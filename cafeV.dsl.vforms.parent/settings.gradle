@@ -1,0 +1,3 @@
+include 'cafeV.dsl.vforms'
+include 'cafeV.dsl.vforms.ide'
+include 'cafeV.dsl.vforms.web'

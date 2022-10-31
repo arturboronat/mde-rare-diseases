@@ -1,0 +1,65 @@
+grammar cafeV.dsl.vforms.VformDSL with org.eclipse.xtext.common.Terminals
+
+generate vformDSL "http://www.dsl.cafeV/vforms/VformDSL"
+
+Model:
+    ("formLayout"
+        formLayout=FormLayout)
+    "formInputs" 
+        (formInput+=FormInput);
+
+FormInput:
+   (text+=Text|checkbox+=Checkbox|number+=Number|dat+=Dat|range+=Range|select+=Select)*;
+    
+FormLayout:
+    layout=Layout;
+
+Text:
+    "inputType" "text"
+    "inputName" inputName=STRING;
+    
+Checkbox:
+    "inputType" "checkbox"
+    "inputName" inputName=STRING;
+
+Number:
+    "inputType" "number"
+    "inputName" inputName=STRING;
+
+Dat:
+    "inputType" "date"
+    "inputName" inputName=STRING;
+    
+Range:
+    "inputType" "range"
+    "inputName" inputName=STRING
+    "min" min=INT
+    "max" max=INT;
+
+Select:
+    "inputType" "select"
+    "inputName" inputName=STRING
+    "options" (dataOption=DataOption|numberOption=NumberOption|enumOption=EnumOption);
+
+DataOption:
+    "optionType" "data"
+    "data" (data+=Data)*;
+
+
+Data:
+    "label" label=STRING
+    "value" strVal=STRING|intVal=INT;
+
+NumberOption:
+    "optionType" "number"
+    "min" min=INT
+    "max" max=INT
+    "range" range=INT;
+
+EnumOption:
+    "optionType" "enum"
+    "data" stringData+=(STRING)*|numberData+=(STRING)*;
+    
+enum Layout:
+	horizontal|vertical
+;
