@@ -50,7 +50,7 @@ public class EnumOptionImpl extends MinimalEObjectImpl.Container implements Enum
    * @generated
    * @ordered
    */
-  protected EList<String> numberData;
+  protected EList<Integer> numberData;
 
   /**
    * <!-- begin-user-doc -->
@@ -94,11 +94,11 @@ public class EnumOptionImpl extends MinimalEObjectImpl.Container implements Enum
    * @generated
    */
   @Override
-  public EList<String> getNumberData()
+  public EList<Integer> getNumberData()
   {
     if (numberData == null)
     {
-      numberData = new EDataTypeEList<String>(String.class, this, VformDSLPackage.ENUM_OPTION__NUMBER_DATA);
+      numberData = new EDataTypeEList<Integer>(Integer.class, this, VformDSLPackage.ENUM_OPTION__NUMBER_DATA);
     }
     return numberData;
   }
@@ -138,7 +138,7 @@ public class EnumOptionImpl extends MinimalEObjectImpl.Container implements Enum
         return;
       case VformDSLPackage.ENUM_OPTION__NUMBER_DATA:
         getNumberData().clear();
-        getNumberData().addAll((Collection<? extends String>)newValue);
+        getNumberData().addAll((Collection<? extends Integer>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

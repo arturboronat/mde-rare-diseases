@@ -10,9 +10,11 @@ import cafeV.dsl.vforms.vformDSL.DataOption;
 import cafeV.dsl.vforms.vformDSL.EnumOption;
 import cafeV.dsl.vforms.vformDSL.FormInput;
 import cafeV.dsl.vforms.vformDSL.FormLayout;
+import cafeV.dsl.vforms.vformDSL.Group;
 import cafeV.dsl.vforms.vformDSL.Model;
 import cafeV.dsl.vforms.vformDSL.NumberOption;
 import cafeV.dsl.vforms.vformDSL.Range;
+import cafeV.dsl.vforms.vformDSL.Search;
 import cafeV.dsl.vforms.vformDSL.Select;
 import cafeV.dsl.vforms.vformDSL.Text;
 import cafeV.dsl.vforms.vformDSL.VformDSLPackage;
@@ -93,14 +95,14 @@ public class VformDSLAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseFormInput(FormInput object)
-      {
-        return createFormInputAdapter();
-      }
-      @Override
       public Adapter caseFormLayout(FormLayout object)
       {
         return createFormLayoutAdapter();
+      }
+      @Override
+      public Adapter caseFormInput(FormInput object)
+      {
+        return createFormInputAdapter();
       }
       @Override
       public Adapter caseText(Text object)
@@ -133,14 +135,24 @@ public class VformDSLAdapterFactory extends AdapterFactoryImpl
         return createSelectAdapter();
       }
       @Override
+      public Adapter caseSearch(Search object)
+      {
+        return createSearchAdapter();
+      }
+      @Override
+      public Adapter caseGroup(Group object)
+      {
+        return createGroupAdapter();
+      }
+      @Override
       public Adapter caseDataOption(DataOption object)
       {
         return createDataOptionAdapter();
       }
       @Override
-      public Adapter caseData(Data object)
+      public Adapter caseEnumOption(EnumOption object)
       {
-        return createDataAdapter();
+        return createEnumOptionAdapter();
       }
       @Override
       public Adapter caseNumberOption(NumberOption object)
@@ -148,9 +160,9 @@ public class VformDSLAdapterFactory extends AdapterFactoryImpl
         return createNumberOptionAdapter();
       }
       @Override
-      public Adapter caseEnumOption(EnumOption object)
+      public Adapter caseData(Data object)
       {
-        return createEnumOptionAdapter();
+        return createDataAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -190,21 +202,6 @@ public class VformDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link cafeV.dsl.vforms.vformDSL.FormInput <em>Form Input</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see cafeV.dsl.vforms.vformDSL.FormInput
-   * @generated
-   */
-  public Adapter createFormInputAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link cafeV.dsl.vforms.vformDSL.FormLayout <em>Form Layout</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -215,6 +212,21 @@ public class VformDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFormLayoutAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link cafeV.dsl.vforms.vformDSL.FormInput <em>Form Input</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see cafeV.dsl.vforms.vformDSL.FormInput
+   * @generated
+   */
+  public Adapter createFormInputAdapter()
   {
     return null;
   }
@@ -310,6 +322,36 @@ public class VformDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link cafeV.dsl.vforms.vformDSL.Search <em>Search</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see cafeV.dsl.vforms.vformDSL.Search
+   * @generated
+   */
+  public Adapter createSearchAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link cafeV.dsl.vforms.vformDSL.Group <em>Group</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see cafeV.dsl.vforms.vformDSL.Group
+   * @generated
+   */
+  public Adapter createGroupAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link cafeV.dsl.vforms.vformDSL.DataOption <em>Data Option</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -325,16 +367,16 @@ public class VformDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link cafeV.dsl.vforms.vformDSL.Data <em>Data</em>}'.
+   * Creates a new adapter for an object of class '{@link cafeV.dsl.vforms.vformDSL.EnumOption <em>Enum Option</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see cafeV.dsl.vforms.vformDSL.Data
+   * @see cafeV.dsl.vforms.vformDSL.EnumOption
    * @generated
    */
-  public Adapter createDataAdapter()
+  public Adapter createEnumOptionAdapter()
   {
     return null;
   }
@@ -355,16 +397,16 @@ public class VformDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link cafeV.dsl.vforms.vformDSL.EnumOption <em>Enum Option</em>}'.
+   * Creates a new adapter for an object of class '{@link cafeV.dsl.vforms.vformDSL.Data <em>Data</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see cafeV.dsl.vforms.vformDSL.EnumOption
+   * @see cafeV.dsl.vforms.vformDSL.Data
    * @generated
    */
-  public Adapter createEnumOptionAdapter()
+  public Adapter createDataAdapter()
   {
     return null;
   }

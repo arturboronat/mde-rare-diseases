@@ -96,6 +96,34 @@ public interface VformDSLPackage extends EPackage
   int MODEL_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link cafeV.dsl.vforms.vformDSL.impl.FormLayoutImpl <em>Form Layout</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see cafeV.dsl.vforms.vformDSL.impl.FormLayoutImpl
+   * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getFormLayout()
+   * @generated
+   */
+  int FORM_LAYOUT = 1;
+
+  /**
+   * The feature id for the '<em><b>Layout</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_LAYOUT__LAYOUT = 0;
+
+  /**
+   * The number of structural features of the '<em>Form Layout</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_LAYOUT_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link cafeV.dsl.vforms.vformDSL.impl.FormInputImpl <em>Form Input</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,7 +131,7 @@ public interface VformDSLPackage extends EPackage
    * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getFormInput()
    * @generated
    */
-  int FORM_INPUT = 1;
+  int FORM_INPUT = 2;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' containment reference list.
@@ -160,41 +188,31 @@ public interface VformDSLPackage extends EPackage
   int FORM_INPUT__SELECT = 5;
 
   /**
+   * The feature id for the '<em><b>Search</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_INPUT__SEARCH = 6;
+
+  /**
+   * The feature id for the '<em><b>Group</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_INPUT__GROUP = 7;
+
+  /**
    * The number of structural features of the '<em>Form Input</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORM_INPUT_FEATURE_COUNT = 6;
-
-  /**
-   * The meta object id for the '{@link cafeV.dsl.vforms.vformDSL.impl.FormLayoutImpl <em>Form Layout</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see cafeV.dsl.vforms.vformDSL.impl.FormLayoutImpl
-   * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getFormLayout()
-   * @generated
-   */
-  int FORM_LAYOUT = 2;
-
-  /**
-   * The feature id for the '<em><b>Layout</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORM_LAYOUT__LAYOUT = 0;
-
-  /**
-   * The number of structural features of the '<em>Form Layout</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORM_LAYOUT_FEATURE_COUNT = 1;
+  int FORM_INPUT_FEATURE_COUNT = 8;
 
   /**
    * The meta object id for the '{@link cafeV.dsl.vforms.vformDSL.impl.TextImpl <em>Text</em>}' class.
@@ -383,22 +401,22 @@ public interface VformDSLPackage extends EPackage
   int SELECT__DATA_OPTION = 1;
 
   /**
-   * The feature id for the '<em><b>Number Option</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELECT__NUMBER_OPTION = 2;
-
-  /**
    * The feature id for the '<em><b>Enum Option</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SELECT__ENUM_OPTION = 3;
+  int SELECT__ENUM_OPTION = 2;
+
+  /**
+   * The feature id for the '<em><b>Number Option</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECT__NUMBER_OPTION = 3;
 
   /**
    * The number of structural features of the '<em>Select</em>' class.
@@ -410,6 +428,98 @@ public interface VformDSLPackage extends EPackage
   int SELECT_FEATURE_COUNT = 4;
 
   /**
+   * The meta object id for the '{@link cafeV.dsl.vforms.vformDSL.impl.SearchImpl <em>Search</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see cafeV.dsl.vforms.vformDSL.impl.SearchImpl
+   * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getSearch()
+   * @generated
+   */
+  int SEARCH = 9;
+
+  /**
+   * The feature id for the '<em><b>Input Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEARCH__INPUT_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>String Data</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEARCH__STRING_DATA = 1;
+
+  /**
+   * The feature id for the '<em><b>Number Data</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEARCH__NUMBER_DATA = 2;
+
+  /**
+   * The feature id for the '<em><b>Data</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEARCH__DATA = 3;
+
+  /**
+   * The number of structural features of the '<em>Search</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEARCH_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link cafeV.dsl.vforms.vformDSL.impl.GroupImpl <em>Group</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see cafeV.dsl.vforms.vformDSL.impl.GroupImpl
+   * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getGroup()
+   * @generated
+   */
+  int GROUP = 10;
+
+  /**
+   * The feature id for the '<em><b>Input Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP__INPUT_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Group Inputs</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP__GROUP_INPUTS = 1;
+
+  /**
+   * The number of structural features of the '<em>Group</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link cafeV.dsl.vforms.vformDSL.impl.DataOptionImpl <em>Data Option</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -417,7 +527,7 @@ public interface VformDSLPackage extends EPackage
    * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getDataOption()
    * @generated
    */
-  int DATA_OPTION = 9;
+  int DATA_OPTION = 11;
 
   /**
    * The feature id for the '<em><b>Data</b></em>' containment reference list.
@@ -436,98 +546,6 @@ public interface VformDSLPackage extends EPackage
    * @ordered
    */
   int DATA_OPTION_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link cafeV.dsl.vforms.vformDSL.impl.DataImpl <em>Data</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see cafeV.dsl.vforms.vformDSL.impl.DataImpl
-   * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getData()
-   * @generated
-   */
-  int DATA = 10;
-
-  /**
-   * The feature id for the '<em><b>Label</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA__LABEL = 0;
-
-  /**
-   * The feature id for the '<em><b>Str Val</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA__STR_VAL = 1;
-
-  /**
-   * The feature id for the '<em><b>Int Val</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA__INT_VAL = 2;
-
-  /**
-   * The number of structural features of the '<em>Data</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link cafeV.dsl.vforms.vformDSL.impl.NumberOptionImpl <em>Number Option</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see cafeV.dsl.vforms.vformDSL.impl.NumberOptionImpl
-   * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getNumberOption()
-   * @generated
-   */
-  int NUMBER_OPTION = 11;
-
-  /**
-   * The feature id for the '<em><b>Min</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_OPTION__MIN = 0;
-
-  /**
-   * The feature id for the '<em><b>Max</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_OPTION__MAX = 1;
-
-  /**
-   * The feature id for the '<em><b>Range</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_OPTION__RANGE = 2;
-
-  /**
-   * The number of structural features of the '<em>Number Option</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NUMBER_OPTION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link cafeV.dsl.vforms.vformDSL.impl.EnumOptionImpl <em>Enum Option</em>}' class.
@@ -567,6 +585,98 @@ public interface VformDSLPackage extends EPackage
   int ENUM_OPTION_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link cafeV.dsl.vforms.vformDSL.impl.NumberOptionImpl <em>Number Option</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see cafeV.dsl.vforms.vformDSL.impl.NumberOptionImpl
+   * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getNumberOption()
+   * @generated
+   */
+  int NUMBER_OPTION = 13;
+
+  /**
+   * The feature id for the '<em><b>Min</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_OPTION__MIN = 0;
+
+  /**
+   * The feature id for the '<em><b>Max</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_OPTION__MAX = 1;
+
+  /**
+   * The feature id for the '<em><b>Range</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_OPTION__RANGE = 2;
+
+  /**
+   * The number of structural features of the '<em>Number Option</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_OPTION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link cafeV.dsl.vforms.vformDSL.impl.DataImpl <em>Data</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see cafeV.dsl.vforms.vformDSL.impl.DataImpl
+   * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getData()
+   * @generated
+   */
+  int DATA = 14;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA__LABEL = 0;
+
+  /**
+   * The feature id for the '<em><b>Str Val</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA__STR_VAL = 1;
+
+  /**
+   * The feature id for the '<em><b>Int Val</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA__INT_VAL = 2;
+
+  /**
+   * The number of structural features of the '<em>Data</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_FEATURE_COUNT = 3;
+
+  /**
    * The meta object id for the '{@link cafeV.dsl.vforms.vformDSL.Layout <em>Layout</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -574,7 +684,7 @@ public interface VformDSLPackage extends EPackage
    * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getLayout()
    * @generated
    */
-  int LAYOUT = 13;
+  int LAYOUT = 15;
 
 
   /**
@@ -608,6 +718,27 @@ public interface VformDSLPackage extends EPackage
    * @generated
    */
   EReference getModel_FormInput();
+
+  /**
+   * Returns the meta object for class '{@link cafeV.dsl.vforms.vformDSL.FormLayout <em>Form Layout</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Form Layout</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.FormLayout
+   * @generated
+   */
+  EClass getFormLayout();
+
+  /**
+   * Returns the meta object for the attribute '{@link cafeV.dsl.vforms.vformDSL.FormLayout#getLayout <em>Layout</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Layout</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.FormLayout#getLayout()
+   * @see #getFormLayout()
+   * @generated
+   */
+  EAttribute getFormLayout_Layout();
 
   /**
    * Returns the meta object for class '{@link cafeV.dsl.vforms.vformDSL.FormInput <em>Form Input</em>}'.
@@ -686,25 +817,26 @@ public interface VformDSLPackage extends EPackage
   EReference getFormInput_Select();
 
   /**
-   * Returns the meta object for class '{@link cafeV.dsl.vforms.vformDSL.FormLayout <em>Form Layout</em>}'.
+   * Returns the meta object for the containment reference list '{@link cafeV.dsl.vforms.vformDSL.FormInput#getSearch <em>Search</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Form Layout</em>'.
-   * @see cafeV.dsl.vforms.vformDSL.FormLayout
+   * @return the meta object for the containment reference list '<em>Search</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.FormInput#getSearch()
+   * @see #getFormInput()
    * @generated
    */
-  EClass getFormLayout();
+  EReference getFormInput_Search();
 
   /**
-   * Returns the meta object for the attribute '{@link cafeV.dsl.vforms.vformDSL.FormLayout#getLayout <em>Layout</em>}'.
+   * Returns the meta object for the containment reference list '{@link cafeV.dsl.vforms.vformDSL.FormInput#getGroup <em>Group</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Layout</em>'.
-   * @see cafeV.dsl.vforms.vformDSL.FormLayout#getLayout()
-   * @see #getFormLayout()
+   * @return the meta object for the containment reference list '<em>Group</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.FormInput#getGroup()
+   * @see #getFormInput()
    * @generated
    */
-  EAttribute getFormLayout_Layout();
+  EReference getFormInput_Group();
 
   /**
    * Returns the meta object for class '{@link cafeV.dsl.vforms.vformDSL.Text <em>Text</em>}'.
@@ -866,6 +998,17 @@ public interface VformDSLPackage extends EPackage
   EReference getSelect_DataOption();
 
   /**
+   * Returns the meta object for the containment reference '{@link cafeV.dsl.vforms.vformDSL.Select#getEnumOption <em>Enum Option</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Enum Option</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.Select#getEnumOption()
+   * @see #getSelect()
+   * @generated
+   */
+  EReference getSelect_EnumOption();
+
+  /**
    * Returns the meta object for the containment reference '{@link cafeV.dsl.vforms.vformDSL.Select#getNumberOption <em>Number Option</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -877,15 +1020,90 @@ public interface VformDSLPackage extends EPackage
   EReference getSelect_NumberOption();
 
   /**
-   * Returns the meta object for the containment reference '{@link cafeV.dsl.vforms.vformDSL.Select#getEnumOption <em>Enum Option</em>}'.
+   * Returns the meta object for class '{@link cafeV.dsl.vforms.vformDSL.Search <em>Search</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Enum Option</em>'.
-   * @see cafeV.dsl.vforms.vformDSL.Select#getEnumOption()
-   * @see #getSelect()
+   * @return the meta object for class '<em>Search</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.Search
    * @generated
    */
-  EReference getSelect_EnumOption();
+  EClass getSearch();
+
+  /**
+   * Returns the meta object for the attribute '{@link cafeV.dsl.vforms.vformDSL.Search#getInputName <em>Input Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Input Name</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.Search#getInputName()
+   * @see #getSearch()
+   * @generated
+   */
+  EAttribute getSearch_InputName();
+
+  /**
+   * Returns the meta object for the attribute list '{@link cafeV.dsl.vforms.vformDSL.Search#getStringData <em>String Data</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>String Data</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.Search#getStringData()
+   * @see #getSearch()
+   * @generated
+   */
+  EAttribute getSearch_StringData();
+
+  /**
+   * Returns the meta object for the attribute list '{@link cafeV.dsl.vforms.vformDSL.Search#getNumberData <em>Number Data</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Number Data</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.Search#getNumberData()
+   * @see #getSearch()
+   * @generated
+   */
+  EAttribute getSearch_NumberData();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link cafeV.dsl.vforms.vformDSL.Search#getData <em>Data</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Data</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.Search#getData()
+   * @see #getSearch()
+   * @generated
+   */
+  EReference getSearch_Data();
+
+  /**
+   * Returns the meta object for class '{@link cafeV.dsl.vforms.vformDSL.Group <em>Group</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Group</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.Group
+   * @generated
+   */
+  EClass getGroup();
+
+  /**
+   * Returns the meta object for the attribute '{@link cafeV.dsl.vforms.vformDSL.Group#getInputName <em>Input Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Input Name</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.Group#getInputName()
+   * @see #getGroup()
+   * @generated
+   */
+  EAttribute getGroup_InputName();
+
+  /**
+   * Returns the meta object for the reference list '{@link cafeV.dsl.vforms.vformDSL.Group#getGroupInputs <em>Group Inputs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Group Inputs</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.Group#getGroupInputs()
+   * @see #getGroup()
+   * @generated
+   */
+  EReference getGroup_GroupInputs();
 
   /**
    * Returns the meta object for class '{@link cafeV.dsl.vforms.vformDSL.DataOption <em>Data Option</em>}'.
@@ -909,47 +1127,36 @@ public interface VformDSLPackage extends EPackage
   EReference getDataOption_Data();
 
   /**
-   * Returns the meta object for class '{@link cafeV.dsl.vforms.vformDSL.Data <em>Data</em>}'.
+   * Returns the meta object for class '{@link cafeV.dsl.vforms.vformDSL.EnumOption <em>Enum Option</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Data</em>'.
-   * @see cafeV.dsl.vforms.vformDSL.Data
+   * @return the meta object for class '<em>Enum Option</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.EnumOption
    * @generated
    */
-  EClass getData();
+  EClass getEnumOption();
 
   /**
-   * Returns the meta object for the attribute '{@link cafeV.dsl.vforms.vformDSL.Data#getLabel <em>Label</em>}'.
+   * Returns the meta object for the attribute list '{@link cafeV.dsl.vforms.vformDSL.EnumOption#getStringData <em>String Data</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Label</em>'.
-   * @see cafeV.dsl.vforms.vformDSL.Data#getLabel()
-   * @see #getData()
+   * @return the meta object for the attribute list '<em>String Data</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.EnumOption#getStringData()
+   * @see #getEnumOption()
    * @generated
    */
-  EAttribute getData_Label();
+  EAttribute getEnumOption_StringData();
 
   /**
-   * Returns the meta object for the attribute '{@link cafeV.dsl.vforms.vformDSL.Data#getStrVal <em>Str Val</em>}'.
+   * Returns the meta object for the attribute list '{@link cafeV.dsl.vforms.vformDSL.EnumOption#getNumberData <em>Number Data</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Str Val</em>'.
-   * @see cafeV.dsl.vforms.vformDSL.Data#getStrVal()
-   * @see #getData()
+   * @return the meta object for the attribute list '<em>Number Data</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.EnumOption#getNumberData()
+   * @see #getEnumOption()
    * @generated
    */
-  EAttribute getData_StrVal();
-
-  /**
-   * Returns the meta object for the attribute '{@link cafeV.dsl.vforms.vformDSL.Data#getIntVal <em>Int Val</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Int Val</em>'.
-   * @see cafeV.dsl.vforms.vformDSL.Data#getIntVal()
-   * @see #getData()
-   * @generated
-   */
-  EAttribute getData_IntVal();
+  EAttribute getEnumOption_NumberData();
 
   /**
    * Returns the meta object for class '{@link cafeV.dsl.vforms.vformDSL.NumberOption <em>Number Option</em>}'.
@@ -995,36 +1202,47 @@ public interface VformDSLPackage extends EPackage
   EAttribute getNumberOption_Range();
 
   /**
-   * Returns the meta object for class '{@link cafeV.dsl.vforms.vformDSL.EnumOption <em>Enum Option</em>}'.
+   * Returns the meta object for class '{@link cafeV.dsl.vforms.vformDSL.Data <em>Data</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Enum Option</em>'.
-   * @see cafeV.dsl.vforms.vformDSL.EnumOption
+   * @return the meta object for class '<em>Data</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.Data
    * @generated
    */
-  EClass getEnumOption();
+  EClass getData();
 
   /**
-   * Returns the meta object for the attribute list '{@link cafeV.dsl.vforms.vformDSL.EnumOption#getStringData <em>String Data</em>}'.
+   * Returns the meta object for the attribute '{@link cafeV.dsl.vforms.vformDSL.Data#getLabel <em>Label</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>String Data</em>'.
-   * @see cafeV.dsl.vforms.vformDSL.EnumOption#getStringData()
-   * @see #getEnumOption()
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.Data#getLabel()
+   * @see #getData()
    * @generated
    */
-  EAttribute getEnumOption_StringData();
+  EAttribute getData_Label();
 
   /**
-   * Returns the meta object for the attribute list '{@link cafeV.dsl.vforms.vformDSL.EnumOption#getNumberData <em>Number Data</em>}'.
+   * Returns the meta object for the attribute '{@link cafeV.dsl.vforms.vformDSL.Data#getStrVal <em>Str Val</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Number Data</em>'.
-   * @see cafeV.dsl.vforms.vformDSL.EnumOption#getNumberData()
-   * @see #getEnumOption()
+   * @return the meta object for the attribute '<em>Str Val</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.Data#getStrVal()
+   * @see #getData()
    * @generated
    */
-  EAttribute getEnumOption_NumberData();
+  EAttribute getData_StrVal();
+
+  /**
+   * Returns the meta object for the attribute '{@link cafeV.dsl.vforms.vformDSL.Data#getIntVal <em>Int Val</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Int Val</em>'.
+   * @see cafeV.dsl.vforms.vformDSL.Data#getIntVal()
+   * @see #getData()
+   * @generated
+   */
+  EAttribute getData_IntVal();
 
   /**
    * Returns the meta object for enum '{@link cafeV.dsl.vforms.vformDSL.Layout <em>Layout</em>}'.
@@ -1086,6 +1304,24 @@ public interface VformDSLPackage extends EPackage
     EReference MODEL__FORM_INPUT = eINSTANCE.getModel_FormInput();
 
     /**
+     * The meta object literal for the '{@link cafeV.dsl.vforms.vformDSL.impl.FormLayoutImpl <em>Form Layout</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see cafeV.dsl.vforms.vformDSL.impl.FormLayoutImpl
+     * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getFormLayout()
+     * @generated
+     */
+    EClass FORM_LAYOUT = eINSTANCE.getFormLayout();
+
+    /**
+     * The meta object literal for the '<em><b>Layout</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM_LAYOUT__LAYOUT = eINSTANCE.getFormLayout_Layout();
+
+    /**
      * The meta object literal for the '{@link cafeV.dsl.vforms.vformDSL.impl.FormInputImpl <em>Form Input</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1144,22 +1380,20 @@ public interface VformDSLPackage extends EPackage
     EReference FORM_INPUT__SELECT = eINSTANCE.getFormInput_Select();
 
     /**
-     * The meta object literal for the '{@link cafeV.dsl.vforms.vformDSL.impl.FormLayoutImpl <em>Form Layout</em>}' class.
+     * The meta object literal for the '<em><b>Search</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see cafeV.dsl.vforms.vformDSL.impl.FormLayoutImpl
-     * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getFormLayout()
      * @generated
      */
-    EClass FORM_LAYOUT = eINSTANCE.getFormLayout();
+    EReference FORM_INPUT__SEARCH = eINSTANCE.getFormInput_Search();
 
     /**
-     * The meta object literal for the '<em><b>Layout</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Group</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FORM_LAYOUT__LAYOUT = eINSTANCE.getFormLayout_Layout();
+    EReference FORM_INPUT__GROUP = eINSTANCE.getFormInput_Group();
 
     /**
      * The meta object literal for the '{@link cafeV.dsl.vforms.vformDSL.impl.TextImpl <em>Text</em>}' class.
@@ -1294,6 +1528,14 @@ public interface VformDSLPackage extends EPackage
     EReference SELECT__DATA_OPTION = eINSTANCE.getSelect_DataOption();
 
     /**
+     * The meta object literal for the '<em><b>Enum Option</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELECT__ENUM_OPTION = eINSTANCE.getSelect_EnumOption();
+
+    /**
      * The meta object literal for the '<em><b>Number Option</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1302,12 +1544,72 @@ public interface VformDSLPackage extends EPackage
     EReference SELECT__NUMBER_OPTION = eINSTANCE.getSelect_NumberOption();
 
     /**
-     * The meta object literal for the '<em><b>Enum Option</b></em>' containment reference feature.
+     * The meta object literal for the '{@link cafeV.dsl.vforms.vformDSL.impl.SearchImpl <em>Search</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see cafeV.dsl.vforms.vformDSL.impl.SearchImpl
+     * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getSearch()
+     * @generated
+     */
+    EClass SEARCH = eINSTANCE.getSearch();
+
+    /**
+     * The meta object literal for the '<em><b>Input Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SELECT__ENUM_OPTION = eINSTANCE.getSelect_EnumOption();
+    EAttribute SEARCH__INPUT_NAME = eINSTANCE.getSearch_InputName();
+
+    /**
+     * The meta object literal for the '<em><b>String Data</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SEARCH__STRING_DATA = eINSTANCE.getSearch_StringData();
+
+    /**
+     * The meta object literal for the '<em><b>Number Data</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SEARCH__NUMBER_DATA = eINSTANCE.getSearch_NumberData();
+
+    /**
+     * The meta object literal for the '<em><b>Data</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SEARCH__DATA = eINSTANCE.getSearch_Data();
+
+    /**
+     * The meta object literal for the '{@link cafeV.dsl.vforms.vformDSL.impl.GroupImpl <em>Group</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see cafeV.dsl.vforms.vformDSL.impl.GroupImpl
+     * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getGroup()
+     * @generated
+     */
+    EClass GROUP = eINSTANCE.getGroup();
+
+    /**
+     * The meta object literal for the '<em><b>Input Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GROUP__INPUT_NAME = eINSTANCE.getGroup_InputName();
+
+    /**
+     * The meta object literal for the '<em><b>Group Inputs</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GROUP__GROUP_INPUTS = eINSTANCE.getGroup_GroupInputs();
 
     /**
      * The meta object literal for the '{@link cafeV.dsl.vforms.vformDSL.impl.DataOptionImpl <em>Data Option</em>}' class.
@@ -1328,38 +1630,30 @@ public interface VformDSLPackage extends EPackage
     EReference DATA_OPTION__DATA = eINSTANCE.getDataOption_Data();
 
     /**
-     * The meta object literal for the '{@link cafeV.dsl.vforms.vformDSL.impl.DataImpl <em>Data</em>}' class.
+     * The meta object literal for the '{@link cafeV.dsl.vforms.vformDSL.impl.EnumOptionImpl <em>Enum Option</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see cafeV.dsl.vforms.vformDSL.impl.DataImpl
-     * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getData()
+     * @see cafeV.dsl.vforms.vformDSL.impl.EnumOptionImpl
+     * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getEnumOption()
      * @generated
      */
-    EClass DATA = eINSTANCE.getData();
+    EClass ENUM_OPTION = eINSTANCE.getEnumOption();
 
     /**
-     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>String Data</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DATA__LABEL = eINSTANCE.getData_Label();
+    EAttribute ENUM_OPTION__STRING_DATA = eINSTANCE.getEnumOption_StringData();
 
     /**
-     * The meta object literal for the '<em><b>Str Val</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Number Data</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DATA__STR_VAL = eINSTANCE.getData_StrVal();
-
-    /**
-     * The meta object literal for the '<em><b>Int Val</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DATA__INT_VAL = eINSTANCE.getData_IntVal();
+    EAttribute ENUM_OPTION__NUMBER_DATA = eINSTANCE.getEnumOption_NumberData();
 
     /**
      * The meta object literal for the '{@link cafeV.dsl.vforms.vformDSL.impl.NumberOptionImpl <em>Number Option</em>}' class.
@@ -1396,30 +1690,38 @@ public interface VformDSLPackage extends EPackage
     EAttribute NUMBER_OPTION__RANGE = eINSTANCE.getNumberOption_Range();
 
     /**
-     * The meta object literal for the '{@link cafeV.dsl.vforms.vformDSL.impl.EnumOptionImpl <em>Enum Option</em>}' class.
+     * The meta object literal for the '{@link cafeV.dsl.vforms.vformDSL.impl.DataImpl <em>Data</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see cafeV.dsl.vforms.vformDSL.impl.EnumOptionImpl
-     * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getEnumOption()
+     * @see cafeV.dsl.vforms.vformDSL.impl.DataImpl
+     * @see cafeV.dsl.vforms.vformDSL.impl.VformDSLPackageImpl#getData()
      * @generated
      */
-    EClass ENUM_OPTION = eINSTANCE.getEnumOption();
+    EClass DATA = eINSTANCE.getData();
 
     /**
-     * The meta object literal for the '<em><b>String Data</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ENUM_OPTION__STRING_DATA = eINSTANCE.getEnumOption_StringData();
+    EAttribute DATA__LABEL = eINSTANCE.getData_Label();
 
     /**
-     * The meta object literal for the '<em><b>Number Data</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Str Val</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ENUM_OPTION__NUMBER_DATA = eINSTANCE.getEnumOption_NumberData();
+    EAttribute DATA__STR_VAL = eINSTANCE.getData_StrVal();
+
+    /**
+     * The meta object literal for the '<em><b>Int Val</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA__INT_VAL = eINSTANCE.getData_IntVal();
 
     /**
      * The meta object literal for the '{@link cafeV.dsl.vforms.vformDSL.Layout <em>Layout</em>}' enum.

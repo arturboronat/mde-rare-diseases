@@ -21,6 +21,7 @@ import cafeV.dsl.vforms.vformDSL.Range
 import cafeV.dsl.vforms.vformDSL.Layout
 import cafeV.dsl.vforms.vformDSL.FormInput
 import cafeV.dsl.vforms.vformDSL.FormLayout
+import cafeV.dsl.vforms.vformDSL.Group
 
 
 
@@ -43,16 +44,36 @@ class VformDSLGroovyGenerator {
 		 * TODO: call your code generator
 		 */
 		String text = ''
-		text+=""" module.exports =  function getModel(){
-        return { """
+		text += """
+			<!doctype html>
+			<html lang="en">
+			  <head>
+			    <meta charset="utf-8">
+			    <meta name="viewport" content="width=device-width, initial-scale=1">
+			    <title>VForms</title>
+			    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+			  </head>
+			  <body>
+			<form>
+			<div class="container">
+			<div class="form-group row mt-5">
+"""
            
 		text += traverse(model)
 		
 		text+="""
-	       		}
-		    }"""		
+		</div>		 
+		</div>
+		</form>
+		 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+		  </body>
+		</html>
+		"""
 		
-		File output = new File("src/main/resources/output.txt")
+		File output = new File("src/main/resources/output.html")
+		if(output.exists()) {
+			output.delete()
+		}
 		output.createNewFile()
 		output << text
 	}
@@ -75,10 +96,10 @@ class VformDSLGroovyGenerator {
 			case Model :
 				if(obj.formLayout.layout ==Layout["horizontal"]){
 				
-					text += """ formLayout: 'horizontal' """
+					text += """"""
 				}
 				else {
-					text += """ formLayout: 'vertical' """
+					text += """"""
 				}
 
 				text+= traverse(obj.formInput)
@@ -115,65 +136,59 @@ class VformDSLGroovyGenerator {
 					 text+= traverse(obj.select)
 					
 				 }
-				 
-				 text+="""]"""
 				 break
 			
 				 case Text :
 				text += """
-						{
-							inputName:'${obj.inputName}',
-							inputType: 'text'
-						},
+						<div class="col-sm-3 mb-2">
+						    <input type="text" class="form-control" id="${obj.inputName}"  placeholder="Enter ${obj.inputName}">
+				 	 	</div>
 						"""
 				break
 				
 				case Checkbox :
 				text += """
-						{
-							inputName:'${obj.inputName}',
-							inputType: 'checkbox'
-						},
+						  <div class="col-sm-3 mb-2">
+						    <input type="checkbox"  id="${obj.inputName}">
+						    <label  for="${obj.inputName}">${obj.inputName}</label>
+						  </div>
 						"""
 				break
 				
 				case Number :
 				text += """
-						{
-							inputName:'${obj.inputName}',
-							inputType: 'number'
-						},
+						<div class="col-sm-3 mb-2">
+					  	<label for="${obj.inputName}">${obj.inputName}</label>  
+						<input type="number" id="${obj.inputName}">
+						  </div>
 						"""
 				break
 				
 				case Dat :
 				text += """
-						{
-							inputName:'${obj.inputName}',
-							inputType: 'date'
-						},
+						<div class=" col-sm-3  my-auto ">
+						    <input type="date"" id="${obj.inputName}">
+						    <label for="${obj.inputName}">${obj.inputName}</label>
+						  </div>
 						"""
 				break
 				
 				case Range :
 				text += """
-						{
-							inputName:'${obj.inputName}',
-							inputType: 'range',
-							min: '${obj.min}',
-							max: '${obj.max}'
-						},
+						  <div class="col-sm-4 mb-2">
+						    <label for="${obj.inputName}">${obj.inputName}</label>
+						    <input type="range" class="form-control-range" id="${obj.inputName}">
+						  </div>
 						"""
 				break
 				
 				case Select :
 				text += """
-						{
-							inputName:'${obj.inputName}',
-							inputType: 'select'
-							options:{
-								
-						"""
+				  <div class="col-sm-2 mb-2">
+				    <label for="${obj.inputName}">${obj.inputName}</label>
+				    <select class="form-control" id="${obj.inputName}">
+				"""
+				
 				if(obj.dataOption!=null){
 					text+= traverse(obj.dataOption)
 				   
@@ -189,44 +204,53 @@ class VformDSLGroovyGenerator {
 				   
 				}
 				
-				text+= """		
-					}
-				},"""
+				text+= """
+				    </select>
+				</div>
+						"""
 				break
 				
 				case DataOption :
-				text += """
-							optionType:'data',
-							data:["""
+		
 				for(it in obj.data){
-					text+= """{
-						label:${it},
-						value:${it}
-						},"""
-				}
-				
-				text+= """]"""
-				break
-			
-					case EnumOption:
-					text += """
-								optionType:'enum',
-								data:["""
-					for(it in obj.data){
-						text+= """'${it}'"""
+					if(it.strVal!=null) {
+					text+= """ <option>${it.strVal}</option>"""
+					}
+					else {
+						text+= """ <option>${it.intVal}</option>"""
 					}
 					
-					text+= """]"""
+				}
+				break
+			
+				case EnumOption:
+				if(obj.numberData!=null) {
+					for(it in obj.numberData){
+						text+= """ <option>${it}</option>"""
+					}
+				}
+				else {
+					for(it in obj.stringData){
+						text+= """ <option>${it}</option>"""
+				
+						}
+				}
 				break
 				
 				case NumberOption:
-					text += """
-					optionType:'number',
-					min: ${obj.min},
-					max: ${obj.max},
-					range: ${obj.range}
-					"""
+				for(int i=0; i<obj.max; i+=obj.range) {
+					text+= """ <option>${i}</option>"""
+					}
+
 				break
+				
+				case Group:
+					text+= """<div> 
+							<h1 class="py-3 border-2 border-primary">${obj.inputName}</h1>
+						"""
+						text+=traverse(obj.groupInputs)
+					
+					text+="""</div>"""
 			
 					}
 			text

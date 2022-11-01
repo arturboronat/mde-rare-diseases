@@ -7,6 +7,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="formInput" upperBound="-1"
         eType="#//FormInput" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormLayout">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layout" eType="#//Layout"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FormInput">
     <eStructuralFeatures xsi:type="ecore:EReference" name="text" upperBound="-1" eType="#//Text"
         containment="true"/>
@@ -20,9 +23,10 @@
         eType="#//Range" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="select" upperBound="-1"
         eType="#//Select" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FormLayout">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layout" eType="#//Layout"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="search" upperBound="-1"
+        eType="#//Search" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group" upperBound="-1"
+        eType="#//Group" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Text">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -45,30 +49,44 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataOption" eType="#//DataOption"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="numberOption" eType="#//NumberOption"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enumOption" eType="#//EnumOption"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="numberOption" eType="#//NumberOption"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Search">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringData" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberData" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Group">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groupInputs" unique="false"
+        upperBound="-1" eType="#//FormInput"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataOption">
     <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Data">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="intVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumOption">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringData" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberData" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumberOption">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="range" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnumOption">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringData" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberData" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Data">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="intVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Layout">
     <eLiterals name="horizontal" literal="horizontal"/>

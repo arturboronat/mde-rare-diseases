@@ -33,15 +33,6 @@ public interface VformDSLFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Form Input</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Form Input</em>'.
-   * @generated
-   */
-  FormInput createFormInput();
-
-  /**
    * Returns a new object of class '<em>Form Layout</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -49,6 +40,15 @@ public interface VformDSLFactory extends EFactory
    * @generated
    */
   FormLayout createFormLayout();
+
+  /**
+   * Returns a new object of class '<em>Form Input</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Form Input</em>'.
+   * @generated
+   */
+  FormInput createFormInput();
 
   /**
    * Returns a new object of class '<em>Text</em>'.
@@ -105,6 +105,24 @@ public interface VformDSLFactory extends EFactory
   Select createSelect();
 
   /**
+   * Returns a new object of class '<em>Search</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Search</em>'.
+   * @generated
+   */
+  Search createSearch();
+
+  /**
+   * Returns a new object of class '<em>Group</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Group</em>'.
+   * @generated
+   */
+  Group createGroup();
+
+  /**
    * Returns a new object of class '<em>Data Option</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -114,13 +132,13 @@ public interface VformDSLFactory extends EFactory
   DataOption createDataOption();
 
   /**
-   * Returns a new object of class '<em>Data</em>'.
+   * Returns a new object of class '<em>Enum Option</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data</em>'.
+   * @return a new object of class '<em>Enum Option</em>'.
    * @generated
    */
-  Data createData();
+  EnumOption createEnumOption();
 
   /**
    * Returns a new object of class '<em>Number Option</em>'.
@@ -132,13 +150,13 @@ public interface VformDSLFactory extends EFactory
   NumberOption createNumberOption();
 
   /**
-   * Returns a new object of class '<em>Enum Option</em>'.
+   * Returns a new object of class '<em>Data</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Enum Option</em>'.
+   * @return a new object of class '<em>Data</em>'.
    * @generated
    */
-  EnumOption createEnumOption();
+  Data createData();
 
   /**
    * Returns the package supported by this factory.

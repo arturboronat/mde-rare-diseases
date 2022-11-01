@@ -40,7 +40,7 @@ public interface EnumOption extends EObject
 
   /**
    * Returns the value of the '<em><b>Number Data</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * The list contents are of type {@link java.lang.Integer}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Number Data</em>' attribute list.
@@ -48,6 +48,6 @@ public interface EnumOption extends EObject
    * @model unique="false"
    * @generated
    */
-  EList<String> getNumberData();
+  EList<Integer> getNumberData();
 
 } // EnumOption

@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link cafeV.dsl.vforms.vformDSL.Select#getInputName <em>Input Name</em>}</li>
  *   <li>{@link cafeV.dsl.vforms.vformDSL.Select#getDataOption <em>Data Option</em>}</li>
- *   <li>{@link cafeV.dsl.vforms.vformDSL.Select#getNumberOption <em>Number Option</em>}</li>
  *   <li>{@link cafeV.dsl.vforms.vformDSL.Select#getEnumOption <em>Enum Option</em>}</li>
+ *   <li>{@link cafeV.dsl.vforms.vformDSL.Select#getNumberOption <em>Number Option</em>}</li>
  * </ul>
  *
  * @see cafeV.dsl.vforms.vformDSL.VformDSLPackage#getSelect()
@@ -71,28 +71,6 @@ public interface Select extends EObject
   void setDataOption(DataOption value);
 
   /**
-   * Returns the value of the '<em><b>Number Option</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Number Option</em>' containment reference.
-   * @see #setNumberOption(NumberOption)
-   * @see cafeV.dsl.vforms.vformDSL.VformDSLPackage#getSelect_NumberOption()
-   * @model containment="true"
-   * @generated
-   */
-  NumberOption getNumberOption();
-
-  /**
-   * Sets the value of the '{@link cafeV.dsl.vforms.vformDSL.Select#getNumberOption <em>Number Option</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Number Option</em>' containment reference.
-   * @see #getNumberOption()
-   * @generated
-   */
-  void setNumberOption(NumberOption value);
-
-  /**
    * Returns the value of the '<em><b>Enum Option</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -113,5 +91,27 @@ public interface Select extends EObject
    * @generated
    */
   void setEnumOption(EnumOption value);
+
+  /**
+   * Returns the value of the '<em><b>Number Option</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Number Option</em>' containment reference.
+   * @see #setNumberOption(NumberOption)
+   * @see cafeV.dsl.vforms.vformDSL.VformDSLPackage#getSelect_NumberOption()
+   * @model containment="true"
+   * @generated
+   */
+  NumberOption getNumberOption();
+
+  /**
+   * Sets the value of the '{@link cafeV.dsl.vforms.vformDSL.Select#getNumberOption <em>Number Option</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Number Option</em>' containment reference.
+   * @see #getNumberOption()
+   * @generated
+   */
+  void setNumberOption(NumberOption value);
 
 } // Select

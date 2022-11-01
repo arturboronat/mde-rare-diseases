@@ -10,9 +10,11 @@ import cafeV.dsl.vforms.vformDSL.DataOption;
 import cafeV.dsl.vforms.vformDSL.EnumOption;
 import cafeV.dsl.vforms.vformDSL.FormInput;
 import cafeV.dsl.vforms.vformDSL.FormLayout;
+import cafeV.dsl.vforms.vformDSL.Group;
 import cafeV.dsl.vforms.vformDSL.Model;
 import cafeV.dsl.vforms.vformDSL.NumberOption;
 import cafeV.dsl.vforms.vformDSL.Range;
+import cafeV.dsl.vforms.vformDSL.Search;
 import cafeV.dsl.vforms.vformDSL.Select;
 import cafeV.dsl.vforms.vformDSL.Text;
 import cafeV.dsl.vforms.vformDSL.VformDSLPackage;
@@ -92,17 +94,17 @@ public class VformDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case VformDSLPackage.FORM_INPUT:
-      {
-        FormInput formInput = (FormInput)theEObject;
-        T result = caseFormInput(formInput);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case VformDSLPackage.FORM_LAYOUT:
       {
         FormLayout formLayout = (FormLayout)theEObject;
         T result = caseFormLayout(formLayout);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case VformDSLPackage.FORM_INPUT:
+      {
+        FormInput formInput = (FormInput)theEObject;
+        T result = caseFormInput(formInput);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -148,6 +150,20 @@ public class VformDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case VformDSLPackage.SEARCH:
+      {
+        Search search = (Search)theEObject;
+        T result = caseSearch(search);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case VformDSLPackage.GROUP:
+      {
+        Group group = (Group)theEObject;
+        T result = caseGroup(group);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case VformDSLPackage.DATA_OPTION:
       {
         DataOption dataOption = (DataOption)theEObject;
@@ -155,10 +171,10 @@ public class VformDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case VformDSLPackage.DATA:
+      case VformDSLPackage.ENUM_OPTION:
       {
-        Data data = (Data)theEObject;
-        T result = caseData(data);
+        EnumOption enumOption = (EnumOption)theEObject;
+        T result = caseEnumOption(enumOption);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -169,10 +185,10 @@ public class VformDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case VformDSLPackage.ENUM_OPTION:
+      case VformDSLPackage.DATA:
       {
-        EnumOption enumOption = (EnumOption)theEObject;
-        T result = caseEnumOption(enumOption);
+        Data data = (Data)theEObject;
+        T result = caseData(data);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -197,22 +213,6 @@ public class VformDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Form Input</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Form Input</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFormInput(FormInput object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Form Layout</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -224,6 +224,22 @@ public class VformDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseFormLayout(FormLayout object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Form Input</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Form Input</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFormInput(FormInput object)
   {
     return null;
   }
@@ -325,6 +341,38 @@ public class VformDSLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Search</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Search</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSearch(Search object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Group</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Group</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGroup(Group object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Data Option</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -341,17 +389,17 @@ public class VformDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Enum Option</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Enum Option</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseData(Data object)
+  public T caseEnumOption(EnumOption object)
   {
     return null;
   }
@@ -373,17 +421,17 @@ public class VformDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Enum Option</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Data</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Enum Option</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Data</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEnumOption(EnumOption object)
+  public T caseData(Data object)
   {
     return null;
   }

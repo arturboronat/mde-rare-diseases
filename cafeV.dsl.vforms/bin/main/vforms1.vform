@@ -1,45 +1,60 @@
-formLayout horizontal
-formInput 
-    inputType text
-    inputName "name"
+formLayout: horizontal,
+		formInputs: [
+				
+				{
+					inputType: date ,		
+					inputName: "date of Birth"
+				}
+				
+				{
+					inputType: range ,		
+					inputName: "temperature",
+					min: 0,
+					max: 10
+				}
+			
+			{
+				inputType: select,
+				inputName: "Age Group",
+				options: {
+					optionType: number,
+						min: 0,
+						max: 100,
+						range: 10
+				}
+					
+			}
 
-    inputType select
-    inputName "gender"
-    options 
-        optionType data
-        data
-            label"Girl"
-            value "girl"
-            label "Boy"
-            value "boy"
-
-    inputType select
-    inputName "gen"
-    options 
-        optionType data
-        data
-            label "Gir"
-            value "gir"
-            label "Bo"
-            value "bo" 
-
-    inputType text
-    inputName "na"
-
-    inputType checkbox
-    inputName "generic"
-
-    inputType range
-    inputName "ageGroup"
-    min 20
-    max 30
-
-    inputType date
-    inputName "calender"
-
-    inputType search
-    inputName "checking"
-    options   "girl" "woman"
-
-    inputType number
-    inputName "choose"
+			{
+				inputType: select,
+				inputName: "sex",
+				options: {
+					optionType: enum,
+						data:[1 2]
+				}
+					
+			} 	
+			{
+				inputType: select,
+				inputName: "Gender",
+				options: {
+					optionType: data,
+					data:[
+							{
+								label: "Girl",
+								value: "girl"
+							}
+						
+							{
+								label: "Boy",
+								value: "boy"
+							}
+						
+						]
+				}
+							
+			}
+			
+			
+		
+		]

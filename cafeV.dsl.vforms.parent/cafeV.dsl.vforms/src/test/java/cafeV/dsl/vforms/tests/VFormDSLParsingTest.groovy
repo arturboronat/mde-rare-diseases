@@ -21,12 +21,15 @@ class VFormDSLParsingTest {
 	void testFormLayout() {
 		def result = parseHelper.parse('''
 
-		formLayout vertical
-		formInputs 
-			inputType text		
-			inputName "name"
-			
-		
+		formLayout: vertical,
+		formInputs: [
+						{
+							inputType: text,		
+							inputName: "name"
+
+						}	
+
+				] 
 		
 		''')
 		
@@ -39,20 +42,29 @@ class VFormDSLParsingTest {
 	void testFormInputBasic() {
 		def result = parseHelper.parse('''
 
-		formLayout horizontal
-		formInputs 
-			inputType text		
-			inputName "name"
-			
-			inputType checkbox		
-			inputName "male"
+		formLayout: horizontal,
+		formInputs:[
+				{
+					inputType: text ,		
+					inputName: "name"
+				}
+	
+				{
+					inputType: checkbox ,	
+					inputName: "male"
+				}
+	
+				{
+					inputType: number ,		
+					inputName: "Age"
+				}
+				
+				{
+					inputType: date ,		
+					inputName: "date of Birth"
+				}		
 
-			inputType number		
-			inputName "Age"
-
-			inputType date		
-			inputName "date of Birth"
-		
+			]
 		
 		''')
 		
@@ -65,39 +77,100 @@ class VFormDSLParsingTest {
 	void testFormInputIntermediate() {
 		def result = parseHelper.parse('''
 
-		formLayout horizontal
-		formInputs
-			inputType select
-			inputName "Gender"
-			options
-				optionType data
-				data 
-					label "Boy"
-					value "boy"
-
-					label "Girl"
-					value "girl"
+		formLayout: horizontal,
+		formInputs: [
 		
-		inputType select
-			inputName "Age group"
-			options
-				optionType number
-				min 0
-				max 100
-				range 10
-
-		inputType select
-			inputName "sex"
-			options
-				optionType enum
-				data "boy" "girl" 
+			
+			{
+				inputType: select,
+				inputName: "Age Group",
+				options: {
+					optionType: number,
+						min: 0,
+						max: 100,
+						range: 10
+				}
 					
+			}
+
+			{
+				inputType: select,
+				inputName: "sex",
+				options: {
+					optionType: enum,
+						data:[1 2]
+				}
+					
+			} 	
+			{
+				inputType: select,
+				inputName: "Gender",
+				options: {
+					optionType: data,
+					data:[
+							{
+								label: "Girl",
+								value: "girl"
+							}
+						
+							{
+								label: "Boy",
+								value: "boy"
+							}
+						
+						]
+				}
+							
+			}
+			
 		
+		]
 		''')
 		
 		Assertions.assertNotNull(result)
 		def errors = result.eResource().errors
 		Assertions.assertTrue(errors.isEmpty(), """Unexpected errors: ${errors.join(", ")}""")
 	}
+	
+//	@Test
+//	void testGroupInput() {
+//		def result = parseHelper.parse('''
+//
+//		formLayout: horizontal,
+//		formInputs:[
+//
+//				{
+//					inputType: group ,
+//					inputName: "demographics" ,
+//					groupInputs: 
+//						
+//						{
+//							inputType: text ,		
+//							inputName: "name"
+//						}
+//							{
+//							inputType: checkbox ,	
+//							inputName: "male"
+//						}
+//			
+//						{
+//							inputType: number ,		
+//							inputName: "Age"
+//						}
+//					
+//								
+//					
+//				}	
+//
+//				
+//
+//			]
+//			
+//		''')
+//		
+//		Assertions.assertNotNull(result)
+//		def errors = result.eResource().errors
+//		Assertions.assertTrue(errors.isEmpty(), """Unexpected errors: ${errors.join(", ")}""")
+//	}
 
 }

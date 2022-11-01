@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link cafeV.dsl.vforms.vformDSL.FormInput#getDat <em>Dat</em>}</li>
  *   <li>{@link cafeV.dsl.vforms.vformDSL.FormInput#getRange <em>Range</em>}</li>
  *   <li>{@link cafeV.dsl.vforms.vformDSL.FormInput#getSelect <em>Select</em>}</li>
+ *   <li>{@link cafeV.dsl.vforms.vformDSL.FormInput#getSearch <em>Search</em>}</li>
+ *   <li>{@link cafeV.dsl.vforms.vformDSL.FormInput#getGroup <em>Group</em>}</li>
  * </ul>
  *
  * @see cafeV.dsl.vforms.vformDSL.VformDSLPackage#getFormInput()
@@ -101,5 +103,29 @@ public interface FormInput extends EObject
    * @generated
    */
   EList<Select> getSelect();
+
+  /**
+   * Returns the value of the '<em><b>Search</b></em>' containment reference list.
+   * The list contents are of type {@link cafeV.dsl.vforms.vformDSL.Search}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Search</em>' containment reference list.
+   * @see cafeV.dsl.vforms.vformDSL.VformDSLPackage#getFormInput_Search()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Search> getSearch();
+
+  /**
+   * Returns the value of the '<em><b>Group</b></em>' containment reference list.
+   * The list contents are of type {@link cafeV.dsl.vforms.vformDSL.Group}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Group</em>' containment reference list.
+   * @see cafeV.dsl.vforms.vformDSL.VformDSLPackage#getFormInput_Group()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Group> getGroup();
 
 } // FormInput

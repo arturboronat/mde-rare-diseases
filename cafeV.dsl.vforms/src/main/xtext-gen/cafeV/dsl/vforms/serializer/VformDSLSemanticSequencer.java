@@ -11,9 +11,11 @@ import cafeV.dsl.vforms.vformDSL.DataOption;
 import cafeV.dsl.vforms.vformDSL.EnumOption;
 import cafeV.dsl.vforms.vformDSL.FormInput;
 import cafeV.dsl.vforms.vformDSL.FormLayout;
+import cafeV.dsl.vforms.vformDSL.Group;
 import cafeV.dsl.vforms.vformDSL.Model;
 import cafeV.dsl.vforms.vformDSL.NumberOption;
 import cafeV.dsl.vforms.vformDSL.Range;
+import cafeV.dsl.vforms.vformDSL.Search;
 import cafeV.dsl.vforms.vformDSL.Select;
 import cafeV.dsl.vforms.vformDSL.Text;
 import cafeV.dsl.vforms.vformDSL.VformDSLPackage;
@@ -64,6 +66,9 @@ public class VformDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case VformDSLPackage.FORM_LAYOUT:
 				sequence_FormLayout(context, (FormLayout) semanticObject); 
 				return; 
+			case VformDSLPackage.GROUP:
+				sequence_Group(context, (Group) semanticObject); 
+				return; 
 			case VformDSLPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
@@ -75,6 +80,9 @@ public class VformDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case VformDSLPackage.RANGE:
 				sequence_Range(context, (Range) semanticObject); 
+				return; 
+			case VformDSLPackage.SEARCH:
+				sequence_Search(context, (Search) semanticObject); 
 				return; 
 			case VformDSLPackage.SELECT:
 				sequence_Select(context, (Select) semanticObject); 
@@ -100,7 +108,7 @@ public class VformDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VformDSLPackage.Literals.CHECKBOX__INPUT_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCheckboxAccess().getInputNameSTRINGTerminalRuleCall_3_0(), semanticObject.getInputName());
+		feeder.accept(grammarAccess.getCheckboxAccess().getInputNameSTRINGTerminalRuleCall_5_0(), semanticObject.getInputName());
 		feeder.finish();
 	}
 	
@@ -118,7 +126,7 @@ public class VformDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VformDSLPackage.Literals.DAT__INPUT_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDatAccess().getInputNameSTRINGTerminalRuleCall_3_0(), semanticObject.getInputName());
+		feeder.accept(grammarAccess.getDatAccess().getInputNameSTRINGTerminalRuleCall_5_0(), semanticObject.getInputName());
 		feeder.finish();
 	}
 	
@@ -140,7 +148,7 @@ public class VformDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Data returns Data
 	 *
 	 * Constraint:
-	 *     ((label=STRING strVal=STRING) | intVal=INT)
+	 *     (label=STRING (strVal=STRING | intVal=INT))
 	 */
 	protected void sequence_Data(ISerializationContext context, Data semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -152,7 +160,7 @@ public class VformDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     EnumOption returns EnumOption
 	 *
 	 * Constraint:
-	 *     (stringData+=STRING+ | numberData+=STRING+)
+	 *     (stringData+=STRING+ | numberData+=INT+)
 	 */
 	protected void sequence_EnumOption(ISerializationContext context, EnumOption semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -170,8 +178,10 @@ public class VformDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         number+=Number | 
 	 *         dat+=Dat | 
 	 *         range+=Range | 
-	 *         select+=Select
-	 *     )+
+	 *         select+=Select | 
+	 *         search+=Search | 
+	 *         group+=Group
+	 *     )
 	 */
 	protected void sequence_FormInput(ISerializationContext context, FormInput semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -198,10 +208,22 @@ public class VformDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     Group returns Group
+	 *
+	 * Constraint:
+	 *     (inputName=STRING groupInputs+=[FormInput|ID]*)
+	 */
+	protected void sequence_Group(ISerializationContext context, Group semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (formLayout=FormLayout formInput+=FormInput)
+	 *     (formLayout=FormLayout formInput+=FormInput*)
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -225,9 +247,9 @@ public class VformDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VformDSLPackage.Literals.NUMBER_OPTION__RANGE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNumberOptionAccess().getMinINTTerminalRuleCall_3_0(), semanticObject.getMin());
-		feeder.accept(grammarAccess.getNumberOptionAccess().getMaxINTTerminalRuleCall_5_0(), semanticObject.getMax());
-		feeder.accept(grammarAccess.getNumberOptionAccess().getRangeINTTerminalRuleCall_7_0(), semanticObject.getRange());
+		feeder.accept(grammarAccess.getNumberOptionAccess().getMinINTTerminalRuleCall_5_0(), semanticObject.getMin());
+		feeder.accept(grammarAccess.getNumberOptionAccess().getMaxINTTerminalRuleCall_8_0(), semanticObject.getMax());
+		feeder.accept(grammarAccess.getNumberOptionAccess().getRangeINTTerminalRuleCall_11_0(), semanticObject.getRange());
 		feeder.finish();
 	}
 	
@@ -245,7 +267,7 @@ public class VformDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VformDSLPackage.Literals.NUMBER__INPUT_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNumberAccess().getInputNameSTRINGTerminalRuleCall_3_0(), semanticObject.getInputName());
+		feeder.accept(grammarAccess.getNumberAccess().getInputNameSTRINGTerminalRuleCall_5_0(), semanticObject.getInputName());
 		feeder.finish();
 	}
 	
@@ -267,10 +289,22 @@ public class VformDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VformDSLPackage.Literals.RANGE__MAX));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRangeAccess().getInputNameSTRINGTerminalRuleCall_3_0(), semanticObject.getInputName());
-		feeder.accept(grammarAccess.getRangeAccess().getMinINTTerminalRuleCall_5_0(), semanticObject.getMin());
-		feeder.accept(grammarAccess.getRangeAccess().getMaxINTTerminalRuleCall_7_0(), semanticObject.getMax());
+		feeder.accept(grammarAccess.getRangeAccess().getInputNameSTRINGTerminalRuleCall_5_0(), semanticObject.getInputName());
+		feeder.accept(grammarAccess.getRangeAccess().getMinINTTerminalRuleCall_8_0(), semanticObject.getMin());
+		feeder.accept(grammarAccess.getRangeAccess().getMaxINTTerminalRuleCall_11_0(), semanticObject.getMax());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Search returns Search
+	 *
+	 * Constraint:
+	 *     (inputName=STRING (stringData+=STRING+ | numberData+=INT+ | data+=Data+)?)
+	 */
+	protected void sequence_Search(ISerializationContext context, Search semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -279,7 +313,7 @@ public class VformDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Select returns Select
 	 *
 	 * Constraint:
-	 *     (inputName=STRING (dataOption=DataOption | numberOption=NumberOption | enumOption=EnumOption))
+	 *     (inputName=STRING (dataOption=DataOption | enumOption=EnumOption | numberOption=NumberOption))
 	 */
 	protected void sequence_Select(ISerializationContext context, Select semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -299,7 +333,7 @@ public class VformDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VformDSLPackage.Literals.TEXT__INPUT_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTextAccess().getInputNameSTRINGTerminalRuleCall_3_0(), semanticObject.getInputName());
+		feeder.accept(grammarAccess.getTextAccess().getInputNameSTRINGTerminalRuleCall_5_0(), semanticObject.getInputName());
 		feeder.finish();
 	}
 	

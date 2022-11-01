@@ -28,8 +28,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link cafeV.dsl.vforms.vformDSL.impl.SelectImpl#getInputName <em>Input Name</em>}</li>
  *   <li>{@link cafeV.dsl.vforms.vformDSL.impl.SelectImpl#getDataOption <em>Data Option</em>}</li>
- *   <li>{@link cafeV.dsl.vforms.vformDSL.impl.SelectImpl#getNumberOption <em>Number Option</em>}</li>
  *   <li>{@link cafeV.dsl.vforms.vformDSL.impl.SelectImpl#getEnumOption <em>Enum Option</em>}</li>
+ *   <li>{@link cafeV.dsl.vforms.vformDSL.impl.SelectImpl#getNumberOption <em>Number Option</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,16 +67,6 @@ public class SelectImpl extends MinimalEObjectImpl.Container implements Select
   protected DataOption dataOption;
 
   /**
-   * The cached value of the '{@link #getNumberOption() <em>Number Option</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNumberOption()
-   * @generated
-   * @ordered
-   */
-  protected NumberOption numberOption;
-
-  /**
    * The cached value of the '{@link #getEnumOption() <em>Enum Option</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -85,6 +75,16 @@ public class SelectImpl extends MinimalEObjectImpl.Container implements Select
    * @ordered
    */
   protected EnumOption enumOption;
+
+  /**
+   * The cached value of the '{@link #getNumberOption() <em>Number Option</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNumberOption()
+   * @generated
+   * @ordered
+   */
+  protected NumberOption numberOption;
 
   /**
    * <!-- begin-user-doc -->
@@ -188,56 +188,6 @@ public class SelectImpl extends MinimalEObjectImpl.Container implements Select
    * @generated
    */
   @Override
-  public NumberOption getNumberOption()
-  {
-    return numberOption;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetNumberOption(NumberOption newNumberOption, NotificationChain msgs)
-  {
-    NumberOption oldNumberOption = numberOption;
-    numberOption = newNumberOption;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VformDSLPackage.SELECT__NUMBER_OPTION, oldNumberOption, newNumberOption);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setNumberOption(NumberOption newNumberOption)
-  {
-    if (newNumberOption != numberOption)
-    {
-      NotificationChain msgs = null;
-      if (numberOption != null)
-        msgs = ((InternalEObject)numberOption).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VformDSLPackage.SELECT__NUMBER_OPTION, null, msgs);
-      if (newNumberOption != null)
-        msgs = ((InternalEObject)newNumberOption).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VformDSLPackage.SELECT__NUMBER_OPTION, null, msgs);
-      msgs = basicSetNumberOption(newNumberOption, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, VformDSLPackage.SELECT__NUMBER_OPTION, newNumberOption, newNumberOption));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EnumOption getEnumOption()
   {
     return enumOption;
@@ -288,16 +238,66 @@ public class SelectImpl extends MinimalEObjectImpl.Container implements Select
    * @generated
    */
   @Override
+  public NumberOption getNumberOption()
+  {
+    return numberOption;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetNumberOption(NumberOption newNumberOption, NotificationChain msgs)
+  {
+    NumberOption oldNumberOption = numberOption;
+    numberOption = newNumberOption;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VformDSLPackage.SELECT__NUMBER_OPTION, oldNumberOption, newNumberOption);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setNumberOption(NumberOption newNumberOption)
+  {
+    if (newNumberOption != numberOption)
+    {
+      NotificationChain msgs = null;
+      if (numberOption != null)
+        msgs = ((InternalEObject)numberOption).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VformDSLPackage.SELECT__NUMBER_OPTION, null, msgs);
+      if (newNumberOption != null)
+        msgs = ((InternalEObject)newNumberOption).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VformDSLPackage.SELECT__NUMBER_OPTION, null, msgs);
+      msgs = basicSetNumberOption(newNumberOption, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VformDSLPackage.SELECT__NUMBER_OPTION, newNumberOption, newNumberOption));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case VformDSLPackage.SELECT__DATA_OPTION:
         return basicSetDataOption(null, msgs);
-      case VformDSLPackage.SELECT__NUMBER_OPTION:
-        return basicSetNumberOption(null, msgs);
       case VformDSLPackage.SELECT__ENUM_OPTION:
         return basicSetEnumOption(null, msgs);
+      case VformDSLPackage.SELECT__NUMBER_OPTION:
+        return basicSetNumberOption(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -316,10 +316,10 @@ public class SelectImpl extends MinimalEObjectImpl.Container implements Select
         return getInputName();
       case VformDSLPackage.SELECT__DATA_OPTION:
         return getDataOption();
-      case VformDSLPackage.SELECT__NUMBER_OPTION:
-        return getNumberOption();
       case VformDSLPackage.SELECT__ENUM_OPTION:
         return getEnumOption();
+      case VformDSLPackage.SELECT__NUMBER_OPTION:
+        return getNumberOption();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -340,11 +340,11 @@ public class SelectImpl extends MinimalEObjectImpl.Container implements Select
       case VformDSLPackage.SELECT__DATA_OPTION:
         setDataOption((DataOption)newValue);
         return;
-      case VformDSLPackage.SELECT__NUMBER_OPTION:
-        setNumberOption((NumberOption)newValue);
-        return;
       case VformDSLPackage.SELECT__ENUM_OPTION:
         setEnumOption((EnumOption)newValue);
+        return;
+      case VformDSLPackage.SELECT__NUMBER_OPTION:
+        setNumberOption((NumberOption)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -366,11 +366,11 @@ public class SelectImpl extends MinimalEObjectImpl.Container implements Select
       case VformDSLPackage.SELECT__DATA_OPTION:
         setDataOption((DataOption)null);
         return;
-      case VformDSLPackage.SELECT__NUMBER_OPTION:
-        setNumberOption((NumberOption)null);
-        return;
       case VformDSLPackage.SELECT__ENUM_OPTION:
         setEnumOption((EnumOption)null);
+        return;
+      case VformDSLPackage.SELECT__NUMBER_OPTION:
+        setNumberOption((NumberOption)null);
         return;
     }
     super.eUnset(featureID);
@@ -390,10 +390,10 @@ public class SelectImpl extends MinimalEObjectImpl.Container implements Select
         return INPUT_NAME_EDEFAULT == null ? inputName != null : !INPUT_NAME_EDEFAULT.equals(inputName);
       case VformDSLPackage.SELECT__DATA_OPTION:
         return dataOption != null;
-      case VformDSLPackage.SELECT__NUMBER_OPTION:
-        return numberOption != null;
       case VformDSLPackage.SELECT__ENUM_OPTION:
         return enumOption != null;
+      case VformDSLPackage.SELECT__NUMBER_OPTION:
+        return numberOption != null;
     }
     return super.eIsSet(featureID);
   }

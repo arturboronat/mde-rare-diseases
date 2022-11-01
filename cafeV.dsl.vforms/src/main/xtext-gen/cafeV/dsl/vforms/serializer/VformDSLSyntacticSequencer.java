@@ -11,9 +11,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
-import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -21,12 +18,10 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class VformDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected VformDSLGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_EnumOption___OptionTypeKeyword_0_0_EnumKeyword_0_1_DataKeyword_0_2__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (VformDSLGrammarAccess) access;
-		match_EnumOption___OptionTypeKeyword_0_0_EnumKeyword_0_1_DataKeyword_0_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEnumOptionAccess().getOptionTypeKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getEnumOptionAccess().getEnumKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getEnumOptionAccess().getDataKeyword_0_2()));
 	}
 	
 	@Override
@@ -41,21 +36,8 @@ public class VformDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_EnumOption___OptionTypeKeyword_0_0_EnumKeyword_0_1_DataKeyword_0_2__q.equals(syntax))
-				emit_EnumOption___OptionTypeKeyword_0_0_EnumKeyword_0_1_DataKeyword_0_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else acceptNodes(getLastNavigableState(), syntaxNodes);
+			acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * Ambiguous syntax:
-	 *     ('optionType' 'enum' 'data')?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) (rule start)
-	 */
-	protected void emit_EnumOption___OptionTypeKeyword_0_0_EnumKeyword_0_1_DataKeyword_0_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 }

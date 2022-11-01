@@ -6,7 +6,9 @@ package cafeV.dsl.vforms.vformDSL.impl;
 import cafeV.dsl.vforms.vformDSL.Checkbox;
 import cafeV.dsl.vforms.vformDSL.Dat;
 import cafeV.dsl.vforms.vformDSL.FormInput;
+import cafeV.dsl.vforms.vformDSL.Group;
 import cafeV.dsl.vforms.vformDSL.Range;
+import cafeV.dsl.vforms.vformDSL.Search;
 import cafeV.dsl.vforms.vformDSL.Select;
 import cafeV.dsl.vforms.vformDSL.Text;
 import cafeV.dsl.vforms.vformDSL.VformDSLPackage;
@@ -39,6 +41,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link cafeV.dsl.vforms.vformDSL.impl.FormInputImpl#getDat <em>Dat</em>}</li>
  *   <li>{@link cafeV.dsl.vforms.vformDSL.impl.FormInputImpl#getRange <em>Range</em>}</li>
  *   <li>{@link cafeV.dsl.vforms.vformDSL.impl.FormInputImpl#getSelect <em>Select</em>}</li>
+ *   <li>{@link cafeV.dsl.vforms.vformDSL.impl.FormInputImpl#getSearch <em>Search</em>}</li>
+ *   <li>{@link cafeV.dsl.vforms.vformDSL.impl.FormInputImpl#getGroup <em>Group</em>}</li>
  * </ul>
  *
  * @generated
@@ -104,6 +108,26 @@ public class FormInputImpl extends MinimalEObjectImpl.Container implements FormI
    * @ordered
    */
   protected EList<Select> select;
+
+  /**
+   * The cached value of the '{@link #getSearch() <em>Search</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSearch()
+   * @generated
+   * @ordered
+   */
+  protected EList<Search> search;
+
+  /**
+   * The cached value of the '{@link #getGroup() <em>Group</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getGroup()
+   * @generated
+   * @ordered
+   */
+  protected EList<Group> group;
 
   /**
    * <!-- begin-user-doc -->
@@ -222,6 +246,36 @@ public class FormInputImpl extends MinimalEObjectImpl.Container implements FormI
    * @generated
    */
   @Override
+  public EList<Search> getSearch()
+  {
+    if (search == null)
+    {
+      search = new EObjectContainmentEList<Search>(Search.class, this, VformDSLPackage.FORM_INPUT__SEARCH);
+    }
+    return search;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Group> getGroup()
+  {
+    if (group == null)
+    {
+      group = new EObjectContainmentEList<Group>(Group.class, this, VformDSLPackage.FORM_INPUT__GROUP);
+    }
+    return group;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -238,6 +292,10 @@ public class FormInputImpl extends MinimalEObjectImpl.Container implements FormI
         return ((InternalEList<?>)getRange()).basicRemove(otherEnd, msgs);
       case VformDSLPackage.FORM_INPUT__SELECT:
         return ((InternalEList<?>)getSelect()).basicRemove(otherEnd, msgs);
+      case VformDSLPackage.FORM_INPUT__SEARCH:
+        return ((InternalEList<?>)getSearch()).basicRemove(otherEnd, msgs);
+      case VformDSLPackage.FORM_INPUT__GROUP:
+        return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -264,6 +322,10 @@ public class FormInputImpl extends MinimalEObjectImpl.Container implements FormI
         return getRange();
       case VformDSLPackage.FORM_INPUT__SELECT:
         return getSelect();
+      case VformDSLPackage.FORM_INPUT__SEARCH:
+        return getSearch();
+      case VformDSLPackage.FORM_INPUT__GROUP:
+        return getGroup();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -303,6 +365,14 @@ public class FormInputImpl extends MinimalEObjectImpl.Container implements FormI
         getSelect().clear();
         getSelect().addAll((Collection<? extends Select>)newValue);
         return;
+      case VformDSLPackage.FORM_INPUT__SEARCH:
+        getSearch().clear();
+        getSearch().addAll((Collection<? extends Search>)newValue);
+        return;
+      case VformDSLPackage.FORM_INPUT__GROUP:
+        getGroup().clear();
+        getGroup().addAll((Collection<? extends Group>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -335,6 +405,12 @@ public class FormInputImpl extends MinimalEObjectImpl.Container implements FormI
       case VformDSLPackage.FORM_INPUT__SELECT:
         getSelect().clear();
         return;
+      case VformDSLPackage.FORM_INPUT__SEARCH:
+        getSearch().clear();
+        return;
+      case VformDSLPackage.FORM_INPUT__GROUP:
+        getGroup().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -361,6 +437,10 @@ public class FormInputImpl extends MinimalEObjectImpl.Container implements FormI
         return range != null && !range.isEmpty();
       case VformDSLPackage.FORM_INPUT__SELECT:
         return select != null && !select.isEmpty();
+      case VformDSLPackage.FORM_INPUT__SEARCH:
+        return search != null && !search.isEmpty();
+      case VformDSLPackage.FORM_INPUT__GROUP:
+        return group != null && !group.isEmpty();
     }
     return super.eIsSet(featureID);
   }

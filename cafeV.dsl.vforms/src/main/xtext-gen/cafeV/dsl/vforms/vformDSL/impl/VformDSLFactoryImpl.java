@@ -10,10 +10,12 @@ import cafeV.dsl.vforms.vformDSL.DataOption;
 import cafeV.dsl.vforms.vformDSL.EnumOption;
 import cafeV.dsl.vforms.vformDSL.FormInput;
 import cafeV.dsl.vforms.vformDSL.FormLayout;
+import cafeV.dsl.vforms.vformDSL.Group;
 import cafeV.dsl.vforms.vformDSL.Layout;
 import cafeV.dsl.vforms.vformDSL.Model;
 import cafeV.dsl.vforms.vformDSL.NumberOption;
 import cafeV.dsl.vforms.vformDSL.Range;
+import cafeV.dsl.vforms.vformDSL.Search;
 import cafeV.dsl.vforms.vformDSL.Select;
 import cafeV.dsl.vforms.vformDSL.Text;
 import cafeV.dsl.vforms.vformDSL.VformDSLFactory;
@@ -81,18 +83,20 @@ public class VformDSLFactoryImpl extends EFactoryImpl implements VformDSLFactory
     switch (eClass.getClassifierID())
     {
       case VformDSLPackage.MODEL: return createModel();
-      case VformDSLPackage.FORM_INPUT: return createFormInput();
       case VformDSLPackage.FORM_LAYOUT: return createFormLayout();
+      case VformDSLPackage.FORM_INPUT: return createFormInput();
       case VformDSLPackage.TEXT: return createText();
       case VformDSLPackage.CHECKBOX: return createCheckbox();
       case VformDSLPackage.NUMBER: return createNumber();
       case VformDSLPackage.DAT: return createDat();
       case VformDSLPackage.RANGE: return createRange();
       case VformDSLPackage.SELECT: return createSelect();
+      case VformDSLPackage.SEARCH: return createSearch();
+      case VformDSLPackage.GROUP: return createGroup();
       case VformDSLPackage.DATA_OPTION: return createDataOption();
-      case VformDSLPackage.DATA: return createData();
-      case VformDSLPackage.NUMBER_OPTION: return createNumberOption();
       case VformDSLPackage.ENUM_OPTION: return createEnumOption();
+      case VformDSLPackage.NUMBER_OPTION: return createNumberOption();
+      case VformDSLPackage.DATA: return createData();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -150,10 +154,10 @@ public class VformDSLFactoryImpl extends EFactoryImpl implements VformDSLFactory
    * @generated
    */
   @Override
-  public FormInput createFormInput()
+  public FormLayout createFormLayout()
   {
-    FormInputImpl formInput = new FormInputImpl();
-    return formInput;
+    FormLayoutImpl formLayout = new FormLayoutImpl();
+    return formLayout;
   }
 
   /**
@@ -162,10 +166,10 @@ public class VformDSLFactoryImpl extends EFactoryImpl implements VformDSLFactory
    * @generated
    */
   @Override
-  public FormLayout createFormLayout()
+  public FormInput createFormInput()
   {
-    FormLayoutImpl formLayout = new FormLayoutImpl();
-    return formLayout;
+    FormInputImpl formInput = new FormInputImpl();
+    return formInput;
   }
 
   /**
@@ -246,6 +250,30 @@ public class VformDSLFactoryImpl extends EFactoryImpl implements VformDSLFactory
    * @generated
    */
   @Override
+  public Search createSearch()
+  {
+    SearchImpl search = new SearchImpl();
+    return search;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Group createGroup()
+  {
+    GroupImpl group = new GroupImpl();
+    return group;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public DataOption createDataOption()
   {
     DataOptionImpl dataOption = new DataOptionImpl();
@@ -258,10 +286,10 @@ public class VformDSLFactoryImpl extends EFactoryImpl implements VformDSLFactory
    * @generated
    */
   @Override
-  public Data createData()
+  public EnumOption createEnumOption()
   {
-    DataImpl data = new DataImpl();
-    return data;
+    EnumOptionImpl enumOption = new EnumOptionImpl();
+    return enumOption;
   }
 
   /**
@@ -282,10 +310,10 @@ public class VformDSLFactoryImpl extends EFactoryImpl implements VformDSLFactory
    * @generated
    */
   @Override
-  public EnumOption createEnumOption()
+  public Data createData()
   {
-    EnumOptionImpl enumOption = new EnumOptionImpl();
-    return enumOption;
+    DataImpl data = new DataImpl();
+    return data;
   }
 
   /**
