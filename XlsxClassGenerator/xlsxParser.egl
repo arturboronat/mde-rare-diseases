@@ -1,0 +1,61 @@
+
+package  xlsxClassGenerator;
+import java.util.ArrayList;
+import java.util.HashMap;
+		
+		
+		
+		
+public  class JsonGen {
+
+
+		//Fields	
+		public HashMap<String, ArrayList<String>> jsonData = new HashMap<String, ArrayList<String>>();
+		[% for (i in Rett_Data.worksheets) { %]	
+			[%for(x in i.header.columns){%]
+		private ArrayList<String> [%=x.name.trim%] = new ArrayList<String>() ;
+			[%}%]
+		[%}%]
+
+
+
+		//getters
+		[% for (i in Rett_Data.worksheets) { %]	
+				[%for(x in i.header.columns){%]
+		public void get[%=x.name%](){
+			for (String i : this.[%=x.name%]) {
+		      System.out.println("[%=x.name%]:"+ i);
+		    }
+		};
+			[%}%]
+		[%}%]
+					
+				
+							
+		//setters		
+		[% for (i in Rett_Data.worksheets) { %]			
+					[%for(x in i.header.columns){%]				
+		private void set[%=x.name%](){	
+			int indx = [%=i.getColumn(x.name).index%];
+			String data = "";
+			[%for(y in i.rows){%]			 
+			data = "[%=y%]";		
+			this.[%=x.name%].add(data.split("=")[indx+1].split("'")[1].trim());				
+			[%}%]
+			this.jsonData.put("[%=x.name%]", this.[%=x.name%]);
+		}
+			[%}%]			
+		[%}%]
+
+
+
+
+		//constructor
+		public JsonGen(){
+			[% for (i in Rett_Data.worksheets) { %]	
+			[%for(x in i.header.columns){%]
+				this.set[%=x.name%]();
+			[%}%]
+		[%}%]
+		}
+}

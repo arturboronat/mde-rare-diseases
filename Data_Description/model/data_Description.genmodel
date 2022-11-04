@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/Data_Description/src-gen" creationIcons="false"
+    editDirectory="/Data_Description.edit/src-gen" editorDirectory="/Data_Description.editor/src-gen"
+    modelPluginID="Data_Description" modelName="Data_Description" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>data_Description.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Data_Description" disposableProviderFactory="true" ecorePackage="data_Description.ecore#/">
+    <genClasses ecoreClass="data_Description.ecore#//CategoricalStat">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_Description.ecore#//CategoricalStat/columnId"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_Description.ecore#//CategoricalStat/frequencyTable"/>
+    </genClasses>
+    <genClasses ecoreClass="data_Description.ecore#//NumericalStat">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_Description.ecore#//NumericalStat/columnId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_Description.ecore#//NumericalStat/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_Description.ecore#//NumericalStat/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_Description.ecore#//NumericalStat/mean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_Description.ecore#//NumericalStat/std"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data_Description.ecore#//NumericalStat/FreqencyTable"/>
+    </genClasses>
+    <genClasses ecoreClass="data_Description.ecore#//freqTable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_Description.ecore#//freqTable/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_Description.ecore#//freqTable/value"/>
+    </genClasses>
+    <genClasses ecoreClass="data_Description.ecore#//DataDescription">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_Description.ecore#//DataDescription/numericalstat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data_Description.ecore#//DataDescription/categoricalstat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data_Description.ecore#//DataDescription/dataName"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
