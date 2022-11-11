@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/yamtl.cafev.stats/src/main/emf-gen" modelPluginID="yamtl.cafev.stats"
+    modelName="DatasetDescription" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>datasetDescription.ecore</foreignModel>
+  <genPackages prefix="DataDescription" disposableProviderFactory="true" ecorePackage="datasetDescription.ecore#/">
+    <genClasses ecoreClass="datasetDescription.ecore#//StatsDataModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datasetDescription.ecore#//StatsDataModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datasetDescription.ecore#//StatsDataModel/types"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="datasetDescription.ecore#//StatsDataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datasetDescription.ecore#//StatsDataType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datasetDescription.ecore#//StatsDataType/frequencyTable"/>
+    </genClasses>
+    <genClasses ecoreClass="datasetDescription.ecore#//CategoricalType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datasetDescription.ecore#//CategoricalType/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="datasetDescription.ecore#//NumericalType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datasetDescription.ecore#//NumericalType/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datasetDescription.ecore#//NumericalType/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datasetDescription.ecore#//NumericalType/mean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datasetDescription.ecore#//NumericalType/std"/>
+    </genClasses>
+    <genClasses ecoreClass="datasetDescription.ecore#//FrequencyTable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datasetDescription.ecore#//FrequencyTable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datasetDescription.ecore#//FrequencyTable/frequency"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
