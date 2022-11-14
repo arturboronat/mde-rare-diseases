@@ -32,7 +32,7 @@ class CSV_to_SD extends YAMTLModule {
 				.out('ct', DD.categoricalType) [
 					m.types.add(ct)
 					ct.name = ft.name
-					ct.dataType = EcorePackage.eINSTANCE.EString
+					ct.dataType = ECORE.EString
 				],
 
 			rule('NumericalType')
