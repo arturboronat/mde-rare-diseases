@@ -18,10 +18,10 @@ class CategoricalType extends StatsDataType {
 }
 
 class NumericalType extends StatsDataType {
-	attr float[1] min;
-	attr float[1] max;
-	attr float[1] mean;
-	attr float[1] std;
+	attr double[1] min;
+	attr double[1] max;
+	attr double[1] mean;
+	attr double[1] std;
 	
 }
 

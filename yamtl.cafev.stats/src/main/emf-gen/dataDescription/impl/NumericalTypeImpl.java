@@ -36,7 +36,7 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float MIN_EDEFAULT = 0.0F;
+	protected static final double MIN_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getMin() <em>Min</em>}' attribute.
@@ -46,7 +46,7 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * @generated
 	 * @ordered
 	 */
-	protected float min = MIN_EDEFAULT;
+	protected double min = MIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
@@ -56,7 +56,7 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float MAX_EDEFAULT = 0.0F;
+	protected static final double MAX_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
@@ -66,7 +66,7 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * @generated
 	 * @ordered
 	 */
-	protected float max = MAX_EDEFAULT;
+	protected double max = MAX_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMean() <em>Mean</em>}' attribute.
@@ -76,7 +76,7 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float MEAN_EDEFAULT = 0.0F;
+	protected static final double MEAN_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getMean() <em>Mean</em>}' attribute.
@@ -86,7 +86,7 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * @generated
 	 * @ordered
 	 */
-	protected float mean = MEAN_EDEFAULT;
+	protected double mean = MEAN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStd() <em>Std</em>}' attribute.
@@ -96,7 +96,7 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float STD_EDEFAULT = 0.0F;
+	protected static final double STD_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getStd() <em>Std</em>}' attribute.
@@ -106,7 +106,7 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * @generated
 	 * @ordered
 	 */
-	protected float std = STD_EDEFAULT;
+	protected double std = STD_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,7 +132,7 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getMin() {
+	public double getMin() {
 		return min;
 	}
 
@@ -141,8 +141,8 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMin(float newMin) {
-		float oldMin = min;
+	public void setMin(double newMin) {
+		double oldMin = min;
 		min = newMin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataDescriptionPackage.NUMERICAL_TYPE__MIN, oldMin, min));
@@ -153,7 +153,7 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getMax() {
+	public double getMax() {
 		return max;
 	}
 
@@ -162,8 +162,8 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMax(float newMax) {
-		float oldMax = max;
+	public void setMax(double newMax) {
+		double oldMax = max;
 		max = newMax;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataDescriptionPackage.NUMERICAL_TYPE__MAX, oldMax, max));
@@ -174,7 +174,7 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getMean() {
+	public double getMean() {
 		return mean;
 	}
 
@@ -183,8 +183,8 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMean(float newMean) {
-		float oldMean = mean;
+	public void setMean(double newMean) {
+		double oldMean = mean;
 		mean = newMean;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataDescriptionPackage.NUMERICAL_TYPE__MEAN, oldMean, mean));
@@ -195,7 +195,7 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getStd() {
+	public double getStd() {
 		return std;
 	}
 
@@ -204,8 +204,8 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStd(float newStd) {
-		float oldStd = std;
+	public void setStd(double newStd) {
+		double oldStd = std;
 		std = newStd;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataDescriptionPackage.NUMERICAL_TYPE__STD, oldStd, std));
@@ -240,16 +240,16 @@ public class NumericalTypeImpl extends StatsDataTypeImpl implements NumericalTyp
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DataDescriptionPackage.NUMERICAL_TYPE__MIN:
-				setMin((Float)newValue);
+				setMin((Double)newValue);
 				return;
 			case DataDescriptionPackage.NUMERICAL_TYPE__MAX:
-				setMax((Float)newValue);
+				setMax((Double)newValue);
 				return;
 			case DataDescriptionPackage.NUMERICAL_TYPE__MEAN:
-				setMean((Float)newValue);
+				setMean((Double)newValue);
 				return;
 			case DataDescriptionPackage.NUMERICAL_TYPE__STD:
-				setStd((Float)newValue);
+				setStd((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

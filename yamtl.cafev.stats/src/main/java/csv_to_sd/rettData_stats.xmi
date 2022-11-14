@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dataDescription:StatsDataModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataDescription="http://www.example.org/dataDescription">
+  <types xsi:type="dataDescription:CategoricalType" name="subject_id">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="Gender">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="rett_diagnosed">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="rett_in_family">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="labour_at_term">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="head_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="normal_ofc_at_birth">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="height_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="weight_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="regression">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="regression_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="regression_hand_use">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="hand_use_acquisition">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="hand_skills_regained">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="hand_stereotypy_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="gastrointestinal_disturbances_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="feed_skill">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="comm_non_verb_quality">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="eye_contact">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="phrases_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="speech_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="sitting_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="walking_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="walking_age_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="gait_dyspraxia">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="intellectual_disability_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="age_at_epilepsy_onset">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="epilepsy_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="epilepsy_type">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="breathing_disorders_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="breathing_disorder_type">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="cold_extremities_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="sphincter_control_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="scoliosis_score">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="presence_of_additional_involuntary_movement">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="bruxism">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="self_injury">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="mood_disturbance">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="trouble_night_sleep">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="brain_imaging">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="affected_gene">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="hgvs">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="mutation_type">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="inheritance">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:NumericalType" name="ofc_at_birth_in_cm" min="31.8" max="36.0" mean="33.61818181818182" std="1.3128733235298689"/>
+  <types xsi:type="dataDescription:NumericalType" name="ofc_with_age_cm" min="42.0" max="53.0" mean="47.0" std="3.302891295379082"/>
+  <types xsi:type="dataDescription:NumericalType" name="height_with_age_cm" min="52.0" max="160.0" mean="94.75" std="29.117707826869015"/>
+  <types xsi:type="dataDescription:NumericalType" name="birth_weight_in_gr" min="2450.0" max="3880.0" mean="3084.1666666666665" std="450.6048124129357"/>
+  <types xsi:type="dataDescription:NumericalType" name="weight_with_age_gr" min="11.0" max="45000.0" mean="12520.25" std="11845.784613677406"/>
+  <types xsi:type="dataDescription:NumericalType" name="regression_age_months" min="2.0" max="24.0" mean="14.5" std="6.346079677464448"/>
+  <types xsi:type="dataDescription:NumericalType" name="hand_skills_regained_age"/>
+  <types xsi:type="dataDescription:NumericalType" name="epilepsy_diag_age_months" min="60.0" max="96.0" mean="78.0" std="25.45584412271571"/>
+</dataDescription:StatsDataModel>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dataDescription:StatsDataModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataDescription="http://www.example.org/dataDescription">
+  <types xsi:type="dataDescription:CategoricalType" name="subject_id">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="biological_samples_available">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="date_of_last_follow_up">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="first_contact_with_specialized_centre">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="date_of_birth">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="patient_status">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="date_of_death">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="cause_of_death">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="phenotype">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="age_at_diagnosis">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="gender">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="seizures">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="age_of_seizure_onset">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="inheritance_model">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="platform">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="analysed_tissue">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="zygosity">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="chr">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="ref">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="alt">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="transcript">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="cDNA">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="protein">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="genes">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="interpretation">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="interpretation_addendum">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="Phenotype_ORPHA">
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:NumericalType" name="age_at_last_follow_up" max="32.0" mean="8.764705882352942" std="9.11406476115834"/>
+  <types xsi:type="dataDescription:NumericalType" name="age_at_first_contact_with_specialized_centre" max="18.0" mean="4.411764705882353" std="5.884925907874837"/>
+  <types xsi:type="dataDescription:NumericalType" name="age" max="34.0" mean="10.0" std="9.212762886344139"/>
+  <types xsi:type="dataDescription:NumericalType" name="age_at_death" min="12.0" max="12.0" mean="12.0"/>
+  <types xsi:type="dataDescription:NumericalType" name="position" min="2541585.0" max="2.36649682E8" mean="1.0274971045E8" std="6.699389578483044E7"/>
+</dataDescription:StatsDataModel>
