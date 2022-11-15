@@ -10,6 +10,7 @@ class FormLayout {
 	attr Layout layout;
 }
 
+// do we need specialization?
 class FormInput {
 	val Text[*] text;
 	val Checkbox[*] checkbox;
@@ -43,6 +44,8 @@ class Range {
 	attr int max;
 }
 
+
+// TODO: do we need a specialization?
 class Select {
 	attr String inputName;
 	val DataOption dataOption;
@@ -53,7 +56,6 @@ class Select {
 class Search {
 	attr String inputName;
 	!unique attr String[*] stringData;
-	!unique attr int[*] numberData;
 	val Data[*] data;
 }
 

@@ -536,22 +536,13 @@ public interface VformDSLPackage extends EPackage {
 	int SEARCH__STRING_DATA = 1;
 
 	/**
-	 * The feature id for the '<em><b>Number Data</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEARCH__NUMBER_DATA = 2;
-
-	/**
 	 * The feature id for the '<em><b>Data</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH__DATA = 3;
+	int SEARCH__DATA = 2;
 
 	/**
 	 * The number of structural features of the '<em>Search</em>' class.
@@ -560,7 +551,7 @@ public interface VformDSLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_FEATURE_COUNT = 4;
+	int SEARCH_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Search</em>' class.
@@ -1186,17 +1177,6 @@ public interface VformDSLPackage extends EPackage {
 	EAttribute getSearch_StringData();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link vformDSL.Search#getNumberData <em>Number Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Number Data</em>'.
-	 * @see vformDSL.Search#getNumberData()
-	 * @see #getSearch()
-	 * @generated
-	 */
-	EAttribute getSearch_NumberData();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link vformDSL.Search#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1702,14 +1682,6 @@ public interface VformDSLPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SEARCH__STRING_DATA = eINSTANCE.getSearch_StringData();
-
-		/**
-		 * The meta object literal for the '<em><b>Number Data</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SEARCH__NUMBER_DATA = eINSTANCE.getSearch_NumberData();
 
 		/**
 		 * The meta object literal for the '<em><b>Data</b></em>' containment reference list feature.

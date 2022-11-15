@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link vformDSL.Search#getInputName <em>Input Name</em>}</li>
  *   <li>{@link vformDSL.Search#getStringData <em>String Data</em>}</li>
- *   <li>{@link vformDSL.Search#getNumberData <em>Number Data</em>}</li>
  *   <li>{@link vformDSL.Search#getData <em>Data</em>}</li>
  * </ul>
  *
@@ -59,18 +58,6 @@ public interface Search extends EObject {
 	 * @generated
 	 */
 	EList<String> getStringData();
-
-	/**
-	 * Returns the value of the '<em><b>Number Data</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Integer}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Number Data</em>' attribute list.
-	 * @see vformDSL.VformDSLPackage#getSearch_NumberData()
-	 * @model unique="false"
-	 * @generated
-	 */
-	EList<Integer> getNumberData();
 
 	/**
 	 * Returns the value of the '<em><b>Data</b></em>' containment reference list.

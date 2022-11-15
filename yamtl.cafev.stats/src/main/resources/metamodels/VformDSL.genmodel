@@ -53,7 +53,6 @@
     <genClasses ecoreClass="VformDSL.ecore#//Search">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VformDSL.ecore#//Search/inputName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VformDSL.ecore#//Search/stringData"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VformDSL.ecore#//Search/numberData"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VformDSL.ecore#//Search/data"/>
     </genClasses>
     <genClasses ecoreClass="VformDSL.ecore#//Group">

@@ -518,17 +518,8 @@ public class VformDSLPackageImpl extends EPackageImpl implements VformDSLPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSearch_NumberData() {
-		return (EAttribute)searchEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getSearch_Data() {
-		return (EReference)searchEClass.getEStructuralFeatures().get(3);
+		return (EReference)searchEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -755,7 +746,6 @@ public class VformDSLPackageImpl extends EPackageImpl implements VformDSLPackage
 		searchEClass = createEClass(SEARCH);
 		createEAttribute(searchEClass, SEARCH__INPUT_NAME);
 		createEAttribute(searchEClass, SEARCH__STRING_DATA);
-		createEAttribute(searchEClass, SEARCH__NUMBER_DATA);
 		createEReference(searchEClass, SEARCH__DATA);
 
 		groupEClass = createEClass(GROUP);
@@ -856,7 +846,6 @@ public class VformDSLPackageImpl extends EPackageImpl implements VformDSLPackage
 		initEClass(searchEClass, Search.class, "Search", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSearch_InputName(), ecorePackage.getEString(), "inputName", null, 0, 1, Search.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSearch_StringData(), ecorePackage.getEString(), "stringData", null, 0, -1, Search.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSearch_NumberData(), ecorePackage.getEInt(), "numberData", null, 0, -1, Search.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSearch_Data(), this.getData(), null, "data", null, 0, -1, Search.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(groupEClass, Group.class, "Group", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

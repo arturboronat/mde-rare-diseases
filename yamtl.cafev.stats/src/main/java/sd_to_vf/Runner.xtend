@@ -1,8 +1,8 @@
-package sd2vf
+package sd_to_vf
 
 class Runner {
 	def public static void main(String[] args) {
-		var String inputModelPath = '''src/main/resources/metamodels/StatsDataModel.xmi'''
+		var String inputModelPath = '''src/main/java/csv_to_sd/rettData_stats.xmi'''
 		
 //		val xform = new statsModel2VForm
 		val xform = new sd2vf
@@ -14,13 +14,13 @@ class Runner {
 		xform.execute()
 		
 		// STORE MODELS
-		var String outputModelPath = '''src/main/java/sd2vf/targetInitial.xmi'''
+		var String outputModelPath = '''src/main/java/sd_to_vf/targetInitial.xmi'''
 		xform.saveOutputModels(#{'vf' -> outputModelPath})
 		
 		// PRINT STATS
 		println(xform.toStringStats)
 		
-		// GENERATE BOlIERPLATE CODE
-		// println(xform.generateBoilerplateCode())
+//		// GENERATE BOlIERPLATE CODE
+//		 println(xform.generateBoilerplateCode())
 	}
 }

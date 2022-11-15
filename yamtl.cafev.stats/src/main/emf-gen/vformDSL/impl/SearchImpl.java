@@ -33,7 +33,6 @@ import vformDSL.VformDSLPackage;
  * <ul>
  *   <li>{@link vformDSL.impl.SearchImpl#getInputName <em>Input Name</em>}</li>
  *   <li>{@link vformDSL.impl.SearchImpl#getStringData <em>String Data</em>}</li>
- *   <li>{@link vformDSL.impl.SearchImpl#getNumberData <em>Number Data</em>}</li>
  *   <li>{@link vformDSL.impl.SearchImpl#getData <em>Data</em>}</li>
  * </ul>
  *
@@ -69,16 +68,6 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 	 * @ordered
 	 */
 	protected EList<String> stringData;
-
-	/**
-	 * The cached value of the '{@link #getNumberData() <em>Number Data</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNumberData()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Integer> numberData;
 
 	/**
 	 * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
@@ -147,18 +136,6 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Integer> getNumberData() {
-		if (numberData == null) {
-			numberData = new EDataTypeEList<Integer>(Integer.class, this, VformDSLPackage.SEARCH__NUMBER_DATA);
-		}
-		return numberData;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Data> getData() {
 		if (data == null) {
 			data = new EObjectContainmentEList<Data>(Data.class, this, VformDSLPackage.SEARCH__DATA);
@@ -192,8 +169,6 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 				return getInputName();
 			case VformDSLPackage.SEARCH__STRING_DATA:
 				return getStringData();
-			case VformDSLPackage.SEARCH__NUMBER_DATA:
-				return getNumberData();
 			case VformDSLPackage.SEARCH__DATA:
 				return getData();
 		}
@@ -215,10 +190,6 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 			case VformDSLPackage.SEARCH__STRING_DATA:
 				getStringData().clear();
 				getStringData().addAll((Collection<? extends String>)newValue);
-				return;
-			case VformDSLPackage.SEARCH__NUMBER_DATA:
-				getNumberData().clear();
-				getNumberData().addAll((Collection<? extends Integer>)newValue);
 				return;
 			case VformDSLPackage.SEARCH__DATA:
 				getData().clear();
@@ -242,9 +213,6 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 			case VformDSLPackage.SEARCH__STRING_DATA:
 				getStringData().clear();
 				return;
-			case VformDSLPackage.SEARCH__NUMBER_DATA:
-				getNumberData().clear();
-				return;
 			case VformDSLPackage.SEARCH__DATA:
 				getData().clear();
 				return;
@@ -264,8 +232,6 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 				return INPUT_NAME_EDEFAULT == null ? inputName != null : !INPUT_NAME_EDEFAULT.equals(inputName);
 			case VformDSLPackage.SEARCH__STRING_DATA:
 				return stringData != null && !stringData.isEmpty();
-			case VformDSLPackage.SEARCH__NUMBER_DATA:
-				return numberData != null && !numberData.isEmpty();
 			case VformDSLPackage.SEARCH__DATA:
 				return data != null && !data.isEmpty();
 		}
@@ -286,8 +252,6 @@ public class SearchImpl extends MinimalEObjectImpl.Container implements Search {
 		result.append(inputName);
 		result.append(", stringData: ");
 		result.append(stringData);
-		result.append(", numberData: ");
-		result.append(numberData);
 		result.append(')');
 		return result.toString();
 	}
