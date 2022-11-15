@@ -1,0 +1,3 @@
+include 'cafev.vform'
+include 'cafev.vform.ide'
+include 'cafev.vform.web'

@@ -1,0 +1,119 @@
+grammar cafev.vform.VFormDsl with org.eclipse.xtext.common.Terminals
+
+generate vFormDsl "http://www.vform.cafev/VFormDsl"
+
+Model:
+    "formLayout:" formLayout=FormLayout ","
+    
+    "formInputs:" "[" 
+        (formInput+=FormInput*)
+    "]"
+;
+   
+FormLayout:
+    layout=Layout; 
+
+FormInput: 
+	FormInputBasic | FormInputRange | FormInputSelect| FormInputSearch | FormInputGroup
+;
+
+FormInputBasic:
+	"name" ":" name=STRING
+	"type" ":" type=InputType
+;
+	
+enum InputType:
+	TEXT | CHECKBOX | NUMBER | DATE 
+	| RANGE | SELECT | SEARCH | GROUP 
+;
+	
+FormInputRange:
+	"name" ":" name=STRING ","
+	"type" ":" "RANGE" ","
+	"min:" min=INT ","
+    "max:" max=INT
+;	
+
+
+FormInputSelect:
+	"name" ":" name=STRING ","
+	"type" ":" "SELECT" ","
+    "options:" "{" option=Option "}"
+;
+
+Option:
+	DataOption | EnumOption | NumberOption
+;
+
+DataOption:
+	"optionType:" "data" ","
+ 	"data:" "[" data+=Data ("," data+=Data)* "]"
+;
+
+EnumOption:
+	"optionType:" "enum" ","
+ 	"data:" "[" data+=OptionItem ("," data+=OptionItem)* "]"
+;
+    
+NumberOption:
+	"optionType:" "number" ","
+ 	"min:" min=INT ","
+   	"max:" max=INT ","
+    "range:" range=INT 
+;
+
+FormInputSearch:
+	"name" ":" name=STRING ","
+	"type" ":" "SEARCH" ","
+	"options:" "[" data+=OptionItem ("," data+=OptionItem)* "]"	
+;
+
+OptionItem:
+	StringOptionItem | IntOptionItem | DataOptionItem
+;
+
+StringOptionItem:
+	value=STRING
+;
+
+IntOptionItem:
+	value=INT
+;
+
+DataOptionItem:
+	value=Data
+;
+
+
+FormInputGroup:
+    "name" ":" name=STRING ","
+	"type:" "GROUP" ","
+    "groupInputs:"  groupInputs=[FormInput] 
+;   
+
+ 
+    
+    
+Data:
+	StringData | IntData;
+	
+StringData:
+	"{"
+	   	"label:" label=STRING ","
+		"value:" value=STRING
+    "}";
+	
+IntData:
+	"{"
+	   	"label:" label=STRING ","
+		"value:" value=INT
+    "}";
+    
+    
+
+enum Layout:
+	horizontal|vertical ;
+	
+	
+	
+	

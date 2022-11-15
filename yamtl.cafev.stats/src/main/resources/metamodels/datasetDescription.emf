@@ -10,7 +10,7 @@ class StatsDataModel {
 
 abstract class StatsDataType {
 	id attr String[1] name;
-	val FrequencyTable[*] frequencyTable;
+	val FrequencyEntry[*] frequencyTable;
 }
 
 class CategoricalType extends StatsDataType {
@@ -25,7 +25,7 @@ class NumericalType extends StatsDataType {
 	
 }
 
-class FrequencyTable {
+class FrequencyEntry {
 	id attr String[1] name;
 	attr int[1] frequency;
 }
