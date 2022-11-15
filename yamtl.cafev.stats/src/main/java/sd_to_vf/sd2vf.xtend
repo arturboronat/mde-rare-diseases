@@ -19,6 +19,7 @@ import vformDSL.VformDSLPackage
 import yamtl.core.YAMTLModule
 
 import static yamtl.dsl.Rule.*
+import vFormDsl.VFormDslPackage
 
 /** 
  * SHORTER TRANSFORMATION FOR PRESENTATION PURPOSES
@@ -26,7 +27,7 @@ import static yamtl.dsl.Rule.*
  */
 class sd2vf extends YAMTLModule {
 	val DD = DataDescriptionPackage.eINSTANCE  
-	val VF = VformDSLPackage.eINSTANCE  
+	val VF = VFormDslPackage.eINSTANCE  
 	new () {
 		header().in('dd', DD).out('vf', VF)
 		ruleStore( #[

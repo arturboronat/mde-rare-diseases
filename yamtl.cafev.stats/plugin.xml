@@ -49,4 +49,12 @@
             genModel="src/main/resources/metamodels/VformDSL.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated VFormDsl -->
+      <package
+            uri="http://www.vform.cafev/VFormDsl"
+            class="vFormDsl.VFormDslPackage"
+            genModel="src/main/resources/metamodels/VFormDsl.genmodel"/>
+   </extension>
+
 </plugin>
