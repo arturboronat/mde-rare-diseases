@@ -12,6 +12,7 @@ import runtimeModel.RuntimeModelPackage
 import yamtl.core.YAMTLModule
 
 import static yamtl.dsl.Rule.*
+import dataDescription.DataDescriptionFactory
 
 class CSV_to_SD extends YAMTLModule {
 	val ECORE = EcorePackage.eINSTANCE  
@@ -33,6 +34,13 @@ class CSV_to_SD extends YAMTLModule {
 					m.types.add(ct)
 					ct.name = ft.name
 					ct.dataType = ECORE.EString
+					val group = ft.featureValues.map[it as AttributeValue].groupBy[it.value]
+					group.entrySet.forEach[  
+						val entry = DataDescriptionFactory.eINSTANCE.createFrequencyEntry
+						entry.name = it.key.toString
+						entry.frequency = it.value.size
+						ct.frequencyTable += entry 
+					]
 				],
 
 			rule('NumericalType')
@@ -52,6 +60,30 @@ class CSV_to_SD extends YAMTLModule {
 					nt.max = d.max
 					nt.mean = d.mean
 					nt.std = d.standardDeviation
+					
+					var count = d.mean
+					while(count<d.max) {
+						count += d.standardDeviation
+						val upperBound = count
+						val lowerBound = count - d.standardDeviation
+						
+						val entry = DataDescriptionFactory.eINSTANCE.createFrequencyEntry
+						entry.name = ''']«lowerBound», «upperBound»]'''
+						entry.frequency = ft.featureValues.map[it as AttributeValue].filter[ it.value.toDouble <= lowerBound || it.value.toDouble > upperBound ].size
+						nt.frequencyTable += entry
+					}
+					
+					count = d.mean
+					while(count>d.min) {
+						count -= d.standardDeviation
+						val upperBound = count + d.standardDeviation
+						val lowerBound = count
+						
+						val entry = DataDescriptionFactory.eINSTANCE.createFrequencyEntry
+						entry.name = ''']«lowerBound», «upperBound»]'''
+						entry.frequency = ft.featureValues.map[it as AttributeValue].filter[ it.value.toDouble <= lowerBound || it.value.toDouble > upperBound ].size
+						nt.frequencyTable += entry
+					}
 				]
 				
 		])
@@ -80,6 +112,7 @@ class CSV_to_SD extends YAMTLModule {
 		switch(i) {
 			Integer: return Double.valueOf(i)
 			Double: return i
+			default: throw new Exception("Undefined")
 		}
 		
 	}

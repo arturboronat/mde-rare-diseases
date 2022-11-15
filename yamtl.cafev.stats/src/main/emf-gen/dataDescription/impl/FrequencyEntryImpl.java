@@ -3,7 +3,7 @@
 package dataDescription.impl;
 
 import dataDescription.DataDescriptionPackage;
-import dataDescription.FrequencyTable;
+import dataDescription.FrequencyEntry;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,19 +14,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Frequency Table</b></em>'.
+ * An implementation of the model object '<em><b>Frequency Entry</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dataDescription.impl.FrequencyTableImpl#getName <em>Name</em>}</li>
- *   <li>{@link dataDescription.impl.FrequencyTableImpl#getFrequency <em>Frequency</em>}</li>
+ *   <li>{@link dataDescription.impl.FrequencyEntryImpl#getName <em>Name</em>}</li>
+ *   <li>{@link dataDescription.impl.FrequencyEntryImpl#getFrequency <em>Frequency</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class FrequencyTableImpl extends MinimalEObjectImpl.Container implements FrequencyTable {
+public class FrequencyEntryImpl extends MinimalEObjectImpl.Container implements FrequencyEntry {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public class FrequencyTableImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FrequencyTableImpl() {
+	protected FrequencyEntryImpl() {
 		super();
 	}
 
@@ -83,7 +83,7 @@ public class FrequencyTableImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DataDescriptionPackage.Literals.FREQUENCY_TABLE;
+		return DataDescriptionPackage.Literals.FREQUENCY_ENTRY;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class FrequencyTableImpl extends MinimalEObjectImpl.Container implements 
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataDescriptionPackage.FREQUENCY_TABLE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataDescriptionPackage.FREQUENCY_ENTRY__NAME, oldName, name));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class FrequencyTableImpl extends MinimalEObjectImpl.Container implements 
 		int oldFrequency = frequency;
 		frequency = newFrequency;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataDescriptionPackage.FREQUENCY_TABLE__FREQUENCY, oldFrequency, frequency));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataDescriptionPackage.FREQUENCY_ENTRY__FREQUENCY, oldFrequency, frequency));
 	}
 
 	/**
@@ -136,9 +136,9 @@ public class FrequencyTableImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DataDescriptionPackage.FREQUENCY_TABLE__NAME:
+			case DataDescriptionPackage.FREQUENCY_ENTRY__NAME:
 				return getName();
-			case DataDescriptionPackage.FREQUENCY_TABLE__FREQUENCY:
+			case DataDescriptionPackage.FREQUENCY_ENTRY__FREQUENCY:
 				return getFrequency();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -152,10 +152,10 @@ public class FrequencyTableImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DataDescriptionPackage.FREQUENCY_TABLE__NAME:
+			case DataDescriptionPackage.FREQUENCY_ENTRY__NAME:
 				setName((String)newValue);
 				return;
-			case DataDescriptionPackage.FREQUENCY_TABLE__FREQUENCY:
+			case DataDescriptionPackage.FREQUENCY_ENTRY__FREQUENCY:
 				setFrequency((Integer)newValue);
 				return;
 		}
@@ -170,10 +170,10 @@ public class FrequencyTableImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DataDescriptionPackage.FREQUENCY_TABLE__NAME:
+			case DataDescriptionPackage.FREQUENCY_ENTRY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case DataDescriptionPackage.FREQUENCY_TABLE__FREQUENCY:
+			case DataDescriptionPackage.FREQUENCY_ENTRY__FREQUENCY:
 				setFrequency(FREQUENCY_EDEFAULT);
 				return;
 		}
@@ -188,9 +188,9 @@ public class FrequencyTableImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DataDescriptionPackage.FREQUENCY_TABLE__NAME:
+			case DataDescriptionPackage.FREQUENCY_ENTRY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DataDescriptionPackage.FREQUENCY_TABLE__FREQUENCY:
+			case DataDescriptionPackage.FREQUENCY_ENTRY__FREQUENCY:
 				return frequency != FREQUENCY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -214,4 +214,4 @@ public class FrequencyTableImpl extends MinimalEObjectImpl.Container implements 
 		return result.toString();
 	}
 
-} //FrequencyTableImpl
+} //FrequencyEntryImpl

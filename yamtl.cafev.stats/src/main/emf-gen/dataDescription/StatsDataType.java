@@ -48,7 +48,7 @@ public interface StatsDataType extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Frequency Table</b></em>' containment reference list.
-	 * The list contents are of type {@link dataDescription.FrequencyTable}.
+	 * The list contents are of type {@link dataDescription.FrequencyEntry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Frequency Table</em>' containment reference list.
@@ -56,6 +56,6 @@ public interface StatsDataType extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<FrequencyTable> getFrequencyTable();
+	EList<FrequencyEntry> getFrequencyTable();
 
 } // StatsDataType

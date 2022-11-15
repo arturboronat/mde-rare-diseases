@@ -59,7 +59,7 @@ public class DataDescriptionFactoryImpl extends EFactoryImpl implements DataDesc
 			case DataDescriptionPackage.STATS_DATA_MODEL: return createStatsDataModel();
 			case DataDescriptionPackage.CATEGORICAL_TYPE: return createCategoricalType();
 			case DataDescriptionPackage.NUMERICAL_TYPE: return createNumericalType();
-			case DataDescriptionPackage.FREQUENCY_TABLE: return createFrequencyTable();
+			case DataDescriptionPackage.FREQUENCY_ENTRY: return createFrequencyEntry();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -100,9 +100,9 @@ public class DataDescriptionFactoryImpl extends EFactoryImpl implements DataDesc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FrequencyTable createFrequencyTable() {
-		FrequencyTableImpl frequencyTable = new FrequencyTableImpl();
-		return frequencyTable;
+	public FrequencyEntry createFrequencyEntry() {
+		FrequencyEntryImpl frequencyEntry = new FrequencyEntryImpl();
+		return frequencyEntry;
 	}
 
 	/**

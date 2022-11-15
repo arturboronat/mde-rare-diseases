@@ -23,9 +23,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datasetDescription.ecore#//NumericalType/mean"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datasetDescription.ecore#//NumericalType/std"/>
     </genClasses>
-    <genClasses ecoreClass="datasetDescription.ecore#//FrequencyTable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datasetDescription.ecore#//FrequencyTable/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datasetDescription.ecore#//FrequencyTable/frequency"/>
+    <genClasses ecoreClass="datasetDescription.ecore#//FrequencyEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datasetDescription.ecore#//FrequencyEntry/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datasetDescription.ecore#//FrequencyEntry/frequency"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

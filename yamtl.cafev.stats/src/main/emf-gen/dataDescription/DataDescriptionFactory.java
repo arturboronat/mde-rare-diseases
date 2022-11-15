@@ -49,13 +49,13 @@ public interface DataDescriptionFactory extends EFactory {
 	NumericalType createNumericalType();
 
 	/**
-	 * Returns a new object of class '<em>Frequency Table</em>'.
+	 * Returns a new object of class '<em>Frequency Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Frequency Table</em>'.
+	 * @return a new object of class '<em>Frequency Entry</em>'.
 	 * @generated
 	 */
-	FrequencyTable createFrequencyTable();
+	FrequencyEntry createFrequencyEntry();
 
 	/**
 	 * Returns the package supported by this factory.

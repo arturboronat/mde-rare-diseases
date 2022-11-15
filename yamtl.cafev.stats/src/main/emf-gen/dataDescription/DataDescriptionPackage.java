@@ -286,14 +286,14 @@ public interface DataDescriptionPackage extends EPackage {
 	int NUMERICAL_TYPE_OPERATION_COUNT = STATS_DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link dataDescription.impl.FrequencyTableImpl <em>Frequency Table</em>}' class.
+	 * The meta object id for the '{@link dataDescription.impl.FrequencyEntryImpl <em>Frequency Entry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dataDescription.impl.FrequencyTableImpl
-	 * @see dataDescription.impl.DataDescriptionPackageImpl#getFrequencyTable()
+	 * @see dataDescription.impl.FrequencyEntryImpl
+	 * @see dataDescription.impl.DataDescriptionPackageImpl#getFrequencyEntry()
 	 * @generated
 	 */
-	int FREQUENCY_TABLE = 4;
+	int FREQUENCY_ENTRY = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -302,7 +302,7 @@ public interface DataDescriptionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FREQUENCY_TABLE__NAME = 0;
+	int FREQUENCY_ENTRY__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
@@ -311,25 +311,25 @@ public interface DataDescriptionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FREQUENCY_TABLE__FREQUENCY = 1;
+	int FREQUENCY_ENTRY__FREQUENCY = 1;
 
 	/**
-	 * The number of structural features of the '<em>Frequency Table</em>' class.
+	 * The number of structural features of the '<em>Frequency Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FREQUENCY_TABLE_FEATURE_COUNT = 2;
+	int FREQUENCY_ENTRY_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Frequency Table</em>' class.
+	 * The number of operations of the '<em>Frequency Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FREQUENCY_TABLE_OPERATION_COUNT = 0;
+	int FREQUENCY_ENTRY_OPERATION_COUNT = 0;
 
 
 	/**
@@ -472,36 +472,36 @@ public interface DataDescriptionPackage extends EPackage {
 	EAttribute getNumericalType_Std();
 
 	/**
-	 * Returns the meta object for class '{@link dataDescription.FrequencyTable <em>Frequency Table</em>}'.
+	 * Returns the meta object for class '{@link dataDescription.FrequencyEntry <em>Frequency Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Frequency Table</em>'.
-	 * @see dataDescription.FrequencyTable
+	 * @return the meta object for class '<em>Frequency Entry</em>'.
+	 * @see dataDescription.FrequencyEntry
 	 * @generated
 	 */
-	EClass getFrequencyTable();
+	EClass getFrequencyEntry();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dataDescription.FrequencyTable#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link dataDescription.FrequencyEntry#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see dataDescription.FrequencyTable#getName()
-	 * @see #getFrequencyTable()
+	 * @see dataDescription.FrequencyEntry#getName()
+	 * @see #getFrequencyEntry()
 	 * @generated
 	 */
-	EAttribute getFrequencyTable_Name();
+	EAttribute getFrequencyEntry_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dataDescription.FrequencyTable#getFrequency <em>Frequency</em>}'.
+	 * Returns the meta object for the attribute '{@link dataDescription.FrequencyEntry#getFrequency <em>Frequency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Frequency</em>'.
-	 * @see dataDescription.FrequencyTable#getFrequency()
-	 * @see #getFrequencyTable()
+	 * @see dataDescription.FrequencyEntry#getFrequency()
+	 * @see #getFrequencyEntry()
 	 * @generated
 	 */
-	EAttribute getFrequencyTable_Frequency();
+	EAttribute getFrequencyEntry_Frequency();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -639,14 +639,14 @@ public interface DataDescriptionPackage extends EPackage {
 		EAttribute NUMERICAL_TYPE__STD = eINSTANCE.getNumericalType_Std();
 
 		/**
-		 * The meta object literal for the '{@link dataDescription.impl.FrequencyTableImpl <em>Frequency Table</em>}' class.
+		 * The meta object literal for the '{@link dataDescription.impl.FrequencyEntryImpl <em>Frequency Entry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dataDescription.impl.FrequencyTableImpl
-		 * @see dataDescription.impl.DataDescriptionPackageImpl#getFrequencyTable()
+		 * @see dataDescription.impl.FrequencyEntryImpl
+		 * @see dataDescription.impl.DataDescriptionPackageImpl#getFrequencyEntry()
 		 * @generated
 		 */
-		EClass FREQUENCY_TABLE = eINSTANCE.getFrequencyTable();
+		EClass FREQUENCY_ENTRY = eINSTANCE.getFrequencyEntry();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -654,7 +654,7 @@ public interface DataDescriptionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FREQUENCY_TABLE__NAME = eINSTANCE.getFrequencyTable_Name();
+		EAttribute FREQUENCY_ENTRY__NAME = eINSTANCE.getFrequencyEntry_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Frequency</b></em>' attribute feature.
@@ -662,7 +662,7 @@ public interface DataDescriptionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FREQUENCY_TABLE__FREQUENCY = eINSTANCE.getFrequencyTable_Frequency();
+		EAttribute FREQUENCY_ENTRY__FREQUENCY = eINSTANCE.getFrequencyEntry_Frequency();
 
 	}
 

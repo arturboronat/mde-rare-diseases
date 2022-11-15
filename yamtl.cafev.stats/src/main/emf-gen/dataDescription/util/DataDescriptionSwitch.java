@@ -92,9 +92,9 @@ public class DataDescriptionSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataDescriptionPackage.FREQUENCY_TABLE: {
-				FrequencyTable frequencyTable = (FrequencyTable)theEObject;
-				T result = caseFrequencyTable(frequencyTable);
+			case DataDescriptionPackage.FREQUENCY_ENTRY: {
+				FrequencyEntry frequencyEntry = (FrequencyEntry)theEObject;
+				T result = caseFrequencyEntry(frequencyEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -163,17 +163,17 @@ public class DataDescriptionSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Frequency Table</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Frequency Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Frequency Table</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Frequency Entry</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFrequencyTable(FrequencyTable object) {
+	public T caseFrequencyEntry(FrequencyEntry object) {
 		return null;
 	}
 

@@ -84,8 +84,8 @@ public class DataDescriptionAdapterFactory extends AdapterFactoryImpl {
 				return createNumericalTypeAdapter();
 			}
 			@Override
-			public Adapter caseFrequencyTable(FrequencyTable object) {
-				return createFrequencyTableAdapter();
+			public Adapter caseFrequencyEntry(FrequencyEntry object) {
+				return createFrequencyEntryAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -164,16 +164,16 @@ public class DataDescriptionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dataDescription.FrequencyTable <em>Frequency Table</em>}'.
+	 * Creates a new adapter for an object of class '{@link dataDescription.FrequencyEntry <em>Frequency Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dataDescription.FrequencyTable
+	 * @see dataDescription.FrequencyEntry
 	 * @generated
 	 */
-	public Adapter createFrequencyTableAdapter() {
+	public Adapter createFrequencyEntryAdapter() {
 		return null;
 	}
 

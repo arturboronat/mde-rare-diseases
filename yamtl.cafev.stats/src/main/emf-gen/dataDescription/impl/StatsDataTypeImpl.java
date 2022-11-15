@@ -3,7 +3,7 @@
 package dataDescription.impl;
 
 import dataDescription.DataDescriptionPackage;
-import dataDescription.FrequencyTable;
+import dataDescription.FrequencyEntry;
 import dataDescription.StatsDataType;
 
 import java.util.Collection;
@@ -65,7 +65,7 @@ public abstract class StatsDataTypeImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<FrequencyTable> frequencyTable;
+	protected EList<FrequencyEntry> frequencyTable;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,9 +112,9 @@ public abstract class StatsDataTypeImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FrequencyTable> getFrequencyTable() {
+	public EList<FrequencyEntry> getFrequencyTable() {
 		if (frequencyTable == null) {
-			frequencyTable = new EObjectContainmentEList<FrequencyTable>(FrequencyTable.class, this, DataDescriptionPackage.STATS_DATA_TYPE__FREQUENCY_TABLE);
+			frequencyTable = new EObjectContainmentEList<FrequencyEntry>(FrequencyEntry.class, this, DataDescriptionPackage.STATS_DATA_TYPE__FREQUENCY_TABLE);
 		}
 		return frequencyTable;
 	}
@@ -163,7 +163,7 @@ public abstract class StatsDataTypeImpl extends MinimalEObjectImpl.Container imp
 				return;
 			case DataDescriptionPackage.STATS_DATA_TYPE__FREQUENCY_TABLE:
 				getFrequencyTable().clear();
-				getFrequencyTable().addAll((Collection<? extends FrequencyTable>)newValue);
+				getFrequencyTable().addAll((Collection<? extends FrequencyEntry>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -5,7 +5,7 @@ package dataDescription.impl;
 import dataDescription.CategoricalType;
 import dataDescription.DataDescriptionFactory;
 import dataDescription.DataDescriptionPackage;
-import dataDescription.FrequencyTable;
+import dataDescription.FrequencyEntry;
 import dataDescription.NumericalType;
 import dataDescription.StatsDataModel;
 import dataDescription.StatsDataType;
@@ -57,7 +57,7 @@ public class DataDescriptionPackageImpl extends EPackageImpl implements DataDesc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass frequencyTableEClass = null;
+	private EClass frequencyEntryEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -241,8 +241,8 @@ public class DataDescriptionPackageImpl extends EPackageImpl implements DataDesc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFrequencyTable() {
-		return frequencyTableEClass;
+	public EClass getFrequencyEntry() {
+		return frequencyEntryEClass;
 	}
 
 	/**
@@ -250,8 +250,8 @@ public class DataDescriptionPackageImpl extends EPackageImpl implements DataDesc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFrequencyTable_Name() {
-		return (EAttribute)frequencyTableEClass.getEStructuralFeatures().get(0);
+	public EAttribute getFrequencyEntry_Name() {
+		return (EAttribute)frequencyEntryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -259,8 +259,8 @@ public class DataDescriptionPackageImpl extends EPackageImpl implements DataDesc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFrequencyTable_Frequency() {
-		return (EAttribute)frequencyTableEClass.getEStructuralFeatures().get(1);
+	public EAttribute getFrequencyEntry_Frequency() {
+		return (EAttribute)frequencyEntryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -308,9 +308,9 @@ public class DataDescriptionPackageImpl extends EPackageImpl implements DataDesc
 		createEAttribute(numericalTypeEClass, NUMERICAL_TYPE__MEAN);
 		createEAttribute(numericalTypeEClass, NUMERICAL_TYPE__STD);
 
-		frequencyTableEClass = createEClass(FREQUENCY_TABLE);
-		createEAttribute(frequencyTableEClass, FREQUENCY_TABLE__NAME);
-		createEAttribute(frequencyTableEClass, FREQUENCY_TABLE__FREQUENCY);
+		frequencyEntryEClass = createEClass(FREQUENCY_ENTRY);
+		createEAttribute(frequencyEntryEClass, FREQUENCY_ENTRY__NAME);
+		createEAttribute(frequencyEntryEClass, FREQUENCY_ENTRY__FREQUENCY);
 	}
 
 	/**
@@ -351,7 +351,7 @@ public class DataDescriptionPackageImpl extends EPackageImpl implements DataDesc
 
 		initEClass(statsDataTypeEClass, StatsDataType.class, "StatsDataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatsDataType_Name(), ecorePackage.getEString(), "name", null, 1, 1, StatsDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStatsDataType_FrequencyTable(), this.getFrequencyTable(), null, "frequencyTable", null, 0, -1, StatsDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStatsDataType_FrequencyTable(), this.getFrequencyEntry(), null, "frequencyTable", null, 0, -1, StatsDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(categoricalTypeEClass, CategoricalType.class, "CategoricalType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCategoricalType_DataType(), ecorePackage.getEDataType(), null, "dataType", null, 1, 1, CategoricalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -362,9 +362,9 @@ public class DataDescriptionPackageImpl extends EPackageImpl implements DataDesc
 		initEAttribute(getNumericalType_Mean(), ecorePackage.getEDouble(), "mean", null, 1, 1, NumericalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNumericalType_Std(), ecorePackage.getEDouble(), "std", null, 1, 1, NumericalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(frequencyTableEClass, FrequencyTable.class, "FrequencyTable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFrequencyTable_Name(), ecorePackage.getEString(), "name", null, 1, 1, FrequencyTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFrequencyTable_Frequency(), ecorePackage.getEInt(), "frequency", null, 1, 1, FrequencyTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(frequencyEntryEClass, FrequencyEntry.class, "FrequencyEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFrequencyEntry_Name(), ecorePackage.getEString(), "name", null, 1, 1, FrequencyEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFrequencyEntry_Frequency(), ecorePackage.getEInt(), "frequency", null, 1, 1, FrequencyEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
