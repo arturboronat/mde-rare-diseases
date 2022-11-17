@@ -40,8 +40,7 @@ class DatasetCompiler {
 		val Injector injector = new VFormDslStandaloneSetup().
 		createInjectorAndDoEMFRegistration();
 		val XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet);
-		resourceSet.addLoadOption
-		 (XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
 		val Resource resource = resourceSet.createResource(URI.createURI('''src/main/resources/datasets/«DATASET».vform'''));
 		val modelRes = sd2vfModule.getOutputModel('vf')
 		resource.contents.addAll(modelRes.contents)
