@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vFormDsl="http://www.vform.cafev/VFormDsl">
+  <vFormDsl:Model>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="subject_id">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="subject_id" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="subject_id"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="Gender">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="Gender" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="Gender"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="rett_diagnosed">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="rett_diagnosed" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="rett_diagnosed"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="rett_in_family">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="rett_in_family" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="rett_in_family"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="labour_at_term">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="labour_at_term" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="labour_at_term"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="head_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="head_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="head_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="normal_ofc_at_birth">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="normal_ofc_at_birth" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="normal_ofc_at_birth"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="height_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="height_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="height_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="weight_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="weight_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="weight_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="regression">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="regression" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="regression"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="regression_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="regression_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="regression_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="regression_hand_use">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="regression_hand_use" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="regression_hand_use"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="hand_use_acquisition">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="hand_use_acquisition" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="hand_use_acquisition"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="hand_skills_regained">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="hand_skills_regained" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="hand_skills_regained"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="hand_stereotypy_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="hand_stereotypy_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="hand_stereotypy_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="gastrointestinal_disturbances_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="gastrointestinal_disturbances_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="gastrointestinal_disturbances_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="feed_skill">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="feed_skill" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="feed_skill"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="comm_non_verb_quality">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="comm_non_verb_quality" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="comm_non_verb_quality"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="eye_contact">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="eye_contact" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="eye_contact"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="phrases_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="phrases_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="phrases_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="speech_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="speech_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="speech_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="sitting_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="sitting_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="sitting_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="walking_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="walking_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="walking_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="walking_age_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="walking_age_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="walking_age_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="gait_dyspraxia">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="gait_dyspraxia" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="gait_dyspraxia"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="intellectual_disability_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="intellectual_disability_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="intellectual_disability_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="age_at_epilepsy_onset">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="age_at_epilepsy_onset" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="age_at_epilepsy_onset"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="epilepsy_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="epilepsy_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="epilepsy_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="epilepsy_type">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="epilepsy_type" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="epilepsy_type"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="breathing_disorders_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="breathing_disorders_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="breathing_disorders_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="breathing_disorder_type">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="breathing_disorder_type" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="breathing_disorder_type"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="cold_extremities_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="cold_extremities_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="cold_extremities_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="sphincter_control_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="sphincter_control_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="sphincter_control_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="scoliosis_score">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="scoliosis_score" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="scoliosis_score"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="presence_of_additional_involuntary_movement">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="presence_of_additional_involuntary_movement" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="presence_of_additional_involuntary_movement"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="bruxism">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="bruxism" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="bruxism"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="self_injury">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="self_injury" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="self_injury"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="mood_disturbance">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="mood_disturbance" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="mood_disturbance"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="trouble_night_sleep">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="trouble_night_sleep" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="trouble_night_sleep"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="brain_imaging">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="brain_imaging" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="brain_imaging"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="affected_gene">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="affected_gene" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="affected_gene"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="hgvs">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="hgvs" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="hgvs"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="mutation_type">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="mutation_type" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="mutation_type"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="inheritance">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="inheritance" type="CHECKBOX"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="inheritance"/>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="ofc_at_birth_in_cm" type="NUMBER"/>
+    <formInput xsi:type="vFormDsl:FormInputRange" name="ofc_at_birth_in_cm" min="32" max="36"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="ofc_at_birth_in_cm">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="ofc_with_age_cm" type="NUMBER"/>
+    <formInput xsi:type="vFormDsl:FormInputRange" name="ofc_with_age_cm" min="42" max="53"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="ofc_with_age_cm">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="height_with_age_cm" type="NUMBER"/>
+    <formInput xsi:type="vFormDsl:FormInputRange" name="height_with_age_cm" min="52" max="160"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="height_with_age_cm">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="birth_weight_in_gr" type="NUMBER"/>
+    <formInput xsi:type="vFormDsl:FormInputRange" name="birth_weight_in_gr" min="2450" max="3880"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="birth_weight_in_gr">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="weight_with_age_gr" type="NUMBER"/>
+    <formInput xsi:type="vFormDsl:FormInputRange" name="weight_with_age_gr" min="11" max="45000"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="weight_with_age_gr">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="regression_age_months" type="NUMBER"/>
+    <formInput xsi:type="vFormDsl:FormInputRange" name="regression_age_months" min="2" max="24"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="regression_age_months">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="hand_skills_regained_age" type="NUMBER"/>
+    <formInput xsi:type="vFormDsl:FormInputRange" name="hand_skills_regained_age"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="hand_skills_regained_age">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+    <formInput xsi:type="vFormDsl:FormInputBasic" name="epilepsy_diag_age_months" type="NUMBER"/>
+    <formInput xsi:type="vFormDsl:FormInputRange" name="epilepsy_diag_age_months" min="60" max="96"/>
+    <formInput xsi:type="vFormDsl:FormInputSelect" name="epilepsy_diag_age_months">
+      <option xsi:type="vFormDsl:EnumOption"/>
+    </formInput>
+  </vFormDsl:Model>
+  <vFormDsl:FormLayout/>
+</xmi:XMI>
