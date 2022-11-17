@@ -33,7 +33,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
-public class VFormDslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
+public abstract class AbstractVFormDslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 
 	@Inject
 	private VFormDslGrammarAccess grammarAccess;

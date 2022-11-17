@@ -72,7 +72,6 @@ class CSV_to_SD extends YAMTLModule {
 						
 						val entry = DataDescriptionFactory.eINSTANCE.createFrequencyEntry
 						entry.name = ''']«lowerBound», «upperBound»]'''
-						println(entry.name)
 						entry.frequency = ft.featureValues.map[it as AttributeValue].filter[ it.value.toDouble >= lowerBound || it.value.toDouble < upperBound ].size
 						nt.frequencyTable += entry
 					}
