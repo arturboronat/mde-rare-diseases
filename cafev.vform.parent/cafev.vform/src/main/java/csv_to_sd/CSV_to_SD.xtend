@@ -28,7 +28,15 @@ class CSV_to_SD extends YAMTLModule {
 				
 			rule('CategoricalType')
 				.in('ft', CSV.featureType).filter[
-					ft.emfType == ECORE.EString
+					ft.emfType == ECORE.EString 
+					||
+					(
+						(ft.emfType == ECORE.EDouble || ft.emfType == ECORE.EInt) 
+						&& 
+						(
+							ft.featureValues.map[(it as AttributeValue).value].toSet.size <= 1	
+						)
+					)
 				]
 				.out('ct', DD.categoricalType) [
 					m.types.add(ct)
@@ -46,6 +54,8 @@ class CSV_to_SD extends YAMTLModule {
 			rule('NumericalType')
 				.in('ft', CSV.featureType).filter[
 					ft.emfType == ECORE.EDouble || ft.emfType == ECORE.EInt
+					&& 
+					ft.featureValues.map[(it as AttributeValue).value].toSet.size > 1	
 				]
 				.out('nt', DD.numericalType) [
 					m.types.add(nt)
@@ -118,7 +128,9 @@ class CSV_to_SD extends YAMTLModule {
 		switch(i) {
 			Integer: return Double.valueOf(i)
 			Double: return i
-			default: throw new Exception("Undefined")
+			default: {
+				throw new Exception("Undefined: " + i.toString)
+			}
 		}
 		
 	}

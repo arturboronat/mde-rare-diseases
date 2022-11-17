@@ -31,8 +31,11 @@ Workflow {
 			name = "cafev.vform.VFormDsl"
 			fileExtensions = "vform"
 
-			serializer = {
-				generateStub = true
+//			serializer = {
+//				generateStub = true
+//			}
+			formatter={
+			    generateStub=true
 			}
 			validator = {
 				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"

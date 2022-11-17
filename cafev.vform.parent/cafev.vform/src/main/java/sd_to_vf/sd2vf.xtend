@@ -16,6 +16,7 @@ import dataDescription.DataDescriptionPackage
 import dataDescription.FrequencyEntry
 import dataDescription.NumericalType
 import dataDescription.StatsDataModel
+import java.util.List
 import yamtl.core.YAMTLModule
 
 import static yamtl.dsl.Rule.*
@@ -32,7 +33,9 @@ class sd2vf extends YAMTLModule {
 		ruleStore( #[
 			rule('Init')
 				.in('sd', DD.statsDataModel)
-				.out('m', VF.model)
+				.out('m', VF.model) [
+					m.formLayout = fl
+				]
 				.out('fl', VF.formLayout) [
 					fl.layout = Layout.HORIZONTAL
 				],
@@ -103,9 +106,7 @@ class sd2vf extends YAMTLModule {
 					
 					//bindings
 					sch.name = ct.name
-					ct.frequencyTable.forEach[j|
-						sch.data.add((j as FrequencyEntry).fetch("stringOptionItem") as StringOptionItem)
-						]
+					sch.data += ct.frequencyTable.fetch("stringOptionItem") as List<StringOptionItem>
 					m.formInput.add(sch)
 				],
 			rule('Categorical Select')
@@ -116,14 +117,12 @@ class sd2vf extends YAMTLModule {
 				.out("slt", VF.formInputSelect) [
 					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
-					slt.name = ct.name					
+					slt.name = ct.name			
+					slt.option = opt
 					m.formInput.add(slt)
 				].
 				out("opt", VF.enumOption) [
-					ct.frequencyTable.forEach[j|
-						opt.data.add((j as FrequencyEntry).fetch("stringOptionItem") as StringOptionItem)
-						]
-						slt.option = opt
+					opt.data += ct.frequencyTable.fetch("stringOptionItem") as List<StringOptionItem>
 				],
 			rule('Numerical Select')
 				.in('nt', DD.numericalType).filter [
@@ -134,13 +133,11 @@ class sd2vf extends YAMTLModule {
 					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
 					slt.name = nt.name					
+					slt.option = opt
 					m.formInput.add(slt)
 				].
 				out("opt", VF.enumOption) [
-					nt.frequencyTable.forEach[j|
-						opt.data.add((j as FrequencyEntry).fetch("stringOptionItem") as StringOptionItem)
-						]
-						slt.option = opt
+					opt.data += nt.frequencyTable.fetch("stringOptionItem") as List<StringOptionItem>
 				],
 			rule('stringOptionItem')
 				.uniqueLazy

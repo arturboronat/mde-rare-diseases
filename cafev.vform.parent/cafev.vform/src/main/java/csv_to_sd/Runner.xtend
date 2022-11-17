@@ -4,8 +4,8 @@ import csv_to_sd.CSV_to_SD
 
 class Runner {
 	def public static void main(String[] args) {
-		var String inputCsvPath = '''src/main/resources/datasets/Mock_data.csv'''
-//		var String inputCsvPath = '''src/main/resources/datasets/Rett_Datacleaned.csv'''
+//		var String inputCsvPath = '''src/main/resources/datasets/Mock_data.csv'''
+		var String inputCsvPath = '''src/main/resources/datasets/Rett_Datacleaned.csv'''
 		
 		val xform = new CSV_to_SD
 
@@ -17,8 +17,8 @@ class Runner {
 		xform.execute()
 		
 		// STORE MODELS
-		var String outputModelPath = '''src/main/java/csv_to_sd/mockData_stats.xmi'''
-//		var String outputModelPath = '''src/main/java/csv_to_sd/rettData_stats.xmi'''
+//		var String outputModelPath = '''src/main/java/csv_to_sd/mockData_stats.xmi'''
+		var String outputModelPath = '''src/main/java/csv_to_sd/rettData_stats.xmi'''
 		xform.saveOutputModels(#{'dd' -> outputModelPath})
 		
 		// PRINT STATS
