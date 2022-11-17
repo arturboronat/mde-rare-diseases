@@ -10,13 +10,10 @@ import org.eclipse.xtext.resource.XtextResourceSet
 import sd_to_vf.sd2vf
 
 class DatasetCompiler {
-	def public static void main(String[] args) {
+	def static void main(String[] args) {
 		var DATASET = "Mock_data"
 //		var DATASET = "Rett_Datacleaned"
-//		var String inputCsvPath = '''src/main/resources/datasets/'''
 		var String inputCsvPath = '''src/main/resources/datasets/«DATASET».csv'''
-		
-		
 		
 		/*
 		 * CSV to DataDescription 
@@ -31,16 +28,11 @@ class DatasetCompiler {
 		/*
 		 * DataDescription TO VFormDsl
 		 */
-		
 		val sd2vfModule = new sd2vf
 		sd2vfModule.loadInputModels(#{'dd' -> outputModelPath})
 		sd2vfModule.execute()
 		var String outputVFormPath = '''src/main/resources/datasets/«DATASET»_vform.xmi'''
 		sd2vfModule.saveOutputModels(#{'vf' -> outputVFormPath})
-		
-		// PRINT STATS
-		println(sd2vfModule.toStringStats)
-		
 		
 		/*
 		 * SERIALIZE MODEL
@@ -50,15 +42,9 @@ class DatasetCompiler {
 		val XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet);
 		resourceSet.addLoadOption
 		 (XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
-//		val Resource resource = resourceSet.getResource
-//		 (URI.createURI("/path/to/my.entities"), true);
-//		Model model = (Model) resource.getContents().get(0);
 		val Resource resource = resourceSet.createResource(URI.createURI('''src/main/resources/datasets/«DATASET».vform'''));
-//		Model model = (Model) resource.getContents().get(0);
 		val modelRes = sd2vfModule.getOutputModel('vf')
 		resource.contents.addAll(modelRes.contents)
 		resource.save(null)
-		
-		
 	}
 }
