@@ -6,15 +6,10 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>VFormDsl.ecore</foreignModel>
   <genPackages prefix="VFormDsl" disposableProviderFactory="true" ecorePackage="VFormDsl.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="VFormDsl.ecore#//InputType">
-      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//InputType/TEXT"/>
-      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//InputType/CHECKBOX"/>
-      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//InputType/NUMBER"/>
-      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//InputType/DATE"/>
-      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//InputType/RANGE"/>
-      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//InputType/SELECT"/>
-      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//InputType/SEARCH"/>
-      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//InputType/GROUP"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="VFormDsl.ecore#//BasicInputType">
+      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//BasicInputType/TEXT"/>
+      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//BasicInputType/CHECKBOX"/>
+      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//BasicInputType/NUMBER"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="VFormDsl.ecore#//Layout">
       <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//Layout/horizontal"/>

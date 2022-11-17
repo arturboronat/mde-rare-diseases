@@ -22,27 +22,27 @@ package vFormDsl;
 public interface FormInputBasic extends FormInput {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link vFormDsl.InputType}.
+	 * The literals are from the enumeration {@link vFormDsl.BasicInputType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see vFormDsl.InputType
-	 * @see #setType(InputType)
+	 * @see vFormDsl.BasicInputType
+	 * @see #setType(BasicInputType)
 	 * @see vFormDsl.VFormDslPackage#getFormInputBasic_Type()
 	 * @model
 	 * @generated
 	 */
-	InputType getType();
+	BasicInputType getType();
 
 	/**
 	 * Sets the value of the '{@link vFormDsl.FormInputBasic#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see vFormDsl.InputType
+	 * @see vFormDsl.BasicInputType
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(InputType value);
+	void setType(BasicInputType value);
 
 } // FormInputBasic

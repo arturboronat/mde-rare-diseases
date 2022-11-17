@@ -1,25 +1,22 @@
 package sd_to_vf
-
 import dataDescription.CategoricalType
 import dataDescription.DataDescriptionPackage
 import dataDescription.NumericalType
 import dataDescription.StatsDataModel
-import dataDescription.StatsDataType
-import vformDSL.Checkbox
-import vformDSL.EnumOption
-import vformDSL.FormInput
-import vformDSL.FormLayout
-import vformDSL.Layout
-import vformDSL.Range
-import vformDSL.Search
-import vformDSL.Select
-import vformDSL.Text
-import vformDSL.Number
-import vformDSL.VformDSLPackage
 import yamtl.core.YAMTLModule
-
 import static yamtl.dsl.Rule.*
 import vFormDsl.VFormDslPackage
+import vFormDsl.FormLayout
+import vFormDsl.Layout
+import vFormDsl.FormInputSearch
+import vFormDsl.FormInputSelect
+import vFormDsl.FormInputRange
+import vFormDsl.EnumOption
+import vFormDsl.FormInputBasic
+import vFormDsl.BasicInputType
+import vFormDsl.StringOptionItem
+import vFormDsl.Model
+import dataDescription.FrequencyEntry
 
 /** 
  * SHORTER TRANSFORMATION FOR PRESENTATION PURPOSES
@@ -33,46 +30,48 @@ class sd2vf extends YAMTLModule {
 		ruleStore( #[
 			rule('Init')
 				.in('sd', DD.statsDataModel)
-				.out('fi', VF.formInput) 
+				.out('m', VF.model)
 				.out('fl', VF.formLayout) [
 					fl.layout = Layout.HORIZONTAL
 				],
-			rule('CheckBox')
-				.in('sdt', DD.statsDataType).filter [
-					sdt.frequencyTable.size() <= 2
+			rule('Checkbox')
+				.in('ct', DD.categoricalType).filter[
+					ct.frequencyTable.size()<=2
 				]
-				.out('ck', VF.checkbox) [
-					val fi = (sdt.eContainer() as StatsDataModel).fetch('fi') as FormInput
-					ck.inputName = sdt.name
-					fi.checkbox.add(ck)
+				.out('fib', VF.formInputBasic) [	
+					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
+					fib.name = ct.name
+					fib.type = BasicInputType.CHECKBOX
+					m.formInput.add(fib)
 				],
 				
 			rule('Text')
 				.in('ct', DD.categoricalType)
-				.out('txt', VF.text) [
-					val fi = (ct.eContainer() as StatsDataModel).fetch('fi') as FormInput
-					//bindings
-					txt.inputName = ct.name
-					fi.text.add(txt)
+				.out('fib', VF.formInputBasic) [	
+					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
+					fib.name = ct.name
+					fib.type = BasicInputType.TEXT
+					m.formInput.add(fib)
 				],
 			rule('Number')
 				.in('nt', DD.numericalType)
-				.out('nb', VF.number) [
-					val fi = (nt.eContainer() as StatsDataModel).fetch('fi') as FormInput
-					//bindings
-					nb.inputName = nt.name
-					fi.number.add(nb)
+				.out('fib', VF.formInputBasic) [	
+					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
+					fib.name = nt.name
+					fib.type = BasicInputType.NUMBER
+					m.formInput.add(fib)
 				],
 			rule('Range')
 				.in('nt', DD.numericalType)
-				.out('rg', VF.range) [
-					val fi = (nt.eContainer() as StatsDataModel).fetch('fi') as FormInput
+				.out('rg', VF.formInputRange) [
+					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
-					rg.inputName = nt.name
+					rg.name = nt.name
 					rg.min = Math.toIntExact(Math.round(nt.min)) 
 					rg.max = Math.toIntExact(Math.round(nt.max)) 
-					fi.range.add(rg)
+					m.formInput.add(rg)
 				],
+				
 //				rule('Date')
 //				.in('sdt', DD.statsDataType).
 //				out('dt', VF.dat) [
@@ -93,48 +92,61 @@ class sd2vf extends YAMTLModule {
 //				],
 			
 			rule('Search')
-				.in('sdt', DD.statsDataType).filter [
-					val sdt = 'sdt'.fetch as StatsDataType
-					sdt.frequencyTable.size() > 10
+				.in('ct', DD.categoricalType).filter [
+					val ct = 'ct'.fetch as CategoricalType
+					ct.frequencyTable.size() > 10
 				]
-				.out("sch", VF.search)[
-					val fi = (sdt.eContainer() as StatsDataModel).fetch('fi') as FormInput
+				.out("sch", VF.formInputSearch) [
+					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
+					
 					//bindings
-					sdt.frequencyTable.forEach[i|sch.stringData.add(i.name)]
-					sch.inputName = sdt.name
-					fi.search.add(sch)
+					sch.name = ct.name
+					ct.frequencyTable.forEach[j|
+						sch.data.add((j as FrequencyEntry).fetch("stringOptionItem") as StringOptionItem)
+						]
+					m.formInput.add(sch)
 				],
-				
-			rule('select')
-				.in('sdt', DD.statsDataType).filter [
-					val sdt = 'sdt'.fetch as StatsDataType
-					sdt.frequencyTable.size() <= 10
+			rule('Categorical Select')
+				.in('ct', DD.categoricalType).filter [
+					val ct = 'ct'.fetch as CategoricalType
+					ct.frequencyTable.size() <= 10
 				]
-				.out("slt", VF.select)[
-					val fi = (sdt.eContainer() as StatsDataModel).fetch('fi') as FormInput
+				.out("slt", VF.formInputSelect) [
+					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
-					slt.inputName = sdt.name					
-					fi.select.add(slt)
+					slt.name = ct.name					
+					m.formInput.add(slt)
+				].
+				out("opt", VF.enumOption) [
+					ct.frequencyTable.forEach[j|
+						opt.data.add((j as FrequencyEntry).fetch("stringOptionItem") as StringOptionItem)
+						]
+						slt.option = opt
+				],
+			rule('Numerical Select')
+				.in('nt', DD.numericalType).filter [
+					val nt = 'nt'.fetch as NumericalType
+					nt.frequencyTable.size() <= 10
 				]
-				.out("opt", VF.enumOption)[
-					val fi = (sdt.eContainer() as StatsDataModel).fetch('fi') as FormInput
-					//bindings 
-					fi.select.forEach[i|
-						if(i.inputName == sdt.name){
-							sdt.frequencyTable.forEach[j|opt.stringData.add(j.name)]
-						}
-						if(i.inputName == sdt.name){
-							i.setEnumOption(opt)
-						}
-					]
-				]		
-			// TODO: at the moment select iterates over output model
-			// * why does opt have stringData? should this attribute be univalued
-			// * should each option be modeled as a separate EnumOption?
-			// * what is select and what is enumOption?
-//			rule('selectOption').uniqueLazy
-//				.in('sdt', DD.statsDataType)
-//				.out("slt", VF.select)
+				.out("slt", VF.formInputSelect) [
+					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
+					//bindings
+					slt.name = nt.name					
+					m.formInput.add(slt)
+				].
+				out("opt", VF.enumOption) [
+					nt.frequencyTable.forEach[j|
+						opt.data.add((j as FrequencyEntry).fetch("stringOptionItem") as StringOptionItem)
+						]
+						slt.option = opt
+				],
+			rule('stringOptionItem')
+				.uniqueLazy
+				.in('fe', DD.frequencyEntry)
+				.out("soi", VF.stringOptionItem) [
+					soi.value = fe.name
+				]	
+
 		])				
 				
 	}
@@ -145,40 +157,38 @@ class sd2vf extends YAMTLModule {
 	def sd() {
 	  'sd'.fetch() as StatsDataModel
 	}
-	def fi() {
-	  'fi'.fetch() as FormInput
+	def m() {
+	  'm'.fetch() as Model
+	}
+	def fib() {
+	  'fib'.fetch() as FormInputBasic
 	}
 	def fl() {
 	  'fl'.fetch() as FormLayout
 	}
-	def sdt() {
-	  'sdt'.fetch() as StatsDataType
-	}
-	def ck() {
-	  'ck'.fetch() as Checkbox
-	}
+
 	def ct() {
 	  'ct'.fetch() as CategoricalType
-	}
-	def txt() {
-	  'txt'.fetch() as Text
 	}
 	def nt() {
 	  'nt'.fetch() as NumericalType
 	}
-	def nb() {
-	  'nb'.fetch() as Number
-	}
-	def rg() {
-	  'rg'.fetch() as Range
+	def rg(){
+	  'rg'.fetch() as FormInputRange
 	}
 	def sch() {
-	  'sch'.fetch() as Search
+	  'sch'.fetch() as FormInputSearch
 	}
 	def slt() {
-	  'slt'.fetch() as Select
+	  'slt'.fetch() as FormInputSelect
 	}
 	def opt() {
 	  'opt'.fetch() as EnumOption
+	}
+	def soi(){
+	  'soi'.fetch() as StringOptionItem
+	}
+	def fe(){
+	  'fe'.fetch() as FrequencyEntry
 	}
 }

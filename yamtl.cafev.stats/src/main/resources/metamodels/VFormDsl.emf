@@ -15,18 +15,13 @@ class FormInput {
 }
 
 class FormInputBasic extends FormInput {
-	attr InputType type;
+	attr BasicInputType type;
 }
 
-enum InputType {
+enum BasicInputType {
 	TEXT = 0;
 	CHECKBOX = 1;
 	NUMBER = 2;
-	DATE = 3;
-	RANGE = 4;
-	SELECT = 5;
-	SEARCH = 6;
-	GROUP = 7;
 }
 
 class FormInputRange extends FormInput {

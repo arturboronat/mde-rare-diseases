@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import vFormDsl.BasicInputType;
 import vFormDsl.FormInputBasic;
-import vFormDsl.InputType;
 import vFormDsl.VFormDslPackage;
 
 /**
@@ -34,7 +34,7 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final InputType TYPE_EDEFAULT = InputType.TEXT;
+	protected static final BasicInputType TYPE_EDEFAULT = BasicInputType.TEXT;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -44,7 +44,7 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic 
 	 * @generated
 	 * @ordered
 	 */
-	protected InputType type = TYPE_EDEFAULT;
+	protected BasicInputType type = TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +70,7 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InputType getType() {
+	public BasicInputType getType() {
 		return type;
 	}
 
@@ -79,8 +79,8 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(InputType newType) {
-		InputType oldType = type;
+	public void setType(BasicInputType newType) {
+		BasicInputType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VFormDslPackage.FORM_INPUT_BASIC__TYPE, oldType, type));
@@ -109,7 +109,7 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case VFormDslPackage.FORM_INPUT_BASIC__TYPE:
-				setType((InputType)newValue);
+				setType((BasicInputType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

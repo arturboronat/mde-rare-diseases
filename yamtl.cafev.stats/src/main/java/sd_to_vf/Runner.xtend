@@ -14,7 +14,7 @@ class Runner {
 		xform.execute()
 		
 		// STORE MODELS
-		var String outputModelPath = '''src/main/java/sd_to_vf/targetInitial.xmi'''
+		var String outputModelPath = '''src/main/java/sd_to_vf/rettData_vform.xmi'''
 		xform.saveOutputModels(#{'vf' -> outputModelPath})
 		
 		// PRINT STATS
