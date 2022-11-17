@@ -35,7 +35,7 @@ public class VFormDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOptionAccess().getAlternatives(), "rule__Option__Alternatives");
 			builder.put(grammarAccess.getOptionItemAccess().getAlternatives(), "rule__OptionItem__Alternatives");
 			builder.put(grammarAccess.getDataAccess().getAlternatives(), "rule__Data__Alternatives");
-			builder.put(grammarAccess.getInputTypeAccess().getAlternatives(), "rule__InputType__Alternatives");
+			builder.put(grammarAccess.getBasicInputTypeAccess().getAlternatives(), "rule__BasicInputType__Alternatives");
 			builder.put(grammarAccess.getLayoutAccess().getAlternatives(), "rule__Layout__Alternatives");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getFormInputBasicAccess().getGroup(), "rule__FormInputBasic__Group__0");

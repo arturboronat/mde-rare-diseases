@@ -290,9 +290,9 @@ ruleFormInputBasic returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFormInputBasicAccess().getTypeInputTypeEnumRuleCall_5_0());
+					newCompositeNode(grammarAccess.getFormInputBasicAccess().getTypeBasicInputTypeEnumRuleCall_5_0());
 				}
-				lv_type_5_0=ruleInputType
+				lv_type_5_0=ruleBasicInputType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFormInputBasicRule());
@@ -301,7 +301,7 @@ ruleFormInputBasic returns [EObject current=null]
 						$current,
 						"type",
 						lv_type_5_0,
-						"cafev.vform.VFormDsl.InputType");
+						"cafev.vform.VFormDsl.BasicInputType");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1378,8 +1378,8 @@ ruleIntData returns [EObject current=null]
 	)
 ;
 
-// Rule InputType
-ruleInputType returns [Enumerator current=null]
+// Rule BasicInputType
+ruleBasicInputType returns [Enumerator current=null]
 @init {
 	enterRule();
 }
@@ -1390,64 +1390,24 @@ ruleInputType returns [Enumerator current=null]
 		(
 			enumLiteral_0='TEXT'
 			{
-				$current = grammarAccess.getInputTypeAccess().getTEXTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getInputTypeAccess().getTEXTEnumLiteralDeclaration_0());
+				$current = grammarAccess.getBasicInputTypeAccess().getTEXTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getBasicInputTypeAccess().getTEXTEnumLiteralDeclaration_0());
 			}
 		)
 		    |
 		(
 			enumLiteral_1='CHECKBOX'
 			{
-				$current = grammarAccess.getInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1());
+				$current = grammarAccess.getBasicInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getBasicInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1());
 			}
 		)
 		    |
 		(
 			enumLiteral_2='NUMBER'
 			{
-				$current = grammarAccess.getInputTypeAccess().getNUMBEREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getInputTypeAccess().getNUMBEREnumLiteralDeclaration_2());
-			}
-		)
-		    |
-		(
-			enumLiteral_3='DATE'
-			{
-				$current = grammarAccess.getInputTypeAccess().getDATEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_3, grammarAccess.getInputTypeAccess().getDATEEnumLiteralDeclaration_3());
-			}
-		)
-		    |
-		(
-			enumLiteral_4='RANGE'
-			{
-				$current = grammarAccess.getInputTypeAccess().getRANGEEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_4, grammarAccess.getInputTypeAccess().getRANGEEnumLiteralDeclaration_4());
-			}
-		)
-		    |
-		(
-			enumLiteral_5='SELECT'
-			{
-				$current = grammarAccess.getInputTypeAccess().getSELECTEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_5, grammarAccess.getInputTypeAccess().getSELECTEnumLiteralDeclaration_5());
-			}
-		)
-		    |
-		(
-			enumLiteral_6='SEARCH'
-			{
-				$current = grammarAccess.getInputTypeAccess().getSEARCHEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_6, grammarAccess.getInputTypeAccess().getSEARCHEnumLiteralDeclaration_6());
-			}
-		)
-		    |
-		(
-			enumLiteral_7='GROUP'
-			{
-				$current = grammarAccess.getInputTypeAccess().getGROUPEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_7, grammarAccess.getInputTypeAccess().getGROUPEnumLiteralDeclaration_7());
+				$current = grammarAccess.getBasicInputTypeAccess().getNUMBEREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getBasicInputTypeAccess().getNUMBEREnumLiteralDeclaration_2());
 			}
 		)
 	)

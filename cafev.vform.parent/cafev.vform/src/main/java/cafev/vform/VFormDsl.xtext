@@ -19,12 +19,11 @@ FormInput:
 
 FormInputBasic:
 	"name" ":" name=STRING
-	"type" ":" type=InputType
+	"type" ":" type=BasicInputType
 ;
 	
-enum InputType:
-	TEXT | CHECKBOX | NUMBER | DATE 
-	| RANGE | SELECT | SEARCH | GROUP 
+enum BasicInputType:
+	TEXT | CHECKBOX | NUMBER  
 ;
 	
 FormInputRange:
@@ -113,7 +112,3 @@ IntData:
 
 enum Layout:
 	horizontal|vertical ;
-	
-	
-	
-	

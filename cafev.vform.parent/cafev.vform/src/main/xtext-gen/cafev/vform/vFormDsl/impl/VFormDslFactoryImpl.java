@@ -100,8 +100,8 @@ public class VFormDslFactoryImpl extends EFactoryImpl implements VFormDslFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case VFormDslPackage.INPUT_TYPE:
-        return createInputTypeFromString(eDataType, initialValue);
+      case VFormDslPackage.BASIC_INPUT_TYPE:
+        return createBasicInputTypeFromString(eDataType, initialValue);
       case VFormDslPackage.LAYOUT:
         return createLayoutFromString(eDataType, initialValue);
       default:
@@ -119,8 +119,8 @@ public class VFormDslFactoryImpl extends EFactoryImpl implements VFormDslFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case VFormDslPackage.INPUT_TYPE:
-        return convertInputTypeToString(eDataType, instanceValue);
+      case VFormDslPackage.BASIC_INPUT_TYPE:
+        return convertBasicInputTypeToString(eDataType, instanceValue);
       case VFormDslPackage.LAYOUT:
         return convertLayoutToString(eDataType, instanceValue);
       default:
@@ -361,9 +361,9 @@ public class VFormDslFactoryImpl extends EFactoryImpl implements VFormDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public InputType createInputTypeFromString(EDataType eDataType, String initialValue)
+  public BasicInputType createBasicInputTypeFromString(EDataType eDataType, String initialValue)
   {
-    InputType result = InputType.get(initialValue);
+    BasicInputType result = BasicInputType.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -373,7 +373,7 @@ public class VFormDslFactoryImpl extends EFactoryImpl implements VFormDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertInputTypeToString(EDataType eDataType, Object instanceValue)
+  public String convertBasicInputTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

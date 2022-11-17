@@ -14,17 +14,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FormInputBasic" eSuperTypes="#//FormInput">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//InputType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//BasicInputType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="InputType">
+  <eClassifiers xsi:type="ecore:EEnum" name="BasicInputType">
     <eLiterals name="TEXT" literal="TEXT"/>
     <eLiterals name="CHECKBOX" value="1" literal="CHECKBOX"/>
     <eLiterals name="NUMBER" value="2" literal="NUMBER"/>
-    <eLiterals name="DATE" value="3" literal="DATE"/>
-    <eLiterals name="RANGE" value="4" literal="RANGE"/>
-    <eLiterals name="SELECT" value="5" literal="SELECT"/>
-    <eLiterals name="SEARCH" value="6" literal="SEARCH"/>
-    <eLiterals name="GROUP" value="7" literal="GROUP"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FormInputRange" eSuperTypes="#//FormInput">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

@@ -136,16 +136,16 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cTypeKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cTypeInputTypeEnumRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
+		private final RuleCall cTypeBasicInputTypeEnumRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
 		
 		//FormInputBasic:
 		//    "name" ":" name=STRING
-		//    "type" ":" type=InputType
+		//    "type" ":" type=BasicInputType
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"name" ":" name=STRING
-		//"type" ":" type=InputType
+		//"type" ":" type=BasicInputType
 		public Group getGroup() { return cGroup; }
 		
 		//"name"
@@ -166,11 +166,11 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//":"
 		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
 		
-		//type=InputType
+		//type=BasicInputType
 		public Assignment getTypeAssignment_5() { return cTypeAssignment_5; }
 		
-		//InputType
-		public RuleCall getTypeInputTypeEnumRuleCall_5_0() { return cTypeInputTypeEnumRuleCall_5_0; }
+		//BasicInputType
+		public RuleCall getTypeBasicInputTypeEnumRuleCall_5_0() { return cTypeBasicInputTypeEnumRuleCall_5_0; }
 	}
 	public class FormInputRangeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.FormInputRange");
@@ -898,8 +898,8 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	
-	public class InputTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.InputType");
+	public class BasicInputTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.BasicInputType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cTEXTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cTEXTTEXTKeyword_0_0 = (Keyword)cTEXTEnumLiteralDeclaration_0.eContents().get(0);
@@ -907,25 +907,13 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cCHECKBOXCHECKBOXKeyword_1_0 = (Keyword)cCHECKBOXEnumLiteralDeclaration_1.eContents().get(0);
 		private final EnumLiteralDeclaration cNUMBEREnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cNUMBERNUMBERKeyword_2_0 = (Keyword)cNUMBEREnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cDATEEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cDATEDATEKeyword_3_0 = (Keyword)cDATEEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cRANGEEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cRANGERANGEKeyword_4_0 = (Keyword)cRANGEEnumLiteralDeclaration_4.eContents().get(0);
-		private final EnumLiteralDeclaration cSELECTEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cSELECTSELECTKeyword_5_0 = (Keyword)cSELECTEnumLiteralDeclaration_5.eContents().get(0);
-		private final EnumLiteralDeclaration cSEARCHEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
-		private final Keyword cSEARCHSEARCHKeyword_6_0 = (Keyword)cSEARCHEnumLiteralDeclaration_6.eContents().get(0);
-		private final EnumLiteralDeclaration cGROUPEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
-		private final Keyword cGROUPGROUPKeyword_7_0 = (Keyword)cGROUPEnumLiteralDeclaration_7.eContents().get(0);
 		
-		//enum InputType:
-		//    TEXT | CHECKBOX | NUMBER | DATE
-		//    | RANGE | SELECT | SEARCH | GROUP
+		//enum BasicInputType:
+		//    TEXT | CHECKBOX | NUMBER
 		//;
 		public EnumRule getRule() { return rule; }
 		
-		//TEXT | CHECKBOX | NUMBER | DATE
-		//| RANGE | SELECT | SEARCH | GROUP
+		//TEXT | CHECKBOX | NUMBER
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//TEXT
@@ -942,31 +930,6 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		public EnumLiteralDeclaration getNUMBEREnumLiteralDeclaration_2() { return cNUMBEREnumLiteralDeclaration_2; }
 		
 		public Keyword getNUMBERNUMBERKeyword_2_0() { return cNUMBERNUMBERKeyword_2_0; }
-		
-		//DATE
-		public EnumLiteralDeclaration getDATEEnumLiteralDeclaration_3() { return cDATEEnumLiteralDeclaration_3; }
-		
-		public Keyword getDATEDATEKeyword_3_0() { return cDATEDATEKeyword_3_0; }
-		
-		//RANGE
-		public EnumLiteralDeclaration getRANGEEnumLiteralDeclaration_4() { return cRANGEEnumLiteralDeclaration_4; }
-		
-		public Keyword getRANGERANGEKeyword_4_0() { return cRANGERANGEKeyword_4_0; }
-		
-		//SELECT
-		public EnumLiteralDeclaration getSELECTEnumLiteralDeclaration_5() { return cSELECTEnumLiteralDeclaration_5; }
-		
-		public Keyword getSELECTSELECTKeyword_5_0() { return cSELECTSELECTKeyword_5_0; }
-		
-		//SEARCH
-		public EnumLiteralDeclaration getSEARCHEnumLiteralDeclaration_6() { return cSEARCHEnumLiteralDeclaration_6; }
-		
-		public Keyword getSEARCHSEARCHKeyword_6_0() { return cSEARCHSEARCHKeyword_6_0; }
-		
-		//GROUP
-		public EnumLiteralDeclaration getGROUPEnumLiteralDeclaration_7() { return cGROUPEnumLiteralDeclaration_7; }
-		
-		public Keyword getGROUPGROUPKeyword_7_0() { return cGROUPGROUPKeyword_7_0; }
 	}
 	public class LayoutElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.Layout");
@@ -998,7 +961,7 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	private final FormLayoutElements pFormLayout;
 	private final FormInputElements pFormInput;
 	private final FormInputBasicElements pFormInputBasic;
-	private final InputTypeElements eInputType;
+	private final BasicInputTypeElements eBasicInputType;
 	private final FormInputRangeElements pFormInputRange;
 	private final FormInputSelectElements pFormInputSelect;
 	private final OptionElements pOption;
@@ -1029,7 +992,7 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		this.pFormLayout = new FormLayoutElements();
 		this.pFormInput = new FormInputElements();
 		this.pFormInputBasic = new FormInputBasicElements();
-		this.eInputType = new InputTypeElements();
+		this.eBasicInputType = new BasicInputTypeElements();
 		this.pFormInputRange = new FormInputRangeElements();
 		this.pFormInputSelect = new FormInputSelectElements();
 		this.pOption = new OptionElements();
@@ -1112,7 +1075,7 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	//FormInputBasic:
 	//    "name" ":" name=STRING
-	//    "type" ":" type=InputType
+	//    "type" ":" type=BasicInputType
 	//;
 	public FormInputBasicElements getFormInputBasicAccess() {
 		return pFormInputBasic;
@@ -1122,16 +1085,15 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		return getFormInputBasicAccess().getRule();
 	}
 	
-	//enum InputType:
-	//    TEXT | CHECKBOX | NUMBER | DATE
-	//    | RANGE | SELECT | SEARCH | GROUP
+	//enum BasicInputType:
+	//    TEXT | CHECKBOX | NUMBER
 	//;
-	public InputTypeElements getInputTypeAccess() {
-		return eInputType;
+	public BasicInputTypeElements getBasicInputTypeAccess() {
+		return eBasicInputType;
 	}
 	
-	public EnumRule getInputTypeRule() {
-		return getInputTypeAccess().getRule();
+	public EnumRule getBasicInputTypeRule() {
+		return getBasicInputTypeAccess().getRule();
 	}
 	
 	//FormInputRange:

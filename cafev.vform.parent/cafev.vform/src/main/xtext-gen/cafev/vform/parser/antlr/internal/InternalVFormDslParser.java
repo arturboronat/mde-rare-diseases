@@ -22,18 +22,33 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalVFormDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'formLayout:'", "','", "'formInputs:'", "'['", "']'", "'name'", "':'", "'type'", "'RANGE'", "'min:'", "'max:'", "'SELECT'", "'options:'", "'{'", "'}'", "'optionType:'", "'data'", "'data:'", "'enum'", "'number'", "'range:'", "'SEARCH'", "'type:'", "'GROUP'", "'groupInputs:'", "'label:'", "'value:'", "'TEXT'", "'CHECKBOX'", "'NUMBER'", "'DATE'", "'horizontal'", "'vertical'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'formLayout:'", "','", "'formInputs:'", "'['", "']'", "'name'", "':'", "'type'", "'RANGE'", "'min:'", "'max:'", "'SELECT'", "'options:'", "'{'", "'}'", "'optionType:'", "'data'", "'data:'", "'enum'", "'number'", "'range:'", "'SEARCH'", "'type:'", "'GROUP'", "'groupInputs:'", "'label:'", "'value:'", "'TEXT'", "'CHECKBOX'", "'NUMBER'", "'horizontal'", "'vertical'"
     };
+    public static final int RULE_STRING=4;
+    public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
+    public static final int T__37=37;
     public static final int T__16=16;
+    public static final int T__38=38;
     public static final int T__17=17;
+    public static final int T__39=39;
     public static final int T__18=18;
     public static final int T__11=11;
+    public static final int T__33=33;
     public static final int T__12=12;
+    public static final int T__34=34;
     public static final int T__13=13;
+    public static final int T__35=35;
     public static final int T__14=14;
+    public static final int T__36=36;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_ID=6;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -44,27 +59,11 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
-    public static final int T__20=20;
-    public static final int T__21=21;
-    public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
-    public static final int T__33=33;
-    public static final int T__34=34;
-    public static final int T__35=35;
-    public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
     public static final int T__40=40;
     public static final int T__41=41;
+    public static final int T__20=20;
     public static final int T__42=42;
-    public static final int T__43=43;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -601,7 +600,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormInputBasic"
-    // InternalVFormDsl.g:248:1: ruleFormInputBasic returns [EObject current=null] : (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleInputType ) ) ) ;
+    // InternalVFormDsl.g:248:1: ruleFormInputBasic returns [EObject current=null] : (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleBasicInputType ) ) ) ;
     public final EObject ruleFormInputBasic() throws RecognitionException {
         EObject current = null;
 
@@ -617,11 +616,11 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:254:2: ( (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleInputType ) ) ) )
-            // InternalVFormDsl.g:255:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleInputType ) ) )
+            // InternalVFormDsl.g:254:2: ( (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleBasicInputType ) ) ) )
+            // InternalVFormDsl.g:255:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleBasicInputType ) ) )
             {
-            // InternalVFormDsl.g:255:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleInputType ) ) )
-            // InternalVFormDsl.g:256:3: otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleInputType ) )
+            // InternalVFormDsl.g:255:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleBasicInputType ) ) )
+            // InternalVFormDsl.g:256:3: otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleBasicInputType ) )
             {
             otherlv_0=(Token)match(input,16,FOLLOW_8); 
 
@@ -665,17 +664,17 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getFormInputBasicAccess().getColonKeyword_4());
             		
-            // InternalVFormDsl.g:290:3: ( (lv_type_5_0= ruleInputType ) )
-            // InternalVFormDsl.g:291:4: (lv_type_5_0= ruleInputType )
+            // InternalVFormDsl.g:290:3: ( (lv_type_5_0= ruleBasicInputType ) )
+            // InternalVFormDsl.g:291:4: (lv_type_5_0= ruleBasicInputType )
             {
-            // InternalVFormDsl.g:291:4: (lv_type_5_0= ruleInputType )
-            // InternalVFormDsl.g:292:5: lv_type_5_0= ruleInputType
+            // InternalVFormDsl.g:291:4: (lv_type_5_0= ruleBasicInputType )
+            // InternalVFormDsl.g:292:5: lv_type_5_0= ruleBasicInputType
             {
 
-            					newCompositeNode(grammarAccess.getFormInputBasicAccess().getTypeInputTypeEnumRuleCall_5_0());
+            					newCompositeNode(grammarAccess.getFormInputBasicAccess().getTypeBasicInputTypeEnumRuleCall_5_0());
             				
             pushFollow(FOLLOW_2);
-            lv_type_5_0=ruleInputType();
+            lv_type_5_0=ruleBasicInputType();
 
             state._fsp--;
 
@@ -687,7 +686,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             						current,
             						"type",
             						lv_type_5_0,
-            						"cafev.vform.VFormDsl.InputType");
+            						"cafev.vform.VFormDsl.BasicInputType");
             					afterParserOrEnumRuleCall();
             				
 
@@ -3203,29 +3202,24 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleIntData"
 
 
-    // $ANTLR start "ruleInputType"
-    // InternalVFormDsl.g:1382:1: ruleInputType returns [Enumerator current=null] : ( (enumLiteral_0= 'TEXT' ) | (enumLiteral_1= 'CHECKBOX' ) | (enumLiteral_2= 'NUMBER' ) | (enumLiteral_3= 'DATE' ) | (enumLiteral_4= 'RANGE' ) | (enumLiteral_5= 'SELECT' ) | (enumLiteral_6= 'SEARCH' ) | (enumLiteral_7= 'GROUP' ) ) ;
-    public final Enumerator ruleInputType() throws RecognitionException {
+    // $ANTLR start "ruleBasicInputType"
+    // InternalVFormDsl.g:1382:1: ruleBasicInputType returns [Enumerator current=null] : ( (enumLiteral_0= 'TEXT' ) | (enumLiteral_1= 'CHECKBOX' ) | (enumLiteral_2= 'NUMBER' ) ) ;
+    public final Enumerator ruleBasicInputType() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
         Token enumLiteral_2=null;
-        Token enumLiteral_3=null;
-        Token enumLiteral_4=null;
-        Token enumLiteral_5=null;
-        Token enumLiteral_6=null;
-        Token enumLiteral_7=null;
 
 
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:1388:2: ( ( (enumLiteral_0= 'TEXT' ) | (enumLiteral_1= 'CHECKBOX' ) | (enumLiteral_2= 'NUMBER' ) | (enumLiteral_3= 'DATE' ) | (enumLiteral_4= 'RANGE' ) | (enumLiteral_5= 'SELECT' ) | (enumLiteral_6= 'SEARCH' ) | (enumLiteral_7= 'GROUP' ) ) )
-            // InternalVFormDsl.g:1389:2: ( (enumLiteral_0= 'TEXT' ) | (enumLiteral_1= 'CHECKBOX' ) | (enumLiteral_2= 'NUMBER' ) | (enumLiteral_3= 'DATE' ) | (enumLiteral_4= 'RANGE' ) | (enumLiteral_5= 'SELECT' ) | (enumLiteral_6= 'SEARCH' ) | (enumLiteral_7= 'GROUP' ) )
+            // InternalVFormDsl.g:1388:2: ( ( (enumLiteral_0= 'TEXT' ) | (enumLiteral_1= 'CHECKBOX' ) | (enumLiteral_2= 'NUMBER' ) ) )
+            // InternalVFormDsl.g:1389:2: ( (enumLiteral_0= 'TEXT' ) | (enumLiteral_1= 'CHECKBOX' ) | (enumLiteral_2= 'NUMBER' ) )
             {
-            // InternalVFormDsl.g:1389:2: ( (enumLiteral_0= 'TEXT' ) | (enumLiteral_1= 'CHECKBOX' ) | (enumLiteral_2= 'NUMBER' ) | (enumLiteral_3= 'DATE' ) | (enumLiteral_4= 'RANGE' ) | (enumLiteral_5= 'SELECT' ) | (enumLiteral_6= 'SEARCH' ) | (enumLiteral_7= 'GROUP' ) )
-            int alt9=8;
+            // InternalVFormDsl.g:1389:2: ( (enumLiteral_0= 'TEXT' ) | (enumLiteral_1= 'CHECKBOX' ) | (enumLiteral_2= 'NUMBER' ) )
+            int alt9=3;
             switch ( input.LA(1) ) {
             case 38:
                 {
@@ -3240,31 +3234,6 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             case 40:
                 {
                 alt9=3;
-                }
-                break;
-            case 41:
-                {
-                alt9=4;
-                }
-                break;
-            case 19:
-                {
-                alt9=5;
-                }
-                break;
-            case 22:
-                {
-                alt9=6;
-                }
-                break;
-            case 32:
-                {
-                alt9=7;
-                }
-                break;
-            case 34:
-                {
-                alt9=8;
                 }
                 break;
             default:
@@ -3283,8 +3252,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_0=(Token)match(input,38,FOLLOW_2); 
 
-                    				current = grammarAccess.getInputTypeAccess().getTEXTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getInputTypeAccess().getTEXTEnumLiteralDeclaration_0());
+                    				current = grammarAccess.getBasicInputTypeAccess().getTEXTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getBasicInputTypeAccess().getTEXTEnumLiteralDeclaration_0());
                     			
 
                     }
@@ -3300,8 +3269,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_1=(Token)match(input,39,FOLLOW_2); 
 
-                    				current = grammarAccess.getInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1());
+                    				current = grammarAccess.getBasicInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getBasicInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1());
                     			
 
                     }
@@ -3317,93 +3286,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_2=(Token)match(input,40,FOLLOW_2); 
 
-                    				current = grammarAccess.getInputTypeAccess().getNUMBEREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_2, grammarAccess.getInputTypeAccess().getNUMBEREnumLiteralDeclaration_2());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalVFormDsl.g:1414:3: (enumLiteral_3= 'DATE' )
-                    {
-                    // InternalVFormDsl.g:1414:3: (enumLiteral_3= 'DATE' )
-                    // InternalVFormDsl.g:1415:4: enumLiteral_3= 'DATE'
-                    {
-                    enumLiteral_3=(Token)match(input,41,FOLLOW_2); 
-
-                    				current = grammarAccess.getInputTypeAccess().getDATEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_3, grammarAccess.getInputTypeAccess().getDATEEnumLiteralDeclaration_3());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // InternalVFormDsl.g:1422:3: (enumLiteral_4= 'RANGE' )
-                    {
-                    // InternalVFormDsl.g:1422:3: (enumLiteral_4= 'RANGE' )
-                    // InternalVFormDsl.g:1423:4: enumLiteral_4= 'RANGE'
-                    {
-                    enumLiteral_4=(Token)match(input,19,FOLLOW_2); 
-
-                    				current = grammarAccess.getInputTypeAccess().getRANGEEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_4, grammarAccess.getInputTypeAccess().getRANGEEnumLiteralDeclaration_4());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 6 :
-                    // InternalVFormDsl.g:1430:3: (enumLiteral_5= 'SELECT' )
-                    {
-                    // InternalVFormDsl.g:1430:3: (enumLiteral_5= 'SELECT' )
-                    // InternalVFormDsl.g:1431:4: enumLiteral_5= 'SELECT'
-                    {
-                    enumLiteral_5=(Token)match(input,22,FOLLOW_2); 
-
-                    				current = grammarAccess.getInputTypeAccess().getSELECTEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_5, grammarAccess.getInputTypeAccess().getSELECTEnumLiteralDeclaration_5());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 7 :
-                    // InternalVFormDsl.g:1438:3: (enumLiteral_6= 'SEARCH' )
-                    {
-                    // InternalVFormDsl.g:1438:3: (enumLiteral_6= 'SEARCH' )
-                    // InternalVFormDsl.g:1439:4: enumLiteral_6= 'SEARCH'
-                    {
-                    enumLiteral_6=(Token)match(input,32,FOLLOW_2); 
-
-                    				current = grammarAccess.getInputTypeAccess().getSEARCHEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_6, grammarAccess.getInputTypeAccess().getSEARCHEnumLiteralDeclaration_6());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 8 :
-                    // InternalVFormDsl.g:1446:3: (enumLiteral_7= 'GROUP' )
-                    {
-                    // InternalVFormDsl.g:1446:3: (enumLiteral_7= 'GROUP' )
-                    // InternalVFormDsl.g:1447:4: enumLiteral_7= 'GROUP'
-                    {
-                    enumLiteral_7=(Token)match(input,34,FOLLOW_2); 
-
-                    				current = grammarAccess.getInputTypeAccess().getGROUPEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_7, grammarAccess.getInputTypeAccess().getGROUPEnumLiteralDeclaration_7());
+                    				current = grammarAccess.getBasicInputTypeAccess().getNUMBEREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getBasicInputTypeAccess().getNUMBEREnumLiteralDeclaration_2());
                     			
 
                     }
@@ -3430,11 +3314,11 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleInputType"
+    // $ANTLR end "ruleBasicInputType"
 
 
     // $ANTLR start "ruleLayout"
-    // InternalVFormDsl.g:1457:1: ruleLayout returns [Enumerator current=null] : ( (enumLiteral_0= 'horizontal' ) | (enumLiteral_1= 'vertical' ) ) ;
+    // InternalVFormDsl.g:1417:1: ruleLayout returns [Enumerator current=null] : ( (enumLiteral_0= 'horizontal' ) | (enumLiteral_1= 'vertical' ) ) ;
     public final Enumerator ruleLayout() throws RecognitionException {
         Enumerator current = null;
 
@@ -3445,17 +3329,17 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:1463:2: ( ( (enumLiteral_0= 'horizontal' ) | (enumLiteral_1= 'vertical' ) ) )
-            // InternalVFormDsl.g:1464:2: ( (enumLiteral_0= 'horizontal' ) | (enumLiteral_1= 'vertical' ) )
+            // InternalVFormDsl.g:1423:2: ( ( (enumLiteral_0= 'horizontal' ) | (enumLiteral_1= 'vertical' ) ) )
+            // InternalVFormDsl.g:1424:2: ( (enumLiteral_0= 'horizontal' ) | (enumLiteral_1= 'vertical' ) )
             {
-            // InternalVFormDsl.g:1464:2: ( (enumLiteral_0= 'horizontal' ) | (enumLiteral_1= 'vertical' ) )
+            // InternalVFormDsl.g:1424:2: ( (enumLiteral_0= 'horizontal' ) | (enumLiteral_1= 'vertical' ) )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==42) ) {
+            if ( (LA10_0==41) ) {
                 alt10=1;
             }
-            else if ( (LA10_0==43) ) {
+            else if ( (LA10_0==42) ) {
                 alt10=2;
             }
             else {
@@ -3466,12 +3350,12 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalVFormDsl.g:1465:3: (enumLiteral_0= 'horizontal' )
+                    // InternalVFormDsl.g:1425:3: (enumLiteral_0= 'horizontal' )
                     {
-                    // InternalVFormDsl.g:1465:3: (enumLiteral_0= 'horizontal' )
-                    // InternalVFormDsl.g:1466:4: enumLiteral_0= 'horizontal'
+                    // InternalVFormDsl.g:1425:3: (enumLiteral_0= 'horizontal' )
+                    // InternalVFormDsl.g:1426:4: enumLiteral_0= 'horizontal'
                     {
-                    enumLiteral_0=(Token)match(input,42,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,41,FOLLOW_2); 
 
                     				current = grammarAccess.getLayoutAccess().getHorizontalEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getLayoutAccess().getHorizontalEnumLiteralDeclaration_0());
@@ -3483,12 +3367,12 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalVFormDsl.g:1473:3: (enumLiteral_1= 'vertical' )
+                    // InternalVFormDsl.g:1433:3: (enumLiteral_1= 'vertical' )
                     {
-                    // InternalVFormDsl.g:1473:3: (enumLiteral_1= 'vertical' )
-                    // InternalVFormDsl.g:1474:4: enumLiteral_1= 'vertical'
+                    // InternalVFormDsl.g:1433:3: (enumLiteral_1= 'vertical' )
+                    // InternalVFormDsl.g:1434:4: enumLiteral_1= 'vertical'
                     {
-                    enumLiteral_1=(Token)match(input,43,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,42,FOLLOW_2); 
 
                     				current = grammarAccess.getLayoutAccess().getVerticalEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getLayoutAccess().getVerticalEnumLiteralDeclaration_1());
@@ -3572,7 +3456,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000C0000000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000060000000000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
@@ -3580,7 +3464,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000003C500480000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000001C000000000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000020L});

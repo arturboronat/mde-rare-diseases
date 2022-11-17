@@ -154,7 +154,7 @@ public class VFormDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     FormInputBasic returns FormInputBasic
 	 *
 	 * Constraint:
-	 *     (name=STRING type=InputType)
+	 *     (name=STRING type=BasicInputType)
 	 * </pre>
 	 */
 	protected void sequence_FormInputBasic(ISerializationContext context, FormInputBasic semanticObject) {
@@ -166,7 +166,7 @@ public class VFormDslSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getFormInputBasicAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getFormInputBasicAccess().getTypeInputTypeEnumRuleCall_5_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getFormInputBasicAccess().getTypeBasicInputTypeEnumRuleCall_5_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	

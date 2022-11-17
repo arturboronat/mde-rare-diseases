@@ -524,16 +524,16 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Rule InputType
-ruleInputType
+// Rule BasicInputType
+ruleBasicInputType
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getInputTypeAccess().getAlternatives()); }
-		(rule__InputType__Alternatives)
-		{ after(grammarAccess.getInputTypeAccess().getAlternatives()); }
+		{ before(grammarAccess.getBasicInputTypeAccess().getAlternatives()); }
+		(rule__BasicInputType__Alternatives)
+		{ after(grammarAccess.getBasicInputTypeAccess().getAlternatives()); }
 	)
 ;
 finally {
@@ -670,57 +670,27 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__InputType__Alternatives
+rule__BasicInputType__Alternatives
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getInputTypeAccess().getTEXTEnumLiteralDeclaration_0()); }
+		{ before(grammarAccess.getBasicInputTypeAccess().getTEXTEnumLiteralDeclaration_0()); }
 		('TEXT')
-		{ after(grammarAccess.getInputTypeAccess().getTEXTEnumLiteralDeclaration_0()); }
+		{ after(grammarAccess.getBasicInputTypeAccess().getTEXTEnumLiteralDeclaration_0()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1()); }
+		{ before(grammarAccess.getBasicInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1()); }
 		('CHECKBOX')
-		{ after(grammarAccess.getInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1()); }
+		{ after(grammarAccess.getBasicInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getInputTypeAccess().getNUMBEREnumLiteralDeclaration_2()); }
+		{ before(grammarAccess.getBasicInputTypeAccess().getNUMBEREnumLiteralDeclaration_2()); }
 		('NUMBER')
-		{ after(grammarAccess.getInputTypeAccess().getNUMBEREnumLiteralDeclaration_2()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getInputTypeAccess().getDATEEnumLiteralDeclaration_3()); }
-		('DATE')
-		{ after(grammarAccess.getInputTypeAccess().getDATEEnumLiteralDeclaration_3()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getInputTypeAccess().getRANGEEnumLiteralDeclaration_4()); }
-		('RANGE')
-		{ after(grammarAccess.getInputTypeAccess().getRANGEEnumLiteralDeclaration_4()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getInputTypeAccess().getSELECTEnumLiteralDeclaration_5()); }
-		('SELECT')
-		{ after(grammarAccess.getInputTypeAccess().getSELECTEnumLiteralDeclaration_5()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getInputTypeAccess().getSEARCHEnumLiteralDeclaration_6()); }
-		('SEARCH')
-		{ after(grammarAccess.getInputTypeAccess().getSEARCHEnumLiteralDeclaration_6()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getInputTypeAccess().getGROUPEnumLiteralDeclaration_7()); }
-		('GROUP')
-		{ after(grammarAccess.getInputTypeAccess().getGROUPEnumLiteralDeclaration_7()); }
+		{ after(grammarAccess.getBasicInputTypeAccess().getNUMBEREnumLiteralDeclaration_2()); }
 	)
 ;
 finally {
@@ -3703,9 +3673,9 @@ rule__FormInputBasic__TypeAssignment_5
 	}
 :
 	(
-		{ before(grammarAccess.getFormInputBasicAccess().getTypeInputTypeEnumRuleCall_5_0()); }
-		ruleInputType
-		{ after(grammarAccess.getFormInputBasicAccess().getTypeInputTypeEnumRuleCall_5_0()); }
+		{ before(grammarAccess.getFormInputBasicAccess().getTypeBasicInputTypeEnumRuleCall_5_0()); }
+		ruleBasicInputType
+		{ after(grammarAccess.getFormInputBasicAccess().getTypeBasicInputTypeEnumRuleCall_5_0()); }
 	)
 ;
 finally {

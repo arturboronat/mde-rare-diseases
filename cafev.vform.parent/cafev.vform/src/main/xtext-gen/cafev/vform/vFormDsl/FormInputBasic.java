@@ -24,27 +24,27 @@ public interface FormInputBasic extends FormInput
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' attribute.
-   * The literals are from the enumeration {@link cafev.vform.vFormDsl.InputType}.
+   * The literals are from the enumeration {@link cafev.vform.vFormDsl.BasicInputType}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' attribute.
-   * @see cafev.vform.vFormDsl.InputType
-   * @see #setType(InputType)
+   * @see cafev.vform.vFormDsl.BasicInputType
+   * @see #setType(BasicInputType)
    * @see cafev.vform.vFormDsl.VFormDslPackage#getFormInputBasic_Type()
    * @model
    * @generated
    */
-  InputType getType();
+  BasicInputType getType();
 
   /**
    * Sets the value of the '{@link cafev.vform.vFormDsl.FormInputBasic#getType <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' attribute.
-   * @see cafev.vform.vFormDsl.InputType
+   * @see cafev.vform.vFormDsl.BasicInputType
    * @see #getType()
    * @generated
    */
-  void setType(InputType value);
+  void setType(BasicInputType value);
 
 } // FormInputBasic

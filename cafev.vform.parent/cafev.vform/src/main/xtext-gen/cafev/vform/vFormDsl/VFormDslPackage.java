@@ -672,14 +672,14 @@ public interface VFormDslPackage extends EPackage
   int INT_DATA_FEATURE_COUNT = DATA_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link cafev.vform.vFormDsl.InputType <em>Input Type</em>}' enum.
+   * The meta object id for the '{@link cafev.vform.vFormDsl.BasicInputType <em>Basic Input Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see cafev.vform.vFormDsl.InputType
-   * @see cafev.vform.vFormDsl.impl.VFormDslPackageImpl#getInputType()
+   * @see cafev.vform.vFormDsl.BasicInputType
+   * @see cafev.vform.vFormDsl.impl.VFormDslPackageImpl#getBasicInputType()
    * @generated
    */
-  int INPUT_TYPE = 19;
+  int BASIC_INPUT_TYPE = 19;
 
   /**
    * The meta object id for the '{@link cafev.vform.vFormDsl.Layout <em>Layout</em>}' enum.
@@ -1114,14 +1114,14 @@ public interface VFormDslPackage extends EPackage
   EAttribute getIntData_Value();
 
   /**
-   * Returns the meta object for enum '{@link cafev.vform.vFormDsl.InputType <em>Input Type</em>}'.
+   * Returns the meta object for enum '{@link cafev.vform.vFormDsl.BasicInputType <em>Basic Input Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Input Type</em>'.
-   * @see cafev.vform.vFormDsl.InputType
+   * @return the meta object for enum '<em>Basic Input Type</em>'.
+   * @see cafev.vform.vFormDsl.BasicInputType
    * @generated
    */
-  EEnum getInputType();
+  EEnum getBasicInputType();
 
   /**
    * Returns the meta object for enum '{@link cafev.vform.vFormDsl.Layout <em>Layout</em>}'.
@@ -1515,14 +1515,14 @@ public interface VFormDslPackage extends EPackage
     EAttribute INT_DATA__VALUE = eINSTANCE.getIntData_Value();
 
     /**
-     * The meta object literal for the '{@link cafev.vform.vFormDsl.InputType <em>Input Type</em>}' enum.
+     * The meta object literal for the '{@link cafev.vform.vFormDsl.BasicInputType <em>Basic Input Type</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see cafev.vform.vFormDsl.InputType
-     * @see cafev.vform.vFormDsl.impl.VFormDslPackageImpl#getInputType()
+     * @see cafev.vform.vFormDsl.BasicInputType
+     * @see cafev.vform.vFormDsl.impl.VFormDslPackageImpl#getBasicInputType()
      * @generated
      */
-    EEnum INPUT_TYPE = eINSTANCE.getInputType();
+    EEnum BASIC_INPUT_TYPE = eINSTANCE.getBasicInputType();
 
     /**
      * The meta object literal for the '{@link cafev.vform.vFormDsl.Layout <em>Layout</em>}' enum.

@@ -3,6 +3,7 @@
  */
 package cafev.vform.vFormDsl.impl;
 
+import cafev.vform.vFormDsl.BasicInputType;
 import cafev.vform.vFormDsl.Data;
 import cafev.vform.vFormDsl.DataOption;
 import cafev.vform.vFormDsl.DataOptionItem;
@@ -14,7 +15,6 @@ import cafev.vform.vFormDsl.FormInputRange;
 import cafev.vform.vFormDsl.FormInputSearch;
 import cafev.vform.vFormDsl.FormInputSelect;
 import cafev.vform.vFormDsl.FormLayout;
-import cafev.vform.vFormDsl.InputType;
 import cafev.vform.vFormDsl.IntData;
 import cafev.vform.vFormDsl.IntOptionItem;
 import cafev.vform.vFormDsl.Layout;
@@ -181,7 +181,7 @@ public class VFormDslPackageImpl extends EPackageImpl implements VFormDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum inputTypeEEnum = null;
+  private EEnum basicInputTypeEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -699,9 +699,9 @@ public class VFormDslPackageImpl extends EPackageImpl implements VFormDslPackage
    * @generated
    */
   @Override
-  public EEnum getInputType()
+  public EEnum getBasicInputType()
   {
-    return inputTypeEEnum;
+    return basicInputTypeEEnum;
   }
 
   /**
@@ -806,7 +806,7 @@ public class VFormDslPackageImpl extends EPackageImpl implements VFormDslPackage
     createEAttribute(intDataEClass, INT_DATA__VALUE);
 
     // Create enums
-    inputTypeEEnum = createEEnum(INPUT_TYPE);
+    basicInputTypeEEnum = createEEnum(BASIC_INPUT_TYPE);
     layoutEEnum = createEEnum(LAYOUT);
   }
 
@@ -865,7 +865,7 @@ public class VFormDslPackageImpl extends EPackageImpl implements VFormDslPackage
     initEAttribute(getFormInput_Name(), ecorePackage.getEString(), "name", null, 0, 1, FormInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formInputBasicEClass, FormInputBasic.class, "FormInputBasic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFormInputBasic_Type(), this.getInputType(), "type", null, 0, 1, FormInputBasic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFormInputBasic_Type(), this.getBasicInputType(), "type", null, 0, 1, FormInputBasic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formInputRangeEClass, FormInputRange.class, "FormInputRange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFormInputRange_Min(), ecorePackage.getEInt(), "min", null, 0, 1, FormInputRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -914,15 +914,10 @@ public class VFormDslPackageImpl extends EPackageImpl implements VFormDslPackage
     initEAttribute(getIntData_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
-    initEEnum(inputTypeEEnum, InputType.class, "InputType");
-    addEEnumLiteral(inputTypeEEnum, InputType.TEXT);
-    addEEnumLiteral(inputTypeEEnum, InputType.CHECKBOX);
-    addEEnumLiteral(inputTypeEEnum, InputType.NUMBER);
-    addEEnumLiteral(inputTypeEEnum, InputType.DATE);
-    addEEnumLiteral(inputTypeEEnum, InputType.RANGE);
-    addEEnumLiteral(inputTypeEEnum, InputType.SELECT);
-    addEEnumLiteral(inputTypeEEnum, InputType.SEARCH);
-    addEEnumLiteral(inputTypeEEnum, InputType.GROUP);
+    initEEnum(basicInputTypeEEnum, BasicInputType.class, "BasicInputType");
+    addEEnumLiteral(basicInputTypeEEnum, BasicInputType.TEXT);
+    addEEnumLiteral(basicInputTypeEEnum, BasicInputType.CHECKBOX);
+    addEEnumLiteral(basicInputTypeEEnum, BasicInputType.NUMBER);
 
     initEEnum(layoutEEnum, Layout.class, "Layout");
     addEEnumLiteral(layoutEEnum, Layout.HORIZONTAL);

@@ -22,18 +22,33 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalVFormDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'TEXT'", "'CHECKBOX'", "'NUMBER'", "'DATE'", "'RANGE'", "'SELECT'", "'SEARCH'", "'GROUP'", "'horizontal'", "'vertical'", "'formLayout:'", "','", "'formInputs:'", "'['", "']'", "'name'", "':'", "'type'", "'min:'", "'max:'", "'options:'", "'{'", "'}'", "'optionType:'", "'data'", "'data:'", "'enum'", "'number'", "'range:'", "'type:'", "'groupInputs:'", "'label:'", "'value:'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'TEXT'", "'CHECKBOX'", "'NUMBER'", "'horizontal'", "'vertical'", "'formLayout:'", "','", "'formInputs:'", "'['", "']'", "'name'", "':'", "'type'", "'RANGE'", "'min:'", "'max:'", "'SELECT'", "'options:'", "'{'", "'}'", "'optionType:'", "'data'", "'data:'", "'enum'", "'number'", "'range:'", "'SEARCH'", "'type:'", "'GROUP'", "'groupInputs:'", "'label:'", "'value:'"
     };
+    public static final int RULE_STRING=4;
+    public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
+    public static final int T__37=37;
     public static final int T__16=16;
+    public static final int T__38=38;
     public static final int T__17=17;
+    public static final int T__39=39;
     public static final int T__18=18;
     public static final int T__11=11;
+    public static final int T__33=33;
     public static final int T__12=12;
+    public static final int T__34=34;
     public static final int T__13=13;
+    public static final int T__35=35;
     public static final int T__14=14;
+    public static final int T__36=36;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_ID=6;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -44,27 +59,11 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
-    public static final int T__20=20;
-    public static final int T__21=21;
-    public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
-    public static final int T__33=33;
-    public static final int T__34=34;
-    public static final int T__35=35;
-    public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
     public static final int T__40=40;
     public static final int T__41=41;
+    public static final int T__20=20;
     public static final int T__42=42;
-    public static final int T__43=43;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -1564,32 +1563,32 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "ruleIntData"
 
 
-    // $ANTLR start "ruleInputType"
-    // InternalVFormDsl.g:528:1: ruleInputType : ( ( rule__InputType__Alternatives ) ) ;
-    public final void ruleInputType() throws RecognitionException {
+    // $ANTLR start "ruleBasicInputType"
+    // InternalVFormDsl.g:528:1: ruleBasicInputType : ( ( rule__BasicInputType__Alternatives ) ) ;
+    public final void ruleBasicInputType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:532:1: ( ( ( rule__InputType__Alternatives ) ) )
-            // InternalVFormDsl.g:533:2: ( ( rule__InputType__Alternatives ) )
+            // InternalVFormDsl.g:532:1: ( ( ( rule__BasicInputType__Alternatives ) ) )
+            // InternalVFormDsl.g:533:2: ( ( rule__BasicInputType__Alternatives ) )
             {
-            // InternalVFormDsl.g:533:2: ( ( rule__InputType__Alternatives ) )
-            // InternalVFormDsl.g:534:3: ( rule__InputType__Alternatives )
+            // InternalVFormDsl.g:533:2: ( ( rule__BasicInputType__Alternatives ) )
+            // InternalVFormDsl.g:534:3: ( rule__BasicInputType__Alternatives )
             {
-             before(grammarAccess.getInputTypeAccess().getAlternatives()); 
-            // InternalVFormDsl.g:535:3: ( rule__InputType__Alternatives )
-            // InternalVFormDsl.g:535:4: rule__InputType__Alternatives
+             before(grammarAccess.getBasicInputTypeAccess().getAlternatives()); 
+            // InternalVFormDsl.g:535:3: ( rule__BasicInputType__Alternatives )
+            // InternalVFormDsl.g:535:4: rule__BasicInputType__Alternatives
             {
             pushFollow(FOLLOW_2);
-            rule__InputType__Alternatives();
+            rule__BasicInputType__Alternatives();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getInputTypeAccess().getAlternatives()); 
+             after(grammarAccess.getBasicInputTypeAccess().getAlternatives()); 
 
             }
 
@@ -1608,7 +1607,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "ruleInputType"
+    // $ANTLR end "ruleBasicInputType"
 
 
     // $ANTLR start "ruleLayout"
@@ -1792,21 +1791,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
             int alt2=3;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==34) ) {
+            if ( (LA2_0==31) ) {
                 switch ( input.LA(2) ) {
-                case 37:
+                case 32:
+                    {
+                    alt2=1;
+                    }
+                    break;
+                case 34:
                     {
                     alt2=2;
                     }
                     break;
-                case 38:
-                    {
-                    alt2=3;
-                    }
-                    break;
                 case 35:
                     {
-                    alt2=1;
+                    alt2=3;
                     }
                     break;
                 default:
@@ -1918,7 +1917,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
                 alt3=2;
                 }
                 break;
-            case 32:
+            case 29:
                 {
                 alt3=3;
                 }
@@ -2016,19 +2015,19 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==32) ) {
+            if ( (LA4_0==29) ) {
                 int LA4_1 = input.LA(2);
 
-                if ( (LA4_1==42) ) {
+                if ( (LA4_1==41) ) {
                     int LA4_2 = input.LA(3);
 
                     if ( (LA4_2==RULE_STRING) ) {
                         int LA4_3 = input.LA(4);
 
-                        if ( (LA4_3==22) ) {
+                        if ( (LA4_3==17) ) {
                             int LA4_4 = input.LA(5);
 
-                            if ( (LA4_4==43) ) {
+                            if ( (LA4_4==42) ) {
                                 int LA4_5 = input.LA(6);
 
                                 if ( (LA4_5==RULE_INT) ) {
@@ -2134,15 +2133,15 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Data__Alternatives"
 
 
-    // $ANTLR start "rule__InputType__Alternatives"
-    // InternalVFormDsl.g:673:1: rule__InputType__Alternatives : ( ( ( 'TEXT' ) ) | ( ( 'CHECKBOX' ) ) | ( ( 'NUMBER' ) ) | ( ( 'DATE' ) ) | ( ( 'RANGE' ) ) | ( ( 'SELECT' ) ) | ( ( 'SEARCH' ) ) | ( ( 'GROUP' ) ) );
-    public final void rule__InputType__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__BasicInputType__Alternatives"
+    // InternalVFormDsl.g:673:1: rule__BasicInputType__Alternatives : ( ( ( 'TEXT' ) ) | ( ( 'CHECKBOX' ) ) | ( ( 'NUMBER' ) ) );
+    public final void rule__BasicInputType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:677:1: ( ( ( 'TEXT' ) ) | ( ( 'CHECKBOX' ) ) | ( ( 'NUMBER' ) ) | ( ( 'DATE' ) ) | ( ( 'RANGE' ) ) | ( ( 'SELECT' ) ) | ( ( 'SEARCH' ) ) | ( ( 'GROUP' ) ) )
-            int alt5=8;
+            // InternalVFormDsl.g:677:1: ( ( ( 'TEXT' ) ) | ( ( 'CHECKBOX' ) ) | ( ( 'NUMBER' ) ) )
+            int alt5=3;
             switch ( input.LA(1) ) {
             case 11:
                 {
@@ -2159,31 +2158,6 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
                 alt5=3;
                 }
                 break;
-            case 14:
-                {
-                alt5=4;
-                }
-                break;
-            case 15:
-                {
-                alt5=5;
-                }
-                break;
-            case 16:
-                {
-                alt5=6;
-                }
-                break;
-            case 17:
-                {
-                alt5=7;
-                }
-                break;
-            case 18:
-                {
-                alt5=8;
-                }
-                break;
             default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 5, 0, input);
@@ -2198,7 +2172,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
                     // InternalVFormDsl.g:678:2: ( ( 'TEXT' ) )
                     // InternalVFormDsl.g:679:3: ( 'TEXT' )
                     {
-                     before(grammarAccess.getInputTypeAccess().getTEXTEnumLiteralDeclaration_0()); 
+                     before(grammarAccess.getBasicInputTypeAccess().getTEXTEnumLiteralDeclaration_0()); 
                     // InternalVFormDsl.g:680:3: ( 'TEXT' )
                     // InternalVFormDsl.g:680:4: 'TEXT'
                     {
@@ -2206,7 +2180,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getInputTypeAccess().getTEXTEnumLiteralDeclaration_0()); 
+                     after(grammarAccess.getBasicInputTypeAccess().getTEXTEnumLiteralDeclaration_0()); 
 
                     }
 
@@ -2219,7 +2193,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
                     // InternalVFormDsl.g:684:2: ( ( 'CHECKBOX' ) )
                     // InternalVFormDsl.g:685:3: ( 'CHECKBOX' )
                     {
-                     before(grammarAccess.getInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1()); 
+                     before(grammarAccess.getBasicInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1()); 
                     // InternalVFormDsl.g:686:3: ( 'CHECKBOX' )
                     // InternalVFormDsl.g:686:4: 'CHECKBOX'
                     {
@@ -2227,7 +2201,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1()); 
+                     after(grammarAccess.getBasicInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1()); 
 
                     }
 
@@ -2240,7 +2214,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
                     // InternalVFormDsl.g:690:2: ( ( 'NUMBER' ) )
                     // InternalVFormDsl.g:691:3: ( 'NUMBER' )
                     {
-                     before(grammarAccess.getInputTypeAccess().getNUMBEREnumLiteralDeclaration_2()); 
+                     before(grammarAccess.getBasicInputTypeAccess().getNUMBEREnumLiteralDeclaration_2()); 
                     // InternalVFormDsl.g:692:3: ( 'NUMBER' )
                     // InternalVFormDsl.g:692:4: 'NUMBER'
                     {
@@ -2248,112 +2222,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getInputTypeAccess().getNUMBEREnumLiteralDeclaration_2()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalVFormDsl.g:696:2: ( ( 'DATE' ) )
-                    {
-                    // InternalVFormDsl.g:696:2: ( ( 'DATE' ) )
-                    // InternalVFormDsl.g:697:3: ( 'DATE' )
-                    {
-                     before(grammarAccess.getInputTypeAccess().getDATEEnumLiteralDeclaration_3()); 
-                    // InternalVFormDsl.g:698:3: ( 'DATE' )
-                    // InternalVFormDsl.g:698:4: 'DATE'
-                    {
-                    match(input,14,FOLLOW_2); 
-
-                    }
-
-                     after(grammarAccess.getInputTypeAccess().getDATEEnumLiteralDeclaration_3()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // InternalVFormDsl.g:702:2: ( ( 'RANGE' ) )
-                    {
-                    // InternalVFormDsl.g:702:2: ( ( 'RANGE' ) )
-                    // InternalVFormDsl.g:703:3: ( 'RANGE' )
-                    {
-                     before(grammarAccess.getInputTypeAccess().getRANGEEnumLiteralDeclaration_4()); 
-                    // InternalVFormDsl.g:704:3: ( 'RANGE' )
-                    // InternalVFormDsl.g:704:4: 'RANGE'
-                    {
-                    match(input,15,FOLLOW_2); 
-
-                    }
-
-                     after(grammarAccess.getInputTypeAccess().getRANGEEnumLiteralDeclaration_4()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 6 :
-                    // InternalVFormDsl.g:708:2: ( ( 'SELECT' ) )
-                    {
-                    // InternalVFormDsl.g:708:2: ( ( 'SELECT' ) )
-                    // InternalVFormDsl.g:709:3: ( 'SELECT' )
-                    {
-                     before(grammarAccess.getInputTypeAccess().getSELECTEnumLiteralDeclaration_5()); 
-                    // InternalVFormDsl.g:710:3: ( 'SELECT' )
-                    // InternalVFormDsl.g:710:4: 'SELECT'
-                    {
-                    match(input,16,FOLLOW_2); 
-
-                    }
-
-                     after(grammarAccess.getInputTypeAccess().getSELECTEnumLiteralDeclaration_5()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 7 :
-                    // InternalVFormDsl.g:714:2: ( ( 'SEARCH' ) )
-                    {
-                    // InternalVFormDsl.g:714:2: ( ( 'SEARCH' ) )
-                    // InternalVFormDsl.g:715:3: ( 'SEARCH' )
-                    {
-                     before(grammarAccess.getInputTypeAccess().getSEARCHEnumLiteralDeclaration_6()); 
-                    // InternalVFormDsl.g:716:3: ( 'SEARCH' )
-                    // InternalVFormDsl.g:716:4: 'SEARCH'
-                    {
-                    match(input,17,FOLLOW_2); 
-
-                    }
-
-                     after(grammarAccess.getInputTypeAccess().getSEARCHEnumLiteralDeclaration_6()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 8 :
-                    // InternalVFormDsl.g:720:2: ( ( 'GROUP' ) )
-                    {
-                    // InternalVFormDsl.g:720:2: ( ( 'GROUP' ) )
-                    // InternalVFormDsl.g:721:3: ( 'GROUP' )
-                    {
-                     before(grammarAccess.getInputTypeAccess().getGROUPEnumLiteralDeclaration_7()); 
-                    // InternalVFormDsl.g:722:3: ( 'GROUP' )
-                    // InternalVFormDsl.g:722:4: 'GROUP'
-                    {
-                    match(input,18,FOLLOW_2); 
-
-                    }
-
-                     after(grammarAccess.getInputTypeAccess().getGROUPEnumLiteralDeclaration_7()); 
+                     after(grammarAccess.getBasicInputTypeAccess().getNUMBEREnumLiteralDeclaration_2()); 
 
                     }
 
@@ -2374,24 +2243,24 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__InputType__Alternatives"
+    // $ANTLR end "rule__BasicInputType__Alternatives"
 
 
     // $ANTLR start "rule__Layout__Alternatives"
-    // InternalVFormDsl.g:730:1: rule__Layout__Alternatives : ( ( ( 'horizontal' ) ) | ( ( 'vertical' ) ) );
+    // InternalVFormDsl.g:700:1: rule__Layout__Alternatives : ( ( ( 'horizontal' ) ) | ( ( 'vertical' ) ) );
     public final void rule__Layout__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:734:1: ( ( ( 'horizontal' ) ) | ( ( 'vertical' ) ) )
+            // InternalVFormDsl.g:704:1: ( ( ( 'horizontal' ) ) | ( ( 'vertical' ) ) )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==19) ) {
+            if ( (LA6_0==14) ) {
                 alt6=1;
             }
-            else if ( (LA6_0==20) ) {
+            else if ( (LA6_0==15) ) {
                 alt6=2;
             }
             else {
@@ -2402,16 +2271,16 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
             }
             switch (alt6) {
                 case 1 :
-                    // InternalVFormDsl.g:735:2: ( ( 'horizontal' ) )
+                    // InternalVFormDsl.g:705:2: ( ( 'horizontal' ) )
                     {
-                    // InternalVFormDsl.g:735:2: ( ( 'horizontal' ) )
-                    // InternalVFormDsl.g:736:3: ( 'horizontal' )
+                    // InternalVFormDsl.g:705:2: ( ( 'horizontal' ) )
+                    // InternalVFormDsl.g:706:3: ( 'horizontal' )
                     {
                      before(grammarAccess.getLayoutAccess().getHorizontalEnumLiteralDeclaration_0()); 
-                    // InternalVFormDsl.g:737:3: ( 'horizontal' )
-                    // InternalVFormDsl.g:737:4: 'horizontal'
+                    // InternalVFormDsl.g:707:3: ( 'horizontal' )
+                    // InternalVFormDsl.g:707:4: 'horizontal'
                     {
-                    match(input,19,FOLLOW_2); 
+                    match(input,14,FOLLOW_2); 
 
                     }
 
@@ -2423,16 +2292,16 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalVFormDsl.g:741:2: ( ( 'vertical' ) )
+                    // InternalVFormDsl.g:711:2: ( ( 'vertical' ) )
                     {
-                    // InternalVFormDsl.g:741:2: ( ( 'vertical' ) )
-                    // InternalVFormDsl.g:742:3: ( 'vertical' )
+                    // InternalVFormDsl.g:711:2: ( ( 'vertical' ) )
+                    // InternalVFormDsl.g:712:3: ( 'vertical' )
                     {
                      before(grammarAccess.getLayoutAccess().getVerticalEnumLiteralDeclaration_1()); 
-                    // InternalVFormDsl.g:743:3: ( 'vertical' )
-                    // InternalVFormDsl.g:743:4: 'vertical'
+                    // InternalVFormDsl.g:713:3: ( 'vertical' )
+                    // InternalVFormDsl.g:713:4: 'vertical'
                     {
-                    match(input,20,FOLLOW_2); 
+                    match(input,15,FOLLOW_2); 
 
                     }
 
@@ -2461,14 +2330,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__0"
-    // InternalVFormDsl.g:751:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
+    // InternalVFormDsl.g:721:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
     public final void rule__Model__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:755:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
-            // InternalVFormDsl.g:756:2: rule__Model__Group__0__Impl rule__Model__Group__1
+            // InternalVFormDsl.g:725:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
+            // InternalVFormDsl.g:726:2: rule__Model__Group__0__Impl rule__Model__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Model__Group__0__Impl();
@@ -2499,20 +2368,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__0__Impl"
-    // InternalVFormDsl.g:763:1: rule__Model__Group__0__Impl : ( 'formLayout:' ) ;
+    // InternalVFormDsl.g:733:1: rule__Model__Group__0__Impl : ( 'formLayout:' ) ;
     public final void rule__Model__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:767:1: ( ( 'formLayout:' ) )
-            // InternalVFormDsl.g:768:1: ( 'formLayout:' )
+            // InternalVFormDsl.g:737:1: ( ( 'formLayout:' ) )
+            // InternalVFormDsl.g:738:1: ( 'formLayout:' )
             {
-            // InternalVFormDsl.g:768:1: ( 'formLayout:' )
-            // InternalVFormDsl.g:769:2: 'formLayout:'
+            // InternalVFormDsl.g:738:1: ( 'formLayout:' )
+            // InternalVFormDsl.g:739:2: 'formLayout:'
             {
              before(grammarAccess.getModelAccess().getFormLayoutKeyword_0()); 
-            match(input,21,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getModelAccess().getFormLayoutKeyword_0()); 
 
             }
@@ -2536,14 +2405,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__1"
-    // InternalVFormDsl.g:778:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
+    // InternalVFormDsl.g:748:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
     public final void rule__Model__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:782:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
-            // InternalVFormDsl.g:783:2: rule__Model__Group__1__Impl rule__Model__Group__2
+            // InternalVFormDsl.g:752:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
+            // InternalVFormDsl.g:753:2: rule__Model__Group__1__Impl rule__Model__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Model__Group__1__Impl();
@@ -2574,21 +2443,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__1__Impl"
-    // InternalVFormDsl.g:790:1: rule__Model__Group__1__Impl : ( ( rule__Model__FormLayoutAssignment_1 ) ) ;
+    // InternalVFormDsl.g:760:1: rule__Model__Group__1__Impl : ( ( rule__Model__FormLayoutAssignment_1 ) ) ;
     public final void rule__Model__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:794:1: ( ( ( rule__Model__FormLayoutAssignment_1 ) ) )
-            // InternalVFormDsl.g:795:1: ( ( rule__Model__FormLayoutAssignment_1 ) )
+            // InternalVFormDsl.g:764:1: ( ( ( rule__Model__FormLayoutAssignment_1 ) ) )
+            // InternalVFormDsl.g:765:1: ( ( rule__Model__FormLayoutAssignment_1 ) )
             {
-            // InternalVFormDsl.g:795:1: ( ( rule__Model__FormLayoutAssignment_1 ) )
-            // InternalVFormDsl.g:796:2: ( rule__Model__FormLayoutAssignment_1 )
+            // InternalVFormDsl.g:765:1: ( ( rule__Model__FormLayoutAssignment_1 ) )
+            // InternalVFormDsl.g:766:2: ( rule__Model__FormLayoutAssignment_1 )
             {
              before(grammarAccess.getModelAccess().getFormLayoutAssignment_1()); 
-            // InternalVFormDsl.g:797:2: ( rule__Model__FormLayoutAssignment_1 )
-            // InternalVFormDsl.g:797:3: rule__Model__FormLayoutAssignment_1
+            // InternalVFormDsl.g:767:2: ( rule__Model__FormLayoutAssignment_1 )
+            // InternalVFormDsl.g:767:3: rule__Model__FormLayoutAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Model__FormLayoutAssignment_1();
@@ -2621,14 +2490,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__2"
-    // InternalVFormDsl.g:805:1: rule__Model__Group__2 : rule__Model__Group__2__Impl rule__Model__Group__3 ;
+    // InternalVFormDsl.g:775:1: rule__Model__Group__2 : rule__Model__Group__2__Impl rule__Model__Group__3 ;
     public final void rule__Model__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:809:1: ( rule__Model__Group__2__Impl rule__Model__Group__3 )
-            // InternalVFormDsl.g:810:2: rule__Model__Group__2__Impl rule__Model__Group__3
+            // InternalVFormDsl.g:779:1: ( rule__Model__Group__2__Impl rule__Model__Group__3 )
+            // InternalVFormDsl.g:780:2: rule__Model__Group__2__Impl rule__Model__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__Model__Group__2__Impl();
@@ -2659,20 +2528,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__2__Impl"
-    // InternalVFormDsl.g:817:1: rule__Model__Group__2__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:787:1: rule__Model__Group__2__Impl : ( ',' ) ;
     public final void rule__Model__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:821:1: ( ( ',' ) )
-            // InternalVFormDsl.g:822:1: ( ',' )
+            // InternalVFormDsl.g:791:1: ( ( ',' ) )
+            // InternalVFormDsl.g:792:1: ( ',' )
             {
-            // InternalVFormDsl.g:822:1: ( ',' )
-            // InternalVFormDsl.g:823:2: ','
+            // InternalVFormDsl.g:792:1: ( ',' )
+            // InternalVFormDsl.g:793:2: ','
             {
              before(grammarAccess.getModelAccess().getCommaKeyword_2()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getModelAccess().getCommaKeyword_2()); 
 
             }
@@ -2696,14 +2565,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__3"
-    // InternalVFormDsl.g:832:1: rule__Model__Group__3 : rule__Model__Group__3__Impl rule__Model__Group__4 ;
+    // InternalVFormDsl.g:802:1: rule__Model__Group__3 : rule__Model__Group__3__Impl rule__Model__Group__4 ;
     public final void rule__Model__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:836:1: ( rule__Model__Group__3__Impl rule__Model__Group__4 )
-            // InternalVFormDsl.g:837:2: rule__Model__Group__3__Impl rule__Model__Group__4
+            // InternalVFormDsl.g:806:1: ( rule__Model__Group__3__Impl rule__Model__Group__4 )
+            // InternalVFormDsl.g:807:2: rule__Model__Group__3__Impl rule__Model__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__Model__Group__3__Impl();
@@ -2734,20 +2603,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__3__Impl"
-    // InternalVFormDsl.g:844:1: rule__Model__Group__3__Impl : ( 'formInputs:' ) ;
+    // InternalVFormDsl.g:814:1: rule__Model__Group__3__Impl : ( 'formInputs:' ) ;
     public final void rule__Model__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:848:1: ( ( 'formInputs:' ) )
-            // InternalVFormDsl.g:849:1: ( 'formInputs:' )
+            // InternalVFormDsl.g:818:1: ( ( 'formInputs:' ) )
+            // InternalVFormDsl.g:819:1: ( 'formInputs:' )
             {
-            // InternalVFormDsl.g:849:1: ( 'formInputs:' )
-            // InternalVFormDsl.g:850:2: 'formInputs:'
+            // InternalVFormDsl.g:819:1: ( 'formInputs:' )
+            // InternalVFormDsl.g:820:2: 'formInputs:'
             {
              before(grammarAccess.getModelAccess().getFormInputsKeyword_3()); 
-            match(input,23,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getModelAccess().getFormInputsKeyword_3()); 
 
             }
@@ -2771,14 +2640,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__4"
-    // InternalVFormDsl.g:859:1: rule__Model__Group__4 : rule__Model__Group__4__Impl rule__Model__Group__5 ;
+    // InternalVFormDsl.g:829:1: rule__Model__Group__4 : rule__Model__Group__4__Impl rule__Model__Group__5 ;
     public final void rule__Model__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:863:1: ( rule__Model__Group__4__Impl rule__Model__Group__5 )
-            // InternalVFormDsl.g:864:2: rule__Model__Group__4__Impl rule__Model__Group__5
+            // InternalVFormDsl.g:833:1: ( rule__Model__Group__4__Impl rule__Model__Group__5 )
+            // InternalVFormDsl.g:834:2: rule__Model__Group__4__Impl rule__Model__Group__5
             {
             pushFollow(FOLLOW_7);
             rule__Model__Group__4__Impl();
@@ -2809,20 +2678,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__4__Impl"
-    // InternalVFormDsl.g:871:1: rule__Model__Group__4__Impl : ( '[' ) ;
+    // InternalVFormDsl.g:841:1: rule__Model__Group__4__Impl : ( '[' ) ;
     public final void rule__Model__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:875:1: ( ( '[' ) )
-            // InternalVFormDsl.g:876:1: ( '[' )
+            // InternalVFormDsl.g:845:1: ( ( '[' ) )
+            // InternalVFormDsl.g:846:1: ( '[' )
             {
-            // InternalVFormDsl.g:876:1: ( '[' )
-            // InternalVFormDsl.g:877:2: '['
+            // InternalVFormDsl.g:846:1: ( '[' )
+            // InternalVFormDsl.g:847:2: '['
             {
              before(grammarAccess.getModelAccess().getLeftSquareBracketKeyword_4()); 
-            match(input,24,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getModelAccess().getLeftSquareBracketKeyword_4()); 
 
             }
@@ -2846,14 +2715,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__5"
-    // InternalVFormDsl.g:886:1: rule__Model__Group__5 : rule__Model__Group__5__Impl rule__Model__Group__6 ;
+    // InternalVFormDsl.g:856:1: rule__Model__Group__5 : rule__Model__Group__5__Impl rule__Model__Group__6 ;
     public final void rule__Model__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:890:1: ( rule__Model__Group__5__Impl rule__Model__Group__6 )
-            // InternalVFormDsl.g:891:2: rule__Model__Group__5__Impl rule__Model__Group__6
+            // InternalVFormDsl.g:860:1: ( rule__Model__Group__5__Impl rule__Model__Group__6 )
+            // InternalVFormDsl.g:861:2: rule__Model__Group__5__Impl rule__Model__Group__6
             {
             pushFollow(FOLLOW_7);
             rule__Model__Group__5__Impl();
@@ -2884,33 +2753,33 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__5__Impl"
-    // InternalVFormDsl.g:898:1: rule__Model__Group__5__Impl : ( ( rule__Model__FormInputAssignment_5 )* ) ;
+    // InternalVFormDsl.g:868:1: rule__Model__Group__5__Impl : ( ( rule__Model__FormInputAssignment_5 )* ) ;
     public final void rule__Model__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:902:1: ( ( ( rule__Model__FormInputAssignment_5 )* ) )
-            // InternalVFormDsl.g:903:1: ( ( rule__Model__FormInputAssignment_5 )* )
+            // InternalVFormDsl.g:872:1: ( ( ( rule__Model__FormInputAssignment_5 )* ) )
+            // InternalVFormDsl.g:873:1: ( ( rule__Model__FormInputAssignment_5 )* )
             {
-            // InternalVFormDsl.g:903:1: ( ( rule__Model__FormInputAssignment_5 )* )
-            // InternalVFormDsl.g:904:2: ( rule__Model__FormInputAssignment_5 )*
+            // InternalVFormDsl.g:873:1: ( ( rule__Model__FormInputAssignment_5 )* )
+            // InternalVFormDsl.g:874:2: ( rule__Model__FormInputAssignment_5 )*
             {
              before(grammarAccess.getModelAccess().getFormInputAssignment_5()); 
-            // InternalVFormDsl.g:905:2: ( rule__Model__FormInputAssignment_5 )*
+            // InternalVFormDsl.g:875:2: ( rule__Model__FormInputAssignment_5 )*
             loop7:
             do {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( (LA7_0==26) ) {
+                if ( (LA7_0==21) ) {
                     alt7=1;
                 }
 
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalVFormDsl.g:905:3: rule__Model__FormInputAssignment_5
+            	    // InternalVFormDsl.g:875:3: rule__Model__FormInputAssignment_5
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__Model__FormInputAssignment_5();
@@ -2949,14 +2818,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__6"
-    // InternalVFormDsl.g:913:1: rule__Model__Group__6 : rule__Model__Group__6__Impl ;
+    // InternalVFormDsl.g:883:1: rule__Model__Group__6 : rule__Model__Group__6__Impl ;
     public final void rule__Model__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:917:1: ( rule__Model__Group__6__Impl )
-            // InternalVFormDsl.g:918:2: rule__Model__Group__6__Impl
+            // InternalVFormDsl.g:887:1: ( rule__Model__Group__6__Impl )
+            // InternalVFormDsl.g:888:2: rule__Model__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Model__Group__6__Impl();
@@ -2982,20 +2851,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__Group__6__Impl"
-    // InternalVFormDsl.g:924:1: rule__Model__Group__6__Impl : ( ']' ) ;
+    // InternalVFormDsl.g:894:1: rule__Model__Group__6__Impl : ( ']' ) ;
     public final void rule__Model__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:928:1: ( ( ']' ) )
-            // InternalVFormDsl.g:929:1: ( ']' )
+            // InternalVFormDsl.g:898:1: ( ( ']' ) )
+            // InternalVFormDsl.g:899:1: ( ']' )
             {
-            // InternalVFormDsl.g:929:1: ( ']' )
-            // InternalVFormDsl.g:930:2: ']'
+            // InternalVFormDsl.g:899:1: ( ']' )
+            // InternalVFormDsl.g:900:2: ']'
             {
              before(grammarAccess.getModelAccess().getRightSquareBracketKeyword_6()); 
-            match(input,25,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getModelAccess().getRightSquareBracketKeyword_6()); 
 
             }
@@ -3019,14 +2888,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputBasic__Group__0"
-    // InternalVFormDsl.g:940:1: rule__FormInputBasic__Group__0 : rule__FormInputBasic__Group__0__Impl rule__FormInputBasic__Group__1 ;
+    // InternalVFormDsl.g:910:1: rule__FormInputBasic__Group__0 : rule__FormInputBasic__Group__0__Impl rule__FormInputBasic__Group__1 ;
     public final void rule__FormInputBasic__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:944:1: ( rule__FormInputBasic__Group__0__Impl rule__FormInputBasic__Group__1 )
-            // InternalVFormDsl.g:945:2: rule__FormInputBasic__Group__0__Impl rule__FormInputBasic__Group__1
+            // InternalVFormDsl.g:914:1: ( rule__FormInputBasic__Group__0__Impl rule__FormInputBasic__Group__1 )
+            // InternalVFormDsl.g:915:2: rule__FormInputBasic__Group__0__Impl rule__FormInputBasic__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__FormInputBasic__Group__0__Impl();
@@ -3057,20 +2926,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputBasic__Group__0__Impl"
-    // InternalVFormDsl.g:952:1: rule__FormInputBasic__Group__0__Impl : ( 'name' ) ;
+    // InternalVFormDsl.g:922:1: rule__FormInputBasic__Group__0__Impl : ( 'name' ) ;
     public final void rule__FormInputBasic__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:956:1: ( ( 'name' ) )
-            // InternalVFormDsl.g:957:1: ( 'name' )
+            // InternalVFormDsl.g:926:1: ( ( 'name' ) )
+            // InternalVFormDsl.g:927:1: ( 'name' )
             {
-            // InternalVFormDsl.g:957:1: ( 'name' )
-            // InternalVFormDsl.g:958:2: 'name'
+            // InternalVFormDsl.g:927:1: ( 'name' )
+            // InternalVFormDsl.g:928:2: 'name'
             {
              before(grammarAccess.getFormInputBasicAccess().getNameKeyword_0()); 
-            match(input,26,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getFormInputBasicAccess().getNameKeyword_0()); 
 
             }
@@ -3094,14 +2963,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputBasic__Group__1"
-    // InternalVFormDsl.g:967:1: rule__FormInputBasic__Group__1 : rule__FormInputBasic__Group__1__Impl rule__FormInputBasic__Group__2 ;
+    // InternalVFormDsl.g:937:1: rule__FormInputBasic__Group__1 : rule__FormInputBasic__Group__1__Impl rule__FormInputBasic__Group__2 ;
     public final void rule__FormInputBasic__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:971:1: ( rule__FormInputBasic__Group__1__Impl rule__FormInputBasic__Group__2 )
-            // InternalVFormDsl.g:972:2: rule__FormInputBasic__Group__1__Impl rule__FormInputBasic__Group__2
+            // InternalVFormDsl.g:941:1: ( rule__FormInputBasic__Group__1__Impl rule__FormInputBasic__Group__2 )
+            // InternalVFormDsl.g:942:2: rule__FormInputBasic__Group__1__Impl rule__FormInputBasic__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__FormInputBasic__Group__1__Impl();
@@ -3132,20 +3001,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputBasic__Group__1__Impl"
-    // InternalVFormDsl.g:979:1: rule__FormInputBasic__Group__1__Impl : ( ':' ) ;
+    // InternalVFormDsl.g:949:1: rule__FormInputBasic__Group__1__Impl : ( ':' ) ;
     public final void rule__FormInputBasic__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:983:1: ( ( ':' ) )
-            // InternalVFormDsl.g:984:1: ( ':' )
+            // InternalVFormDsl.g:953:1: ( ( ':' ) )
+            // InternalVFormDsl.g:954:1: ( ':' )
             {
-            // InternalVFormDsl.g:984:1: ( ':' )
-            // InternalVFormDsl.g:985:2: ':'
+            // InternalVFormDsl.g:954:1: ( ':' )
+            // InternalVFormDsl.g:955:2: ':'
             {
              before(grammarAccess.getFormInputBasicAccess().getColonKeyword_1()); 
-            match(input,27,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getFormInputBasicAccess().getColonKeyword_1()); 
 
             }
@@ -3169,14 +3038,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputBasic__Group__2"
-    // InternalVFormDsl.g:994:1: rule__FormInputBasic__Group__2 : rule__FormInputBasic__Group__2__Impl rule__FormInputBasic__Group__3 ;
+    // InternalVFormDsl.g:964:1: rule__FormInputBasic__Group__2 : rule__FormInputBasic__Group__2__Impl rule__FormInputBasic__Group__3 ;
     public final void rule__FormInputBasic__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:998:1: ( rule__FormInputBasic__Group__2__Impl rule__FormInputBasic__Group__3 )
-            // InternalVFormDsl.g:999:2: rule__FormInputBasic__Group__2__Impl rule__FormInputBasic__Group__3
+            // InternalVFormDsl.g:968:1: ( rule__FormInputBasic__Group__2__Impl rule__FormInputBasic__Group__3 )
+            // InternalVFormDsl.g:969:2: rule__FormInputBasic__Group__2__Impl rule__FormInputBasic__Group__3
             {
             pushFollow(FOLLOW_11);
             rule__FormInputBasic__Group__2__Impl();
@@ -3207,21 +3076,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputBasic__Group__2__Impl"
-    // InternalVFormDsl.g:1006:1: rule__FormInputBasic__Group__2__Impl : ( ( rule__FormInputBasic__NameAssignment_2 ) ) ;
+    // InternalVFormDsl.g:976:1: rule__FormInputBasic__Group__2__Impl : ( ( rule__FormInputBasic__NameAssignment_2 ) ) ;
     public final void rule__FormInputBasic__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1010:1: ( ( ( rule__FormInputBasic__NameAssignment_2 ) ) )
-            // InternalVFormDsl.g:1011:1: ( ( rule__FormInputBasic__NameAssignment_2 ) )
+            // InternalVFormDsl.g:980:1: ( ( ( rule__FormInputBasic__NameAssignment_2 ) ) )
+            // InternalVFormDsl.g:981:1: ( ( rule__FormInputBasic__NameAssignment_2 ) )
             {
-            // InternalVFormDsl.g:1011:1: ( ( rule__FormInputBasic__NameAssignment_2 ) )
-            // InternalVFormDsl.g:1012:2: ( rule__FormInputBasic__NameAssignment_2 )
+            // InternalVFormDsl.g:981:1: ( ( rule__FormInputBasic__NameAssignment_2 ) )
+            // InternalVFormDsl.g:982:2: ( rule__FormInputBasic__NameAssignment_2 )
             {
              before(grammarAccess.getFormInputBasicAccess().getNameAssignment_2()); 
-            // InternalVFormDsl.g:1013:2: ( rule__FormInputBasic__NameAssignment_2 )
-            // InternalVFormDsl.g:1013:3: rule__FormInputBasic__NameAssignment_2
+            // InternalVFormDsl.g:983:2: ( rule__FormInputBasic__NameAssignment_2 )
+            // InternalVFormDsl.g:983:3: rule__FormInputBasic__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__FormInputBasic__NameAssignment_2();
@@ -3254,14 +3123,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputBasic__Group__3"
-    // InternalVFormDsl.g:1021:1: rule__FormInputBasic__Group__3 : rule__FormInputBasic__Group__3__Impl rule__FormInputBasic__Group__4 ;
+    // InternalVFormDsl.g:991:1: rule__FormInputBasic__Group__3 : rule__FormInputBasic__Group__3__Impl rule__FormInputBasic__Group__4 ;
     public final void rule__FormInputBasic__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1025:1: ( rule__FormInputBasic__Group__3__Impl rule__FormInputBasic__Group__4 )
-            // InternalVFormDsl.g:1026:2: rule__FormInputBasic__Group__3__Impl rule__FormInputBasic__Group__4
+            // InternalVFormDsl.g:995:1: ( rule__FormInputBasic__Group__3__Impl rule__FormInputBasic__Group__4 )
+            // InternalVFormDsl.g:996:2: rule__FormInputBasic__Group__3__Impl rule__FormInputBasic__Group__4
             {
             pushFollow(FOLLOW_9);
             rule__FormInputBasic__Group__3__Impl();
@@ -3292,20 +3161,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputBasic__Group__3__Impl"
-    // InternalVFormDsl.g:1033:1: rule__FormInputBasic__Group__3__Impl : ( 'type' ) ;
+    // InternalVFormDsl.g:1003:1: rule__FormInputBasic__Group__3__Impl : ( 'type' ) ;
     public final void rule__FormInputBasic__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1037:1: ( ( 'type' ) )
-            // InternalVFormDsl.g:1038:1: ( 'type' )
+            // InternalVFormDsl.g:1007:1: ( ( 'type' ) )
+            // InternalVFormDsl.g:1008:1: ( 'type' )
             {
-            // InternalVFormDsl.g:1038:1: ( 'type' )
-            // InternalVFormDsl.g:1039:2: 'type'
+            // InternalVFormDsl.g:1008:1: ( 'type' )
+            // InternalVFormDsl.g:1009:2: 'type'
             {
              before(grammarAccess.getFormInputBasicAccess().getTypeKeyword_3()); 
-            match(input,28,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getFormInputBasicAccess().getTypeKeyword_3()); 
 
             }
@@ -3329,14 +3198,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputBasic__Group__4"
-    // InternalVFormDsl.g:1048:1: rule__FormInputBasic__Group__4 : rule__FormInputBasic__Group__4__Impl rule__FormInputBasic__Group__5 ;
+    // InternalVFormDsl.g:1018:1: rule__FormInputBasic__Group__4 : rule__FormInputBasic__Group__4__Impl rule__FormInputBasic__Group__5 ;
     public final void rule__FormInputBasic__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1052:1: ( rule__FormInputBasic__Group__4__Impl rule__FormInputBasic__Group__5 )
-            // InternalVFormDsl.g:1053:2: rule__FormInputBasic__Group__4__Impl rule__FormInputBasic__Group__5
+            // InternalVFormDsl.g:1022:1: ( rule__FormInputBasic__Group__4__Impl rule__FormInputBasic__Group__5 )
+            // InternalVFormDsl.g:1023:2: rule__FormInputBasic__Group__4__Impl rule__FormInputBasic__Group__5
             {
             pushFollow(FOLLOW_12);
             rule__FormInputBasic__Group__4__Impl();
@@ -3367,20 +3236,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputBasic__Group__4__Impl"
-    // InternalVFormDsl.g:1060:1: rule__FormInputBasic__Group__4__Impl : ( ':' ) ;
+    // InternalVFormDsl.g:1030:1: rule__FormInputBasic__Group__4__Impl : ( ':' ) ;
     public final void rule__FormInputBasic__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1064:1: ( ( ':' ) )
-            // InternalVFormDsl.g:1065:1: ( ':' )
+            // InternalVFormDsl.g:1034:1: ( ( ':' ) )
+            // InternalVFormDsl.g:1035:1: ( ':' )
             {
-            // InternalVFormDsl.g:1065:1: ( ':' )
-            // InternalVFormDsl.g:1066:2: ':'
+            // InternalVFormDsl.g:1035:1: ( ':' )
+            // InternalVFormDsl.g:1036:2: ':'
             {
              before(grammarAccess.getFormInputBasicAccess().getColonKeyword_4()); 
-            match(input,27,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getFormInputBasicAccess().getColonKeyword_4()); 
 
             }
@@ -3404,14 +3273,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputBasic__Group__5"
-    // InternalVFormDsl.g:1075:1: rule__FormInputBasic__Group__5 : rule__FormInputBasic__Group__5__Impl ;
+    // InternalVFormDsl.g:1045:1: rule__FormInputBasic__Group__5 : rule__FormInputBasic__Group__5__Impl ;
     public final void rule__FormInputBasic__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1079:1: ( rule__FormInputBasic__Group__5__Impl )
-            // InternalVFormDsl.g:1080:2: rule__FormInputBasic__Group__5__Impl
+            // InternalVFormDsl.g:1049:1: ( rule__FormInputBasic__Group__5__Impl )
+            // InternalVFormDsl.g:1050:2: rule__FormInputBasic__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FormInputBasic__Group__5__Impl();
@@ -3437,21 +3306,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputBasic__Group__5__Impl"
-    // InternalVFormDsl.g:1086:1: rule__FormInputBasic__Group__5__Impl : ( ( rule__FormInputBasic__TypeAssignment_5 ) ) ;
+    // InternalVFormDsl.g:1056:1: rule__FormInputBasic__Group__5__Impl : ( ( rule__FormInputBasic__TypeAssignment_5 ) ) ;
     public final void rule__FormInputBasic__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1090:1: ( ( ( rule__FormInputBasic__TypeAssignment_5 ) ) )
-            // InternalVFormDsl.g:1091:1: ( ( rule__FormInputBasic__TypeAssignment_5 ) )
+            // InternalVFormDsl.g:1060:1: ( ( ( rule__FormInputBasic__TypeAssignment_5 ) ) )
+            // InternalVFormDsl.g:1061:1: ( ( rule__FormInputBasic__TypeAssignment_5 ) )
             {
-            // InternalVFormDsl.g:1091:1: ( ( rule__FormInputBasic__TypeAssignment_5 ) )
-            // InternalVFormDsl.g:1092:2: ( rule__FormInputBasic__TypeAssignment_5 )
+            // InternalVFormDsl.g:1061:1: ( ( rule__FormInputBasic__TypeAssignment_5 ) )
+            // InternalVFormDsl.g:1062:2: ( rule__FormInputBasic__TypeAssignment_5 )
             {
              before(grammarAccess.getFormInputBasicAccess().getTypeAssignment_5()); 
-            // InternalVFormDsl.g:1093:2: ( rule__FormInputBasic__TypeAssignment_5 )
-            // InternalVFormDsl.g:1093:3: rule__FormInputBasic__TypeAssignment_5
+            // InternalVFormDsl.g:1063:2: ( rule__FormInputBasic__TypeAssignment_5 )
+            // InternalVFormDsl.g:1063:3: rule__FormInputBasic__TypeAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__FormInputBasic__TypeAssignment_5();
@@ -3484,14 +3353,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__0"
-    // InternalVFormDsl.g:1102:1: rule__FormInputRange__Group__0 : rule__FormInputRange__Group__0__Impl rule__FormInputRange__Group__1 ;
+    // InternalVFormDsl.g:1072:1: rule__FormInputRange__Group__0 : rule__FormInputRange__Group__0__Impl rule__FormInputRange__Group__1 ;
     public final void rule__FormInputRange__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1106:1: ( rule__FormInputRange__Group__0__Impl rule__FormInputRange__Group__1 )
-            // InternalVFormDsl.g:1107:2: rule__FormInputRange__Group__0__Impl rule__FormInputRange__Group__1
+            // InternalVFormDsl.g:1076:1: ( rule__FormInputRange__Group__0__Impl rule__FormInputRange__Group__1 )
+            // InternalVFormDsl.g:1077:2: rule__FormInputRange__Group__0__Impl rule__FormInputRange__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__FormInputRange__Group__0__Impl();
@@ -3522,20 +3391,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__0__Impl"
-    // InternalVFormDsl.g:1114:1: rule__FormInputRange__Group__0__Impl : ( 'name' ) ;
+    // InternalVFormDsl.g:1084:1: rule__FormInputRange__Group__0__Impl : ( 'name' ) ;
     public final void rule__FormInputRange__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1118:1: ( ( 'name' ) )
-            // InternalVFormDsl.g:1119:1: ( 'name' )
+            // InternalVFormDsl.g:1088:1: ( ( 'name' ) )
+            // InternalVFormDsl.g:1089:1: ( 'name' )
             {
-            // InternalVFormDsl.g:1119:1: ( 'name' )
-            // InternalVFormDsl.g:1120:2: 'name'
+            // InternalVFormDsl.g:1089:1: ( 'name' )
+            // InternalVFormDsl.g:1090:2: 'name'
             {
              before(grammarAccess.getFormInputRangeAccess().getNameKeyword_0()); 
-            match(input,26,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getFormInputRangeAccess().getNameKeyword_0()); 
 
             }
@@ -3559,14 +3428,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__1"
-    // InternalVFormDsl.g:1129:1: rule__FormInputRange__Group__1 : rule__FormInputRange__Group__1__Impl rule__FormInputRange__Group__2 ;
+    // InternalVFormDsl.g:1099:1: rule__FormInputRange__Group__1 : rule__FormInputRange__Group__1__Impl rule__FormInputRange__Group__2 ;
     public final void rule__FormInputRange__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1133:1: ( rule__FormInputRange__Group__1__Impl rule__FormInputRange__Group__2 )
-            // InternalVFormDsl.g:1134:2: rule__FormInputRange__Group__1__Impl rule__FormInputRange__Group__2
+            // InternalVFormDsl.g:1103:1: ( rule__FormInputRange__Group__1__Impl rule__FormInputRange__Group__2 )
+            // InternalVFormDsl.g:1104:2: rule__FormInputRange__Group__1__Impl rule__FormInputRange__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__FormInputRange__Group__1__Impl();
@@ -3597,20 +3466,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__1__Impl"
-    // InternalVFormDsl.g:1141:1: rule__FormInputRange__Group__1__Impl : ( ':' ) ;
+    // InternalVFormDsl.g:1111:1: rule__FormInputRange__Group__1__Impl : ( ':' ) ;
     public final void rule__FormInputRange__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1145:1: ( ( ':' ) )
-            // InternalVFormDsl.g:1146:1: ( ':' )
+            // InternalVFormDsl.g:1115:1: ( ( ':' ) )
+            // InternalVFormDsl.g:1116:1: ( ':' )
             {
-            // InternalVFormDsl.g:1146:1: ( ':' )
-            // InternalVFormDsl.g:1147:2: ':'
+            // InternalVFormDsl.g:1116:1: ( ':' )
+            // InternalVFormDsl.g:1117:2: ':'
             {
              before(grammarAccess.getFormInputRangeAccess().getColonKeyword_1()); 
-            match(input,27,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getFormInputRangeAccess().getColonKeyword_1()); 
 
             }
@@ -3634,14 +3503,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__2"
-    // InternalVFormDsl.g:1156:1: rule__FormInputRange__Group__2 : rule__FormInputRange__Group__2__Impl rule__FormInputRange__Group__3 ;
+    // InternalVFormDsl.g:1126:1: rule__FormInputRange__Group__2 : rule__FormInputRange__Group__2__Impl rule__FormInputRange__Group__3 ;
     public final void rule__FormInputRange__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1160:1: ( rule__FormInputRange__Group__2__Impl rule__FormInputRange__Group__3 )
-            // InternalVFormDsl.g:1161:2: rule__FormInputRange__Group__2__Impl rule__FormInputRange__Group__3
+            // InternalVFormDsl.g:1130:1: ( rule__FormInputRange__Group__2__Impl rule__FormInputRange__Group__3 )
+            // InternalVFormDsl.g:1131:2: rule__FormInputRange__Group__2__Impl rule__FormInputRange__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__FormInputRange__Group__2__Impl();
@@ -3672,21 +3541,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__2__Impl"
-    // InternalVFormDsl.g:1168:1: rule__FormInputRange__Group__2__Impl : ( ( rule__FormInputRange__NameAssignment_2 ) ) ;
+    // InternalVFormDsl.g:1138:1: rule__FormInputRange__Group__2__Impl : ( ( rule__FormInputRange__NameAssignment_2 ) ) ;
     public final void rule__FormInputRange__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1172:1: ( ( ( rule__FormInputRange__NameAssignment_2 ) ) )
-            // InternalVFormDsl.g:1173:1: ( ( rule__FormInputRange__NameAssignment_2 ) )
+            // InternalVFormDsl.g:1142:1: ( ( ( rule__FormInputRange__NameAssignment_2 ) ) )
+            // InternalVFormDsl.g:1143:1: ( ( rule__FormInputRange__NameAssignment_2 ) )
             {
-            // InternalVFormDsl.g:1173:1: ( ( rule__FormInputRange__NameAssignment_2 ) )
-            // InternalVFormDsl.g:1174:2: ( rule__FormInputRange__NameAssignment_2 )
+            // InternalVFormDsl.g:1143:1: ( ( rule__FormInputRange__NameAssignment_2 ) )
+            // InternalVFormDsl.g:1144:2: ( rule__FormInputRange__NameAssignment_2 )
             {
              before(grammarAccess.getFormInputRangeAccess().getNameAssignment_2()); 
-            // InternalVFormDsl.g:1175:2: ( rule__FormInputRange__NameAssignment_2 )
-            // InternalVFormDsl.g:1175:3: rule__FormInputRange__NameAssignment_2
+            // InternalVFormDsl.g:1145:2: ( rule__FormInputRange__NameAssignment_2 )
+            // InternalVFormDsl.g:1145:3: rule__FormInputRange__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__FormInputRange__NameAssignment_2();
@@ -3719,14 +3588,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__3"
-    // InternalVFormDsl.g:1183:1: rule__FormInputRange__Group__3 : rule__FormInputRange__Group__3__Impl rule__FormInputRange__Group__4 ;
+    // InternalVFormDsl.g:1153:1: rule__FormInputRange__Group__3 : rule__FormInputRange__Group__3__Impl rule__FormInputRange__Group__4 ;
     public final void rule__FormInputRange__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1187:1: ( rule__FormInputRange__Group__3__Impl rule__FormInputRange__Group__4 )
-            // InternalVFormDsl.g:1188:2: rule__FormInputRange__Group__3__Impl rule__FormInputRange__Group__4
+            // InternalVFormDsl.g:1157:1: ( rule__FormInputRange__Group__3__Impl rule__FormInputRange__Group__4 )
+            // InternalVFormDsl.g:1158:2: rule__FormInputRange__Group__3__Impl rule__FormInputRange__Group__4
             {
             pushFollow(FOLLOW_11);
             rule__FormInputRange__Group__3__Impl();
@@ -3757,20 +3626,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__3__Impl"
-    // InternalVFormDsl.g:1195:1: rule__FormInputRange__Group__3__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:1165:1: rule__FormInputRange__Group__3__Impl : ( ',' ) ;
     public final void rule__FormInputRange__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1199:1: ( ( ',' ) )
-            // InternalVFormDsl.g:1200:1: ( ',' )
+            // InternalVFormDsl.g:1169:1: ( ( ',' ) )
+            // InternalVFormDsl.g:1170:1: ( ',' )
             {
-            // InternalVFormDsl.g:1200:1: ( ',' )
-            // InternalVFormDsl.g:1201:2: ','
+            // InternalVFormDsl.g:1170:1: ( ',' )
+            // InternalVFormDsl.g:1171:2: ','
             {
              before(grammarAccess.getFormInputRangeAccess().getCommaKeyword_3()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getFormInputRangeAccess().getCommaKeyword_3()); 
 
             }
@@ -3794,14 +3663,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__4"
-    // InternalVFormDsl.g:1210:1: rule__FormInputRange__Group__4 : rule__FormInputRange__Group__4__Impl rule__FormInputRange__Group__5 ;
+    // InternalVFormDsl.g:1180:1: rule__FormInputRange__Group__4 : rule__FormInputRange__Group__4__Impl rule__FormInputRange__Group__5 ;
     public final void rule__FormInputRange__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1214:1: ( rule__FormInputRange__Group__4__Impl rule__FormInputRange__Group__5 )
-            // InternalVFormDsl.g:1215:2: rule__FormInputRange__Group__4__Impl rule__FormInputRange__Group__5
+            // InternalVFormDsl.g:1184:1: ( rule__FormInputRange__Group__4__Impl rule__FormInputRange__Group__5 )
+            // InternalVFormDsl.g:1185:2: rule__FormInputRange__Group__4__Impl rule__FormInputRange__Group__5
             {
             pushFollow(FOLLOW_9);
             rule__FormInputRange__Group__4__Impl();
@@ -3832,20 +3701,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__4__Impl"
-    // InternalVFormDsl.g:1222:1: rule__FormInputRange__Group__4__Impl : ( 'type' ) ;
+    // InternalVFormDsl.g:1192:1: rule__FormInputRange__Group__4__Impl : ( 'type' ) ;
     public final void rule__FormInputRange__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1226:1: ( ( 'type' ) )
-            // InternalVFormDsl.g:1227:1: ( 'type' )
+            // InternalVFormDsl.g:1196:1: ( ( 'type' ) )
+            // InternalVFormDsl.g:1197:1: ( 'type' )
             {
-            // InternalVFormDsl.g:1227:1: ( 'type' )
-            // InternalVFormDsl.g:1228:2: 'type'
+            // InternalVFormDsl.g:1197:1: ( 'type' )
+            // InternalVFormDsl.g:1198:2: 'type'
             {
              before(grammarAccess.getFormInputRangeAccess().getTypeKeyword_4()); 
-            match(input,28,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getFormInputRangeAccess().getTypeKeyword_4()); 
 
             }
@@ -3869,14 +3738,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__5"
-    // InternalVFormDsl.g:1237:1: rule__FormInputRange__Group__5 : rule__FormInputRange__Group__5__Impl rule__FormInputRange__Group__6 ;
+    // InternalVFormDsl.g:1207:1: rule__FormInputRange__Group__5 : rule__FormInputRange__Group__5__Impl rule__FormInputRange__Group__6 ;
     public final void rule__FormInputRange__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1241:1: ( rule__FormInputRange__Group__5__Impl rule__FormInputRange__Group__6 )
-            // InternalVFormDsl.g:1242:2: rule__FormInputRange__Group__5__Impl rule__FormInputRange__Group__6
+            // InternalVFormDsl.g:1211:1: ( rule__FormInputRange__Group__5__Impl rule__FormInputRange__Group__6 )
+            // InternalVFormDsl.g:1212:2: rule__FormInputRange__Group__5__Impl rule__FormInputRange__Group__6
             {
             pushFollow(FOLLOW_13);
             rule__FormInputRange__Group__5__Impl();
@@ -3907,20 +3776,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__5__Impl"
-    // InternalVFormDsl.g:1249:1: rule__FormInputRange__Group__5__Impl : ( ':' ) ;
+    // InternalVFormDsl.g:1219:1: rule__FormInputRange__Group__5__Impl : ( ':' ) ;
     public final void rule__FormInputRange__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1253:1: ( ( ':' ) )
-            // InternalVFormDsl.g:1254:1: ( ':' )
+            // InternalVFormDsl.g:1223:1: ( ( ':' ) )
+            // InternalVFormDsl.g:1224:1: ( ':' )
             {
-            // InternalVFormDsl.g:1254:1: ( ':' )
-            // InternalVFormDsl.g:1255:2: ':'
+            // InternalVFormDsl.g:1224:1: ( ':' )
+            // InternalVFormDsl.g:1225:2: ':'
             {
              before(grammarAccess.getFormInputRangeAccess().getColonKeyword_5()); 
-            match(input,27,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getFormInputRangeAccess().getColonKeyword_5()); 
 
             }
@@ -3944,14 +3813,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__6"
-    // InternalVFormDsl.g:1264:1: rule__FormInputRange__Group__6 : rule__FormInputRange__Group__6__Impl rule__FormInputRange__Group__7 ;
+    // InternalVFormDsl.g:1234:1: rule__FormInputRange__Group__6 : rule__FormInputRange__Group__6__Impl rule__FormInputRange__Group__7 ;
     public final void rule__FormInputRange__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1268:1: ( rule__FormInputRange__Group__6__Impl rule__FormInputRange__Group__7 )
-            // InternalVFormDsl.g:1269:2: rule__FormInputRange__Group__6__Impl rule__FormInputRange__Group__7
+            // InternalVFormDsl.g:1238:1: ( rule__FormInputRange__Group__6__Impl rule__FormInputRange__Group__7 )
+            // InternalVFormDsl.g:1239:2: rule__FormInputRange__Group__6__Impl rule__FormInputRange__Group__7
             {
             pushFollow(FOLLOW_4);
             rule__FormInputRange__Group__6__Impl();
@@ -3982,20 +3851,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__6__Impl"
-    // InternalVFormDsl.g:1276:1: rule__FormInputRange__Group__6__Impl : ( 'RANGE' ) ;
+    // InternalVFormDsl.g:1246:1: rule__FormInputRange__Group__6__Impl : ( 'RANGE' ) ;
     public final void rule__FormInputRange__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1280:1: ( ( 'RANGE' ) )
-            // InternalVFormDsl.g:1281:1: ( 'RANGE' )
+            // InternalVFormDsl.g:1250:1: ( ( 'RANGE' ) )
+            // InternalVFormDsl.g:1251:1: ( 'RANGE' )
             {
-            // InternalVFormDsl.g:1281:1: ( 'RANGE' )
-            // InternalVFormDsl.g:1282:2: 'RANGE'
+            // InternalVFormDsl.g:1251:1: ( 'RANGE' )
+            // InternalVFormDsl.g:1252:2: 'RANGE'
             {
              before(grammarAccess.getFormInputRangeAccess().getRANGEKeyword_6()); 
-            match(input,15,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getFormInputRangeAccess().getRANGEKeyword_6()); 
 
             }
@@ -4019,14 +3888,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__7"
-    // InternalVFormDsl.g:1291:1: rule__FormInputRange__Group__7 : rule__FormInputRange__Group__7__Impl rule__FormInputRange__Group__8 ;
+    // InternalVFormDsl.g:1261:1: rule__FormInputRange__Group__7 : rule__FormInputRange__Group__7__Impl rule__FormInputRange__Group__8 ;
     public final void rule__FormInputRange__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1295:1: ( rule__FormInputRange__Group__7__Impl rule__FormInputRange__Group__8 )
-            // InternalVFormDsl.g:1296:2: rule__FormInputRange__Group__7__Impl rule__FormInputRange__Group__8
+            // InternalVFormDsl.g:1265:1: ( rule__FormInputRange__Group__7__Impl rule__FormInputRange__Group__8 )
+            // InternalVFormDsl.g:1266:2: rule__FormInputRange__Group__7__Impl rule__FormInputRange__Group__8
             {
             pushFollow(FOLLOW_14);
             rule__FormInputRange__Group__7__Impl();
@@ -4057,20 +3926,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__7__Impl"
-    // InternalVFormDsl.g:1303:1: rule__FormInputRange__Group__7__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:1273:1: rule__FormInputRange__Group__7__Impl : ( ',' ) ;
     public final void rule__FormInputRange__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1307:1: ( ( ',' ) )
-            // InternalVFormDsl.g:1308:1: ( ',' )
+            // InternalVFormDsl.g:1277:1: ( ( ',' ) )
+            // InternalVFormDsl.g:1278:1: ( ',' )
             {
-            // InternalVFormDsl.g:1308:1: ( ',' )
-            // InternalVFormDsl.g:1309:2: ','
+            // InternalVFormDsl.g:1278:1: ( ',' )
+            // InternalVFormDsl.g:1279:2: ','
             {
              before(grammarAccess.getFormInputRangeAccess().getCommaKeyword_7()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getFormInputRangeAccess().getCommaKeyword_7()); 
 
             }
@@ -4094,14 +3963,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__8"
-    // InternalVFormDsl.g:1318:1: rule__FormInputRange__Group__8 : rule__FormInputRange__Group__8__Impl rule__FormInputRange__Group__9 ;
+    // InternalVFormDsl.g:1288:1: rule__FormInputRange__Group__8 : rule__FormInputRange__Group__8__Impl rule__FormInputRange__Group__9 ;
     public final void rule__FormInputRange__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1322:1: ( rule__FormInputRange__Group__8__Impl rule__FormInputRange__Group__9 )
-            // InternalVFormDsl.g:1323:2: rule__FormInputRange__Group__8__Impl rule__FormInputRange__Group__9
+            // InternalVFormDsl.g:1292:1: ( rule__FormInputRange__Group__8__Impl rule__FormInputRange__Group__9 )
+            // InternalVFormDsl.g:1293:2: rule__FormInputRange__Group__8__Impl rule__FormInputRange__Group__9
             {
             pushFollow(FOLLOW_15);
             rule__FormInputRange__Group__8__Impl();
@@ -4132,20 +4001,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__8__Impl"
-    // InternalVFormDsl.g:1330:1: rule__FormInputRange__Group__8__Impl : ( 'min:' ) ;
+    // InternalVFormDsl.g:1300:1: rule__FormInputRange__Group__8__Impl : ( 'min:' ) ;
     public final void rule__FormInputRange__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1334:1: ( ( 'min:' ) )
-            // InternalVFormDsl.g:1335:1: ( 'min:' )
+            // InternalVFormDsl.g:1304:1: ( ( 'min:' ) )
+            // InternalVFormDsl.g:1305:1: ( 'min:' )
             {
-            // InternalVFormDsl.g:1335:1: ( 'min:' )
-            // InternalVFormDsl.g:1336:2: 'min:'
+            // InternalVFormDsl.g:1305:1: ( 'min:' )
+            // InternalVFormDsl.g:1306:2: 'min:'
             {
              before(grammarAccess.getFormInputRangeAccess().getMinKeyword_8()); 
-            match(input,29,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getFormInputRangeAccess().getMinKeyword_8()); 
 
             }
@@ -4169,14 +4038,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__9"
-    // InternalVFormDsl.g:1345:1: rule__FormInputRange__Group__9 : rule__FormInputRange__Group__9__Impl rule__FormInputRange__Group__10 ;
+    // InternalVFormDsl.g:1315:1: rule__FormInputRange__Group__9 : rule__FormInputRange__Group__9__Impl rule__FormInputRange__Group__10 ;
     public final void rule__FormInputRange__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1349:1: ( rule__FormInputRange__Group__9__Impl rule__FormInputRange__Group__10 )
-            // InternalVFormDsl.g:1350:2: rule__FormInputRange__Group__9__Impl rule__FormInputRange__Group__10
+            // InternalVFormDsl.g:1319:1: ( rule__FormInputRange__Group__9__Impl rule__FormInputRange__Group__10 )
+            // InternalVFormDsl.g:1320:2: rule__FormInputRange__Group__9__Impl rule__FormInputRange__Group__10
             {
             pushFollow(FOLLOW_4);
             rule__FormInputRange__Group__9__Impl();
@@ -4207,21 +4076,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__9__Impl"
-    // InternalVFormDsl.g:1357:1: rule__FormInputRange__Group__9__Impl : ( ( rule__FormInputRange__MinAssignment_9 ) ) ;
+    // InternalVFormDsl.g:1327:1: rule__FormInputRange__Group__9__Impl : ( ( rule__FormInputRange__MinAssignment_9 ) ) ;
     public final void rule__FormInputRange__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1361:1: ( ( ( rule__FormInputRange__MinAssignment_9 ) ) )
-            // InternalVFormDsl.g:1362:1: ( ( rule__FormInputRange__MinAssignment_9 ) )
+            // InternalVFormDsl.g:1331:1: ( ( ( rule__FormInputRange__MinAssignment_9 ) ) )
+            // InternalVFormDsl.g:1332:1: ( ( rule__FormInputRange__MinAssignment_9 ) )
             {
-            // InternalVFormDsl.g:1362:1: ( ( rule__FormInputRange__MinAssignment_9 ) )
-            // InternalVFormDsl.g:1363:2: ( rule__FormInputRange__MinAssignment_9 )
+            // InternalVFormDsl.g:1332:1: ( ( rule__FormInputRange__MinAssignment_9 ) )
+            // InternalVFormDsl.g:1333:2: ( rule__FormInputRange__MinAssignment_9 )
             {
              before(grammarAccess.getFormInputRangeAccess().getMinAssignment_9()); 
-            // InternalVFormDsl.g:1364:2: ( rule__FormInputRange__MinAssignment_9 )
-            // InternalVFormDsl.g:1364:3: rule__FormInputRange__MinAssignment_9
+            // InternalVFormDsl.g:1334:2: ( rule__FormInputRange__MinAssignment_9 )
+            // InternalVFormDsl.g:1334:3: rule__FormInputRange__MinAssignment_9
             {
             pushFollow(FOLLOW_2);
             rule__FormInputRange__MinAssignment_9();
@@ -4254,14 +4123,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__10"
-    // InternalVFormDsl.g:1372:1: rule__FormInputRange__Group__10 : rule__FormInputRange__Group__10__Impl rule__FormInputRange__Group__11 ;
+    // InternalVFormDsl.g:1342:1: rule__FormInputRange__Group__10 : rule__FormInputRange__Group__10__Impl rule__FormInputRange__Group__11 ;
     public final void rule__FormInputRange__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1376:1: ( rule__FormInputRange__Group__10__Impl rule__FormInputRange__Group__11 )
-            // InternalVFormDsl.g:1377:2: rule__FormInputRange__Group__10__Impl rule__FormInputRange__Group__11
+            // InternalVFormDsl.g:1346:1: ( rule__FormInputRange__Group__10__Impl rule__FormInputRange__Group__11 )
+            // InternalVFormDsl.g:1347:2: rule__FormInputRange__Group__10__Impl rule__FormInputRange__Group__11
             {
             pushFollow(FOLLOW_16);
             rule__FormInputRange__Group__10__Impl();
@@ -4292,20 +4161,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__10__Impl"
-    // InternalVFormDsl.g:1384:1: rule__FormInputRange__Group__10__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:1354:1: rule__FormInputRange__Group__10__Impl : ( ',' ) ;
     public final void rule__FormInputRange__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1388:1: ( ( ',' ) )
-            // InternalVFormDsl.g:1389:1: ( ',' )
+            // InternalVFormDsl.g:1358:1: ( ( ',' ) )
+            // InternalVFormDsl.g:1359:1: ( ',' )
             {
-            // InternalVFormDsl.g:1389:1: ( ',' )
-            // InternalVFormDsl.g:1390:2: ','
+            // InternalVFormDsl.g:1359:1: ( ',' )
+            // InternalVFormDsl.g:1360:2: ','
             {
              before(grammarAccess.getFormInputRangeAccess().getCommaKeyword_10()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getFormInputRangeAccess().getCommaKeyword_10()); 
 
             }
@@ -4329,14 +4198,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__11"
-    // InternalVFormDsl.g:1399:1: rule__FormInputRange__Group__11 : rule__FormInputRange__Group__11__Impl rule__FormInputRange__Group__12 ;
+    // InternalVFormDsl.g:1369:1: rule__FormInputRange__Group__11 : rule__FormInputRange__Group__11__Impl rule__FormInputRange__Group__12 ;
     public final void rule__FormInputRange__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1403:1: ( rule__FormInputRange__Group__11__Impl rule__FormInputRange__Group__12 )
-            // InternalVFormDsl.g:1404:2: rule__FormInputRange__Group__11__Impl rule__FormInputRange__Group__12
+            // InternalVFormDsl.g:1373:1: ( rule__FormInputRange__Group__11__Impl rule__FormInputRange__Group__12 )
+            // InternalVFormDsl.g:1374:2: rule__FormInputRange__Group__11__Impl rule__FormInputRange__Group__12
             {
             pushFollow(FOLLOW_15);
             rule__FormInputRange__Group__11__Impl();
@@ -4367,20 +4236,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__11__Impl"
-    // InternalVFormDsl.g:1411:1: rule__FormInputRange__Group__11__Impl : ( 'max:' ) ;
+    // InternalVFormDsl.g:1381:1: rule__FormInputRange__Group__11__Impl : ( 'max:' ) ;
     public final void rule__FormInputRange__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1415:1: ( ( 'max:' ) )
-            // InternalVFormDsl.g:1416:1: ( 'max:' )
+            // InternalVFormDsl.g:1385:1: ( ( 'max:' ) )
+            // InternalVFormDsl.g:1386:1: ( 'max:' )
             {
-            // InternalVFormDsl.g:1416:1: ( 'max:' )
-            // InternalVFormDsl.g:1417:2: 'max:'
+            // InternalVFormDsl.g:1386:1: ( 'max:' )
+            // InternalVFormDsl.g:1387:2: 'max:'
             {
              before(grammarAccess.getFormInputRangeAccess().getMaxKeyword_11()); 
-            match(input,30,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getFormInputRangeAccess().getMaxKeyword_11()); 
 
             }
@@ -4404,14 +4273,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__12"
-    // InternalVFormDsl.g:1426:1: rule__FormInputRange__Group__12 : rule__FormInputRange__Group__12__Impl ;
+    // InternalVFormDsl.g:1396:1: rule__FormInputRange__Group__12 : rule__FormInputRange__Group__12__Impl ;
     public final void rule__FormInputRange__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1430:1: ( rule__FormInputRange__Group__12__Impl )
-            // InternalVFormDsl.g:1431:2: rule__FormInputRange__Group__12__Impl
+            // InternalVFormDsl.g:1400:1: ( rule__FormInputRange__Group__12__Impl )
+            // InternalVFormDsl.g:1401:2: rule__FormInputRange__Group__12__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FormInputRange__Group__12__Impl();
@@ -4437,21 +4306,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__Group__12__Impl"
-    // InternalVFormDsl.g:1437:1: rule__FormInputRange__Group__12__Impl : ( ( rule__FormInputRange__MaxAssignment_12 ) ) ;
+    // InternalVFormDsl.g:1407:1: rule__FormInputRange__Group__12__Impl : ( ( rule__FormInputRange__MaxAssignment_12 ) ) ;
     public final void rule__FormInputRange__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1441:1: ( ( ( rule__FormInputRange__MaxAssignment_12 ) ) )
-            // InternalVFormDsl.g:1442:1: ( ( rule__FormInputRange__MaxAssignment_12 ) )
+            // InternalVFormDsl.g:1411:1: ( ( ( rule__FormInputRange__MaxAssignment_12 ) ) )
+            // InternalVFormDsl.g:1412:1: ( ( rule__FormInputRange__MaxAssignment_12 ) )
             {
-            // InternalVFormDsl.g:1442:1: ( ( rule__FormInputRange__MaxAssignment_12 ) )
-            // InternalVFormDsl.g:1443:2: ( rule__FormInputRange__MaxAssignment_12 )
+            // InternalVFormDsl.g:1412:1: ( ( rule__FormInputRange__MaxAssignment_12 ) )
+            // InternalVFormDsl.g:1413:2: ( rule__FormInputRange__MaxAssignment_12 )
             {
              before(grammarAccess.getFormInputRangeAccess().getMaxAssignment_12()); 
-            // InternalVFormDsl.g:1444:2: ( rule__FormInputRange__MaxAssignment_12 )
-            // InternalVFormDsl.g:1444:3: rule__FormInputRange__MaxAssignment_12
+            // InternalVFormDsl.g:1414:2: ( rule__FormInputRange__MaxAssignment_12 )
+            // InternalVFormDsl.g:1414:3: rule__FormInputRange__MaxAssignment_12
             {
             pushFollow(FOLLOW_2);
             rule__FormInputRange__MaxAssignment_12();
@@ -4484,14 +4353,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__0"
-    // InternalVFormDsl.g:1453:1: rule__FormInputSelect__Group__0 : rule__FormInputSelect__Group__0__Impl rule__FormInputSelect__Group__1 ;
+    // InternalVFormDsl.g:1423:1: rule__FormInputSelect__Group__0 : rule__FormInputSelect__Group__0__Impl rule__FormInputSelect__Group__1 ;
     public final void rule__FormInputSelect__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1457:1: ( rule__FormInputSelect__Group__0__Impl rule__FormInputSelect__Group__1 )
-            // InternalVFormDsl.g:1458:2: rule__FormInputSelect__Group__0__Impl rule__FormInputSelect__Group__1
+            // InternalVFormDsl.g:1427:1: ( rule__FormInputSelect__Group__0__Impl rule__FormInputSelect__Group__1 )
+            // InternalVFormDsl.g:1428:2: rule__FormInputSelect__Group__0__Impl rule__FormInputSelect__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__FormInputSelect__Group__0__Impl();
@@ -4522,20 +4391,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__0__Impl"
-    // InternalVFormDsl.g:1465:1: rule__FormInputSelect__Group__0__Impl : ( 'name' ) ;
+    // InternalVFormDsl.g:1435:1: rule__FormInputSelect__Group__0__Impl : ( 'name' ) ;
     public final void rule__FormInputSelect__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1469:1: ( ( 'name' ) )
-            // InternalVFormDsl.g:1470:1: ( 'name' )
+            // InternalVFormDsl.g:1439:1: ( ( 'name' ) )
+            // InternalVFormDsl.g:1440:1: ( 'name' )
             {
-            // InternalVFormDsl.g:1470:1: ( 'name' )
-            // InternalVFormDsl.g:1471:2: 'name'
+            // InternalVFormDsl.g:1440:1: ( 'name' )
+            // InternalVFormDsl.g:1441:2: 'name'
             {
              before(grammarAccess.getFormInputSelectAccess().getNameKeyword_0()); 
-            match(input,26,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getFormInputSelectAccess().getNameKeyword_0()); 
 
             }
@@ -4559,14 +4428,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__1"
-    // InternalVFormDsl.g:1480:1: rule__FormInputSelect__Group__1 : rule__FormInputSelect__Group__1__Impl rule__FormInputSelect__Group__2 ;
+    // InternalVFormDsl.g:1450:1: rule__FormInputSelect__Group__1 : rule__FormInputSelect__Group__1__Impl rule__FormInputSelect__Group__2 ;
     public final void rule__FormInputSelect__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1484:1: ( rule__FormInputSelect__Group__1__Impl rule__FormInputSelect__Group__2 )
-            // InternalVFormDsl.g:1485:2: rule__FormInputSelect__Group__1__Impl rule__FormInputSelect__Group__2
+            // InternalVFormDsl.g:1454:1: ( rule__FormInputSelect__Group__1__Impl rule__FormInputSelect__Group__2 )
+            // InternalVFormDsl.g:1455:2: rule__FormInputSelect__Group__1__Impl rule__FormInputSelect__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__FormInputSelect__Group__1__Impl();
@@ -4597,20 +4466,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__1__Impl"
-    // InternalVFormDsl.g:1492:1: rule__FormInputSelect__Group__1__Impl : ( ':' ) ;
+    // InternalVFormDsl.g:1462:1: rule__FormInputSelect__Group__1__Impl : ( ':' ) ;
     public final void rule__FormInputSelect__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1496:1: ( ( ':' ) )
-            // InternalVFormDsl.g:1497:1: ( ':' )
+            // InternalVFormDsl.g:1466:1: ( ( ':' ) )
+            // InternalVFormDsl.g:1467:1: ( ':' )
             {
-            // InternalVFormDsl.g:1497:1: ( ':' )
-            // InternalVFormDsl.g:1498:2: ':'
+            // InternalVFormDsl.g:1467:1: ( ':' )
+            // InternalVFormDsl.g:1468:2: ':'
             {
              before(grammarAccess.getFormInputSelectAccess().getColonKeyword_1()); 
-            match(input,27,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getFormInputSelectAccess().getColonKeyword_1()); 
 
             }
@@ -4634,14 +4503,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__2"
-    // InternalVFormDsl.g:1507:1: rule__FormInputSelect__Group__2 : rule__FormInputSelect__Group__2__Impl rule__FormInputSelect__Group__3 ;
+    // InternalVFormDsl.g:1477:1: rule__FormInputSelect__Group__2 : rule__FormInputSelect__Group__2__Impl rule__FormInputSelect__Group__3 ;
     public final void rule__FormInputSelect__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1511:1: ( rule__FormInputSelect__Group__2__Impl rule__FormInputSelect__Group__3 )
-            // InternalVFormDsl.g:1512:2: rule__FormInputSelect__Group__2__Impl rule__FormInputSelect__Group__3
+            // InternalVFormDsl.g:1481:1: ( rule__FormInputSelect__Group__2__Impl rule__FormInputSelect__Group__3 )
+            // InternalVFormDsl.g:1482:2: rule__FormInputSelect__Group__2__Impl rule__FormInputSelect__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__FormInputSelect__Group__2__Impl();
@@ -4672,21 +4541,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__2__Impl"
-    // InternalVFormDsl.g:1519:1: rule__FormInputSelect__Group__2__Impl : ( ( rule__FormInputSelect__NameAssignment_2 ) ) ;
+    // InternalVFormDsl.g:1489:1: rule__FormInputSelect__Group__2__Impl : ( ( rule__FormInputSelect__NameAssignment_2 ) ) ;
     public final void rule__FormInputSelect__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1523:1: ( ( ( rule__FormInputSelect__NameAssignment_2 ) ) )
-            // InternalVFormDsl.g:1524:1: ( ( rule__FormInputSelect__NameAssignment_2 ) )
+            // InternalVFormDsl.g:1493:1: ( ( ( rule__FormInputSelect__NameAssignment_2 ) ) )
+            // InternalVFormDsl.g:1494:1: ( ( rule__FormInputSelect__NameAssignment_2 ) )
             {
-            // InternalVFormDsl.g:1524:1: ( ( rule__FormInputSelect__NameAssignment_2 ) )
-            // InternalVFormDsl.g:1525:2: ( rule__FormInputSelect__NameAssignment_2 )
+            // InternalVFormDsl.g:1494:1: ( ( rule__FormInputSelect__NameAssignment_2 ) )
+            // InternalVFormDsl.g:1495:2: ( rule__FormInputSelect__NameAssignment_2 )
             {
              before(grammarAccess.getFormInputSelectAccess().getNameAssignment_2()); 
-            // InternalVFormDsl.g:1526:2: ( rule__FormInputSelect__NameAssignment_2 )
-            // InternalVFormDsl.g:1526:3: rule__FormInputSelect__NameAssignment_2
+            // InternalVFormDsl.g:1496:2: ( rule__FormInputSelect__NameAssignment_2 )
+            // InternalVFormDsl.g:1496:3: rule__FormInputSelect__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__FormInputSelect__NameAssignment_2();
@@ -4719,14 +4588,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__3"
-    // InternalVFormDsl.g:1534:1: rule__FormInputSelect__Group__3 : rule__FormInputSelect__Group__3__Impl rule__FormInputSelect__Group__4 ;
+    // InternalVFormDsl.g:1504:1: rule__FormInputSelect__Group__3 : rule__FormInputSelect__Group__3__Impl rule__FormInputSelect__Group__4 ;
     public final void rule__FormInputSelect__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1538:1: ( rule__FormInputSelect__Group__3__Impl rule__FormInputSelect__Group__4 )
-            // InternalVFormDsl.g:1539:2: rule__FormInputSelect__Group__3__Impl rule__FormInputSelect__Group__4
+            // InternalVFormDsl.g:1508:1: ( rule__FormInputSelect__Group__3__Impl rule__FormInputSelect__Group__4 )
+            // InternalVFormDsl.g:1509:2: rule__FormInputSelect__Group__3__Impl rule__FormInputSelect__Group__4
             {
             pushFollow(FOLLOW_11);
             rule__FormInputSelect__Group__3__Impl();
@@ -4757,20 +4626,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__3__Impl"
-    // InternalVFormDsl.g:1546:1: rule__FormInputSelect__Group__3__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:1516:1: rule__FormInputSelect__Group__3__Impl : ( ',' ) ;
     public final void rule__FormInputSelect__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1550:1: ( ( ',' ) )
-            // InternalVFormDsl.g:1551:1: ( ',' )
+            // InternalVFormDsl.g:1520:1: ( ( ',' ) )
+            // InternalVFormDsl.g:1521:1: ( ',' )
             {
-            // InternalVFormDsl.g:1551:1: ( ',' )
-            // InternalVFormDsl.g:1552:2: ','
+            // InternalVFormDsl.g:1521:1: ( ',' )
+            // InternalVFormDsl.g:1522:2: ','
             {
              before(grammarAccess.getFormInputSelectAccess().getCommaKeyword_3()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getFormInputSelectAccess().getCommaKeyword_3()); 
 
             }
@@ -4794,14 +4663,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__4"
-    // InternalVFormDsl.g:1561:1: rule__FormInputSelect__Group__4 : rule__FormInputSelect__Group__4__Impl rule__FormInputSelect__Group__5 ;
+    // InternalVFormDsl.g:1531:1: rule__FormInputSelect__Group__4 : rule__FormInputSelect__Group__4__Impl rule__FormInputSelect__Group__5 ;
     public final void rule__FormInputSelect__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1565:1: ( rule__FormInputSelect__Group__4__Impl rule__FormInputSelect__Group__5 )
-            // InternalVFormDsl.g:1566:2: rule__FormInputSelect__Group__4__Impl rule__FormInputSelect__Group__5
+            // InternalVFormDsl.g:1535:1: ( rule__FormInputSelect__Group__4__Impl rule__FormInputSelect__Group__5 )
+            // InternalVFormDsl.g:1536:2: rule__FormInputSelect__Group__4__Impl rule__FormInputSelect__Group__5
             {
             pushFollow(FOLLOW_9);
             rule__FormInputSelect__Group__4__Impl();
@@ -4832,20 +4701,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__4__Impl"
-    // InternalVFormDsl.g:1573:1: rule__FormInputSelect__Group__4__Impl : ( 'type' ) ;
+    // InternalVFormDsl.g:1543:1: rule__FormInputSelect__Group__4__Impl : ( 'type' ) ;
     public final void rule__FormInputSelect__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1577:1: ( ( 'type' ) )
-            // InternalVFormDsl.g:1578:1: ( 'type' )
+            // InternalVFormDsl.g:1547:1: ( ( 'type' ) )
+            // InternalVFormDsl.g:1548:1: ( 'type' )
             {
-            // InternalVFormDsl.g:1578:1: ( 'type' )
-            // InternalVFormDsl.g:1579:2: 'type'
+            // InternalVFormDsl.g:1548:1: ( 'type' )
+            // InternalVFormDsl.g:1549:2: 'type'
             {
              before(grammarAccess.getFormInputSelectAccess().getTypeKeyword_4()); 
-            match(input,28,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getFormInputSelectAccess().getTypeKeyword_4()); 
 
             }
@@ -4869,14 +4738,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__5"
-    // InternalVFormDsl.g:1588:1: rule__FormInputSelect__Group__5 : rule__FormInputSelect__Group__5__Impl rule__FormInputSelect__Group__6 ;
+    // InternalVFormDsl.g:1558:1: rule__FormInputSelect__Group__5 : rule__FormInputSelect__Group__5__Impl rule__FormInputSelect__Group__6 ;
     public final void rule__FormInputSelect__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1592:1: ( rule__FormInputSelect__Group__5__Impl rule__FormInputSelect__Group__6 )
-            // InternalVFormDsl.g:1593:2: rule__FormInputSelect__Group__5__Impl rule__FormInputSelect__Group__6
+            // InternalVFormDsl.g:1562:1: ( rule__FormInputSelect__Group__5__Impl rule__FormInputSelect__Group__6 )
+            // InternalVFormDsl.g:1563:2: rule__FormInputSelect__Group__5__Impl rule__FormInputSelect__Group__6
             {
             pushFollow(FOLLOW_17);
             rule__FormInputSelect__Group__5__Impl();
@@ -4907,20 +4776,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__5__Impl"
-    // InternalVFormDsl.g:1600:1: rule__FormInputSelect__Group__5__Impl : ( ':' ) ;
+    // InternalVFormDsl.g:1570:1: rule__FormInputSelect__Group__5__Impl : ( ':' ) ;
     public final void rule__FormInputSelect__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1604:1: ( ( ':' ) )
-            // InternalVFormDsl.g:1605:1: ( ':' )
+            // InternalVFormDsl.g:1574:1: ( ( ':' ) )
+            // InternalVFormDsl.g:1575:1: ( ':' )
             {
-            // InternalVFormDsl.g:1605:1: ( ':' )
-            // InternalVFormDsl.g:1606:2: ':'
+            // InternalVFormDsl.g:1575:1: ( ':' )
+            // InternalVFormDsl.g:1576:2: ':'
             {
              before(grammarAccess.getFormInputSelectAccess().getColonKeyword_5()); 
-            match(input,27,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getFormInputSelectAccess().getColonKeyword_5()); 
 
             }
@@ -4944,14 +4813,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__6"
-    // InternalVFormDsl.g:1615:1: rule__FormInputSelect__Group__6 : rule__FormInputSelect__Group__6__Impl rule__FormInputSelect__Group__7 ;
+    // InternalVFormDsl.g:1585:1: rule__FormInputSelect__Group__6 : rule__FormInputSelect__Group__6__Impl rule__FormInputSelect__Group__7 ;
     public final void rule__FormInputSelect__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1619:1: ( rule__FormInputSelect__Group__6__Impl rule__FormInputSelect__Group__7 )
-            // InternalVFormDsl.g:1620:2: rule__FormInputSelect__Group__6__Impl rule__FormInputSelect__Group__7
+            // InternalVFormDsl.g:1589:1: ( rule__FormInputSelect__Group__6__Impl rule__FormInputSelect__Group__7 )
+            // InternalVFormDsl.g:1590:2: rule__FormInputSelect__Group__6__Impl rule__FormInputSelect__Group__7
             {
             pushFollow(FOLLOW_4);
             rule__FormInputSelect__Group__6__Impl();
@@ -4982,20 +4851,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__6__Impl"
-    // InternalVFormDsl.g:1627:1: rule__FormInputSelect__Group__6__Impl : ( 'SELECT' ) ;
+    // InternalVFormDsl.g:1597:1: rule__FormInputSelect__Group__6__Impl : ( 'SELECT' ) ;
     public final void rule__FormInputSelect__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1631:1: ( ( 'SELECT' ) )
-            // InternalVFormDsl.g:1632:1: ( 'SELECT' )
+            // InternalVFormDsl.g:1601:1: ( ( 'SELECT' ) )
+            // InternalVFormDsl.g:1602:1: ( 'SELECT' )
             {
-            // InternalVFormDsl.g:1632:1: ( 'SELECT' )
-            // InternalVFormDsl.g:1633:2: 'SELECT'
+            // InternalVFormDsl.g:1602:1: ( 'SELECT' )
+            // InternalVFormDsl.g:1603:2: 'SELECT'
             {
              before(grammarAccess.getFormInputSelectAccess().getSELECTKeyword_6()); 
-            match(input,16,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getFormInputSelectAccess().getSELECTKeyword_6()); 
 
             }
@@ -5019,14 +4888,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__7"
-    // InternalVFormDsl.g:1642:1: rule__FormInputSelect__Group__7 : rule__FormInputSelect__Group__7__Impl rule__FormInputSelect__Group__8 ;
+    // InternalVFormDsl.g:1612:1: rule__FormInputSelect__Group__7 : rule__FormInputSelect__Group__7__Impl rule__FormInputSelect__Group__8 ;
     public final void rule__FormInputSelect__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1646:1: ( rule__FormInputSelect__Group__7__Impl rule__FormInputSelect__Group__8 )
-            // InternalVFormDsl.g:1647:2: rule__FormInputSelect__Group__7__Impl rule__FormInputSelect__Group__8
+            // InternalVFormDsl.g:1616:1: ( rule__FormInputSelect__Group__7__Impl rule__FormInputSelect__Group__8 )
+            // InternalVFormDsl.g:1617:2: rule__FormInputSelect__Group__7__Impl rule__FormInputSelect__Group__8
             {
             pushFollow(FOLLOW_18);
             rule__FormInputSelect__Group__7__Impl();
@@ -5057,20 +4926,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__7__Impl"
-    // InternalVFormDsl.g:1654:1: rule__FormInputSelect__Group__7__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:1624:1: rule__FormInputSelect__Group__7__Impl : ( ',' ) ;
     public final void rule__FormInputSelect__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1658:1: ( ( ',' ) )
-            // InternalVFormDsl.g:1659:1: ( ',' )
+            // InternalVFormDsl.g:1628:1: ( ( ',' ) )
+            // InternalVFormDsl.g:1629:1: ( ',' )
             {
-            // InternalVFormDsl.g:1659:1: ( ',' )
-            // InternalVFormDsl.g:1660:2: ','
+            // InternalVFormDsl.g:1629:1: ( ',' )
+            // InternalVFormDsl.g:1630:2: ','
             {
              before(grammarAccess.getFormInputSelectAccess().getCommaKeyword_7()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getFormInputSelectAccess().getCommaKeyword_7()); 
 
             }
@@ -5094,14 +4963,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__8"
-    // InternalVFormDsl.g:1669:1: rule__FormInputSelect__Group__8 : rule__FormInputSelect__Group__8__Impl rule__FormInputSelect__Group__9 ;
+    // InternalVFormDsl.g:1639:1: rule__FormInputSelect__Group__8 : rule__FormInputSelect__Group__8__Impl rule__FormInputSelect__Group__9 ;
     public final void rule__FormInputSelect__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1673:1: ( rule__FormInputSelect__Group__8__Impl rule__FormInputSelect__Group__9 )
-            // InternalVFormDsl.g:1674:2: rule__FormInputSelect__Group__8__Impl rule__FormInputSelect__Group__9
+            // InternalVFormDsl.g:1643:1: ( rule__FormInputSelect__Group__8__Impl rule__FormInputSelect__Group__9 )
+            // InternalVFormDsl.g:1644:2: rule__FormInputSelect__Group__8__Impl rule__FormInputSelect__Group__9
             {
             pushFollow(FOLLOW_19);
             rule__FormInputSelect__Group__8__Impl();
@@ -5132,20 +5001,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__8__Impl"
-    // InternalVFormDsl.g:1681:1: rule__FormInputSelect__Group__8__Impl : ( 'options:' ) ;
+    // InternalVFormDsl.g:1651:1: rule__FormInputSelect__Group__8__Impl : ( 'options:' ) ;
     public final void rule__FormInputSelect__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1685:1: ( ( 'options:' ) )
-            // InternalVFormDsl.g:1686:1: ( 'options:' )
+            // InternalVFormDsl.g:1655:1: ( ( 'options:' ) )
+            // InternalVFormDsl.g:1656:1: ( 'options:' )
             {
-            // InternalVFormDsl.g:1686:1: ( 'options:' )
-            // InternalVFormDsl.g:1687:2: 'options:'
+            // InternalVFormDsl.g:1656:1: ( 'options:' )
+            // InternalVFormDsl.g:1657:2: 'options:'
             {
              before(grammarAccess.getFormInputSelectAccess().getOptionsKeyword_8()); 
-            match(input,31,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getFormInputSelectAccess().getOptionsKeyword_8()); 
 
             }
@@ -5169,14 +5038,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__9"
-    // InternalVFormDsl.g:1696:1: rule__FormInputSelect__Group__9 : rule__FormInputSelect__Group__9__Impl rule__FormInputSelect__Group__10 ;
+    // InternalVFormDsl.g:1666:1: rule__FormInputSelect__Group__9 : rule__FormInputSelect__Group__9__Impl rule__FormInputSelect__Group__10 ;
     public final void rule__FormInputSelect__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1700:1: ( rule__FormInputSelect__Group__9__Impl rule__FormInputSelect__Group__10 )
-            // InternalVFormDsl.g:1701:2: rule__FormInputSelect__Group__9__Impl rule__FormInputSelect__Group__10
+            // InternalVFormDsl.g:1670:1: ( rule__FormInputSelect__Group__9__Impl rule__FormInputSelect__Group__10 )
+            // InternalVFormDsl.g:1671:2: rule__FormInputSelect__Group__9__Impl rule__FormInputSelect__Group__10
             {
             pushFollow(FOLLOW_20);
             rule__FormInputSelect__Group__9__Impl();
@@ -5207,20 +5076,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__9__Impl"
-    // InternalVFormDsl.g:1708:1: rule__FormInputSelect__Group__9__Impl : ( '{' ) ;
+    // InternalVFormDsl.g:1678:1: rule__FormInputSelect__Group__9__Impl : ( '{' ) ;
     public final void rule__FormInputSelect__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1712:1: ( ( '{' ) )
-            // InternalVFormDsl.g:1713:1: ( '{' )
+            // InternalVFormDsl.g:1682:1: ( ( '{' ) )
+            // InternalVFormDsl.g:1683:1: ( '{' )
             {
-            // InternalVFormDsl.g:1713:1: ( '{' )
-            // InternalVFormDsl.g:1714:2: '{'
+            // InternalVFormDsl.g:1683:1: ( '{' )
+            // InternalVFormDsl.g:1684:2: '{'
             {
              before(grammarAccess.getFormInputSelectAccess().getLeftCurlyBracketKeyword_9()); 
-            match(input,32,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getFormInputSelectAccess().getLeftCurlyBracketKeyword_9()); 
 
             }
@@ -5244,14 +5113,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__10"
-    // InternalVFormDsl.g:1723:1: rule__FormInputSelect__Group__10 : rule__FormInputSelect__Group__10__Impl rule__FormInputSelect__Group__11 ;
+    // InternalVFormDsl.g:1693:1: rule__FormInputSelect__Group__10 : rule__FormInputSelect__Group__10__Impl rule__FormInputSelect__Group__11 ;
     public final void rule__FormInputSelect__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1727:1: ( rule__FormInputSelect__Group__10__Impl rule__FormInputSelect__Group__11 )
-            // InternalVFormDsl.g:1728:2: rule__FormInputSelect__Group__10__Impl rule__FormInputSelect__Group__11
+            // InternalVFormDsl.g:1697:1: ( rule__FormInputSelect__Group__10__Impl rule__FormInputSelect__Group__11 )
+            // InternalVFormDsl.g:1698:2: rule__FormInputSelect__Group__10__Impl rule__FormInputSelect__Group__11
             {
             pushFollow(FOLLOW_21);
             rule__FormInputSelect__Group__10__Impl();
@@ -5282,21 +5151,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__10__Impl"
-    // InternalVFormDsl.g:1735:1: rule__FormInputSelect__Group__10__Impl : ( ( rule__FormInputSelect__OptionAssignment_10 ) ) ;
+    // InternalVFormDsl.g:1705:1: rule__FormInputSelect__Group__10__Impl : ( ( rule__FormInputSelect__OptionAssignment_10 ) ) ;
     public final void rule__FormInputSelect__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1739:1: ( ( ( rule__FormInputSelect__OptionAssignment_10 ) ) )
-            // InternalVFormDsl.g:1740:1: ( ( rule__FormInputSelect__OptionAssignment_10 ) )
+            // InternalVFormDsl.g:1709:1: ( ( ( rule__FormInputSelect__OptionAssignment_10 ) ) )
+            // InternalVFormDsl.g:1710:1: ( ( rule__FormInputSelect__OptionAssignment_10 ) )
             {
-            // InternalVFormDsl.g:1740:1: ( ( rule__FormInputSelect__OptionAssignment_10 ) )
-            // InternalVFormDsl.g:1741:2: ( rule__FormInputSelect__OptionAssignment_10 )
+            // InternalVFormDsl.g:1710:1: ( ( rule__FormInputSelect__OptionAssignment_10 ) )
+            // InternalVFormDsl.g:1711:2: ( rule__FormInputSelect__OptionAssignment_10 )
             {
              before(grammarAccess.getFormInputSelectAccess().getOptionAssignment_10()); 
-            // InternalVFormDsl.g:1742:2: ( rule__FormInputSelect__OptionAssignment_10 )
-            // InternalVFormDsl.g:1742:3: rule__FormInputSelect__OptionAssignment_10
+            // InternalVFormDsl.g:1712:2: ( rule__FormInputSelect__OptionAssignment_10 )
+            // InternalVFormDsl.g:1712:3: rule__FormInputSelect__OptionAssignment_10
             {
             pushFollow(FOLLOW_2);
             rule__FormInputSelect__OptionAssignment_10();
@@ -5329,14 +5198,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__11"
-    // InternalVFormDsl.g:1750:1: rule__FormInputSelect__Group__11 : rule__FormInputSelect__Group__11__Impl ;
+    // InternalVFormDsl.g:1720:1: rule__FormInputSelect__Group__11 : rule__FormInputSelect__Group__11__Impl ;
     public final void rule__FormInputSelect__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1754:1: ( rule__FormInputSelect__Group__11__Impl )
-            // InternalVFormDsl.g:1755:2: rule__FormInputSelect__Group__11__Impl
+            // InternalVFormDsl.g:1724:1: ( rule__FormInputSelect__Group__11__Impl )
+            // InternalVFormDsl.g:1725:2: rule__FormInputSelect__Group__11__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FormInputSelect__Group__11__Impl();
@@ -5362,20 +5231,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__Group__11__Impl"
-    // InternalVFormDsl.g:1761:1: rule__FormInputSelect__Group__11__Impl : ( '}' ) ;
+    // InternalVFormDsl.g:1731:1: rule__FormInputSelect__Group__11__Impl : ( '}' ) ;
     public final void rule__FormInputSelect__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1765:1: ( ( '}' ) )
-            // InternalVFormDsl.g:1766:1: ( '}' )
+            // InternalVFormDsl.g:1735:1: ( ( '}' ) )
+            // InternalVFormDsl.g:1736:1: ( '}' )
             {
-            // InternalVFormDsl.g:1766:1: ( '}' )
-            // InternalVFormDsl.g:1767:2: '}'
+            // InternalVFormDsl.g:1736:1: ( '}' )
+            // InternalVFormDsl.g:1737:2: '}'
             {
              before(grammarAccess.getFormInputSelectAccess().getRightCurlyBracketKeyword_11()); 
-            match(input,33,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getFormInputSelectAccess().getRightCurlyBracketKeyword_11()); 
 
             }
@@ -5399,14 +5268,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__0"
-    // InternalVFormDsl.g:1777:1: rule__DataOption__Group__0 : rule__DataOption__Group__0__Impl rule__DataOption__Group__1 ;
+    // InternalVFormDsl.g:1747:1: rule__DataOption__Group__0 : rule__DataOption__Group__0__Impl rule__DataOption__Group__1 ;
     public final void rule__DataOption__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1781:1: ( rule__DataOption__Group__0__Impl rule__DataOption__Group__1 )
-            // InternalVFormDsl.g:1782:2: rule__DataOption__Group__0__Impl rule__DataOption__Group__1
+            // InternalVFormDsl.g:1751:1: ( rule__DataOption__Group__0__Impl rule__DataOption__Group__1 )
+            // InternalVFormDsl.g:1752:2: rule__DataOption__Group__0__Impl rule__DataOption__Group__1
             {
             pushFollow(FOLLOW_22);
             rule__DataOption__Group__0__Impl();
@@ -5437,20 +5306,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__0__Impl"
-    // InternalVFormDsl.g:1789:1: rule__DataOption__Group__0__Impl : ( 'optionType:' ) ;
+    // InternalVFormDsl.g:1759:1: rule__DataOption__Group__0__Impl : ( 'optionType:' ) ;
     public final void rule__DataOption__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1793:1: ( ( 'optionType:' ) )
-            // InternalVFormDsl.g:1794:1: ( 'optionType:' )
+            // InternalVFormDsl.g:1763:1: ( ( 'optionType:' ) )
+            // InternalVFormDsl.g:1764:1: ( 'optionType:' )
             {
-            // InternalVFormDsl.g:1794:1: ( 'optionType:' )
-            // InternalVFormDsl.g:1795:2: 'optionType:'
+            // InternalVFormDsl.g:1764:1: ( 'optionType:' )
+            // InternalVFormDsl.g:1765:2: 'optionType:'
             {
              before(grammarAccess.getDataOptionAccess().getOptionTypeKeyword_0()); 
-            match(input,34,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getDataOptionAccess().getOptionTypeKeyword_0()); 
 
             }
@@ -5474,14 +5343,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__1"
-    // InternalVFormDsl.g:1804:1: rule__DataOption__Group__1 : rule__DataOption__Group__1__Impl rule__DataOption__Group__2 ;
+    // InternalVFormDsl.g:1774:1: rule__DataOption__Group__1 : rule__DataOption__Group__1__Impl rule__DataOption__Group__2 ;
     public final void rule__DataOption__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1808:1: ( rule__DataOption__Group__1__Impl rule__DataOption__Group__2 )
-            // InternalVFormDsl.g:1809:2: rule__DataOption__Group__1__Impl rule__DataOption__Group__2
+            // InternalVFormDsl.g:1778:1: ( rule__DataOption__Group__1__Impl rule__DataOption__Group__2 )
+            // InternalVFormDsl.g:1779:2: rule__DataOption__Group__1__Impl rule__DataOption__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__DataOption__Group__1__Impl();
@@ -5512,20 +5381,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__1__Impl"
-    // InternalVFormDsl.g:1816:1: rule__DataOption__Group__1__Impl : ( 'data' ) ;
+    // InternalVFormDsl.g:1786:1: rule__DataOption__Group__1__Impl : ( 'data' ) ;
     public final void rule__DataOption__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1820:1: ( ( 'data' ) )
-            // InternalVFormDsl.g:1821:1: ( 'data' )
+            // InternalVFormDsl.g:1790:1: ( ( 'data' ) )
+            // InternalVFormDsl.g:1791:1: ( 'data' )
             {
-            // InternalVFormDsl.g:1821:1: ( 'data' )
-            // InternalVFormDsl.g:1822:2: 'data'
+            // InternalVFormDsl.g:1791:1: ( 'data' )
+            // InternalVFormDsl.g:1792:2: 'data'
             {
              before(grammarAccess.getDataOptionAccess().getDataKeyword_1()); 
-            match(input,35,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getDataOptionAccess().getDataKeyword_1()); 
 
             }
@@ -5549,14 +5418,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__2"
-    // InternalVFormDsl.g:1831:1: rule__DataOption__Group__2 : rule__DataOption__Group__2__Impl rule__DataOption__Group__3 ;
+    // InternalVFormDsl.g:1801:1: rule__DataOption__Group__2 : rule__DataOption__Group__2__Impl rule__DataOption__Group__3 ;
     public final void rule__DataOption__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1835:1: ( rule__DataOption__Group__2__Impl rule__DataOption__Group__3 )
-            // InternalVFormDsl.g:1836:2: rule__DataOption__Group__2__Impl rule__DataOption__Group__3
+            // InternalVFormDsl.g:1805:1: ( rule__DataOption__Group__2__Impl rule__DataOption__Group__3 )
+            // InternalVFormDsl.g:1806:2: rule__DataOption__Group__2__Impl rule__DataOption__Group__3
             {
             pushFollow(FOLLOW_23);
             rule__DataOption__Group__2__Impl();
@@ -5587,20 +5456,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__2__Impl"
-    // InternalVFormDsl.g:1843:1: rule__DataOption__Group__2__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:1813:1: rule__DataOption__Group__2__Impl : ( ',' ) ;
     public final void rule__DataOption__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1847:1: ( ( ',' ) )
-            // InternalVFormDsl.g:1848:1: ( ',' )
+            // InternalVFormDsl.g:1817:1: ( ( ',' ) )
+            // InternalVFormDsl.g:1818:1: ( ',' )
             {
-            // InternalVFormDsl.g:1848:1: ( ',' )
-            // InternalVFormDsl.g:1849:2: ','
+            // InternalVFormDsl.g:1818:1: ( ',' )
+            // InternalVFormDsl.g:1819:2: ','
             {
              before(grammarAccess.getDataOptionAccess().getCommaKeyword_2()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getDataOptionAccess().getCommaKeyword_2()); 
 
             }
@@ -5624,14 +5493,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__3"
-    // InternalVFormDsl.g:1858:1: rule__DataOption__Group__3 : rule__DataOption__Group__3__Impl rule__DataOption__Group__4 ;
+    // InternalVFormDsl.g:1828:1: rule__DataOption__Group__3 : rule__DataOption__Group__3__Impl rule__DataOption__Group__4 ;
     public final void rule__DataOption__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1862:1: ( rule__DataOption__Group__3__Impl rule__DataOption__Group__4 )
-            // InternalVFormDsl.g:1863:2: rule__DataOption__Group__3__Impl rule__DataOption__Group__4
+            // InternalVFormDsl.g:1832:1: ( rule__DataOption__Group__3__Impl rule__DataOption__Group__4 )
+            // InternalVFormDsl.g:1833:2: rule__DataOption__Group__3__Impl rule__DataOption__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__DataOption__Group__3__Impl();
@@ -5662,20 +5531,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__3__Impl"
-    // InternalVFormDsl.g:1870:1: rule__DataOption__Group__3__Impl : ( 'data:' ) ;
+    // InternalVFormDsl.g:1840:1: rule__DataOption__Group__3__Impl : ( 'data:' ) ;
     public final void rule__DataOption__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1874:1: ( ( 'data:' ) )
-            // InternalVFormDsl.g:1875:1: ( 'data:' )
+            // InternalVFormDsl.g:1844:1: ( ( 'data:' ) )
+            // InternalVFormDsl.g:1845:1: ( 'data:' )
             {
-            // InternalVFormDsl.g:1875:1: ( 'data:' )
-            // InternalVFormDsl.g:1876:2: 'data:'
+            // InternalVFormDsl.g:1845:1: ( 'data:' )
+            // InternalVFormDsl.g:1846:2: 'data:'
             {
              before(grammarAccess.getDataOptionAccess().getDataKeyword_3()); 
-            match(input,36,FOLLOW_2); 
+            match(input,33,FOLLOW_2); 
              after(grammarAccess.getDataOptionAccess().getDataKeyword_3()); 
 
             }
@@ -5699,14 +5568,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__4"
-    // InternalVFormDsl.g:1885:1: rule__DataOption__Group__4 : rule__DataOption__Group__4__Impl rule__DataOption__Group__5 ;
+    // InternalVFormDsl.g:1855:1: rule__DataOption__Group__4 : rule__DataOption__Group__4__Impl rule__DataOption__Group__5 ;
     public final void rule__DataOption__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1889:1: ( rule__DataOption__Group__4__Impl rule__DataOption__Group__5 )
-            // InternalVFormDsl.g:1890:2: rule__DataOption__Group__4__Impl rule__DataOption__Group__5
+            // InternalVFormDsl.g:1859:1: ( rule__DataOption__Group__4__Impl rule__DataOption__Group__5 )
+            // InternalVFormDsl.g:1860:2: rule__DataOption__Group__4__Impl rule__DataOption__Group__5
             {
             pushFollow(FOLLOW_19);
             rule__DataOption__Group__4__Impl();
@@ -5737,20 +5606,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__4__Impl"
-    // InternalVFormDsl.g:1897:1: rule__DataOption__Group__4__Impl : ( '[' ) ;
+    // InternalVFormDsl.g:1867:1: rule__DataOption__Group__4__Impl : ( '[' ) ;
     public final void rule__DataOption__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1901:1: ( ( '[' ) )
-            // InternalVFormDsl.g:1902:1: ( '[' )
+            // InternalVFormDsl.g:1871:1: ( ( '[' ) )
+            // InternalVFormDsl.g:1872:1: ( '[' )
             {
-            // InternalVFormDsl.g:1902:1: ( '[' )
-            // InternalVFormDsl.g:1903:2: '['
+            // InternalVFormDsl.g:1872:1: ( '[' )
+            // InternalVFormDsl.g:1873:2: '['
             {
              before(grammarAccess.getDataOptionAccess().getLeftSquareBracketKeyword_4()); 
-            match(input,24,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getDataOptionAccess().getLeftSquareBracketKeyword_4()); 
 
             }
@@ -5774,14 +5643,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__5"
-    // InternalVFormDsl.g:1912:1: rule__DataOption__Group__5 : rule__DataOption__Group__5__Impl rule__DataOption__Group__6 ;
+    // InternalVFormDsl.g:1882:1: rule__DataOption__Group__5 : rule__DataOption__Group__5__Impl rule__DataOption__Group__6 ;
     public final void rule__DataOption__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1916:1: ( rule__DataOption__Group__5__Impl rule__DataOption__Group__6 )
-            // InternalVFormDsl.g:1917:2: rule__DataOption__Group__5__Impl rule__DataOption__Group__6
+            // InternalVFormDsl.g:1886:1: ( rule__DataOption__Group__5__Impl rule__DataOption__Group__6 )
+            // InternalVFormDsl.g:1887:2: rule__DataOption__Group__5__Impl rule__DataOption__Group__6
             {
             pushFollow(FOLLOW_24);
             rule__DataOption__Group__5__Impl();
@@ -5812,21 +5681,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__5__Impl"
-    // InternalVFormDsl.g:1924:1: rule__DataOption__Group__5__Impl : ( ( rule__DataOption__DataAssignment_5 ) ) ;
+    // InternalVFormDsl.g:1894:1: rule__DataOption__Group__5__Impl : ( ( rule__DataOption__DataAssignment_5 ) ) ;
     public final void rule__DataOption__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1928:1: ( ( ( rule__DataOption__DataAssignment_5 ) ) )
-            // InternalVFormDsl.g:1929:1: ( ( rule__DataOption__DataAssignment_5 ) )
+            // InternalVFormDsl.g:1898:1: ( ( ( rule__DataOption__DataAssignment_5 ) ) )
+            // InternalVFormDsl.g:1899:1: ( ( rule__DataOption__DataAssignment_5 ) )
             {
-            // InternalVFormDsl.g:1929:1: ( ( rule__DataOption__DataAssignment_5 ) )
-            // InternalVFormDsl.g:1930:2: ( rule__DataOption__DataAssignment_5 )
+            // InternalVFormDsl.g:1899:1: ( ( rule__DataOption__DataAssignment_5 ) )
+            // InternalVFormDsl.g:1900:2: ( rule__DataOption__DataAssignment_5 )
             {
              before(grammarAccess.getDataOptionAccess().getDataAssignment_5()); 
-            // InternalVFormDsl.g:1931:2: ( rule__DataOption__DataAssignment_5 )
-            // InternalVFormDsl.g:1931:3: rule__DataOption__DataAssignment_5
+            // InternalVFormDsl.g:1901:2: ( rule__DataOption__DataAssignment_5 )
+            // InternalVFormDsl.g:1901:3: rule__DataOption__DataAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__DataOption__DataAssignment_5();
@@ -5859,14 +5728,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__6"
-    // InternalVFormDsl.g:1939:1: rule__DataOption__Group__6 : rule__DataOption__Group__6__Impl rule__DataOption__Group__7 ;
+    // InternalVFormDsl.g:1909:1: rule__DataOption__Group__6 : rule__DataOption__Group__6__Impl rule__DataOption__Group__7 ;
     public final void rule__DataOption__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1943:1: ( rule__DataOption__Group__6__Impl rule__DataOption__Group__7 )
-            // InternalVFormDsl.g:1944:2: rule__DataOption__Group__6__Impl rule__DataOption__Group__7
+            // InternalVFormDsl.g:1913:1: ( rule__DataOption__Group__6__Impl rule__DataOption__Group__7 )
+            // InternalVFormDsl.g:1914:2: rule__DataOption__Group__6__Impl rule__DataOption__Group__7
             {
             pushFollow(FOLLOW_24);
             rule__DataOption__Group__6__Impl();
@@ -5897,33 +5766,33 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__6__Impl"
-    // InternalVFormDsl.g:1951:1: rule__DataOption__Group__6__Impl : ( ( rule__DataOption__Group_6__0 )* ) ;
+    // InternalVFormDsl.g:1921:1: rule__DataOption__Group__6__Impl : ( ( rule__DataOption__Group_6__0 )* ) ;
     public final void rule__DataOption__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1955:1: ( ( ( rule__DataOption__Group_6__0 )* ) )
-            // InternalVFormDsl.g:1956:1: ( ( rule__DataOption__Group_6__0 )* )
+            // InternalVFormDsl.g:1925:1: ( ( ( rule__DataOption__Group_6__0 )* ) )
+            // InternalVFormDsl.g:1926:1: ( ( rule__DataOption__Group_6__0 )* )
             {
-            // InternalVFormDsl.g:1956:1: ( ( rule__DataOption__Group_6__0 )* )
-            // InternalVFormDsl.g:1957:2: ( rule__DataOption__Group_6__0 )*
+            // InternalVFormDsl.g:1926:1: ( ( rule__DataOption__Group_6__0 )* )
+            // InternalVFormDsl.g:1927:2: ( rule__DataOption__Group_6__0 )*
             {
              before(grammarAccess.getDataOptionAccess().getGroup_6()); 
-            // InternalVFormDsl.g:1958:2: ( rule__DataOption__Group_6__0 )*
+            // InternalVFormDsl.g:1928:2: ( rule__DataOption__Group_6__0 )*
             loop8:
             do {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==22) ) {
+                if ( (LA8_0==17) ) {
                     alt8=1;
                 }
 
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalVFormDsl.g:1958:3: rule__DataOption__Group_6__0
+            	    // InternalVFormDsl.g:1928:3: rule__DataOption__Group_6__0
             	    {
             	    pushFollow(FOLLOW_25);
             	    rule__DataOption__Group_6__0();
@@ -5962,14 +5831,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__7"
-    // InternalVFormDsl.g:1966:1: rule__DataOption__Group__7 : rule__DataOption__Group__7__Impl ;
+    // InternalVFormDsl.g:1936:1: rule__DataOption__Group__7 : rule__DataOption__Group__7__Impl ;
     public final void rule__DataOption__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1970:1: ( rule__DataOption__Group__7__Impl )
-            // InternalVFormDsl.g:1971:2: rule__DataOption__Group__7__Impl
+            // InternalVFormDsl.g:1940:1: ( rule__DataOption__Group__7__Impl )
+            // InternalVFormDsl.g:1941:2: rule__DataOption__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DataOption__Group__7__Impl();
@@ -5995,20 +5864,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group__7__Impl"
-    // InternalVFormDsl.g:1977:1: rule__DataOption__Group__7__Impl : ( ']' ) ;
+    // InternalVFormDsl.g:1947:1: rule__DataOption__Group__7__Impl : ( ']' ) ;
     public final void rule__DataOption__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1981:1: ( ( ']' ) )
-            // InternalVFormDsl.g:1982:1: ( ']' )
+            // InternalVFormDsl.g:1951:1: ( ( ']' ) )
+            // InternalVFormDsl.g:1952:1: ( ']' )
             {
-            // InternalVFormDsl.g:1982:1: ( ']' )
-            // InternalVFormDsl.g:1983:2: ']'
+            // InternalVFormDsl.g:1952:1: ( ']' )
+            // InternalVFormDsl.g:1953:2: ']'
             {
              before(grammarAccess.getDataOptionAccess().getRightSquareBracketKeyword_7()); 
-            match(input,25,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getDataOptionAccess().getRightSquareBracketKeyword_7()); 
 
             }
@@ -6032,14 +5901,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group_6__0"
-    // InternalVFormDsl.g:1993:1: rule__DataOption__Group_6__0 : rule__DataOption__Group_6__0__Impl rule__DataOption__Group_6__1 ;
+    // InternalVFormDsl.g:1963:1: rule__DataOption__Group_6__0 : rule__DataOption__Group_6__0__Impl rule__DataOption__Group_6__1 ;
     public final void rule__DataOption__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:1997:1: ( rule__DataOption__Group_6__0__Impl rule__DataOption__Group_6__1 )
-            // InternalVFormDsl.g:1998:2: rule__DataOption__Group_6__0__Impl rule__DataOption__Group_6__1
+            // InternalVFormDsl.g:1967:1: ( rule__DataOption__Group_6__0__Impl rule__DataOption__Group_6__1 )
+            // InternalVFormDsl.g:1968:2: rule__DataOption__Group_6__0__Impl rule__DataOption__Group_6__1
             {
             pushFollow(FOLLOW_19);
             rule__DataOption__Group_6__0__Impl();
@@ -6070,20 +5939,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group_6__0__Impl"
-    // InternalVFormDsl.g:2005:1: rule__DataOption__Group_6__0__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:1975:1: rule__DataOption__Group_6__0__Impl : ( ',' ) ;
     public final void rule__DataOption__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2009:1: ( ( ',' ) )
-            // InternalVFormDsl.g:2010:1: ( ',' )
+            // InternalVFormDsl.g:1979:1: ( ( ',' ) )
+            // InternalVFormDsl.g:1980:1: ( ',' )
             {
-            // InternalVFormDsl.g:2010:1: ( ',' )
-            // InternalVFormDsl.g:2011:2: ','
+            // InternalVFormDsl.g:1980:1: ( ',' )
+            // InternalVFormDsl.g:1981:2: ','
             {
              before(grammarAccess.getDataOptionAccess().getCommaKeyword_6_0()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getDataOptionAccess().getCommaKeyword_6_0()); 
 
             }
@@ -6107,14 +5976,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group_6__1"
-    // InternalVFormDsl.g:2020:1: rule__DataOption__Group_6__1 : rule__DataOption__Group_6__1__Impl ;
+    // InternalVFormDsl.g:1990:1: rule__DataOption__Group_6__1 : rule__DataOption__Group_6__1__Impl ;
     public final void rule__DataOption__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2024:1: ( rule__DataOption__Group_6__1__Impl )
-            // InternalVFormDsl.g:2025:2: rule__DataOption__Group_6__1__Impl
+            // InternalVFormDsl.g:1994:1: ( rule__DataOption__Group_6__1__Impl )
+            // InternalVFormDsl.g:1995:2: rule__DataOption__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DataOption__Group_6__1__Impl();
@@ -6140,21 +6009,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__Group_6__1__Impl"
-    // InternalVFormDsl.g:2031:1: rule__DataOption__Group_6__1__Impl : ( ( rule__DataOption__DataAssignment_6_1 ) ) ;
+    // InternalVFormDsl.g:2001:1: rule__DataOption__Group_6__1__Impl : ( ( rule__DataOption__DataAssignment_6_1 ) ) ;
     public final void rule__DataOption__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2035:1: ( ( ( rule__DataOption__DataAssignment_6_1 ) ) )
-            // InternalVFormDsl.g:2036:1: ( ( rule__DataOption__DataAssignment_6_1 ) )
+            // InternalVFormDsl.g:2005:1: ( ( ( rule__DataOption__DataAssignment_6_1 ) ) )
+            // InternalVFormDsl.g:2006:1: ( ( rule__DataOption__DataAssignment_6_1 ) )
             {
-            // InternalVFormDsl.g:2036:1: ( ( rule__DataOption__DataAssignment_6_1 ) )
-            // InternalVFormDsl.g:2037:2: ( rule__DataOption__DataAssignment_6_1 )
+            // InternalVFormDsl.g:2006:1: ( ( rule__DataOption__DataAssignment_6_1 ) )
+            // InternalVFormDsl.g:2007:2: ( rule__DataOption__DataAssignment_6_1 )
             {
              before(grammarAccess.getDataOptionAccess().getDataAssignment_6_1()); 
-            // InternalVFormDsl.g:2038:2: ( rule__DataOption__DataAssignment_6_1 )
-            // InternalVFormDsl.g:2038:3: rule__DataOption__DataAssignment_6_1
+            // InternalVFormDsl.g:2008:2: ( rule__DataOption__DataAssignment_6_1 )
+            // InternalVFormDsl.g:2008:3: rule__DataOption__DataAssignment_6_1
             {
             pushFollow(FOLLOW_2);
             rule__DataOption__DataAssignment_6_1();
@@ -6187,14 +6056,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__0"
-    // InternalVFormDsl.g:2047:1: rule__EnumOption__Group__0 : rule__EnumOption__Group__0__Impl rule__EnumOption__Group__1 ;
+    // InternalVFormDsl.g:2017:1: rule__EnumOption__Group__0 : rule__EnumOption__Group__0__Impl rule__EnumOption__Group__1 ;
     public final void rule__EnumOption__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2051:1: ( rule__EnumOption__Group__0__Impl rule__EnumOption__Group__1 )
-            // InternalVFormDsl.g:2052:2: rule__EnumOption__Group__0__Impl rule__EnumOption__Group__1
+            // InternalVFormDsl.g:2021:1: ( rule__EnumOption__Group__0__Impl rule__EnumOption__Group__1 )
+            // InternalVFormDsl.g:2022:2: rule__EnumOption__Group__0__Impl rule__EnumOption__Group__1
             {
             pushFollow(FOLLOW_26);
             rule__EnumOption__Group__0__Impl();
@@ -6225,20 +6094,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__0__Impl"
-    // InternalVFormDsl.g:2059:1: rule__EnumOption__Group__0__Impl : ( 'optionType:' ) ;
+    // InternalVFormDsl.g:2029:1: rule__EnumOption__Group__0__Impl : ( 'optionType:' ) ;
     public final void rule__EnumOption__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2063:1: ( ( 'optionType:' ) )
-            // InternalVFormDsl.g:2064:1: ( 'optionType:' )
+            // InternalVFormDsl.g:2033:1: ( ( 'optionType:' ) )
+            // InternalVFormDsl.g:2034:1: ( 'optionType:' )
             {
-            // InternalVFormDsl.g:2064:1: ( 'optionType:' )
-            // InternalVFormDsl.g:2065:2: 'optionType:'
+            // InternalVFormDsl.g:2034:1: ( 'optionType:' )
+            // InternalVFormDsl.g:2035:2: 'optionType:'
             {
              before(grammarAccess.getEnumOptionAccess().getOptionTypeKeyword_0()); 
-            match(input,34,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getEnumOptionAccess().getOptionTypeKeyword_0()); 
 
             }
@@ -6262,14 +6131,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__1"
-    // InternalVFormDsl.g:2074:1: rule__EnumOption__Group__1 : rule__EnumOption__Group__1__Impl rule__EnumOption__Group__2 ;
+    // InternalVFormDsl.g:2044:1: rule__EnumOption__Group__1 : rule__EnumOption__Group__1__Impl rule__EnumOption__Group__2 ;
     public final void rule__EnumOption__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2078:1: ( rule__EnumOption__Group__1__Impl rule__EnumOption__Group__2 )
-            // InternalVFormDsl.g:2079:2: rule__EnumOption__Group__1__Impl rule__EnumOption__Group__2
+            // InternalVFormDsl.g:2048:1: ( rule__EnumOption__Group__1__Impl rule__EnumOption__Group__2 )
+            // InternalVFormDsl.g:2049:2: rule__EnumOption__Group__1__Impl rule__EnumOption__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__EnumOption__Group__1__Impl();
@@ -6300,20 +6169,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__1__Impl"
-    // InternalVFormDsl.g:2086:1: rule__EnumOption__Group__1__Impl : ( 'enum' ) ;
+    // InternalVFormDsl.g:2056:1: rule__EnumOption__Group__1__Impl : ( 'enum' ) ;
     public final void rule__EnumOption__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2090:1: ( ( 'enum' ) )
-            // InternalVFormDsl.g:2091:1: ( 'enum' )
+            // InternalVFormDsl.g:2060:1: ( ( 'enum' ) )
+            // InternalVFormDsl.g:2061:1: ( 'enum' )
             {
-            // InternalVFormDsl.g:2091:1: ( 'enum' )
-            // InternalVFormDsl.g:2092:2: 'enum'
+            // InternalVFormDsl.g:2061:1: ( 'enum' )
+            // InternalVFormDsl.g:2062:2: 'enum'
             {
              before(grammarAccess.getEnumOptionAccess().getEnumKeyword_1()); 
-            match(input,37,FOLLOW_2); 
+            match(input,34,FOLLOW_2); 
              after(grammarAccess.getEnumOptionAccess().getEnumKeyword_1()); 
 
             }
@@ -6337,14 +6206,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__2"
-    // InternalVFormDsl.g:2101:1: rule__EnumOption__Group__2 : rule__EnumOption__Group__2__Impl rule__EnumOption__Group__3 ;
+    // InternalVFormDsl.g:2071:1: rule__EnumOption__Group__2 : rule__EnumOption__Group__2__Impl rule__EnumOption__Group__3 ;
     public final void rule__EnumOption__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2105:1: ( rule__EnumOption__Group__2__Impl rule__EnumOption__Group__3 )
-            // InternalVFormDsl.g:2106:2: rule__EnumOption__Group__2__Impl rule__EnumOption__Group__3
+            // InternalVFormDsl.g:2075:1: ( rule__EnumOption__Group__2__Impl rule__EnumOption__Group__3 )
+            // InternalVFormDsl.g:2076:2: rule__EnumOption__Group__2__Impl rule__EnumOption__Group__3
             {
             pushFollow(FOLLOW_23);
             rule__EnumOption__Group__2__Impl();
@@ -6375,20 +6244,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__2__Impl"
-    // InternalVFormDsl.g:2113:1: rule__EnumOption__Group__2__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:2083:1: rule__EnumOption__Group__2__Impl : ( ',' ) ;
     public final void rule__EnumOption__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2117:1: ( ( ',' ) )
-            // InternalVFormDsl.g:2118:1: ( ',' )
+            // InternalVFormDsl.g:2087:1: ( ( ',' ) )
+            // InternalVFormDsl.g:2088:1: ( ',' )
             {
-            // InternalVFormDsl.g:2118:1: ( ',' )
-            // InternalVFormDsl.g:2119:2: ','
+            // InternalVFormDsl.g:2088:1: ( ',' )
+            // InternalVFormDsl.g:2089:2: ','
             {
              before(grammarAccess.getEnumOptionAccess().getCommaKeyword_2()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getEnumOptionAccess().getCommaKeyword_2()); 
 
             }
@@ -6412,14 +6281,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__3"
-    // InternalVFormDsl.g:2128:1: rule__EnumOption__Group__3 : rule__EnumOption__Group__3__Impl rule__EnumOption__Group__4 ;
+    // InternalVFormDsl.g:2098:1: rule__EnumOption__Group__3 : rule__EnumOption__Group__3__Impl rule__EnumOption__Group__4 ;
     public final void rule__EnumOption__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2132:1: ( rule__EnumOption__Group__3__Impl rule__EnumOption__Group__4 )
-            // InternalVFormDsl.g:2133:2: rule__EnumOption__Group__3__Impl rule__EnumOption__Group__4
+            // InternalVFormDsl.g:2102:1: ( rule__EnumOption__Group__3__Impl rule__EnumOption__Group__4 )
+            // InternalVFormDsl.g:2103:2: rule__EnumOption__Group__3__Impl rule__EnumOption__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__EnumOption__Group__3__Impl();
@@ -6450,20 +6319,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__3__Impl"
-    // InternalVFormDsl.g:2140:1: rule__EnumOption__Group__3__Impl : ( 'data:' ) ;
+    // InternalVFormDsl.g:2110:1: rule__EnumOption__Group__3__Impl : ( 'data:' ) ;
     public final void rule__EnumOption__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2144:1: ( ( 'data:' ) )
-            // InternalVFormDsl.g:2145:1: ( 'data:' )
+            // InternalVFormDsl.g:2114:1: ( ( 'data:' ) )
+            // InternalVFormDsl.g:2115:1: ( 'data:' )
             {
-            // InternalVFormDsl.g:2145:1: ( 'data:' )
-            // InternalVFormDsl.g:2146:2: 'data:'
+            // InternalVFormDsl.g:2115:1: ( 'data:' )
+            // InternalVFormDsl.g:2116:2: 'data:'
             {
              before(grammarAccess.getEnumOptionAccess().getDataKeyword_3()); 
-            match(input,36,FOLLOW_2); 
+            match(input,33,FOLLOW_2); 
              after(grammarAccess.getEnumOptionAccess().getDataKeyword_3()); 
 
             }
@@ -6487,14 +6356,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__4"
-    // InternalVFormDsl.g:2155:1: rule__EnumOption__Group__4 : rule__EnumOption__Group__4__Impl rule__EnumOption__Group__5 ;
+    // InternalVFormDsl.g:2125:1: rule__EnumOption__Group__4 : rule__EnumOption__Group__4__Impl rule__EnumOption__Group__5 ;
     public final void rule__EnumOption__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2159:1: ( rule__EnumOption__Group__4__Impl rule__EnumOption__Group__5 )
-            // InternalVFormDsl.g:2160:2: rule__EnumOption__Group__4__Impl rule__EnumOption__Group__5
+            // InternalVFormDsl.g:2129:1: ( rule__EnumOption__Group__4__Impl rule__EnumOption__Group__5 )
+            // InternalVFormDsl.g:2130:2: rule__EnumOption__Group__4__Impl rule__EnumOption__Group__5
             {
             pushFollow(FOLLOW_27);
             rule__EnumOption__Group__4__Impl();
@@ -6525,20 +6394,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__4__Impl"
-    // InternalVFormDsl.g:2167:1: rule__EnumOption__Group__4__Impl : ( '[' ) ;
+    // InternalVFormDsl.g:2137:1: rule__EnumOption__Group__4__Impl : ( '[' ) ;
     public final void rule__EnumOption__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2171:1: ( ( '[' ) )
-            // InternalVFormDsl.g:2172:1: ( '[' )
+            // InternalVFormDsl.g:2141:1: ( ( '[' ) )
+            // InternalVFormDsl.g:2142:1: ( '[' )
             {
-            // InternalVFormDsl.g:2172:1: ( '[' )
-            // InternalVFormDsl.g:2173:2: '['
+            // InternalVFormDsl.g:2142:1: ( '[' )
+            // InternalVFormDsl.g:2143:2: '['
             {
              before(grammarAccess.getEnumOptionAccess().getLeftSquareBracketKeyword_4()); 
-            match(input,24,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getEnumOptionAccess().getLeftSquareBracketKeyword_4()); 
 
             }
@@ -6562,14 +6431,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__5"
-    // InternalVFormDsl.g:2182:1: rule__EnumOption__Group__5 : rule__EnumOption__Group__5__Impl rule__EnumOption__Group__6 ;
+    // InternalVFormDsl.g:2152:1: rule__EnumOption__Group__5 : rule__EnumOption__Group__5__Impl rule__EnumOption__Group__6 ;
     public final void rule__EnumOption__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2186:1: ( rule__EnumOption__Group__5__Impl rule__EnumOption__Group__6 )
-            // InternalVFormDsl.g:2187:2: rule__EnumOption__Group__5__Impl rule__EnumOption__Group__6
+            // InternalVFormDsl.g:2156:1: ( rule__EnumOption__Group__5__Impl rule__EnumOption__Group__6 )
+            // InternalVFormDsl.g:2157:2: rule__EnumOption__Group__5__Impl rule__EnumOption__Group__6
             {
             pushFollow(FOLLOW_24);
             rule__EnumOption__Group__5__Impl();
@@ -6600,21 +6469,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__5__Impl"
-    // InternalVFormDsl.g:2194:1: rule__EnumOption__Group__5__Impl : ( ( rule__EnumOption__DataAssignment_5 ) ) ;
+    // InternalVFormDsl.g:2164:1: rule__EnumOption__Group__5__Impl : ( ( rule__EnumOption__DataAssignment_5 ) ) ;
     public final void rule__EnumOption__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2198:1: ( ( ( rule__EnumOption__DataAssignment_5 ) ) )
-            // InternalVFormDsl.g:2199:1: ( ( rule__EnumOption__DataAssignment_5 ) )
+            // InternalVFormDsl.g:2168:1: ( ( ( rule__EnumOption__DataAssignment_5 ) ) )
+            // InternalVFormDsl.g:2169:1: ( ( rule__EnumOption__DataAssignment_5 ) )
             {
-            // InternalVFormDsl.g:2199:1: ( ( rule__EnumOption__DataAssignment_5 ) )
-            // InternalVFormDsl.g:2200:2: ( rule__EnumOption__DataAssignment_5 )
+            // InternalVFormDsl.g:2169:1: ( ( rule__EnumOption__DataAssignment_5 ) )
+            // InternalVFormDsl.g:2170:2: ( rule__EnumOption__DataAssignment_5 )
             {
              before(grammarAccess.getEnumOptionAccess().getDataAssignment_5()); 
-            // InternalVFormDsl.g:2201:2: ( rule__EnumOption__DataAssignment_5 )
-            // InternalVFormDsl.g:2201:3: rule__EnumOption__DataAssignment_5
+            // InternalVFormDsl.g:2171:2: ( rule__EnumOption__DataAssignment_5 )
+            // InternalVFormDsl.g:2171:3: rule__EnumOption__DataAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__EnumOption__DataAssignment_5();
@@ -6647,14 +6516,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__6"
-    // InternalVFormDsl.g:2209:1: rule__EnumOption__Group__6 : rule__EnumOption__Group__6__Impl rule__EnumOption__Group__7 ;
+    // InternalVFormDsl.g:2179:1: rule__EnumOption__Group__6 : rule__EnumOption__Group__6__Impl rule__EnumOption__Group__7 ;
     public final void rule__EnumOption__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2213:1: ( rule__EnumOption__Group__6__Impl rule__EnumOption__Group__7 )
-            // InternalVFormDsl.g:2214:2: rule__EnumOption__Group__6__Impl rule__EnumOption__Group__7
+            // InternalVFormDsl.g:2183:1: ( rule__EnumOption__Group__6__Impl rule__EnumOption__Group__7 )
+            // InternalVFormDsl.g:2184:2: rule__EnumOption__Group__6__Impl rule__EnumOption__Group__7
             {
             pushFollow(FOLLOW_24);
             rule__EnumOption__Group__6__Impl();
@@ -6685,33 +6554,33 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__6__Impl"
-    // InternalVFormDsl.g:2221:1: rule__EnumOption__Group__6__Impl : ( ( rule__EnumOption__Group_6__0 )* ) ;
+    // InternalVFormDsl.g:2191:1: rule__EnumOption__Group__6__Impl : ( ( rule__EnumOption__Group_6__0 )* ) ;
     public final void rule__EnumOption__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2225:1: ( ( ( rule__EnumOption__Group_6__0 )* ) )
-            // InternalVFormDsl.g:2226:1: ( ( rule__EnumOption__Group_6__0 )* )
+            // InternalVFormDsl.g:2195:1: ( ( ( rule__EnumOption__Group_6__0 )* ) )
+            // InternalVFormDsl.g:2196:1: ( ( rule__EnumOption__Group_6__0 )* )
             {
-            // InternalVFormDsl.g:2226:1: ( ( rule__EnumOption__Group_6__0 )* )
-            // InternalVFormDsl.g:2227:2: ( rule__EnumOption__Group_6__0 )*
+            // InternalVFormDsl.g:2196:1: ( ( rule__EnumOption__Group_6__0 )* )
+            // InternalVFormDsl.g:2197:2: ( rule__EnumOption__Group_6__0 )*
             {
              before(grammarAccess.getEnumOptionAccess().getGroup_6()); 
-            // InternalVFormDsl.g:2228:2: ( rule__EnumOption__Group_6__0 )*
+            // InternalVFormDsl.g:2198:2: ( rule__EnumOption__Group_6__0 )*
             loop9:
             do {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( (LA9_0==22) ) {
+                if ( (LA9_0==17) ) {
                     alt9=1;
                 }
 
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalVFormDsl.g:2228:3: rule__EnumOption__Group_6__0
+            	    // InternalVFormDsl.g:2198:3: rule__EnumOption__Group_6__0
             	    {
             	    pushFollow(FOLLOW_25);
             	    rule__EnumOption__Group_6__0();
@@ -6750,14 +6619,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__7"
-    // InternalVFormDsl.g:2236:1: rule__EnumOption__Group__7 : rule__EnumOption__Group__7__Impl ;
+    // InternalVFormDsl.g:2206:1: rule__EnumOption__Group__7 : rule__EnumOption__Group__7__Impl ;
     public final void rule__EnumOption__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2240:1: ( rule__EnumOption__Group__7__Impl )
-            // InternalVFormDsl.g:2241:2: rule__EnumOption__Group__7__Impl
+            // InternalVFormDsl.g:2210:1: ( rule__EnumOption__Group__7__Impl )
+            // InternalVFormDsl.g:2211:2: rule__EnumOption__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EnumOption__Group__7__Impl();
@@ -6783,20 +6652,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group__7__Impl"
-    // InternalVFormDsl.g:2247:1: rule__EnumOption__Group__7__Impl : ( ']' ) ;
+    // InternalVFormDsl.g:2217:1: rule__EnumOption__Group__7__Impl : ( ']' ) ;
     public final void rule__EnumOption__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2251:1: ( ( ']' ) )
-            // InternalVFormDsl.g:2252:1: ( ']' )
+            // InternalVFormDsl.g:2221:1: ( ( ']' ) )
+            // InternalVFormDsl.g:2222:1: ( ']' )
             {
-            // InternalVFormDsl.g:2252:1: ( ']' )
-            // InternalVFormDsl.g:2253:2: ']'
+            // InternalVFormDsl.g:2222:1: ( ']' )
+            // InternalVFormDsl.g:2223:2: ']'
             {
              before(grammarAccess.getEnumOptionAccess().getRightSquareBracketKeyword_7()); 
-            match(input,25,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getEnumOptionAccess().getRightSquareBracketKeyword_7()); 
 
             }
@@ -6820,14 +6689,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group_6__0"
-    // InternalVFormDsl.g:2263:1: rule__EnumOption__Group_6__0 : rule__EnumOption__Group_6__0__Impl rule__EnumOption__Group_6__1 ;
+    // InternalVFormDsl.g:2233:1: rule__EnumOption__Group_6__0 : rule__EnumOption__Group_6__0__Impl rule__EnumOption__Group_6__1 ;
     public final void rule__EnumOption__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2267:1: ( rule__EnumOption__Group_6__0__Impl rule__EnumOption__Group_6__1 )
-            // InternalVFormDsl.g:2268:2: rule__EnumOption__Group_6__0__Impl rule__EnumOption__Group_6__1
+            // InternalVFormDsl.g:2237:1: ( rule__EnumOption__Group_6__0__Impl rule__EnumOption__Group_6__1 )
+            // InternalVFormDsl.g:2238:2: rule__EnumOption__Group_6__0__Impl rule__EnumOption__Group_6__1
             {
             pushFollow(FOLLOW_27);
             rule__EnumOption__Group_6__0__Impl();
@@ -6858,20 +6727,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group_6__0__Impl"
-    // InternalVFormDsl.g:2275:1: rule__EnumOption__Group_6__0__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:2245:1: rule__EnumOption__Group_6__0__Impl : ( ',' ) ;
     public final void rule__EnumOption__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2279:1: ( ( ',' ) )
-            // InternalVFormDsl.g:2280:1: ( ',' )
+            // InternalVFormDsl.g:2249:1: ( ( ',' ) )
+            // InternalVFormDsl.g:2250:1: ( ',' )
             {
-            // InternalVFormDsl.g:2280:1: ( ',' )
-            // InternalVFormDsl.g:2281:2: ','
+            // InternalVFormDsl.g:2250:1: ( ',' )
+            // InternalVFormDsl.g:2251:2: ','
             {
              before(grammarAccess.getEnumOptionAccess().getCommaKeyword_6_0()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getEnumOptionAccess().getCommaKeyword_6_0()); 
 
             }
@@ -6895,14 +6764,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group_6__1"
-    // InternalVFormDsl.g:2290:1: rule__EnumOption__Group_6__1 : rule__EnumOption__Group_6__1__Impl ;
+    // InternalVFormDsl.g:2260:1: rule__EnumOption__Group_6__1 : rule__EnumOption__Group_6__1__Impl ;
     public final void rule__EnumOption__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2294:1: ( rule__EnumOption__Group_6__1__Impl )
-            // InternalVFormDsl.g:2295:2: rule__EnumOption__Group_6__1__Impl
+            // InternalVFormDsl.g:2264:1: ( rule__EnumOption__Group_6__1__Impl )
+            // InternalVFormDsl.g:2265:2: rule__EnumOption__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EnumOption__Group_6__1__Impl();
@@ -6928,21 +6797,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__Group_6__1__Impl"
-    // InternalVFormDsl.g:2301:1: rule__EnumOption__Group_6__1__Impl : ( ( rule__EnumOption__DataAssignment_6_1 ) ) ;
+    // InternalVFormDsl.g:2271:1: rule__EnumOption__Group_6__1__Impl : ( ( rule__EnumOption__DataAssignment_6_1 ) ) ;
     public final void rule__EnumOption__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2305:1: ( ( ( rule__EnumOption__DataAssignment_6_1 ) ) )
-            // InternalVFormDsl.g:2306:1: ( ( rule__EnumOption__DataAssignment_6_1 ) )
+            // InternalVFormDsl.g:2275:1: ( ( ( rule__EnumOption__DataAssignment_6_1 ) ) )
+            // InternalVFormDsl.g:2276:1: ( ( rule__EnumOption__DataAssignment_6_1 ) )
             {
-            // InternalVFormDsl.g:2306:1: ( ( rule__EnumOption__DataAssignment_6_1 ) )
-            // InternalVFormDsl.g:2307:2: ( rule__EnumOption__DataAssignment_6_1 )
+            // InternalVFormDsl.g:2276:1: ( ( rule__EnumOption__DataAssignment_6_1 ) )
+            // InternalVFormDsl.g:2277:2: ( rule__EnumOption__DataAssignment_6_1 )
             {
              before(grammarAccess.getEnumOptionAccess().getDataAssignment_6_1()); 
-            // InternalVFormDsl.g:2308:2: ( rule__EnumOption__DataAssignment_6_1 )
-            // InternalVFormDsl.g:2308:3: rule__EnumOption__DataAssignment_6_1
+            // InternalVFormDsl.g:2278:2: ( rule__EnumOption__DataAssignment_6_1 )
+            // InternalVFormDsl.g:2278:3: rule__EnumOption__DataAssignment_6_1
             {
             pushFollow(FOLLOW_2);
             rule__EnumOption__DataAssignment_6_1();
@@ -6975,14 +6844,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__0"
-    // InternalVFormDsl.g:2317:1: rule__NumberOption__Group__0 : rule__NumberOption__Group__0__Impl rule__NumberOption__Group__1 ;
+    // InternalVFormDsl.g:2287:1: rule__NumberOption__Group__0 : rule__NumberOption__Group__0__Impl rule__NumberOption__Group__1 ;
     public final void rule__NumberOption__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2321:1: ( rule__NumberOption__Group__0__Impl rule__NumberOption__Group__1 )
-            // InternalVFormDsl.g:2322:2: rule__NumberOption__Group__0__Impl rule__NumberOption__Group__1
+            // InternalVFormDsl.g:2291:1: ( rule__NumberOption__Group__0__Impl rule__NumberOption__Group__1 )
+            // InternalVFormDsl.g:2292:2: rule__NumberOption__Group__0__Impl rule__NumberOption__Group__1
             {
             pushFollow(FOLLOW_28);
             rule__NumberOption__Group__0__Impl();
@@ -7013,20 +6882,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__0__Impl"
-    // InternalVFormDsl.g:2329:1: rule__NumberOption__Group__0__Impl : ( 'optionType:' ) ;
+    // InternalVFormDsl.g:2299:1: rule__NumberOption__Group__0__Impl : ( 'optionType:' ) ;
     public final void rule__NumberOption__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2333:1: ( ( 'optionType:' ) )
-            // InternalVFormDsl.g:2334:1: ( 'optionType:' )
+            // InternalVFormDsl.g:2303:1: ( ( 'optionType:' ) )
+            // InternalVFormDsl.g:2304:1: ( 'optionType:' )
             {
-            // InternalVFormDsl.g:2334:1: ( 'optionType:' )
-            // InternalVFormDsl.g:2335:2: 'optionType:'
+            // InternalVFormDsl.g:2304:1: ( 'optionType:' )
+            // InternalVFormDsl.g:2305:2: 'optionType:'
             {
              before(grammarAccess.getNumberOptionAccess().getOptionTypeKeyword_0()); 
-            match(input,34,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getNumberOptionAccess().getOptionTypeKeyword_0()); 
 
             }
@@ -7050,14 +6919,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__1"
-    // InternalVFormDsl.g:2344:1: rule__NumberOption__Group__1 : rule__NumberOption__Group__1__Impl rule__NumberOption__Group__2 ;
+    // InternalVFormDsl.g:2314:1: rule__NumberOption__Group__1 : rule__NumberOption__Group__1__Impl rule__NumberOption__Group__2 ;
     public final void rule__NumberOption__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2348:1: ( rule__NumberOption__Group__1__Impl rule__NumberOption__Group__2 )
-            // InternalVFormDsl.g:2349:2: rule__NumberOption__Group__1__Impl rule__NumberOption__Group__2
+            // InternalVFormDsl.g:2318:1: ( rule__NumberOption__Group__1__Impl rule__NumberOption__Group__2 )
+            // InternalVFormDsl.g:2319:2: rule__NumberOption__Group__1__Impl rule__NumberOption__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__NumberOption__Group__1__Impl();
@@ -7088,20 +6957,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__1__Impl"
-    // InternalVFormDsl.g:2356:1: rule__NumberOption__Group__1__Impl : ( 'number' ) ;
+    // InternalVFormDsl.g:2326:1: rule__NumberOption__Group__1__Impl : ( 'number' ) ;
     public final void rule__NumberOption__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2360:1: ( ( 'number' ) )
-            // InternalVFormDsl.g:2361:1: ( 'number' )
+            // InternalVFormDsl.g:2330:1: ( ( 'number' ) )
+            // InternalVFormDsl.g:2331:1: ( 'number' )
             {
-            // InternalVFormDsl.g:2361:1: ( 'number' )
-            // InternalVFormDsl.g:2362:2: 'number'
+            // InternalVFormDsl.g:2331:1: ( 'number' )
+            // InternalVFormDsl.g:2332:2: 'number'
             {
              before(grammarAccess.getNumberOptionAccess().getNumberKeyword_1()); 
-            match(input,38,FOLLOW_2); 
+            match(input,35,FOLLOW_2); 
              after(grammarAccess.getNumberOptionAccess().getNumberKeyword_1()); 
 
             }
@@ -7125,14 +6994,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__2"
-    // InternalVFormDsl.g:2371:1: rule__NumberOption__Group__2 : rule__NumberOption__Group__2__Impl rule__NumberOption__Group__3 ;
+    // InternalVFormDsl.g:2341:1: rule__NumberOption__Group__2 : rule__NumberOption__Group__2__Impl rule__NumberOption__Group__3 ;
     public final void rule__NumberOption__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2375:1: ( rule__NumberOption__Group__2__Impl rule__NumberOption__Group__3 )
-            // InternalVFormDsl.g:2376:2: rule__NumberOption__Group__2__Impl rule__NumberOption__Group__3
+            // InternalVFormDsl.g:2345:1: ( rule__NumberOption__Group__2__Impl rule__NumberOption__Group__3 )
+            // InternalVFormDsl.g:2346:2: rule__NumberOption__Group__2__Impl rule__NumberOption__Group__3
             {
             pushFollow(FOLLOW_14);
             rule__NumberOption__Group__2__Impl();
@@ -7163,20 +7032,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__2__Impl"
-    // InternalVFormDsl.g:2383:1: rule__NumberOption__Group__2__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:2353:1: rule__NumberOption__Group__2__Impl : ( ',' ) ;
     public final void rule__NumberOption__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2387:1: ( ( ',' ) )
-            // InternalVFormDsl.g:2388:1: ( ',' )
+            // InternalVFormDsl.g:2357:1: ( ( ',' ) )
+            // InternalVFormDsl.g:2358:1: ( ',' )
             {
-            // InternalVFormDsl.g:2388:1: ( ',' )
-            // InternalVFormDsl.g:2389:2: ','
+            // InternalVFormDsl.g:2358:1: ( ',' )
+            // InternalVFormDsl.g:2359:2: ','
             {
              before(grammarAccess.getNumberOptionAccess().getCommaKeyword_2()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getNumberOptionAccess().getCommaKeyword_2()); 
 
             }
@@ -7200,14 +7069,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__3"
-    // InternalVFormDsl.g:2398:1: rule__NumberOption__Group__3 : rule__NumberOption__Group__3__Impl rule__NumberOption__Group__4 ;
+    // InternalVFormDsl.g:2368:1: rule__NumberOption__Group__3 : rule__NumberOption__Group__3__Impl rule__NumberOption__Group__4 ;
     public final void rule__NumberOption__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2402:1: ( rule__NumberOption__Group__3__Impl rule__NumberOption__Group__4 )
-            // InternalVFormDsl.g:2403:2: rule__NumberOption__Group__3__Impl rule__NumberOption__Group__4
+            // InternalVFormDsl.g:2372:1: ( rule__NumberOption__Group__3__Impl rule__NumberOption__Group__4 )
+            // InternalVFormDsl.g:2373:2: rule__NumberOption__Group__3__Impl rule__NumberOption__Group__4
             {
             pushFollow(FOLLOW_15);
             rule__NumberOption__Group__3__Impl();
@@ -7238,20 +7107,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__3__Impl"
-    // InternalVFormDsl.g:2410:1: rule__NumberOption__Group__3__Impl : ( 'min:' ) ;
+    // InternalVFormDsl.g:2380:1: rule__NumberOption__Group__3__Impl : ( 'min:' ) ;
     public final void rule__NumberOption__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2414:1: ( ( 'min:' ) )
-            // InternalVFormDsl.g:2415:1: ( 'min:' )
+            // InternalVFormDsl.g:2384:1: ( ( 'min:' ) )
+            // InternalVFormDsl.g:2385:1: ( 'min:' )
             {
-            // InternalVFormDsl.g:2415:1: ( 'min:' )
-            // InternalVFormDsl.g:2416:2: 'min:'
+            // InternalVFormDsl.g:2385:1: ( 'min:' )
+            // InternalVFormDsl.g:2386:2: 'min:'
             {
              before(grammarAccess.getNumberOptionAccess().getMinKeyword_3()); 
-            match(input,29,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getNumberOptionAccess().getMinKeyword_3()); 
 
             }
@@ -7275,14 +7144,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__4"
-    // InternalVFormDsl.g:2425:1: rule__NumberOption__Group__4 : rule__NumberOption__Group__4__Impl rule__NumberOption__Group__5 ;
+    // InternalVFormDsl.g:2395:1: rule__NumberOption__Group__4 : rule__NumberOption__Group__4__Impl rule__NumberOption__Group__5 ;
     public final void rule__NumberOption__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2429:1: ( rule__NumberOption__Group__4__Impl rule__NumberOption__Group__5 )
-            // InternalVFormDsl.g:2430:2: rule__NumberOption__Group__4__Impl rule__NumberOption__Group__5
+            // InternalVFormDsl.g:2399:1: ( rule__NumberOption__Group__4__Impl rule__NumberOption__Group__5 )
+            // InternalVFormDsl.g:2400:2: rule__NumberOption__Group__4__Impl rule__NumberOption__Group__5
             {
             pushFollow(FOLLOW_4);
             rule__NumberOption__Group__4__Impl();
@@ -7313,21 +7182,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__4__Impl"
-    // InternalVFormDsl.g:2437:1: rule__NumberOption__Group__4__Impl : ( ( rule__NumberOption__MinAssignment_4 ) ) ;
+    // InternalVFormDsl.g:2407:1: rule__NumberOption__Group__4__Impl : ( ( rule__NumberOption__MinAssignment_4 ) ) ;
     public final void rule__NumberOption__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2441:1: ( ( ( rule__NumberOption__MinAssignment_4 ) ) )
-            // InternalVFormDsl.g:2442:1: ( ( rule__NumberOption__MinAssignment_4 ) )
+            // InternalVFormDsl.g:2411:1: ( ( ( rule__NumberOption__MinAssignment_4 ) ) )
+            // InternalVFormDsl.g:2412:1: ( ( rule__NumberOption__MinAssignment_4 ) )
             {
-            // InternalVFormDsl.g:2442:1: ( ( rule__NumberOption__MinAssignment_4 ) )
-            // InternalVFormDsl.g:2443:2: ( rule__NumberOption__MinAssignment_4 )
+            // InternalVFormDsl.g:2412:1: ( ( rule__NumberOption__MinAssignment_4 ) )
+            // InternalVFormDsl.g:2413:2: ( rule__NumberOption__MinAssignment_4 )
             {
              before(grammarAccess.getNumberOptionAccess().getMinAssignment_4()); 
-            // InternalVFormDsl.g:2444:2: ( rule__NumberOption__MinAssignment_4 )
-            // InternalVFormDsl.g:2444:3: rule__NumberOption__MinAssignment_4
+            // InternalVFormDsl.g:2414:2: ( rule__NumberOption__MinAssignment_4 )
+            // InternalVFormDsl.g:2414:3: rule__NumberOption__MinAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__NumberOption__MinAssignment_4();
@@ -7360,14 +7229,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__5"
-    // InternalVFormDsl.g:2452:1: rule__NumberOption__Group__5 : rule__NumberOption__Group__5__Impl rule__NumberOption__Group__6 ;
+    // InternalVFormDsl.g:2422:1: rule__NumberOption__Group__5 : rule__NumberOption__Group__5__Impl rule__NumberOption__Group__6 ;
     public final void rule__NumberOption__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2456:1: ( rule__NumberOption__Group__5__Impl rule__NumberOption__Group__6 )
-            // InternalVFormDsl.g:2457:2: rule__NumberOption__Group__5__Impl rule__NumberOption__Group__6
+            // InternalVFormDsl.g:2426:1: ( rule__NumberOption__Group__5__Impl rule__NumberOption__Group__6 )
+            // InternalVFormDsl.g:2427:2: rule__NumberOption__Group__5__Impl rule__NumberOption__Group__6
             {
             pushFollow(FOLLOW_16);
             rule__NumberOption__Group__5__Impl();
@@ -7398,20 +7267,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__5__Impl"
-    // InternalVFormDsl.g:2464:1: rule__NumberOption__Group__5__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:2434:1: rule__NumberOption__Group__5__Impl : ( ',' ) ;
     public final void rule__NumberOption__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2468:1: ( ( ',' ) )
-            // InternalVFormDsl.g:2469:1: ( ',' )
+            // InternalVFormDsl.g:2438:1: ( ( ',' ) )
+            // InternalVFormDsl.g:2439:1: ( ',' )
             {
-            // InternalVFormDsl.g:2469:1: ( ',' )
-            // InternalVFormDsl.g:2470:2: ','
+            // InternalVFormDsl.g:2439:1: ( ',' )
+            // InternalVFormDsl.g:2440:2: ','
             {
              before(grammarAccess.getNumberOptionAccess().getCommaKeyword_5()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getNumberOptionAccess().getCommaKeyword_5()); 
 
             }
@@ -7435,14 +7304,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__6"
-    // InternalVFormDsl.g:2479:1: rule__NumberOption__Group__6 : rule__NumberOption__Group__6__Impl rule__NumberOption__Group__7 ;
+    // InternalVFormDsl.g:2449:1: rule__NumberOption__Group__6 : rule__NumberOption__Group__6__Impl rule__NumberOption__Group__7 ;
     public final void rule__NumberOption__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2483:1: ( rule__NumberOption__Group__6__Impl rule__NumberOption__Group__7 )
-            // InternalVFormDsl.g:2484:2: rule__NumberOption__Group__6__Impl rule__NumberOption__Group__7
+            // InternalVFormDsl.g:2453:1: ( rule__NumberOption__Group__6__Impl rule__NumberOption__Group__7 )
+            // InternalVFormDsl.g:2454:2: rule__NumberOption__Group__6__Impl rule__NumberOption__Group__7
             {
             pushFollow(FOLLOW_15);
             rule__NumberOption__Group__6__Impl();
@@ -7473,20 +7342,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__6__Impl"
-    // InternalVFormDsl.g:2491:1: rule__NumberOption__Group__6__Impl : ( 'max:' ) ;
+    // InternalVFormDsl.g:2461:1: rule__NumberOption__Group__6__Impl : ( 'max:' ) ;
     public final void rule__NumberOption__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2495:1: ( ( 'max:' ) )
-            // InternalVFormDsl.g:2496:1: ( 'max:' )
+            // InternalVFormDsl.g:2465:1: ( ( 'max:' ) )
+            // InternalVFormDsl.g:2466:1: ( 'max:' )
             {
-            // InternalVFormDsl.g:2496:1: ( 'max:' )
-            // InternalVFormDsl.g:2497:2: 'max:'
+            // InternalVFormDsl.g:2466:1: ( 'max:' )
+            // InternalVFormDsl.g:2467:2: 'max:'
             {
              before(grammarAccess.getNumberOptionAccess().getMaxKeyword_6()); 
-            match(input,30,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getNumberOptionAccess().getMaxKeyword_6()); 
 
             }
@@ -7510,14 +7379,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__7"
-    // InternalVFormDsl.g:2506:1: rule__NumberOption__Group__7 : rule__NumberOption__Group__7__Impl rule__NumberOption__Group__8 ;
+    // InternalVFormDsl.g:2476:1: rule__NumberOption__Group__7 : rule__NumberOption__Group__7__Impl rule__NumberOption__Group__8 ;
     public final void rule__NumberOption__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2510:1: ( rule__NumberOption__Group__7__Impl rule__NumberOption__Group__8 )
-            // InternalVFormDsl.g:2511:2: rule__NumberOption__Group__7__Impl rule__NumberOption__Group__8
+            // InternalVFormDsl.g:2480:1: ( rule__NumberOption__Group__7__Impl rule__NumberOption__Group__8 )
+            // InternalVFormDsl.g:2481:2: rule__NumberOption__Group__7__Impl rule__NumberOption__Group__8
             {
             pushFollow(FOLLOW_4);
             rule__NumberOption__Group__7__Impl();
@@ -7548,21 +7417,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__7__Impl"
-    // InternalVFormDsl.g:2518:1: rule__NumberOption__Group__7__Impl : ( ( rule__NumberOption__MaxAssignment_7 ) ) ;
+    // InternalVFormDsl.g:2488:1: rule__NumberOption__Group__7__Impl : ( ( rule__NumberOption__MaxAssignment_7 ) ) ;
     public final void rule__NumberOption__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2522:1: ( ( ( rule__NumberOption__MaxAssignment_7 ) ) )
-            // InternalVFormDsl.g:2523:1: ( ( rule__NumberOption__MaxAssignment_7 ) )
+            // InternalVFormDsl.g:2492:1: ( ( ( rule__NumberOption__MaxAssignment_7 ) ) )
+            // InternalVFormDsl.g:2493:1: ( ( rule__NumberOption__MaxAssignment_7 ) )
             {
-            // InternalVFormDsl.g:2523:1: ( ( rule__NumberOption__MaxAssignment_7 ) )
-            // InternalVFormDsl.g:2524:2: ( rule__NumberOption__MaxAssignment_7 )
+            // InternalVFormDsl.g:2493:1: ( ( rule__NumberOption__MaxAssignment_7 ) )
+            // InternalVFormDsl.g:2494:2: ( rule__NumberOption__MaxAssignment_7 )
             {
              before(grammarAccess.getNumberOptionAccess().getMaxAssignment_7()); 
-            // InternalVFormDsl.g:2525:2: ( rule__NumberOption__MaxAssignment_7 )
-            // InternalVFormDsl.g:2525:3: rule__NumberOption__MaxAssignment_7
+            // InternalVFormDsl.g:2495:2: ( rule__NumberOption__MaxAssignment_7 )
+            // InternalVFormDsl.g:2495:3: rule__NumberOption__MaxAssignment_7
             {
             pushFollow(FOLLOW_2);
             rule__NumberOption__MaxAssignment_7();
@@ -7595,14 +7464,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__8"
-    // InternalVFormDsl.g:2533:1: rule__NumberOption__Group__8 : rule__NumberOption__Group__8__Impl rule__NumberOption__Group__9 ;
+    // InternalVFormDsl.g:2503:1: rule__NumberOption__Group__8 : rule__NumberOption__Group__8__Impl rule__NumberOption__Group__9 ;
     public final void rule__NumberOption__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2537:1: ( rule__NumberOption__Group__8__Impl rule__NumberOption__Group__9 )
-            // InternalVFormDsl.g:2538:2: rule__NumberOption__Group__8__Impl rule__NumberOption__Group__9
+            // InternalVFormDsl.g:2507:1: ( rule__NumberOption__Group__8__Impl rule__NumberOption__Group__9 )
+            // InternalVFormDsl.g:2508:2: rule__NumberOption__Group__8__Impl rule__NumberOption__Group__9
             {
             pushFollow(FOLLOW_29);
             rule__NumberOption__Group__8__Impl();
@@ -7633,20 +7502,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__8__Impl"
-    // InternalVFormDsl.g:2545:1: rule__NumberOption__Group__8__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:2515:1: rule__NumberOption__Group__8__Impl : ( ',' ) ;
     public final void rule__NumberOption__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2549:1: ( ( ',' ) )
-            // InternalVFormDsl.g:2550:1: ( ',' )
+            // InternalVFormDsl.g:2519:1: ( ( ',' ) )
+            // InternalVFormDsl.g:2520:1: ( ',' )
             {
-            // InternalVFormDsl.g:2550:1: ( ',' )
-            // InternalVFormDsl.g:2551:2: ','
+            // InternalVFormDsl.g:2520:1: ( ',' )
+            // InternalVFormDsl.g:2521:2: ','
             {
              before(grammarAccess.getNumberOptionAccess().getCommaKeyword_8()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getNumberOptionAccess().getCommaKeyword_8()); 
 
             }
@@ -7670,14 +7539,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__9"
-    // InternalVFormDsl.g:2560:1: rule__NumberOption__Group__9 : rule__NumberOption__Group__9__Impl rule__NumberOption__Group__10 ;
+    // InternalVFormDsl.g:2530:1: rule__NumberOption__Group__9 : rule__NumberOption__Group__9__Impl rule__NumberOption__Group__10 ;
     public final void rule__NumberOption__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2564:1: ( rule__NumberOption__Group__9__Impl rule__NumberOption__Group__10 )
-            // InternalVFormDsl.g:2565:2: rule__NumberOption__Group__9__Impl rule__NumberOption__Group__10
+            // InternalVFormDsl.g:2534:1: ( rule__NumberOption__Group__9__Impl rule__NumberOption__Group__10 )
+            // InternalVFormDsl.g:2535:2: rule__NumberOption__Group__9__Impl rule__NumberOption__Group__10
             {
             pushFollow(FOLLOW_15);
             rule__NumberOption__Group__9__Impl();
@@ -7708,20 +7577,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__9__Impl"
-    // InternalVFormDsl.g:2572:1: rule__NumberOption__Group__9__Impl : ( 'range:' ) ;
+    // InternalVFormDsl.g:2542:1: rule__NumberOption__Group__9__Impl : ( 'range:' ) ;
     public final void rule__NumberOption__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2576:1: ( ( 'range:' ) )
-            // InternalVFormDsl.g:2577:1: ( 'range:' )
+            // InternalVFormDsl.g:2546:1: ( ( 'range:' ) )
+            // InternalVFormDsl.g:2547:1: ( 'range:' )
             {
-            // InternalVFormDsl.g:2577:1: ( 'range:' )
-            // InternalVFormDsl.g:2578:2: 'range:'
+            // InternalVFormDsl.g:2547:1: ( 'range:' )
+            // InternalVFormDsl.g:2548:2: 'range:'
             {
              before(grammarAccess.getNumberOptionAccess().getRangeKeyword_9()); 
-            match(input,39,FOLLOW_2); 
+            match(input,36,FOLLOW_2); 
              after(grammarAccess.getNumberOptionAccess().getRangeKeyword_9()); 
 
             }
@@ -7745,14 +7614,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__10"
-    // InternalVFormDsl.g:2587:1: rule__NumberOption__Group__10 : rule__NumberOption__Group__10__Impl ;
+    // InternalVFormDsl.g:2557:1: rule__NumberOption__Group__10 : rule__NumberOption__Group__10__Impl ;
     public final void rule__NumberOption__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2591:1: ( rule__NumberOption__Group__10__Impl )
-            // InternalVFormDsl.g:2592:2: rule__NumberOption__Group__10__Impl
+            // InternalVFormDsl.g:2561:1: ( rule__NumberOption__Group__10__Impl )
+            // InternalVFormDsl.g:2562:2: rule__NumberOption__Group__10__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NumberOption__Group__10__Impl();
@@ -7778,21 +7647,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__Group__10__Impl"
-    // InternalVFormDsl.g:2598:1: rule__NumberOption__Group__10__Impl : ( ( rule__NumberOption__RangeAssignment_10 ) ) ;
+    // InternalVFormDsl.g:2568:1: rule__NumberOption__Group__10__Impl : ( ( rule__NumberOption__RangeAssignment_10 ) ) ;
     public final void rule__NumberOption__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2602:1: ( ( ( rule__NumberOption__RangeAssignment_10 ) ) )
-            // InternalVFormDsl.g:2603:1: ( ( rule__NumberOption__RangeAssignment_10 ) )
+            // InternalVFormDsl.g:2572:1: ( ( ( rule__NumberOption__RangeAssignment_10 ) ) )
+            // InternalVFormDsl.g:2573:1: ( ( rule__NumberOption__RangeAssignment_10 ) )
             {
-            // InternalVFormDsl.g:2603:1: ( ( rule__NumberOption__RangeAssignment_10 ) )
-            // InternalVFormDsl.g:2604:2: ( rule__NumberOption__RangeAssignment_10 )
+            // InternalVFormDsl.g:2573:1: ( ( rule__NumberOption__RangeAssignment_10 ) )
+            // InternalVFormDsl.g:2574:2: ( rule__NumberOption__RangeAssignment_10 )
             {
              before(grammarAccess.getNumberOptionAccess().getRangeAssignment_10()); 
-            // InternalVFormDsl.g:2605:2: ( rule__NumberOption__RangeAssignment_10 )
-            // InternalVFormDsl.g:2605:3: rule__NumberOption__RangeAssignment_10
+            // InternalVFormDsl.g:2575:2: ( rule__NumberOption__RangeAssignment_10 )
+            // InternalVFormDsl.g:2575:3: rule__NumberOption__RangeAssignment_10
             {
             pushFollow(FOLLOW_2);
             rule__NumberOption__RangeAssignment_10();
@@ -7825,14 +7694,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__0"
-    // InternalVFormDsl.g:2614:1: rule__FormInputSearch__Group__0 : rule__FormInputSearch__Group__0__Impl rule__FormInputSearch__Group__1 ;
+    // InternalVFormDsl.g:2584:1: rule__FormInputSearch__Group__0 : rule__FormInputSearch__Group__0__Impl rule__FormInputSearch__Group__1 ;
     public final void rule__FormInputSearch__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2618:1: ( rule__FormInputSearch__Group__0__Impl rule__FormInputSearch__Group__1 )
-            // InternalVFormDsl.g:2619:2: rule__FormInputSearch__Group__0__Impl rule__FormInputSearch__Group__1
+            // InternalVFormDsl.g:2588:1: ( rule__FormInputSearch__Group__0__Impl rule__FormInputSearch__Group__1 )
+            // InternalVFormDsl.g:2589:2: rule__FormInputSearch__Group__0__Impl rule__FormInputSearch__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__FormInputSearch__Group__0__Impl();
@@ -7863,20 +7732,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__0__Impl"
-    // InternalVFormDsl.g:2626:1: rule__FormInputSearch__Group__0__Impl : ( 'name' ) ;
+    // InternalVFormDsl.g:2596:1: rule__FormInputSearch__Group__0__Impl : ( 'name' ) ;
     public final void rule__FormInputSearch__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2630:1: ( ( 'name' ) )
-            // InternalVFormDsl.g:2631:1: ( 'name' )
+            // InternalVFormDsl.g:2600:1: ( ( 'name' ) )
+            // InternalVFormDsl.g:2601:1: ( 'name' )
             {
-            // InternalVFormDsl.g:2631:1: ( 'name' )
-            // InternalVFormDsl.g:2632:2: 'name'
+            // InternalVFormDsl.g:2601:1: ( 'name' )
+            // InternalVFormDsl.g:2602:2: 'name'
             {
              before(grammarAccess.getFormInputSearchAccess().getNameKeyword_0()); 
-            match(input,26,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getFormInputSearchAccess().getNameKeyword_0()); 
 
             }
@@ -7900,14 +7769,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__1"
-    // InternalVFormDsl.g:2641:1: rule__FormInputSearch__Group__1 : rule__FormInputSearch__Group__1__Impl rule__FormInputSearch__Group__2 ;
+    // InternalVFormDsl.g:2611:1: rule__FormInputSearch__Group__1 : rule__FormInputSearch__Group__1__Impl rule__FormInputSearch__Group__2 ;
     public final void rule__FormInputSearch__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2645:1: ( rule__FormInputSearch__Group__1__Impl rule__FormInputSearch__Group__2 )
-            // InternalVFormDsl.g:2646:2: rule__FormInputSearch__Group__1__Impl rule__FormInputSearch__Group__2
+            // InternalVFormDsl.g:2615:1: ( rule__FormInputSearch__Group__1__Impl rule__FormInputSearch__Group__2 )
+            // InternalVFormDsl.g:2616:2: rule__FormInputSearch__Group__1__Impl rule__FormInputSearch__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__FormInputSearch__Group__1__Impl();
@@ -7938,20 +7807,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__1__Impl"
-    // InternalVFormDsl.g:2653:1: rule__FormInputSearch__Group__1__Impl : ( ':' ) ;
+    // InternalVFormDsl.g:2623:1: rule__FormInputSearch__Group__1__Impl : ( ':' ) ;
     public final void rule__FormInputSearch__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2657:1: ( ( ':' ) )
-            // InternalVFormDsl.g:2658:1: ( ':' )
+            // InternalVFormDsl.g:2627:1: ( ( ':' ) )
+            // InternalVFormDsl.g:2628:1: ( ':' )
             {
-            // InternalVFormDsl.g:2658:1: ( ':' )
-            // InternalVFormDsl.g:2659:2: ':'
+            // InternalVFormDsl.g:2628:1: ( ':' )
+            // InternalVFormDsl.g:2629:2: ':'
             {
              before(grammarAccess.getFormInputSearchAccess().getColonKeyword_1()); 
-            match(input,27,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getFormInputSearchAccess().getColonKeyword_1()); 
 
             }
@@ -7975,14 +7844,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__2"
-    // InternalVFormDsl.g:2668:1: rule__FormInputSearch__Group__2 : rule__FormInputSearch__Group__2__Impl rule__FormInputSearch__Group__3 ;
+    // InternalVFormDsl.g:2638:1: rule__FormInputSearch__Group__2 : rule__FormInputSearch__Group__2__Impl rule__FormInputSearch__Group__3 ;
     public final void rule__FormInputSearch__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2672:1: ( rule__FormInputSearch__Group__2__Impl rule__FormInputSearch__Group__3 )
-            // InternalVFormDsl.g:2673:2: rule__FormInputSearch__Group__2__Impl rule__FormInputSearch__Group__3
+            // InternalVFormDsl.g:2642:1: ( rule__FormInputSearch__Group__2__Impl rule__FormInputSearch__Group__3 )
+            // InternalVFormDsl.g:2643:2: rule__FormInputSearch__Group__2__Impl rule__FormInputSearch__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__FormInputSearch__Group__2__Impl();
@@ -8013,21 +7882,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__2__Impl"
-    // InternalVFormDsl.g:2680:1: rule__FormInputSearch__Group__2__Impl : ( ( rule__FormInputSearch__NameAssignment_2 ) ) ;
+    // InternalVFormDsl.g:2650:1: rule__FormInputSearch__Group__2__Impl : ( ( rule__FormInputSearch__NameAssignment_2 ) ) ;
     public final void rule__FormInputSearch__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2684:1: ( ( ( rule__FormInputSearch__NameAssignment_2 ) ) )
-            // InternalVFormDsl.g:2685:1: ( ( rule__FormInputSearch__NameAssignment_2 ) )
+            // InternalVFormDsl.g:2654:1: ( ( ( rule__FormInputSearch__NameAssignment_2 ) ) )
+            // InternalVFormDsl.g:2655:1: ( ( rule__FormInputSearch__NameAssignment_2 ) )
             {
-            // InternalVFormDsl.g:2685:1: ( ( rule__FormInputSearch__NameAssignment_2 ) )
-            // InternalVFormDsl.g:2686:2: ( rule__FormInputSearch__NameAssignment_2 )
+            // InternalVFormDsl.g:2655:1: ( ( rule__FormInputSearch__NameAssignment_2 ) )
+            // InternalVFormDsl.g:2656:2: ( rule__FormInputSearch__NameAssignment_2 )
             {
              before(grammarAccess.getFormInputSearchAccess().getNameAssignment_2()); 
-            // InternalVFormDsl.g:2687:2: ( rule__FormInputSearch__NameAssignment_2 )
-            // InternalVFormDsl.g:2687:3: rule__FormInputSearch__NameAssignment_2
+            // InternalVFormDsl.g:2657:2: ( rule__FormInputSearch__NameAssignment_2 )
+            // InternalVFormDsl.g:2657:3: rule__FormInputSearch__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__FormInputSearch__NameAssignment_2();
@@ -8060,14 +7929,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__3"
-    // InternalVFormDsl.g:2695:1: rule__FormInputSearch__Group__3 : rule__FormInputSearch__Group__3__Impl rule__FormInputSearch__Group__4 ;
+    // InternalVFormDsl.g:2665:1: rule__FormInputSearch__Group__3 : rule__FormInputSearch__Group__3__Impl rule__FormInputSearch__Group__4 ;
     public final void rule__FormInputSearch__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2699:1: ( rule__FormInputSearch__Group__3__Impl rule__FormInputSearch__Group__4 )
-            // InternalVFormDsl.g:2700:2: rule__FormInputSearch__Group__3__Impl rule__FormInputSearch__Group__4
+            // InternalVFormDsl.g:2669:1: ( rule__FormInputSearch__Group__3__Impl rule__FormInputSearch__Group__4 )
+            // InternalVFormDsl.g:2670:2: rule__FormInputSearch__Group__3__Impl rule__FormInputSearch__Group__4
             {
             pushFollow(FOLLOW_11);
             rule__FormInputSearch__Group__3__Impl();
@@ -8098,20 +7967,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__3__Impl"
-    // InternalVFormDsl.g:2707:1: rule__FormInputSearch__Group__3__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:2677:1: rule__FormInputSearch__Group__3__Impl : ( ',' ) ;
     public final void rule__FormInputSearch__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2711:1: ( ( ',' ) )
-            // InternalVFormDsl.g:2712:1: ( ',' )
+            // InternalVFormDsl.g:2681:1: ( ( ',' ) )
+            // InternalVFormDsl.g:2682:1: ( ',' )
             {
-            // InternalVFormDsl.g:2712:1: ( ',' )
-            // InternalVFormDsl.g:2713:2: ','
+            // InternalVFormDsl.g:2682:1: ( ',' )
+            // InternalVFormDsl.g:2683:2: ','
             {
              before(grammarAccess.getFormInputSearchAccess().getCommaKeyword_3()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getFormInputSearchAccess().getCommaKeyword_3()); 
 
             }
@@ -8135,14 +8004,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__4"
-    // InternalVFormDsl.g:2722:1: rule__FormInputSearch__Group__4 : rule__FormInputSearch__Group__4__Impl rule__FormInputSearch__Group__5 ;
+    // InternalVFormDsl.g:2692:1: rule__FormInputSearch__Group__4 : rule__FormInputSearch__Group__4__Impl rule__FormInputSearch__Group__5 ;
     public final void rule__FormInputSearch__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2726:1: ( rule__FormInputSearch__Group__4__Impl rule__FormInputSearch__Group__5 )
-            // InternalVFormDsl.g:2727:2: rule__FormInputSearch__Group__4__Impl rule__FormInputSearch__Group__5
+            // InternalVFormDsl.g:2696:1: ( rule__FormInputSearch__Group__4__Impl rule__FormInputSearch__Group__5 )
+            // InternalVFormDsl.g:2697:2: rule__FormInputSearch__Group__4__Impl rule__FormInputSearch__Group__5
             {
             pushFollow(FOLLOW_9);
             rule__FormInputSearch__Group__4__Impl();
@@ -8173,20 +8042,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__4__Impl"
-    // InternalVFormDsl.g:2734:1: rule__FormInputSearch__Group__4__Impl : ( 'type' ) ;
+    // InternalVFormDsl.g:2704:1: rule__FormInputSearch__Group__4__Impl : ( 'type' ) ;
     public final void rule__FormInputSearch__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2738:1: ( ( 'type' ) )
-            // InternalVFormDsl.g:2739:1: ( 'type' )
+            // InternalVFormDsl.g:2708:1: ( ( 'type' ) )
+            // InternalVFormDsl.g:2709:1: ( 'type' )
             {
-            // InternalVFormDsl.g:2739:1: ( 'type' )
-            // InternalVFormDsl.g:2740:2: 'type'
+            // InternalVFormDsl.g:2709:1: ( 'type' )
+            // InternalVFormDsl.g:2710:2: 'type'
             {
              before(grammarAccess.getFormInputSearchAccess().getTypeKeyword_4()); 
-            match(input,28,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getFormInputSearchAccess().getTypeKeyword_4()); 
 
             }
@@ -8210,14 +8079,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__5"
-    // InternalVFormDsl.g:2749:1: rule__FormInputSearch__Group__5 : rule__FormInputSearch__Group__5__Impl rule__FormInputSearch__Group__6 ;
+    // InternalVFormDsl.g:2719:1: rule__FormInputSearch__Group__5 : rule__FormInputSearch__Group__5__Impl rule__FormInputSearch__Group__6 ;
     public final void rule__FormInputSearch__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2753:1: ( rule__FormInputSearch__Group__5__Impl rule__FormInputSearch__Group__6 )
-            // InternalVFormDsl.g:2754:2: rule__FormInputSearch__Group__5__Impl rule__FormInputSearch__Group__6
+            // InternalVFormDsl.g:2723:1: ( rule__FormInputSearch__Group__5__Impl rule__FormInputSearch__Group__6 )
+            // InternalVFormDsl.g:2724:2: rule__FormInputSearch__Group__5__Impl rule__FormInputSearch__Group__6
             {
             pushFollow(FOLLOW_30);
             rule__FormInputSearch__Group__5__Impl();
@@ -8248,20 +8117,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__5__Impl"
-    // InternalVFormDsl.g:2761:1: rule__FormInputSearch__Group__5__Impl : ( ':' ) ;
+    // InternalVFormDsl.g:2731:1: rule__FormInputSearch__Group__5__Impl : ( ':' ) ;
     public final void rule__FormInputSearch__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2765:1: ( ( ':' ) )
-            // InternalVFormDsl.g:2766:1: ( ':' )
+            // InternalVFormDsl.g:2735:1: ( ( ':' ) )
+            // InternalVFormDsl.g:2736:1: ( ':' )
             {
-            // InternalVFormDsl.g:2766:1: ( ':' )
-            // InternalVFormDsl.g:2767:2: ':'
+            // InternalVFormDsl.g:2736:1: ( ':' )
+            // InternalVFormDsl.g:2737:2: ':'
             {
              before(grammarAccess.getFormInputSearchAccess().getColonKeyword_5()); 
-            match(input,27,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getFormInputSearchAccess().getColonKeyword_5()); 
 
             }
@@ -8285,14 +8154,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__6"
-    // InternalVFormDsl.g:2776:1: rule__FormInputSearch__Group__6 : rule__FormInputSearch__Group__6__Impl rule__FormInputSearch__Group__7 ;
+    // InternalVFormDsl.g:2746:1: rule__FormInputSearch__Group__6 : rule__FormInputSearch__Group__6__Impl rule__FormInputSearch__Group__7 ;
     public final void rule__FormInputSearch__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2780:1: ( rule__FormInputSearch__Group__6__Impl rule__FormInputSearch__Group__7 )
-            // InternalVFormDsl.g:2781:2: rule__FormInputSearch__Group__6__Impl rule__FormInputSearch__Group__7
+            // InternalVFormDsl.g:2750:1: ( rule__FormInputSearch__Group__6__Impl rule__FormInputSearch__Group__7 )
+            // InternalVFormDsl.g:2751:2: rule__FormInputSearch__Group__6__Impl rule__FormInputSearch__Group__7
             {
             pushFollow(FOLLOW_4);
             rule__FormInputSearch__Group__6__Impl();
@@ -8323,20 +8192,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__6__Impl"
-    // InternalVFormDsl.g:2788:1: rule__FormInputSearch__Group__6__Impl : ( 'SEARCH' ) ;
+    // InternalVFormDsl.g:2758:1: rule__FormInputSearch__Group__6__Impl : ( 'SEARCH' ) ;
     public final void rule__FormInputSearch__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2792:1: ( ( 'SEARCH' ) )
-            // InternalVFormDsl.g:2793:1: ( 'SEARCH' )
+            // InternalVFormDsl.g:2762:1: ( ( 'SEARCH' ) )
+            // InternalVFormDsl.g:2763:1: ( 'SEARCH' )
             {
-            // InternalVFormDsl.g:2793:1: ( 'SEARCH' )
-            // InternalVFormDsl.g:2794:2: 'SEARCH'
+            // InternalVFormDsl.g:2763:1: ( 'SEARCH' )
+            // InternalVFormDsl.g:2764:2: 'SEARCH'
             {
              before(grammarAccess.getFormInputSearchAccess().getSEARCHKeyword_6()); 
-            match(input,17,FOLLOW_2); 
+            match(input,37,FOLLOW_2); 
              after(grammarAccess.getFormInputSearchAccess().getSEARCHKeyword_6()); 
 
             }
@@ -8360,14 +8229,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__7"
-    // InternalVFormDsl.g:2803:1: rule__FormInputSearch__Group__7 : rule__FormInputSearch__Group__7__Impl rule__FormInputSearch__Group__8 ;
+    // InternalVFormDsl.g:2773:1: rule__FormInputSearch__Group__7 : rule__FormInputSearch__Group__7__Impl rule__FormInputSearch__Group__8 ;
     public final void rule__FormInputSearch__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2807:1: ( rule__FormInputSearch__Group__7__Impl rule__FormInputSearch__Group__8 )
-            // InternalVFormDsl.g:2808:2: rule__FormInputSearch__Group__7__Impl rule__FormInputSearch__Group__8
+            // InternalVFormDsl.g:2777:1: ( rule__FormInputSearch__Group__7__Impl rule__FormInputSearch__Group__8 )
+            // InternalVFormDsl.g:2778:2: rule__FormInputSearch__Group__7__Impl rule__FormInputSearch__Group__8
             {
             pushFollow(FOLLOW_18);
             rule__FormInputSearch__Group__7__Impl();
@@ -8398,20 +8267,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__7__Impl"
-    // InternalVFormDsl.g:2815:1: rule__FormInputSearch__Group__7__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:2785:1: rule__FormInputSearch__Group__7__Impl : ( ',' ) ;
     public final void rule__FormInputSearch__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2819:1: ( ( ',' ) )
-            // InternalVFormDsl.g:2820:1: ( ',' )
+            // InternalVFormDsl.g:2789:1: ( ( ',' ) )
+            // InternalVFormDsl.g:2790:1: ( ',' )
             {
-            // InternalVFormDsl.g:2820:1: ( ',' )
-            // InternalVFormDsl.g:2821:2: ','
+            // InternalVFormDsl.g:2790:1: ( ',' )
+            // InternalVFormDsl.g:2791:2: ','
             {
              before(grammarAccess.getFormInputSearchAccess().getCommaKeyword_7()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getFormInputSearchAccess().getCommaKeyword_7()); 
 
             }
@@ -8435,14 +8304,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__8"
-    // InternalVFormDsl.g:2830:1: rule__FormInputSearch__Group__8 : rule__FormInputSearch__Group__8__Impl rule__FormInputSearch__Group__9 ;
+    // InternalVFormDsl.g:2800:1: rule__FormInputSearch__Group__8 : rule__FormInputSearch__Group__8__Impl rule__FormInputSearch__Group__9 ;
     public final void rule__FormInputSearch__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2834:1: ( rule__FormInputSearch__Group__8__Impl rule__FormInputSearch__Group__9 )
-            // InternalVFormDsl.g:2835:2: rule__FormInputSearch__Group__8__Impl rule__FormInputSearch__Group__9
+            // InternalVFormDsl.g:2804:1: ( rule__FormInputSearch__Group__8__Impl rule__FormInputSearch__Group__9 )
+            // InternalVFormDsl.g:2805:2: rule__FormInputSearch__Group__8__Impl rule__FormInputSearch__Group__9
             {
             pushFollow(FOLLOW_6);
             rule__FormInputSearch__Group__8__Impl();
@@ -8473,20 +8342,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__8__Impl"
-    // InternalVFormDsl.g:2842:1: rule__FormInputSearch__Group__8__Impl : ( 'options:' ) ;
+    // InternalVFormDsl.g:2812:1: rule__FormInputSearch__Group__8__Impl : ( 'options:' ) ;
     public final void rule__FormInputSearch__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2846:1: ( ( 'options:' ) )
-            // InternalVFormDsl.g:2847:1: ( 'options:' )
+            // InternalVFormDsl.g:2816:1: ( ( 'options:' ) )
+            // InternalVFormDsl.g:2817:1: ( 'options:' )
             {
-            // InternalVFormDsl.g:2847:1: ( 'options:' )
-            // InternalVFormDsl.g:2848:2: 'options:'
+            // InternalVFormDsl.g:2817:1: ( 'options:' )
+            // InternalVFormDsl.g:2818:2: 'options:'
             {
              before(grammarAccess.getFormInputSearchAccess().getOptionsKeyword_8()); 
-            match(input,31,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getFormInputSearchAccess().getOptionsKeyword_8()); 
 
             }
@@ -8510,14 +8379,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__9"
-    // InternalVFormDsl.g:2857:1: rule__FormInputSearch__Group__9 : rule__FormInputSearch__Group__9__Impl rule__FormInputSearch__Group__10 ;
+    // InternalVFormDsl.g:2827:1: rule__FormInputSearch__Group__9 : rule__FormInputSearch__Group__9__Impl rule__FormInputSearch__Group__10 ;
     public final void rule__FormInputSearch__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2861:1: ( rule__FormInputSearch__Group__9__Impl rule__FormInputSearch__Group__10 )
-            // InternalVFormDsl.g:2862:2: rule__FormInputSearch__Group__9__Impl rule__FormInputSearch__Group__10
+            // InternalVFormDsl.g:2831:1: ( rule__FormInputSearch__Group__9__Impl rule__FormInputSearch__Group__10 )
+            // InternalVFormDsl.g:2832:2: rule__FormInputSearch__Group__9__Impl rule__FormInputSearch__Group__10
             {
             pushFollow(FOLLOW_27);
             rule__FormInputSearch__Group__9__Impl();
@@ -8548,20 +8417,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__9__Impl"
-    // InternalVFormDsl.g:2869:1: rule__FormInputSearch__Group__9__Impl : ( '[' ) ;
+    // InternalVFormDsl.g:2839:1: rule__FormInputSearch__Group__9__Impl : ( '[' ) ;
     public final void rule__FormInputSearch__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2873:1: ( ( '[' ) )
-            // InternalVFormDsl.g:2874:1: ( '[' )
+            // InternalVFormDsl.g:2843:1: ( ( '[' ) )
+            // InternalVFormDsl.g:2844:1: ( '[' )
             {
-            // InternalVFormDsl.g:2874:1: ( '[' )
-            // InternalVFormDsl.g:2875:2: '['
+            // InternalVFormDsl.g:2844:1: ( '[' )
+            // InternalVFormDsl.g:2845:2: '['
             {
              before(grammarAccess.getFormInputSearchAccess().getLeftSquareBracketKeyword_9()); 
-            match(input,24,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getFormInputSearchAccess().getLeftSquareBracketKeyword_9()); 
 
             }
@@ -8585,14 +8454,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__10"
-    // InternalVFormDsl.g:2884:1: rule__FormInputSearch__Group__10 : rule__FormInputSearch__Group__10__Impl rule__FormInputSearch__Group__11 ;
+    // InternalVFormDsl.g:2854:1: rule__FormInputSearch__Group__10 : rule__FormInputSearch__Group__10__Impl rule__FormInputSearch__Group__11 ;
     public final void rule__FormInputSearch__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2888:1: ( rule__FormInputSearch__Group__10__Impl rule__FormInputSearch__Group__11 )
-            // InternalVFormDsl.g:2889:2: rule__FormInputSearch__Group__10__Impl rule__FormInputSearch__Group__11
+            // InternalVFormDsl.g:2858:1: ( rule__FormInputSearch__Group__10__Impl rule__FormInputSearch__Group__11 )
+            // InternalVFormDsl.g:2859:2: rule__FormInputSearch__Group__10__Impl rule__FormInputSearch__Group__11
             {
             pushFollow(FOLLOW_24);
             rule__FormInputSearch__Group__10__Impl();
@@ -8623,21 +8492,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__10__Impl"
-    // InternalVFormDsl.g:2896:1: rule__FormInputSearch__Group__10__Impl : ( ( rule__FormInputSearch__DataAssignment_10 ) ) ;
+    // InternalVFormDsl.g:2866:1: rule__FormInputSearch__Group__10__Impl : ( ( rule__FormInputSearch__DataAssignment_10 ) ) ;
     public final void rule__FormInputSearch__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2900:1: ( ( ( rule__FormInputSearch__DataAssignment_10 ) ) )
-            // InternalVFormDsl.g:2901:1: ( ( rule__FormInputSearch__DataAssignment_10 ) )
+            // InternalVFormDsl.g:2870:1: ( ( ( rule__FormInputSearch__DataAssignment_10 ) ) )
+            // InternalVFormDsl.g:2871:1: ( ( rule__FormInputSearch__DataAssignment_10 ) )
             {
-            // InternalVFormDsl.g:2901:1: ( ( rule__FormInputSearch__DataAssignment_10 ) )
-            // InternalVFormDsl.g:2902:2: ( rule__FormInputSearch__DataAssignment_10 )
+            // InternalVFormDsl.g:2871:1: ( ( rule__FormInputSearch__DataAssignment_10 ) )
+            // InternalVFormDsl.g:2872:2: ( rule__FormInputSearch__DataAssignment_10 )
             {
              before(grammarAccess.getFormInputSearchAccess().getDataAssignment_10()); 
-            // InternalVFormDsl.g:2903:2: ( rule__FormInputSearch__DataAssignment_10 )
-            // InternalVFormDsl.g:2903:3: rule__FormInputSearch__DataAssignment_10
+            // InternalVFormDsl.g:2873:2: ( rule__FormInputSearch__DataAssignment_10 )
+            // InternalVFormDsl.g:2873:3: rule__FormInputSearch__DataAssignment_10
             {
             pushFollow(FOLLOW_2);
             rule__FormInputSearch__DataAssignment_10();
@@ -8670,14 +8539,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__11"
-    // InternalVFormDsl.g:2911:1: rule__FormInputSearch__Group__11 : rule__FormInputSearch__Group__11__Impl rule__FormInputSearch__Group__12 ;
+    // InternalVFormDsl.g:2881:1: rule__FormInputSearch__Group__11 : rule__FormInputSearch__Group__11__Impl rule__FormInputSearch__Group__12 ;
     public final void rule__FormInputSearch__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2915:1: ( rule__FormInputSearch__Group__11__Impl rule__FormInputSearch__Group__12 )
-            // InternalVFormDsl.g:2916:2: rule__FormInputSearch__Group__11__Impl rule__FormInputSearch__Group__12
+            // InternalVFormDsl.g:2885:1: ( rule__FormInputSearch__Group__11__Impl rule__FormInputSearch__Group__12 )
+            // InternalVFormDsl.g:2886:2: rule__FormInputSearch__Group__11__Impl rule__FormInputSearch__Group__12
             {
             pushFollow(FOLLOW_24);
             rule__FormInputSearch__Group__11__Impl();
@@ -8708,33 +8577,33 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__11__Impl"
-    // InternalVFormDsl.g:2923:1: rule__FormInputSearch__Group__11__Impl : ( ( rule__FormInputSearch__Group_11__0 )* ) ;
+    // InternalVFormDsl.g:2893:1: rule__FormInputSearch__Group__11__Impl : ( ( rule__FormInputSearch__Group_11__0 )* ) ;
     public final void rule__FormInputSearch__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2927:1: ( ( ( rule__FormInputSearch__Group_11__0 )* ) )
-            // InternalVFormDsl.g:2928:1: ( ( rule__FormInputSearch__Group_11__0 )* )
+            // InternalVFormDsl.g:2897:1: ( ( ( rule__FormInputSearch__Group_11__0 )* ) )
+            // InternalVFormDsl.g:2898:1: ( ( rule__FormInputSearch__Group_11__0 )* )
             {
-            // InternalVFormDsl.g:2928:1: ( ( rule__FormInputSearch__Group_11__0 )* )
-            // InternalVFormDsl.g:2929:2: ( rule__FormInputSearch__Group_11__0 )*
+            // InternalVFormDsl.g:2898:1: ( ( rule__FormInputSearch__Group_11__0 )* )
+            // InternalVFormDsl.g:2899:2: ( rule__FormInputSearch__Group_11__0 )*
             {
              before(grammarAccess.getFormInputSearchAccess().getGroup_11()); 
-            // InternalVFormDsl.g:2930:2: ( rule__FormInputSearch__Group_11__0 )*
+            // InternalVFormDsl.g:2900:2: ( rule__FormInputSearch__Group_11__0 )*
             loop10:
             do {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==22) ) {
+                if ( (LA10_0==17) ) {
                     alt10=1;
                 }
 
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalVFormDsl.g:2930:3: rule__FormInputSearch__Group_11__0
+            	    // InternalVFormDsl.g:2900:3: rule__FormInputSearch__Group_11__0
             	    {
             	    pushFollow(FOLLOW_25);
             	    rule__FormInputSearch__Group_11__0();
@@ -8773,14 +8642,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__12"
-    // InternalVFormDsl.g:2938:1: rule__FormInputSearch__Group__12 : rule__FormInputSearch__Group__12__Impl ;
+    // InternalVFormDsl.g:2908:1: rule__FormInputSearch__Group__12 : rule__FormInputSearch__Group__12__Impl ;
     public final void rule__FormInputSearch__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2942:1: ( rule__FormInputSearch__Group__12__Impl )
-            // InternalVFormDsl.g:2943:2: rule__FormInputSearch__Group__12__Impl
+            // InternalVFormDsl.g:2912:1: ( rule__FormInputSearch__Group__12__Impl )
+            // InternalVFormDsl.g:2913:2: rule__FormInputSearch__Group__12__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FormInputSearch__Group__12__Impl();
@@ -8806,20 +8675,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group__12__Impl"
-    // InternalVFormDsl.g:2949:1: rule__FormInputSearch__Group__12__Impl : ( ']' ) ;
+    // InternalVFormDsl.g:2919:1: rule__FormInputSearch__Group__12__Impl : ( ']' ) ;
     public final void rule__FormInputSearch__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2953:1: ( ( ']' ) )
-            // InternalVFormDsl.g:2954:1: ( ']' )
+            // InternalVFormDsl.g:2923:1: ( ( ']' ) )
+            // InternalVFormDsl.g:2924:1: ( ']' )
             {
-            // InternalVFormDsl.g:2954:1: ( ']' )
-            // InternalVFormDsl.g:2955:2: ']'
+            // InternalVFormDsl.g:2924:1: ( ']' )
+            // InternalVFormDsl.g:2925:2: ']'
             {
              before(grammarAccess.getFormInputSearchAccess().getRightSquareBracketKeyword_12()); 
-            match(input,25,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getFormInputSearchAccess().getRightSquareBracketKeyword_12()); 
 
             }
@@ -8843,14 +8712,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group_11__0"
-    // InternalVFormDsl.g:2965:1: rule__FormInputSearch__Group_11__0 : rule__FormInputSearch__Group_11__0__Impl rule__FormInputSearch__Group_11__1 ;
+    // InternalVFormDsl.g:2935:1: rule__FormInputSearch__Group_11__0 : rule__FormInputSearch__Group_11__0__Impl rule__FormInputSearch__Group_11__1 ;
     public final void rule__FormInputSearch__Group_11__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2969:1: ( rule__FormInputSearch__Group_11__0__Impl rule__FormInputSearch__Group_11__1 )
-            // InternalVFormDsl.g:2970:2: rule__FormInputSearch__Group_11__0__Impl rule__FormInputSearch__Group_11__1
+            // InternalVFormDsl.g:2939:1: ( rule__FormInputSearch__Group_11__0__Impl rule__FormInputSearch__Group_11__1 )
+            // InternalVFormDsl.g:2940:2: rule__FormInputSearch__Group_11__0__Impl rule__FormInputSearch__Group_11__1
             {
             pushFollow(FOLLOW_27);
             rule__FormInputSearch__Group_11__0__Impl();
@@ -8881,20 +8750,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group_11__0__Impl"
-    // InternalVFormDsl.g:2977:1: rule__FormInputSearch__Group_11__0__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:2947:1: rule__FormInputSearch__Group_11__0__Impl : ( ',' ) ;
     public final void rule__FormInputSearch__Group_11__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2981:1: ( ( ',' ) )
-            // InternalVFormDsl.g:2982:1: ( ',' )
+            // InternalVFormDsl.g:2951:1: ( ( ',' ) )
+            // InternalVFormDsl.g:2952:1: ( ',' )
             {
-            // InternalVFormDsl.g:2982:1: ( ',' )
-            // InternalVFormDsl.g:2983:2: ','
+            // InternalVFormDsl.g:2952:1: ( ',' )
+            // InternalVFormDsl.g:2953:2: ','
             {
              before(grammarAccess.getFormInputSearchAccess().getCommaKeyword_11_0()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getFormInputSearchAccess().getCommaKeyword_11_0()); 
 
             }
@@ -8918,14 +8787,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group_11__1"
-    // InternalVFormDsl.g:2992:1: rule__FormInputSearch__Group_11__1 : rule__FormInputSearch__Group_11__1__Impl ;
+    // InternalVFormDsl.g:2962:1: rule__FormInputSearch__Group_11__1 : rule__FormInputSearch__Group_11__1__Impl ;
     public final void rule__FormInputSearch__Group_11__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:2996:1: ( rule__FormInputSearch__Group_11__1__Impl )
-            // InternalVFormDsl.g:2997:2: rule__FormInputSearch__Group_11__1__Impl
+            // InternalVFormDsl.g:2966:1: ( rule__FormInputSearch__Group_11__1__Impl )
+            // InternalVFormDsl.g:2967:2: rule__FormInputSearch__Group_11__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FormInputSearch__Group_11__1__Impl();
@@ -8951,21 +8820,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__Group_11__1__Impl"
-    // InternalVFormDsl.g:3003:1: rule__FormInputSearch__Group_11__1__Impl : ( ( rule__FormInputSearch__DataAssignment_11_1 ) ) ;
+    // InternalVFormDsl.g:2973:1: rule__FormInputSearch__Group_11__1__Impl : ( ( rule__FormInputSearch__DataAssignment_11_1 ) ) ;
     public final void rule__FormInputSearch__Group_11__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3007:1: ( ( ( rule__FormInputSearch__DataAssignment_11_1 ) ) )
-            // InternalVFormDsl.g:3008:1: ( ( rule__FormInputSearch__DataAssignment_11_1 ) )
+            // InternalVFormDsl.g:2977:1: ( ( ( rule__FormInputSearch__DataAssignment_11_1 ) ) )
+            // InternalVFormDsl.g:2978:1: ( ( rule__FormInputSearch__DataAssignment_11_1 ) )
             {
-            // InternalVFormDsl.g:3008:1: ( ( rule__FormInputSearch__DataAssignment_11_1 ) )
-            // InternalVFormDsl.g:3009:2: ( rule__FormInputSearch__DataAssignment_11_1 )
+            // InternalVFormDsl.g:2978:1: ( ( rule__FormInputSearch__DataAssignment_11_1 ) )
+            // InternalVFormDsl.g:2979:2: ( rule__FormInputSearch__DataAssignment_11_1 )
             {
              before(grammarAccess.getFormInputSearchAccess().getDataAssignment_11_1()); 
-            // InternalVFormDsl.g:3010:2: ( rule__FormInputSearch__DataAssignment_11_1 )
-            // InternalVFormDsl.g:3010:3: rule__FormInputSearch__DataAssignment_11_1
+            // InternalVFormDsl.g:2980:2: ( rule__FormInputSearch__DataAssignment_11_1 )
+            // InternalVFormDsl.g:2980:3: rule__FormInputSearch__DataAssignment_11_1
             {
             pushFollow(FOLLOW_2);
             rule__FormInputSearch__DataAssignment_11_1();
@@ -8998,14 +8867,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__0"
-    // InternalVFormDsl.g:3019:1: rule__FormInputGroup__Group__0 : rule__FormInputGroup__Group__0__Impl rule__FormInputGroup__Group__1 ;
+    // InternalVFormDsl.g:2989:1: rule__FormInputGroup__Group__0 : rule__FormInputGroup__Group__0__Impl rule__FormInputGroup__Group__1 ;
     public final void rule__FormInputGroup__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3023:1: ( rule__FormInputGroup__Group__0__Impl rule__FormInputGroup__Group__1 )
-            // InternalVFormDsl.g:3024:2: rule__FormInputGroup__Group__0__Impl rule__FormInputGroup__Group__1
+            // InternalVFormDsl.g:2993:1: ( rule__FormInputGroup__Group__0__Impl rule__FormInputGroup__Group__1 )
+            // InternalVFormDsl.g:2994:2: rule__FormInputGroup__Group__0__Impl rule__FormInputGroup__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__FormInputGroup__Group__0__Impl();
@@ -9036,20 +8905,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__0__Impl"
-    // InternalVFormDsl.g:3031:1: rule__FormInputGroup__Group__0__Impl : ( 'name' ) ;
+    // InternalVFormDsl.g:3001:1: rule__FormInputGroup__Group__0__Impl : ( 'name' ) ;
     public final void rule__FormInputGroup__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3035:1: ( ( 'name' ) )
-            // InternalVFormDsl.g:3036:1: ( 'name' )
+            // InternalVFormDsl.g:3005:1: ( ( 'name' ) )
+            // InternalVFormDsl.g:3006:1: ( 'name' )
             {
-            // InternalVFormDsl.g:3036:1: ( 'name' )
-            // InternalVFormDsl.g:3037:2: 'name'
+            // InternalVFormDsl.g:3006:1: ( 'name' )
+            // InternalVFormDsl.g:3007:2: 'name'
             {
              before(grammarAccess.getFormInputGroupAccess().getNameKeyword_0()); 
-            match(input,26,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getFormInputGroupAccess().getNameKeyword_0()); 
 
             }
@@ -9073,14 +8942,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__1"
-    // InternalVFormDsl.g:3046:1: rule__FormInputGroup__Group__1 : rule__FormInputGroup__Group__1__Impl rule__FormInputGroup__Group__2 ;
+    // InternalVFormDsl.g:3016:1: rule__FormInputGroup__Group__1 : rule__FormInputGroup__Group__1__Impl rule__FormInputGroup__Group__2 ;
     public final void rule__FormInputGroup__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3050:1: ( rule__FormInputGroup__Group__1__Impl rule__FormInputGroup__Group__2 )
-            // InternalVFormDsl.g:3051:2: rule__FormInputGroup__Group__1__Impl rule__FormInputGroup__Group__2
+            // InternalVFormDsl.g:3020:1: ( rule__FormInputGroup__Group__1__Impl rule__FormInputGroup__Group__2 )
+            // InternalVFormDsl.g:3021:2: rule__FormInputGroup__Group__1__Impl rule__FormInputGroup__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__FormInputGroup__Group__1__Impl();
@@ -9111,20 +8980,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__1__Impl"
-    // InternalVFormDsl.g:3058:1: rule__FormInputGroup__Group__1__Impl : ( ':' ) ;
+    // InternalVFormDsl.g:3028:1: rule__FormInputGroup__Group__1__Impl : ( ':' ) ;
     public final void rule__FormInputGroup__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3062:1: ( ( ':' ) )
-            // InternalVFormDsl.g:3063:1: ( ':' )
+            // InternalVFormDsl.g:3032:1: ( ( ':' ) )
+            // InternalVFormDsl.g:3033:1: ( ':' )
             {
-            // InternalVFormDsl.g:3063:1: ( ':' )
-            // InternalVFormDsl.g:3064:2: ':'
+            // InternalVFormDsl.g:3033:1: ( ':' )
+            // InternalVFormDsl.g:3034:2: ':'
             {
              before(grammarAccess.getFormInputGroupAccess().getColonKeyword_1()); 
-            match(input,27,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getFormInputGroupAccess().getColonKeyword_1()); 
 
             }
@@ -9148,14 +9017,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__2"
-    // InternalVFormDsl.g:3073:1: rule__FormInputGroup__Group__2 : rule__FormInputGroup__Group__2__Impl rule__FormInputGroup__Group__3 ;
+    // InternalVFormDsl.g:3043:1: rule__FormInputGroup__Group__2 : rule__FormInputGroup__Group__2__Impl rule__FormInputGroup__Group__3 ;
     public final void rule__FormInputGroup__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3077:1: ( rule__FormInputGroup__Group__2__Impl rule__FormInputGroup__Group__3 )
-            // InternalVFormDsl.g:3078:2: rule__FormInputGroup__Group__2__Impl rule__FormInputGroup__Group__3
+            // InternalVFormDsl.g:3047:1: ( rule__FormInputGroup__Group__2__Impl rule__FormInputGroup__Group__3 )
+            // InternalVFormDsl.g:3048:2: rule__FormInputGroup__Group__2__Impl rule__FormInputGroup__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__FormInputGroup__Group__2__Impl();
@@ -9186,21 +9055,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__2__Impl"
-    // InternalVFormDsl.g:3085:1: rule__FormInputGroup__Group__2__Impl : ( ( rule__FormInputGroup__NameAssignment_2 ) ) ;
+    // InternalVFormDsl.g:3055:1: rule__FormInputGroup__Group__2__Impl : ( ( rule__FormInputGroup__NameAssignment_2 ) ) ;
     public final void rule__FormInputGroup__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3089:1: ( ( ( rule__FormInputGroup__NameAssignment_2 ) ) )
-            // InternalVFormDsl.g:3090:1: ( ( rule__FormInputGroup__NameAssignment_2 ) )
+            // InternalVFormDsl.g:3059:1: ( ( ( rule__FormInputGroup__NameAssignment_2 ) ) )
+            // InternalVFormDsl.g:3060:1: ( ( rule__FormInputGroup__NameAssignment_2 ) )
             {
-            // InternalVFormDsl.g:3090:1: ( ( rule__FormInputGroup__NameAssignment_2 ) )
-            // InternalVFormDsl.g:3091:2: ( rule__FormInputGroup__NameAssignment_2 )
+            // InternalVFormDsl.g:3060:1: ( ( rule__FormInputGroup__NameAssignment_2 ) )
+            // InternalVFormDsl.g:3061:2: ( rule__FormInputGroup__NameAssignment_2 )
             {
              before(grammarAccess.getFormInputGroupAccess().getNameAssignment_2()); 
-            // InternalVFormDsl.g:3092:2: ( rule__FormInputGroup__NameAssignment_2 )
-            // InternalVFormDsl.g:3092:3: rule__FormInputGroup__NameAssignment_2
+            // InternalVFormDsl.g:3062:2: ( rule__FormInputGroup__NameAssignment_2 )
+            // InternalVFormDsl.g:3062:3: rule__FormInputGroup__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__FormInputGroup__NameAssignment_2();
@@ -9233,14 +9102,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__3"
-    // InternalVFormDsl.g:3100:1: rule__FormInputGroup__Group__3 : rule__FormInputGroup__Group__3__Impl rule__FormInputGroup__Group__4 ;
+    // InternalVFormDsl.g:3070:1: rule__FormInputGroup__Group__3 : rule__FormInputGroup__Group__3__Impl rule__FormInputGroup__Group__4 ;
     public final void rule__FormInputGroup__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3104:1: ( rule__FormInputGroup__Group__3__Impl rule__FormInputGroup__Group__4 )
-            // InternalVFormDsl.g:3105:2: rule__FormInputGroup__Group__3__Impl rule__FormInputGroup__Group__4
+            // InternalVFormDsl.g:3074:1: ( rule__FormInputGroup__Group__3__Impl rule__FormInputGroup__Group__4 )
+            // InternalVFormDsl.g:3075:2: rule__FormInputGroup__Group__3__Impl rule__FormInputGroup__Group__4
             {
             pushFollow(FOLLOW_31);
             rule__FormInputGroup__Group__3__Impl();
@@ -9271,20 +9140,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__3__Impl"
-    // InternalVFormDsl.g:3112:1: rule__FormInputGroup__Group__3__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:3082:1: rule__FormInputGroup__Group__3__Impl : ( ',' ) ;
     public final void rule__FormInputGroup__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3116:1: ( ( ',' ) )
-            // InternalVFormDsl.g:3117:1: ( ',' )
+            // InternalVFormDsl.g:3086:1: ( ( ',' ) )
+            // InternalVFormDsl.g:3087:1: ( ',' )
             {
-            // InternalVFormDsl.g:3117:1: ( ',' )
-            // InternalVFormDsl.g:3118:2: ','
+            // InternalVFormDsl.g:3087:1: ( ',' )
+            // InternalVFormDsl.g:3088:2: ','
             {
              before(grammarAccess.getFormInputGroupAccess().getCommaKeyword_3()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getFormInputGroupAccess().getCommaKeyword_3()); 
 
             }
@@ -9308,14 +9177,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__4"
-    // InternalVFormDsl.g:3127:1: rule__FormInputGroup__Group__4 : rule__FormInputGroup__Group__4__Impl rule__FormInputGroup__Group__5 ;
+    // InternalVFormDsl.g:3097:1: rule__FormInputGroup__Group__4 : rule__FormInputGroup__Group__4__Impl rule__FormInputGroup__Group__5 ;
     public final void rule__FormInputGroup__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3131:1: ( rule__FormInputGroup__Group__4__Impl rule__FormInputGroup__Group__5 )
-            // InternalVFormDsl.g:3132:2: rule__FormInputGroup__Group__4__Impl rule__FormInputGroup__Group__5
+            // InternalVFormDsl.g:3101:1: ( rule__FormInputGroup__Group__4__Impl rule__FormInputGroup__Group__5 )
+            // InternalVFormDsl.g:3102:2: rule__FormInputGroup__Group__4__Impl rule__FormInputGroup__Group__5
             {
             pushFollow(FOLLOW_32);
             rule__FormInputGroup__Group__4__Impl();
@@ -9346,20 +9215,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__4__Impl"
-    // InternalVFormDsl.g:3139:1: rule__FormInputGroup__Group__4__Impl : ( 'type:' ) ;
+    // InternalVFormDsl.g:3109:1: rule__FormInputGroup__Group__4__Impl : ( 'type:' ) ;
     public final void rule__FormInputGroup__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3143:1: ( ( 'type:' ) )
-            // InternalVFormDsl.g:3144:1: ( 'type:' )
+            // InternalVFormDsl.g:3113:1: ( ( 'type:' ) )
+            // InternalVFormDsl.g:3114:1: ( 'type:' )
             {
-            // InternalVFormDsl.g:3144:1: ( 'type:' )
-            // InternalVFormDsl.g:3145:2: 'type:'
+            // InternalVFormDsl.g:3114:1: ( 'type:' )
+            // InternalVFormDsl.g:3115:2: 'type:'
             {
              before(grammarAccess.getFormInputGroupAccess().getTypeKeyword_4()); 
-            match(input,40,FOLLOW_2); 
+            match(input,38,FOLLOW_2); 
              after(grammarAccess.getFormInputGroupAccess().getTypeKeyword_4()); 
 
             }
@@ -9383,14 +9252,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__5"
-    // InternalVFormDsl.g:3154:1: rule__FormInputGroup__Group__5 : rule__FormInputGroup__Group__5__Impl rule__FormInputGroup__Group__6 ;
+    // InternalVFormDsl.g:3124:1: rule__FormInputGroup__Group__5 : rule__FormInputGroup__Group__5__Impl rule__FormInputGroup__Group__6 ;
     public final void rule__FormInputGroup__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3158:1: ( rule__FormInputGroup__Group__5__Impl rule__FormInputGroup__Group__6 )
-            // InternalVFormDsl.g:3159:2: rule__FormInputGroup__Group__5__Impl rule__FormInputGroup__Group__6
+            // InternalVFormDsl.g:3128:1: ( rule__FormInputGroup__Group__5__Impl rule__FormInputGroup__Group__6 )
+            // InternalVFormDsl.g:3129:2: rule__FormInputGroup__Group__5__Impl rule__FormInputGroup__Group__6
             {
             pushFollow(FOLLOW_4);
             rule__FormInputGroup__Group__5__Impl();
@@ -9421,20 +9290,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__5__Impl"
-    // InternalVFormDsl.g:3166:1: rule__FormInputGroup__Group__5__Impl : ( 'GROUP' ) ;
+    // InternalVFormDsl.g:3136:1: rule__FormInputGroup__Group__5__Impl : ( 'GROUP' ) ;
     public final void rule__FormInputGroup__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3170:1: ( ( 'GROUP' ) )
-            // InternalVFormDsl.g:3171:1: ( 'GROUP' )
+            // InternalVFormDsl.g:3140:1: ( ( 'GROUP' ) )
+            // InternalVFormDsl.g:3141:1: ( 'GROUP' )
             {
-            // InternalVFormDsl.g:3171:1: ( 'GROUP' )
-            // InternalVFormDsl.g:3172:2: 'GROUP'
+            // InternalVFormDsl.g:3141:1: ( 'GROUP' )
+            // InternalVFormDsl.g:3142:2: 'GROUP'
             {
              before(grammarAccess.getFormInputGroupAccess().getGROUPKeyword_5()); 
-            match(input,18,FOLLOW_2); 
+            match(input,39,FOLLOW_2); 
              after(grammarAccess.getFormInputGroupAccess().getGROUPKeyword_5()); 
 
             }
@@ -9458,14 +9327,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__6"
-    // InternalVFormDsl.g:3181:1: rule__FormInputGroup__Group__6 : rule__FormInputGroup__Group__6__Impl rule__FormInputGroup__Group__7 ;
+    // InternalVFormDsl.g:3151:1: rule__FormInputGroup__Group__6 : rule__FormInputGroup__Group__6__Impl rule__FormInputGroup__Group__7 ;
     public final void rule__FormInputGroup__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3185:1: ( rule__FormInputGroup__Group__6__Impl rule__FormInputGroup__Group__7 )
-            // InternalVFormDsl.g:3186:2: rule__FormInputGroup__Group__6__Impl rule__FormInputGroup__Group__7
+            // InternalVFormDsl.g:3155:1: ( rule__FormInputGroup__Group__6__Impl rule__FormInputGroup__Group__7 )
+            // InternalVFormDsl.g:3156:2: rule__FormInputGroup__Group__6__Impl rule__FormInputGroup__Group__7
             {
             pushFollow(FOLLOW_33);
             rule__FormInputGroup__Group__6__Impl();
@@ -9496,20 +9365,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__6__Impl"
-    // InternalVFormDsl.g:3193:1: rule__FormInputGroup__Group__6__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:3163:1: rule__FormInputGroup__Group__6__Impl : ( ',' ) ;
     public final void rule__FormInputGroup__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3197:1: ( ( ',' ) )
-            // InternalVFormDsl.g:3198:1: ( ',' )
+            // InternalVFormDsl.g:3167:1: ( ( ',' ) )
+            // InternalVFormDsl.g:3168:1: ( ',' )
             {
-            // InternalVFormDsl.g:3198:1: ( ',' )
-            // InternalVFormDsl.g:3199:2: ','
+            // InternalVFormDsl.g:3168:1: ( ',' )
+            // InternalVFormDsl.g:3169:2: ','
             {
              before(grammarAccess.getFormInputGroupAccess().getCommaKeyword_6()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getFormInputGroupAccess().getCommaKeyword_6()); 
 
             }
@@ -9533,14 +9402,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__7"
-    // InternalVFormDsl.g:3208:1: rule__FormInputGroup__Group__7 : rule__FormInputGroup__Group__7__Impl rule__FormInputGroup__Group__8 ;
+    // InternalVFormDsl.g:3178:1: rule__FormInputGroup__Group__7 : rule__FormInputGroup__Group__7__Impl rule__FormInputGroup__Group__8 ;
     public final void rule__FormInputGroup__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3212:1: ( rule__FormInputGroup__Group__7__Impl rule__FormInputGroup__Group__8 )
-            // InternalVFormDsl.g:3213:2: rule__FormInputGroup__Group__7__Impl rule__FormInputGroup__Group__8
+            // InternalVFormDsl.g:3182:1: ( rule__FormInputGroup__Group__7__Impl rule__FormInputGroup__Group__8 )
+            // InternalVFormDsl.g:3183:2: rule__FormInputGroup__Group__7__Impl rule__FormInputGroup__Group__8
             {
             pushFollow(FOLLOW_34);
             rule__FormInputGroup__Group__7__Impl();
@@ -9571,20 +9440,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__7__Impl"
-    // InternalVFormDsl.g:3220:1: rule__FormInputGroup__Group__7__Impl : ( 'groupInputs:' ) ;
+    // InternalVFormDsl.g:3190:1: rule__FormInputGroup__Group__7__Impl : ( 'groupInputs:' ) ;
     public final void rule__FormInputGroup__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3224:1: ( ( 'groupInputs:' ) )
-            // InternalVFormDsl.g:3225:1: ( 'groupInputs:' )
+            // InternalVFormDsl.g:3194:1: ( ( 'groupInputs:' ) )
+            // InternalVFormDsl.g:3195:1: ( 'groupInputs:' )
             {
-            // InternalVFormDsl.g:3225:1: ( 'groupInputs:' )
-            // InternalVFormDsl.g:3226:2: 'groupInputs:'
+            // InternalVFormDsl.g:3195:1: ( 'groupInputs:' )
+            // InternalVFormDsl.g:3196:2: 'groupInputs:'
             {
              before(grammarAccess.getFormInputGroupAccess().getGroupInputsKeyword_7()); 
-            match(input,41,FOLLOW_2); 
+            match(input,40,FOLLOW_2); 
              after(grammarAccess.getFormInputGroupAccess().getGroupInputsKeyword_7()); 
 
             }
@@ -9608,14 +9477,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__8"
-    // InternalVFormDsl.g:3235:1: rule__FormInputGroup__Group__8 : rule__FormInputGroup__Group__8__Impl ;
+    // InternalVFormDsl.g:3205:1: rule__FormInputGroup__Group__8 : rule__FormInputGroup__Group__8__Impl ;
     public final void rule__FormInputGroup__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3239:1: ( rule__FormInputGroup__Group__8__Impl )
-            // InternalVFormDsl.g:3240:2: rule__FormInputGroup__Group__8__Impl
+            // InternalVFormDsl.g:3209:1: ( rule__FormInputGroup__Group__8__Impl )
+            // InternalVFormDsl.g:3210:2: rule__FormInputGroup__Group__8__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FormInputGroup__Group__8__Impl();
@@ -9641,21 +9510,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__8__Impl"
-    // InternalVFormDsl.g:3246:1: rule__FormInputGroup__Group__8__Impl : ( ( rule__FormInputGroup__GroupInputsAssignment_8 ) ) ;
+    // InternalVFormDsl.g:3216:1: rule__FormInputGroup__Group__8__Impl : ( ( rule__FormInputGroup__GroupInputsAssignment_8 ) ) ;
     public final void rule__FormInputGroup__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3250:1: ( ( ( rule__FormInputGroup__GroupInputsAssignment_8 ) ) )
-            // InternalVFormDsl.g:3251:1: ( ( rule__FormInputGroup__GroupInputsAssignment_8 ) )
+            // InternalVFormDsl.g:3220:1: ( ( ( rule__FormInputGroup__GroupInputsAssignment_8 ) ) )
+            // InternalVFormDsl.g:3221:1: ( ( rule__FormInputGroup__GroupInputsAssignment_8 ) )
             {
-            // InternalVFormDsl.g:3251:1: ( ( rule__FormInputGroup__GroupInputsAssignment_8 ) )
-            // InternalVFormDsl.g:3252:2: ( rule__FormInputGroup__GroupInputsAssignment_8 )
+            // InternalVFormDsl.g:3221:1: ( ( rule__FormInputGroup__GroupInputsAssignment_8 ) )
+            // InternalVFormDsl.g:3222:2: ( rule__FormInputGroup__GroupInputsAssignment_8 )
             {
              before(grammarAccess.getFormInputGroupAccess().getGroupInputsAssignment_8()); 
-            // InternalVFormDsl.g:3253:2: ( rule__FormInputGroup__GroupInputsAssignment_8 )
-            // InternalVFormDsl.g:3253:3: rule__FormInputGroup__GroupInputsAssignment_8
+            // InternalVFormDsl.g:3223:2: ( rule__FormInputGroup__GroupInputsAssignment_8 )
+            // InternalVFormDsl.g:3223:3: rule__FormInputGroup__GroupInputsAssignment_8
             {
             pushFollow(FOLLOW_2);
             rule__FormInputGroup__GroupInputsAssignment_8();
@@ -9688,14 +9557,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__Group__0"
-    // InternalVFormDsl.g:3262:1: rule__StringData__Group__0 : rule__StringData__Group__0__Impl rule__StringData__Group__1 ;
+    // InternalVFormDsl.g:3232:1: rule__StringData__Group__0 : rule__StringData__Group__0__Impl rule__StringData__Group__1 ;
     public final void rule__StringData__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3266:1: ( rule__StringData__Group__0__Impl rule__StringData__Group__1 )
-            // InternalVFormDsl.g:3267:2: rule__StringData__Group__0__Impl rule__StringData__Group__1
+            // InternalVFormDsl.g:3236:1: ( rule__StringData__Group__0__Impl rule__StringData__Group__1 )
+            // InternalVFormDsl.g:3237:2: rule__StringData__Group__0__Impl rule__StringData__Group__1
             {
             pushFollow(FOLLOW_35);
             rule__StringData__Group__0__Impl();
@@ -9726,20 +9595,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__Group__0__Impl"
-    // InternalVFormDsl.g:3274:1: rule__StringData__Group__0__Impl : ( '{' ) ;
+    // InternalVFormDsl.g:3244:1: rule__StringData__Group__0__Impl : ( '{' ) ;
     public final void rule__StringData__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3278:1: ( ( '{' ) )
-            // InternalVFormDsl.g:3279:1: ( '{' )
+            // InternalVFormDsl.g:3248:1: ( ( '{' ) )
+            // InternalVFormDsl.g:3249:1: ( '{' )
             {
-            // InternalVFormDsl.g:3279:1: ( '{' )
-            // InternalVFormDsl.g:3280:2: '{'
+            // InternalVFormDsl.g:3249:1: ( '{' )
+            // InternalVFormDsl.g:3250:2: '{'
             {
              before(grammarAccess.getStringDataAccess().getLeftCurlyBracketKeyword_0()); 
-            match(input,32,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getStringDataAccess().getLeftCurlyBracketKeyword_0()); 
 
             }
@@ -9763,14 +9632,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__Group__1"
-    // InternalVFormDsl.g:3289:1: rule__StringData__Group__1 : rule__StringData__Group__1__Impl rule__StringData__Group__2 ;
+    // InternalVFormDsl.g:3259:1: rule__StringData__Group__1 : rule__StringData__Group__1__Impl rule__StringData__Group__2 ;
     public final void rule__StringData__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3293:1: ( rule__StringData__Group__1__Impl rule__StringData__Group__2 )
-            // InternalVFormDsl.g:3294:2: rule__StringData__Group__1__Impl rule__StringData__Group__2
+            // InternalVFormDsl.g:3263:1: ( rule__StringData__Group__1__Impl rule__StringData__Group__2 )
+            // InternalVFormDsl.g:3264:2: rule__StringData__Group__1__Impl rule__StringData__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__StringData__Group__1__Impl();
@@ -9801,20 +9670,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__Group__1__Impl"
-    // InternalVFormDsl.g:3301:1: rule__StringData__Group__1__Impl : ( 'label:' ) ;
+    // InternalVFormDsl.g:3271:1: rule__StringData__Group__1__Impl : ( 'label:' ) ;
     public final void rule__StringData__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3305:1: ( ( 'label:' ) )
-            // InternalVFormDsl.g:3306:1: ( 'label:' )
+            // InternalVFormDsl.g:3275:1: ( ( 'label:' ) )
+            // InternalVFormDsl.g:3276:1: ( 'label:' )
             {
-            // InternalVFormDsl.g:3306:1: ( 'label:' )
-            // InternalVFormDsl.g:3307:2: 'label:'
+            // InternalVFormDsl.g:3276:1: ( 'label:' )
+            // InternalVFormDsl.g:3277:2: 'label:'
             {
              before(grammarAccess.getStringDataAccess().getLabelKeyword_1()); 
-            match(input,42,FOLLOW_2); 
+            match(input,41,FOLLOW_2); 
              after(grammarAccess.getStringDataAccess().getLabelKeyword_1()); 
 
             }
@@ -9838,14 +9707,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__Group__2"
-    // InternalVFormDsl.g:3316:1: rule__StringData__Group__2 : rule__StringData__Group__2__Impl rule__StringData__Group__3 ;
+    // InternalVFormDsl.g:3286:1: rule__StringData__Group__2 : rule__StringData__Group__2__Impl rule__StringData__Group__3 ;
     public final void rule__StringData__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3320:1: ( rule__StringData__Group__2__Impl rule__StringData__Group__3 )
-            // InternalVFormDsl.g:3321:2: rule__StringData__Group__2__Impl rule__StringData__Group__3
+            // InternalVFormDsl.g:3290:1: ( rule__StringData__Group__2__Impl rule__StringData__Group__3 )
+            // InternalVFormDsl.g:3291:2: rule__StringData__Group__2__Impl rule__StringData__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__StringData__Group__2__Impl();
@@ -9876,21 +9745,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__Group__2__Impl"
-    // InternalVFormDsl.g:3328:1: rule__StringData__Group__2__Impl : ( ( rule__StringData__LabelAssignment_2 ) ) ;
+    // InternalVFormDsl.g:3298:1: rule__StringData__Group__2__Impl : ( ( rule__StringData__LabelAssignment_2 ) ) ;
     public final void rule__StringData__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3332:1: ( ( ( rule__StringData__LabelAssignment_2 ) ) )
-            // InternalVFormDsl.g:3333:1: ( ( rule__StringData__LabelAssignment_2 ) )
+            // InternalVFormDsl.g:3302:1: ( ( ( rule__StringData__LabelAssignment_2 ) ) )
+            // InternalVFormDsl.g:3303:1: ( ( rule__StringData__LabelAssignment_2 ) )
             {
-            // InternalVFormDsl.g:3333:1: ( ( rule__StringData__LabelAssignment_2 ) )
-            // InternalVFormDsl.g:3334:2: ( rule__StringData__LabelAssignment_2 )
+            // InternalVFormDsl.g:3303:1: ( ( rule__StringData__LabelAssignment_2 ) )
+            // InternalVFormDsl.g:3304:2: ( rule__StringData__LabelAssignment_2 )
             {
              before(grammarAccess.getStringDataAccess().getLabelAssignment_2()); 
-            // InternalVFormDsl.g:3335:2: ( rule__StringData__LabelAssignment_2 )
-            // InternalVFormDsl.g:3335:3: rule__StringData__LabelAssignment_2
+            // InternalVFormDsl.g:3305:2: ( rule__StringData__LabelAssignment_2 )
+            // InternalVFormDsl.g:3305:3: rule__StringData__LabelAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__StringData__LabelAssignment_2();
@@ -9923,14 +9792,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__Group__3"
-    // InternalVFormDsl.g:3343:1: rule__StringData__Group__3 : rule__StringData__Group__3__Impl rule__StringData__Group__4 ;
+    // InternalVFormDsl.g:3313:1: rule__StringData__Group__3 : rule__StringData__Group__3__Impl rule__StringData__Group__4 ;
     public final void rule__StringData__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3347:1: ( rule__StringData__Group__3__Impl rule__StringData__Group__4 )
-            // InternalVFormDsl.g:3348:2: rule__StringData__Group__3__Impl rule__StringData__Group__4
+            // InternalVFormDsl.g:3317:1: ( rule__StringData__Group__3__Impl rule__StringData__Group__4 )
+            // InternalVFormDsl.g:3318:2: rule__StringData__Group__3__Impl rule__StringData__Group__4
             {
             pushFollow(FOLLOW_36);
             rule__StringData__Group__3__Impl();
@@ -9961,20 +9830,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__Group__3__Impl"
-    // InternalVFormDsl.g:3355:1: rule__StringData__Group__3__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:3325:1: rule__StringData__Group__3__Impl : ( ',' ) ;
     public final void rule__StringData__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3359:1: ( ( ',' ) )
-            // InternalVFormDsl.g:3360:1: ( ',' )
+            // InternalVFormDsl.g:3329:1: ( ( ',' ) )
+            // InternalVFormDsl.g:3330:1: ( ',' )
             {
-            // InternalVFormDsl.g:3360:1: ( ',' )
-            // InternalVFormDsl.g:3361:2: ','
+            // InternalVFormDsl.g:3330:1: ( ',' )
+            // InternalVFormDsl.g:3331:2: ','
             {
              before(grammarAccess.getStringDataAccess().getCommaKeyword_3()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getStringDataAccess().getCommaKeyword_3()); 
 
             }
@@ -9998,14 +9867,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__Group__4"
-    // InternalVFormDsl.g:3370:1: rule__StringData__Group__4 : rule__StringData__Group__4__Impl rule__StringData__Group__5 ;
+    // InternalVFormDsl.g:3340:1: rule__StringData__Group__4 : rule__StringData__Group__4__Impl rule__StringData__Group__5 ;
     public final void rule__StringData__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3374:1: ( rule__StringData__Group__4__Impl rule__StringData__Group__5 )
-            // InternalVFormDsl.g:3375:2: rule__StringData__Group__4__Impl rule__StringData__Group__5
+            // InternalVFormDsl.g:3344:1: ( rule__StringData__Group__4__Impl rule__StringData__Group__5 )
+            // InternalVFormDsl.g:3345:2: rule__StringData__Group__4__Impl rule__StringData__Group__5
             {
             pushFollow(FOLLOW_10);
             rule__StringData__Group__4__Impl();
@@ -10036,20 +9905,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__Group__4__Impl"
-    // InternalVFormDsl.g:3382:1: rule__StringData__Group__4__Impl : ( 'value:' ) ;
+    // InternalVFormDsl.g:3352:1: rule__StringData__Group__4__Impl : ( 'value:' ) ;
     public final void rule__StringData__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3386:1: ( ( 'value:' ) )
-            // InternalVFormDsl.g:3387:1: ( 'value:' )
+            // InternalVFormDsl.g:3356:1: ( ( 'value:' ) )
+            // InternalVFormDsl.g:3357:1: ( 'value:' )
             {
-            // InternalVFormDsl.g:3387:1: ( 'value:' )
-            // InternalVFormDsl.g:3388:2: 'value:'
+            // InternalVFormDsl.g:3357:1: ( 'value:' )
+            // InternalVFormDsl.g:3358:2: 'value:'
             {
              before(grammarAccess.getStringDataAccess().getValueKeyword_4()); 
-            match(input,43,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getStringDataAccess().getValueKeyword_4()); 
 
             }
@@ -10073,14 +9942,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__Group__5"
-    // InternalVFormDsl.g:3397:1: rule__StringData__Group__5 : rule__StringData__Group__5__Impl rule__StringData__Group__6 ;
+    // InternalVFormDsl.g:3367:1: rule__StringData__Group__5 : rule__StringData__Group__5__Impl rule__StringData__Group__6 ;
     public final void rule__StringData__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3401:1: ( rule__StringData__Group__5__Impl rule__StringData__Group__6 )
-            // InternalVFormDsl.g:3402:2: rule__StringData__Group__5__Impl rule__StringData__Group__6
+            // InternalVFormDsl.g:3371:1: ( rule__StringData__Group__5__Impl rule__StringData__Group__6 )
+            // InternalVFormDsl.g:3372:2: rule__StringData__Group__5__Impl rule__StringData__Group__6
             {
             pushFollow(FOLLOW_21);
             rule__StringData__Group__5__Impl();
@@ -10111,21 +9980,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__Group__5__Impl"
-    // InternalVFormDsl.g:3409:1: rule__StringData__Group__5__Impl : ( ( rule__StringData__ValueAssignment_5 ) ) ;
+    // InternalVFormDsl.g:3379:1: rule__StringData__Group__5__Impl : ( ( rule__StringData__ValueAssignment_5 ) ) ;
     public final void rule__StringData__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3413:1: ( ( ( rule__StringData__ValueAssignment_5 ) ) )
-            // InternalVFormDsl.g:3414:1: ( ( rule__StringData__ValueAssignment_5 ) )
+            // InternalVFormDsl.g:3383:1: ( ( ( rule__StringData__ValueAssignment_5 ) ) )
+            // InternalVFormDsl.g:3384:1: ( ( rule__StringData__ValueAssignment_5 ) )
             {
-            // InternalVFormDsl.g:3414:1: ( ( rule__StringData__ValueAssignment_5 ) )
-            // InternalVFormDsl.g:3415:2: ( rule__StringData__ValueAssignment_5 )
+            // InternalVFormDsl.g:3384:1: ( ( rule__StringData__ValueAssignment_5 ) )
+            // InternalVFormDsl.g:3385:2: ( rule__StringData__ValueAssignment_5 )
             {
              before(grammarAccess.getStringDataAccess().getValueAssignment_5()); 
-            // InternalVFormDsl.g:3416:2: ( rule__StringData__ValueAssignment_5 )
-            // InternalVFormDsl.g:3416:3: rule__StringData__ValueAssignment_5
+            // InternalVFormDsl.g:3386:2: ( rule__StringData__ValueAssignment_5 )
+            // InternalVFormDsl.g:3386:3: rule__StringData__ValueAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__StringData__ValueAssignment_5();
@@ -10158,14 +10027,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__Group__6"
-    // InternalVFormDsl.g:3424:1: rule__StringData__Group__6 : rule__StringData__Group__6__Impl ;
+    // InternalVFormDsl.g:3394:1: rule__StringData__Group__6 : rule__StringData__Group__6__Impl ;
     public final void rule__StringData__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3428:1: ( rule__StringData__Group__6__Impl )
-            // InternalVFormDsl.g:3429:2: rule__StringData__Group__6__Impl
+            // InternalVFormDsl.g:3398:1: ( rule__StringData__Group__6__Impl )
+            // InternalVFormDsl.g:3399:2: rule__StringData__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__StringData__Group__6__Impl();
@@ -10191,20 +10060,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__Group__6__Impl"
-    // InternalVFormDsl.g:3435:1: rule__StringData__Group__6__Impl : ( '}' ) ;
+    // InternalVFormDsl.g:3405:1: rule__StringData__Group__6__Impl : ( '}' ) ;
     public final void rule__StringData__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3439:1: ( ( '}' ) )
-            // InternalVFormDsl.g:3440:1: ( '}' )
+            // InternalVFormDsl.g:3409:1: ( ( '}' ) )
+            // InternalVFormDsl.g:3410:1: ( '}' )
             {
-            // InternalVFormDsl.g:3440:1: ( '}' )
-            // InternalVFormDsl.g:3441:2: '}'
+            // InternalVFormDsl.g:3410:1: ( '}' )
+            // InternalVFormDsl.g:3411:2: '}'
             {
              before(grammarAccess.getStringDataAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,33,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getStringDataAccess().getRightCurlyBracketKeyword_6()); 
 
             }
@@ -10228,14 +10097,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__Group__0"
-    // InternalVFormDsl.g:3451:1: rule__IntData__Group__0 : rule__IntData__Group__0__Impl rule__IntData__Group__1 ;
+    // InternalVFormDsl.g:3421:1: rule__IntData__Group__0 : rule__IntData__Group__0__Impl rule__IntData__Group__1 ;
     public final void rule__IntData__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3455:1: ( rule__IntData__Group__0__Impl rule__IntData__Group__1 )
-            // InternalVFormDsl.g:3456:2: rule__IntData__Group__0__Impl rule__IntData__Group__1
+            // InternalVFormDsl.g:3425:1: ( rule__IntData__Group__0__Impl rule__IntData__Group__1 )
+            // InternalVFormDsl.g:3426:2: rule__IntData__Group__0__Impl rule__IntData__Group__1
             {
             pushFollow(FOLLOW_35);
             rule__IntData__Group__0__Impl();
@@ -10266,20 +10135,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__Group__0__Impl"
-    // InternalVFormDsl.g:3463:1: rule__IntData__Group__0__Impl : ( '{' ) ;
+    // InternalVFormDsl.g:3433:1: rule__IntData__Group__0__Impl : ( '{' ) ;
     public final void rule__IntData__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3467:1: ( ( '{' ) )
-            // InternalVFormDsl.g:3468:1: ( '{' )
+            // InternalVFormDsl.g:3437:1: ( ( '{' ) )
+            // InternalVFormDsl.g:3438:1: ( '{' )
             {
-            // InternalVFormDsl.g:3468:1: ( '{' )
-            // InternalVFormDsl.g:3469:2: '{'
+            // InternalVFormDsl.g:3438:1: ( '{' )
+            // InternalVFormDsl.g:3439:2: '{'
             {
              before(grammarAccess.getIntDataAccess().getLeftCurlyBracketKeyword_0()); 
-            match(input,32,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getIntDataAccess().getLeftCurlyBracketKeyword_0()); 
 
             }
@@ -10303,14 +10172,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__Group__1"
-    // InternalVFormDsl.g:3478:1: rule__IntData__Group__1 : rule__IntData__Group__1__Impl rule__IntData__Group__2 ;
+    // InternalVFormDsl.g:3448:1: rule__IntData__Group__1 : rule__IntData__Group__1__Impl rule__IntData__Group__2 ;
     public final void rule__IntData__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3482:1: ( rule__IntData__Group__1__Impl rule__IntData__Group__2 )
-            // InternalVFormDsl.g:3483:2: rule__IntData__Group__1__Impl rule__IntData__Group__2
+            // InternalVFormDsl.g:3452:1: ( rule__IntData__Group__1__Impl rule__IntData__Group__2 )
+            // InternalVFormDsl.g:3453:2: rule__IntData__Group__1__Impl rule__IntData__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__IntData__Group__1__Impl();
@@ -10341,20 +10210,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__Group__1__Impl"
-    // InternalVFormDsl.g:3490:1: rule__IntData__Group__1__Impl : ( 'label:' ) ;
+    // InternalVFormDsl.g:3460:1: rule__IntData__Group__1__Impl : ( 'label:' ) ;
     public final void rule__IntData__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3494:1: ( ( 'label:' ) )
-            // InternalVFormDsl.g:3495:1: ( 'label:' )
+            // InternalVFormDsl.g:3464:1: ( ( 'label:' ) )
+            // InternalVFormDsl.g:3465:1: ( 'label:' )
             {
-            // InternalVFormDsl.g:3495:1: ( 'label:' )
-            // InternalVFormDsl.g:3496:2: 'label:'
+            // InternalVFormDsl.g:3465:1: ( 'label:' )
+            // InternalVFormDsl.g:3466:2: 'label:'
             {
              before(grammarAccess.getIntDataAccess().getLabelKeyword_1()); 
-            match(input,42,FOLLOW_2); 
+            match(input,41,FOLLOW_2); 
              after(grammarAccess.getIntDataAccess().getLabelKeyword_1()); 
 
             }
@@ -10378,14 +10247,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__Group__2"
-    // InternalVFormDsl.g:3505:1: rule__IntData__Group__2 : rule__IntData__Group__2__Impl rule__IntData__Group__3 ;
+    // InternalVFormDsl.g:3475:1: rule__IntData__Group__2 : rule__IntData__Group__2__Impl rule__IntData__Group__3 ;
     public final void rule__IntData__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3509:1: ( rule__IntData__Group__2__Impl rule__IntData__Group__3 )
-            // InternalVFormDsl.g:3510:2: rule__IntData__Group__2__Impl rule__IntData__Group__3
+            // InternalVFormDsl.g:3479:1: ( rule__IntData__Group__2__Impl rule__IntData__Group__3 )
+            // InternalVFormDsl.g:3480:2: rule__IntData__Group__2__Impl rule__IntData__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__IntData__Group__2__Impl();
@@ -10416,21 +10285,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__Group__2__Impl"
-    // InternalVFormDsl.g:3517:1: rule__IntData__Group__2__Impl : ( ( rule__IntData__LabelAssignment_2 ) ) ;
+    // InternalVFormDsl.g:3487:1: rule__IntData__Group__2__Impl : ( ( rule__IntData__LabelAssignment_2 ) ) ;
     public final void rule__IntData__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3521:1: ( ( ( rule__IntData__LabelAssignment_2 ) ) )
-            // InternalVFormDsl.g:3522:1: ( ( rule__IntData__LabelAssignment_2 ) )
+            // InternalVFormDsl.g:3491:1: ( ( ( rule__IntData__LabelAssignment_2 ) ) )
+            // InternalVFormDsl.g:3492:1: ( ( rule__IntData__LabelAssignment_2 ) )
             {
-            // InternalVFormDsl.g:3522:1: ( ( rule__IntData__LabelAssignment_2 ) )
-            // InternalVFormDsl.g:3523:2: ( rule__IntData__LabelAssignment_2 )
+            // InternalVFormDsl.g:3492:1: ( ( rule__IntData__LabelAssignment_2 ) )
+            // InternalVFormDsl.g:3493:2: ( rule__IntData__LabelAssignment_2 )
             {
              before(grammarAccess.getIntDataAccess().getLabelAssignment_2()); 
-            // InternalVFormDsl.g:3524:2: ( rule__IntData__LabelAssignment_2 )
-            // InternalVFormDsl.g:3524:3: rule__IntData__LabelAssignment_2
+            // InternalVFormDsl.g:3494:2: ( rule__IntData__LabelAssignment_2 )
+            // InternalVFormDsl.g:3494:3: rule__IntData__LabelAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__IntData__LabelAssignment_2();
@@ -10463,14 +10332,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__Group__3"
-    // InternalVFormDsl.g:3532:1: rule__IntData__Group__3 : rule__IntData__Group__3__Impl rule__IntData__Group__4 ;
+    // InternalVFormDsl.g:3502:1: rule__IntData__Group__3 : rule__IntData__Group__3__Impl rule__IntData__Group__4 ;
     public final void rule__IntData__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3536:1: ( rule__IntData__Group__3__Impl rule__IntData__Group__4 )
-            // InternalVFormDsl.g:3537:2: rule__IntData__Group__3__Impl rule__IntData__Group__4
+            // InternalVFormDsl.g:3506:1: ( rule__IntData__Group__3__Impl rule__IntData__Group__4 )
+            // InternalVFormDsl.g:3507:2: rule__IntData__Group__3__Impl rule__IntData__Group__4
             {
             pushFollow(FOLLOW_36);
             rule__IntData__Group__3__Impl();
@@ -10501,20 +10370,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__Group__3__Impl"
-    // InternalVFormDsl.g:3544:1: rule__IntData__Group__3__Impl : ( ',' ) ;
+    // InternalVFormDsl.g:3514:1: rule__IntData__Group__3__Impl : ( ',' ) ;
     public final void rule__IntData__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3548:1: ( ( ',' ) )
-            // InternalVFormDsl.g:3549:1: ( ',' )
+            // InternalVFormDsl.g:3518:1: ( ( ',' ) )
+            // InternalVFormDsl.g:3519:1: ( ',' )
             {
-            // InternalVFormDsl.g:3549:1: ( ',' )
-            // InternalVFormDsl.g:3550:2: ','
+            // InternalVFormDsl.g:3519:1: ( ',' )
+            // InternalVFormDsl.g:3520:2: ','
             {
              before(grammarAccess.getIntDataAccess().getCommaKeyword_3()); 
-            match(input,22,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getIntDataAccess().getCommaKeyword_3()); 
 
             }
@@ -10538,14 +10407,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__Group__4"
-    // InternalVFormDsl.g:3559:1: rule__IntData__Group__4 : rule__IntData__Group__4__Impl rule__IntData__Group__5 ;
+    // InternalVFormDsl.g:3529:1: rule__IntData__Group__4 : rule__IntData__Group__4__Impl rule__IntData__Group__5 ;
     public final void rule__IntData__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3563:1: ( rule__IntData__Group__4__Impl rule__IntData__Group__5 )
-            // InternalVFormDsl.g:3564:2: rule__IntData__Group__4__Impl rule__IntData__Group__5
+            // InternalVFormDsl.g:3533:1: ( rule__IntData__Group__4__Impl rule__IntData__Group__5 )
+            // InternalVFormDsl.g:3534:2: rule__IntData__Group__4__Impl rule__IntData__Group__5
             {
             pushFollow(FOLLOW_15);
             rule__IntData__Group__4__Impl();
@@ -10576,20 +10445,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__Group__4__Impl"
-    // InternalVFormDsl.g:3571:1: rule__IntData__Group__4__Impl : ( 'value:' ) ;
+    // InternalVFormDsl.g:3541:1: rule__IntData__Group__4__Impl : ( 'value:' ) ;
     public final void rule__IntData__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3575:1: ( ( 'value:' ) )
-            // InternalVFormDsl.g:3576:1: ( 'value:' )
+            // InternalVFormDsl.g:3545:1: ( ( 'value:' ) )
+            // InternalVFormDsl.g:3546:1: ( 'value:' )
             {
-            // InternalVFormDsl.g:3576:1: ( 'value:' )
-            // InternalVFormDsl.g:3577:2: 'value:'
+            // InternalVFormDsl.g:3546:1: ( 'value:' )
+            // InternalVFormDsl.g:3547:2: 'value:'
             {
              before(grammarAccess.getIntDataAccess().getValueKeyword_4()); 
-            match(input,43,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getIntDataAccess().getValueKeyword_4()); 
 
             }
@@ -10613,14 +10482,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__Group__5"
-    // InternalVFormDsl.g:3586:1: rule__IntData__Group__5 : rule__IntData__Group__5__Impl rule__IntData__Group__6 ;
+    // InternalVFormDsl.g:3556:1: rule__IntData__Group__5 : rule__IntData__Group__5__Impl rule__IntData__Group__6 ;
     public final void rule__IntData__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3590:1: ( rule__IntData__Group__5__Impl rule__IntData__Group__6 )
-            // InternalVFormDsl.g:3591:2: rule__IntData__Group__5__Impl rule__IntData__Group__6
+            // InternalVFormDsl.g:3560:1: ( rule__IntData__Group__5__Impl rule__IntData__Group__6 )
+            // InternalVFormDsl.g:3561:2: rule__IntData__Group__5__Impl rule__IntData__Group__6
             {
             pushFollow(FOLLOW_21);
             rule__IntData__Group__5__Impl();
@@ -10651,21 +10520,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__Group__5__Impl"
-    // InternalVFormDsl.g:3598:1: rule__IntData__Group__5__Impl : ( ( rule__IntData__ValueAssignment_5 ) ) ;
+    // InternalVFormDsl.g:3568:1: rule__IntData__Group__5__Impl : ( ( rule__IntData__ValueAssignment_5 ) ) ;
     public final void rule__IntData__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3602:1: ( ( ( rule__IntData__ValueAssignment_5 ) ) )
-            // InternalVFormDsl.g:3603:1: ( ( rule__IntData__ValueAssignment_5 ) )
+            // InternalVFormDsl.g:3572:1: ( ( ( rule__IntData__ValueAssignment_5 ) ) )
+            // InternalVFormDsl.g:3573:1: ( ( rule__IntData__ValueAssignment_5 ) )
             {
-            // InternalVFormDsl.g:3603:1: ( ( rule__IntData__ValueAssignment_5 ) )
-            // InternalVFormDsl.g:3604:2: ( rule__IntData__ValueAssignment_5 )
+            // InternalVFormDsl.g:3573:1: ( ( rule__IntData__ValueAssignment_5 ) )
+            // InternalVFormDsl.g:3574:2: ( rule__IntData__ValueAssignment_5 )
             {
              before(grammarAccess.getIntDataAccess().getValueAssignment_5()); 
-            // InternalVFormDsl.g:3605:2: ( rule__IntData__ValueAssignment_5 )
-            // InternalVFormDsl.g:3605:3: rule__IntData__ValueAssignment_5
+            // InternalVFormDsl.g:3575:2: ( rule__IntData__ValueAssignment_5 )
+            // InternalVFormDsl.g:3575:3: rule__IntData__ValueAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__IntData__ValueAssignment_5();
@@ -10698,14 +10567,14 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__Group__6"
-    // InternalVFormDsl.g:3613:1: rule__IntData__Group__6 : rule__IntData__Group__6__Impl ;
+    // InternalVFormDsl.g:3583:1: rule__IntData__Group__6 : rule__IntData__Group__6__Impl ;
     public final void rule__IntData__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3617:1: ( rule__IntData__Group__6__Impl )
-            // InternalVFormDsl.g:3618:2: rule__IntData__Group__6__Impl
+            // InternalVFormDsl.g:3587:1: ( rule__IntData__Group__6__Impl )
+            // InternalVFormDsl.g:3588:2: rule__IntData__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__IntData__Group__6__Impl();
@@ -10731,20 +10600,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__Group__6__Impl"
-    // InternalVFormDsl.g:3624:1: rule__IntData__Group__6__Impl : ( '}' ) ;
+    // InternalVFormDsl.g:3594:1: rule__IntData__Group__6__Impl : ( '}' ) ;
     public final void rule__IntData__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3628:1: ( ( '}' ) )
-            // InternalVFormDsl.g:3629:1: ( '}' )
+            // InternalVFormDsl.g:3598:1: ( ( '}' ) )
+            // InternalVFormDsl.g:3599:1: ( '}' )
             {
-            // InternalVFormDsl.g:3629:1: ( '}' )
-            // InternalVFormDsl.g:3630:2: '}'
+            // InternalVFormDsl.g:3599:1: ( '}' )
+            // InternalVFormDsl.g:3600:2: '}'
             {
              before(grammarAccess.getIntDataAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,33,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getIntDataAccess().getRightCurlyBracketKeyword_6()); 
 
             }
@@ -10768,17 +10637,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__FormLayoutAssignment_1"
-    // InternalVFormDsl.g:3640:1: rule__Model__FormLayoutAssignment_1 : ( ruleFormLayout ) ;
+    // InternalVFormDsl.g:3610:1: rule__Model__FormLayoutAssignment_1 : ( ruleFormLayout ) ;
     public final void rule__Model__FormLayoutAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3644:1: ( ( ruleFormLayout ) )
-            // InternalVFormDsl.g:3645:2: ( ruleFormLayout )
+            // InternalVFormDsl.g:3614:1: ( ( ruleFormLayout ) )
+            // InternalVFormDsl.g:3615:2: ( ruleFormLayout )
             {
-            // InternalVFormDsl.g:3645:2: ( ruleFormLayout )
-            // InternalVFormDsl.g:3646:3: ruleFormLayout
+            // InternalVFormDsl.g:3615:2: ( ruleFormLayout )
+            // InternalVFormDsl.g:3616:3: ruleFormLayout
             {
              before(grammarAccess.getModelAccess().getFormLayoutFormLayoutParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -10809,17 +10678,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__FormInputAssignment_5"
-    // InternalVFormDsl.g:3655:1: rule__Model__FormInputAssignment_5 : ( ruleFormInput ) ;
+    // InternalVFormDsl.g:3625:1: rule__Model__FormInputAssignment_5 : ( ruleFormInput ) ;
     public final void rule__Model__FormInputAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3659:1: ( ( ruleFormInput ) )
-            // InternalVFormDsl.g:3660:2: ( ruleFormInput )
+            // InternalVFormDsl.g:3629:1: ( ( ruleFormInput ) )
+            // InternalVFormDsl.g:3630:2: ( ruleFormInput )
             {
-            // InternalVFormDsl.g:3660:2: ( ruleFormInput )
-            // InternalVFormDsl.g:3661:3: ruleFormInput
+            // InternalVFormDsl.g:3630:2: ( ruleFormInput )
+            // InternalVFormDsl.g:3631:3: ruleFormInput
             {
              before(grammarAccess.getModelAccess().getFormInputFormInputParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -10850,17 +10719,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormLayout__LayoutAssignment"
-    // InternalVFormDsl.g:3670:1: rule__FormLayout__LayoutAssignment : ( ruleLayout ) ;
+    // InternalVFormDsl.g:3640:1: rule__FormLayout__LayoutAssignment : ( ruleLayout ) ;
     public final void rule__FormLayout__LayoutAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3674:1: ( ( ruleLayout ) )
-            // InternalVFormDsl.g:3675:2: ( ruleLayout )
+            // InternalVFormDsl.g:3644:1: ( ( ruleLayout ) )
+            // InternalVFormDsl.g:3645:2: ( ruleLayout )
             {
-            // InternalVFormDsl.g:3675:2: ( ruleLayout )
-            // InternalVFormDsl.g:3676:3: ruleLayout
+            // InternalVFormDsl.g:3645:2: ( ruleLayout )
+            // InternalVFormDsl.g:3646:3: ruleLayout
             {
              before(grammarAccess.getFormLayoutAccess().getLayoutLayoutEnumRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -10891,17 +10760,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputBasic__NameAssignment_2"
-    // InternalVFormDsl.g:3685:1: rule__FormInputBasic__NameAssignment_2 : ( RULE_STRING ) ;
+    // InternalVFormDsl.g:3655:1: rule__FormInputBasic__NameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__FormInputBasic__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3689:1: ( ( RULE_STRING ) )
-            // InternalVFormDsl.g:3690:2: ( RULE_STRING )
+            // InternalVFormDsl.g:3659:1: ( ( RULE_STRING ) )
+            // InternalVFormDsl.g:3660:2: ( RULE_STRING )
             {
-            // InternalVFormDsl.g:3690:2: ( RULE_STRING )
-            // InternalVFormDsl.g:3691:3: RULE_STRING
+            // InternalVFormDsl.g:3660:2: ( RULE_STRING )
+            // InternalVFormDsl.g:3661:3: RULE_STRING
             {
              before(grammarAccess.getFormInputBasicAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -10928,25 +10797,25 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputBasic__TypeAssignment_5"
-    // InternalVFormDsl.g:3700:1: rule__FormInputBasic__TypeAssignment_5 : ( ruleInputType ) ;
+    // InternalVFormDsl.g:3670:1: rule__FormInputBasic__TypeAssignment_5 : ( ruleBasicInputType ) ;
     public final void rule__FormInputBasic__TypeAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3704:1: ( ( ruleInputType ) )
-            // InternalVFormDsl.g:3705:2: ( ruleInputType )
+            // InternalVFormDsl.g:3674:1: ( ( ruleBasicInputType ) )
+            // InternalVFormDsl.g:3675:2: ( ruleBasicInputType )
             {
-            // InternalVFormDsl.g:3705:2: ( ruleInputType )
-            // InternalVFormDsl.g:3706:3: ruleInputType
+            // InternalVFormDsl.g:3675:2: ( ruleBasicInputType )
+            // InternalVFormDsl.g:3676:3: ruleBasicInputType
             {
-             before(grammarAccess.getFormInputBasicAccess().getTypeInputTypeEnumRuleCall_5_0()); 
+             before(grammarAccess.getFormInputBasicAccess().getTypeBasicInputTypeEnumRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
-            ruleInputType();
+            ruleBasicInputType();
 
             state._fsp--;
 
-             after(grammarAccess.getFormInputBasicAccess().getTypeInputTypeEnumRuleCall_5_0()); 
+             after(grammarAccess.getFormInputBasicAccess().getTypeBasicInputTypeEnumRuleCall_5_0()); 
 
             }
 
@@ -10969,17 +10838,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__NameAssignment_2"
-    // InternalVFormDsl.g:3715:1: rule__FormInputRange__NameAssignment_2 : ( RULE_STRING ) ;
+    // InternalVFormDsl.g:3685:1: rule__FormInputRange__NameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__FormInputRange__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3719:1: ( ( RULE_STRING ) )
-            // InternalVFormDsl.g:3720:2: ( RULE_STRING )
+            // InternalVFormDsl.g:3689:1: ( ( RULE_STRING ) )
+            // InternalVFormDsl.g:3690:2: ( RULE_STRING )
             {
-            // InternalVFormDsl.g:3720:2: ( RULE_STRING )
-            // InternalVFormDsl.g:3721:3: RULE_STRING
+            // InternalVFormDsl.g:3690:2: ( RULE_STRING )
+            // InternalVFormDsl.g:3691:3: RULE_STRING
             {
              before(grammarAccess.getFormInputRangeAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -11006,17 +10875,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__MinAssignment_9"
-    // InternalVFormDsl.g:3730:1: rule__FormInputRange__MinAssignment_9 : ( RULE_INT ) ;
+    // InternalVFormDsl.g:3700:1: rule__FormInputRange__MinAssignment_9 : ( RULE_INT ) ;
     public final void rule__FormInputRange__MinAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3734:1: ( ( RULE_INT ) )
-            // InternalVFormDsl.g:3735:2: ( RULE_INT )
+            // InternalVFormDsl.g:3704:1: ( ( RULE_INT ) )
+            // InternalVFormDsl.g:3705:2: ( RULE_INT )
             {
-            // InternalVFormDsl.g:3735:2: ( RULE_INT )
-            // InternalVFormDsl.g:3736:3: RULE_INT
+            // InternalVFormDsl.g:3705:2: ( RULE_INT )
+            // InternalVFormDsl.g:3706:3: RULE_INT
             {
              before(grammarAccess.getFormInputRangeAccess().getMinINTTerminalRuleCall_9_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11043,17 +10912,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputRange__MaxAssignment_12"
-    // InternalVFormDsl.g:3745:1: rule__FormInputRange__MaxAssignment_12 : ( RULE_INT ) ;
+    // InternalVFormDsl.g:3715:1: rule__FormInputRange__MaxAssignment_12 : ( RULE_INT ) ;
     public final void rule__FormInputRange__MaxAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3749:1: ( ( RULE_INT ) )
-            // InternalVFormDsl.g:3750:2: ( RULE_INT )
+            // InternalVFormDsl.g:3719:1: ( ( RULE_INT ) )
+            // InternalVFormDsl.g:3720:2: ( RULE_INT )
             {
-            // InternalVFormDsl.g:3750:2: ( RULE_INT )
-            // InternalVFormDsl.g:3751:3: RULE_INT
+            // InternalVFormDsl.g:3720:2: ( RULE_INT )
+            // InternalVFormDsl.g:3721:3: RULE_INT
             {
              before(grammarAccess.getFormInputRangeAccess().getMaxINTTerminalRuleCall_12_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11080,17 +10949,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__NameAssignment_2"
-    // InternalVFormDsl.g:3760:1: rule__FormInputSelect__NameAssignment_2 : ( RULE_STRING ) ;
+    // InternalVFormDsl.g:3730:1: rule__FormInputSelect__NameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__FormInputSelect__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3764:1: ( ( RULE_STRING ) )
-            // InternalVFormDsl.g:3765:2: ( RULE_STRING )
+            // InternalVFormDsl.g:3734:1: ( ( RULE_STRING ) )
+            // InternalVFormDsl.g:3735:2: ( RULE_STRING )
             {
-            // InternalVFormDsl.g:3765:2: ( RULE_STRING )
-            // InternalVFormDsl.g:3766:3: RULE_STRING
+            // InternalVFormDsl.g:3735:2: ( RULE_STRING )
+            // InternalVFormDsl.g:3736:3: RULE_STRING
             {
              before(grammarAccess.getFormInputSelectAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -11117,17 +10986,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSelect__OptionAssignment_10"
-    // InternalVFormDsl.g:3775:1: rule__FormInputSelect__OptionAssignment_10 : ( ruleOption ) ;
+    // InternalVFormDsl.g:3745:1: rule__FormInputSelect__OptionAssignment_10 : ( ruleOption ) ;
     public final void rule__FormInputSelect__OptionAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3779:1: ( ( ruleOption ) )
-            // InternalVFormDsl.g:3780:2: ( ruleOption )
+            // InternalVFormDsl.g:3749:1: ( ( ruleOption ) )
+            // InternalVFormDsl.g:3750:2: ( ruleOption )
             {
-            // InternalVFormDsl.g:3780:2: ( ruleOption )
-            // InternalVFormDsl.g:3781:3: ruleOption
+            // InternalVFormDsl.g:3750:2: ( ruleOption )
+            // InternalVFormDsl.g:3751:3: ruleOption
             {
              before(grammarAccess.getFormInputSelectAccess().getOptionOptionParserRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
@@ -11158,17 +11027,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__DataAssignment_5"
-    // InternalVFormDsl.g:3790:1: rule__DataOption__DataAssignment_5 : ( ruleData ) ;
+    // InternalVFormDsl.g:3760:1: rule__DataOption__DataAssignment_5 : ( ruleData ) ;
     public final void rule__DataOption__DataAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3794:1: ( ( ruleData ) )
-            // InternalVFormDsl.g:3795:2: ( ruleData )
+            // InternalVFormDsl.g:3764:1: ( ( ruleData ) )
+            // InternalVFormDsl.g:3765:2: ( ruleData )
             {
-            // InternalVFormDsl.g:3795:2: ( ruleData )
-            // InternalVFormDsl.g:3796:3: ruleData
+            // InternalVFormDsl.g:3765:2: ( ruleData )
+            // InternalVFormDsl.g:3766:3: ruleData
             {
              before(grammarAccess.getDataOptionAccess().getDataDataParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -11199,17 +11068,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOption__DataAssignment_6_1"
-    // InternalVFormDsl.g:3805:1: rule__DataOption__DataAssignment_6_1 : ( ruleData ) ;
+    // InternalVFormDsl.g:3775:1: rule__DataOption__DataAssignment_6_1 : ( ruleData ) ;
     public final void rule__DataOption__DataAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3809:1: ( ( ruleData ) )
-            // InternalVFormDsl.g:3810:2: ( ruleData )
+            // InternalVFormDsl.g:3779:1: ( ( ruleData ) )
+            // InternalVFormDsl.g:3780:2: ( ruleData )
             {
-            // InternalVFormDsl.g:3810:2: ( ruleData )
-            // InternalVFormDsl.g:3811:3: ruleData
+            // InternalVFormDsl.g:3780:2: ( ruleData )
+            // InternalVFormDsl.g:3781:3: ruleData
             {
              before(grammarAccess.getDataOptionAccess().getDataDataParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -11240,17 +11109,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__DataAssignment_5"
-    // InternalVFormDsl.g:3820:1: rule__EnumOption__DataAssignment_5 : ( ruleOptionItem ) ;
+    // InternalVFormDsl.g:3790:1: rule__EnumOption__DataAssignment_5 : ( ruleOptionItem ) ;
     public final void rule__EnumOption__DataAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3824:1: ( ( ruleOptionItem ) )
-            // InternalVFormDsl.g:3825:2: ( ruleOptionItem )
+            // InternalVFormDsl.g:3794:1: ( ( ruleOptionItem ) )
+            // InternalVFormDsl.g:3795:2: ( ruleOptionItem )
             {
-            // InternalVFormDsl.g:3825:2: ( ruleOptionItem )
-            // InternalVFormDsl.g:3826:3: ruleOptionItem
+            // InternalVFormDsl.g:3795:2: ( ruleOptionItem )
+            // InternalVFormDsl.g:3796:3: ruleOptionItem
             {
              before(grammarAccess.getEnumOptionAccess().getDataOptionItemParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -11281,17 +11150,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EnumOption__DataAssignment_6_1"
-    // InternalVFormDsl.g:3835:1: rule__EnumOption__DataAssignment_6_1 : ( ruleOptionItem ) ;
+    // InternalVFormDsl.g:3805:1: rule__EnumOption__DataAssignment_6_1 : ( ruleOptionItem ) ;
     public final void rule__EnumOption__DataAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3839:1: ( ( ruleOptionItem ) )
-            // InternalVFormDsl.g:3840:2: ( ruleOptionItem )
+            // InternalVFormDsl.g:3809:1: ( ( ruleOptionItem ) )
+            // InternalVFormDsl.g:3810:2: ( ruleOptionItem )
             {
-            // InternalVFormDsl.g:3840:2: ( ruleOptionItem )
-            // InternalVFormDsl.g:3841:3: ruleOptionItem
+            // InternalVFormDsl.g:3810:2: ( ruleOptionItem )
+            // InternalVFormDsl.g:3811:3: ruleOptionItem
             {
              before(grammarAccess.getEnumOptionAccess().getDataOptionItemParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -11322,17 +11191,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__MinAssignment_4"
-    // InternalVFormDsl.g:3850:1: rule__NumberOption__MinAssignment_4 : ( RULE_INT ) ;
+    // InternalVFormDsl.g:3820:1: rule__NumberOption__MinAssignment_4 : ( RULE_INT ) ;
     public final void rule__NumberOption__MinAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3854:1: ( ( RULE_INT ) )
-            // InternalVFormDsl.g:3855:2: ( RULE_INT )
+            // InternalVFormDsl.g:3824:1: ( ( RULE_INT ) )
+            // InternalVFormDsl.g:3825:2: ( RULE_INT )
             {
-            // InternalVFormDsl.g:3855:2: ( RULE_INT )
-            // InternalVFormDsl.g:3856:3: RULE_INT
+            // InternalVFormDsl.g:3825:2: ( RULE_INT )
+            // InternalVFormDsl.g:3826:3: RULE_INT
             {
              before(grammarAccess.getNumberOptionAccess().getMinINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11359,17 +11228,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__MaxAssignment_7"
-    // InternalVFormDsl.g:3865:1: rule__NumberOption__MaxAssignment_7 : ( RULE_INT ) ;
+    // InternalVFormDsl.g:3835:1: rule__NumberOption__MaxAssignment_7 : ( RULE_INT ) ;
     public final void rule__NumberOption__MaxAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3869:1: ( ( RULE_INT ) )
-            // InternalVFormDsl.g:3870:2: ( RULE_INT )
+            // InternalVFormDsl.g:3839:1: ( ( RULE_INT ) )
+            // InternalVFormDsl.g:3840:2: ( RULE_INT )
             {
-            // InternalVFormDsl.g:3870:2: ( RULE_INT )
-            // InternalVFormDsl.g:3871:3: RULE_INT
+            // InternalVFormDsl.g:3840:2: ( RULE_INT )
+            // InternalVFormDsl.g:3841:3: RULE_INT
             {
              before(grammarAccess.getNumberOptionAccess().getMaxINTTerminalRuleCall_7_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11396,17 +11265,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__NumberOption__RangeAssignment_10"
-    // InternalVFormDsl.g:3880:1: rule__NumberOption__RangeAssignment_10 : ( RULE_INT ) ;
+    // InternalVFormDsl.g:3850:1: rule__NumberOption__RangeAssignment_10 : ( RULE_INT ) ;
     public final void rule__NumberOption__RangeAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3884:1: ( ( RULE_INT ) )
-            // InternalVFormDsl.g:3885:2: ( RULE_INT )
+            // InternalVFormDsl.g:3854:1: ( ( RULE_INT ) )
+            // InternalVFormDsl.g:3855:2: ( RULE_INT )
             {
-            // InternalVFormDsl.g:3885:2: ( RULE_INT )
-            // InternalVFormDsl.g:3886:3: RULE_INT
+            // InternalVFormDsl.g:3855:2: ( RULE_INT )
+            // InternalVFormDsl.g:3856:3: RULE_INT
             {
              before(grammarAccess.getNumberOptionAccess().getRangeINTTerminalRuleCall_10_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11433,17 +11302,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__NameAssignment_2"
-    // InternalVFormDsl.g:3895:1: rule__FormInputSearch__NameAssignment_2 : ( RULE_STRING ) ;
+    // InternalVFormDsl.g:3865:1: rule__FormInputSearch__NameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__FormInputSearch__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3899:1: ( ( RULE_STRING ) )
-            // InternalVFormDsl.g:3900:2: ( RULE_STRING )
+            // InternalVFormDsl.g:3869:1: ( ( RULE_STRING ) )
+            // InternalVFormDsl.g:3870:2: ( RULE_STRING )
             {
-            // InternalVFormDsl.g:3900:2: ( RULE_STRING )
-            // InternalVFormDsl.g:3901:3: RULE_STRING
+            // InternalVFormDsl.g:3870:2: ( RULE_STRING )
+            // InternalVFormDsl.g:3871:3: RULE_STRING
             {
              before(grammarAccess.getFormInputSearchAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -11470,17 +11339,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__DataAssignment_10"
-    // InternalVFormDsl.g:3910:1: rule__FormInputSearch__DataAssignment_10 : ( ruleOptionItem ) ;
+    // InternalVFormDsl.g:3880:1: rule__FormInputSearch__DataAssignment_10 : ( ruleOptionItem ) ;
     public final void rule__FormInputSearch__DataAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3914:1: ( ( ruleOptionItem ) )
-            // InternalVFormDsl.g:3915:2: ( ruleOptionItem )
+            // InternalVFormDsl.g:3884:1: ( ( ruleOptionItem ) )
+            // InternalVFormDsl.g:3885:2: ( ruleOptionItem )
             {
-            // InternalVFormDsl.g:3915:2: ( ruleOptionItem )
-            // InternalVFormDsl.g:3916:3: ruleOptionItem
+            // InternalVFormDsl.g:3885:2: ( ruleOptionItem )
+            // InternalVFormDsl.g:3886:3: ruleOptionItem
             {
              before(grammarAccess.getFormInputSearchAccess().getDataOptionItemParserRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
@@ -11511,17 +11380,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputSearch__DataAssignment_11_1"
-    // InternalVFormDsl.g:3925:1: rule__FormInputSearch__DataAssignment_11_1 : ( ruleOptionItem ) ;
+    // InternalVFormDsl.g:3895:1: rule__FormInputSearch__DataAssignment_11_1 : ( ruleOptionItem ) ;
     public final void rule__FormInputSearch__DataAssignment_11_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3929:1: ( ( ruleOptionItem ) )
-            // InternalVFormDsl.g:3930:2: ( ruleOptionItem )
+            // InternalVFormDsl.g:3899:1: ( ( ruleOptionItem ) )
+            // InternalVFormDsl.g:3900:2: ( ruleOptionItem )
             {
-            // InternalVFormDsl.g:3930:2: ( ruleOptionItem )
-            // InternalVFormDsl.g:3931:3: ruleOptionItem
+            // InternalVFormDsl.g:3900:2: ( ruleOptionItem )
+            // InternalVFormDsl.g:3901:3: ruleOptionItem
             {
              before(grammarAccess.getFormInputSearchAccess().getDataOptionItemParserRuleCall_11_1_0()); 
             pushFollow(FOLLOW_2);
@@ -11552,17 +11421,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringOptionItem__ValueAssignment"
-    // InternalVFormDsl.g:3940:1: rule__StringOptionItem__ValueAssignment : ( RULE_STRING ) ;
+    // InternalVFormDsl.g:3910:1: rule__StringOptionItem__ValueAssignment : ( RULE_STRING ) ;
     public final void rule__StringOptionItem__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3944:1: ( ( RULE_STRING ) )
-            // InternalVFormDsl.g:3945:2: ( RULE_STRING )
+            // InternalVFormDsl.g:3914:1: ( ( RULE_STRING ) )
+            // InternalVFormDsl.g:3915:2: ( RULE_STRING )
             {
-            // InternalVFormDsl.g:3945:2: ( RULE_STRING )
-            // InternalVFormDsl.g:3946:3: RULE_STRING
+            // InternalVFormDsl.g:3915:2: ( RULE_STRING )
+            // InternalVFormDsl.g:3916:3: RULE_STRING
             {
              before(grammarAccess.getStringOptionItemAccess().getValueSTRINGTerminalRuleCall_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -11589,17 +11458,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntOptionItem__ValueAssignment"
-    // InternalVFormDsl.g:3955:1: rule__IntOptionItem__ValueAssignment : ( RULE_INT ) ;
+    // InternalVFormDsl.g:3925:1: rule__IntOptionItem__ValueAssignment : ( RULE_INT ) ;
     public final void rule__IntOptionItem__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3959:1: ( ( RULE_INT ) )
-            // InternalVFormDsl.g:3960:2: ( RULE_INT )
+            // InternalVFormDsl.g:3929:1: ( ( RULE_INT ) )
+            // InternalVFormDsl.g:3930:2: ( RULE_INT )
             {
-            // InternalVFormDsl.g:3960:2: ( RULE_INT )
-            // InternalVFormDsl.g:3961:3: RULE_INT
+            // InternalVFormDsl.g:3930:2: ( RULE_INT )
+            // InternalVFormDsl.g:3931:3: RULE_INT
             {
              before(grammarAccess.getIntOptionItemAccess().getValueINTTerminalRuleCall_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11626,17 +11495,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DataOptionItem__ValueAssignment"
-    // InternalVFormDsl.g:3970:1: rule__DataOptionItem__ValueAssignment : ( ruleData ) ;
+    // InternalVFormDsl.g:3940:1: rule__DataOptionItem__ValueAssignment : ( ruleData ) ;
     public final void rule__DataOptionItem__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3974:1: ( ( ruleData ) )
-            // InternalVFormDsl.g:3975:2: ( ruleData )
+            // InternalVFormDsl.g:3944:1: ( ( ruleData ) )
+            // InternalVFormDsl.g:3945:2: ( ruleData )
             {
-            // InternalVFormDsl.g:3975:2: ( ruleData )
-            // InternalVFormDsl.g:3976:3: ruleData
+            // InternalVFormDsl.g:3945:2: ( ruleData )
+            // InternalVFormDsl.g:3946:3: ruleData
             {
              before(grammarAccess.getDataOptionItemAccess().getValueDataParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -11667,17 +11536,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__NameAssignment_2"
-    // InternalVFormDsl.g:3985:1: rule__FormInputGroup__NameAssignment_2 : ( RULE_STRING ) ;
+    // InternalVFormDsl.g:3955:1: rule__FormInputGroup__NameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__FormInputGroup__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:3989:1: ( ( RULE_STRING ) )
-            // InternalVFormDsl.g:3990:2: ( RULE_STRING )
+            // InternalVFormDsl.g:3959:1: ( ( RULE_STRING ) )
+            // InternalVFormDsl.g:3960:2: ( RULE_STRING )
             {
-            // InternalVFormDsl.g:3990:2: ( RULE_STRING )
-            // InternalVFormDsl.g:3991:3: RULE_STRING
+            // InternalVFormDsl.g:3960:2: ( RULE_STRING )
+            // InternalVFormDsl.g:3961:3: RULE_STRING
             {
              before(grammarAccess.getFormInputGroupAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -11704,21 +11573,21 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__GroupInputsAssignment_8"
-    // InternalVFormDsl.g:4000:1: rule__FormInputGroup__GroupInputsAssignment_8 : ( ( RULE_ID ) ) ;
+    // InternalVFormDsl.g:3970:1: rule__FormInputGroup__GroupInputsAssignment_8 : ( ( RULE_ID ) ) ;
     public final void rule__FormInputGroup__GroupInputsAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:4004:1: ( ( ( RULE_ID ) ) )
-            // InternalVFormDsl.g:4005:2: ( ( RULE_ID ) )
+            // InternalVFormDsl.g:3974:1: ( ( ( RULE_ID ) ) )
+            // InternalVFormDsl.g:3975:2: ( ( RULE_ID ) )
             {
-            // InternalVFormDsl.g:4005:2: ( ( RULE_ID ) )
-            // InternalVFormDsl.g:4006:3: ( RULE_ID )
+            // InternalVFormDsl.g:3975:2: ( ( RULE_ID ) )
+            // InternalVFormDsl.g:3976:3: ( RULE_ID )
             {
              before(grammarAccess.getFormInputGroupAccess().getGroupInputsFormInputCrossReference_8_0()); 
-            // InternalVFormDsl.g:4007:3: ( RULE_ID )
-            // InternalVFormDsl.g:4008:4: RULE_ID
+            // InternalVFormDsl.g:3977:3: ( RULE_ID )
+            // InternalVFormDsl.g:3978:4: RULE_ID
             {
              before(grammarAccess.getFormInputGroupAccess().getGroupInputsFormInputIDTerminalRuleCall_8_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -11749,17 +11618,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__LabelAssignment_2"
-    // InternalVFormDsl.g:4019:1: rule__StringData__LabelAssignment_2 : ( RULE_STRING ) ;
+    // InternalVFormDsl.g:3989:1: rule__StringData__LabelAssignment_2 : ( RULE_STRING ) ;
     public final void rule__StringData__LabelAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:4023:1: ( ( RULE_STRING ) )
-            // InternalVFormDsl.g:4024:2: ( RULE_STRING )
+            // InternalVFormDsl.g:3993:1: ( ( RULE_STRING ) )
+            // InternalVFormDsl.g:3994:2: ( RULE_STRING )
             {
-            // InternalVFormDsl.g:4024:2: ( RULE_STRING )
-            // InternalVFormDsl.g:4025:3: RULE_STRING
+            // InternalVFormDsl.g:3994:2: ( RULE_STRING )
+            // InternalVFormDsl.g:3995:3: RULE_STRING
             {
              before(grammarAccess.getStringDataAccess().getLabelSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -11786,17 +11655,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringData__ValueAssignment_5"
-    // InternalVFormDsl.g:4034:1: rule__StringData__ValueAssignment_5 : ( RULE_STRING ) ;
+    // InternalVFormDsl.g:4004:1: rule__StringData__ValueAssignment_5 : ( RULE_STRING ) ;
     public final void rule__StringData__ValueAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:4038:1: ( ( RULE_STRING ) )
-            // InternalVFormDsl.g:4039:2: ( RULE_STRING )
+            // InternalVFormDsl.g:4008:1: ( ( RULE_STRING ) )
+            // InternalVFormDsl.g:4009:2: ( RULE_STRING )
             {
-            // InternalVFormDsl.g:4039:2: ( RULE_STRING )
-            // InternalVFormDsl.g:4040:3: RULE_STRING
+            // InternalVFormDsl.g:4009:2: ( RULE_STRING )
+            // InternalVFormDsl.g:4010:3: RULE_STRING
             {
              before(grammarAccess.getStringDataAccess().getValueSTRINGTerminalRuleCall_5_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -11823,17 +11692,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__LabelAssignment_2"
-    // InternalVFormDsl.g:4049:1: rule__IntData__LabelAssignment_2 : ( RULE_STRING ) ;
+    // InternalVFormDsl.g:4019:1: rule__IntData__LabelAssignment_2 : ( RULE_STRING ) ;
     public final void rule__IntData__LabelAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:4053:1: ( ( RULE_STRING ) )
-            // InternalVFormDsl.g:4054:2: ( RULE_STRING )
+            // InternalVFormDsl.g:4023:1: ( ( RULE_STRING ) )
+            // InternalVFormDsl.g:4024:2: ( RULE_STRING )
             {
-            // InternalVFormDsl.g:4054:2: ( RULE_STRING )
-            // InternalVFormDsl.g:4055:3: RULE_STRING
+            // InternalVFormDsl.g:4024:2: ( RULE_STRING )
+            // InternalVFormDsl.g:4025:3: RULE_STRING
             {
              before(grammarAccess.getIntDataAccess().getLabelSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -11860,17 +11729,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntData__ValueAssignment_5"
-    // InternalVFormDsl.g:4064:1: rule__IntData__ValueAssignment_5 : ( RULE_INT ) ;
+    // InternalVFormDsl.g:4034:1: rule__IntData__ValueAssignment_5 : ( RULE_INT ) ;
     public final void rule__IntData__ValueAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:4068:1: ( ( RULE_INT ) )
-            // InternalVFormDsl.g:4069:2: ( RULE_INT )
+            // InternalVFormDsl.g:4038:1: ( ( RULE_INT ) )
+            // InternalVFormDsl.g:4039:2: ( RULE_INT )
             {
-            // InternalVFormDsl.g:4069:2: ( RULE_INT )
-            // InternalVFormDsl.g:4070:3: RULE_INT
+            // InternalVFormDsl.g:4039:2: ( RULE_INT )
+            // InternalVFormDsl.g:4040:3: RULE_INT
             {
              before(grammarAccess.getIntDataAccess().getValueINTTerminalRuleCall_5_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11900,20 +11769,20 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
     protected DFA1 dfa1 = new DFA1(this);
     static final String dfa_1s = "\14\uffff";
-    static final String dfa_2s = "\1\32\1\33\1\4\1\26\1\34\1\uffff\1\33\1\uffff\1\17\3\uffff";
-    static final String dfa_3s = "\1\32\1\33\1\4\1\34\1\50\1\uffff\1\33\1\uffff\1\21\3\uffff";
-    static final String dfa_4s = "\5\uffff\1\1\1\uffff\1\5\1\uffff\1\2\1\4\1\3";
+    static final String dfa_2s = "\1\25\1\26\1\4\1\21\1\uffff\1\27\1\26\1\uffff\1\30\3\uffff";
+    static final String dfa_3s = "\1\25\1\26\1\4\1\27\1\uffff\1\46\1\26\1\uffff\1\45\3\uffff";
+    static final String dfa_4s = "\4\uffff\1\1\2\uffff\1\5\1\uffff\1\2\1\4\1\3";
     static final String dfa_5s = "\14\uffff}>";
     static final String[] dfa_6s = {
             "\1\1",
             "\1\2",
             "\1\3",
-            "\1\4\5\uffff\1\5",
-            "\1\6\13\uffff\1\7",
+            "\1\5\5\uffff\1\4",
             "",
+            "\1\6\16\uffff\1\7",
             "\1\10",
             "",
-            "\1\11\1\13\1\12",
+            "\1\11\2\uffff\1\13\11\uffff\1\12",
             "",
             "",
             ""
@@ -11947,39 +11816,39 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000180000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000006000000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000004000002L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x000000000000C000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000300000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x000000000007F800L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000003800L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000002400000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000400002L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000100000030L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000120000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000020000030L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000010000000000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000040000000000L});
 
 }

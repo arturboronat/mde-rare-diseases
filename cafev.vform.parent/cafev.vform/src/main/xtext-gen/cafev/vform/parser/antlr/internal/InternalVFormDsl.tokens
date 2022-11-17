@@ -1,7 +1,6 @@
 ','=12
 ':'=17
 'CHECKBOX'=39
-'DATE'=41
 'GROUP'=34
 'NUMBER'=40
 'RANGE'=19
@@ -16,7 +15,7 @@
 'formInputs:'=13
 'formLayout:'=11
 'groupInputs:'=35
-'horizontal'=42
+'horizontal'=41
 'label:'=36
 'max:'=21
 'min:'=20
@@ -28,7 +27,7 @@
 'type'=18
 'type:'=33
 'value:'=37
-'vertical'=43
+'vertical'=42
 '{'=24
 '}'=25
 RULE_ANY_OTHER=10
@@ -70,4 +69,3 @@ T__39=39
 T__40=40
 T__41=41
 T__42=42
-T__43=43
