@@ -1,0 +1,79 @@
+repositories {
+	maven {
+		url "https://github.com/yamtl/yamtl.github.io/raw/mvn-repo/mvn-repo/snapshot-repo"
+	}
+	mavenLocal()
+	mavenCentral()
+}
+
+ext {
+	xtendVersion = '2.28.0'
+	emfChangeVersion = '2.14.0'
+}
+
+xtend {
+	sourceSets {
+		main.xtendOutputDir = 'src/main/xtend-gen'
+		test.xtendOutputDir = 'src/test/xtend-gen'
+	}
+}
+
+sourceSets {
+	main {
+		java {
+			srcDirs = [
+				'src/main/java',
+				'src/main/emf-gen',
+				'src/main/xtend-gen'
+			]
+		}
+	}
+}
+
+
+dependencies {
+	testImplementation 'org.junit.jupiter:junit-jupiter-api'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+	testImplementation "org.eclipse.xtext:org.eclipse.xtext.testing:${xtextVersion}"
+	testImplementation "org.eclipse.xtext:org.eclipse.xtext.xbase.testing:${xtextVersion}"
+	api "org.eclipse.xtext:org.eclipse.xtext:${xtextVersion}"
+	api "org.eclipse.xtext:org.eclipse.xtext.xbase:${xtextVersion}"
+	implementation "org.eclipse.xtend:org.eclipse.xtend.core:$xtendVersion"
+	implementation "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
+	implementation "org.eclipse.emf:org.eclipse.emf.ecore.change:$emfChangeVersion"
+	implementation "yamtl:yamtl:0.2.7"
+	implementation 'org.apache.commons:commons-math3:3.6.1'
+	implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.13.0"
+	implementation "org.apache.groovy:groovy-all:4.0.6"
+}
+configurations {
+	mwe2 {
+		extendsFrom compileClasspath
+	}
+}
+
+dependencies {
+	mwe2 'org.eclipse.emf:org.eclipse.emf.mwe2.launch'
+	mwe2 "org.eclipse.xtext:org.eclipse.xtext.common.types:${xtextVersion}"
+	mwe2 "org.eclipse.xtext:org.eclipse.xtext.xtext.generator:${xtextVersion}"
+	mwe2 'org.eclipse.xtext:xtext-antlr-generator'
+}
+
+task generateXtextLanguage(type: JavaExec) {
+	mainClass = 'org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher'
+	classpath = configurations.mwe2
+	inputs.file "src/main/java/cafev/vform/GenerateVFormDsl.mwe2"
+	inputs.file "src/main/java/cafev/vform/VFormDsl.xtext"
+	outputs.dir "src/main/xtext-gen"
+	args += "src/main/java/cafev/vform/GenerateVFormDsl.mwe2"
+	args += "-p"
+	args += "rootPath=/${projectDir}/.."
+}
+
+test {
+	useJUnitPlatform()
+}
+processResources.dependsOn(generateXtextLanguage)
+generateXtext.dependsOn(generateXtextLanguage)
+clean.dependsOn(cleanGenerateXtextLanguage)
+eclipse.classpath.plusConfigurations += [configurations.mwe2]

@@ -1,0 +1,19 @@
+{
+	"formLayout":"horizontal",
+	"formInputs":[
+		{
+			"inputName":"next Input",
+			"inputType":"range",
+			"min":10,
+			"max":22
+		}, 
+		{
+			"inputName":"myText",
+			"inputType":"text"
+		},
+		{
+			"inputName":"mycheckbox",
+			"inputType":"checkbox"
+		}
+	]
+}

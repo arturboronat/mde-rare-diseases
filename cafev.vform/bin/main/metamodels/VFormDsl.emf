@@ -1,0 +1,92 @@
+@namespace(uri="http://www.vform.cafev/VFormDsl", prefix="vFormDsl")
+package vFormDsl;
+
+class Model {
+	val FormLayout formLayout;
+	val FormInput[*] formInput;
+}
+
+class FormLayout {
+	attr Layout layout;
+}
+
+class FormInput {
+	attr String name;
+}
+
+class FormInputBasic extends FormInput {
+	attr BasicInputType type;
+}
+
+enum BasicInputType {
+	TEXT = 0;
+	CHECKBOX = 1;
+	NUMBER = 2;
+}
+
+class FormInputRange extends FormInput {
+	attr int min;
+	attr int max;
+}
+
+class FormInputSelect extends FormInput {
+	val Option option;
+}
+
+class Option {
+}
+
+class DataOption extends Option {
+	val Data[*] data;
+}
+
+class EnumOption extends Option {
+	val OptionItem[*] data;
+}
+
+class NumberOption extends Option {
+	attr int min;
+	attr int max;
+	attr int range;
+}
+
+class FormInputSearch extends FormInput {
+	val OptionItem[*] data;
+}
+
+class OptionItem {
+}
+
+class StringOptionItem extends OptionItem {
+	attr String value;
+}
+
+class IntOptionItem extends OptionItem {
+	attr int value;
+}
+
+class DataOptionItem extends OptionItem {
+	val Data value;
+}
+
+class FormInputGroup extends FormInput {
+	ref FormInput groupInputs;
+}
+
+class Data {
+	attr String label;
+}
+
+class StringData extends Data {
+	attr String value;
+}
+
+class IntData extends Data {
+	attr int value;
+}
+
+enum Layout {
+	horizontal = 0;
+	vertical = 1;
+}
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataDescription:StatsDataModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dataDescription="http://www.example.org/dataDescription"
+    xsi:schemaLocation="http://www.example.org/dataDescription datasetDescription.ecore"
+    name="Test">
+  <types xsi:type="dataDescription:CategoricalType"
+      name="Gender">
+    <frequencyTable
+        name="M"/>
+    <dataType
+        href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType"
+      name="Gender2">
+    <frequencyTable
+        name="M"/>
+    <frequencyTable
+        name="F"/>
+    <dataType
+        href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType"
+      name="Gender3">
+    <frequencyTable
+        name="M"/>
+    <frequencyTable
+        name="F"/>
+    <frequencyTable
+        name="Other"/>
+    <dataType
+        href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+</dataDescription:StatsDataModel>

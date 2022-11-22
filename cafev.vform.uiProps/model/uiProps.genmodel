@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/cafev.vform.uiProps/src-gen" creationIcons="false"
+    editDirectory="/cafev.vform.uiProps.edit/src-gen" editorDirectory="/cafev.vform.uiProps.editor/src-gen"
+    modelPluginID="cafev.vform.uiProps" modelName="UiProps" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>uiProps.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="UiProps" basePackage="cafev.vform" disposableProviderFactory="true"
+      ecorePackage="uiProps.ecore#/">
+    <genClasses ecoreClass="uiProps.ecore#//Props">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uiProps.ecore#//Props/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uiProps.ecore#//Props/types"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uiProps.ecore#//Props/groupName"/>
+    </genClasses>
+    <genClasses ecoreClass="uiProps.ecore#//NumericalProps">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uiProps.ecore#//NumericalProps/data"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uiProps.ecore#//NumericalProps/std"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uiProps.ecore#//NumericalProps/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uiProps.ecore#//NumericalProps/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uiProps.ecore#//NumericalProps/mean"/>
+    </genClasses>
+    <genClasses ecoreClass="uiProps.ecore#//CategoricalProps">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uiProps.ecore#//CategoricalProps/data"/>
+    </genClasses>
+    <genClasses ecoreClass="uiProps.ecore#//PropsModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uiProps.ecore#//PropsModel/props"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
