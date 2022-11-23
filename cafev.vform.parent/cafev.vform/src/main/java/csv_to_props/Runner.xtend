@@ -15,6 +15,8 @@ class Runner {
 		// EXECUTE TRAFO 
 		xform.execute()
 		xform.saveOutputModels(#{'out'->'src/main/java/csv_to_json/mock_data.json'})
+	
+		println(xform.toJson('out'))
 		
 	}
 }
