@@ -25,27 +25,24 @@ public interface FormLayout extends EObject
 {
   /**
    * Returns the value of the '<em><b>Layout</b></em>' attribute.
-   * The literals are from the enumeration {@link cafev.vform.vFormDsl.Layout}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Layout</em>' attribute.
-   * @see cafev.vform.vFormDsl.Layout
-   * @see #setLayout(Layout)
+   * @see #setLayout(String)
    * @see cafev.vform.vFormDsl.VFormDslPackage#getFormLayout_Layout()
    * @model
    * @generated
    */
-  Layout getLayout();
+  String getLayout();
 
   /**
    * Sets the value of the '{@link cafev.vform.vFormDsl.FormLayout#getLayout <em>Layout</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Layout</em>' attribute.
-   * @see cafev.vform.vFormDsl.Layout
    * @see #getLayout()
    * @generated
    */
-  void setLayout(Layout value);
+  void setLayout(String value);
 
 } // FormLayout

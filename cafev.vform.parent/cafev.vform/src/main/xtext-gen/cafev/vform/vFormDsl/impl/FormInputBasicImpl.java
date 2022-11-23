@@ -3,7 +3,6 @@
  */
 package cafev.vform.vFormDsl.impl;
 
-import cafev.vform.vFormDsl.BasicInputType;
 import cafev.vform.vFormDsl.FormInputBasic;
 import cafev.vform.vFormDsl.VFormDslPackage;
 
@@ -36,7 +35,7 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic
    * @generated
    * @ordered
    */
-  protected static final BasicInputType TYPE_EDEFAULT = BasicInputType.TEXT;
+  protected static final String TYPE_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -46,7 +45,7 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic
    * @generated
    * @ordered
    */
-  protected BasicInputType type = TYPE_EDEFAULT;
+  protected String type = TYPE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,7 +74,7 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic
    * @generated
    */
   @Override
-  public BasicInputType getType()
+  public String getType()
   {
     return type;
   }
@@ -86,10 +85,10 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic
    * @generated
    */
   @Override
-  public void setType(BasicInputType newType)
+  public void setType(String newType)
   {
-    BasicInputType oldType = type;
-    type = newType == null ? TYPE_EDEFAULT : newType;
+    String oldType = type;
+    type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, VFormDslPackage.FORM_INPUT_BASIC__TYPE, oldType, type));
   }
@@ -121,7 +120,7 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic
     switch (featureID)
     {
       case VFormDslPackage.FORM_INPUT_BASIC__TYPE:
-        setType((BasicInputType)newValue);
+        setType((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -155,7 +154,7 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic
     switch (featureID)
     {
       case VFormDslPackage.FORM_INPUT_BASIC__TYPE:
-        return type != TYPE_EDEFAULT;
+        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
     }
     return super.eIsSet(featureID);
   }

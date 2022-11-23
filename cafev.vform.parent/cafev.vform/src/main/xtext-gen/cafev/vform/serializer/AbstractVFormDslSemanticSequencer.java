@@ -154,7 +154,7 @@ public abstract class AbstractVFormDslSemanticSequencer extends AbstractDelegati
 	 *     FormInputBasic returns FormInputBasic
 	 *
 	 * Constraint:
-	 *     (name=STRING type=BasicInputType)
+	 *     (name=STRING type=BASICINPUT)
 	 * </pre>
 	 */
 	protected void sequence_FormInputBasic(ISerializationContext context, FormInputBasic semanticObject) {
@@ -165,8 +165,8 @@ public abstract class AbstractVFormDslSemanticSequencer extends AbstractDelegati
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.FORM_INPUT_BASIC__TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFormInputBasicAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getFormInputBasicAccess().getTypeBasicInputTypeEnumRuleCall_5_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getFormInputBasicAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getFormInputBasicAccess().getTypeBASICINPUTTerminalRuleCall_7_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	
@@ -215,9 +215,9 @@ public abstract class AbstractVFormDslSemanticSequencer extends AbstractDelegati
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.FORM_INPUT_RANGE__MAX));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFormInputRangeAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getFormInputRangeAccess().getMinINTTerminalRuleCall_9_0(), semanticObject.getMin());
-		feeder.accept(grammarAccess.getFormInputRangeAccess().getMaxINTTerminalRuleCall_12_0(), semanticObject.getMax());
+		feeder.accept(grammarAccess.getFormInputRangeAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getFormInputRangeAccess().getMinINTTerminalRuleCall_11_0(), semanticObject.getMin());
+		feeder.accept(grammarAccess.getFormInputRangeAccess().getMaxINTTerminalRuleCall_15_0(), semanticObject.getMax());
 		feeder.finish();
 	}
 	
@@ -255,8 +255,8 @@ public abstract class AbstractVFormDslSemanticSequencer extends AbstractDelegati
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.FORM_INPUT_SELECT__OPTION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFormInputSelectAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getFormInputSelectAccess().getOptionOptionParserRuleCall_10_0(), semanticObject.getOption());
+		feeder.accept(grammarAccess.getFormInputSelectAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getFormInputSelectAccess().getOptionOptionParserRuleCall_11_0(), semanticObject.getOption());
 		feeder.finish();
 	}
 	
@@ -267,7 +267,7 @@ public abstract class AbstractVFormDslSemanticSequencer extends AbstractDelegati
 	 *     FormLayout returns FormLayout
 	 *
 	 * Constraint:
-	 *     layout=Layout
+	 *     layout=LAYOUT
 	 * </pre>
 	 */
 	protected void sequence_FormLayout(ISerializationContext context, FormLayout semanticObject) {
@@ -276,7 +276,7 @@ public abstract class AbstractVFormDslSemanticSequencer extends AbstractDelegati
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.FORM_LAYOUT__LAYOUT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFormLayoutAccess().getLayoutLayoutEnumRuleCall_0(), semanticObject.getLayout());
+		feeder.accept(grammarAccess.getFormLayoutAccess().getLayoutLAYOUTTerminalRuleCall_0(), semanticObject.getLayout());
 		feeder.finish();
 	}
 	
@@ -332,7 +332,7 @@ public abstract class AbstractVFormDslSemanticSequencer extends AbstractDelegati
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (formLayout=FormLayout formInput+=FormInput*)
+	 *     (formLayout=FormLayout formInput+=FormInput formInput+=FormInput*)
 	 * </pre>
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
@@ -360,9 +360,9 @@ public abstract class AbstractVFormDslSemanticSequencer extends AbstractDelegati
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.NUMBER_OPTION__RANGE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNumberOptionAccess().getMinINTTerminalRuleCall_4_0(), semanticObject.getMin());
-		feeder.accept(grammarAccess.getNumberOptionAccess().getMaxINTTerminalRuleCall_7_0(), semanticObject.getMax());
-		feeder.accept(grammarAccess.getNumberOptionAccess().getRangeINTTerminalRuleCall_10_0(), semanticObject.getRange());
+		feeder.accept(grammarAccess.getNumberOptionAccess().getMinINTTerminalRuleCall_7_0(), semanticObject.getMin());
+		feeder.accept(grammarAccess.getNumberOptionAccess().getMaxINTTerminalRuleCall_11_0(), semanticObject.getMax());
+		feeder.accept(grammarAccess.getNumberOptionAccess().getRangeINTTerminalRuleCall_14_0(), semanticObject.getRange());
 		feeder.finish();
 	}
 	

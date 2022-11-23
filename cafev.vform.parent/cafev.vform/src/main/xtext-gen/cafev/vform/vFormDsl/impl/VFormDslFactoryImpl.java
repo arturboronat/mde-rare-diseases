@@ -6,7 +6,6 @@ package cafev.vform.vFormDsl.impl;
 import cafev.vform.vFormDsl.*;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -87,44 +86,6 @@ public class VFormDslFactoryImpl extends EFactoryImpl implements VFormDslFactory
       case VFormDslPackage.INT_DATA: return createIntData();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object createFromString(EDataType eDataType, String initialValue)
-  {
-    switch (eDataType.getClassifierID())
-    {
-      case VFormDslPackage.BASIC_INPUT_TYPE:
-        return createBasicInputTypeFromString(eDataType, initialValue);
-      case VFormDslPackage.LAYOUT:
-        return createLayoutFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String convertToString(EDataType eDataType, Object instanceValue)
-  {
-    switch (eDataType.getClassifierID())
-    {
-      case VFormDslPackage.BASIC_INPUT_TYPE:
-        return convertBasicInputTypeToString(eDataType, instanceValue);
-      case VFormDslPackage.LAYOUT:
-        return convertLayoutToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -354,50 +315,6 @@ public class VFormDslFactoryImpl extends EFactoryImpl implements VFormDslFactory
   {
     IntDataImpl intData = new IntDataImpl();
     return intData;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BasicInputType createBasicInputTypeFromString(EDataType eDataType, String initialValue)
-  {
-    BasicInputType result = BasicInputType.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertBasicInputTypeToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Layout createLayoutFromString(EDataType eDataType, String initialValue)
-  {
-    Layout result = Layout.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertLayoutToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

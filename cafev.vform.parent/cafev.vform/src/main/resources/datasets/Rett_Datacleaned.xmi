@@ -283,45 +283,45 @@
     <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
   <types xsi:type="dataDescription:NumericalType" name="ofc_at_birth_in_cm" min="31.8" max="36.0" mean="33.61818181818182" std="1.3128733235298689">
-    <frequencyTable name="]34.93105514171169, 36.24392846524156]" frequency="11"/>
-    <frequencyTable name="]36.24392846524156, 37.55680178877143]" frequency="11"/>
-    <frequencyTable name="]30.99243517112208, 32.305308494651946]" frequency="11"/>
-    <frequencyTable name="]29.67956184759221, 30.99243517112208]" frequency="11"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="11"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="11"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="11"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="11"/>
   </types>
   <types xsi:type="dataDescription:NumericalType" name="ofc_with_age_cm" min="42.0" max="53.0" mean="47.0" std="3.302891295379082">
-    <frequencyTable name="]50.302891295379084, 53.60578259075817]" frequency="12"/>
-    <frequencyTable name="]53.60578259075817, 56.90867388613725]" frequency="12"/>
-    <frequencyTable name="]40.39421740924183, 43.697108704620916]" frequency="12"/>
-    <frequencyTable name="]37.09132611386275, 40.39421740924183]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
   </types>
   <types xsi:type="dataDescription:NumericalType" name="height_with_age_cm" min="52.0" max="160.0" mean="94.75" std="29.117707826869015">
-    <frequencyTable name="]123.86770782686901, 152.98541565373802]" frequency="12"/>
-    <frequencyTable name="]152.98541565373802, 182.10312348060702]" frequency="12"/>
-    <frequencyTable name="]182.10312348060702, 211.22083130747603]" frequency="12"/>
-    <frequencyTable name="]36.51458434626198, 65.63229217313099]" frequency="12"/>
-    <frequencyTable name="]7.396876519392961, 36.51458434626198]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
   </types>
   <types xsi:type="dataDescription:NumericalType" name="birth_weight_in_gr" min="2450.0" max="3880.0" mean="3084.1666666666665" std="450.6048124129357">
-    <frequencyTable name="]3534.771479079602, 3985.376291492538]" frequency="12"/>
-    <frequencyTable name="]3985.376291492538, 4435.981103905474]" frequency="12"/>
-    <frequencyTable name="]2182.9570418407952, 2633.561854253731]" frequency="12"/>
-    <frequencyTable name="]1732.3522294278596, 2182.9570418407952]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
   </types>
   <types xsi:type="dataDescription:NumericalType" name="weight_with_age_gr" min="11.0" max="45000.0" mean="12520.25" std="11845.784613677406">
-    <frequencyTable name="]24366.034613677406, 36211.81922735481]" frequency="12"/>
-    <frequencyTable name="]36211.81922735481, 48057.60384103222]" frequency="12"/>
-    <frequencyTable name="]48057.60384103222, 59903.388454709624]" frequency="12"/>
-    <frequencyTable name="]-11171.319227354812, 674.465386322594]" frequency="12"/>
-    <frequencyTable name="]-23017.103841032218, -11171.319227354812]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
   </types>
   <types xsi:type="dataDescription:NumericalType" name="regression_age_months" min="2.0" max="24.0" mean="14.5" std="6.346079677464448">
-    <frequencyTable name="]20.84607967746445, 27.192159354928897]" frequency="12"/>
-    <frequencyTable name="]27.192159354928897, 33.53823903239334]" frequency="12"/>
-    <frequencyTable name="]1.8078406450711038, 8.153920322535551]" frequency="12"/>
-    <frequencyTable name="]-4.538239032393344, 1.8078406450711038]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="12"/>
   </types>
   <types xsi:type="dataDescription:NumericalType" name="epilepsy_diag_age_months" min="60.0" max="96.0" mean="78.0" std="25.45584412271571">
-    <frequencyTable name="]103.45584412271572, 128.91168824543144]" frequency="2"/>
-    <frequencyTable name="]27.08831175456858, 52.54415587728429]" frequency="2"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="2"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="2"/>
   </types>
 </dataDescription:StatsDataModel>

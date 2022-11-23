@@ -5,7 +5,6 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -22,21 +21,19 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalVFormDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'formLayout:'", "','", "'formInputs:'", "'['", "']'", "'name'", "':'", "'type'", "'RANGE'", "'min:'", "'max:'", "'SELECT'", "'options:'", "'{'", "'}'", "'optionType:'", "'data'", "'data:'", "'enum'", "'number'", "'range:'", "'SEARCH'", "'type:'", "'GROUP'", "'groupInputs:'", "'label:'", "'value:'", "'TEXT'", "'CHECKBOX'", "'NUMBER'", "'horizontal'", "'vertical'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_LAYOUT", "RULE_STRING", "RULE_BASICINPUT", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'\"formLayout\":'", "','", "'\"formInputs\":'", "'['", "']'", "'}'", "'\"inputName\"'", "':'", "'\"inputType\"'", "'\"range\"'", "'\"min\"'", "'\"max\"'", "'\"select\"'", "'\"options\"'", "'\"optionType\"'", "'\"data\"'", "'\"enum\"'", "'\"number\"'", "'\"search\"'", "'name'", "'type:'", "'GROUP'", "'groupInputs:'", "'label:'", "'value:'"
     };
-    public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_STRING=5;
+    public static final int RULE_LAYOUT=4;
+    public static final int RULE_SL_COMMENT=10;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__37=37;
     public static final int T__16=16;
     public static final int T__38=38;
     public static final int T__17=17;
-    public static final int T__39=39;
     public static final int T__18=18;
-    public static final int T__11=11;
     public static final int T__33=33;
-    public static final int T__12=12;
     public static final int T__34=34;
     public static final int T__13=13;
     public static final int T__35=35;
@@ -46,23 +43,21 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
-    public static final int RULE_ID=6;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_ID=8;
+    public static final int RULE_WS=11;
+    public static final int RULE_ANY_OTHER=12;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=5;
+    public static final int RULE_INT=7;
     public static final int T__29=29;
     public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=7;
+    public static final int RULE_BASICINPUT=6;
+    public static final int RULE_ML_COMMENT=9;
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
-    public static final int T__40=40;
-    public static final int T__41=41;
     public static final int T__20=20;
-    public static final int T__42=42;
     public static final int T__21=21;
 
     // delegates
@@ -105,7 +100,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleModel"
-    // InternalVFormDsl.g:65:1: entryRuleModel returns [EObject current=null] : iv_ruleModel= ruleModel EOF ;
+    // InternalVFormDsl.g:64:1: entryRuleModel returns [EObject current=null] : iv_ruleModel= ruleModel EOF ;
     public final EObject entryRuleModel() throws RecognitionException {
         EObject current = null;
 
@@ -113,8 +108,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:65:46: (iv_ruleModel= ruleModel EOF )
-            // InternalVFormDsl.g:66:2: iv_ruleModel= ruleModel EOF
+            // InternalVFormDsl.g:64:46: (iv_ruleModel= ruleModel EOF )
+            // InternalVFormDsl.g:65:2: iv_ruleModel= ruleModel EOF
             {
              newCompositeNode(grammarAccess.getModelRule()); 
             pushFollow(FOLLOW_1);
@@ -141,45 +136,54 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModel"
-    // InternalVFormDsl.g:72:1: ruleModel returns [EObject current=null] : (otherlv_0= 'formLayout:' ( (lv_formLayout_1_0= ruleFormLayout ) ) otherlv_2= ',' otherlv_3= 'formInputs:' otherlv_4= '[' ( (lv_formInput_5_0= ruleFormInput ) )* otherlv_6= ']' ) ;
+    // InternalVFormDsl.g:71:1: ruleModel returns [EObject current=null] : (otherlv_0= '{' otherlv_1= '\"formLayout\":' ( (lv_formLayout_2_0= ruleFormLayout ) ) otherlv_3= ',' otherlv_4= '\"formInputs\":' otherlv_5= '[' ( (lv_formInput_6_0= ruleFormInput ) ) (otherlv_7= ',' ( (lv_formInput_8_0= ruleFormInput ) ) )* otherlv_9= ']' otherlv_10= '}' ) ;
     public final EObject ruleModel() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_2=null;
+        Token otherlv_1=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
-        Token otherlv_6=null;
-        EObject lv_formLayout_1_0 = null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token otherlv_10=null;
+        EObject lv_formLayout_2_0 = null;
 
-        EObject lv_formInput_5_0 = null;
+        EObject lv_formInput_6_0 = null;
+
+        EObject lv_formInput_8_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:78:2: ( (otherlv_0= 'formLayout:' ( (lv_formLayout_1_0= ruleFormLayout ) ) otherlv_2= ',' otherlv_3= 'formInputs:' otherlv_4= '[' ( (lv_formInput_5_0= ruleFormInput ) )* otherlv_6= ']' ) )
-            // InternalVFormDsl.g:79:2: (otherlv_0= 'formLayout:' ( (lv_formLayout_1_0= ruleFormLayout ) ) otherlv_2= ',' otherlv_3= 'formInputs:' otherlv_4= '[' ( (lv_formInput_5_0= ruleFormInput ) )* otherlv_6= ']' )
+            // InternalVFormDsl.g:77:2: ( (otherlv_0= '{' otherlv_1= '\"formLayout\":' ( (lv_formLayout_2_0= ruleFormLayout ) ) otherlv_3= ',' otherlv_4= '\"formInputs\":' otherlv_5= '[' ( (lv_formInput_6_0= ruleFormInput ) ) (otherlv_7= ',' ( (lv_formInput_8_0= ruleFormInput ) ) )* otherlv_9= ']' otherlv_10= '}' ) )
+            // InternalVFormDsl.g:78:2: (otherlv_0= '{' otherlv_1= '\"formLayout\":' ( (lv_formLayout_2_0= ruleFormLayout ) ) otherlv_3= ',' otherlv_4= '\"formInputs\":' otherlv_5= '[' ( (lv_formInput_6_0= ruleFormInput ) ) (otherlv_7= ',' ( (lv_formInput_8_0= ruleFormInput ) ) )* otherlv_9= ']' otherlv_10= '}' )
             {
-            // InternalVFormDsl.g:79:2: (otherlv_0= 'formLayout:' ( (lv_formLayout_1_0= ruleFormLayout ) ) otherlv_2= ',' otherlv_3= 'formInputs:' otherlv_4= '[' ( (lv_formInput_5_0= ruleFormInput ) )* otherlv_6= ']' )
-            // InternalVFormDsl.g:80:3: otherlv_0= 'formLayout:' ( (lv_formLayout_1_0= ruleFormLayout ) ) otherlv_2= ',' otherlv_3= 'formInputs:' otherlv_4= '[' ( (lv_formInput_5_0= ruleFormInput ) )* otherlv_6= ']'
+            // InternalVFormDsl.g:78:2: (otherlv_0= '{' otherlv_1= '\"formLayout\":' ( (lv_formLayout_2_0= ruleFormLayout ) ) otherlv_3= ',' otherlv_4= '\"formInputs\":' otherlv_5= '[' ( (lv_formInput_6_0= ruleFormInput ) ) (otherlv_7= ',' ( (lv_formInput_8_0= ruleFormInput ) ) )* otherlv_9= ']' otherlv_10= '}' )
+            // InternalVFormDsl.g:79:3: otherlv_0= '{' otherlv_1= '\"formLayout\":' ( (lv_formLayout_2_0= ruleFormLayout ) ) otherlv_3= ',' otherlv_4= '\"formInputs\":' otherlv_5= '[' ( (lv_formInput_6_0= ruleFormInput ) ) (otherlv_7= ',' ( (lv_formInput_8_0= ruleFormInput ) ) )* otherlv_9= ']' otherlv_10= '}'
             {
-            otherlv_0=(Token)match(input,11,FOLLOW_3); 
+            otherlv_0=(Token)match(input,13,FOLLOW_3); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getModelAccess().getFormLayoutKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getModelAccess().getLeftCurlyBracketKeyword_0());
             		
-            // InternalVFormDsl.g:84:3: ( (lv_formLayout_1_0= ruleFormLayout ) )
-            // InternalVFormDsl.g:85:4: (lv_formLayout_1_0= ruleFormLayout )
+            otherlv_1=(Token)match(input,14,FOLLOW_4); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getModelAccess().getFormLayoutKeyword_1());
+            		
+            // InternalVFormDsl.g:87:3: ( (lv_formLayout_2_0= ruleFormLayout ) )
+            // InternalVFormDsl.g:88:4: (lv_formLayout_2_0= ruleFormLayout )
             {
-            // InternalVFormDsl.g:85:4: (lv_formLayout_1_0= ruleFormLayout )
-            // InternalVFormDsl.g:86:5: lv_formLayout_1_0= ruleFormLayout
+            // InternalVFormDsl.g:88:4: (lv_formLayout_2_0= ruleFormLayout )
+            // InternalVFormDsl.g:89:5: lv_formLayout_2_0= ruleFormLayout
             {
 
-            					newCompositeNode(grammarAccess.getModelAccess().getFormLayoutFormLayoutParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getModelAccess().getFormLayoutFormLayoutParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_4);
-            lv_formLayout_1_0=ruleFormLayout();
+            pushFollow(FOLLOW_5);
+            lv_formLayout_2_0=ruleFormLayout();
 
             state._fsp--;
 
@@ -190,7 +194,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"formLayout",
-            						lv_formLayout_1_0,
+            						lv_formLayout_2_0,
             						"cafev.vform.VFormDsl.FormLayout");
             					afterParserOrEnumRuleCall();
             				
@@ -200,55 +204,96 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_5); 
+            otherlv_3=(Token)match(input,15,FOLLOW_6); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getModelAccess().getCommaKeyword_2());
+            			newLeafNode(otherlv_3, grammarAccess.getModelAccess().getCommaKeyword_3());
             		
-            otherlv_3=(Token)match(input,13,FOLLOW_6); 
+            otherlv_4=(Token)match(input,16,FOLLOW_7); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getModelAccess().getFormInputsKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getModelAccess().getFormInputsKeyword_4());
             		
-            otherlv_4=(Token)match(input,14,FOLLOW_7); 
+            otherlv_5=(Token)match(input,17,FOLLOW_8); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getModelAccess().getLeftSquareBracketKeyword_4());
+            			newLeafNode(otherlv_5, grammarAccess.getModelAccess().getLeftSquareBracketKeyword_5());
             		
-            // InternalVFormDsl.g:115:3: ( (lv_formInput_5_0= ruleFormInput ) )*
+            // InternalVFormDsl.g:118:3: ( (lv_formInput_6_0= ruleFormInput ) )
+            // InternalVFormDsl.g:119:4: (lv_formInput_6_0= ruleFormInput )
+            {
+            // InternalVFormDsl.g:119:4: (lv_formInput_6_0= ruleFormInput )
+            // InternalVFormDsl.g:120:5: lv_formInput_6_0= ruleFormInput
+            {
+
+            					newCompositeNode(grammarAccess.getModelAccess().getFormInputFormInputParserRuleCall_6_0());
+            				
+            pushFollow(FOLLOW_9);
+            lv_formInput_6_0=ruleFormInput();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getModelRule());
+            					}
+            					add(
+            						current,
+            						"formInput",
+            						lv_formInput_6_0,
+            						"cafev.vform.VFormDsl.FormInput");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalVFormDsl.g:137:3: (otherlv_7= ',' ( (lv_formInput_8_0= ruleFormInput ) ) )*
             loop1:
             do {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==16) ) {
+                if ( (LA1_0==15) ) {
                     alt1=1;
                 }
 
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalVFormDsl.g:116:4: (lv_formInput_5_0= ruleFormInput )
+            	    // InternalVFormDsl.g:138:4: otherlv_7= ',' ( (lv_formInput_8_0= ruleFormInput ) )
             	    {
-            	    // InternalVFormDsl.g:116:4: (lv_formInput_5_0= ruleFormInput )
-            	    // InternalVFormDsl.g:117:5: lv_formInput_5_0= ruleFormInput
+            	    otherlv_7=(Token)match(input,15,FOLLOW_8); 
+
+            	    				newLeafNode(otherlv_7, grammarAccess.getModelAccess().getCommaKeyword_7_0());
+            	    			
+            	    // InternalVFormDsl.g:142:4: ( (lv_formInput_8_0= ruleFormInput ) )
+            	    // InternalVFormDsl.g:143:5: (lv_formInput_8_0= ruleFormInput )
+            	    {
+            	    // InternalVFormDsl.g:143:5: (lv_formInput_8_0= ruleFormInput )
+            	    // InternalVFormDsl.g:144:6: lv_formInput_8_0= ruleFormInput
             	    {
 
-            	    					newCompositeNode(grammarAccess.getModelAccess().getFormInputFormInputParserRuleCall_5_0());
-            	    				
-            	    pushFollow(FOLLOW_7);
-            	    lv_formInput_5_0=ruleFormInput();
+            	    						newCompositeNode(grammarAccess.getModelAccess().getFormInputFormInputParserRuleCall_7_1_0());
+            	    					
+            	    pushFollow(FOLLOW_9);
+            	    lv_formInput_8_0=ruleFormInput();
 
             	    state._fsp--;
 
 
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getModelRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"formInput",
-            	    						lv_formInput_5_0,
-            	    						"cafev.vform.VFormDsl.FormInput");
-            	    					afterParserOrEnumRuleCall();
-            	    				
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getModelRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"formInput",
+            	    							lv_formInput_8_0,
+            	    							"cafev.vform.VFormDsl.FormInput");
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
+
 
             	    }
 
@@ -261,9 +306,13 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,15,FOLLOW_2); 
+            otherlv_9=(Token)match(input,18,FOLLOW_10); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getModelAccess().getRightSquareBracketKeyword_6());
+            			newLeafNode(otherlv_9, grammarAccess.getModelAccess().getRightSquareBracketKeyword_8());
+            		
+            otherlv_10=(Token)match(input,19,FOLLOW_2); 
+
+            			newLeafNode(otherlv_10, grammarAccess.getModelAccess().getRightCurlyBracketKeyword_9());
             		
 
             }
@@ -288,7 +337,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFormLayout"
-    // InternalVFormDsl.g:142:1: entryRuleFormLayout returns [EObject current=null] : iv_ruleFormLayout= ruleFormLayout EOF ;
+    // InternalVFormDsl.g:174:1: entryRuleFormLayout returns [EObject current=null] : iv_ruleFormLayout= ruleFormLayout EOF ;
     public final EObject entryRuleFormLayout() throws RecognitionException {
         EObject current = null;
 
@@ -296,8 +345,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:142:51: (iv_ruleFormLayout= ruleFormLayout EOF )
-            // InternalVFormDsl.g:143:2: iv_ruleFormLayout= ruleFormLayout EOF
+            // InternalVFormDsl.g:174:51: (iv_ruleFormLayout= ruleFormLayout EOF )
+            // InternalVFormDsl.g:175:2: iv_ruleFormLayout= ruleFormLayout EOF
             {
              newCompositeNode(grammarAccess.getFormLayoutRule()); 
             pushFollow(FOLLOW_1);
@@ -324,44 +373,38 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormLayout"
-    // InternalVFormDsl.g:149:1: ruleFormLayout returns [EObject current=null] : ( (lv_layout_0_0= ruleLayout ) ) ;
+    // InternalVFormDsl.g:181:1: ruleFormLayout returns [EObject current=null] : ( (lv_layout_0_0= RULE_LAYOUT ) ) ;
     public final EObject ruleFormLayout() throws RecognitionException {
         EObject current = null;
 
-        Enumerator lv_layout_0_0 = null;
-
+        Token lv_layout_0_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:155:2: ( ( (lv_layout_0_0= ruleLayout ) ) )
-            // InternalVFormDsl.g:156:2: ( (lv_layout_0_0= ruleLayout ) )
+            // InternalVFormDsl.g:187:2: ( ( (lv_layout_0_0= RULE_LAYOUT ) ) )
+            // InternalVFormDsl.g:188:2: ( (lv_layout_0_0= RULE_LAYOUT ) )
             {
-            // InternalVFormDsl.g:156:2: ( (lv_layout_0_0= ruleLayout ) )
-            // InternalVFormDsl.g:157:3: (lv_layout_0_0= ruleLayout )
+            // InternalVFormDsl.g:188:2: ( (lv_layout_0_0= RULE_LAYOUT ) )
+            // InternalVFormDsl.g:189:3: (lv_layout_0_0= RULE_LAYOUT )
             {
-            // InternalVFormDsl.g:157:3: (lv_layout_0_0= ruleLayout )
-            // InternalVFormDsl.g:158:4: lv_layout_0_0= ruleLayout
+            // InternalVFormDsl.g:189:3: (lv_layout_0_0= RULE_LAYOUT )
+            // InternalVFormDsl.g:190:4: lv_layout_0_0= RULE_LAYOUT
             {
+            lv_layout_0_0=(Token)match(input,RULE_LAYOUT,FOLLOW_2); 
 
-            				newCompositeNode(grammarAccess.getFormLayoutAccess().getLayoutLayoutEnumRuleCall_0());
+            				newLeafNode(lv_layout_0_0, grammarAccess.getFormLayoutAccess().getLayoutLAYOUTTerminalRuleCall_0());
             			
-            pushFollow(FOLLOW_2);
-            lv_layout_0_0=ruleLayout();
-
-            state._fsp--;
-
 
             				if (current==null) {
-            					current = createModelElementForParent(grammarAccess.getFormLayoutRule());
+            					current = createModelElement(grammarAccess.getFormLayoutRule());
             				}
-            				set(
+            				setWithLastConsumed(
             					current,
             					"layout",
             					lv_layout_0_0,
-            					"cafev.vform.VFormDsl.Layout");
-            				afterParserOrEnumRuleCall();
+            					"cafev.vform.VFormDsl.LAYOUT");
             			
 
             }
@@ -389,7 +432,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFormInput"
-    // InternalVFormDsl.g:178:1: entryRuleFormInput returns [EObject current=null] : iv_ruleFormInput= ruleFormInput EOF ;
+    // InternalVFormDsl.g:209:1: entryRuleFormInput returns [EObject current=null] : iv_ruleFormInput= ruleFormInput EOF ;
     public final EObject entryRuleFormInput() throws RecognitionException {
         EObject current = null;
 
@@ -397,8 +440,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:178:50: (iv_ruleFormInput= ruleFormInput EOF )
-            // InternalVFormDsl.g:179:2: iv_ruleFormInput= ruleFormInput EOF
+            // InternalVFormDsl.g:209:50: (iv_ruleFormInput= ruleFormInput EOF )
+            // InternalVFormDsl.g:210:2: iv_ruleFormInput= ruleFormInput EOF
             {
              newCompositeNode(grammarAccess.getFormInputRule()); 
             pushFollow(FOLLOW_1);
@@ -425,7 +468,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormInput"
-    // InternalVFormDsl.g:185:1: ruleFormInput returns [EObject current=null] : (this_FormInputBasic_0= ruleFormInputBasic | this_FormInputRange_1= ruleFormInputRange | this_FormInputSelect_2= ruleFormInputSelect | this_FormInputSearch_3= ruleFormInputSearch | this_FormInputGroup_4= ruleFormInputGroup ) ;
+    // InternalVFormDsl.g:216:1: ruleFormInput returns [EObject current=null] : (this_FormInputBasic_0= ruleFormInputBasic | this_FormInputRange_1= ruleFormInputRange | this_FormInputSelect_2= ruleFormInputSelect | this_FormInputSearch_3= ruleFormInputSearch | this_FormInputGroup_4= ruleFormInputGroup ) ;
     public final EObject ruleFormInput() throws RecognitionException {
         EObject current = null;
 
@@ -444,15 +487,15 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:191:2: ( (this_FormInputBasic_0= ruleFormInputBasic | this_FormInputRange_1= ruleFormInputRange | this_FormInputSelect_2= ruleFormInputSelect | this_FormInputSearch_3= ruleFormInputSearch | this_FormInputGroup_4= ruleFormInputGroup ) )
-            // InternalVFormDsl.g:192:2: (this_FormInputBasic_0= ruleFormInputBasic | this_FormInputRange_1= ruleFormInputRange | this_FormInputSelect_2= ruleFormInputSelect | this_FormInputSearch_3= ruleFormInputSearch | this_FormInputGroup_4= ruleFormInputGroup )
+            // InternalVFormDsl.g:222:2: ( (this_FormInputBasic_0= ruleFormInputBasic | this_FormInputRange_1= ruleFormInputRange | this_FormInputSelect_2= ruleFormInputSelect | this_FormInputSearch_3= ruleFormInputSearch | this_FormInputGroup_4= ruleFormInputGroup ) )
+            // InternalVFormDsl.g:223:2: (this_FormInputBasic_0= ruleFormInputBasic | this_FormInputRange_1= ruleFormInputRange | this_FormInputSelect_2= ruleFormInputSelect | this_FormInputSearch_3= ruleFormInputSearch | this_FormInputGroup_4= ruleFormInputGroup )
             {
-            // InternalVFormDsl.g:192:2: (this_FormInputBasic_0= ruleFormInputBasic | this_FormInputRange_1= ruleFormInputRange | this_FormInputSelect_2= ruleFormInputSelect | this_FormInputSearch_3= ruleFormInputSearch | this_FormInputGroup_4= ruleFormInputGroup )
+            // InternalVFormDsl.g:223:2: (this_FormInputBasic_0= ruleFormInputBasic | this_FormInputRange_1= ruleFormInputRange | this_FormInputSelect_2= ruleFormInputSelect | this_FormInputSearch_3= ruleFormInputSearch | this_FormInputGroup_4= ruleFormInputGroup )
             int alt2=5;
             alt2 = dfa2.predict(input);
             switch (alt2) {
                 case 1 :
-                    // InternalVFormDsl.g:193:3: this_FormInputBasic_0= ruleFormInputBasic
+                    // InternalVFormDsl.g:224:3: this_FormInputBasic_0= ruleFormInputBasic
                     {
 
                     			newCompositeNode(grammarAccess.getFormInputAccess().getFormInputBasicParserRuleCall_0());
@@ -470,7 +513,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalVFormDsl.g:202:3: this_FormInputRange_1= ruleFormInputRange
+                    // InternalVFormDsl.g:233:3: this_FormInputRange_1= ruleFormInputRange
                     {
 
                     			newCompositeNode(grammarAccess.getFormInputAccess().getFormInputRangeParserRuleCall_1());
@@ -488,7 +531,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalVFormDsl.g:211:3: this_FormInputSelect_2= ruleFormInputSelect
+                    // InternalVFormDsl.g:242:3: this_FormInputSelect_2= ruleFormInputSelect
                     {
 
                     			newCompositeNode(grammarAccess.getFormInputAccess().getFormInputSelectParserRuleCall_2());
@@ -506,7 +549,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalVFormDsl.g:220:3: this_FormInputSearch_3= ruleFormInputSearch
+                    // InternalVFormDsl.g:251:3: this_FormInputSearch_3= ruleFormInputSearch
                     {
 
                     			newCompositeNode(grammarAccess.getFormInputAccess().getFormInputSearchParserRuleCall_3());
@@ -524,7 +567,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalVFormDsl.g:229:3: this_FormInputGroup_4= ruleFormInputGroup
+                    // InternalVFormDsl.g:260:3: this_FormInputGroup_4= ruleFormInputGroup
                     {
 
                     			newCompositeNode(grammarAccess.getFormInputAccess().getFormInputGroupParserRuleCall_4());
@@ -564,7 +607,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFormInputBasic"
-    // InternalVFormDsl.g:241:1: entryRuleFormInputBasic returns [EObject current=null] : iv_ruleFormInputBasic= ruleFormInputBasic EOF ;
+    // InternalVFormDsl.g:272:1: entryRuleFormInputBasic returns [EObject current=null] : iv_ruleFormInputBasic= ruleFormInputBasic EOF ;
     public final EObject entryRuleFormInputBasic() throws RecognitionException {
         EObject current = null;
 
@@ -572,8 +615,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:241:55: (iv_ruleFormInputBasic= ruleFormInputBasic EOF )
-            // InternalVFormDsl.g:242:2: iv_ruleFormInputBasic= ruleFormInputBasic EOF
+            // InternalVFormDsl.g:272:55: (iv_ruleFormInputBasic= ruleFormInputBasic EOF )
+            // InternalVFormDsl.g:273:2: iv_ruleFormInputBasic= ruleFormInputBasic EOF
             {
              newCompositeNode(grammarAccess.getFormInputBasicRule()); 
             pushFollow(FOLLOW_1);
@@ -600,45 +643,51 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormInputBasic"
-    // InternalVFormDsl.g:248:1: ruleFormInputBasic returns [EObject current=null] : (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleBasicInputType ) ) ) ;
+    // InternalVFormDsl.g:279:1: ruleFormInputBasic returns [EObject current=null] : (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' ( (lv_type_7_0= RULE_BASICINPUT ) ) otherlv_8= '}' ) ;
     public final EObject ruleFormInputBasic() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token lv_name_2_0=null;
-        Token otherlv_3=null;
+        Token otherlv_2=null;
+        Token lv_name_3_0=null;
         Token otherlv_4=null;
-        Enumerator lv_type_5_0 = null;
-
+        Token otherlv_5=null;
+        Token otherlv_6=null;
+        Token lv_type_7_0=null;
+        Token otherlv_8=null;
 
 
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:254:2: ( (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleBasicInputType ) ) ) )
-            // InternalVFormDsl.g:255:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleBasicInputType ) ) )
+            // InternalVFormDsl.g:285:2: ( (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' ( (lv_type_7_0= RULE_BASICINPUT ) ) otherlv_8= '}' ) )
+            // InternalVFormDsl.g:286:2: (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' ( (lv_type_7_0= RULE_BASICINPUT ) ) otherlv_8= '}' )
             {
-            // InternalVFormDsl.g:255:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleBasicInputType ) ) )
-            // InternalVFormDsl.g:256:3: otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'type' otherlv_4= ':' ( (lv_type_5_0= ruleBasicInputType ) )
+            // InternalVFormDsl.g:286:2: (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' ( (lv_type_7_0= RULE_BASICINPUT ) ) otherlv_8= '}' )
+            // InternalVFormDsl.g:287:3: otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' ( (lv_type_7_0= RULE_BASICINPUT ) ) otherlv_8= '}'
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_8); 
+            otherlv_0=(Token)match(input,13,FOLLOW_11); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getFormInputBasicAccess().getNameKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getFormInputBasicAccess().getLeftCurlyBracketKeyword_0());
             		
-            otherlv_1=(Token)match(input,17,FOLLOW_9); 
+            otherlv_1=(Token)match(input,20,FOLLOW_12); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getFormInputBasicAccess().getColonKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getFormInputBasicAccess().getInputNameKeyword_1());
             		
-            // InternalVFormDsl.g:264:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalVFormDsl.g:265:4: (lv_name_2_0= RULE_STRING )
-            {
-            // InternalVFormDsl.g:265:4: (lv_name_2_0= RULE_STRING )
-            // InternalVFormDsl.g:266:5: lv_name_2_0= RULE_STRING
-            {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
+            otherlv_2=(Token)match(input,21,FOLLOW_13); 
 
-            					newLeafNode(lv_name_2_0, grammarAccess.getFormInputBasicAccess().getNameSTRINGTerminalRuleCall_2_0());
+            			newLeafNode(otherlv_2, grammarAccess.getFormInputBasicAccess().getColonKeyword_2());
+            		
+            // InternalVFormDsl.g:299:3: ( (lv_name_3_0= RULE_STRING ) )
+            // InternalVFormDsl.g:300:4: (lv_name_3_0= RULE_STRING )
+            {
+            // InternalVFormDsl.g:300:4: (lv_name_3_0= RULE_STRING )
+            // InternalVFormDsl.g:301:5: lv_name_3_0= RULE_STRING
+            {
+            lv_name_3_0=(Token)match(input,RULE_STRING,FOLLOW_5); 
+
+            					newLeafNode(lv_name_3_0, grammarAccess.getFormInputBasicAccess().getNameSTRINGTerminalRuleCall_3_0());
             				
 
             					if (current==null) {
@@ -647,7 +696,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_3_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -656,38 +705,37 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,18,FOLLOW_8); 
+            otherlv_4=(Token)match(input,15,FOLLOW_14); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getFormInputBasicAccess().getTypeKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getFormInputBasicAccess().getCommaKeyword_4());
             		
-            otherlv_4=(Token)match(input,17,FOLLOW_11); 
+            otherlv_5=(Token)match(input,22,FOLLOW_12); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getFormInputBasicAccess().getColonKeyword_4());
+            			newLeafNode(otherlv_5, grammarAccess.getFormInputBasicAccess().getInputTypeKeyword_5());
             		
-            // InternalVFormDsl.g:290:3: ( (lv_type_5_0= ruleBasicInputType ) )
-            // InternalVFormDsl.g:291:4: (lv_type_5_0= ruleBasicInputType )
-            {
-            // InternalVFormDsl.g:291:4: (lv_type_5_0= ruleBasicInputType )
-            // InternalVFormDsl.g:292:5: lv_type_5_0= ruleBasicInputType
-            {
+            otherlv_6=(Token)match(input,21,FOLLOW_15); 
 
-            					newCompositeNode(grammarAccess.getFormInputBasicAccess().getTypeBasicInputTypeEnumRuleCall_5_0());
+            			newLeafNode(otherlv_6, grammarAccess.getFormInputBasicAccess().getColonKeyword_6());
+            		
+            // InternalVFormDsl.g:329:3: ( (lv_type_7_0= RULE_BASICINPUT ) )
+            // InternalVFormDsl.g:330:4: (lv_type_7_0= RULE_BASICINPUT )
+            {
+            // InternalVFormDsl.g:330:4: (lv_type_7_0= RULE_BASICINPUT )
+            // InternalVFormDsl.g:331:5: lv_type_7_0= RULE_BASICINPUT
+            {
+            lv_type_7_0=(Token)match(input,RULE_BASICINPUT,FOLLOW_10); 
+
+            					newLeafNode(lv_type_7_0, grammarAccess.getFormInputBasicAccess().getTypeBASICINPUTTerminalRuleCall_7_0());
             				
-            pushFollow(FOLLOW_2);
-            lv_type_5_0=ruleBasicInputType();
-
-            state._fsp--;
-
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getFormInputBasicRule());
+            						current = createModelElement(grammarAccess.getFormInputBasicRule());
             					}
-            					set(
+            					setWithLastConsumed(
             						current,
             						"type",
-            						lv_type_5_0,
-            						"cafev.vform.VFormDsl.BasicInputType");
-            					afterParserOrEnumRuleCall();
+            						lv_type_7_0,
+            						"cafev.vform.VFormDsl.BASICINPUT");
             				
 
             }
@@ -695,6 +743,10 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
+            otherlv_8=(Token)match(input,19,FOLLOW_2); 
+
+            			newLeafNode(otherlv_8, grammarAccess.getFormInputBasicAccess().getRightCurlyBracketKeyword_8());
+            		
 
             }
 
@@ -718,7 +770,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFormInputRange"
-    // InternalVFormDsl.g:313:1: entryRuleFormInputRange returns [EObject current=null] : iv_ruleFormInputRange= ruleFormInputRange EOF ;
+    // InternalVFormDsl.g:355:1: entryRuleFormInputRange returns [EObject current=null] : iv_ruleFormInputRange= ruleFormInputRange EOF ;
     public final EObject entryRuleFormInputRange() throws RecognitionException {
         EObject current = null;
 
@@ -726,8 +778,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:313:55: (iv_ruleFormInputRange= ruleFormInputRange EOF )
-            // InternalVFormDsl.g:314:2: iv_ruleFormInputRange= ruleFormInputRange EOF
+            // InternalVFormDsl.g:355:55: (iv_ruleFormInputRange= ruleFormInputRange EOF )
+            // InternalVFormDsl.g:356:2: iv_ruleFormInputRange= ruleFormInputRange EOF
             {
              newCompositeNode(grammarAccess.getFormInputRangeRule()); 
             pushFollow(FOLLOW_1);
@@ -754,51 +806,59 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormInputRange"
-    // InternalVFormDsl.g:320:1: ruleFormInputRange returns [EObject current=null] : (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'RANGE' otherlv_7= ',' otherlv_8= 'min:' ( (lv_min_9_0= RULE_INT ) ) otherlv_10= ',' otherlv_11= 'max:' ( (lv_max_12_0= RULE_INT ) ) ) ;
+    // InternalVFormDsl.g:362:1: ruleFormInputRange returns [EObject current=null] : (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"range\"' otherlv_8= ',' otherlv_9= '\"min\"' otherlv_10= ':' ( (lv_min_11_0= RULE_INT ) ) otherlv_12= ',' otherlv_13= '\"max\"' otherlv_14= ':' ( (lv_max_15_0= RULE_INT ) ) otherlv_16= '}' ) ;
     public final EObject ruleFormInputRange() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token lv_name_2_0=null;
-        Token otherlv_3=null;
+        Token otherlv_2=null;
+        Token lv_name_3_0=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
         Token otherlv_6=null;
         Token otherlv_7=null;
         Token otherlv_8=null;
-        Token lv_min_9_0=null;
+        Token otherlv_9=null;
         Token otherlv_10=null;
-        Token otherlv_11=null;
-        Token lv_max_12_0=null;
+        Token lv_min_11_0=null;
+        Token otherlv_12=null;
+        Token otherlv_13=null;
+        Token otherlv_14=null;
+        Token lv_max_15_0=null;
+        Token otherlv_16=null;
 
 
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:326:2: ( (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'RANGE' otherlv_7= ',' otherlv_8= 'min:' ( (lv_min_9_0= RULE_INT ) ) otherlv_10= ',' otherlv_11= 'max:' ( (lv_max_12_0= RULE_INT ) ) ) )
-            // InternalVFormDsl.g:327:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'RANGE' otherlv_7= ',' otherlv_8= 'min:' ( (lv_min_9_0= RULE_INT ) ) otherlv_10= ',' otherlv_11= 'max:' ( (lv_max_12_0= RULE_INT ) ) )
+            // InternalVFormDsl.g:368:2: ( (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"range\"' otherlv_8= ',' otherlv_9= '\"min\"' otherlv_10= ':' ( (lv_min_11_0= RULE_INT ) ) otherlv_12= ',' otherlv_13= '\"max\"' otherlv_14= ':' ( (lv_max_15_0= RULE_INT ) ) otherlv_16= '}' ) )
+            // InternalVFormDsl.g:369:2: (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"range\"' otherlv_8= ',' otherlv_9= '\"min\"' otherlv_10= ':' ( (lv_min_11_0= RULE_INT ) ) otherlv_12= ',' otherlv_13= '\"max\"' otherlv_14= ':' ( (lv_max_15_0= RULE_INT ) ) otherlv_16= '}' )
             {
-            // InternalVFormDsl.g:327:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'RANGE' otherlv_7= ',' otherlv_8= 'min:' ( (lv_min_9_0= RULE_INT ) ) otherlv_10= ',' otherlv_11= 'max:' ( (lv_max_12_0= RULE_INT ) ) )
-            // InternalVFormDsl.g:328:3: otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'RANGE' otherlv_7= ',' otherlv_8= 'min:' ( (lv_min_9_0= RULE_INT ) ) otherlv_10= ',' otherlv_11= 'max:' ( (lv_max_12_0= RULE_INT ) )
+            // InternalVFormDsl.g:369:2: (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"range\"' otherlv_8= ',' otherlv_9= '\"min\"' otherlv_10= ':' ( (lv_min_11_0= RULE_INT ) ) otherlv_12= ',' otherlv_13= '\"max\"' otherlv_14= ':' ( (lv_max_15_0= RULE_INT ) ) otherlv_16= '}' )
+            // InternalVFormDsl.g:370:3: otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"range\"' otherlv_8= ',' otherlv_9= '\"min\"' otherlv_10= ':' ( (lv_min_11_0= RULE_INT ) ) otherlv_12= ',' otherlv_13= '\"max\"' otherlv_14= ':' ( (lv_max_15_0= RULE_INT ) ) otherlv_16= '}'
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_8); 
+            otherlv_0=(Token)match(input,13,FOLLOW_11); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getFormInputRangeAccess().getNameKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getFormInputRangeAccess().getLeftCurlyBracketKeyword_0());
             		
-            otherlv_1=(Token)match(input,17,FOLLOW_9); 
+            otherlv_1=(Token)match(input,20,FOLLOW_12); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getFormInputRangeAccess().getColonKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getFormInputRangeAccess().getInputNameKeyword_1());
             		
-            // InternalVFormDsl.g:336:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalVFormDsl.g:337:4: (lv_name_2_0= RULE_STRING )
-            {
-            // InternalVFormDsl.g:337:4: (lv_name_2_0= RULE_STRING )
-            // InternalVFormDsl.g:338:5: lv_name_2_0= RULE_STRING
-            {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_4); 
+            otherlv_2=(Token)match(input,21,FOLLOW_13); 
 
-            					newLeafNode(lv_name_2_0, grammarAccess.getFormInputRangeAccess().getNameSTRINGTerminalRuleCall_2_0());
+            			newLeafNode(otherlv_2, grammarAccess.getFormInputRangeAccess().getColonKeyword_2());
+            		
+            // InternalVFormDsl.g:382:3: ( (lv_name_3_0= RULE_STRING ) )
+            // InternalVFormDsl.g:383:4: (lv_name_3_0= RULE_STRING )
+            {
+            // InternalVFormDsl.g:383:4: (lv_name_3_0= RULE_STRING )
+            // InternalVFormDsl.g:384:5: lv_name_3_0= RULE_STRING
+            {
+            lv_name_3_0=(Token)match(input,RULE_STRING,FOLLOW_5); 
+
+            					newLeafNode(lv_name_3_0, grammarAccess.getFormInputRangeAccess().getNameSTRINGTerminalRuleCall_3_0());
             				
 
             					if (current==null) {
@@ -807,7 +867,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_3_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -816,39 +876,43 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_10); 
+            otherlv_4=(Token)match(input,15,FOLLOW_14); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getFormInputRangeAccess().getCommaKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getFormInputRangeAccess().getCommaKeyword_4());
             		
-            otherlv_4=(Token)match(input,18,FOLLOW_8); 
+            otherlv_5=(Token)match(input,22,FOLLOW_12); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getFormInputRangeAccess().getTypeKeyword_4());
+            			newLeafNode(otherlv_5, grammarAccess.getFormInputRangeAccess().getInputTypeKeyword_5());
             		
-            otherlv_5=(Token)match(input,17,FOLLOW_12); 
+            otherlv_6=(Token)match(input,21,FOLLOW_16); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getFormInputRangeAccess().getColonKeyword_5());
+            			newLeafNode(otherlv_6, grammarAccess.getFormInputRangeAccess().getColonKeyword_6());
             		
-            otherlv_6=(Token)match(input,19,FOLLOW_4); 
+            otherlv_7=(Token)match(input,23,FOLLOW_5); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getFormInputRangeAccess().getRANGEKeyword_6());
+            			newLeafNode(otherlv_7, grammarAccess.getFormInputRangeAccess().getRangeKeyword_7());
             		
-            otherlv_7=(Token)match(input,12,FOLLOW_13); 
+            otherlv_8=(Token)match(input,15,FOLLOW_17); 
 
-            			newLeafNode(otherlv_7, grammarAccess.getFormInputRangeAccess().getCommaKeyword_7());
+            			newLeafNode(otherlv_8, grammarAccess.getFormInputRangeAccess().getCommaKeyword_8());
             		
-            otherlv_8=(Token)match(input,20,FOLLOW_14); 
+            otherlv_9=(Token)match(input,24,FOLLOW_12); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getFormInputRangeAccess().getMinKeyword_8());
+            			newLeafNode(otherlv_9, grammarAccess.getFormInputRangeAccess().getMinKeyword_9());
             		
-            // InternalVFormDsl.g:378:3: ( (lv_min_9_0= RULE_INT ) )
-            // InternalVFormDsl.g:379:4: (lv_min_9_0= RULE_INT )
+            otherlv_10=(Token)match(input,21,FOLLOW_18); 
+
+            			newLeafNode(otherlv_10, grammarAccess.getFormInputRangeAccess().getColonKeyword_10());
+            		
+            // InternalVFormDsl.g:428:3: ( (lv_min_11_0= RULE_INT ) )
+            // InternalVFormDsl.g:429:4: (lv_min_11_0= RULE_INT )
             {
-            // InternalVFormDsl.g:379:4: (lv_min_9_0= RULE_INT )
-            // InternalVFormDsl.g:380:5: lv_min_9_0= RULE_INT
+            // InternalVFormDsl.g:429:4: (lv_min_11_0= RULE_INT )
+            // InternalVFormDsl.g:430:5: lv_min_11_0= RULE_INT
             {
-            lv_min_9_0=(Token)match(input,RULE_INT,FOLLOW_4); 
+            lv_min_11_0=(Token)match(input,RULE_INT,FOLLOW_5); 
 
-            					newLeafNode(lv_min_9_0, grammarAccess.getFormInputRangeAccess().getMinINTTerminalRuleCall_9_0());
+            					newLeafNode(lv_min_11_0, grammarAccess.getFormInputRangeAccess().getMinINTTerminalRuleCall_11_0());
             				
 
             					if (current==null) {
@@ -857,7 +921,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"min",
-            						lv_min_9_0,
+            						lv_min_11_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -866,23 +930,27 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,12,FOLLOW_15); 
+            otherlv_12=(Token)match(input,15,FOLLOW_19); 
 
-            			newLeafNode(otherlv_10, grammarAccess.getFormInputRangeAccess().getCommaKeyword_10());
+            			newLeafNode(otherlv_12, grammarAccess.getFormInputRangeAccess().getCommaKeyword_12());
             		
-            otherlv_11=(Token)match(input,21,FOLLOW_14); 
+            otherlv_13=(Token)match(input,25,FOLLOW_12); 
 
-            			newLeafNode(otherlv_11, grammarAccess.getFormInputRangeAccess().getMaxKeyword_11());
+            			newLeafNode(otherlv_13, grammarAccess.getFormInputRangeAccess().getMaxKeyword_13());
             		
-            // InternalVFormDsl.g:404:3: ( (lv_max_12_0= RULE_INT ) )
-            // InternalVFormDsl.g:405:4: (lv_max_12_0= RULE_INT )
-            {
-            // InternalVFormDsl.g:405:4: (lv_max_12_0= RULE_INT )
-            // InternalVFormDsl.g:406:5: lv_max_12_0= RULE_INT
-            {
-            lv_max_12_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            otherlv_14=(Token)match(input,21,FOLLOW_18); 
 
-            					newLeafNode(lv_max_12_0, grammarAccess.getFormInputRangeAccess().getMaxINTTerminalRuleCall_12_0());
+            			newLeafNode(otherlv_14, grammarAccess.getFormInputRangeAccess().getColonKeyword_14());
+            		
+            // InternalVFormDsl.g:458:3: ( (lv_max_15_0= RULE_INT ) )
+            // InternalVFormDsl.g:459:4: (lv_max_15_0= RULE_INT )
+            {
+            // InternalVFormDsl.g:459:4: (lv_max_15_0= RULE_INT )
+            // InternalVFormDsl.g:460:5: lv_max_15_0= RULE_INT
+            {
+            lv_max_15_0=(Token)match(input,RULE_INT,FOLLOW_10); 
+
+            					newLeafNode(lv_max_15_0, grammarAccess.getFormInputRangeAccess().getMaxINTTerminalRuleCall_15_0());
             				
 
             					if (current==null) {
@@ -891,7 +959,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"max",
-            						lv_max_12_0,
+            						lv_max_15_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -900,6 +968,10 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
+            otherlv_16=(Token)match(input,19,FOLLOW_2); 
+
+            			newLeafNode(otherlv_16, grammarAccess.getFormInputRangeAccess().getRightCurlyBracketKeyword_16());
+            		
 
             }
 
@@ -923,7 +995,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFormInputSelect"
-    // InternalVFormDsl.g:426:1: entryRuleFormInputSelect returns [EObject current=null] : iv_ruleFormInputSelect= ruleFormInputSelect EOF ;
+    // InternalVFormDsl.g:484:1: entryRuleFormInputSelect returns [EObject current=null] : iv_ruleFormInputSelect= ruleFormInputSelect EOF ;
     public final EObject entryRuleFormInputSelect() throws RecognitionException {
         EObject current = null;
 
@@ -931,8 +1003,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:426:56: (iv_ruleFormInputSelect= ruleFormInputSelect EOF )
-            // InternalVFormDsl.g:427:2: iv_ruleFormInputSelect= ruleFormInputSelect EOF
+            // InternalVFormDsl.g:484:56: (iv_ruleFormInputSelect= ruleFormInputSelect EOF )
+            // InternalVFormDsl.g:485:2: iv_ruleFormInputSelect= ruleFormInputSelect EOF
             {
              newCompositeNode(grammarAccess.getFormInputSelectRule()); 
             pushFollow(FOLLOW_1);
@@ -959,51 +1031,56 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormInputSelect"
-    // InternalVFormDsl.g:433:1: ruleFormInputSelect returns [EObject current=null] : (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'SELECT' otherlv_7= ',' otherlv_8= 'options:' otherlv_9= '{' ( (lv_option_10_0= ruleOption ) ) otherlv_11= '}' ) ;
+    // InternalVFormDsl.g:491:1: ruleFormInputSelect returns [EObject current=null] : (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"select\"' otherlv_8= ',' otherlv_9= '\"options\"' otherlv_10= ':' ( (lv_option_11_0= ruleOption ) ) otherlv_12= '}' ) ;
     public final EObject ruleFormInputSelect() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token lv_name_2_0=null;
-        Token otherlv_3=null;
+        Token otherlv_2=null;
+        Token lv_name_3_0=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
         Token otherlv_6=null;
         Token otherlv_7=null;
         Token otherlv_8=null;
         Token otherlv_9=null;
-        Token otherlv_11=null;
-        EObject lv_option_10_0 = null;
+        Token otherlv_10=null;
+        Token otherlv_12=null;
+        EObject lv_option_11_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:439:2: ( (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'SELECT' otherlv_7= ',' otherlv_8= 'options:' otherlv_9= '{' ( (lv_option_10_0= ruleOption ) ) otherlv_11= '}' ) )
-            // InternalVFormDsl.g:440:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'SELECT' otherlv_7= ',' otherlv_8= 'options:' otherlv_9= '{' ( (lv_option_10_0= ruleOption ) ) otherlv_11= '}' )
+            // InternalVFormDsl.g:497:2: ( (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"select\"' otherlv_8= ',' otherlv_9= '\"options\"' otherlv_10= ':' ( (lv_option_11_0= ruleOption ) ) otherlv_12= '}' ) )
+            // InternalVFormDsl.g:498:2: (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"select\"' otherlv_8= ',' otherlv_9= '\"options\"' otherlv_10= ':' ( (lv_option_11_0= ruleOption ) ) otherlv_12= '}' )
             {
-            // InternalVFormDsl.g:440:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'SELECT' otherlv_7= ',' otherlv_8= 'options:' otherlv_9= '{' ( (lv_option_10_0= ruleOption ) ) otherlv_11= '}' )
-            // InternalVFormDsl.g:441:3: otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'SELECT' otherlv_7= ',' otherlv_8= 'options:' otherlv_9= '{' ( (lv_option_10_0= ruleOption ) ) otherlv_11= '}'
+            // InternalVFormDsl.g:498:2: (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"select\"' otherlv_8= ',' otherlv_9= '\"options\"' otherlv_10= ':' ( (lv_option_11_0= ruleOption ) ) otherlv_12= '}' )
+            // InternalVFormDsl.g:499:3: otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"select\"' otherlv_8= ',' otherlv_9= '\"options\"' otherlv_10= ':' ( (lv_option_11_0= ruleOption ) ) otherlv_12= '}'
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_8); 
+            otherlv_0=(Token)match(input,13,FOLLOW_11); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getFormInputSelectAccess().getNameKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getFormInputSelectAccess().getLeftCurlyBracketKeyword_0());
             		
-            otherlv_1=(Token)match(input,17,FOLLOW_9); 
+            otherlv_1=(Token)match(input,20,FOLLOW_12); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getFormInputSelectAccess().getColonKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getFormInputSelectAccess().getInputNameKeyword_1());
             		
-            // InternalVFormDsl.g:449:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalVFormDsl.g:450:4: (lv_name_2_0= RULE_STRING )
-            {
-            // InternalVFormDsl.g:450:4: (lv_name_2_0= RULE_STRING )
-            // InternalVFormDsl.g:451:5: lv_name_2_0= RULE_STRING
-            {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_4); 
+            otherlv_2=(Token)match(input,21,FOLLOW_13); 
 
-            					newLeafNode(lv_name_2_0, grammarAccess.getFormInputSelectAccess().getNameSTRINGTerminalRuleCall_2_0());
+            			newLeafNode(otherlv_2, grammarAccess.getFormInputSelectAccess().getColonKeyword_2());
+            		
+            // InternalVFormDsl.g:511:3: ( (lv_name_3_0= RULE_STRING ) )
+            // InternalVFormDsl.g:512:4: (lv_name_3_0= RULE_STRING )
+            {
+            // InternalVFormDsl.g:512:4: (lv_name_3_0= RULE_STRING )
+            // InternalVFormDsl.g:513:5: lv_name_3_0= RULE_STRING
+            {
+            lv_name_3_0=(Token)match(input,RULE_STRING,FOLLOW_5); 
+
+            					newLeafNode(lv_name_3_0, grammarAccess.getFormInputSelectAccess().getNameSTRINGTerminalRuleCall_3_0());
             				
 
             					if (current==null) {
@@ -1012,7 +1089,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_3_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -1021,45 +1098,45 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_10); 
+            otherlv_4=(Token)match(input,15,FOLLOW_14); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getFormInputSelectAccess().getCommaKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getFormInputSelectAccess().getCommaKeyword_4());
             		
-            otherlv_4=(Token)match(input,18,FOLLOW_8); 
+            otherlv_5=(Token)match(input,22,FOLLOW_12); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getFormInputSelectAccess().getTypeKeyword_4());
+            			newLeafNode(otherlv_5, grammarAccess.getFormInputSelectAccess().getInputTypeKeyword_5());
             		
-            otherlv_5=(Token)match(input,17,FOLLOW_16); 
+            otherlv_6=(Token)match(input,21,FOLLOW_20); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getFormInputSelectAccess().getColonKeyword_5());
+            			newLeafNode(otherlv_6, grammarAccess.getFormInputSelectAccess().getColonKeyword_6());
             		
-            otherlv_6=(Token)match(input,22,FOLLOW_4); 
+            otherlv_7=(Token)match(input,26,FOLLOW_5); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getFormInputSelectAccess().getSELECTKeyword_6());
+            			newLeafNode(otherlv_7, grammarAccess.getFormInputSelectAccess().getSelectKeyword_7());
             		
-            otherlv_7=(Token)match(input,12,FOLLOW_17); 
+            otherlv_8=(Token)match(input,15,FOLLOW_21); 
 
-            			newLeafNode(otherlv_7, grammarAccess.getFormInputSelectAccess().getCommaKeyword_7());
+            			newLeafNode(otherlv_8, grammarAccess.getFormInputSelectAccess().getCommaKeyword_8());
             		
-            otherlv_8=(Token)match(input,23,FOLLOW_18); 
+            otherlv_9=(Token)match(input,27,FOLLOW_12); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getFormInputSelectAccess().getOptionsKeyword_8());
+            			newLeafNode(otherlv_9, grammarAccess.getFormInputSelectAccess().getOptionsKeyword_9());
             		
-            otherlv_9=(Token)match(input,24,FOLLOW_19); 
+            otherlv_10=(Token)match(input,21,FOLLOW_22); 
 
-            			newLeafNode(otherlv_9, grammarAccess.getFormInputSelectAccess().getLeftCurlyBracketKeyword_9());
+            			newLeafNode(otherlv_10, grammarAccess.getFormInputSelectAccess().getColonKeyword_10());
             		
-            // InternalVFormDsl.g:495:3: ( (lv_option_10_0= ruleOption ) )
-            // InternalVFormDsl.g:496:4: (lv_option_10_0= ruleOption )
+            // InternalVFormDsl.g:557:3: ( (lv_option_11_0= ruleOption ) )
+            // InternalVFormDsl.g:558:4: (lv_option_11_0= ruleOption )
             {
-            // InternalVFormDsl.g:496:4: (lv_option_10_0= ruleOption )
-            // InternalVFormDsl.g:497:5: lv_option_10_0= ruleOption
+            // InternalVFormDsl.g:558:4: (lv_option_11_0= ruleOption )
+            // InternalVFormDsl.g:559:5: lv_option_11_0= ruleOption
             {
 
-            					newCompositeNode(grammarAccess.getFormInputSelectAccess().getOptionOptionParserRuleCall_10_0());
+            					newCompositeNode(grammarAccess.getFormInputSelectAccess().getOptionOptionParserRuleCall_11_0());
             				
-            pushFollow(FOLLOW_20);
-            lv_option_10_0=ruleOption();
+            pushFollow(FOLLOW_10);
+            lv_option_11_0=ruleOption();
 
             state._fsp--;
 
@@ -1070,7 +1147,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"option",
-            						lv_option_10_0,
+            						lv_option_11_0,
             						"cafev.vform.VFormDsl.Option");
             					afterParserOrEnumRuleCall();
             				
@@ -1080,9 +1157,9 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,25,FOLLOW_2); 
+            otherlv_12=(Token)match(input,19,FOLLOW_2); 
 
-            			newLeafNode(otherlv_11, grammarAccess.getFormInputSelectAccess().getRightCurlyBracketKeyword_11());
+            			newLeafNode(otherlv_12, grammarAccess.getFormInputSelectAccess().getRightCurlyBracketKeyword_12());
             		
 
             }
@@ -1107,7 +1184,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOption"
-    // InternalVFormDsl.g:522:1: entryRuleOption returns [EObject current=null] : iv_ruleOption= ruleOption EOF ;
+    // InternalVFormDsl.g:584:1: entryRuleOption returns [EObject current=null] : iv_ruleOption= ruleOption EOF ;
     public final EObject entryRuleOption() throws RecognitionException {
         EObject current = null;
 
@@ -1115,8 +1192,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:522:47: (iv_ruleOption= ruleOption EOF )
-            // InternalVFormDsl.g:523:2: iv_ruleOption= ruleOption EOF
+            // InternalVFormDsl.g:584:47: (iv_ruleOption= ruleOption EOF )
+            // InternalVFormDsl.g:585:2: iv_ruleOption= ruleOption EOF
             {
              newCompositeNode(grammarAccess.getOptionRule()); 
             pushFollow(FOLLOW_1);
@@ -1143,7 +1220,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOption"
-    // InternalVFormDsl.g:529:1: ruleOption returns [EObject current=null] : (this_DataOption_0= ruleDataOption | this_EnumOption_1= ruleEnumOption | this_NumberOption_2= ruleNumberOption ) ;
+    // InternalVFormDsl.g:591:1: ruleOption returns [EObject current=null] : (this_DataOption_0= ruleDataOption | this_EnumOption_1= ruleEnumOption | this_NumberOption_2= ruleNumberOption ) ;
     public final EObject ruleOption() throws RecognitionException {
         EObject current = null;
 
@@ -1158,37 +1235,57 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:535:2: ( (this_DataOption_0= ruleDataOption | this_EnumOption_1= ruleEnumOption | this_NumberOption_2= ruleNumberOption ) )
-            // InternalVFormDsl.g:536:2: (this_DataOption_0= ruleDataOption | this_EnumOption_1= ruleEnumOption | this_NumberOption_2= ruleNumberOption )
+            // InternalVFormDsl.g:597:2: ( (this_DataOption_0= ruleDataOption | this_EnumOption_1= ruleEnumOption | this_NumberOption_2= ruleNumberOption ) )
+            // InternalVFormDsl.g:598:2: (this_DataOption_0= ruleDataOption | this_EnumOption_1= ruleEnumOption | this_NumberOption_2= ruleNumberOption )
             {
-            // InternalVFormDsl.g:536:2: (this_DataOption_0= ruleDataOption | this_EnumOption_1= ruleEnumOption | this_NumberOption_2= ruleNumberOption )
+            // InternalVFormDsl.g:598:2: (this_DataOption_0= ruleDataOption | this_EnumOption_1= ruleEnumOption | this_NumberOption_2= ruleNumberOption )
             int alt3=3;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==26) ) {
-                switch ( input.LA(2) ) {
-                case 30:
-                    {
-                    alt3=3;
+            if ( (LA3_0==13) ) {
+                int LA3_1 = input.LA(2);
+
+                if ( (LA3_1==28) ) {
+                    int LA3_2 = input.LA(3);
+
+                    if ( (LA3_2==21) ) {
+                        switch ( input.LA(4) ) {
+                        case 29:
+                            {
+                            alt3=1;
+                            }
+                            break;
+                        case 30:
+                            {
+                            alt3=2;
+                            }
+                            break;
+                        case 31:
+                            {
+                            alt3=3;
+                            }
+                            break;
+                        default:
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 3, 3, input);
+
+                            throw nvae;
+                        }
+
                     }
-                    break;
-                case 27:
-                    {
-                    alt3=1;
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 3, 2, input);
+
+                        throw nvae;
                     }
-                    break;
-                case 29:
-                    {
-                    alt3=2;
-                    }
-                    break;
-                default:
+                }
+                else {
                     NoViableAltException nvae =
                         new NoViableAltException("", 3, 1, input);
 
                     throw nvae;
                 }
-
             }
             else {
                 NoViableAltException nvae =
@@ -1198,7 +1295,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalVFormDsl.g:537:3: this_DataOption_0= ruleDataOption
+                    // InternalVFormDsl.g:599:3: this_DataOption_0= ruleDataOption
                     {
 
                     			newCompositeNode(grammarAccess.getOptionAccess().getDataOptionParserRuleCall_0());
@@ -1216,7 +1313,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalVFormDsl.g:546:3: this_EnumOption_1= ruleEnumOption
+                    // InternalVFormDsl.g:608:3: this_EnumOption_1= ruleEnumOption
                     {
 
                     			newCompositeNode(grammarAccess.getOptionAccess().getEnumOptionParserRuleCall_1());
@@ -1234,7 +1331,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalVFormDsl.g:555:3: this_NumberOption_2= ruleNumberOption
+                    // InternalVFormDsl.g:617:3: this_NumberOption_2= ruleNumberOption
                     {
 
                     			newCompositeNode(grammarAccess.getOptionAccess().getNumberOptionParserRuleCall_2());
@@ -1274,7 +1371,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDataOption"
-    // InternalVFormDsl.g:567:1: entryRuleDataOption returns [EObject current=null] : iv_ruleDataOption= ruleDataOption EOF ;
+    // InternalVFormDsl.g:629:1: entryRuleDataOption returns [EObject current=null] : iv_ruleDataOption= ruleDataOption EOF ;
     public final EObject entryRuleDataOption() throws RecognitionException {
         EObject current = null;
 
@@ -1282,8 +1379,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:567:51: (iv_ruleDataOption= ruleDataOption EOF )
-            // InternalVFormDsl.g:568:2: iv_ruleDataOption= ruleDataOption EOF
+            // InternalVFormDsl.g:629:51: (iv_ruleDataOption= ruleDataOption EOF )
+            // InternalVFormDsl.g:630:2: iv_ruleDataOption= ruleDataOption EOF
             {
              newCompositeNode(grammarAccess.getDataOptionRule()); 
             pushFollow(FOLLOW_1);
@@ -1310,7 +1407,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataOption"
-    // InternalVFormDsl.g:574:1: ruleDataOption returns [EObject current=null] : (otherlv_0= 'optionType:' otherlv_1= 'data' otherlv_2= ',' otherlv_3= 'data:' otherlv_4= '[' ( (lv_data_5_0= ruleData ) ) (otherlv_6= ',' ( (lv_data_7_0= ruleData ) ) )* otherlv_8= ']' ) ;
+    // InternalVFormDsl.g:636:1: ruleDataOption returns [EObject current=null] : (otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"data\"' otherlv_4= ',' otherlv_5= '\"data\"' otherlv_6= ':' otherlv_7= '[' ( (lv_data_8_0= ruleData ) ) (otherlv_9= ',' ( (lv_data_10_0= ruleData ) ) )* otherlv_11= ']' otherlv_12= '}' ) ;
     public final EObject ruleDataOption() throws RecognitionException {
         EObject current = null;
 
@@ -1319,54 +1416,70 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
+        Token otherlv_5=null;
         Token otherlv_6=null;
-        Token otherlv_8=null;
-        EObject lv_data_5_0 = null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token otherlv_11=null;
+        Token otherlv_12=null;
+        EObject lv_data_8_0 = null;
 
-        EObject lv_data_7_0 = null;
+        EObject lv_data_10_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:580:2: ( (otherlv_0= 'optionType:' otherlv_1= 'data' otherlv_2= ',' otherlv_3= 'data:' otherlv_4= '[' ( (lv_data_5_0= ruleData ) ) (otherlv_6= ',' ( (lv_data_7_0= ruleData ) ) )* otherlv_8= ']' ) )
-            // InternalVFormDsl.g:581:2: (otherlv_0= 'optionType:' otherlv_1= 'data' otherlv_2= ',' otherlv_3= 'data:' otherlv_4= '[' ( (lv_data_5_0= ruleData ) ) (otherlv_6= ',' ( (lv_data_7_0= ruleData ) ) )* otherlv_8= ']' )
+            // InternalVFormDsl.g:642:2: ( (otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"data\"' otherlv_4= ',' otherlv_5= '\"data\"' otherlv_6= ':' otherlv_7= '[' ( (lv_data_8_0= ruleData ) ) (otherlv_9= ',' ( (lv_data_10_0= ruleData ) ) )* otherlv_11= ']' otherlv_12= '}' ) )
+            // InternalVFormDsl.g:643:2: (otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"data\"' otherlv_4= ',' otherlv_5= '\"data\"' otherlv_6= ':' otherlv_7= '[' ( (lv_data_8_0= ruleData ) ) (otherlv_9= ',' ( (lv_data_10_0= ruleData ) ) )* otherlv_11= ']' otherlv_12= '}' )
             {
-            // InternalVFormDsl.g:581:2: (otherlv_0= 'optionType:' otherlv_1= 'data' otherlv_2= ',' otherlv_3= 'data:' otherlv_4= '[' ( (lv_data_5_0= ruleData ) ) (otherlv_6= ',' ( (lv_data_7_0= ruleData ) ) )* otherlv_8= ']' )
-            // InternalVFormDsl.g:582:3: otherlv_0= 'optionType:' otherlv_1= 'data' otherlv_2= ',' otherlv_3= 'data:' otherlv_4= '[' ( (lv_data_5_0= ruleData ) ) (otherlv_6= ',' ( (lv_data_7_0= ruleData ) ) )* otherlv_8= ']'
+            // InternalVFormDsl.g:643:2: (otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"data\"' otherlv_4= ',' otherlv_5= '\"data\"' otherlv_6= ':' otherlv_7= '[' ( (lv_data_8_0= ruleData ) ) (otherlv_9= ',' ( (lv_data_10_0= ruleData ) ) )* otherlv_11= ']' otherlv_12= '}' )
+            // InternalVFormDsl.g:644:3: otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"data\"' otherlv_4= ',' otherlv_5= '\"data\"' otherlv_6= ':' otherlv_7= '[' ( (lv_data_8_0= ruleData ) ) (otherlv_9= ',' ( (lv_data_10_0= ruleData ) ) )* otherlv_11= ']' otherlv_12= '}'
             {
-            otherlv_0=(Token)match(input,26,FOLLOW_21); 
+            otherlv_0=(Token)match(input,13,FOLLOW_23); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getDataOptionAccess().getOptionTypeKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getDataOptionAccess().getLeftCurlyBracketKeyword_0());
             		
-            otherlv_1=(Token)match(input,27,FOLLOW_4); 
+            otherlv_1=(Token)match(input,28,FOLLOW_12); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getDataOptionAccess().getDataKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getDataOptionAccess().getOptionTypeKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_22); 
+            otherlv_2=(Token)match(input,21,FOLLOW_24); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getDataOptionAccess().getCommaKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getDataOptionAccess().getColonKeyword_2());
             		
-            otherlv_3=(Token)match(input,28,FOLLOW_6); 
+            otherlv_3=(Token)match(input,29,FOLLOW_5); 
 
             			newLeafNode(otherlv_3, grammarAccess.getDataOptionAccess().getDataKeyword_3());
             		
-            otherlv_4=(Token)match(input,14,FOLLOW_18); 
+            otherlv_4=(Token)match(input,15,FOLLOW_24); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getDataOptionAccess().getLeftSquareBracketKeyword_4());
+            			newLeafNode(otherlv_4, grammarAccess.getDataOptionAccess().getCommaKeyword_4());
             		
-            // InternalVFormDsl.g:602:3: ( (lv_data_5_0= ruleData ) )
-            // InternalVFormDsl.g:603:4: (lv_data_5_0= ruleData )
+            otherlv_5=(Token)match(input,29,FOLLOW_12); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getDataOptionAccess().getDataKeyword_5());
+            		
+            otherlv_6=(Token)match(input,21,FOLLOW_7); 
+
+            			newLeafNode(otherlv_6, grammarAccess.getDataOptionAccess().getColonKeyword_6());
+            		
+            otherlv_7=(Token)match(input,17,FOLLOW_22); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getDataOptionAccess().getLeftSquareBracketKeyword_7());
+            		
+            // InternalVFormDsl.g:676:3: ( (lv_data_8_0= ruleData ) )
+            // InternalVFormDsl.g:677:4: (lv_data_8_0= ruleData )
             {
-            // InternalVFormDsl.g:603:4: (lv_data_5_0= ruleData )
-            // InternalVFormDsl.g:604:5: lv_data_5_0= ruleData
+            // InternalVFormDsl.g:677:4: (lv_data_8_0= ruleData )
+            // InternalVFormDsl.g:678:5: lv_data_8_0= ruleData
             {
 
-            					newCompositeNode(grammarAccess.getDataOptionAccess().getDataDataParserRuleCall_5_0());
+            					newCompositeNode(grammarAccess.getDataOptionAccess().getDataDataParserRuleCall_8_0());
             				
-            pushFollow(FOLLOW_23);
-            lv_data_5_0=ruleData();
+            pushFollow(FOLLOW_9);
+            lv_data_8_0=ruleData();
 
             state._fsp--;
 
@@ -1377,7 +1490,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             					add(
             						current,
             						"data",
-            						lv_data_5_0,
+            						lv_data_8_0,
             						"cafev.vform.VFormDsl.Data");
             					afterParserOrEnumRuleCall();
             				
@@ -1387,36 +1500,36 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalVFormDsl.g:621:3: (otherlv_6= ',' ( (lv_data_7_0= ruleData ) ) )*
+            // InternalVFormDsl.g:695:3: (otherlv_9= ',' ( (lv_data_10_0= ruleData ) ) )*
             loop4:
             do {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==12) ) {
+                if ( (LA4_0==15) ) {
                     alt4=1;
                 }
 
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalVFormDsl.g:622:4: otherlv_6= ',' ( (lv_data_7_0= ruleData ) )
+            	    // InternalVFormDsl.g:696:4: otherlv_9= ',' ( (lv_data_10_0= ruleData ) )
             	    {
-            	    otherlv_6=(Token)match(input,12,FOLLOW_18); 
+            	    otherlv_9=(Token)match(input,15,FOLLOW_22); 
 
-            	    				newLeafNode(otherlv_6, grammarAccess.getDataOptionAccess().getCommaKeyword_6_0());
+            	    				newLeafNode(otherlv_9, grammarAccess.getDataOptionAccess().getCommaKeyword_9_0());
             	    			
-            	    // InternalVFormDsl.g:626:4: ( (lv_data_7_0= ruleData ) )
-            	    // InternalVFormDsl.g:627:5: (lv_data_7_0= ruleData )
+            	    // InternalVFormDsl.g:700:4: ( (lv_data_10_0= ruleData ) )
+            	    // InternalVFormDsl.g:701:5: (lv_data_10_0= ruleData )
             	    {
-            	    // InternalVFormDsl.g:627:5: (lv_data_7_0= ruleData )
-            	    // InternalVFormDsl.g:628:6: lv_data_7_0= ruleData
+            	    // InternalVFormDsl.g:701:5: (lv_data_10_0= ruleData )
+            	    // InternalVFormDsl.g:702:6: lv_data_10_0= ruleData
             	    {
 
-            	    						newCompositeNode(grammarAccess.getDataOptionAccess().getDataDataParserRuleCall_6_1_0());
+            	    						newCompositeNode(grammarAccess.getDataOptionAccess().getDataDataParserRuleCall_9_1_0());
             	    					
-            	    pushFollow(FOLLOW_23);
-            	    lv_data_7_0=ruleData();
+            	    pushFollow(FOLLOW_9);
+            	    lv_data_10_0=ruleData();
 
             	    state._fsp--;
 
@@ -1427,7 +1540,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             	    						add(
             	    							current,
             	    							"data",
-            	    							lv_data_7_0,
+            	    							lv_data_10_0,
             	    							"cafev.vform.VFormDsl.Data");
             	    						afterParserOrEnumRuleCall();
             	    					
@@ -1446,9 +1559,13 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_8=(Token)match(input,15,FOLLOW_2); 
+            otherlv_11=(Token)match(input,18,FOLLOW_10); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getDataOptionAccess().getRightSquareBracketKeyword_7());
+            			newLeafNode(otherlv_11, grammarAccess.getDataOptionAccess().getRightSquareBracketKeyword_10());
+            		
+            otherlv_12=(Token)match(input,19,FOLLOW_2); 
+
+            			newLeafNode(otherlv_12, grammarAccess.getDataOptionAccess().getRightCurlyBracketKeyword_11());
             		
 
             }
@@ -1473,7 +1590,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEnumOption"
-    // InternalVFormDsl.g:654:1: entryRuleEnumOption returns [EObject current=null] : iv_ruleEnumOption= ruleEnumOption EOF ;
+    // InternalVFormDsl.g:732:1: entryRuleEnumOption returns [EObject current=null] : iv_ruleEnumOption= ruleEnumOption EOF ;
     public final EObject entryRuleEnumOption() throws RecognitionException {
         EObject current = null;
 
@@ -1481,8 +1598,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:654:51: (iv_ruleEnumOption= ruleEnumOption EOF )
-            // InternalVFormDsl.g:655:2: iv_ruleEnumOption= ruleEnumOption EOF
+            // InternalVFormDsl.g:732:51: (iv_ruleEnumOption= ruleEnumOption EOF )
+            // InternalVFormDsl.g:733:2: iv_ruleEnumOption= ruleEnumOption EOF
             {
              newCompositeNode(grammarAccess.getEnumOptionRule()); 
             pushFollow(FOLLOW_1);
@@ -1509,7 +1626,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumOption"
-    // InternalVFormDsl.g:661:1: ruleEnumOption returns [EObject current=null] : (otherlv_0= 'optionType:' otherlv_1= 'enum' otherlv_2= ',' otherlv_3= 'data:' otherlv_4= '[' ( (lv_data_5_0= ruleOptionItem ) ) (otherlv_6= ',' ( (lv_data_7_0= ruleOptionItem ) ) )* otherlv_8= ']' ) ;
+    // InternalVFormDsl.g:739:1: ruleEnumOption returns [EObject current=null] : (otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"enum\"' otherlv_4= ',' otherlv_5= '\"data\"' otherlv_6= ':' otherlv_7= '[' ( (lv_data_8_0= ruleOptionItem ) ) (otherlv_9= ',' ( (lv_data_10_0= ruleOptionItem ) ) )* otherlv_11= ']' otherlv_12= '}' ) ;
     public final EObject ruleEnumOption() throws RecognitionException {
         EObject current = null;
 
@@ -1518,54 +1635,70 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
+        Token otherlv_5=null;
         Token otherlv_6=null;
-        Token otherlv_8=null;
-        EObject lv_data_5_0 = null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token otherlv_11=null;
+        Token otherlv_12=null;
+        EObject lv_data_8_0 = null;
 
-        EObject lv_data_7_0 = null;
+        EObject lv_data_10_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:667:2: ( (otherlv_0= 'optionType:' otherlv_1= 'enum' otherlv_2= ',' otherlv_3= 'data:' otherlv_4= '[' ( (lv_data_5_0= ruleOptionItem ) ) (otherlv_6= ',' ( (lv_data_7_0= ruleOptionItem ) ) )* otherlv_8= ']' ) )
-            // InternalVFormDsl.g:668:2: (otherlv_0= 'optionType:' otherlv_1= 'enum' otherlv_2= ',' otherlv_3= 'data:' otherlv_4= '[' ( (lv_data_5_0= ruleOptionItem ) ) (otherlv_6= ',' ( (lv_data_7_0= ruleOptionItem ) ) )* otherlv_8= ']' )
+            // InternalVFormDsl.g:745:2: ( (otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"enum\"' otherlv_4= ',' otherlv_5= '\"data\"' otherlv_6= ':' otherlv_7= '[' ( (lv_data_8_0= ruleOptionItem ) ) (otherlv_9= ',' ( (lv_data_10_0= ruleOptionItem ) ) )* otherlv_11= ']' otherlv_12= '}' ) )
+            // InternalVFormDsl.g:746:2: (otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"enum\"' otherlv_4= ',' otherlv_5= '\"data\"' otherlv_6= ':' otherlv_7= '[' ( (lv_data_8_0= ruleOptionItem ) ) (otherlv_9= ',' ( (lv_data_10_0= ruleOptionItem ) ) )* otherlv_11= ']' otherlv_12= '}' )
             {
-            // InternalVFormDsl.g:668:2: (otherlv_0= 'optionType:' otherlv_1= 'enum' otherlv_2= ',' otherlv_3= 'data:' otherlv_4= '[' ( (lv_data_5_0= ruleOptionItem ) ) (otherlv_6= ',' ( (lv_data_7_0= ruleOptionItem ) ) )* otherlv_8= ']' )
-            // InternalVFormDsl.g:669:3: otherlv_0= 'optionType:' otherlv_1= 'enum' otherlv_2= ',' otherlv_3= 'data:' otherlv_4= '[' ( (lv_data_5_0= ruleOptionItem ) ) (otherlv_6= ',' ( (lv_data_7_0= ruleOptionItem ) ) )* otherlv_8= ']'
+            // InternalVFormDsl.g:746:2: (otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"enum\"' otherlv_4= ',' otherlv_5= '\"data\"' otherlv_6= ':' otherlv_7= '[' ( (lv_data_8_0= ruleOptionItem ) ) (otherlv_9= ',' ( (lv_data_10_0= ruleOptionItem ) ) )* otherlv_11= ']' otherlv_12= '}' )
+            // InternalVFormDsl.g:747:3: otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"enum\"' otherlv_4= ',' otherlv_5= '\"data\"' otherlv_6= ':' otherlv_7= '[' ( (lv_data_8_0= ruleOptionItem ) ) (otherlv_9= ',' ( (lv_data_10_0= ruleOptionItem ) ) )* otherlv_11= ']' otherlv_12= '}'
             {
-            otherlv_0=(Token)match(input,26,FOLLOW_24); 
+            otherlv_0=(Token)match(input,13,FOLLOW_23); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getEnumOptionAccess().getOptionTypeKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getEnumOptionAccess().getLeftCurlyBracketKeyword_0());
             		
-            otherlv_1=(Token)match(input,29,FOLLOW_4); 
+            otherlv_1=(Token)match(input,28,FOLLOW_12); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getEnumOptionAccess().getEnumKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getEnumOptionAccess().getOptionTypeKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_22); 
+            otherlv_2=(Token)match(input,21,FOLLOW_25); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getEnumOptionAccess().getCommaKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getEnumOptionAccess().getColonKeyword_2());
             		
-            otherlv_3=(Token)match(input,28,FOLLOW_6); 
+            otherlv_3=(Token)match(input,30,FOLLOW_5); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getEnumOptionAccess().getDataKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getEnumOptionAccess().getEnumKeyword_3());
             		
-            otherlv_4=(Token)match(input,14,FOLLOW_25); 
+            otherlv_4=(Token)match(input,15,FOLLOW_24); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getEnumOptionAccess().getLeftSquareBracketKeyword_4());
+            			newLeafNode(otherlv_4, grammarAccess.getEnumOptionAccess().getCommaKeyword_4());
             		
-            // InternalVFormDsl.g:689:3: ( (lv_data_5_0= ruleOptionItem ) )
-            // InternalVFormDsl.g:690:4: (lv_data_5_0= ruleOptionItem )
+            otherlv_5=(Token)match(input,29,FOLLOW_12); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getEnumOptionAccess().getDataKeyword_5());
+            		
+            otherlv_6=(Token)match(input,21,FOLLOW_7); 
+
+            			newLeafNode(otherlv_6, grammarAccess.getEnumOptionAccess().getColonKeyword_6());
+            		
+            otherlv_7=(Token)match(input,17,FOLLOW_26); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getEnumOptionAccess().getLeftSquareBracketKeyword_7());
+            		
+            // InternalVFormDsl.g:779:3: ( (lv_data_8_0= ruleOptionItem ) )
+            // InternalVFormDsl.g:780:4: (lv_data_8_0= ruleOptionItem )
             {
-            // InternalVFormDsl.g:690:4: (lv_data_5_0= ruleOptionItem )
-            // InternalVFormDsl.g:691:5: lv_data_5_0= ruleOptionItem
+            // InternalVFormDsl.g:780:4: (lv_data_8_0= ruleOptionItem )
+            // InternalVFormDsl.g:781:5: lv_data_8_0= ruleOptionItem
             {
 
-            					newCompositeNode(grammarAccess.getEnumOptionAccess().getDataOptionItemParserRuleCall_5_0());
+            					newCompositeNode(grammarAccess.getEnumOptionAccess().getDataOptionItemParserRuleCall_8_0());
             				
-            pushFollow(FOLLOW_23);
-            lv_data_5_0=ruleOptionItem();
+            pushFollow(FOLLOW_9);
+            lv_data_8_0=ruleOptionItem();
 
             state._fsp--;
 
@@ -1576,7 +1709,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             					add(
             						current,
             						"data",
-            						lv_data_5_0,
+            						lv_data_8_0,
             						"cafev.vform.VFormDsl.OptionItem");
             					afterParserOrEnumRuleCall();
             				
@@ -1586,36 +1719,36 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalVFormDsl.g:708:3: (otherlv_6= ',' ( (lv_data_7_0= ruleOptionItem ) ) )*
+            // InternalVFormDsl.g:798:3: (otherlv_9= ',' ( (lv_data_10_0= ruleOptionItem ) ) )*
             loop5:
             do {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==12) ) {
+                if ( (LA5_0==15) ) {
                     alt5=1;
                 }
 
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalVFormDsl.g:709:4: otherlv_6= ',' ( (lv_data_7_0= ruleOptionItem ) )
+            	    // InternalVFormDsl.g:799:4: otherlv_9= ',' ( (lv_data_10_0= ruleOptionItem ) )
             	    {
-            	    otherlv_6=(Token)match(input,12,FOLLOW_25); 
+            	    otherlv_9=(Token)match(input,15,FOLLOW_26); 
 
-            	    				newLeafNode(otherlv_6, grammarAccess.getEnumOptionAccess().getCommaKeyword_6_0());
+            	    				newLeafNode(otherlv_9, grammarAccess.getEnumOptionAccess().getCommaKeyword_9_0());
             	    			
-            	    // InternalVFormDsl.g:713:4: ( (lv_data_7_0= ruleOptionItem ) )
-            	    // InternalVFormDsl.g:714:5: (lv_data_7_0= ruleOptionItem )
+            	    // InternalVFormDsl.g:803:4: ( (lv_data_10_0= ruleOptionItem ) )
+            	    // InternalVFormDsl.g:804:5: (lv_data_10_0= ruleOptionItem )
             	    {
-            	    // InternalVFormDsl.g:714:5: (lv_data_7_0= ruleOptionItem )
-            	    // InternalVFormDsl.g:715:6: lv_data_7_0= ruleOptionItem
+            	    // InternalVFormDsl.g:804:5: (lv_data_10_0= ruleOptionItem )
+            	    // InternalVFormDsl.g:805:6: lv_data_10_0= ruleOptionItem
             	    {
 
-            	    						newCompositeNode(grammarAccess.getEnumOptionAccess().getDataOptionItemParserRuleCall_6_1_0());
+            	    						newCompositeNode(grammarAccess.getEnumOptionAccess().getDataOptionItemParserRuleCall_9_1_0());
             	    					
-            	    pushFollow(FOLLOW_23);
-            	    lv_data_7_0=ruleOptionItem();
+            	    pushFollow(FOLLOW_9);
+            	    lv_data_10_0=ruleOptionItem();
 
             	    state._fsp--;
 
@@ -1626,7 +1759,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             	    						add(
             	    							current,
             	    							"data",
-            	    							lv_data_7_0,
+            	    							lv_data_10_0,
             	    							"cafev.vform.VFormDsl.OptionItem");
             	    						afterParserOrEnumRuleCall();
             	    					
@@ -1645,9 +1778,13 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_8=(Token)match(input,15,FOLLOW_2); 
+            otherlv_11=(Token)match(input,18,FOLLOW_10); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getEnumOptionAccess().getRightSquareBracketKeyword_7());
+            			newLeafNode(otherlv_11, grammarAccess.getEnumOptionAccess().getRightSquareBracketKeyword_10());
+            		
+            otherlv_12=(Token)match(input,19,FOLLOW_2); 
+
+            			newLeafNode(otherlv_12, grammarAccess.getEnumOptionAccess().getRightCurlyBracketKeyword_11());
             		
 
             }
@@ -1672,7 +1809,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumberOption"
-    // InternalVFormDsl.g:741:1: entryRuleNumberOption returns [EObject current=null] : iv_ruleNumberOption= ruleNumberOption EOF ;
+    // InternalVFormDsl.g:835:1: entryRuleNumberOption returns [EObject current=null] : iv_ruleNumberOption= ruleNumberOption EOF ;
     public final EObject entryRuleNumberOption() throws RecognitionException {
         EObject current = null;
 
@@ -1680,8 +1817,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:741:53: (iv_ruleNumberOption= ruleNumberOption EOF )
-            // InternalVFormDsl.g:742:2: iv_ruleNumberOption= ruleNumberOption EOF
+            // InternalVFormDsl.g:835:53: (iv_ruleNumberOption= ruleNumberOption EOF )
+            // InternalVFormDsl.g:836:2: iv_ruleNumberOption= ruleNumberOption EOF
             {
              newCompositeNode(grammarAccess.getNumberOptionRule()); 
             pushFollow(FOLLOW_1);
@@ -1708,7 +1845,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumberOption"
-    // InternalVFormDsl.g:748:1: ruleNumberOption returns [EObject current=null] : (otherlv_0= 'optionType:' otherlv_1= 'number' otherlv_2= ',' otherlv_3= 'min:' ( (lv_min_4_0= RULE_INT ) ) otherlv_5= ',' otherlv_6= 'max:' ( (lv_max_7_0= RULE_INT ) ) otherlv_8= ',' otherlv_9= 'range:' ( (lv_range_10_0= RULE_INT ) ) ) ;
+    // InternalVFormDsl.g:842:1: ruleNumberOption returns [EObject current=null] : (otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"number\"' otherlv_4= ',' otherlv_5= '\"min\"' otherlv_6= ':' ( (lv_min_7_0= RULE_INT ) ) otherlv_8= ',' otherlv_9= '\"max\"' otherlv_10= ':' ( (lv_max_11_0= RULE_INT ) ) otherlv_12= '\"range\"' otherlv_13= ':' ( (lv_range_14_0= RULE_INT ) ) otherlv_15= '}' ) ;
     public final EObject ruleNumberOption() throws RecognitionException {
         EObject current = null;
 
@@ -1716,49 +1853,66 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
-        Token lv_min_4_0=null;
+        Token otherlv_4=null;
         Token otherlv_5=null;
         Token otherlv_6=null;
-        Token lv_max_7_0=null;
+        Token lv_min_7_0=null;
         Token otherlv_8=null;
         Token otherlv_9=null;
-        Token lv_range_10_0=null;
+        Token otherlv_10=null;
+        Token lv_max_11_0=null;
+        Token otherlv_12=null;
+        Token otherlv_13=null;
+        Token lv_range_14_0=null;
+        Token otherlv_15=null;
 
 
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:754:2: ( (otherlv_0= 'optionType:' otherlv_1= 'number' otherlv_2= ',' otherlv_3= 'min:' ( (lv_min_4_0= RULE_INT ) ) otherlv_5= ',' otherlv_6= 'max:' ( (lv_max_7_0= RULE_INT ) ) otherlv_8= ',' otherlv_9= 'range:' ( (lv_range_10_0= RULE_INT ) ) ) )
-            // InternalVFormDsl.g:755:2: (otherlv_0= 'optionType:' otherlv_1= 'number' otherlv_2= ',' otherlv_3= 'min:' ( (lv_min_4_0= RULE_INT ) ) otherlv_5= ',' otherlv_6= 'max:' ( (lv_max_7_0= RULE_INT ) ) otherlv_8= ',' otherlv_9= 'range:' ( (lv_range_10_0= RULE_INT ) ) )
+            // InternalVFormDsl.g:848:2: ( (otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"number\"' otherlv_4= ',' otherlv_5= '\"min\"' otherlv_6= ':' ( (lv_min_7_0= RULE_INT ) ) otherlv_8= ',' otherlv_9= '\"max\"' otherlv_10= ':' ( (lv_max_11_0= RULE_INT ) ) otherlv_12= '\"range\"' otherlv_13= ':' ( (lv_range_14_0= RULE_INT ) ) otherlv_15= '}' ) )
+            // InternalVFormDsl.g:849:2: (otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"number\"' otherlv_4= ',' otherlv_5= '\"min\"' otherlv_6= ':' ( (lv_min_7_0= RULE_INT ) ) otherlv_8= ',' otherlv_9= '\"max\"' otherlv_10= ':' ( (lv_max_11_0= RULE_INT ) ) otherlv_12= '\"range\"' otherlv_13= ':' ( (lv_range_14_0= RULE_INT ) ) otherlv_15= '}' )
             {
-            // InternalVFormDsl.g:755:2: (otherlv_0= 'optionType:' otherlv_1= 'number' otherlv_2= ',' otherlv_3= 'min:' ( (lv_min_4_0= RULE_INT ) ) otherlv_5= ',' otherlv_6= 'max:' ( (lv_max_7_0= RULE_INT ) ) otherlv_8= ',' otherlv_9= 'range:' ( (lv_range_10_0= RULE_INT ) ) )
-            // InternalVFormDsl.g:756:3: otherlv_0= 'optionType:' otherlv_1= 'number' otherlv_2= ',' otherlv_3= 'min:' ( (lv_min_4_0= RULE_INT ) ) otherlv_5= ',' otherlv_6= 'max:' ( (lv_max_7_0= RULE_INT ) ) otherlv_8= ',' otherlv_9= 'range:' ( (lv_range_10_0= RULE_INT ) )
+            // InternalVFormDsl.g:849:2: (otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"number\"' otherlv_4= ',' otherlv_5= '\"min\"' otherlv_6= ':' ( (lv_min_7_0= RULE_INT ) ) otherlv_8= ',' otherlv_9= '\"max\"' otherlv_10= ':' ( (lv_max_11_0= RULE_INT ) ) otherlv_12= '\"range\"' otherlv_13= ':' ( (lv_range_14_0= RULE_INT ) ) otherlv_15= '}' )
+            // InternalVFormDsl.g:850:3: otherlv_0= '{' otherlv_1= '\"optionType\"' otherlv_2= ':' otherlv_3= '\"number\"' otherlv_4= ',' otherlv_5= '\"min\"' otherlv_6= ':' ( (lv_min_7_0= RULE_INT ) ) otherlv_8= ',' otherlv_9= '\"max\"' otherlv_10= ':' ( (lv_max_11_0= RULE_INT ) ) otherlv_12= '\"range\"' otherlv_13= ':' ( (lv_range_14_0= RULE_INT ) ) otherlv_15= '}'
             {
-            otherlv_0=(Token)match(input,26,FOLLOW_26); 
+            otherlv_0=(Token)match(input,13,FOLLOW_23); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getNumberOptionAccess().getOptionTypeKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getNumberOptionAccess().getLeftCurlyBracketKeyword_0());
             		
-            otherlv_1=(Token)match(input,30,FOLLOW_4); 
+            otherlv_1=(Token)match(input,28,FOLLOW_12); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getNumberOptionAccess().getNumberKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getNumberOptionAccess().getOptionTypeKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_13); 
+            otherlv_2=(Token)match(input,21,FOLLOW_27); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getNumberOptionAccess().getCommaKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getNumberOptionAccess().getColonKeyword_2());
             		
-            otherlv_3=(Token)match(input,20,FOLLOW_14); 
+            otherlv_3=(Token)match(input,31,FOLLOW_5); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getNumberOptionAccess().getMinKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getNumberOptionAccess().getNumberKeyword_3());
             		
-            // InternalVFormDsl.g:772:3: ( (lv_min_4_0= RULE_INT ) )
-            // InternalVFormDsl.g:773:4: (lv_min_4_0= RULE_INT )
+            otherlv_4=(Token)match(input,15,FOLLOW_17); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getNumberOptionAccess().getCommaKeyword_4());
+            		
+            otherlv_5=(Token)match(input,24,FOLLOW_12); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getNumberOptionAccess().getMinKeyword_5());
+            		
+            otherlv_6=(Token)match(input,21,FOLLOW_18); 
+
+            			newLeafNode(otherlv_6, grammarAccess.getNumberOptionAccess().getColonKeyword_6());
+            		
+            // InternalVFormDsl.g:878:3: ( (lv_min_7_0= RULE_INT ) )
+            // InternalVFormDsl.g:879:4: (lv_min_7_0= RULE_INT )
             {
-            // InternalVFormDsl.g:773:4: (lv_min_4_0= RULE_INT )
-            // InternalVFormDsl.g:774:5: lv_min_4_0= RULE_INT
+            // InternalVFormDsl.g:879:4: (lv_min_7_0= RULE_INT )
+            // InternalVFormDsl.g:880:5: lv_min_7_0= RULE_INT
             {
-            lv_min_4_0=(Token)match(input,RULE_INT,FOLLOW_4); 
+            lv_min_7_0=(Token)match(input,RULE_INT,FOLLOW_5); 
 
-            					newLeafNode(lv_min_4_0, grammarAccess.getNumberOptionAccess().getMinINTTerminalRuleCall_4_0());
+            					newLeafNode(lv_min_7_0, grammarAccess.getNumberOptionAccess().getMinINTTerminalRuleCall_7_0());
             				
 
             					if (current==null) {
@@ -1767,7 +1921,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"min",
-            						lv_min_4_0,
+            						lv_min_7_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -1776,23 +1930,27 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,12,FOLLOW_15); 
+            otherlv_8=(Token)match(input,15,FOLLOW_19); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getNumberOptionAccess().getCommaKeyword_5());
+            			newLeafNode(otherlv_8, grammarAccess.getNumberOptionAccess().getCommaKeyword_8());
             		
-            otherlv_6=(Token)match(input,21,FOLLOW_14); 
+            otherlv_9=(Token)match(input,25,FOLLOW_12); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getNumberOptionAccess().getMaxKeyword_6());
+            			newLeafNode(otherlv_9, grammarAccess.getNumberOptionAccess().getMaxKeyword_9());
             		
-            // InternalVFormDsl.g:798:3: ( (lv_max_7_0= RULE_INT ) )
-            // InternalVFormDsl.g:799:4: (lv_max_7_0= RULE_INT )
-            {
-            // InternalVFormDsl.g:799:4: (lv_max_7_0= RULE_INT )
-            // InternalVFormDsl.g:800:5: lv_max_7_0= RULE_INT
-            {
-            lv_max_7_0=(Token)match(input,RULE_INT,FOLLOW_4); 
+            otherlv_10=(Token)match(input,21,FOLLOW_18); 
 
-            					newLeafNode(lv_max_7_0, grammarAccess.getNumberOptionAccess().getMaxINTTerminalRuleCall_7_0());
+            			newLeafNode(otherlv_10, grammarAccess.getNumberOptionAccess().getColonKeyword_10());
+            		
+            // InternalVFormDsl.g:908:3: ( (lv_max_11_0= RULE_INT ) )
+            // InternalVFormDsl.g:909:4: (lv_max_11_0= RULE_INT )
+            {
+            // InternalVFormDsl.g:909:4: (lv_max_11_0= RULE_INT )
+            // InternalVFormDsl.g:910:5: lv_max_11_0= RULE_INT
+            {
+            lv_max_11_0=(Token)match(input,RULE_INT,FOLLOW_16); 
+
+            					newLeafNode(lv_max_11_0, grammarAccess.getNumberOptionAccess().getMaxINTTerminalRuleCall_11_0());
             				
 
             					if (current==null) {
@@ -1801,7 +1959,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"max",
-            						lv_max_7_0,
+            						lv_max_11_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -1810,23 +1968,23 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,12,FOLLOW_27); 
+            otherlv_12=(Token)match(input,23,FOLLOW_12); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getNumberOptionAccess().getCommaKeyword_8());
+            			newLeafNode(otherlv_12, grammarAccess.getNumberOptionAccess().getRangeKeyword_12());
             		
-            otherlv_9=(Token)match(input,31,FOLLOW_14); 
+            otherlv_13=(Token)match(input,21,FOLLOW_18); 
 
-            			newLeafNode(otherlv_9, grammarAccess.getNumberOptionAccess().getRangeKeyword_9());
+            			newLeafNode(otherlv_13, grammarAccess.getNumberOptionAccess().getColonKeyword_13());
             		
-            // InternalVFormDsl.g:824:3: ( (lv_range_10_0= RULE_INT ) )
-            // InternalVFormDsl.g:825:4: (lv_range_10_0= RULE_INT )
+            // InternalVFormDsl.g:934:3: ( (lv_range_14_0= RULE_INT ) )
+            // InternalVFormDsl.g:935:4: (lv_range_14_0= RULE_INT )
             {
-            // InternalVFormDsl.g:825:4: (lv_range_10_0= RULE_INT )
-            // InternalVFormDsl.g:826:5: lv_range_10_0= RULE_INT
+            // InternalVFormDsl.g:935:4: (lv_range_14_0= RULE_INT )
+            // InternalVFormDsl.g:936:5: lv_range_14_0= RULE_INT
             {
-            lv_range_10_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            lv_range_14_0=(Token)match(input,RULE_INT,FOLLOW_10); 
 
-            					newLeafNode(lv_range_10_0, grammarAccess.getNumberOptionAccess().getRangeINTTerminalRuleCall_10_0());
+            					newLeafNode(lv_range_14_0, grammarAccess.getNumberOptionAccess().getRangeINTTerminalRuleCall_14_0());
             				
 
             					if (current==null) {
@@ -1835,7 +1993,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"range",
-            						lv_range_10_0,
+            						lv_range_14_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -1844,6 +2002,10 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
+            otherlv_15=(Token)match(input,19,FOLLOW_2); 
+
+            			newLeafNode(otherlv_15, grammarAccess.getNumberOptionAccess().getRightCurlyBracketKeyword_15());
+            		
 
             }
 
@@ -1867,7 +2029,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFormInputSearch"
-    // InternalVFormDsl.g:846:1: entryRuleFormInputSearch returns [EObject current=null] : iv_ruleFormInputSearch= ruleFormInputSearch EOF ;
+    // InternalVFormDsl.g:960:1: entryRuleFormInputSearch returns [EObject current=null] : iv_ruleFormInputSearch= ruleFormInputSearch EOF ;
     public final EObject entryRuleFormInputSearch() throws RecognitionException {
         EObject current = null;
 
@@ -1875,8 +2037,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:846:56: (iv_ruleFormInputSearch= ruleFormInputSearch EOF )
-            // InternalVFormDsl.g:847:2: iv_ruleFormInputSearch= ruleFormInputSearch EOF
+            // InternalVFormDsl.g:960:56: (iv_ruleFormInputSearch= ruleFormInputSearch EOF )
+            // InternalVFormDsl.g:961:2: iv_ruleFormInputSearch= ruleFormInputSearch EOF
             {
              newCompositeNode(grammarAccess.getFormInputSearchRule()); 
             pushFollow(FOLLOW_1);
@@ -1903,54 +2065,61 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormInputSearch"
-    // InternalVFormDsl.g:853:1: ruleFormInputSearch returns [EObject current=null] : (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'SEARCH' otherlv_7= ',' otherlv_8= 'options:' otherlv_9= '[' ( (lv_data_10_0= ruleOptionItem ) ) (otherlv_11= ',' ( (lv_data_12_0= ruleOptionItem ) ) )* otherlv_13= ']' ) ;
+    // InternalVFormDsl.g:967:1: ruleFormInputSearch returns [EObject current=null] : (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"search\"' otherlv_8= ',' otherlv_9= '\"data\"' otherlv_10= ':' otherlv_11= '[' ( (lv_data_12_0= ruleOptionItem ) ) (otherlv_13= ',' ( (lv_data_14_0= ruleOptionItem ) ) )* otherlv_15= ']' otherlv_16= '}' ) ;
     public final EObject ruleFormInputSearch() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token lv_name_2_0=null;
-        Token otherlv_3=null;
+        Token otherlv_2=null;
+        Token lv_name_3_0=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
         Token otherlv_6=null;
         Token otherlv_7=null;
         Token otherlv_8=null;
         Token otherlv_9=null;
+        Token otherlv_10=null;
         Token otherlv_11=null;
         Token otherlv_13=null;
-        EObject lv_data_10_0 = null;
-
+        Token otherlv_15=null;
+        Token otherlv_16=null;
         EObject lv_data_12_0 = null;
+
+        EObject lv_data_14_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:859:2: ( (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'SEARCH' otherlv_7= ',' otherlv_8= 'options:' otherlv_9= '[' ( (lv_data_10_0= ruleOptionItem ) ) (otherlv_11= ',' ( (lv_data_12_0= ruleOptionItem ) ) )* otherlv_13= ']' ) )
-            // InternalVFormDsl.g:860:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'SEARCH' otherlv_7= ',' otherlv_8= 'options:' otherlv_9= '[' ( (lv_data_10_0= ruleOptionItem ) ) (otherlv_11= ',' ( (lv_data_12_0= ruleOptionItem ) ) )* otherlv_13= ']' )
+            // InternalVFormDsl.g:973:2: ( (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"search\"' otherlv_8= ',' otherlv_9= '\"data\"' otherlv_10= ':' otherlv_11= '[' ( (lv_data_12_0= ruleOptionItem ) ) (otherlv_13= ',' ( (lv_data_14_0= ruleOptionItem ) ) )* otherlv_15= ']' otherlv_16= '}' ) )
+            // InternalVFormDsl.g:974:2: (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"search\"' otherlv_8= ',' otherlv_9= '\"data\"' otherlv_10= ':' otherlv_11= '[' ( (lv_data_12_0= ruleOptionItem ) ) (otherlv_13= ',' ( (lv_data_14_0= ruleOptionItem ) ) )* otherlv_15= ']' otherlv_16= '}' )
             {
-            // InternalVFormDsl.g:860:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'SEARCH' otherlv_7= ',' otherlv_8= 'options:' otherlv_9= '[' ( (lv_data_10_0= ruleOptionItem ) ) (otherlv_11= ',' ( (lv_data_12_0= ruleOptionItem ) ) )* otherlv_13= ']' )
-            // InternalVFormDsl.g:861:3: otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type' otherlv_5= ':' otherlv_6= 'SEARCH' otherlv_7= ',' otherlv_8= 'options:' otherlv_9= '[' ( (lv_data_10_0= ruleOptionItem ) ) (otherlv_11= ',' ( (lv_data_12_0= ruleOptionItem ) ) )* otherlv_13= ']'
+            // InternalVFormDsl.g:974:2: (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"search\"' otherlv_8= ',' otherlv_9= '\"data\"' otherlv_10= ':' otherlv_11= '[' ( (lv_data_12_0= ruleOptionItem ) ) (otherlv_13= ',' ( (lv_data_14_0= ruleOptionItem ) ) )* otherlv_15= ']' otherlv_16= '}' )
+            // InternalVFormDsl.g:975:3: otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' otherlv_5= '\"inputType\"' otherlv_6= ':' otherlv_7= '\"search\"' otherlv_8= ',' otherlv_9= '\"data\"' otherlv_10= ':' otherlv_11= '[' ( (lv_data_12_0= ruleOptionItem ) ) (otherlv_13= ',' ( (lv_data_14_0= ruleOptionItem ) ) )* otherlv_15= ']' otherlv_16= '}'
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_8); 
+            otherlv_0=(Token)match(input,13,FOLLOW_11); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getFormInputSearchAccess().getNameKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getFormInputSearchAccess().getLeftCurlyBracketKeyword_0());
             		
-            otherlv_1=(Token)match(input,17,FOLLOW_9); 
+            otherlv_1=(Token)match(input,20,FOLLOW_12); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getFormInputSearchAccess().getColonKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getFormInputSearchAccess().getInputNameKeyword_1());
             		
-            // InternalVFormDsl.g:869:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalVFormDsl.g:870:4: (lv_name_2_0= RULE_STRING )
-            {
-            // InternalVFormDsl.g:870:4: (lv_name_2_0= RULE_STRING )
-            // InternalVFormDsl.g:871:5: lv_name_2_0= RULE_STRING
-            {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_4); 
+            otherlv_2=(Token)match(input,21,FOLLOW_13); 
 
-            					newLeafNode(lv_name_2_0, grammarAccess.getFormInputSearchAccess().getNameSTRINGTerminalRuleCall_2_0());
+            			newLeafNode(otherlv_2, grammarAccess.getFormInputSearchAccess().getColonKeyword_2());
+            		
+            // InternalVFormDsl.g:987:3: ( (lv_name_3_0= RULE_STRING ) )
+            // InternalVFormDsl.g:988:4: (lv_name_3_0= RULE_STRING )
+            {
+            // InternalVFormDsl.g:988:4: (lv_name_3_0= RULE_STRING )
+            // InternalVFormDsl.g:989:5: lv_name_3_0= RULE_STRING
+            {
+            lv_name_3_0=(Token)match(input,RULE_STRING,FOLLOW_5); 
+
+            					newLeafNode(lv_name_3_0, grammarAccess.getFormInputSearchAccess().getNameSTRINGTerminalRuleCall_3_0());
             				
 
             					if (current==null) {
@@ -1959,7 +2128,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_3_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -1968,45 +2137,49 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_10); 
+            otherlv_4=(Token)match(input,15,FOLLOW_14); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getFormInputSearchAccess().getCommaKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getFormInputSearchAccess().getCommaKeyword_4());
             		
-            otherlv_4=(Token)match(input,18,FOLLOW_8); 
+            otherlv_5=(Token)match(input,22,FOLLOW_12); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getFormInputSearchAccess().getTypeKeyword_4());
+            			newLeafNode(otherlv_5, grammarAccess.getFormInputSearchAccess().getInputTypeKeyword_5());
             		
-            otherlv_5=(Token)match(input,17,FOLLOW_28); 
+            otherlv_6=(Token)match(input,21,FOLLOW_28); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getFormInputSearchAccess().getColonKeyword_5());
+            			newLeafNode(otherlv_6, grammarAccess.getFormInputSearchAccess().getColonKeyword_6());
             		
-            otherlv_6=(Token)match(input,32,FOLLOW_4); 
+            otherlv_7=(Token)match(input,32,FOLLOW_5); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getFormInputSearchAccess().getSEARCHKeyword_6());
+            			newLeafNode(otherlv_7, grammarAccess.getFormInputSearchAccess().getSearchKeyword_7());
             		
-            otherlv_7=(Token)match(input,12,FOLLOW_17); 
+            otherlv_8=(Token)match(input,15,FOLLOW_24); 
 
-            			newLeafNode(otherlv_7, grammarAccess.getFormInputSearchAccess().getCommaKeyword_7());
+            			newLeafNode(otherlv_8, grammarAccess.getFormInputSearchAccess().getCommaKeyword_8());
             		
-            otherlv_8=(Token)match(input,23,FOLLOW_6); 
+            otherlv_9=(Token)match(input,29,FOLLOW_12); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getFormInputSearchAccess().getOptionsKeyword_8());
+            			newLeafNode(otherlv_9, grammarAccess.getFormInputSearchAccess().getDataKeyword_9());
             		
-            otherlv_9=(Token)match(input,14,FOLLOW_25); 
+            otherlv_10=(Token)match(input,21,FOLLOW_7); 
 
-            			newLeafNode(otherlv_9, grammarAccess.getFormInputSearchAccess().getLeftSquareBracketKeyword_9());
+            			newLeafNode(otherlv_10, grammarAccess.getFormInputSearchAccess().getColonKeyword_10());
             		
-            // InternalVFormDsl.g:915:3: ( (lv_data_10_0= ruleOptionItem ) )
-            // InternalVFormDsl.g:916:4: (lv_data_10_0= ruleOptionItem )
+            otherlv_11=(Token)match(input,17,FOLLOW_26); 
+
+            			newLeafNode(otherlv_11, grammarAccess.getFormInputSearchAccess().getLeftSquareBracketKeyword_11());
+            		
+            // InternalVFormDsl.g:1037:3: ( (lv_data_12_0= ruleOptionItem ) )
+            // InternalVFormDsl.g:1038:4: (lv_data_12_0= ruleOptionItem )
             {
-            // InternalVFormDsl.g:916:4: (lv_data_10_0= ruleOptionItem )
-            // InternalVFormDsl.g:917:5: lv_data_10_0= ruleOptionItem
+            // InternalVFormDsl.g:1038:4: (lv_data_12_0= ruleOptionItem )
+            // InternalVFormDsl.g:1039:5: lv_data_12_0= ruleOptionItem
             {
 
-            					newCompositeNode(grammarAccess.getFormInputSearchAccess().getDataOptionItemParserRuleCall_10_0());
+            					newCompositeNode(grammarAccess.getFormInputSearchAccess().getDataOptionItemParserRuleCall_12_0());
             				
-            pushFollow(FOLLOW_23);
-            lv_data_10_0=ruleOptionItem();
+            pushFollow(FOLLOW_9);
+            lv_data_12_0=ruleOptionItem();
 
             state._fsp--;
 
@@ -2017,7 +2190,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             					add(
             						current,
             						"data",
-            						lv_data_10_0,
+            						lv_data_12_0,
             						"cafev.vform.VFormDsl.OptionItem");
             					afterParserOrEnumRuleCall();
             				
@@ -2027,36 +2200,36 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalVFormDsl.g:934:3: (otherlv_11= ',' ( (lv_data_12_0= ruleOptionItem ) ) )*
+            // InternalVFormDsl.g:1056:3: (otherlv_13= ',' ( (lv_data_14_0= ruleOptionItem ) ) )*
             loop6:
             do {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( (LA6_0==12) ) {
+                if ( (LA6_0==15) ) {
                     alt6=1;
                 }
 
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalVFormDsl.g:935:4: otherlv_11= ',' ( (lv_data_12_0= ruleOptionItem ) )
+            	    // InternalVFormDsl.g:1057:4: otherlv_13= ',' ( (lv_data_14_0= ruleOptionItem ) )
             	    {
-            	    otherlv_11=(Token)match(input,12,FOLLOW_25); 
+            	    otherlv_13=(Token)match(input,15,FOLLOW_26); 
 
-            	    				newLeafNode(otherlv_11, grammarAccess.getFormInputSearchAccess().getCommaKeyword_11_0());
+            	    				newLeafNode(otherlv_13, grammarAccess.getFormInputSearchAccess().getCommaKeyword_13_0());
             	    			
-            	    // InternalVFormDsl.g:939:4: ( (lv_data_12_0= ruleOptionItem ) )
-            	    // InternalVFormDsl.g:940:5: (lv_data_12_0= ruleOptionItem )
+            	    // InternalVFormDsl.g:1061:4: ( (lv_data_14_0= ruleOptionItem ) )
+            	    // InternalVFormDsl.g:1062:5: (lv_data_14_0= ruleOptionItem )
             	    {
-            	    // InternalVFormDsl.g:940:5: (lv_data_12_0= ruleOptionItem )
-            	    // InternalVFormDsl.g:941:6: lv_data_12_0= ruleOptionItem
+            	    // InternalVFormDsl.g:1062:5: (lv_data_14_0= ruleOptionItem )
+            	    // InternalVFormDsl.g:1063:6: lv_data_14_0= ruleOptionItem
             	    {
 
-            	    						newCompositeNode(grammarAccess.getFormInputSearchAccess().getDataOptionItemParserRuleCall_11_1_0());
+            	    						newCompositeNode(grammarAccess.getFormInputSearchAccess().getDataOptionItemParserRuleCall_13_1_0());
             	    					
-            	    pushFollow(FOLLOW_23);
-            	    lv_data_12_0=ruleOptionItem();
+            	    pushFollow(FOLLOW_9);
+            	    lv_data_14_0=ruleOptionItem();
 
             	    state._fsp--;
 
@@ -2067,7 +2240,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             	    						add(
             	    							current,
             	    							"data",
-            	    							lv_data_12_0,
+            	    							lv_data_14_0,
             	    							"cafev.vform.VFormDsl.OptionItem");
             	    						afterParserOrEnumRuleCall();
             	    					
@@ -2086,9 +2259,13 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_13=(Token)match(input,15,FOLLOW_2); 
+            otherlv_15=(Token)match(input,18,FOLLOW_10); 
 
-            			newLeafNode(otherlv_13, grammarAccess.getFormInputSearchAccess().getRightSquareBracketKeyword_12());
+            			newLeafNode(otherlv_15, grammarAccess.getFormInputSearchAccess().getRightSquareBracketKeyword_14());
+            		
+            otherlv_16=(Token)match(input,19,FOLLOW_2); 
+
+            			newLeafNode(otherlv_16, grammarAccess.getFormInputSearchAccess().getRightCurlyBracketKeyword_15());
             		
 
             }
@@ -2113,7 +2290,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOptionItem"
-    // InternalVFormDsl.g:967:1: entryRuleOptionItem returns [EObject current=null] : iv_ruleOptionItem= ruleOptionItem EOF ;
+    // InternalVFormDsl.g:1093:1: entryRuleOptionItem returns [EObject current=null] : iv_ruleOptionItem= ruleOptionItem EOF ;
     public final EObject entryRuleOptionItem() throws RecognitionException {
         EObject current = null;
 
@@ -2121,8 +2298,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:967:51: (iv_ruleOptionItem= ruleOptionItem EOF )
-            // InternalVFormDsl.g:968:2: iv_ruleOptionItem= ruleOptionItem EOF
+            // InternalVFormDsl.g:1093:51: (iv_ruleOptionItem= ruleOptionItem EOF )
+            // InternalVFormDsl.g:1094:2: iv_ruleOptionItem= ruleOptionItem EOF
             {
              newCompositeNode(grammarAccess.getOptionItemRule()); 
             pushFollow(FOLLOW_1);
@@ -2149,7 +2326,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOptionItem"
-    // InternalVFormDsl.g:974:1: ruleOptionItem returns [EObject current=null] : (this_StringOptionItem_0= ruleStringOptionItem | this_IntOptionItem_1= ruleIntOptionItem | this_DataOptionItem_2= ruleDataOptionItem ) ;
+    // InternalVFormDsl.g:1100:1: ruleOptionItem returns [EObject current=null] : (this_StringOptionItem_0= ruleStringOptionItem | this_IntOptionItem_1= ruleIntOptionItem | this_DataOptionItem_2= ruleDataOptionItem ) ;
     public final EObject ruleOptionItem() throws RecognitionException {
         EObject current = null;
 
@@ -2164,10 +2341,10 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:980:2: ( (this_StringOptionItem_0= ruleStringOptionItem | this_IntOptionItem_1= ruleIntOptionItem | this_DataOptionItem_2= ruleDataOptionItem ) )
-            // InternalVFormDsl.g:981:2: (this_StringOptionItem_0= ruleStringOptionItem | this_IntOptionItem_1= ruleIntOptionItem | this_DataOptionItem_2= ruleDataOptionItem )
+            // InternalVFormDsl.g:1106:2: ( (this_StringOptionItem_0= ruleStringOptionItem | this_IntOptionItem_1= ruleIntOptionItem | this_DataOptionItem_2= ruleDataOptionItem ) )
+            // InternalVFormDsl.g:1107:2: (this_StringOptionItem_0= ruleStringOptionItem | this_IntOptionItem_1= ruleIntOptionItem | this_DataOptionItem_2= ruleDataOptionItem )
             {
-            // InternalVFormDsl.g:981:2: (this_StringOptionItem_0= ruleStringOptionItem | this_IntOptionItem_1= ruleIntOptionItem | this_DataOptionItem_2= ruleDataOptionItem )
+            // InternalVFormDsl.g:1107:2: (this_StringOptionItem_0= ruleStringOptionItem | this_IntOptionItem_1= ruleIntOptionItem | this_DataOptionItem_2= ruleDataOptionItem )
             int alt7=3;
             switch ( input.LA(1) ) {
             case RULE_STRING:
@@ -2180,7 +2357,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                 alt7=2;
                 }
                 break;
-            case 24:
+            case 13:
                 {
                 alt7=3;
                 }
@@ -2194,7 +2371,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             switch (alt7) {
                 case 1 :
-                    // InternalVFormDsl.g:982:3: this_StringOptionItem_0= ruleStringOptionItem
+                    // InternalVFormDsl.g:1108:3: this_StringOptionItem_0= ruleStringOptionItem
                     {
 
                     			newCompositeNode(grammarAccess.getOptionItemAccess().getStringOptionItemParserRuleCall_0());
@@ -2212,7 +2389,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalVFormDsl.g:991:3: this_IntOptionItem_1= ruleIntOptionItem
+                    // InternalVFormDsl.g:1117:3: this_IntOptionItem_1= ruleIntOptionItem
                     {
 
                     			newCompositeNode(grammarAccess.getOptionItemAccess().getIntOptionItemParserRuleCall_1());
@@ -2230,7 +2407,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalVFormDsl.g:1000:3: this_DataOptionItem_2= ruleDataOptionItem
+                    // InternalVFormDsl.g:1126:3: this_DataOptionItem_2= ruleDataOptionItem
                     {
 
                     			newCompositeNode(grammarAccess.getOptionItemAccess().getDataOptionItemParserRuleCall_2());
@@ -2270,7 +2447,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringOptionItem"
-    // InternalVFormDsl.g:1012:1: entryRuleStringOptionItem returns [EObject current=null] : iv_ruleStringOptionItem= ruleStringOptionItem EOF ;
+    // InternalVFormDsl.g:1138:1: entryRuleStringOptionItem returns [EObject current=null] : iv_ruleStringOptionItem= ruleStringOptionItem EOF ;
     public final EObject entryRuleStringOptionItem() throws RecognitionException {
         EObject current = null;
 
@@ -2278,8 +2455,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:1012:57: (iv_ruleStringOptionItem= ruleStringOptionItem EOF )
-            // InternalVFormDsl.g:1013:2: iv_ruleStringOptionItem= ruleStringOptionItem EOF
+            // InternalVFormDsl.g:1138:57: (iv_ruleStringOptionItem= ruleStringOptionItem EOF )
+            // InternalVFormDsl.g:1139:2: iv_ruleStringOptionItem= ruleStringOptionItem EOF
             {
              newCompositeNode(grammarAccess.getStringOptionItemRule()); 
             pushFollow(FOLLOW_1);
@@ -2306,7 +2483,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringOptionItem"
-    // InternalVFormDsl.g:1019:1: ruleStringOptionItem returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
+    // InternalVFormDsl.g:1145:1: ruleStringOptionItem returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
     public final EObject ruleStringOptionItem() throws RecognitionException {
         EObject current = null;
 
@@ -2316,14 +2493,14 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:1025:2: ( ( (lv_value_0_0= RULE_STRING ) ) )
-            // InternalVFormDsl.g:1026:2: ( (lv_value_0_0= RULE_STRING ) )
+            // InternalVFormDsl.g:1151:2: ( ( (lv_value_0_0= RULE_STRING ) ) )
+            // InternalVFormDsl.g:1152:2: ( (lv_value_0_0= RULE_STRING ) )
             {
-            // InternalVFormDsl.g:1026:2: ( (lv_value_0_0= RULE_STRING ) )
-            // InternalVFormDsl.g:1027:3: (lv_value_0_0= RULE_STRING )
+            // InternalVFormDsl.g:1152:2: ( (lv_value_0_0= RULE_STRING ) )
+            // InternalVFormDsl.g:1153:3: (lv_value_0_0= RULE_STRING )
             {
-            // InternalVFormDsl.g:1027:3: (lv_value_0_0= RULE_STRING )
-            // InternalVFormDsl.g:1028:4: lv_value_0_0= RULE_STRING
+            // InternalVFormDsl.g:1153:3: (lv_value_0_0= RULE_STRING )
+            // InternalVFormDsl.g:1154:4: lv_value_0_0= RULE_STRING
             {
             lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -2365,7 +2542,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntOptionItem"
-    // InternalVFormDsl.g:1047:1: entryRuleIntOptionItem returns [EObject current=null] : iv_ruleIntOptionItem= ruleIntOptionItem EOF ;
+    // InternalVFormDsl.g:1173:1: entryRuleIntOptionItem returns [EObject current=null] : iv_ruleIntOptionItem= ruleIntOptionItem EOF ;
     public final EObject entryRuleIntOptionItem() throws RecognitionException {
         EObject current = null;
 
@@ -2373,8 +2550,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:1047:54: (iv_ruleIntOptionItem= ruleIntOptionItem EOF )
-            // InternalVFormDsl.g:1048:2: iv_ruleIntOptionItem= ruleIntOptionItem EOF
+            // InternalVFormDsl.g:1173:54: (iv_ruleIntOptionItem= ruleIntOptionItem EOF )
+            // InternalVFormDsl.g:1174:2: iv_ruleIntOptionItem= ruleIntOptionItem EOF
             {
              newCompositeNode(grammarAccess.getIntOptionItemRule()); 
             pushFollow(FOLLOW_1);
@@ -2401,7 +2578,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntOptionItem"
-    // InternalVFormDsl.g:1054:1: ruleIntOptionItem returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
+    // InternalVFormDsl.g:1180:1: ruleIntOptionItem returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
     public final EObject ruleIntOptionItem() throws RecognitionException {
         EObject current = null;
 
@@ -2411,14 +2588,14 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:1060:2: ( ( (lv_value_0_0= RULE_INT ) ) )
-            // InternalVFormDsl.g:1061:2: ( (lv_value_0_0= RULE_INT ) )
+            // InternalVFormDsl.g:1186:2: ( ( (lv_value_0_0= RULE_INT ) ) )
+            // InternalVFormDsl.g:1187:2: ( (lv_value_0_0= RULE_INT ) )
             {
-            // InternalVFormDsl.g:1061:2: ( (lv_value_0_0= RULE_INT ) )
-            // InternalVFormDsl.g:1062:3: (lv_value_0_0= RULE_INT )
+            // InternalVFormDsl.g:1187:2: ( (lv_value_0_0= RULE_INT ) )
+            // InternalVFormDsl.g:1188:3: (lv_value_0_0= RULE_INT )
             {
-            // InternalVFormDsl.g:1062:3: (lv_value_0_0= RULE_INT )
-            // InternalVFormDsl.g:1063:4: lv_value_0_0= RULE_INT
+            // InternalVFormDsl.g:1188:3: (lv_value_0_0= RULE_INT )
+            // InternalVFormDsl.g:1189:4: lv_value_0_0= RULE_INT
             {
             lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -2460,7 +2637,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDataOptionItem"
-    // InternalVFormDsl.g:1082:1: entryRuleDataOptionItem returns [EObject current=null] : iv_ruleDataOptionItem= ruleDataOptionItem EOF ;
+    // InternalVFormDsl.g:1208:1: entryRuleDataOptionItem returns [EObject current=null] : iv_ruleDataOptionItem= ruleDataOptionItem EOF ;
     public final EObject entryRuleDataOptionItem() throws RecognitionException {
         EObject current = null;
 
@@ -2468,8 +2645,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:1082:55: (iv_ruleDataOptionItem= ruleDataOptionItem EOF )
-            // InternalVFormDsl.g:1083:2: iv_ruleDataOptionItem= ruleDataOptionItem EOF
+            // InternalVFormDsl.g:1208:55: (iv_ruleDataOptionItem= ruleDataOptionItem EOF )
+            // InternalVFormDsl.g:1209:2: iv_ruleDataOptionItem= ruleDataOptionItem EOF
             {
              newCompositeNode(grammarAccess.getDataOptionItemRule()); 
             pushFollow(FOLLOW_1);
@@ -2496,7 +2673,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataOptionItem"
-    // InternalVFormDsl.g:1089:1: ruleDataOptionItem returns [EObject current=null] : ( (lv_value_0_0= ruleData ) ) ;
+    // InternalVFormDsl.g:1215:1: ruleDataOptionItem returns [EObject current=null] : ( (lv_value_0_0= ruleData ) ) ;
     public final EObject ruleDataOptionItem() throws RecognitionException {
         EObject current = null;
 
@@ -2507,14 +2684,14 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:1095:2: ( ( (lv_value_0_0= ruleData ) ) )
-            // InternalVFormDsl.g:1096:2: ( (lv_value_0_0= ruleData ) )
+            // InternalVFormDsl.g:1221:2: ( ( (lv_value_0_0= ruleData ) ) )
+            // InternalVFormDsl.g:1222:2: ( (lv_value_0_0= ruleData ) )
             {
-            // InternalVFormDsl.g:1096:2: ( (lv_value_0_0= ruleData ) )
-            // InternalVFormDsl.g:1097:3: (lv_value_0_0= ruleData )
+            // InternalVFormDsl.g:1222:2: ( (lv_value_0_0= ruleData ) )
+            // InternalVFormDsl.g:1223:3: (lv_value_0_0= ruleData )
             {
-            // InternalVFormDsl.g:1097:3: (lv_value_0_0= ruleData )
-            // InternalVFormDsl.g:1098:4: lv_value_0_0= ruleData
+            // InternalVFormDsl.g:1223:3: (lv_value_0_0= ruleData )
+            // InternalVFormDsl.g:1224:4: lv_value_0_0= ruleData
             {
 
             				newCompositeNode(grammarAccess.getDataOptionItemAccess().getValueDataParserRuleCall_0());
@@ -2561,7 +2738,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFormInputGroup"
-    // InternalVFormDsl.g:1118:1: entryRuleFormInputGroup returns [EObject current=null] : iv_ruleFormInputGroup= ruleFormInputGroup EOF ;
+    // InternalVFormDsl.g:1244:1: entryRuleFormInputGroup returns [EObject current=null] : iv_ruleFormInputGroup= ruleFormInputGroup EOF ;
     public final EObject entryRuleFormInputGroup() throws RecognitionException {
         EObject current = null;
 
@@ -2569,8 +2746,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:1118:55: (iv_ruleFormInputGroup= ruleFormInputGroup EOF )
-            // InternalVFormDsl.g:1119:2: iv_ruleFormInputGroup= ruleFormInputGroup EOF
+            // InternalVFormDsl.g:1244:55: (iv_ruleFormInputGroup= ruleFormInputGroup EOF )
+            // InternalVFormDsl.g:1245:2: iv_ruleFormInputGroup= ruleFormInputGroup EOF
             {
              newCompositeNode(grammarAccess.getFormInputGroupRule()); 
             pushFollow(FOLLOW_1);
@@ -2597,7 +2774,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormInputGroup"
-    // InternalVFormDsl.g:1125:1: ruleFormInputGroup returns [EObject current=null] : (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type:' otherlv_5= 'GROUP' otherlv_6= ',' otherlv_7= 'groupInputs:' ( (otherlv_8= RULE_ID ) ) ) ;
+    // InternalVFormDsl.g:1251:1: ruleFormInputGroup returns [EObject current=null] : (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type:' otherlv_5= 'GROUP' otherlv_6= ',' otherlv_7= 'groupInputs:' ( (otherlv_8= RULE_ID ) ) ) ;
     public final EObject ruleFormInputGroup() throws RecognitionException {
         EObject current = null;
 
@@ -2615,27 +2792,27 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:1131:2: ( (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type:' otherlv_5= 'GROUP' otherlv_6= ',' otherlv_7= 'groupInputs:' ( (otherlv_8= RULE_ID ) ) ) )
-            // InternalVFormDsl.g:1132:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type:' otherlv_5= 'GROUP' otherlv_6= ',' otherlv_7= 'groupInputs:' ( (otherlv_8= RULE_ID ) ) )
+            // InternalVFormDsl.g:1257:2: ( (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type:' otherlv_5= 'GROUP' otherlv_6= ',' otherlv_7= 'groupInputs:' ( (otherlv_8= RULE_ID ) ) ) )
+            // InternalVFormDsl.g:1258:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type:' otherlv_5= 'GROUP' otherlv_6= ',' otherlv_7= 'groupInputs:' ( (otherlv_8= RULE_ID ) ) )
             {
-            // InternalVFormDsl.g:1132:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type:' otherlv_5= 'GROUP' otherlv_6= ',' otherlv_7= 'groupInputs:' ( (otherlv_8= RULE_ID ) ) )
-            // InternalVFormDsl.g:1133:3: otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type:' otherlv_5= 'GROUP' otherlv_6= ',' otherlv_7= 'groupInputs:' ( (otherlv_8= RULE_ID ) )
+            // InternalVFormDsl.g:1258:2: (otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type:' otherlv_5= 'GROUP' otherlv_6= ',' otherlv_7= 'groupInputs:' ( (otherlv_8= RULE_ID ) ) )
+            // InternalVFormDsl.g:1259:3: otherlv_0= 'name' otherlv_1= ':' ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'type:' otherlv_5= 'GROUP' otherlv_6= ',' otherlv_7= 'groupInputs:' ( (otherlv_8= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_8); 
+            otherlv_0=(Token)match(input,33,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getFormInputGroupAccess().getNameKeyword_0());
             		
-            otherlv_1=(Token)match(input,17,FOLLOW_9); 
+            otherlv_1=(Token)match(input,21,FOLLOW_13); 
 
             			newLeafNode(otherlv_1, grammarAccess.getFormInputGroupAccess().getColonKeyword_1());
             		
-            // InternalVFormDsl.g:1141:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalVFormDsl.g:1142:4: (lv_name_2_0= RULE_STRING )
+            // InternalVFormDsl.g:1267:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalVFormDsl.g:1268:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalVFormDsl.g:1142:4: (lv_name_2_0= RULE_STRING )
-            // InternalVFormDsl.g:1143:5: lv_name_2_0= RULE_STRING
+            // InternalVFormDsl.g:1268:4: (lv_name_2_0= RULE_STRING )
+            // InternalVFormDsl.g:1269:5: lv_name_2_0= RULE_STRING
             {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_4); 
+            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_5); 
 
             					newLeafNode(lv_name_2_0, grammarAccess.getFormInputGroupAccess().getNameSTRINGTerminalRuleCall_2_0());
             				
@@ -2655,31 +2832,31 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_29); 
+            otherlv_3=(Token)match(input,15,FOLLOW_29); 
 
             			newLeafNode(otherlv_3, grammarAccess.getFormInputGroupAccess().getCommaKeyword_3());
             		
-            otherlv_4=(Token)match(input,33,FOLLOW_30); 
+            otherlv_4=(Token)match(input,34,FOLLOW_30); 
 
             			newLeafNode(otherlv_4, grammarAccess.getFormInputGroupAccess().getTypeKeyword_4());
             		
-            otherlv_5=(Token)match(input,34,FOLLOW_4); 
+            otherlv_5=(Token)match(input,35,FOLLOW_5); 
 
             			newLeafNode(otherlv_5, grammarAccess.getFormInputGroupAccess().getGROUPKeyword_5());
             		
-            otherlv_6=(Token)match(input,12,FOLLOW_31); 
+            otherlv_6=(Token)match(input,15,FOLLOW_31); 
 
             			newLeafNode(otherlv_6, grammarAccess.getFormInputGroupAccess().getCommaKeyword_6());
             		
-            otherlv_7=(Token)match(input,35,FOLLOW_32); 
+            otherlv_7=(Token)match(input,36,FOLLOW_32); 
 
             			newLeafNode(otherlv_7, grammarAccess.getFormInputGroupAccess().getGroupInputsKeyword_7());
             		
-            // InternalVFormDsl.g:1179:3: ( (otherlv_8= RULE_ID ) )
-            // InternalVFormDsl.g:1180:4: (otherlv_8= RULE_ID )
+            // InternalVFormDsl.g:1305:3: ( (otherlv_8= RULE_ID ) )
+            // InternalVFormDsl.g:1306:4: (otherlv_8= RULE_ID )
             {
-            // InternalVFormDsl.g:1180:4: (otherlv_8= RULE_ID )
-            // InternalVFormDsl.g:1181:5: otherlv_8= RULE_ID
+            // InternalVFormDsl.g:1306:4: (otherlv_8= RULE_ID )
+            // InternalVFormDsl.g:1307:5: otherlv_8= RULE_ID
             {
 
             					if (current==null) {
@@ -2719,7 +2896,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleData"
-    // InternalVFormDsl.g:1196:1: entryRuleData returns [EObject current=null] : iv_ruleData= ruleData EOF ;
+    // InternalVFormDsl.g:1322:1: entryRuleData returns [EObject current=null] : iv_ruleData= ruleData EOF ;
     public final EObject entryRuleData() throws RecognitionException {
         EObject current = null;
 
@@ -2727,8 +2904,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:1196:45: (iv_ruleData= ruleData EOF )
-            // InternalVFormDsl.g:1197:2: iv_ruleData= ruleData EOF
+            // InternalVFormDsl.g:1322:45: (iv_ruleData= ruleData EOF )
+            // InternalVFormDsl.g:1323:2: iv_ruleData= ruleData EOF
             {
              newCompositeNode(grammarAccess.getDataRule()); 
             pushFollow(FOLLOW_1);
@@ -2755,7 +2932,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleData"
-    // InternalVFormDsl.g:1203:1: ruleData returns [EObject current=null] : (this_StringData_0= ruleStringData | this_IntData_1= ruleIntData ) ;
+    // InternalVFormDsl.g:1329:1: ruleData returns [EObject current=null] : (this_StringData_0= ruleStringData | this_IntData_1= ruleIntData ) ;
     public final EObject ruleData() throws RecognitionException {
         EObject current = null;
 
@@ -2768,33 +2945,33 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:1209:2: ( (this_StringData_0= ruleStringData | this_IntData_1= ruleIntData ) )
-            // InternalVFormDsl.g:1210:2: (this_StringData_0= ruleStringData | this_IntData_1= ruleIntData )
+            // InternalVFormDsl.g:1335:2: ( (this_StringData_0= ruleStringData | this_IntData_1= ruleIntData ) )
+            // InternalVFormDsl.g:1336:2: (this_StringData_0= ruleStringData | this_IntData_1= ruleIntData )
             {
-            // InternalVFormDsl.g:1210:2: (this_StringData_0= ruleStringData | this_IntData_1= ruleIntData )
+            // InternalVFormDsl.g:1336:2: (this_StringData_0= ruleStringData | this_IntData_1= ruleIntData )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==24) ) {
+            if ( (LA8_0==13) ) {
                 int LA8_1 = input.LA(2);
 
-                if ( (LA8_1==36) ) {
+                if ( (LA8_1==37) ) {
                     int LA8_2 = input.LA(3);
 
                     if ( (LA8_2==RULE_STRING) ) {
                         int LA8_3 = input.LA(4);
 
-                        if ( (LA8_3==12) ) {
+                        if ( (LA8_3==15) ) {
                             int LA8_4 = input.LA(5);
 
-                            if ( (LA8_4==37) ) {
+                            if ( (LA8_4==38) ) {
                                 int LA8_5 = input.LA(6);
 
-                                if ( (LA8_5==RULE_STRING) ) {
-                                    alt8=1;
-                                }
-                                else if ( (LA8_5==RULE_INT) ) {
+                                if ( (LA8_5==RULE_INT) ) {
                                     alt8=2;
+                                }
+                                else if ( (LA8_5==RULE_STRING) ) {
+                                    alt8=1;
                                 }
                                 else {
                                     NoViableAltException nvae =
@@ -2839,7 +3016,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalVFormDsl.g:1211:3: this_StringData_0= ruleStringData
+                    // InternalVFormDsl.g:1337:3: this_StringData_0= ruleStringData
                     {
 
                     			newCompositeNode(grammarAccess.getDataAccess().getStringDataParserRuleCall_0());
@@ -2857,7 +3034,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalVFormDsl.g:1220:3: this_IntData_1= ruleIntData
+                    // InternalVFormDsl.g:1346:3: this_IntData_1= ruleIntData
                     {
 
                     			newCompositeNode(grammarAccess.getDataAccess().getIntDataParserRuleCall_1());
@@ -2897,7 +3074,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringData"
-    // InternalVFormDsl.g:1232:1: entryRuleStringData returns [EObject current=null] : iv_ruleStringData= ruleStringData EOF ;
+    // InternalVFormDsl.g:1358:1: entryRuleStringData returns [EObject current=null] : iv_ruleStringData= ruleStringData EOF ;
     public final EObject entryRuleStringData() throws RecognitionException {
         EObject current = null;
 
@@ -2905,8 +3082,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:1232:51: (iv_ruleStringData= ruleStringData EOF )
-            // InternalVFormDsl.g:1233:2: iv_ruleStringData= ruleStringData EOF
+            // InternalVFormDsl.g:1358:51: (iv_ruleStringData= ruleStringData EOF )
+            // InternalVFormDsl.g:1359:2: iv_ruleStringData= ruleStringData EOF
             {
              newCompositeNode(grammarAccess.getStringDataRule()); 
             pushFollow(FOLLOW_1);
@@ -2933,7 +3110,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringData"
-    // InternalVFormDsl.g:1239:1: ruleStringData returns [EObject current=null] : (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '}' ) ;
+    // InternalVFormDsl.g:1365:1: ruleStringData returns [EObject current=null] : (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '}' ) ;
     public final EObject ruleStringData() throws RecognitionException {
         EObject current = null;
 
@@ -2949,27 +3126,27 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:1245:2: ( (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '}' ) )
-            // InternalVFormDsl.g:1246:2: (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '}' )
+            // InternalVFormDsl.g:1371:2: ( (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '}' ) )
+            // InternalVFormDsl.g:1372:2: (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '}' )
             {
-            // InternalVFormDsl.g:1246:2: (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '}' )
-            // InternalVFormDsl.g:1247:3: otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '}'
+            // InternalVFormDsl.g:1372:2: (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '}' )
+            // InternalVFormDsl.g:1373:3: otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,24,FOLLOW_33); 
+            otherlv_0=(Token)match(input,13,FOLLOW_33); 
 
             			newLeafNode(otherlv_0, grammarAccess.getStringDataAccess().getLeftCurlyBracketKeyword_0());
             		
-            otherlv_1=(Token)match(input,36,FOLLOW_9); 
+            otherlv_1=(Token)match(input,37,FOLLOW_13); 
 
             			newLeafNode(otherlv_1, grammarAccess.getStringDataAccess().getLabelKeyword_1());
             		
-            // InternalVFormDsl.g:1255:3: ( (lv_label_2_0= RULE_STRING ) )
-            // InternalVFormDsl.g:1256:4: (lv_label_2_0= RULE_STRING )
+            // InternalVFormDsl.g:1381:3: ( (lv_label_2_0= RULE_STRING ) )
+            // InternalVFormDsl.g:1382:4: (lv_label_2_0= RULE_STRING )
             {
-            // InternalVFormDsl.g:1256:4: (lv_label_2_0= RULE_STRING )
-            // InternalVFormDsl.g:1257:5: lv_label_2_0= RULE_STRING
+            // InternalVFormDsl.g:1382:4: (lv_label_2_0= RULE_STRING )
+            // InternalVFormDsl.g:1383:5: lv_label_2_0= RULE_STRING
             {
-            lv_label_2_0=(Token)match(input,RULE_STRING,FOLLOW_4); 
+            lv_label_2_0=(Token)match(input,RULE_STRING,FOLLOW_5); 
 
             					newLeafNode(lv_label_2_0, grammarAccess.getStringDataAccess().getLabelSTRINGTerminalRuleCall_2_0());
             				
@@ -2989,21 +3166,21 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_34); 
+            otherlv_3=(Token)match(input,15,FOLLOW_34); 
 
             			newLeafNode(otherlv_3, grammarAccess.getStringDataAccess().getCommaKeyword_3());
             		
-            otherlv_4=(Token)match(input,37,FOLLOW_9); 
+            otherlv_4=(Token)match(input,38,FOLLOW_13); 
 
             			newLeafNode(otherlv_4, grammarAccess.getStringDataAccess().getValueKeyword_4());
             		
-            // InternalVFormDsl.g:1281:3: ( (lv_value_5_0= RULE_STRING ) )
-            // InternalVFormDsl.g:1282:4: (lv_value_5_0= RULE_STRING )
+            // InternalVFormDsl.g:1407:3: ( (lv_value_5_0= RULE_STRING ) )
+            // InternalVFormDsl.g:1408:4: (lv_value_5_0= RULE_STRING )
             {
-            // InternalVFormDsl.g:1282:4: (lv_value_5_0= RULE_STRING )
-            // InternalVFormDsl.g:1283:5: lv_value_5_0= RULE_STRING
+            // InternalVFormDsl.g:1408:4: (lv_value_5_0= RULE_STRING )
+            // InternalVFormDsl.g:1409:5: lv_value_5_0= RULE_STRING
             {
-            lv_value_5_0=(Token)match(input,RULE_STRING,FOLLOW_20); 
+            lv_value_5_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
             					newLeafNode(lv_value_5_0, grammarAccess.getStringDataAccess().getValueSTRINGTerminalRuleCall_5_0());
             				
@@ -3023,7 +3200,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,25,FOLLOW_2); 
+            otherlv_6=(Token)match(input,19,FOLLOW_2); 
 
             			newLeafNode(otherlv_6, grammarAccess.getStringDataAccess().getRightCurlyBracketKeyword_6());
             		
@@ -3050,7 +3227,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntData"
-    // InternalVFormDsl.g:1307:1: entryRuleIntData returns [EObject current=null] : iv_ruleIntData= ruleIntData EOF ;
+    // InternalVFormDsl.g:1433:1: entryRuleIntData returns [EObject current=null] : iv_ruleIntData= ruleIntData EOF ;
     public final EObject entryRuleIntData() throws RecognitionException {
         EObject current = null;
 
@@ -3058,8 +3235,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVFormDsl.g:1307:48: (iv_ruleIntData= ruleIntData EOF )
-            // InternalVFormDsl.g:1308:2: iv_ruleIntData= ruleIntData EOF
+            // InternalVFormDsl.g:1433:48: (iv_ruleIntData= ruleIntData EOF )
+            // InternalVFormDsl.g:1434:2: iv_ruleIntData= ruleIntData EOF
             {
              newCompositeNode(grammarAccess.getIntDataRule()); 
             pushFollow(FOLLOW_1);
@@ -3086,7 +3263,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntData"
-    // InternalVFormDsl.g:1314:1: ruleIntData returns [EObject current=null] : (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_INT ) ) otherlv_6= '}' ) ;
+    // InternalVFormDsl.g:1440:1: ruleIntData returns [EObject current=null] : (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_INT ) ) otherlv_6= '}' ) ;
     public final EObject ruleIntData() throws RecognitionException {
         EObject current = null;
 
@@ -3102,27 +3279,27 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:1320:2: ( (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_INT ) ) otherlv_6= '}' ) )
-            // InternalVFormDsl.g:1321:2: (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_INT ) ) otherlv_6= '}' )
+            // InternalVFormDsl.g:1446:2: ( (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_INT ) ) otherlv_6= '}' ) )
+            // InternalVFormDsl.g:1447:2: (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_INT ) ) otherlv_6= '}' )
             {
-            // InternalVFormDsl.g:1321:2: (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_INT ) ) otherlv_6= '}' )
-            // InternalVFormDsl.g:1322:3: otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_INT ) ) otherlv_6= '}'
+            // InternalVFormDsl.g:1447:2: (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_INT ) ) otherlv_6= '}' )
+            // InternalVFormDsl.g:1448:3: otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_INT ) ) otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,24,FOLLOW_33); 
+            otherlv_0=(Token)match(input,13,FOLLOW_33); 
 
             			newLeafNode(otherlv_0, grammarAccess.getIntDataAccess().getLeftCurlyBracketKeyword_0());
             		
-            otherlv_1=(Token)match(input,36,FOLLOW_9); 
+            otherlv_1=(Token)match(input,37,FOLLOW_13); 
 
             			newLeafNode(otherlv_1, grammarAccess.getIntDataAccess().getLabelKeyword_1());
             		
-            // InternalVFormDsl.g:1330:3: ( (lv_label_2_0= RULE_STRING ) )
-            // InternalVFormDsl.g:1331:4: (lv_label_2_0= RULE_STRING )
+            // InternalVFormDsl.g:1456:3: ( (lv_label_2_0= RULE_STRING ) )
+            // InternalVFormDsl.g:1457:4: (lv_label_2_0= RULE_STRING )
             {
-            // InternalVFormDsl.g:1331:4: (lv_label_2_0= RULE_STRING )
-            // InternalVFormDsl.g:1332:5: lv_label_2_0= RULE_STRING
+            // InternalVFormDsl.g:1457:4: (lv_label_2_0= RULE_STRING )
+            // InternalVFormDsl.g:1458:5: lv_label_2_0= RULE_STRING
             {
-            lv_label_2_0=(Token)match(input,RULE_STRING,FOLLOW_4); 
+            lv_label_2_0=(Token)match(input,RULE_STRING,FOLLOW_5); 
 
             					newLeafNode(lv_label_2_0, grammarAccess.getIntDataAccess().getLabelSTRINGTerminalRuleCall_2_0());
             				
@@ -3142,21 +3319,21 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_34); 
+            otherlv_3=(Token)match(input,15,FOLLOW_34); 
 
             			newLeafNode(otherlv_3, grammarAccess.getIntDataAccess().getCommaKeyword_3());
             		
-            otherlv_4=(Token)match(input,37,FOLLOW_14); 
+            otherlv_4=(Token)match(input,38,FOLLOW_18); 
 
             			newLeafNode(otherlv_4, grammarAccess.getIntDataAccess().getValueKeyword_4());
             		
-            // InternalVFormDsl.g:1356:3: ( (lv_value_5_0= RULE_INT ) )
-            // InternalVFormDsl.g:1357:4: (lv_value_5_0= RULE_INT )
+            // InternalVFormDsl.g:1482:3: ( (lv_value_5_0= RULE_INT ) )
+            // InternalVFormDsl.g:1483:4: (lv_value_5_0= RULE_INT )
             {
-            // InternalVFormDsl.g:1357:4: (lv_value_5_0= RULE_INT )
-            // InternalVFormDsl.g:1358:5: lv_value_5_0= RULE_INT
+            // InternalVFormDsl.g:1483:4: (lv_value_5_0= RULE_INT )
+            // InternalVFormDsl.g:1484:5: lv_value_5_0= RULE_INT
             {
-            lv_value_5_0=(Token)match(input,RULE_INT,FOLLOW_20); 
+            lv_value_5_0=(Token)match(input,RULE_INT,FOLLOW_10); 
 
             					newLeafNode(lv_value_5_0, grammarAccess.getIntDataAccess().getValueINTTerminalRuleCall_5_0());
             				
@@ -3176,7 +3353,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,25,FOLLOW_2); 
+            otherlv_6=(Token)match(input,19,FOLLOW_2); 
 
             			newLeafNode(otherlv_6, grammarAccess.getIntDataAccess().getRightCurlyBracketKeyword_6());
             		
@@ -3201,228 +3378,26 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleIntData"
 
-
-    // $ANTLR start "ruleBasicInputType"
-    // InternalVFormDsl.g:1382:1: ruleBasicInputType returns [Enumerator current=null] : ( (enumLiteral_0= 'TEXT' ) | (enumLiteral_1= 'CHECKBOX' ) | (enumLiteral_2= 'NUMBER' ) ) ;
-    public final Enumerator ruleBasicInputType() throws RecognitionException {
-        Enumerator current = null;
-
-        Token enumLiteral_0=null;
-        Token enumLiteral_1=null;
-        Token enumLiteral_2=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalVFormDsl.g:1388:2: ( ( (enumLiteral_0= 'TEXT' ) | (enumLiteral_1= 'CHECKBOX' ) | (enumLiteral_2= 'NUMBER' ) ) )
-            // InternalVFormDsl.g:1389:2: ( (enumLiteral_0= 'TEXT' ) | (enumLiteral_1= 'CHECKBOX' ) | (enumLiteral_2= 'NUMBER' ) )
-            {
-            // InternalVFormDsl.g:1389:2: ( (enumLiteral_0= 'TEXT' ) | (enumLiteral_1= 'CHECKBOX' ) | (enumLiteral_2= 'NUMBER' ) )
-            int alt9=3;
-            switch ( input.LA(1) ) {
-            case 38:
-                {
-                alt9=1;
-                }
-                break;
-            case 39:
-                {
-                alt9=2;
-                }
-                break;
-            case 40:
-                {
-                alt9=3;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt9) {
-                case 1 :
-                    // InternalVFormDsl.g:1390:3: (enumLiteral_0= 'TEXT' )
-                    {
-                    // InternalVFormDsl.g:1390:3: (enumLiteral_0= 'TEXT' )
-                    // InternalVFormDsl.g:1391:4: enumLiteral_0= 'TEXT'
-                    {
-                    enumLiteral_0=(Token)match(input,38,FOLLOW_2); 
-
-                    				current = grammarAccess.getBasicInputTypeAccess().getTEXTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getBasicInputTypeAccess().getTEXTEnumLiteralDeclaration_0());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalVFormDsl.g:1398:3: (enumLiteral_1= 'CHECKBOX' )
-                    {
-                    // InternalVFormDsl.g:1398:3: (enumLiteral_1= 'CHECKBOX' )
-                    // InternalVFormDsl.g:1399:4: enumLiteral_1= 'CHECKBOX'
-                    {
-                    enumLiteral_1=(Token)match(input,39,FOLLOW_2); 
-
-                    				current = grammarAccess.getBasicInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getBasicInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalVFormDsl.g:1406:3: (enumLiteral_2= 'NUMBER' )
-                    {
-                    // InternalVFormDsl.g:1406:3: (enumLiteral_2= 'NUMBER' )
-                    // InternalVFormDsl.g:1407:4: enumLiteral_2= 'NUMBER'
-                    {
-                    enumLiteral_2=(Token)match(input,40,FOLLOW_2); 
-
-                    				current = grammarAccess.getBasicInputTypeAccess().getNUMBEREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_2, grammarAccess.getBasicInputTypeAccess().getNUMBEREnumLiteralDeclaration_2());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleBasicInputType"
-
-
-    // $ANTLR start "ruleLayout"
-    // InternalVFormDsl.g:1417:1: ruleLayout returns [Enumerator current=null] : ( (enumLiteral_0= 'horizontal' ) | (enumLiteral_1= 'vertical' ) ) ;
-    public final Enumerator ruleLayout() throws RecognitionException {
-        Enumerator current = null;
-
-        Token enumLiteral_0=null;
-        Token enumLiteral_1=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalVFormDsl.g:1423:2: ( ( (enumLiteral_0= 'horizontal' ) | (enumLiteral_1= 'vertical' ) ) )
-            // InternalVFormDsl.g:1424:2: ( (enumLiteral_0= 'horizontal' ) | (enumLiteral_1= 'vertical' ) )
-            {
-            // InternalVFormDsl.g:1424:2: ( (enumLiteral_0= 'horizontal' ) | (enumLiteral_1= 'vertical' ) )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
-
-            if ( (LA10_0==41) ) {
-                alt10=1;
-            }
-            else if ( (LA10_0==42) ) {
-                alt10=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
-
-                throw nvae;
-            }
-            switch (alt10) {
-                case 1 :
-                    // InternalVFormDsl.g:1425:3: (enumLiteral_0= 'horizontal' )
-                    {
-                    // InternalVFormDsl.g:1425:3: (enumLiteral_0= 'horizontal' )
-                    // InternalVFormDsl.g:1426:4: enumLiteral_0= 'horizontal'
-                    {
-                    enumLiteral_0=(Token)match(input,41,FOLLOW_2); 
-
-                    				current = grammarAccess.getLayoutAccess().getHorizontalEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getLayoutAccess().getHorizontalEnumLiteralDeclaration_0());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalVFormDsl.g:1433:3: (enumLiteral_1= 'vertical' )
-                    {
-                    // InternalVFormDsl.g:1433:3: (enumLiteral_1= 'vertical' )
-                    // InternalVFormDsl.g:1434:4: enumLiteral_1= 'vertical'
-                    {
-                    enumLiteral_1=(Token)match(input,42,FOLLOW_2); 
-
-                    				current = grammarAccess.getLayoutAccess().getVerticalEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getLayoutAccess().getVerticalEnumLiteralDeclaration_1());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleLayout"
-
     // Delegated rules
 
 
     protected DFA2 dfa2 = new DFA2(this);
-    static final String dfa_1s = "\14\uffff";
-    static final String dfa_2s = "\1\20\1\21\1\4\1\14\1\22\1\uffff\1\21\1\uffff\1\23\3\uffff";
-    static final String dfa_3s = "\1\20\1\21\1\4\1\22\1\41\1\uffff\1\21\1\uffff\1\40\3\uffff";
-    static final String dfa_4s = "\5\uffff\1\1\1\uffff\1\5\1\uffff\1\4\1\2\1\3";
-    static final String dfa_5s = "\14\uffff}>";
+    static final String dfa_1s = "\15\uffff";
+    static final String dfa_2s = "\1\15\1\24\1\uffff\1\25\1\5\1\17\1\26\1\25\1\6\4\uffff";
+    static final String dfa_3s = "\1\41\1\24\1\uffff\1\25\1\5\1\17\1\26\1\25\1\40\4\uffff";
+    static final String dfa_4s = "\2\uffff\1\5\6\uffff\1\1\1\3\1\4\1\2";
+    static final String dfa_5s = "\15\uffff}>";
     static final String[] dfa_6s = {
-            "\1\1",
-            "\1\2",
+            "\1\1\23\uffff\1\2",
             "\1\3",
-            "\1\4\5\uffff\1\5",
-            "\1\6\16\uffff\1\7",
             "",
+            "\1\4",
+            "\1\5",
+            "\1\6",
+            "\1\7",
             "\1\10",
+            "\1\11\20\uffff\1\14\2\uffff\1\12\5\uffff\1\13",
             "",
-            "\1\12\2\uffff\1\13\11\uffff\1\11",
             "",
             "",
             ""
@@ -3449,44 +3424,44 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             this.transition = dfa_6;
         }
         public String getDescription() {
-            return "192:2: (this_FormInputBasic_0= ruleFormInputBasic | this_FormInputRange_1= ruleFormInputRange | this_FormInputSelect_2= ruleFormInputSelect | this_FormInputSearch_3= ruleFormInputSearch | this_FormInputGroup_4= ruleFormInputGroup )";
+            return "223:2: (this_FormInputBasic_0= ruleFormInputBasic | this_FormInputRange_1= ruleFormInputRange | this_FormInputSelect_2= ruleFormInputSelect | this_FormInputSearch_3= ruleFormInputSearch | this_FormInputGroup_4= ruleFormInputGroup )";
         }
     }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000060000000000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000001C000000000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000200002000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000048000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000009000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000001000030L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x00000000000020A0L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000080000000L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000004000000000L});
 
 }

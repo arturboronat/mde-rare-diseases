@@ -6,15 +6,6 @@
     copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="VFormDsl" basePackage="cafev.vform" disposableProviderFactory="true"
       fileExtensions="vform" ecorePackage="VFormDsl.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="VFormDsl.ecore#//BasicInputType">
-      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//BasicInputType/TEXT"/>
-      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//BasicInputType/CHECKBOX"/>
-      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//BasicInputType/NUMBER"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="VFormDsl.ecore#//Layout">
-      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//Layout/horizontal"/>
-      <genEnumLiterals ecoreEnumLiteral="VFormDsl.ecore#//Layout/vertical"/>
-    </genEnums>
     <genClasses ecoreClass="VFormDsl.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VFormDsl.ecore#//Model/formLayout"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VFormDsl.ecore#//Model/formInput"/>

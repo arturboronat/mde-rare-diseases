@@ -322,28 +322,28 @@
     <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
   <types xsi:type="dataDescription:NumericalType" name="age_at_last_follow_up" max="32.0" mean="8.764705882352942" std="9.11406476115834">
-    <frequencyTable name="]17.87877064351128, 26.99283540466962]" frequency="17"/>
-    <frequencyTable name="]26.99283540466962, 36.10690016582796]" frequency="17"/>
-    <frequencyTable name="]36.10690016582796, 45.2209649269863]" frequency="17"/>
-    <frequencyTable name="]-9.46342363996374, -0.34935887880539873]" frequency="17"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="17"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="17"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="17"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="17"/>
   </types>
   <types xsi:type="dataDescription:NumericalType" name="age_at_first_contact_with_specialized_centre" max="18.0" mean="4.411764705882353" std="5.884925907874837">
-    <frequencyTable name="]10.296690613757189, 16.181616521632026]" frequency="17"/>
-    <frequencyTable name="]16.181616521632026, 22.066542429506864]" frequency="17"/>
-    <frequencyTable name="]22.066542429506864, 27.9514683373817]" frequency="17"/>
-    <frequencyTable name="]-7.35808710986732, -1.4731612019924833]" frequency="17"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="17"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="17"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="17"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="17"/>
   </types>
   <types xsi:type="dataDescription:NumericalType" name="age" max="34.0" mean="10.0" std="9.212762886344139">
-    <frequencyTable name="]19.212762886344137, 28.425525772688275]" frequency="17"/>
-    <frequencyTable name="]28.425525772688275, 37.63828865903241]" frequency="17"/>
-    <frequencyTable name="]37.63828865903241, 46.85105154537655]" frequency="17"/>
-    <frequencyTable name="]-8.425525772688278, 0.7872371136558609]" frequency="17"/>
-    <frequencyTable name="]-17.63828865903242, -8.425525772688278]" frequency="17"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="17"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="17"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="17"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="17"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="17"/>
   </types>
   <types xsi:type="dataDescription:NumericalType" name="position" min="2541585.0" max="2.36649682E8" mean="1.0274971045E8" std="6.699389578483044E7">
-    <frequencyTable name="]1.6974360623483044E8, 2.367375020196609E8]" frequency="20"/>
-    <frequencyTable name="]2.367375020196609E8, 3.0373139780449134E8]" frequency="20"/>
-    <frequencyTable name="]-3.1238081119660884E7, 3.575581466516956E7]" frequency="20"/>
-    <frequencyTable name="]-9.823197690449134E7, -3.1238081119660884E7]" frequency="20"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="20"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="20"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="20"/>
+    <frequencyTable name="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]" frequency="20"/>
   </types>
 </dataDescription:StatsDataModel>

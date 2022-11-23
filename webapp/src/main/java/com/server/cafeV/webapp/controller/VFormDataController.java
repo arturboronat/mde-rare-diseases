@@ -16,6 +16,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.server.cafeV.webapp.model.VForm;
+import com.server.cafeV.webapp.service.YAMLServices;
 
 
 
@@ -26,35 +27,10 @@ import com.server.cafeV.webapp.model.VForm;
 public class VFormDataController {
 	
 	@GetMapping("/getData")
-	public String welcome() {
-//		ArrayList<VForm> vff = new ArrayList<VForm>();
-		
-		
-		String json = "";
-		
-		try {
-			File fileUrl = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI());
-			json = fileUrl.getParentFile().getParentFile().getParent()+"/webapp/src/main/resources/newFile.Json";
-		} catch (URISyntaxException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		VForm vfM = new VForm();
-		ObjectMapper objectMapper = new ObjectMapper();
-		
-			try {
-				
-				VForm vf = objectMapper.readValue(new File(json), vfM.getClass());
-				
-
-				return objectMapper.writeValueAsString(vf);
-				
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				
-			}
-			return null;
+	public VForm welcome() {
+			
+		YAMLServices ym = new YAMLServices();
+			return ym.getVFormData("Rett_Datacleaned");
 			
 			
 			

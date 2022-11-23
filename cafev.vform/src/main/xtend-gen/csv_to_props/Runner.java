@@ -1,25 +1,14 @@
 package csv_to_props;
 
-import java.util.Collections;
-import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.xbase.lib.CollectionLiterals;
-import org.eclipse.xtext.xbase.lib.InputOutput;
-import org.eclipse.xtext.xbase.lib.Pair;
-
 @SuppressWarnings("all")
 public class Runner {
   public static void main(final String[] args) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("src/main/resources/datasets/Mock_data.csv");
-    String inputCsvPath = _builder.toString();
-    final csv2props xform = new csv2props();
-    xform.parseCsvTable("csv", inputCsvPath);
-    xform.execute();
-    StringConcatenation _builder_1 = new StringConcatenation();
-    _builder_1.append("src/main/java/csv_to_props/mockData_props.xmi");
-    String outputModelPath = _builder_1.toString();
-    Pair<String, String> _mappedTo = Pair.<String, String>of("up", outputModelPath);
-    xform.saveOutputModels(Collections.<String, String>unmodifiableMap(CollectionLiterals.<String, String>newHashMap(_mappedTo)));
-    InputOutput.<String>println(xform.toStringStats());
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method parseCsvTable(String, String) is undefined for the type csv2props"
+      + "\nThe method execute() is undefined for the type csv2props"
+      + "\nThe method saveOutputModels(Set<Object>) is undefined for the type csv2props"
+      + "\n-> cannot be resolved."
+      + "\nThe method println(Object) is undefined"
+      + "\nThe method or field toStringStats is undefined for the type csv2props");
   }
 }

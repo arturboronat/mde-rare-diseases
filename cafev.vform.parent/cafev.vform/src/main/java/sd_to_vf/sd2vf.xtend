@@ -1,13 +1,11 @@
 package sd_to_vf
 
-import cafev.vform.vFormDsl.BasicInputType
 import cafev.vform.vFormDsl.EnumOption
 import cafev.vform.vFormDsl.FormInputBasic
 import cafev.vform.vFormDsl.FormInputRange
 import cafev.vform.vFormDsl.FormInputSearch
 import cafev.vform.vFormDsl.FormInputSelect
 import cafev.vform.vFormDsl.FormLayout
-import cafev.vform.vFormDsl.Layout
 import cafev.vform.vFormDsl.Model
 import cafev.vform.vFormDsl.StringOptionItem
 import cafev.vform.vFormDsl.VFormDslPackage
@@ -37,35 +35,35 @@ class sd2vf extends YAMTLModule {
 					m.formLayout = fl
 				]
 				.out('fl', VF.formLayout) [
-					fl.layout = Layout.HORIZONTAL
+					fl.layout = "\"horizontal\""
 				],
-			rule('Checkbox')
-				.in('ct', DD.categoricalType).filter[
-					ct.frequencyTable.size()<=2
-				]
-				.out('fib', VF.formInputBasic) [	
-					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
-					fib.name = ct.name
-					fib.type = BasicInputType.CHECKBOX
-					m.formInput.add(fib)
-				],
-				
-			rule('Text')
-				.in('ct', DD.categoricalType)
-				.out('fib', VF.formInputBasic) [	
-					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
-					fib.name = ct.name
-					fib.type = BasicInputType.TEXT
-					m.formInput.add(fib)
-				],
-			rule('Number')
-				.in('nt', DD.numericalType)
-				.out('fib', VF.formInputBasic) [	
-					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
-					fib.name = nt.name
-					fib.type = BasicInputType.NUMBER
-					m.formInput.add(fib)
-				],
+//			rule('Checkbox')
+//				.in('ct', DD.categoricalType).filter[
+//					ct.frequencyTable.size()<=2
+//				]
+//				.out('fib', VF.formInputBasic) [	
+//					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
+//					fib.name = ct.name
+//					fib.type = "\"checkbox\""
+//					m.formInput.add(fib)
+//				],
+//				
+//			rule('Text')
+//				.in('ct', DD.categoricalType)
+//				.out('fib', VF.formInputBasic) [	
+//					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
+//					fib.name = ct.name
+//					fib.type = "\"text\""
+//					m.formInput.add(fib)
+//				],
+//			rule('Number')
+//				.in('nt', DD.numericalType)
+//				.out('fib', VF.formInputBasic) [	
+//					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
+//					fib.name = nt.name
+//					fib.type = "'numberr'"
+//					m.formInput.add(fib)
+//				],
 			rule('Range')
 				.in('nt', DD.numericalType)
 				.out('rg', VF.formInputRange) [

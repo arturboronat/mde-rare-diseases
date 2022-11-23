@@ -1,148 +1,457 @@
 package csv_to_json;
 
-import com.google.common.base.Objects;
-import java.util.Collections;
-import java.util.List;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.xtext.xbase.lib.CollectionLiterals;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
-import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.ListExtensions;
-import org.eclipse.xtext.xbase.lib.Procedures.Procedure0;
-import runtimeModel.AttributeValue;
-import runtimeModel.ContainmentValue;
-import runtimeModel.DynamicEObject;
-import runtimeModel.DynamicEObjectType;
-import runtimeModel.FeatureType;
-import runtimeModel.FeatureValue;
-import runtimeModel.RuntimeModel;
-import runtimeModel.RuntimeModelFactory;
-import runtimeModel.RuntimeModelPackage;
-import yamtl.core.YAMTLModule;
-import yamtl.core.s;
-import yamtl.dsl.OutputElementCS;
-import yamtl.dsl.Rule;
-
 @SuppressWarnings("all")
-public class CSV_to_JSON extends YAMTLModule {
-  private final RuntimeModelPackage CSV = RuntimeModelPackage.eINSTANCE;
+public class CSV_to_JSON /* implements YAMTLModule  */{
+  private final Object CSV /* Skipped initializer because of errors */;
 
-  private final EcorePackage ECORE = EcorePackage.eINSTANCE;
+  private final Object ECORE /* Skipped initializer because of errors */;
+
+  private final Object JSON /* Skipped initializer because of errors */;
 
   public CSV_to_JSON() {
-    this.header().in("in", this.CSV).out("out", this.CSV);
-    OutputElementCS _out = Rule.rule("root").in("inModel", this.CSV.getRuntimeModel()).out("outModel", this.CSV.getRuntimeModel());
-    final Procedure0 _function = () -> {
-      final DynamicEObject obj = RuntimeModelFactory.eINSTANCE.createDynamicEObject();
-      Object _fetch = this.fetch(this.inOt().getOwningModel());
-      obj.setOwningModel(((RuntimeModel) _fetch));
-      obj.setType(this.outOt());
-      DynamicEObjectType _outOt = this.outOt();
-      Object _fetch_1 = this.fetch(this.inOt().getOwningModel());
-      _outOt.setOwningModel(((RuntimeModel) _fetch_1));
-    };
-    OutputElementCS _out_1 = Rule.rule("ObjectType").in("inOt", this.CSV.getDynamicEObjectType()).out("outOt", this.CSV.getDynamicEObjectType(), _function);
-    final Function0<Boolean> _function_1 = () -> {
-      return Boolean.valueOf(this.isNumeric(this.inFt()));
-    };
-    final Procedure0 _function_2 = () -> {
-      FeatureType _outFt = this.outFt();
-      _outFt.setName(this.inFt().getName());
-      FeatureType _outFt_1 = this.outFt();
-      Object _fetch = this.fetch(this.inFt().getOwningObjectType());
-      _outFt_1.setOwningObjectType(((DynamicEObjectType) _fetch));
-      final AttributeValue att = RuntimeModelFactory.eINSTANCE.createAttributeValue();
-      EList<FeatureValue> _featureValues = this.outFt().getFeatureValues();
-      _featureValues.add(att);
-      Object _fetch_1 = this.fetch(this.inFt().getOwningObjectType());
-      att.setContainingDynamicEObject(((DynamicEObjectType) _fetch_1).getInstances().get(0));
-      final Function1<FeatureValue, AttributeValue> _function_3 = (FeatureValue it) -> {
-        return ((AttributeValue) it);
-      };
-      final Function1<AttributeValue, Object> _function_4 = (AttributeValue it) -> {
-        return it.getValue();
-      };
-      final List<Object> list = ListExtensions.<AttributeValue, Object>map(ListExtensions.<FeatureValue, AttributeValue>map(this.inFt().getFeatureValues(), _function_3), _function_4);
-      att.setValue(list);
-    };
-    OutputElementCS _out_2 = Rule.rule("FeatureType").in("inFt", this.CSV.getFeatureType()).filter(_function_1).out("outFt", this.CSV.getFeatureType(), _function_2);
-    this.ruleStore(Collections.<s>unmodifiableList(CollectionLiterals.<s>newArrayList(_out, _out_1, _out_2)));
+    throw new Error("Unresolved compilation problems:"
+      + "\nRuntimeModel cannot be resolved to a type."
+      + "\nRuntimeModel cannot be resolved to a type."
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nAttributeValue cannot be resolved to a type."
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nAttributeValue cannot be resolved to a type."
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nAttributeValue cannot be resolved to a type."
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nAttributeValue cannot be resolved to a type."
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nAttributeValue cannot be resolved to a type."
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nAttributeValue cannot be resolved to a type."
+      + "\nThe method header() is undefined"
+      + "\nThe method ruleStore(List<Object>) is undefined"
+      + "\nThe method rule(String) is undefined"
+      + "\nThe method rule(String) is undefined"
+      + "\nThe method or field RuntimeModelFactory is undefined"
+      + "\nThe method rule(String) is undefined"
+      + "\nThe method or field RuntimeModelFactory is undefined"
+      + "\nThe method or field RuntimeModelFactory is undefined"
+      + "\nThe method or field value is undefined"
+      + "\nThe method or field RuntimeModelFactory is undefined"
+      + "\nThe method or field value is undefined"
+      + "\nDescriptiveStatistics cannot be resolved."
+      + "\nThe method or field RuntimeModelFactory is undefined"
+      + "\nThe method or field value is undefined"
+      + "\nDescriptiveStatistics cannot be resolved."
+      + "\nThe method or field RuntimeModelFactory is undefined"
+      + "\nThe method or field value is undefined"
+      + "\nDescriptiveStatistics cannot be resolved."
+      + "\nThe method or field RuntimeModelFactory is undefined"
+      + "\nThe method or field value is undefined"
+      + "\nDescriptiveStatistics cannot be resolved."
+      + "\nThe method or field RuntimeModelFactory is undefined"
+      + "\nThe method or field value is undefined"
+      + "\nDescriptiveStatistics cannot be resolved."
+      + "\nThe field CSV_to_JSON.CSV refers to the missing type Object"
+      + "\nThe field CSV_to_JSON.JSON refers to the missing type Object"
+      + "\nThe field CSV_to_JSON.CSV refers to the missing type Object"
+      + "\nThe field CSV_to_JSON.JSON refers to the missing type Object"
+      + "\nThe field CSV_to_JSON.CSV refers to the missing type Object"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe field CSV_to_JSON.JSON refers to the missing type Object"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outOt() from the type CSV_to_JSON refers to the missing type DynamicEObjectType"
+      + "\nThe method outOt() from the type CSV_to_JSON refers to the missing type DynamicEObjectType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe field CSV_to_JSON.CSV refers to the missing type Object"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe field CSV_to_JSON.JSON refers to the missing type Object"
+      + "\nThe method outFtN() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtN() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtN() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe field CSV_to_JSON.JSON refers to the missing type Object"
+      + "\nThe method outFtD() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtD() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtD() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe field CSV_to_JSON.JSON refers to the missing type Object"
+      + "\nThe method outFtT() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtT() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtT() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe field CSV_to_JSON.JSON refers to the missing type Object"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtMe() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtMe() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtMe() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe field CSV_to_JSON.JSON refers to the missing type Object"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtMx() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtMx() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtMx() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe field CSV_to_JSON.JSON refers to the missing type Object"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtMn() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtMn() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtMn() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe field CSV_to_JSON.JSON refers to the missing type Object"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtSd() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtSd() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method outFtSd() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nThe method inFt() from the type CSV_to_JSON refers to the missing type FeatureType"
+      + "\nin cannot be resolved"
+      + "\nout cannot be resolved"
+      + "\nin cannot be resolved"
+      + "\nruntimeModel cannot be resolved"
+      + "\nout cannot be resolved"
+      + "\nruntimeModel cannot be resolved"
+      + "\nin cannot be resolved"
+      + "\nfeatureType cannot be resolved"
+      + "\nfilter cannot be resolved"
+      + "\nname cannot be resolved"
+      + "\n!= cannot be resolved"
+      + "\nout cannot be resolved"
+      + "\ndynamicEObjectType cannot be resolved"
+      + "\neINSTANCE cannot be resolved"
+      + "\ncreateDynamicEObject cannot be resolved"
+      + "\nowningModel cannot be resolved"
+      + "\nowningObjectType cannot be resolved"
+      + "\nowningModel cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\ntype cannot be resolved"
+      + "\nowningModel cannot be resolved"
+      + "\nowningObjectType cannot be resolved"
+      + "\nowningModel cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\nin cannot be resolved"
+      + "\nfeatureType cannot be resolved"
+      + "\nfilter cannot be resolved"
+      + "\nname cannot be resolved"
+      + "\n!= cannot be resolved"
+      + "\nout cannot be resolved"
+      + "\nfeatureType cannot be resolved"
+      + "\nname cannot be resolved"
+      + "\nowningObjectType cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\neINSTANCE cannot be resolved"
+      + "\ncreateAttributeValue cannot be resolved"
+      + "\nfeatureValues cannot be resolved"
+      + "\n+= cannot be resolved"
+      + "\ncontainingDynamicEObject cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\ninstances cannot be resolved"
+      + "\nget cannot be resolved"
+      + "\nname cannot be resolved"
+      + "\nvalue cannot be resolved"
+      + "\nout cannot be resolved"
+      + "\nfeatureType cannot be resolved"
+      + "\nname cannot be resolved"
+      + "\nowningObjectType cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\neINSTANCE cannot be resolved"
+      + "\ncreateAttributeValue cannot be resolved"
+      + "\nfeatureValues cannot be resolved"
+      + "\n+= cannot be resolved"
+      + "\ncontainingDynamicEObject cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\ninstances cannot be resolved"
+      + "\nget cannot be resolved"
+      + "\nfeatureValues cannot be resolved"
+      + "\nmap cannot be resolved"
+      + "\nmap cannot be resolved"
+      + "\nisNumeric cannot be resolved"
+      + "\n! cannot be resolved"
+      + "\nvalue cannot be resolved"
+      + "\ntoSet cannot be resolved"
+      + "\nvalue cannot be resolved"
+      + "\nout cannot be resolved"
+      + "\nfeatureType cannot be resolved"
+      + "\nname cannot be resolved"
+      + "\nowningObjectType cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\neINSTANCE cannot be resolved"
+      + "\ncreateAttributeValue cannot be resolved"
+      + "\nfeatureValues cannot be resolved"
+      + "\n+= cannot be resolved"
+      + "\ncontainingDynamicEObject cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\ninstances cannot be resolved"
+      + "\nget cannot be resolved"
+      + "\nfeatureValues cannot be resolved"
+      + "\nmap cannot be resolved"
+      + "\nmap cannot be resolved"
+      + "\nisNumeric cannot be resolved"
+      + "\n! cannot be resolved"
+      + "\ntoSet cannot be resolved"
+      + "\nsize cannot be resolved"
+      + "\n> cannot be resolved"
+      + "\n&& cannot be resolved"
+      + "\nsize cannot be resolved"
+      + "\n<= cannot be resolved"
+      + "\nsize cannot be resolved"
+      + "\n<= cannot be resolved"
+      + "\naddValue cannot be resolved"
+      + "\ntoDouble cannot be resolved"
+      + "\nmax cannot be resolved"
+      + "\n- cannot be resolved"
+      + "\nmin cannot be resolved"
+      + "\n< cannot be resolved"
+      + "\nvalue cannot be resolved"
+      + "\nout cannot be resolved"
+      + "\nfeatureType cannot be resolved"
+      + "\nisNumeric cannot be resolved"
+      + "\nname cannot be resolved"
+      + "\nowningObjectType cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\neINSTANCE cannot be resolved"
+      + "\ncreateAttributeValue cannot be resolved"
+      + "\nfeatureValues cannot be resolved"
+      + "\n+= cannot be resolved"
+      + "\ncontainingDynamicEObject cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\ninstances cannot be resolved"
+      + "\nget cannot be resolved"
+      + "\nfeatureValues cannot be resolved"
+      + "\nmap cannot be resolved"
+      + "\nmap cannot be resolved"
+      + "\naddValue cannot be resolved"
+      + "\ntoDouble cannot be resolved"
+      + "\nmean cannot be resolved"
+      + "\ntoString cannot be resolved"
+      + "\nvalue cannot be resolved"
+      + "\nout cannot be resolved"
+      + "\nfeatureType cannot be resolved"
+      + "\nisNumeric cannot be resolved"
+      + "\nname cannot be resolved"
+      + "\nowningObjectType cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\neINSTANCE cannot be resolved"
+      + "\ncreateAttributeValue cannot be resolved"
+      + "\nfeatureValues cannot be resolved"
+      + "\n+= cannot be resolved"
+      + "\ncontainingDynamicEObject cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\ninstances cannot be resolved"
+      + "\nget cannot be resolved"
+      + "\nfeatureValues cannot be resolved"
+      + "\nmap cannot be resolved"
+      + "\nmap cannot be resolved"
+      + "\naddValue cannot be resolved"
+      + "\ntoDouble cannot be resolved"
+      + "\nmax cannot be resolved"
+      + "\ntoString cannot be resolved"
+      + "\nvalue cannot be resolved"
+      + "\nout cannot be resolved"
+      + "\nfeatureType cannot be resolved"
+      + "\nisNumeric cannot be resolved"
+      + "\nname cannot be resolved"
+      + "\nowningObjectType cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\neINSTANCE cannot be resolved"
+      + "\ncreateAttributeValue cannot be resolved"
+      + "\nfeatureValues cannot be resolved"
+      + "\n+= cannot be resolved"
+      + "\ncontainingDynamicEObject cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\ninstances cannot be resolved"
+      + "\nget cannot be resolved"
+      + "\nfeatureValues cannot be resolved"
+      + "\nmap cannot be resolved"
+      + "\nmap cannot be resolved"
+      + "\naddValue cannot be resolved"
+      + "\ntoDouble cannot be resolved"
+      + "\nmin cannot be resolved"
+      + "\ntoString cannot be resolved"
+      + "\nvalue cannot be resolved"
+      + "\nout cannot be resolved"
+      + "\nfeatureType cannot be resolved"
+      + "\nisNumeric cannot be resolved"
+      + "\nname cannot be resolved"
+      + "\nowningObjectType cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\neINSTANCE cannot be resolved"
+      + "\ncreateAttributeValue cannot be resolved"
+      + "\nfeatureValues cannot be resolved"
+      + "\n+= cannot be resolved"
+      + "\ncontainingDynamicEObject cannot be resolved"
+      + "\nfetch cannot be resolved"
+      + "\ninstances cannot be resolved"
+      + "\nget cannot be resolved"
+      + "\nfeatureValues cannot be resolved"
+      + "\nmap cannot be resolved"
+      + "\nmap cannot be resolved"
+      + "\naddValue cannot be resolved"
+      + "\ntoDouble cannot be resolved"
+      + "\nstandardDeviation cannot be resolved"
+      + "\ntoString cannot be resolved"
+      + "\nvalue cannot be resolved");
   }
 
-  public boolean isNumeric(final FeatureType inFt) {
-    return (Objects.equal(inFt.getEmfType(), this.ECORE.getEDouble()) || (Objects.equal(inFt.getEmfType(), this.ECORE.getEInt()) && 
-      (IterableExtensions.<Object>toSet(ListExtensions.<FeatureValue, Object>map(inFt.getFeatureValues(), ((Function1<FeatureValue, Object>) (FeatureValue it) -> {
-        return ((AttributeValue) it).getValue();
-      }))).size() > 1)));
+  public Object isNumeric(final /* FeatureType */Object inFt) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nAttributeValue cannot be resolved to a type."
+      + "\nThe field CSV_to_JSON.ECORE refers to the missing type Object"
+      + "\nThe field CSV_to_JSON.ECORE refers to the missing type Object"
+      + "\nemfType cannot be resolved"
+      + "\n== cannot be resolved"
+      + "\nEDouble cannot be resolved"
+      + "\n|| cannot be resolved"
+      + "\nemfType cannot be resolved"
+      + "\n== cannot be resolved"
+      + "\nEInt cannot be resolved"
+      + "\n&& cannot be resolved"
+      + "\nfeatureValues cannot be resolved"
+      + "\nmap cannot be resolved"
+      + "\nvalue cannot be resolved"
+      + "\ntoSet cannot be resolved"
+      + "\nsize cannot be resolved"
+      + "\n> cannot be resolved");
   }
 
   /**
    * HELPERS: generated with runner.generateBoilerplateCode()
    */
   public AttributeValue att() {
-    Object _fetch = this.fetch("att");
-    return ((AttributeValue) _fetch);
+    throw new Error("Unresolved compilation problems:"
+      + "\nAttributeValue cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
   }
 
   public DynamicEObject inObj() {
-    Object _fetch = this.fetch("inObj");
-    return ((DynamicEObject) _fetch);
+    throw new Error("Unresolved compilation problems:"
+      + "\nDynamicEObject cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
   }
 
   public DynamicEObject outObj() {
-    Object _fetch = this.fetch("outObj");
-    return ((DynamicEObject) _fetch);
+    throw new Error("Unresolved compilation problems:"
+      + "\nDynamicEObject cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
   }
 
   public FeatureType inFt() {
-    Object _fetch = this.fetch("inFt");
-    return ((FeatureType) _fetch);
+    throw new Error("Unresolved compilation problems:"
+      + "\nFeatureType cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
   }
 
-  public FeatureType outFt() {
-    Object _fetch = this.fetch("outFt");
-    return ((FeatureType) _fetch);
+  public FeatureType outFtN() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nFeatureType cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
+  }
+
+  public FeatureType outFtT() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nFeatureType cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
+  }
+
+  public FeatureType outFtD() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nFeatureType cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
+  }
+
+  public FeatureType outFtMe() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nFeatureType cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
+  }
+
+  public FeatureType outFtMx() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nFeatureType cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
+  }
+
+  public FeatureType outFtMn() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nFeatureType cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
+  }
+
+  public FeatureType outFtSd() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nFeatureType cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
   }
 
   public DynamicEObjectType inOt() {
-    Object _fetch = this.fetch("inOt");
-    return ((DynamicEObjectType) _fetch);
+    throw new Error("Unresolved compilation problems:"
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
   }
 
   public DynamicEObjectType outOt() {
-    Object _fetch = this.fetch("outOt");
-    return ((DynamicEObjectType) _fetch);
+    throw new Error("Unresolved compilation problems:"
+      + "\nDynamicEObjectType cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
   }
 
   public AttributeValue inAtt() {
-    Object _fetch = this.fetch("inAtt");
-    return ((AttributeValue) _fetch);
+    throw new Error("Unresolved compilation problems:"
+      + "\nAttributeValue cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
   }
 
   public AttributeValue outAtt() {
-    Object _fetch = this.fetch("outAtt");
-    return ((AttributeValue) _fetch);
+    throw new Error("Unresolved compilation problems:"
+      + "\nAttributeValue cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
   }
 
   public ContainmentValue inCont() {
-    Object _fetch = this.fetch("inCont");
-    return ((ContainmentValue) _fetch);
+    throw new Error("Unresolved compilation problems:"
+      + "\nContainmentValue cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
   }
 
   public ContainmentValue outCont() {
-    Object _fetch = this.fetch("outCont");
-    return ((ContainmentValue) _fetch);
+    throw new Error("Unresolved compilation problems:"
+      + "\nContainmentValue cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
   }
 
   public RuntimeModel inModel() {
-    Object _fetch = this.fetch("inModel");
-    return ((RuntimeModel) _fetch);
+    throw new Error("Unresolved compilation problems:"
+      + "\nRuntimeModel cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
   }
 
   public RuntimeModel outModel() {
-    Object _fetch = this.fetch("outModel");
-    return ((RuntimeModel) _fetch);
+    throw new Error("Unresolved compilation problems:"
+      + "\nRuntimeModel cannot be resolved to a type."
+      + "\nThe method fetch() is undefined for the type String");
+  }
+
+  public Double toDouble(final Object i) {
+    throw new Error("Unresolved compilation problems:"
+      + "\n+ cannot be resolved.");
   }
 }

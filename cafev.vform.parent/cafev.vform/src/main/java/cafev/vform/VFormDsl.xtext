@@ -3,41 +3,42 @@ grammar cafev.vform.VFormDsl with org.eclipse.xtext.common.Terminals
 generate vFormDsl "http://www.vform.cafev/VFormDsl"
 
 Model:
-    "formLayout:" formLayout=FormLayout ","
-    
-    "formInputs:" "[" 
-        (formInput+=FormInput*)
-    "]"
+"{"
+    "\"formLayout\":" formLayout=FormLayout ","
+    "\"formInputs\":" "["formInput+=FormInput ("," formInput+=FormInput)*"]"
+"}"
 ;
    
 FormLayout:
-    layout=Layout; 
+    layout=LAYOUT; 
 
 FormInput: 
 	FormInputBasic | FormInputRange | FormInputSelect| FormInputSearch | FormInputGroup
 ;
 
 FormInputBasic:
-	"name" ":" name=STRING
-	"type" ":" type=BasicInputType
-;
-	
-enum BasicInputType:
-	TEXT | CHECKBOX | NUMBER  
+"{"
+	"\"inputName\"" ":" name=STRING ","
+	"\"inputType\"" ":" type=BASICINPUT
+"}"
 ;
 	
 FormInputRange:
-	"name" ":" name=STRING ","
-	"type" ":" "RANGE" ","
-	"min:" min=INT ","
-    "max:" max=INT
+"{"
+	"\"inputName\"" ":" name=STRING ","
+	"\"inputType\"" ":" "\"range\"" ","
+	"\"min\"" ":" min=INT ","
+    "\"max\"" ":" max=INT
+"}"
 ;	
 
 
 FormInputSelect:
-	"name" ":" name=STRING ","
-	"type" ":" "SELECT" ","
-    "options:" "{" option=Option "}"
+"{"
+	"\"inputName\"" ":" name=STRING ","
+	"\"inputType\"" ":" "\"select\"" ","
+	 "\"options\"" ":"  option=Option 
+"}"
 ;
 
 Option:
@@ -45,26 +46,34 @@ Option:
 ;
 
 DataOption:
-	"optionType:" "data" ","
- 	"data:" "[" data+=Data ("," data+=Data)* "]"
+"{"
+	"\"optionType\"" ":" "\"data\"" ","
+ 	"\"data\"" ":" "[" data+=Data ("," data+=Data)* "]"
+"}"
 ;
 
 EnumOption:
-	"optionType:" "enum" ","
- 	"data:" "[" data+=OptionItem ("," data+=OptionItem)* "]"
+"{"
+	"\"optionType\"" ":" "\"enum\"" ","
+ 	"\"data\"" ":" "[" data+=OptionItem ("," data+=OptionItem)* "]"
+"}"
 ;
     
 NumberOption:
-	"optionType:" "number" ","
- 	"min:" min=INT ","
-   	"max:" max=INT ","
-    "range:" range=INT 
+"{"
+	"\"optionType\"" ":" "\"number\"" ","
+	"\"min\"" ":" min=INT ","
+    "\"max\"" ":" max=INT
+    "\"range\"" ":" range=INT
+"}"
 ;
 
 FormInputSearch:
-	"name" ":" name=STRING ","
-	"type" ":" "SEARCH" ","
-	"options:" "[" data+=OptionItem ("," data+=OptionItem)* "]"	
+"{"
+	"\"inputName\"" ":" name=STRING ","
+	"\"inputType\"" ":" "\"search\"" ","
+ 	"\"data\"" ":"  "[" data+=OptionItem ("," data+=OptionItem)* "]"	 
+"}"
 ;
 
 OptionItem:
@@ -110,5 +119,9 @@ IntData:
     
     
 
-enum Layout:
-	horizontal|vertical ;
+terminal LAYOUT:
+	"\"horizontal\""|"\"vertical\"" ;
+	
+terminal BASICINPUT:
+	("\"text\""|"\"checkbox\""|"\"numberr\""|"\"date\"")
+;

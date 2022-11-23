@@ -23,7 +23,6 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -77,16 +76,20 @@ ruleModel returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='formLayout:'
+		otherlv_0='{'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getModelAccess().getFormLayoutKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getModelAccess().getLeftCurlyBracketKeyword_0());
+		}
+		otherlv_1='"formLayout":'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getModelAccess().getFormLayoutKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getFormLayoutFormLayoutParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getModelAccess().getFormLayoutFormLayoutParserRuleCall_2_0());
 				}
-				lv_formLayout_1_0=ruleFormLayout
+				lv_formLayout_2_0=ruleFormLayout
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -94,30 +97,30 @@ ruleModel returns [EObject current=null]
 					set(
 						$current,
 						"formLayout",
-						lv_formLayout_1_0,
+						lv_formLayout_2_0,
 						"cafev.vform.VFormDsl.FormLayout");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_2=','
+		otherlv_3=','
 		{
-			newLeafNode(otherlv_2, grammarAccess.getModelAccess().getCommaKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getModelAccess().getCommaKeyword_3());
 		}
-		otherlv_3='formInputs:'
+		otherlv_4='"formInputs":'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getModelAccess().getFormInputsKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getModelAccess().getFormInputsKeyword_4());
 		}
-		otherlv_4='['
+		otherlv_5='['
 		{
-			newLeafNode(otherlv_4, grammarAccess.getModelAccess().getLeftSquareBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getModelAccess().getLeftSquareBracketKeyword_5());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getFormInputFormInputParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getModelAccess().getFormInputFormInputParserRuleCall_6_0());
 				}
-				lv_formInput_5_0=ruleFormInput
+				lv_formInput_6_0=ruleFormInput
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -125,15 +128,44 @@ ruleModel returns [EObject current=null]
 					add(
 						$current,
 						"formInput",
-						lv_formInput_5_0,
+						lv_formInput_6_0,
 						"cafev.vform.VFormDsl.FormInput");
 					afterParserOrEnumRuleCall();
 				}
 			)
+		)
+		(
+			otherlv_7=','
+			{
+				newLeafNode(otherlv_7, grammarAccess.getModelAccess().getCommaKeyword_7_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getModelAccess().getFormInputFormInputParserRuleCall_7_1_0());
+					}
+					lv_formInput_8_0=ruleFormInput
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getModelRule());
+						}
+						add(
+							$current,
+							"formInput",
+							lv_formInput_8_0,
+							"cafev.vform.VFormDsl.FormInput");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
 		)*
-		otherlv_6=']'
+		otherlv_9=']'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getModelAccess().getRightSquareBracketKeyword_6());
+			newLeafNode(otherlv_9, grammarAccess.getModelAccess().getRightSquareBracketKeyword_8());
+		}
+		otherlv_10='}'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getModelAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;
@@ -155,20 +187,19 @@ ruleFormLayout returns [EObject current=null]
 }:
 	(
 		(
+			lv_layout_0_0=RULE_LAYOUT
 			{
-				newCompositeNode(grammarAccess.getFormLayoutAccess().getLayoutLayoutEnumRuleCall_0());
+				newLeafNode(lv_layout_0_0, grammarAccess.getFormLayoutAccess().getLayoutLAYOUTTerminalRuleCall_0());
 			}
-			lv_layout_0_0=ruleLayout
 			{
 				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getFormLayoutRule());
+					$current = createModelElement(grammarAccess.getFormLayoutRule());
 				}
-				set(
+				setWithLastConsumed(
 					$current,
 					"layout",
 					lv_layout_0_0,
-					"cafev.vform.VFormDsl.Layout");
-				afterParserOrEnumRuleCall();
+					"cafev.vform.VFormDsl.LAYOUT");
 			}
 		)
 	)
@@ -253,19 +284,23 @@ ruleFormInputBasic returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='name'
+		otherlv_0='{'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getFormInputBasicAccess().getNameKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getFormInputBasicAccess().getLeftCurlyBracketKeyword_0());
 		}
-		otherlv_1=':'
+		otherlv_1='"inputName"'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getFormInputBasicAccess().getColonKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getFormInputBasicAccess().getInputNameKeyword_1());
+		}
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getFormInputBasicAccess().getColonKeyword_2());
 		}
 		(
 			(
-				lv_name_2_0=RULE_STRING
+				lv_name_3_0=RULE_STRING
 				{
-					newLeafNode(lv_name_2_0, grammarAccess.getFormInputBasicAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_name_3_0, grammarAccess.getFormInputBasicAccess().getNameSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -274,38 +309,45 @@ ruleFormInputBasic returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_3_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_3='type'
+		otherlv_4=','
 		{
-			newLeafNode(otherlv_3, grammarAccess.getFormInputBasicAccess().getTypeKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getFormInputBasicAccess().getCommaKeyword_4());
 		}
-		otherlv_4=':'
+		otherlv_5='"inputType"'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getFormInputBasicAccess().getColonKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getFormInputBasicAccess().getInputTypeKeyword_5());
+		}
+		otherlv_6=':'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getFormInputBasicAccess().getColonKeyword_6());
 		}
 		(
 			(
+				lv_type_7_0=RULE_BASICINPUT
 				{
-					newCompositeNode(grammarAccess.getFormInputBasicAccess().getTypeBasicInputTypeEnumRuleCall_5_0());
+					newLeafNode(lv_type_7_0, grammarAccess.getFormInputBasicAccess().getTypeBASICINPUTTerminalRuleCall_7_0());
 				}
-				lv_type_5_0=ruleBasicInputType
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getFormInputBasicRule());
+						$current = createModelElement(grammarAccess.getFormInputBasicRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"type",
-						lv_type_5_0,
-						"cafev.vform.VFormDsl.BasicInputType");
-					afterParserOrEnumRuleCall();
+						lv_type_7_0,
+						"cafev.vform.VFormDsl.BASICINPUT");
 				}
 			)
 		)
+		otherlv_8='}'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getFormInputBasicAccess().getRightCurlyBracketKeyword_8());
+		}
 	)
 ;
 
@@ -325,19 +367,23 @@ ruleFormInputRange returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='name'
+		otherlv_0='{'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getFormInputRangeAccess().getNameKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getFormInputRangeAccess().getLeftCurlyBracketKeyword_0());
 		}
-		otherlv_1=':'
+		otherlv_1='"inputName"'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getFormInputRangeAccess().getColonKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getFormInputRangeAccess().getInputNameKeyword_1());
+		}
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getFormInputRangeAccess().getColonKeyword_2());
 		}
 		(
 			(
-				lv_name_2_0=RULE_STRING
+				lv_name_3_0=RULE_STRING
 				{
-					newLeafNode(lv_name_2_0, grammarAccess.getFormInputRangeAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_name_3_0, grammarAccess.getFormInputRangeAccess().getNameSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -346,40 +392,44 @@ ruleFormInputRange returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_3_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_3=','
+		otherlv_4=','
 		{
-			newLeafNode(otherlv_3, grammarAccess.getFormInputRangeAccess().getCommaKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getFormInputRangeAccess().getCommaKeyword_4());
 		}
-		otherlv_4='type'
+		otherlv_5='"inputType"'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getFormInputRangeAccess().getTypeKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getFormInputRangeAccess().getInputTypeKeyword_5());
 		}
-		otherlv_5=':'
+		otherlv_6=':'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getFormInputRangeAccess().getColonKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getFormInputRangeAccess().getColonKeyword_6());
 		}
-		otherlv_6='RANGE'
+		otherlv_7='"range"'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getFormInputRangeAccess().getRANGEKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getFormInputRangeAccess().getRangeKeyword_7());
 		}
-		otherlv_7=','
+		otherlv_8=','
 		{
-			newLeafNode(otherlv_7, grammarAccess.getFormInputRangeAccess().getCommaKeyword_7());
+			newLeafNode(otherlv_8, grammarAccess.getFormInputRangeAccess().getCommaKeyword_8());
 		}
-		otherlv_8='min:'
+		otherlv_9='"min"'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getFormInputRangeAccess().getMinKeyword_8());
+			newLeafNode(otherlv_9, grammarAccess.getFormInputRangeAccess().getMinKeyword_9());
+		}
+		otherlv_10=':'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getFormInputRangeAccess().getColonKeyword_10());
 		}
 		(
 			(
-				lv_min_9_0=RULE_INT
+				lv_min_11_0=RULE_INT
 				{
-					newLeafNode(lv_min_9_0, grammarAccess.getFormInputRangeAccess().getMinINTTerminalRuleCall_9_0());
+					newLeafNode(lv_min_11_0, grammarAccess.getFormInputRangeAccess().getMinINTTerminalRuleCall_11_0());
 				}
 				{
 					if ($current==null) {
@@ -388,24 +438,28 @@ ruleFormInputRange returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"min",
-						lv_min_9_0,
+						lv_min_11_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_10=','
+		otherlv_12=','
 		{
-			newLeafNode(otherlv_10, grammarAccess.getFormInputRangeAccess().getCommaKeyword_10());
+			newLeafNode(otherlv_12, grammarAccess.getFormInputRangeAccess().getCommaKeyword_12());
 		}
-		otherlv_11='max:'
+		otherlv_13='"max"'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getFormInputRangeAccess().getMaxKeyword_11());
+			newLeafNode(otherlv_13, grammarAccess.getFormInputRangeAccess().getMaxKeyword_13());
+		}
+		otherlv_14=':'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getFormInputRangeAccess().getColonKeyword_14());
 		}
 		(
 			(
-				lv_max_12_0=RULE_INT
+				lv_max_15_0=RULE_INT
 				{
-					newLeafNode(lv_max_12_0, grammarAccess.getFormInputRangeAccess().getMaxINTTerminalRuleCall_12_0());
+					newLeafNode(lv_max_15_0, grammarAccess.getFormInputRangeAccess().getMaxINTTerminalRuleCall_15_0());
 				}
 				{
 					if ($current==null) {
@@ -414,11 +468,15 @@ ruleFormInputRange returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"max",
-						lv_max_12_0,
+						lv_max_15_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
+		otherlv_16='}'
+		{
+			newLeafNode(otherlv_16, grammarAccess.getFormInputRangeAccess().getRightCurlyBracketKeyword_16());
+		}
 	)
 ;
 
@@ -438,19 +496,23 @@ ruleFormInputSelect returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='name'
+		otherlv_0='{'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getFormInputSelectAccess().getNameKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getFormInputSelectAccess().getLeftCurlyBracketKeyword_0());
 		}
-		otherlv_1=':'
+		otherlv_1='"inputName"'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getFormInputSelectAccess().getColonKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getFormInputSelectAccess().getInputNameKeyword_1());
+		}
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getFormInputSelectAccess().getColonKeyword_2());
 		}
 		(
 			(
-				lv_name_2_0=RULE_STRING
+				lv_name_3_0=RULE_STRING
 				{
-					newLeafNode(lv_name_2_0, grammarAccess.getFormInputSelectAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_name_3_0, grammarAccess.getFormInputSelectAccess().getNameSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -459,45 +521,45 @@ ruleFormInputSelect returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_3_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_3=','
+		otherlv_4=','
 		{
-			newLeafNode(otherlv_3, grammarAccess.getFormInputSelectAccess().getCommaKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getFormInputSelectAccess().getCommaKeyword_4());
 		}
-		otherlv_4='type'
+		otherlv_5='"inputType"'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getFormInputSelectAccess().getTypeKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getFormInputSelectAccess().getInputTypeKeyword_5());
 		}
-		otherlv_5=':'
+		otherlv_6=':'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getFormInputSelectAccess().getColonKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getFormInputSelectAccess().getColonKeyword_6());
 		}
-		otherlv_6='SELECT'
+		otherlv_7='"select"'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getFormInputSelectAccess().getSELECTKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getFormInputSelectAccess().getSelectKeyword_7());
 		}
-		otherlv_7=','
+		otherlv_8=','
 		{
-			newLeafNode(otherlv_7, grammarAccess.getFormInputSelectAccess().getCommaKeyword_7());
+			newLeafNode(otherlv_8, grammarAccess.getFormInputSelectAccess().getCommaKeyword_8());
 		}
-		otherlv_8='options:'
+		otherlv_9='"options"'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getFormInputSelectAccess().getOptionsKeyword_8());
+			newLeafNode(otherlv_9, grammarAccess.getFormInputSelectAccess().getOptionsKeyword_9());
 		}
-		otherlv_9='{'
+		otherlv_10=':'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getFormInputSelectAccess().getLeftCurlyBracketKeyword_9());
+			newLeafNode(otherlv_10, grammarAccess.getFormInputSelectAccess().getColonKeyword_10());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFormInputSelectAccess().getOptionOptionParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getFormInputSelectAccess().getOptionOptionParserRuleCall_11_0());
 				}
-				lv_option_10_0=ruleOption
+				lv_option_11_0=ruleOption
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFormInputSelectRule());
@@ -505,15 +567,15 @@ ruleFormInputSelect returns [EObject current=null]
 					set(
 						$current,
 						"option",
-						lv_option_10_0,
+						lv_option_11_0,
 						"cafev.vform.VFormDsl.Option");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_11='}'
+		otherlv_12='}'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getFormInputSelectAccess().getRightCurlyBracketKeyword_11());
+			newLeafNode(otherlv_12, grammarAccess.getFormInputSelectAccess().getRightCurlyBracketKeyword_12());
 		}
 	)
 ;
@@ -579,32 +641,44 @@ ruleDataOption returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='optionType:'
+		otherlv_0='{'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getDataOptionAccess().getOptionTypeKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getDataOptionAccess().getLeftCurlyBracketKeyword_0());
 		}
-		otherlv_1='data'
+		otherlv_1='"optionType"'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getDataOptionAccess().getDataKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getDataOptionAccess().getOptionTypeKeyword_1());
 		}
-		otherlv_2=','
+		otherlv_2=':'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getDataOptionAccess().getCommaKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getDataOptionAccess().getColonKeyword_2());
 		}
-		otherlv_3='data:'
+		otherlv_3='"data"'
 		{
 			newLeafNode(otherlv_3, grammarAccess.getDataOptionAccess().getDataKeyword_3());
 		}
-		otherlv_4='['
+		otherlv_4=','
 		{
-			newLeafNode(otherlv_4, grammarAccess.getDataOptionAccess().getLeftSquareBracketKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getDataOptionAccess().getCommaKeyword_4());
+		}
+		otherlv_5='"data"'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getDataOptionAccess().getDataKeyword_5());
+		}
+		otherlv_6=':'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getDataOptionAccess().getColonKeyword_6());
+		}
+		otherlv_7='['
+		{
+			newLeafNode(otherlv_7, grammarAccess.getDataOptionAccess().getLeftSquareBracketKeyword_7());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getDataOptionAccess().getDataDataParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getDataOptionAccess().getDataDataParserRuleCall_8_0());
 				}
-				lv_data_5_0=ruleData
+				lv_data_8_0=ruleData
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getDataOptionRule());
@@ -612,23 +686,23 @@ ruleDataOption returns [EObject current=null]
 					add(
 						$current,
 						"data",
-						lv_data_5_0,
+						lv_data_8_0,
 						"cafev.vform.VFormDsl.Data");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_6=','
+			otherlv_9=','
 			{
-				newLeafNode(otherlv_6, grammarAccess.getDataOptionAccess().getCommaKeyword_6_0());
+				newLeafNode(otherlv_9, grammarAccess.getDataOptionAccess().getCommaKeyword_9_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDataOptionAccess().getDataDataParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getDataOptionAccess().getDataDataParserRuleCall_9_1_0());
 					}
-					lv_data_7_0=ruleData
+					lv_data_10_0=ruleData
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDataOptionRule());
@@ -636,16 +710,20 @@ ruleDataOption returns [EObject current=null]
 						add(
 							$current,
 							"data",
-							lv_data_7_0,
+							lv_data_10_0,
 							"cafev.vform.VFormDsl.Data");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_8=']'
+		otherlv_11=']'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getDataOptionAccess().getRightSquareBracketKeyword_7());
+			newLeafNode(otherlv_11, grammarAccess.getDataOptionAccess().getRightSquareBracketKeyword_10());
+		}
+		otherlv_12='}'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getDataOptionAccess().getRightCurlyBracketKeyword_11());
 		}
 	)
 ;
@@ -666,32 +744,44 @@ ruleEnumOption returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='optionType:'
+		otherlv_0='{'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getEnumOptionAccess().getOptionTypeKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getEnumOptionAccess().getLeftCurlyBracketKeyword_0());
 		}
-		otherlv_1='enum'
+		otherlv_1='"optionType"'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getEnumOptionAccess().getEnumKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getEnumOptionAccess().getOptionTypeKeyword_1());
 		}
-		otherlv_2=','
+		otherlv_2=':'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getEnumOptionAccess().getCommaKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getEnumOptionAccess().getColonKeyword_2());
 		}
-		otherlv_3='data:'
+		otherlv_3='"enum"'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getEnumOptionAccess().getDataKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getEnumOptionAccess().getEnumKeyword_3());
 		}
-		otherlv_4='['
+		otherlv_4=','
 		{
-			newLeafNode(otherlv_4, grammarAccess.getEnumOptionAccess().getLeftSquareBracketKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getEnumOptionAccess().getCommaKeyword_4());
+		}
+		otherlv_5='"data"'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getEnumOptionAccess().getDataKeyword_5());
+		}
+		otherlv_6=':'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getEnumOptionAccess().getColonKeyword_6());
+		}
+		otherlv_7='['
+		{
+			newLeafNode(otherlv_7, grammarAccess.getEnumOptionAccess().getLeftSquareBracketKeyword_7());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEnumOptionAccess().getDataOptionItemParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getEnumOptionAccess().getDataOptionItemParserRuleCall_8_0());
 				}
-				lv_data_5_0=ruleOptionItem
+				lv_data_8_0=ruleOptionItem
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEnumOptionRule());
@@ -699,23 +789,23 @@ ruleEnumOption returns [EObject current=null]
 					add(
 						$current,
 						"data",
-						lv_data_5_0,
+						lv_data_8_0,
 						"cafev.vform.VFormDsl.OptionItem");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_6=','
+			otherlv_9=','
 			{
-				newLeafNode(otherlv_6, grammarAccess.getEnumOptionAccess().getCommaKeyword_6_0());
+				newLeafNode(otherlv_9, grammarAccess.getEnumOptionAccess().getCommaKeyword_9_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEnumOptionAccess().getDataOptionItemParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getEnumOptionAccess().getDataOptionItemParserRuleCall_9_1_0());
 					}
-					lv_data_7_0=ruleOptionItem
+					lv_data_10_0=ruleOptionItem
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEnumOptionRule());
@@ -723,16 +813,20 @@ ruleEnumOption returns [EObject current=null]
 						add(
 							$current,
 							"data",
-							lv_data_7_0,
+							lv_data_10_0,
 							"cafev.vform.VFormDsl.OptionItem");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_8=']'
+		otherlv_11=']'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getEnumOptionAccess().getRightSquareBracketKeyword_7());
+			newLeafNode(otherlv_11, grammarAccess.getEnumOptionAccess().getRightSquareBracketKeyword_10());
+		}
+		otherlv_12='}'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getEnumOptionAccess().getRightCurlyBracketKeyword_11());
 		}
 	)
 ;
@@ -753,27 +847,39 @@ ruleNumberOption returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='optionType:'
+		otherlv_0='{'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getNumberOptionAccess().getOptionTypeKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getNumberOptionAccess().getLeftCurlyBracketKeyword_0());
 		}
-		otherlv_1='number'
+		otherlv_1='"optionType"'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getNumberOptionAccess().getNumberKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getNumberOptionAccess().getOptionTypeKeyword_1());
 		}
-		otherlv_2=','
+		otherlv_2=':'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getNumberOptionAccess().getCommaKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getNumberOptionAccess().getColonKeyword_2());
 		}
-		otherlv_3='min:'
+		otherlv_3='"number"'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getNumberOptionAccess().getMinKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getNumberOptionAccess().getNumberKeyword_3());
+		}
+		otherlv_4=','
+		{
+			newLeafNode(otherlv_4, grammarAccess.getNumberOptionAccess().getCommaKeyword_4());
+		}
+		otherlv_5='"min"'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getNumberOptionAccess().getMinKeyword_5());
+		}
+		otherlv_6=':'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getNumberOptionAccess().getColonKeyword_6());
 		}
 		(
 			(
-				lv_min_4_0=RULE_INT
+				lv_min_7_0=RULE_INT
 				{
-					newLeafNode(lv_min_4_0, grammarAccess.getNumberOptionAccess().getMinINTTerminalRuleCall_4_0());
+					newLeafNode(lv_min_7_0, grammarAccess.getNumberOptionAccess().getMinINTTerminalRuleCall_7_0());
 				}
 				{
 					if ($current==null) {
@@ -782,33 +888,7 @@ ruleNumberOption returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"min",
-						lv_min_4_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_5=','
-		{
-			newLeafNode(otherlv_5, grammarAccess.getNumberOptionAccess().getCommaKeyword_5());
-		}
-		otherlv_6='max:'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getNumberOptionAccess().getMaxKeyword_6());
-		}
-		(
-			(
-				lv_max_7_0=RULE_INT
-				{
-					newLeafNode(lv_max_7_0, grammarAccess.getNumberOptionAccess().getMaxINTTerminalRuleCall_7_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getNumberOptionRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"max",
-						lv_max_7_0,
+						lv_min_7_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -817,15 +897,45 @@ ruleNumberOption returns [EObject current=null]
 		{
 			newLeafNode(otherlv_8, grammarAccess.getNumberOptionAccess().getCommaKeyword_8());
 		}
-		otherlv_9='range:'
+		otherlv_9='"max"'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getNumberOptionAccess().getRangeKeyword_9());
+			newLeafNode(otherlv_9, grammarAccess.getNumberOptionAccess().getMaxKeyword_9());
+		}
+		otherlv_10=':'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getNumberOptionAccess().getColonKeyword_10());
 		}
 		(
 			(
-				lv_range_10_0=RULE_INT
+				lv_max_11_0=RULE_INT
 				{
-					newLeafNode(lv_range_10_0, grammarAccess.getNumberOptionAccess().getRangeINTTerminalRuleCall_10_0());
+					newLeafNode(lv_max_11_0, grammarAccess.getNumberOptionAccess().getMaxINTTerminalRuleCall_11_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNumberOptionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"max",
+						lv_max_11_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_12='"range"'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getNumberOptionAccess().getRangeKeyword_12());
+		}
+		otherlv_13=':'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getNumberOptionAccess().getColonKeyword_13());
+		}
+		(
+			(
+				lv_range_14_0=RULE_INT
+				{
+					newLeafNode(lv_range_14_0, grammarAccess.getNumberOptionAccess().getRangeINTTerminalRuleCall_14_0());
 				}
 				{
 					if ($current==null) {
@@ -834,11 +944,15 @@ ruleNumberOption returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"range",
-						lv_range_10_0,
+						lv_range_14_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
+		otherlv_15='}'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getNumberOptionAccess().getRightCurlyBracketKeyword_15());
+		}
 	)
 ;
 
@@ -858,19 +972,23 @@ ruleFormInputSearch returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='name'
+		otherlv_0='{'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getFormInputSearchAccess().getNameKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getFormInputSearchAccess().getLeftCurlyBracketKeyword_0());
 		}
-		otherlv_1=':'
+		otherlv_1='"inputName"'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getFormInputSearchAccess().getColonKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getFormInputSearchAccess().getInputNameKeyword_1());
+		}
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getFormInputSearchAccess().getColonKeyword_2());
 		}
 		(
 			(
-				lv_name_2_0=RULE_STRING
+				lv_name_3_0=RULE_STRING
 				{
-					newLeafNode(lv_name_2_0, grammarAccess.getFormInputSearchAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_name_3_0, grammarAccess.getFormInputSearchAccess().getNameSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -879,45 +997,49 @@ ruleFormInputSearch returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_3_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_3=','
+		otherlv_4=','
 		{
-			newLeafNode(otherlv_3, grammarAccess.getFormInputSearchAccess().getCommaKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getFormInputSearchAccess().getCommaKeyword_4());
 		}
-		otherlv_4='type'
+		otherlv_5='"inputType"'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getFormInputSearchAccess().getTypeKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getFormInputSearchAccess().getInputTypeKeyword_5());
 		}
-		otherlv_5=':'
+		otherlv_6=':'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getFormInputSearchAccess().getColonKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getFormInputSearchAccess().getColonKeyword_6());
 		}
-		otherlv_6='SEARCH'
+		otherlv_7='"search"'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getFormInputSearchAccess().getSEARCHKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getFormInputSearchAccess().getSearchKeyword_7());
 		}
-		otherlv_7=','
+		otherlv_8=','
 		{
-			newLeafNode(otherlv_7, grammarAccess.getFormInputSearchAccess().getCommaKeyword_7());
+			newLeafNode(otherlv_8, grammarAccess.getFormInputSearchAccess().getCommaKeyword_8());
 		}
-		otherlv_8='options:'
+		otherlv_9='"data"'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getFormInputSearchAccess().getOptionsKeyword_8());
+			newLeafNode(otherlv_9, grammarAccess.getFormInputSearchAccess().getDataKeyword_9());
 		}
-		otherlv_9='['
+		otherlv_10=':'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getFormInputSearchAccess().getLeftSquareBracketKeyword_9());
+			newLeafNode(otherlv_10, grammarAccess.getFormInputSearchAccess().getColonKeyword_10());
+		}
+		otherlv_11='['
+		{
+			newLeafNode(otherlv_11, grammarAccess.getFormInputSearchAccess().getLeftSquareBracketKeyword_11());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFormInputSearchAccess().getDataOptionItemParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getFormInputSearchAccess().getDataOptionItemParserRuleCall_12_0());
 				}
-				lv_data_10_0=ruleOptionItem
+				lv_data_12_0=ruleOptionItem
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFormInputSearchRule());
@@ -925,23 +1047,23 @@ ruleFormInputSearch returns [EObject current=null]
 					add(
 						$current,
 						"data",
-						lv_data_10_0,
+						lv_data_12_0,
 						"cafev.vform.VFormDsl.OptionItem");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_11=','
+			otherlv_13=','
 			{
-				newLeafNode(otherlv_11, grammarAccess.getFormInputSearchAccess().getCommaKeyword_11_0());
+				newLeafNode(otherlv_13, grammarAccess.getFormInputSearchAccess().getCommaKeyword_13_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFormInputSearchAccess().getDataOptionItemParserRuleCall_11_1_0());
+						newCompositeNode(grammarAccess.getFormInputSearchAccess().getDataOptionItemParserRuleCall_13_1_0());
 					}
-					lv_data_12_0=ruleOptionItem
+					lv_data_14_0=ruleOptionItem
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFormInputSearchRule());
@@ -949,16 +1071,20 @@ ruleFormInputSearch returns [EObject current=null]
 						add(
 							$current,
 							"data",
-							lv_data_12_0,
+							lv_data_14_0,
 							"cafev.vform.VFormDsl.OptionItem");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_13=']'
+		otherlv_15=']'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getFormInputSearchAccess().getRightSquareBracketKeyword_12());
+			newLeafNode(otherlv_15, grammarAccess.getFormInputSearchAccess().getRightSquareBracketKeyword_14());
+		}
+		otherlv_16='}'
+		{
+			newLeafNode(otherlv_16, grammarAccess.getFormInputSearchAccess().getRightCurlyBracketKeyword_15());
 		}
 	)
 ;
@@ -1378,67 +1504,9 @@ ruleIntData returns [EObject current=null]
 	)
 ;
 
-// Rule BasicInputType
-ruleBasicInputType returns [Enumerator current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			enumLiteral_0='TEXT'
-			{
-				$current = grammarAccess.getBasicInputTypeAccess().getTEXTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getBasicInputTypeAccess().getTEXTEnumLiteralDeclaration_0());
-			}
-		)
-		    |
-		(
-			enumLiteral_1='CHECKBOX'
-			{
-				$current = grammarAccess.getBasicInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getBasicInputTypeAccess().getCHECKBOXEnumLiteralDeclaration_1());
-			}
-		)
-		    |
-		(
-			enumLiteral_2='NUMBER'
-			{
-				$current = grammarAccess.getBasicInputTypeAccess().getNUMBEREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getBasicInputTypeAccess().getNUMBEREnumLiteralDeclaration_2());
-			}
-		)
-	)
-;
+RULE_LAYOUT : ('"horizontal"'|'"vertical"');
 
-// Rule Layout
-ruleLayout returns [Enumerator current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			enumLiteral_0='horizontal'
-			{
-				$current = grammarAccess.getLayoutAccess().getHorizontalEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getLayoutAccess().getHorizontalEnumLiteralDeclaration_0());
-			}
-		)
-		    |
-		(
-			enumLiteral_1='vertical'
-			{
-				$current = grammarAccess.getLayoutAccess().getVerticalEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getLayoutAccess().getVerticalEnumLiteralDeclaration_1());
-			}
-		)
-	)
-;
+RULE_BASICINPUT : ('"text"'|'"checkbox"'|'"numberr"'|'"date"');
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

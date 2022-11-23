@@ -8,18 +8,13 @@
         eType="#//FormInput" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FormLayout">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layout" eType="#//Layout"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FormInput">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FormInputBasic" eSuperTypes="#//FormInput">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//BasicInputType"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="BasicInputType">
-    <eLiterals name="TEXT" literal="TEXT"/>
-    <eLiterals name="CHECKBOX" value="1" literal="CHECKBOX"/>
-    <eLiterals name="NUMBER" value="2" literal="NUMBER"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FormInputRange" eSuperTypes="#//FormInput">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -69,9 +64,5 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntData" eSuperTypes="#//Data">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Layout">
-    <eLiterals name="horizontal" literal="horizontal"/>
-    <eLiterals name="vertical" value="1" literal="vertical"/>
   </eClassifiers>
 </ecore:EPackage>

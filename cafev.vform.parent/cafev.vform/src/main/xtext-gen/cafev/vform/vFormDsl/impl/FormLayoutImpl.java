@@ -4,7 +4,6 @@
 package cafev.vform.vFormDsl.impl;
 
 import cafev.vform.vFormDsl.FormLayout;
-import cafev.vform.vFormDsl.Layout;
 import cafev.vform.vFormDsl.VFormDslPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -37,7 +36,7 @@ public class FormLayoutImpl extends MinimalEObjectImpl.Container implements Form
    * @generated
    * @ordered
    */
-  protected static final Layout LAYOUT_EDEFAULT = Layout.HORIZONTAL;
+  protected static final String LAYOUT_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getLayout() <em>Layout</em>}' attribute.
@@ -47,7 +46,7 @@ public class FormLayoutImpl extends MinimalEObjectImpl.Container implements Form
    * @generated
    * @ordered
    */
-  protected Layout layout = LAYOUT_EDEFAULT;
+  protected String layout = LAYOUT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -76,7 +75,7 @@ public class FormLayoutImpl extends MinimalEObjectImpl.Container implements Form
    * @generated
    */
   @Override
-  public Layout getLayout()
+  public String getLayout()
   {
     return layout;
   }
@@ -87,10 +86,10 @@ public class FormLayoutImpl extends MinimalEObjectImpl.Container implements Form
    * @generated
    */
   @Override
-  public void setLayout(Layout newLayout)
+  public void setLayout(String newLayout)
   {
-    Layout oldLayout = layout;
-    layout = newLayout == null ? LAYOUT_EDEFAULT : newLayout;
+    String oldLayout = layout;
+    layout = newLayout;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, VFormDslPackage.FORM_LAYOUT__LAYOUT, oldLayout, layout));
   }
@@ -122,7 +121,7 @@ public class FormLayoutImpl extends MinimalEObjectImpl.Container implements Form
     switch (featureID)
     {
       case VFormDslPackage.FORM_LAYOUT__LAYOUT:
-        setLayout((Layout)newValue);
+        setLayout((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -156,7 +155,7 @@ public class FormLayoutImpl extends MinimalEObjectImpl.Container implements Form
     switch (featureID)
     {
       case VFormDslPackage.FORM_LAYOUT__LAYOUT:
-        return layout != LAYOUT_EDEFAULT;
+        return LAYOUT_EDEFAULT == null ? layout != null : !LAYOUT_EDEFAULT.equals(layout);
     }
     return super.eIsSet(featureID);
   }

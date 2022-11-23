@@ -5,7 +5,6 @@ package cafev.vform.vFormDsl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -671,26 +670,6 @@ public interface VFormDslPackage extends EPackage
    */
   int INT_DATA_FEATURE_COUNT = DATA_FEATURE_COUNT + 1;
 
-  /**
-   * The meta object id for the '{@link cafev.vform.vFormDsl.BasicInputType <em>Basic Input Type</em>}' enum.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see cafev.vform.vFormDsl.BasicInputType
-   * @see cafev.vform.vFormDsl.impl.VFormDslPackageImpl#getBasicInputType()
-   * @generated
-   */
-  int BASIC_INPUT_TYPE = 19;
-
-  /**
-   * The meta object id for the '{@link cafev.vform.vFormDsl.Layout <em>Layout</em>}' enum.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see cafev.vform.vFormDsl.Layout
-   * @see cafev.vform.vFormDsl.impl.VFormDslPackageImpl#getLayout()
-   * @generated
-   */
-  int LAYOUT = 20;
-
 
   /**
    * Returns the meta object for class '{@link cafev.vform.vFormDsl.Model <em>Model</em>}'.
@@ -1114,26 +1093,6 @@ public interface VFormDslPackage extends EPackage
   EAttribute getIntData_Value();
 
   /**
-   * Returns the meta object for enum '{@link cafev.vform.vFormDsl.BasicInputType <em>Basic Input Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Basic Input Type</em>'.
-   * @see cafev.vform.vFormDsl.BasicInputType
-   * @generated
-   */
-  EEnum getBasicInputType();
-
-  /**
-   * Returns the meta object for enum '{@link cafev.vform.vFormDsl.Layout <em>Layout</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Layout</em>'.
-   * @see cafev.vform.vFormDsl.Layout
-   * @generated
-   */
-  EEnum getLayout();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1513,26 +1472,6 @@ public interface VFormDslPackage extends EPackage
      * @generated
      */
     EAttribute INT_DATA__VALUE = eINSTANCE.getIntData_Value();
-
-    /**
-     * The meta object literal for the '{@link cafev.vform.vFormDsl.BasicInputType <em>Basic Input Type</em>}' enum.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see cafev.vform.vFormDsl.BasicInputType
-     * @see cafev.vform.vFormDsl.impl.VFormDslPackageImpl#getBasicInputType()
-     * @generated
-     */
-    EEnum BASIC_INPUT_TYPE = eINSTANCE.getBasicInputType();
-
-    /**
-     * The meta object literal for the '{@link cafev.vform.vFormDsl.Layout <em>Layout</em>}' enum.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see cafev.vform.vFormDsl.Layout
-     * @see cafev.vform.vFormDsl.impl.VFormDslPackageImpl#getLayout()
-     * @generated
-     */
-    EEnum LAYOUT = eINSTANCE.getLayout();
 
   }
 

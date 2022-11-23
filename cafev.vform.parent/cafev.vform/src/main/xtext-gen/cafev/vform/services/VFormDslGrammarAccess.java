@@ -9,8 +9,6 @@ import java.util.List;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
-import org.eclipse.xtext.EnumLiteralDeclaration;
-import org.eclipse.xtext.EnumRule;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -28,71 +26,95 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.Model");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFormLayoutKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cFormLayoutAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cFormLayoutFormLayoutParserRuleCall_1_0 = (RuleCall)cFormLayoutAssignment_1.eContents().get(0);
-		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cFormInputsKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cLeftSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cFormInputAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cFormInputFormInputParserRuleCall_5_0 = (RuleCall)cFormInputAssignment_5.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cFormLayoutKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cFormLayoutAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cFormLayoutFormLayoutParserRuleCall_2_0 = (RuleCall)cFormLayoutAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cFormInputsKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cLeftSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cFormInputAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cFormInputFormInputParserRuleCall_6_0 = (RuleCall)cFormInputAssignment_6.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cCommaKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cFormInputAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cFormInputFormInputParserRuleCall_7_1_0 = (RuleCall)cFormInputAssignment_7_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Model:
-		//    "formLayout:" formLayout=FormLayout ","
-		//    "formInputs:" "["
-		//        (formInput+=FormInput*)
-		//    "]"
+		//"{"
+		//    "\"formLayout\":" formLayout=FormLayout ","
+		//    "\"formInputs\":" "["formInput+=FormInput ("," formInput+=FormInput)*"]"
+		//"}"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"formLayout:" formLayout=FormLayout ","
-		//"formInputs:" "["
-		//    (formInput+=FormInput*)
-		//"]"
+		//"{"
+		//    "\"formLayout\":" formLayout=FormLayout ","
+		//    "\"formInputs\":" "["formInput+=FormInput ("," formInput+=FormInput)*"]"
+		//"}"
 		public Group getGroup() { return cGroup; }
 		
-		//"formLayout:"
-		public Keyword getFormLayoutKeyword_0() { return cFormLayoutKeyword_0; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+		
+		//"\"formLayout\":"
+		public Keyword getFormLayoutKeyword_1() { return cFormLayoutKeyword_1; }
 		
 		//formLayout=FormLayout
-		public Assignment getFormLayoutAssignment_1() { return cFormLayoutAssignment_1; }
+		public Assignment getFormLayoutAssignment_2() { return cFormLayoutAssignment_2; }
 		
 		//FormLayout
-		public RuleCall getFormLayoutFormLayoutParserRuleCall_1_0() { return cFormLayoutFormLayoutParserRuleCall_1_0; }
+		public RuleCall getFormLayoutFormLayoutParserRuleCall_2_0() { return cFormLayoutFormLayoutParserRuleCall_2_0; }
 		
 		//","
-		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
 		
-		//"formInputs:"
-		public Keyword getFormInputsKeyword_3() { return cFormInputsKeyword_3; }
+		//"\"formInputs\":"
+		public Keyword getFormInputsKeyword_4() { return cFormInputsKeyword_4; }
 		
 		//"["
-		public Keyword getLeftSquareBracketKeyword_4() { return cLeftSquareBracketKeyword_4; }
+		public Keyword getLeftSquareBracketKeyword_5() { return cLeftSquareBracketKeyword_5; }
 		
-		//(formInput+=FormInput*)
-		public Assignment getFormInputAssignment_5() { return cFormInputAssignment_5; }
+		//formInput+=FormInput
+		public Assignment getFormInputAssignment_6() { return cFormInputAssignment_6; }
 		
 		//FormInput
-		public RuleCall getFormInputFormInputParserRuleCall_5_0() { return cFormInputFormInputParserRuleCall_5_0; }
+		public RuleCall getFormInputFormInputParserRuleCall_6_0() { return cFormInputFormInputParserRuleCall_6_0; }
+		
+		//("," formInput+=FormInput)*
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//","
+		public Keyword getCommaKeyword_7_0() { return cCommaKeyword_7_0; }
+		
+		//formInput+=FormInput
+		public Assignment getFormInputAssignment_7_1() { return cFormInputAssignment_7_1; }
+		
+		//FormInput
+		public RuleCall getFormInputFormInputParserRuleCall_7_1_0() { return cFormInputFormInputParserRuleCall_7_1_0; }
 		
 		//"]"
-		public Keyword getRightSquareBracketKeyword_6() { return cRightSquareBracketKeyword_6; }
+		public Keyword getRightSquareBracketKeyword_8() { return cRightSquareBracketKeyword_8; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class FormLayoutElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.FormLayout");
 		private final Assignment cLayoutAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cLayoutLayoutEnumRuleCall_0 = (RuleCall)cLayoutAssignment.eContents().get(0);
+		private final RuleCall cLayoutLAYOUTTerminalRuleCall_0 = (RuleCall)cLayoutAssignment.eContents().get(0);
 		
 		//FormLayout:
-		//    layout=Layout;
+		//    layout=LAYOUT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//layout=Layout
+		//layout=LAYOUT
 		public Assignment getLayoutAssignment() { return cLayoutAssignment; }
 		
-		//Layout
-		public RuleCall getLayoutLayoutEnumRuleCall_0() { return cLayoutLayoutEnumRuleCall_0; }
+		//LAYOUT
+		public RuleCall getLayoutLAYOUTTerminalRuleCall_0() { return cLayoutLAYOUTTerminalRuleCall_0; }
 	}
 	public class FormInputElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.FormInput");
@@ -129,202 +151,246 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	public class FormInputBasicElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.FormInputBasic");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cNameKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cTypeKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cTypeBasicInputTypeEnumRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cInputNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cInputTypeKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cTypeAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cTypeBASICINPUTTerminalRuleCall_7_0 = (RuleCall)cTypeAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//FormInputBasic:
-		//    "name" ":" name=STRING
-		//    "type" ":" type=BasicInputType
+		//"{"
+		//    "\"inputName\"" ":" name=STRING ","
+		//    "\"inputType\"" ":" type=BASICINPUT
+		//"}"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"name" ":" name=STRING
-		//"type" ":" type=BasicInputType
+		//"{"
+		//    "\"inputName\"" ":" name=STRING ","
+		//    "\"inputType\"" ":" type=BASICINPUT
+		//"}"
 		public Group getGroup() { return cGroup; }
 		
-		//"name"
-		public Keyword getNameKeyword_0() { return cNameKeyword_0; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+		
+		//"\"inputName\""
+		public Keyword getInputNameKeyword_1() { return cInputNameKeyword_1; }
 		
 		//":"
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_3_0() { return cNameSTRINGTerminalRuleCall_3_0; }
 		
-		//"type"
-		public Keyword getTypeKeyword_3() { return cTypeKeyword_3; }
+		//","
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		
+		//"\"inputType\""
+		public Keyword getInputTypeKeyword_5() { return cInputTypeKeyword_5; }
 		
 		//":"
-		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
 		
-		//type=BasicInputType
-		public Assignment getTypeAssignment_5() { return cTypeAssignment_5; }
+		//type=BASICINPUT
+		public Assignment getTypeAssignment_7() { return cTypeAssignment_7; }
 		
-		//BasicInputType
-		public RuleCall getTypeBasicInputTypeEnumRuleCall_5_0() { return cTypeBasicInputTypeEnumRuleCall_5_0; }
+		//BASICINPUT
+		public RuleCall getTypeBASICINPUTTerminalRuleCall_7_0() { return cTypeBASICINPUTTerminalRuleCall_7_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	public class FormInputRangeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.FormInputRange");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cNameKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cTypeKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cRANGEKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cCommaKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cMinKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cMinAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cMinINTTerminalRuleCall_9_0 = (RuleCall)cMinAssignment_9.eContents().get(0);
-		private final Keyword cCommaKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cMaxKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cMaxAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cMaxINTTerminalRuleCall_12_0 = (RuleCall)cMaxAssignment_12.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cInputNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cInputTypeKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cRangeKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cMinKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cMinAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cMinINTTerminalRuleCall_11_0 = (RuleCall)cMinAssignment_11.eContents().get(0);
+		private final Keyword cCommaKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cMaxKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cColonKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Assignment cMaxAssignment_15 = (Assignment)cGroup.eContents().get(15);
+		private final RuleCall cMaxINTTerminalRuleCall_15_0 = (RuleCall)cMaxAssignment_15.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//FormInputRange:
-		//    "name" ":" name=STRING ","
-		//    "type" ":" "RANGE" ","
-		//    "min:" min=INT ","
-		//    "max:" max=INT
+		//"{"
+		//    "\"inputName\"" ":" name=STRING ","
+		//    "\"inputType\"" ":" "\"range\"" ","
+		//    "\"min\"" ":" min=INT ","
+		//    "\"max\"" ":" max=INT
+		//"}"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"name" ":" name=STRING ","
-		//"type" ":" "RANGE" ","
-		//"min:" min=INT ","
-		//"max:" max=INT
+		//"{"
+		//    "\"inputName\"" ":" name=STRING ","
+		//    "\"inputType\"" ":" "\"range\"" ","
+		//    "\"min\"" ":" min=INT ","
+		//    "\"max\"" ":" max=INT
+		//"}"
 		public Group getGroup() { return cGroup; }
 		
-		//"name"
-		public Keyword getNameKeyword_0() { return cNameKeyword_0; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+		
+		//"\"inputName\""
+		public Keyword getInputNameKeyword_1() { return cInputNameKeyword_1; }
 		
 		//":"
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_3_0() { return cNameSTRINGTerminalRuleCall_3_0; }
 		
 		//","
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 		
-		//"type"
-		public Keyword getTypeKeyword_4() { return cTypeKeyword_4; }
+		//"\"inputType\""
+		public Keyword getInputTypeKeyword_5() { return cInputTypeKeyword_5; }
 		
 		//":"
-		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
 		
-		//"RANGE"
-		public Keyword getRANGEKeyword_6() { return cRANGEKeyword_6; }
+		//"\"range\""
+		public Keyword getRangeKeyword_7() { return cRangeKeyword_7; }
 		
 		//","
-		public Keyword getCommaKeyword_7() { return cCommaKeyword_7; }
+		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
 		
-		//"min:"
-		public Keyword getMinKeyword_8() { return cMinKeyword_8; }
+		//"\"min\""
+		public Keyword getMinKeyword_9() { return cMinKeyword_9; }
+		
+		//":"
+		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
 		
 		//min=INT
-		public Assignment getMinAssignment_9() { return cMinAssignment_9; }
+		public Assignment getMinAssignment_11() { return cMinAssignment_11; }
 		
 		//INT
-		public RuleCall getMinINTTerminalRuleCall_9_0() { return cMinINTTerminalRuleCall_9_0; }
+		public RuleCall getMinINTTerminalRuleCall_11_0() { return cMinINTTerminalRuleCall_11_0; }
 		
 		//","
-		public Keyword getCommaKeyword_10() { return cCommaKeyword_10; }
+		public Keyword getCommaKeyword_12() { return cCommaKeyword_12; }
 		
-		//"max:"
-		public Keyword getMaxKeyword_11() { return cMaxKeyword_11; }
+		//"\"max\""
+		public Keyword getMaxKeyword_13() { return cMaxKeyword_13; }
+		
+		//":"
+		public Keyword getColonKeyword_14() { return cColonKeyword_14; }
 		
 		//max=INT
-		public Assignment getMaxAssignment_12() { return cMaxAssignment_12; }
+		public Assignment getMaxAssignment_15() { return cMaxAssignment_15; }
 		
 		//INT
-		public RuleCall getMaxINTTerminalRuleCall_12_0() { return cMaxINTTerminalRuleCall_12_0; }
+		public RuleCall getMaxINTTerminalRuleCall_15_0() { return cMaxINTTerminalRuleCall_15_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
 	}
 	public class FormInputSelectElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.FormInputSelect");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cNameKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cTypeKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cSELECTKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cCommaKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cOptionsKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cLeftCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cOptionAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cOptionOptionParserRuleCall_10_0 = (RuleCall)cOptionAssignment_10.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cInputNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cInputTypeKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cSelectKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cOptionsKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cOptionAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cOptionOptionParserRuleCall_11_0 = (RuleCall)cOptionAssignment_11.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//FormInputSelect:
-		//    "name" ":" name=STRING ","
-		//    "type" ":" "SELECT" ","
-		//    "options:" "{" option=Option "}"
+		//"{"
+		//    "\"inputName\"" ":" name=STRING ","
+		//    "\"inputType\"" ":" "\"select\"" ","
+		//     "\"options\"" ":"  option=Option
+		//"}"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"name" ":" name=STRING ","
-		//"type" ":" "SELECT" ","
-		//"options:" "{" option=Option "}"
+		//"{"
+		//    "\"inputName\"" ":" name=STRING ","
+		//    "\"inputType\"" ":" "\"select\"" ","
+		//     "\"options\"" ":"  option=Option
+		//"}"
 		public Group getGroup() { return cGroup; }
 		
-		//"name"
-		public Keyword getNameKeyword_0() { return cNameKeyword_0; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+		
+		//"\"inputName\""
+		public Keyword getInputNameKeyword_1() { return cInputNameKeyword_1; }
 		
 		//":"
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_3_0() { return cNameSTRINGTerminalRuleCall_3_0; }
 		
 		//","
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 		
-		//"type"
-		public Keyword getTypeKeyword_4() { return cTypeKeyword_4; }
+		//"\"inputType\""
+		public Keyword getInputTypeKeyword_5() { return cInputTypeKeyword_5; }
 		
 		//":"
-		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
 		
-		//"SELECT"
-		public Keyword getSELECTKeyword_6() { return cSELECTKeyword_6; }
+		//"\"select\""
+		public Keyword getSelectKeyword_7() { return cSelectKeyword_7; }
 		
 		//","
-		public Keyword getCommaKeyword_7() { return cCommaKeyword_7; }
+		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
 		
-		//"options:"
-		public Keyword getOptionsKeyword_8() { return cOptionsKeyword_8; }
+		//"\"options\""
+		public Keyword getOptionsKeyword_9() { return cOptionsKeyword_9; }
 		
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_9() { return cLeftCurlyBracketKeyword_9; }
+		//":"
+		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
 		
 		//option=Option
-		public Assignment getOptionAssignment_10() { return cOptionAssignment_10; }
+		public Assignment getOptionAssignment_11() { return cOptionAssignment_11; }
 		
 		//Option
-		public RuleCall getOptionOptionParserRuleCall_10_0() { return cOptionOptionParserRuleCall_10_0; }
+		public RuleCall getOptionOptionParserRuleCall_11_0() { return cOptionOptionParserRuleCall_11_0; }
 		
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 	public class OptionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.Option");
@@ -353,288 +419,368 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	public class DataOptionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.DataOption");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cOptionTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cDataKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cOptionTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cDataKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cLeftSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cDataAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cDataDataParserRuleCall_5_0 = (RuleCall)cDataAssignment_5.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cDataAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cDataDataParserRuleCall_6_1_0 = (RuleCall)cDataAssignment_6_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cDataKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cLeftSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cDataAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cDataDataParserRuleCall_8_0 = (RuleCall)cDataAssignment_8.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cCommaKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cDataAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final RuleCall cDataDataParserRuleCall_9_1_0 = (RuleCall)cDataAssignment_9_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//DataOption:
-		//    "optionType:" "data" ","
-		//     "data:" "[" data+=Data ("," data+=Data)* "]"
+		//"{"
+		//    "\"optionType\"" ":" "\"data\"" ","
+		//     "\"data\"" ":" "[" data+=Data ("," data+=Data)* "]"
+		//"}"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"optionType:" "data" ","
-		// "data:" "[" data+=Data ("," data+=Data)* "]"
+		//"{"
+		//    "\"optionType\"" ":" "\"data\"" ","
+		//     "\"data\"" ":" "[" data+=Data ("," data+=Data)* "]"
+		//"}"
 		public Group getGroup() { return cGroup; }
 		
-		//"optionType:"
-		public Keyword getOptionTypeKeyword_0() { return cOptionTypeKeyword_0; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
 		
-		//"data"
-		public Keyword getDataKeyword_1() { return cDataKeyword_1; }
+		//"\"optionType\""
+		public Keyword getOptionTypeKeyword_1() { return cOptionTypeKeyword_1; }
 		
-		//","
-		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//"data:"
+		//"\"data\""
 		public Keyword getDataKeyword_3() { return cDataKeyword_3; }
 		
+		//","
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		
+		//"\"data\""
+		public Keyword getDataKeyword_5() { return cDataKeyword_5; }
+		
+		//":"
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		
 		//"["
-		public Keyword getLeftSquareBracketKeyword_4() { return cLeftSquareBracketKeyword_4; }
+		public Keyword getLeftSquareBracketKeyword_7() { return cLeftSquareBracketKeyword_7; }
 		
 		//data+=Data
-		public Assignment getDataAssignment_5() { return cDataAssignment_5; }
+		public Assignment getDataAssignment_8() { return cDataAssignment_8; }
 		
 		//Data
-		public RuleCall getDataDataParserRuleCall_5_0() { return cDataDataParserRuleCall_5_0; }
+		public RuleCall getDataDataParserRuleCall_8_0() { return cDataDataParserRuleCall_8_0; }
 		
 		//("," data+=Data)*
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_9() { return cGroup_9; }
 		
 		//","
-		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
+		public Keyword getCommaKeyword_9_0() { return cCommaKeyword_9_0; }
 		
 		//data+=Data
-		public Assignment getDataAssignment_6_1() { return cDataAssignment_6_1; }
+		public Assignment getDataAssignment_9_1() { return cDataAssignment_9_1; }
 		
 		//Data
-		public RuleCall getDataDataParserRuleCall_6_1_0() { return cDataDataParserRuleCall_6_1_0; }
+		public RuleCall getDataDataParserRuleCall_9_1_0() { return cDataDataParserRuleCall_9_1_0; }
 		
 		//"]"
-		public Keyword getRightSquareBracketKeyword_7() { return cRightSquareBracketKeyword_7; }
+		public Keyword getRightSquareBracketKeyword_10() { return cRightSquareBracketKeyword_10; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 	public class EnumOptionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.EnumOption");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cOptionTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cEnumKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cDataKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cLeftSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cDataAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cDataOptionItemParserRuleCall_5_0 = (RuleCall)cDataAssignment_5.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cDataAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cDataOptionItemParserRuleCall_6_1_0 = (RuleCall)cDataAssignment_6_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cOptionTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cEnumKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cDataKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cLeftSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cDataAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cDataOptionItemParserRuleCall_8_0 = (RuleCall)cDataAssignment_8.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cCommaKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cDataAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final RuleCall cDataOptionItemParserRuleCall_9_1_0 = (RuleCall)cDataAssignment_9_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//EnumOption:
-		//    "optionType:" "enum" ","
-		//     "data:" "[" data+=OptionItem ("," data+=OptionItem)* "]"
+		//"{"
+		//    "\"optionType\"" ":" "\"enum\"" ","
+		//     "\"data\"" ":" "[" data+=OptionItem ("," data+=OptionItem)* "]"
+		//"}"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"optionType:" "enum" ","
-		// "data:" "[" data+=OptionItem ("," data+=OptionItem)* "]"
+		//"{"
+		//    "\"optionType\"" ":" "\"enum\"" ","
+		//     "\"data\"" ":" "[" data+=OptionItem ("," data+=OptionItem)* "]"
+		//"}"
 		public Group getGroup() { return cGroup; }
 		
-		//"optionType:"
-		public Keyword getOptionTypeKeyword_0() { return cOptionTypeKeyword_0; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
 		
-		//"enum"
-		public Keyword getEnumKeyword_1() { return cEnumKeyword_1; }
+		//"\"optionType\""
+		public Keyword getOptionTypeKeyword_1() { return cOptionTypeKeyword_1; }
+		
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//"\"enum\""
+		public Keyword getEnumKeyword_3() { return cEnumKeyword_3; }
 		
 		//","
-		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 		
-		//"data:"
-		public Keyword getDataKeyword_3() { return cDataKeyword_3; }
+		//"\"data\""
+		public Keyword getDataKeyword_5() { return cDataKeyword_5; }
+		
+		//":"
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
 		
 		//"["
-		public Keyword getLeftSquareBracketKeyword_4() { return cLeftSquareBracketKeyword_4; }
+		public Keyword getLeftSquareBracketKeyword_7() { return cLeftSquareBracketKeyword_7; }
 		
 		//data+=OptionItem
-		public Assignment getDataAssignment_5() { return cDataAssignment_5; }
+		public Assignment getDataAssignment_8() { return cDataAssignment_8; }
 		
 		//OptionItem
-		public RuleCall getDataOptionItemParserRuleCall_5_0() { return cDataOptionItemParserRuleCall_5_0; }
+		public RuleCall getDataOptionItemParserRuleCall_8_0() { return cDataOptionItemParserRuleCall_8_0; }
 		
 		//("," data+=OptionItem)*
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_9() { return cGroup_9; }
 		
 		//","
-		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
+		public Keyword getCommaKeyword_9_0() { return cCommaKeyword_9_0; }
 		
 		//data+=OptionItem
-		public Assignment getDataAssignment_6_1() { return cDataAssignment_6_1; }
+		public Assignment getDataAssignment_9_1() { return cDataAssignment_9_1; }
 		
 		//OptionItem
-		public RuleCall getDataOptionItemParserRuleCall_6_1_0() { return cDataOptionItemParserRuleCall_6_1_0; }
+		public RuleCall getDataOptionItemParserRuleCall_9_1_0() { return cDataOptionItemParserRuleCall_9_1_0; }
 		
 		//"]"
-		public Keyword getRightSquareBracketKeyword_7() { return cRightSquareBracketKeyword_7; }
+		public Keyword getRightSquareBracketKeyword_10() { return cRightSquareBracketKeyword_10; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 	public class NumberOptionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.NumberOption");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cOptionTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cNumberKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cMinKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cMinAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cMinINTTerminalRuleCall_4_0 = (RuleCall)cMinAssignment_4.eContents().get(0);
-		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cMaxKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cMaxAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cMaxINTTerminalRuleCall_7_0 = (RuleCall)cMaxAssignment_7.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cOptionTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cNumberKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cMinKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cMinAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cMinINTTerminalRuleCall_7_0 = (RuleCall)cMinAssignment_7.eContents().get(0);
 		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cRangeKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cRangeAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cRangeINTTerminalRuleCall_10_0 = (RuleCall)cRangeAssignment_10.eContents().get(0);
+		private final Keyword cMaxKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cMaxAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cMaxINTTerminalRuleCall_11_0 = (RuleCall)cMaxAssignment_11.eContents().get(0);
+		private final Keyword cRangeKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cColonKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cRangeAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cRangeINTTerminalRuleCall_14_0 = (RuleCall)cRangeAssignment_14.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		
 		//NumberOption:
-		//    "optionType:" "number" ","
-		//     "min:" min=INT ","
-		//       "max:" max=INT ","
-		//    "range:" range=INT
+		//"{"
+		//    "\"optionType\"" ":" "\"number\"" ","
+		//    "\"min\"" ":" min=INT ","
+		//    "\"max\"" ":" max=INT
+		//    "\"range\"" ":" range=INT
+		//"}"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"optionType:" "number" ","
-		// "min:" min=INT ","
-		//   "max:" max=INT ","
-		//"range:" range=INT
+		//"{"
+		//    "\"optionType\"" ":" "\"number\"" ","
+		//    "\"min\"" ":" min=INT ","
+		//    "\"max\"" ":" max=INT
+		//    "\"range\"" ":" range=INT
+		//"}"
 		public Group getGroup() { return cGroup; }
 		
-		//"optionType:"
-		public Keyword getOptionTypeKeyword_0() { return cOptionTypeKeyword_0; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
 		
-		//"number"
-		public Keyword getNumberKeyword_1() { return cNumberKeyword_1; }
+		//"\"optionType\""
+		public Keyword getOptionTypeKeyword_1() { return cOptionTypeKeyword_1; }
+		
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//"\"number\""
+		public Keyword getNumberKeyword_3() { return cNumberKeyword_3; }
 		
 		//","
-		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 		
-		//"min:"
-		public Keyword getMinKeyword_3() { return cMinKeyword_3; }
+		//"\"min\""
+		public Keyword getMinKeyword_5() { return cMinKeyword_5; }
+		
+		//":"
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
 		
 		//min=INT
-		public Assignment getMinAssignment_4() { return cMinAssignment_4; }
+		public Assignment getMinAssignment_7() { return cMinAssignment_7; }
 		
 		//INT
-		public RuleCall getMinINTTerminalRuleCall_4_0() { return cMinINTTerminalRuleCall_4_0; }
-		
-		//","
-		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
-		
-		//"max:"
-		public Keyword getMaxKeyword_6() { return cMaxKeyword_6; }
-		
-		//max=INT
-		public Assignment getMaxAssignment_7() { return cMaxAssignment_7; }
-		
-		//INT
-		public RuleCall getMaxINTTerminalRuleCall_7_0() { return cMaxINTTerminalRuleCall_7_0; }
+		public RuleCall getMinINTTerminalRuleCall_7_0() { return cMinINTTerminalRuleCall_7_0; }
 		
 		//","
 		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
 		
-		//"range:"
-		public Keyword getRangeKeyword_9() { return cRangeKeyword_9; }
+		//"\"max\""
+		public Keyword getMaxKeyword_9() { return cMaxKeyword_9; }
 		
-		//range=INT
-		public Assignment getRangeAssignment_10() { return cRangeAssignment_10; }
+		//":"
+		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
+		
+		//max=INT
+		public Assignment getMaxAssignment_11() { return cMaxAssignment_11; }
 		
 		//INT
-		public RuleCall getRangeINTTerminalRuleCall_10_0() { return cRangeINTTerminalRuleCall_10_0; }
+		public RuleCall getMaxINTTerminalRuleCall_11_0() { return cMaxINTTerminalRuleCall_11_0; }
+		
+		//"\"range\""
+		public Keyword getRangeKeyword_12() { return cRangeKeyword_12; }
+		
+		//":"
+		public Keyword getColonKeyword_13() { return cColonKeyword_13; }
+		
+		//range=INT
+		public Assignment getRangeAssignment_14() { return cRangeAssignment_14; }
+		
+		//INT
+		public RuleCall getRangeINTTerminalRuleCall_14_0() { return cRangeINTTerminalRuleCall_14_0; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
 	}
 	public class FormInputSearchElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.FormInputSearch");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cNameKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cTypeKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cSEARCHKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cCommaKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cOptionsKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cLeftSquareBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cDataAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cDataOptionItemParserRuleCall_10_0 = (RuleCall)cDataAssignment_10.eContents().get(0);
-		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
-		private final Keyword cCommaKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final Assignment cDataAssignment_11_1 = (Assignment)cGroup_11.eContents().get(1);
-		private final RuleCall cDataOptionItemParserRuleCall_11_1_0 = (RuleCall)cDataAssignment_11_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cInputNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cInputTypeKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cSearchKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cDataKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cLeftSquareBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cDataAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cDataOptionItemParserRuleCall_12_0 = (RuleCall)cDataAssignment_12.eContents().get(0);
+		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
+		private final Keyword cCommaKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
+		private final Assignment cDataAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
+		private final RuleCall cDataOptionItemParserRuleCall_13_1_0 = (RuleCall)cDataAssignment_13_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		
 		//FormInputSearch:
-		//    "name" ":" name=STRING ","
-		//    "type" ":" "SEARCH" ","
-		//    "options:" "[" data+=OptionItem ("," data+=OptionItem)* "]"
+		//"{"
+		//    "\"inputName\"" ":" name=STRING ","
+		//    "\"inputType\"" ":" "\"search\"" ","
+		//     "\"data\"" ":"  "[" data+=OptionItem ("," data+=OptionItem)* "]"
+		//"}"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"name" ":" name=STRING ","
-		//"type" ":" "SEARCH" ","
-		//"options:" "[" data+=OptionItem ("," data+=OptionItem)* "]"
+		//"{"
+		//    "\"inputName\"" ":" name=STRING ","
+		//    "\"inputType\"" ":" "\"search\"" ","
+		//     "\"data\"" ":"  "[" data+=OptionItem ("," data+=OptionItem)* "]"
+		//"}"
 		public Group getGroup() { return cGroup; }
 		
-		//"name"
-		public Keyword getNameKeyword_0() { return cNameKeyword_0; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+		
+		//"\"inputName\""
+		public Keyword getInputNameKeyword_1() { return cInputNameKeyword_1; }
 		
 		//":"
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
 		//name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_3_0() { return cNameSTRINGTerminalRuleCall_3_0; }
 		
 		//","
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 		
-		//"type"
-		public Keyword getTypeKeyword_4() { return cTypeKeyword_4; }
+		//"\"inputType\""
+		public Keyword getInputTypeKeyword_5() { return cInputTypeKeyword_5; }
 		
 		//":"
-		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
 		
-		//"SEARCH"
-		public Keyword getSEARCHKeyword_6() { return cSEARCHKeyword_6; }
+		//"\"search\""
+		public Keyword getSearchKeyword_7() { return cSearchKeyword_7; }
 		
 		//","
-		public Keyword getCommaKeyword_7() { return cCommaKeyword_7; }
+		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
 		
-		//"options:"
-		public Keyword getOptionsKeyword_8() { return cOptionsKeyword_8; }
+		//"\"data\""
+		public Keyword getDataKeyword_9() { return cDataKeyword_9; }
+		
+		//":"
+		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
 		
 		//"["
-		public Keyword getLeftSquareBracketKeyword_9() { return cLeftSquareBracketKeyword_9; }
+		public Keyword getLeftSquareBracketKeyword_11() { return cLeftSquareBracketKeyword_11; }
 		
 		//data+=OptionItem
-		public Assignment getDataAssignment_10() { return cDataAssignment_10; }
+		public Assignment getDataAssignment_12() { return cDataAssignment_12; }
 		
 		//OptionItem
-		public RuleCall getDataOptionItemParserRuleCall_10_0() { return cDataOptionItemParserRuleCall_10_0; }
+		public RuleCall getDataOptionItemParserRuleCall_12_0() { return cDataOptionItemParserRuleCall_12_0; }
 		
 		//("," data+=OptionItem)*
-		public Group getGroup_11() { return cGroup_11; }
+		public Group getGroup_13() { return cGroup_13; }
 		
 		//","
-		public Keyword getCommaKeyword_11_0() { return cCommaKeyword_11_0; }
+		public Keyword getCommaKeyword_13_0() { return cCommaKeyword_13_0; }
 		
 		//data+=OptionItem
-		public Assignment getDataAssignment_11_1() { return cDataAssignment_11_1; }
+		public Assignment getDataAssignment_13_1() { return cDataAssignment_13_1; }
 		
 		//OptionItem
-		public RuleCall getDataOptionItemParserRuleCall_11_1_0() { return cDataOptionItemParserRuleCall_11_1_0; }
+		public RuleCall getDataOptionItemParserRuleCall_13_1_0() { return cDataOptionItemParserRuleCall_13_1_0; }
 		
 		//"]"
-		public Keyword getRightSquareBracketKeyword_12() { return cRightSquareBracketKeyword_12; }
+		public Keyword getRightSquareBracketKeyword_14() { return cRightSquareBracketKeyword_14; }
+		
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
 	}
 	public class OptionItemElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.OptionItem");
@@ -898,70 +1044,11 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	
-	public class BasicInputTypeElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.BasicInputType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cTEXTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cTEXTTEXTKeyword_0_0 = (Keyword)cTEXTEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cCHECKBOXEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cCHECKBOXCHECKBOXKeyword_1_0 = (Keyword)cCHECKBOXEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cNUMBEREnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cNUMBERNUMBERKeyword_2_0 = (Keyword)cNUMBEREnumLiteralDeclaration_2.eContents().get(0);
-		
-		//enum BasicInputType:
-		//    TEXT | CHECKBOX | NUMBER
-		//;
-		public EnumRule getRule() { return rule; }
-		
-		//TEXT | CHECKBOX | NUMBER
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//TEXT
-		public EnumLiteralDeclaration getTEXTEnumLiteralDeclaration_0() { return cTEXTEnumLiteralDeclaration_0; }
-		
-		public Keyword getTEXTTEXTKeyword_0_0() { return cTEXTTEXTKeyword_0_0; }
-		
-		//CHECKBOX
-		public EnumLiteralDeclaration getCHECKBOXEnumLiteralDeclaration_1() { return cCHECKBOXEnumLiteralDeclaration_1; }
-		
-		public Keyword getCHECKBOXCHECKBOXKeyword_1_0() { return cCHECKBOXCHECKBOXKeyword_1_0; }
-		
-		//NUMBER
-		public EnumLiteralDeclaration getNUMBEREnumLiteralDeclaration_2() { return cNUMBEREnumLiteralDeclaration_2; }
-		
-		public Keyword getNUMBERNUMBERKeyword_2_0() { return cNUMBERNUMBERKeyword_2_0; }
-	}
-	public class LayoutElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.Layout");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cHorizontalEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cHorizontalHorizontalKeyword_0_0 = (Keyword)cHorizontalEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cVerticalEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cVerticalVerticalKeyword_1_0 = (Keyword)cVerticalEnumLiteralDeclaration_1.eContents().get(0);
-		
-		//enum Layout:
-		//    horizontal|vertical ;
-		public EnumRule getRule() { return rule; }
-		
-		//horizontal|vertical
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//horizontal
-		public EnumLiteralDeclaration getHorizontalEnumLiteralDeclaration_0() { return cHorizontalEnumLiteralDeclaration_0; }
-		
-		public Keyword getHorizontalHorizontalKeyword_0_0() { return cHorizontalHorizontalKeyword_0_0; }
-		
-		//vertical
-		public EnumLiteralDeclaration getVerticalEnumLiteralDeclaration_1() { return cVerticalEnumLiteralDeclaration_1; }
-		
-		public Keyword getVerticalVerticalKeyword_1_0() { return cVerticalVerticalKeyword_1_0; }
-	}
 	
 	private final ModelElements pModel;
 	private final FormLayoutElements pFormLayout;
 	private final FormInputElements pFormInput;
 	private final FormInputBasicElements pFormInputBasic;
-	private final BasicInputTypeElements eBasicInputType;
 	private final FormInputRangeElements pFormInputRange;
 	private final FormInputSelectElements pFormInputSelect;
 	private final OptionElements pOption;
@@ -977,7 +1064,8 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	private final DataElements pData;
 	private final StringDataElements pStringData;
 	private final IntDataElements pIntData;
-	private final LayoutElements eLayout;
+	private final TerminalRule tLAYOUT;
+	private final TerminalRule tBASICINPUT;
 	
 	private final Grammar grammar;
 	
@@ -992,7 +1080,6 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		this.pFormLayout = new FormLayoutElements();
 		this.pFormInput = new FormInputElements();
 		this.pFormInputBasic = new FormInputBasicElements();
-		this.eBasicInputType = new BasicInputTypeElements();
 		this.pFormInputRange = new FormInputRangeElements();
 		this.pFormInputSelect = new FormInputSelectElements();
 		this.pOption = new OptionElements();
@@ -1008,7 +1095,8 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		this.pData = new DataElements();
 		this.pStringData = new StringDataElements();
 		this.pIntData = new IntDataElements();
-		this.eLayout = new LayoutElements();
+		this.tLAYOUT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.LAYOUT");
+		this.tBASICINPUT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.BASICINPUT");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1039,10 +1127,10 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 
 	
 	//Model:
-	//    "formLayout:" formLayout=FormLayout ","
-	//    "formInputs:" "["
-	//        (formInput+=FormInput*)
-	//    "]"
+	//"{"
+	//    "\"formLayout\":" formLayout=FormLayout ","
+	//    "\"formInputs\":" "["formInput+=FormInput ("," formInput+=FormInput)*"]"
+	//"}"
 	//;
 	public ModelElements getModelAccess() {
 		return pModel;
@@ -1053,7 +1141,7 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//FormLayout:
-	//    layout=Layout;
+	//    layout=LAYOUT;
 	public FormLayoutElements getFormLayoutAccess() {
 		return pFormLayout;
 	}
@@ -1074,8 +1162,10 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//FormInputBasic:
-	//    "name" ":" name=STRING
-	//    "type" ":" type=BasicInputType
+	//"{"
+	//    "\"inputName\"" ":" name=STRING ","
+	//    "\"inputType\"" ":" type=BASICINPUT
+	//"}"
 	//;
 	public FormInputBasicElements getFormInputBasicAccess() {
 		return pFormInputBasic;
@@ -1085,22 +1175,13 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		return getFormInputBasicAccess().getRule();
 	}
 	
-	//enum BasicInputType:
-	//    TEXT | CHECKBOX | NUMBER
-	//;
-	public BasicInputTypeElements getBasicInputTypeAccess() {
-		return eBasicInputType;
-	}
-	
-	public EnumRule getBasicInputTypeRule() {
-		return getBasicInputTypeAccess().getRule();
-	}
-	
 	//FormInputRange:
-	//    "name" ":" name=STRING ","
-	//    "type" ":" "RANGE" ","
-	//    "min:" min=INT ","
-	//    "max:" max=INT
+	//"{"
+	//    "\"inputName\"" ":" name=STRING ","
+	//    "\"inputType\"" ":" "\"range\"" ","
+	//    "\"min\"" ":" min=INT ","
+	//    "\"max\"" ":" max=INT
+	//"}"
 	//;
 	public FormInputRangeElements getFormInputRangeAccess() {
 		return pFormInputRange;
@@ -1111,9 +1192,11 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//FormInputSelect:
-	//    "name" ":" name=STRING ","
-	//    "type" ":" "SELECT" ","
-	//    "options:" "{" option=Option "}"
+	//"{"
+	//    "\"inputName\"" ":" name=STRING ","
+	//    "\"inputType\"" ":" "\"select\"" ","
+	//     "\"options\"" ":"  option=Option
+	//"}"
 	//;
 	public FormInputSelectElements getFormInputSelectAccess() {
 		return pFormInputSelect;
@@ -1135,8 +1218,10 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//DataOption:
-	//    "optionType:" "data" ","
-	//     "data:" "[" data+=Data ("," data+=Data)* "]"
+	//"{"
+	//    "\"optionType\"" ":" "\"data\"" ","
+	//     "\"data\"" ":" "[" data+=Data ("," data+=Data)* "]"
+	//"}"
 	//;
 	public DataOptionElements getDataOptionAccess() {
 		return pDataOption;
@@ -1147,8 +1232,10 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//EnumOption:
-	//    "optionType:" "enum" ","
-	//     "data:" "[" data+=OptionItem ("," data+=OptionItem)* "]"
+	//"{"
+	//    "\"optionType\"" ":" "\"enum\"" ","
+	//     "\"data\"" ":" "[" data+=OptionItem ("," data+=OptionItem)* "]"
+	//"}"
 	//;
 	public EnumOptionElements getEnumOptionAccess() {
 		return pEnumOption;
@@ -1159,10 +1246,12 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//NumberOption:
-	//    "optionType:" "number" ","
-	//     "min:" min=INT ","
-	//       "max:" max=INT ","
-	//    "range:" range=INT
+	//"{"
+	//    "\"optionType\"" ":" "\"number\"" ","
+	//    "\"min\"" ":" min=INT ","
+	//    "\"max\"" ":" max=INT
+	//    "\"range\"" ":" range=INT
+	//"}"
 	//;
 	public NumberOptionElements getNumberOptionAccess() {
 		return pNumberOption;
@@ -1173,9 +1262,11 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//FormInputSearch:
-	//    "name" ":" name=STRING ","
-	//    "type" ":" "SEARCH" ","
-	//    "options:" "[" data+=OptionItem ("," data+=OptionItem)* "]"
+	//"{"
+	//    "\"inputName\"" ":" name=STRING ","
+	//    "\"inputType\"" ":" "\"search\"" ","
+	//     "\"data\"" ":"  "[" data+=OptionItem ("," data+=OptionItem)* "]"
+	//"}"
 	//;
 	public FormInputSearchElements getFormInputSearchAccess() {
 		return pFormInputSearch;
@@ -1278,14 +1369,17 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		return getIntDataAccess().getRule();
 	}
 	
-	//enum Layout:
-	//    horizontal|vertical ;
-	public LayoutElements getLayoutAccess() {
-		return eLayout;
+	//terminal LAYOUT:
+	//    "\"horizontal\""|"\"vertical\"" ;
+	public TerminalRule getLAYOUTRule() {
+		return tLAYOUT;
 	}
 	
-	public EnumRule getLayoutRule() {
-		return getLayoutAccess().getRule();
+	//terminal BASICINPUT:
+	//    ("\"text\""|"\"checkbox\""|"\"numberr\""|"\"date\"")
+	//;
+	public TerminalRule getBASICINPUTRule() {
+		return tBASICINPUT;
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
