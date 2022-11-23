@@ -1,6 +1,10 @@
 [
     {
-        "subject_id": [
+        "types": [
+            "search",
+            "select"
+        ],
+        "data": [
             "22-414",
             "22-413",
             "22-410",
@@ -21,152 +25,819 @@
             "22-366",
             "22-365"
         ],
-        "height_score": [
+        "name": [
+            "subject_id"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "F"
+        ],
+        "name": [
+            "Gender"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "classical"
+        ],
+        "name": [
+            "rett_diagnosed"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "no",
+            "yes"
+        ],
+        "name": [
+            "rett_in_family"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "yes",
+            "no"
+        ],
+        "name": [
+            "labour_at_term"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "deceleration of head growth",
+            "microcephaly",
+            "no deceleration"
+        ],
+        "name": [
+            "head_score"
+        ]
+    },
+    {
+        "Mean": [
+            "33.61818181818182"
+        ],
+        "types": [
+            "range",
+            "select",
+            "number"
+        ],
+        "Std": [
+            "1.3128733235298689"
+        ],
+        "Min": [
+            "31.8"
+        ],
+        "data": [
+            36,
+            34,
+            33,
+            32,
+            34,
+            32,
+            34,
+            34,
+            31.8,
+            35,
+            34
+        ],
+        "Max": [
+            "36.0"
+        ],
+        "name": [
+            "ofc_at_birth_in_cm"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "yes",
+            "no"
+        ],
+        "name": [
+            "normal_ofc_at_birth"
+        ]
+    },
+    {
+        "Mean": [
+            "47.0"
+        ],
+        "types": [
+            "range",
+            "select",
+            "number"
+        ],
+        "Std": [
+            "3.302891295379082"
+        ],
+        "Min": [
+            "42.0"
+        ],
+        "data": [
+            42,
+            51,
+            47,
+            43,
+            50,
+            47,
+            53,
+            43,
+            48,
+            46,
+            47,
+            47
+        ],
+        "Max": [
+            "53.0"
+        ],
+        "name": [
+            "ofc_with_age_cm"
+        ]
+    },
+    {
+        "Mean": [
+            "94.75"
+        ],
+        "types": [
+            "select",
+            "range",
+            "number"
+        ],
+        "Std": [
+            "29.117707826869015"
+        ],
+        "Min": [
+            "52.0"
+        ],
+        "data": [
+            89,
+            73,
+            160,
+            96,
+            140,
+            77,
+            52,
+            89,
+            87,
+            80,
+            102,
+            92
+        ],
+        "Max": [
+            "160.0"
+        ],
+        "name": [
+            "height_with_age_cm"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
             "below 5th percentile",
-            "Above 25th percentile",
-            "Above 25th percentile",
-            "below 5th percentile",
-            "below 5th percentile",
-            "Above 25th percentile",
-            "Above 25th percentile",
-            "Above 25th percentile",
-            "below 5th percentile",
-            "Above 25th percentile",
-            "5th to 25th percentile",
-            "5th to 25th percentile",
             "Above 25th percentile",
             "5th to 25th percentile"
         ],
-        "comm_non_verb_quality": [
-            "intermittent",
-            "significative/intentional",
-            "significative/intentional",
-            "intermittent",
-            "never acquired",
-            "significative/intentional",
-            "significative/intentional",
-            "significative/intentional"
+        "name": [
+            "height_score"
+        ]
+    },
+    {
+        "Mean": [
+            "3084.1666666666665"
         ],
-        "labour_at_term": [
-            "yes",
-            "no",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes"
+        "types": [
+            "select",
+            "range",
+            "number"
         ],
-        "rett_in_family": [
-            "no",
-            "no",
-            "no",
-            "no",
+        "Std": [
+            "450.6048124129357"
+        ],
+        "Min": [
+            "2450.0"
+        ],
+        "data": [
+            3810,
+            3070,
+            2750,
+            2450,
+            3470,
+            2960,
+            3880,
+            3200,
+            2690,
+            3210,
+            2770,
+            2750
+        ],
+        "Max": [
+            "3880.0"
+        ],
+        "name": [
+            "birth_weight_in_gr"
+        ]
+    },
+    {
+        "Mean": [
+            "12520.25"
+        ],
+        "types": [
+            "select",
+            "range",
+            "number"
+        ],
+        "Std": [
+            "11845.784613677406"
+        ],
+        "Min": [
+            "11.0"
+        ],
+        "data": [
+            16000,
+            13000,
+            7720,
+            45000,
+            12000,
+            3800,
+            10000,
+            12,
+            11,
+            9700,
+            19500,
+            13500
+        ],
+        "Max": [
+            "45000.0"
+        ],
+        "name": [
+            "weight_with_age_gr"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "3rd to 25th percentile",
+            "below 3rd percentile",
+            "Above 25th percentile"
+        ],
+        "name": [
+            "weight_score"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
             "yes",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
             "no"
         ],
-        "hand_skills_regained_age": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
+        "name": [
+            "regression"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "between 18 months and 3 years",
+            "before 18 months",
+            "after 3 years",
+            "before 18 months "
+        ],
+        "name": [
+            "regression_score"
+        ]
+    },
+    {
+        "Mean": [
+            "14.5"
+        ],
+        "types": [
+            "range",
+            "select",
+            "number"
+        ],
+        "Std": [
+            "6.346079677464448"
+        ],
+        "Min": [
+            "2.0"
+        ],
+        "data": [
+            24,
+            18,
+            10,
+            18,
+            18,
+            14,
+            8,
+            21,
+            2,
+            15,
+            8,
+            18
+        ],
+        "Max": [
+            "24.0"
+        ],
+        "name": [
+            "regression_age_months"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "yes",
+            "no"
+        ],
+        "name": [
+            "regression_hand_use"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "yes"
+        ],
+        "name": [
+            "hand_use_acquisition"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "yes",
+            "no"
+        ],
+        "name": [
+            "hand_skills_regained"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
             0
         ],
-        "age_at_epilepsy_onset": [
+        "name": [
+            "hand_skills_regained_age"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "mild or intermittent",
+            "dominating or costant"
+        ],
+        "name": [
+            "hand_stereotypy_score"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "absent",
+            "mild",
+            "severe"
+        ],
+        "name": [
+            "gastrointestinal_disturbances_score"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "feeding with assistance",
+            "self finger",
+            "gastrostomy tube feeding",
+            "feeding without assistance"
+        ],
+        "name": [
+            "feed_skill"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "intermittent",
+            "significative/intentional",
+            "never acquired"
+        ],
+        "name": [
+            "comm_non_verb_quality"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "yes",
+            "no"
+        ],
+        "name": [
+            "eye_contact"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "absent"
+        ],
+        "name": [
+            "phrases_score"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "loss of ability to speak",
+            "never spoken",
+            "loss to ability to speak",
+            ">10 words at age of 5"
+        ],
+        "name": [
+            "speech_score"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "sitting unsupported at age of 5",
+            "never learned to sit"
+        ],
+        "name": [
+            "sitting_score"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "walking unsupported",
+            "never learned to walk",
+            "loss ability to walk",
+            "not know"
+        ],
+        "name": [
+            "walking_score"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "after and equal to 18 months",
+            "before 18 months",
+            "never"
+        ],
+        "name": [
+            "walking_age_score"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "yes",
+            "no"
+        ],
+        "name": [
+            "gait_dyspraxia"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "non measurable IQ(IQ<20)",
+            "severe IQ 20-40"
+        ],
+        "name": [
+            "intellectual_disability_score"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
             "5-10 years",
             "1-3 years",
             "0-1 year",
             "5-10-years",
             "0-1 years",
-            "5-10 years",
-            "5-10 years",
-            "1-3 years",
-            "5-10 years",
             "3-5 years"
         ],
-        "head_score": [
-            "deceleration of head growth",
-            "microcephaly",
-            "microcephaly",
-            "microcephaly",
-            "microcephaly",
-            "microcephaly",
-            "deceleration of head growth",
-            "microcephaly",
-            "deceleration of head growth",
-            "deceleration of head growth",
-            "deceleration of head growth",
-            "microcephaly",
-            "microcephaly",
-            "deceleration of head growth",
-            "no deceleration",
-            "no deceleration",
-            "microcephaly",
-            "microcephaly"
+        "name": [
+            "age_at_epilepsy_onset"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
         ],
-        "inheritance": [
-            "de novo mutation",
-            "de novo mutation",
-            "carrier mother",
-            "de novo mutation",
-            "de novo mutation",
-            "de novo mutation",
-            "de novo mutation",
-            "de novo mutation",
-            "de novo mutation",
-            "de novo mutation",
-            "de novo mutation",
-            "de novo mutation",
-            "de novo mutation"
+        "data": [
+            "no epilepsy at age of 5",
+            "rarely or not controlled by therapy",
+            "barely or not controlled by therapy",
+            "controlled by therapy"
         ],
-        "Gender": [
-            "F",
-            "F",
-            "F",
-            "F",
-            "F",
-            "F",
-            "F",
-            "F",
-            "F",
-            "F",
-            "F",
-            "F",
-            "F",
-            "F",
-            "F",
-            "F",
-            "F",
-            "F",
-            "F"
+        "name": [
+            "epilepsy_score"
+        ]
+    },
+    {
+        "Mean": [
+            "78.0"
         ],
-        "hgvs": [
+        "types": [
+            "range",
+            "select",
+            "number"
+        ],
+        "Std": [
+            "25.45584412271571"
+        ],
+        "Min": [
+            "60.0"
+        ],
+        "data": [
+            96,
+            60
+        ],
+        "Max": [
+            "96.0"
+        ],
+        "name": [
+            "epilepsy_diag_age_months"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "myoclonic",
+            "infantile spasm",
+            "absent"
+        ],
+        "name": [
+            "epilepsy_type"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "mild or intermittent",
+            "mild",
+            "absent",
+            "severe",
+            "mild "
+        ],
+        "name": [
+            "breathing_disorders_score"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "apnea",
+            "hyperventilation",
+            "none",
+            "both"
+        ],
+        "name": [
+            "breathing_disorder_type"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "mild ",
+            "absent",
+            "mild",
+            "severe"
+        ],
+        "name": [
+            "cold_extremities_score"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "absent",
+            "complete",
+            "partiial",
+            "partial"
+        ],
+        "name": [
+            "sphincter_control_score"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "absent",
+            "mild"
+        ],
+        "name": [
+            "scoliosis_score"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "no",
+            "yes"
+        ],
+        "name": [
+            "presence_of_additional_involuntary_movement"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "yes",
+            "no"
+        ],
+        "name": [
+            "bruxism"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "no",
+            "yes ",
+            "yes"
+        ],
+        "name": [
+            "self_injury"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
+        ],
+        "data": [
+            "no",
+            "yes",
+            "sudden laughing"
+        ],
+        "name": [
+            "mood_disturbance"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "absent",
+            "present"
+        ],
+        "name": [
+            "trouble_night_sleep"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "yes",
+            "no"
+        ],
+        "name": [
+            "brain_imaging"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
+        ],
+        "data": [
+            "MECP2",
+            "FOXG1"
+        ],
+        "name": [
+            "affected_gene"
+        ]
+    },
+    {
+        "types": [
+            "search",
+            "select"
+        ],
+        "data": [
             "MECP2c.763C>T",
             "MECP2c.1164_1207del44(P.P389X)",
-            "MECP2c.502C>T (p.R168X)",
             "MECP2c.502C>T (p.R168X)",
             "FOXG1c.1200C>G(p.Tyr400X)",
             "MECP2c.468C>G(pD156E)",
@@ -176,583 +847,39 @@
             "MECP2c.1326_1327insC(pA443Xfs)",
             "MECP2c.11155_1198del44(pL386Xfs)",
             "MECP2c.502C>T(pR168X)",
-            "MECP2c.916C>T(pR306C)",
             "MECP2c.401C>T(pS134F)"
         ],
-        "intellectual_disability_score": [
-            "non measurable IQ(IQ<20)",
-            "non measurable IQ(IQ<20)",
-            "severe IQ 20-40",
-            "non measurable IQ(IQ<20)",
-            "severe IQ 20-40",
-            "severe IQ 20-40",
-            "non measurable IQ(IQ<20)",
-            "severe IQ 20-40",
-            "severe IQ 20-40",
-            "severe IQ 20-40"
+        "name": [
+            "hgvs"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "search"
         ],
-        "sphincter_control_score": [
-            "absent",
-            "absent",
-            "absent",
-            "complete",
-            "absent",
-            "partiial",
-            "absent",
-            "absent",
-            "partial",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent"
-        ],
-        "gastrointestinal_disturbances_score": [
-            "absent",
-            "absent",
-            "mild",
-            "mild",
-            "mild",
-            "absent",
-            "mild",
-            "mild",
-            "severe",
-            "absent",
-            "mild",
-            "absent",
-            "mild",
-            "mild",
-            "mild",
-            "absent",
-            "absent"
-        ],
-        "hand_use_acquisition": [
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes"
-        ],
-        "epilepsy_type": [
-            "myoclonic",
-            "infantile spasm",
-            "absent",
-            "absent"
-        ],
-        "mood_disturbance": [
-            "no",
-            "no",
-            "yes",
-            "no",
-            "no",
-            "no",
-            "no",
-            "sudden laughing",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no"
-        ],
-        "mutation_type": [
+        "data": [
             "gene duplication",
             "gene deletion",
             "early truncating",
-            "early truncating",
-            "early truncating",
-            "gene deletion",
-            "early truncating",
-            "gene deletion",
             "late truncating",
-            "missense",
-            "early truncating",
-            "missense",
-            "missense",
-            "late truncating",
-            "late truncating",
-            "early truncating",
-            "missense",
             "missense"
         ],
-        "feed_skill": [
-            "feeding with assistance",
-            "self finger",
-            "feeding with assistance",
-            "gastrostomy tube feeding",
-            "feeding without assistance",
-            "feeding with assistance",
-            "feeding with assistance",
-            "feeding with assistance",
-            "feeding with assistance",
-            "feeding with assistance",
-            "feeding with assistance",
-            "feeding with assistance",
-            "feeding with assistance"
+        "name": [
+            "mutation_type"
+        ]
+    },
+    {
+        "types": [
+            "select",
+            "checkbox"
         ],
-        "gait_dyspraxia": [
-            "yes",
-            "yes",
-            "no",
-            "yes",
-            "no",
-            "yes",
-            "yes",
-            "no",
-            "no",
-            "yes",
-            "yes",
-            "no",
-            "no",
-            "yes"
+        "data": [
+            "de novo mutation",
+            "carrier mother"
         ],
-        "epilepsy_score": [
-            "no epilepsy at age of 5",
-            "rarely or not controlled by therapy",
-            "barely or not controlled by therapy",
-            "no epilepsy at age of 5",
-            "no epilepsy at age of 5",
-            "no epilepsy at age of 5",
-            "barely or not controlled by therapy",
-            "barely or not controlled by therapy",
-            "barely or not controlled by therapy",
-            "no epilepsy at age of 5",
-            "no epilepsy at age of 5",
-            "controlled by therapy",
-            "no epilepsy at age of 5",
-            "barely or not controlled by therapy",
-            "controlled by therapy",
-            "no epilepsy at age of 5",
-            "no epilepsy at age of 5",
-            "controlled by therapy"
-        ],
-        "walking_age_score": [
-            "after and equal to 18 months",
-            "before 18 months",
-            "never",
-            "never",
-            "after and equal to 18 months",
-            "after and equal to 18 months",
-            "after and equal to 18 months",
-            "after and equal to 18 months",
-            "after and equal to 18 months",
-            "after and equal to 18 months",
-            "before 18 months",
-            "after and equal to 18 months",
-            "never",
-            "after and equal to 18 months",
-            "after and equal to 18 months"
-        ],
-        "scoliosis_score": [
-            "absent",
-            "mild",
-            "absent",
-            "mild",
-            "absent",
-            "mild",
-            "mild",
-            "absent",
-            "mild",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent"
-        ],
-        "self_injury": [
-            "no",
-            "no",
-            "yes ",
-            "no",
-            "no",
-            "no",
-            "no",
-            "yes",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no"
-        ],
-        "bruxism": [
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "no",
-            "no",
-            "yes",
-            "no",
-            "yes",
-            "no"
-        ],
-        "eye_contact": [
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "no",
-            "yes",
-            "yes",
-            "yes"
-        ],
-        "speech_score": [
-            "loss of ability to speak",
-            "never spoken",
-            "never spoken",
-            "never spoken",
-            "loss to ability to speak",
-            "loss to ability to speak",
-            "loss to ability to speak",
-            "never spoken",
-            "loss to ability to speak",
-            "never spoken",
-            "never spoken",
-            "never spoken",
-            "never spoken",
-            "never spoken",
-            "loss of ability to speak",
-            "never spoken",
-            "loss of ability to speak",
-            ">10 words at age of 5"
-        ],
-        "breathing_disorder_type": [
-            "apnea",
-            "hyperventilation",
-            "apnea",
-            "apnea",
-            "apnea",
-            "apnea",
-            "none",
-            "none",
-            "none",
-            "both",
-            "apnea",
-            "both",
-            "none",
-            "apnea",
-            "none",
-            "none"
-        ],
-        "breathing_disorders_score": [
-            "mild or intermittent",
-            "mild",
-            "mild",
-            "mild",
-            "mild",
-            "mild",
-            "absent",
-            "absent",
-            "severe",
-            "absent",
-            "mild ",
-            "mild ",
-            "mild",
-            "absent",
-            "mild",
-            "absent",
-            "absent"
-        ],
-        "phrases_score": [
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent"
-        ],
-        "weight_score": [
-            "3rd to 25th percentile",
-            "below 3rd percentile",
-            "3rd to 25th percentile",
-            "3rd to 25th percentile",
-            "3rd to 25th percentile",
-            "below 3rd percentile",
-            "below 3rd percentile",
-            "Above 25th percentile",
-            "Above 25th percentile",
-            "below 3rd percentile",
-            "3rd to 25th percentile",
-            "3rd to 25th percentile",
-            "Above 25th percentile",
-            "Above 25th percentile",
-            "Above 25th percentile"
-        ],
-        "regression_hand_use": [
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "no",
-            "yes",
-            "yes",
-            "no",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes"
-        ],
-        "normal_ofc_at_birth": [
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "no"
-        ],
-        "sitting_score": [
-            "sitting unsupported at age of 5",
-            "sitting unsupported at age of 5",
-            "sitting unsupported at age of 5",
-            "never learned to sit",
-            "sitting unsupported at age of 5",
-            "sitting unsupported at age of 5",
-            "sitting unsupported at age of 5",
-            "sitting unsupported at age of 5",
-            "sitting unsupported at age of 5",
-            "sitting unsupported at age of 5",
-            "sitting unsupported at age of 5",
-            "sitting unsupported at age of 5",
-            "sitting unsupported at age of 5",
-            "sitting unsupported at age of 5",
-            "never learned to sit",
-            "sitting unsupported at age of 5",
-            "sitting unsupported at age of 5"
-        ],
-        "affected_gene": [
-            "MECP2",
-            "MECP2",
-            "MECP2",
-            "MECP2",
-            "MECP2",
-            "MECP2",
-            "MECP2",
-            "MECP2",
-            "MECP2",
-            "FOXG1",
-            "MECP2",
-            "MECP2",
-            "MECP2",
-            "MECP2",
-            "MECP2",
-            "MECP2",
-            "MECP2",
-            "MECP2",
-            "MECP2"
-        ],
-        "hand_skills_regained": [
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "no",
-            "no"
-        ],
-        "trouble_night_sleep": [
-            "absent",
-            "absent",
-            "present",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent",
-            "absent"
-        ],
-        "rett_diagnosed": [
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical",
-            "classical"
-        ],
-        "walking_score": [
-            "walking unsupported",
-            "walking unsupported",
-            "never learned to walk",
-            "never learned to walk",
-            "loss ability to walk",
-            "walking unsupported",
-            "walking unsupported",
-            "not know",
-            "walking unsupported",
-            "walking unsupported",
-            "walking unsupported",
-            "walking unsupported",
-            "walking unsupported",
-            "never learned to walk",
-            "walking unsupported",
-            "walking unsupported"
-        ],
-        "regression": [
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "no",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "no",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "yes"
-        ],
-        "brain_imaging": [
-            "yes",
-            "yes",
-            "yes",
-            "yes",
-            "no",
-            "yes",
-            "no",
-            "no",
-            "yes",
-            "no",
-            "yes",
-            "no"
-        ],
-        "regression_score": [
-            "between 18 months and 3 years",
-            "between 18 months and 3 years",
-            "before 18 months",
-            "before 18 months",
-            "after 3 years",
-            "between 18 months and 3 years",
-            "before 18 months ",
-            "before 18 months ",
-            "before 18 months ",
-            "between 18 months and 3 years",
-            "before 18 months ",
-            "between 18 months and 3 years",
-            "between 18 months and 3 years",
-            "before 18 months ",
-            "before 18 months ",
-            "before 18 months ",
-            "before 18 months "
-        ],
-        "cold_extremities_score": [
-            "mild ",
-            "mild ",
-            "mild ",
-            "mild ",
-            "mild ",
-            "absent",
-            "mild",
-            "severe",
-            "absent",
-            "severe",
-            "mild",
-            "mild",
-            "mild",
-            "absent",
-            "absent"
-        ],
-        "<group_end>": [
-            
-        ],
-        "hand_stereotypy_score": [
-            "mild or intermittent",
-            "dominating or costant",
-            "dominating or costant",
-            "mild or intermittent",
-            "dominating or costant",
-            "dominating or costant",
-            "mild or intermittent",
-            "dominating or costant",
-            "mild or intermittent",
-            "mild or intermittent",
-            "dominating or costant",
-            "dominating or costant",
-            "dominating or costant",
-            "mild or intermittent",
-            "mild or intermittent",
-            "mild or intermittent",
-            "dominating or costant",
-            "mild or intermittent"
-        ],
-        "presence_of_additional_involuntary_movement": [
-            "no",
-            "no",
-            "yes",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no",
-            "no"
+        "name": [
+            "inheritance"
         ]
     }
 ]
