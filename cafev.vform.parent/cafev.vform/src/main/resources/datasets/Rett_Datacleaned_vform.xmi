@@ -1,69 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <vFormDsl:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vFormDsl="http://www.vform.cafev/VFormDsl">
   <formLayout layout="&quot;horizontal&quot;"/>
-  <formInput xsi:type="vFormDsl:FormInputRange" name="ofc_at_birth_in_cm" min="32" max="36"/>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="ofc_at_birth_in_cm">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputRange" name="ofc_with_age_cm" min="42" max="53"/>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="ofc_with_age_cm">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputRange" name="height_with_age_cm" min="52" max="160"/>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="height_with_age_cm">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputRange" name="birth_weight_in_gr" min="2450" max="3880"/>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="birth_weight_in_gr">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputRange" name="weight_with_age_gr" min="11" max="45000"/>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="weight_with_age_gr">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputRange" name="regression_age_months" min="2" max="24"/>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="regression_age_months">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputRange" name="epilepsy_diag_age_months" min="60" max="96"/>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="epilepsy_diag_age_months">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
-    </option>
-  </formInput>
   <formInput xsi:type="vFormDsl:FormInputSearch" name="subject_id">
     <data xsi:type="vFormDsl:StringOptionItem" value="22-414"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="22-413"/>
@@ -385,6 +322,62 @@
     <option xsi:type="vFormDsl:EnumOption">
       <data xsi:type="vFormDsl:StringOptionItem" value="de novo mutation"/>
       <data xsi:type="vFormDsl:StringOptionItem" value="carrier mother"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="ofc_at_birth_in_cm">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="ofc_with_age_cm">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="height_with_age_cm">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="birth_weight_in_gr">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="weight_with_age_gr">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="regression_age_months">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="epilepsy_diag_age_months">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
     </option>
   </formInput>
 </vFormDsl:Model>

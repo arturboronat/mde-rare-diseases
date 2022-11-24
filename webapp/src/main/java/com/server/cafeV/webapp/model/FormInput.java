@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.lang.Nullable;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -13,8 +14,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeInfo(
 use = JsonTypeInfo.Id.NAME,
-include = JsonTypeInfo.As.PROPERTY,
-property = "inputType")
+include = JsonTypeInfo.As.EXISTING_PROPERTY,
+property = "inputType", visible=true)
 @JsonSubTypes({
 	@Type(value=FormInputBasic.class, name="text"),
 	@Type(value=FormInputBasic.class, name="checkbox"),
@@ -26,8 +27,19 @@ property = "inputType")
 
 public abstract class FormInput {
 	
-	private String inputName;
-	
+	public String inputName;
+;
+
+
+	public String inputType;
+
+	public String getInputType() {
+		return inputType;
+	}
+
+	public void setInputType(String inputType) {
+		this.inputType = inputType;
+	}
 
 	public FormInput(String name, String type) {
 		this.inputName = name;

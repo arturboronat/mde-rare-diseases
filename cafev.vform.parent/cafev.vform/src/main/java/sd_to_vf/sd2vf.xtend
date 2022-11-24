@@ -64,17 +64,17 @@ class sd2vf extends YAMTLModule {
 //					fib.type = "'numberr'"
 //					m.formInput.add(fib)
 //				],
-			rule('Range')
-				.in('nt', DD.numericalType)
-				.out('rg', VF.formInputRange) [
-					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
-					//bindings
-					rg.name = nt.name
-					rg.min = Math.toIntExact(Math.round(nt.min)) 
-					rg.max = Math.toIntExact(Math.round(nt.max)) 
-					m.formInput.add(rg)
-				],
-				
+//			rule('Range')
+//				.in('nt', DD.numericalType)
+//				.out('rg', VF.formInputRange) [
+//					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
+//					//bindings
+//					rg.name = nt.name
+//					rg.min = Math.toIntExact(Math.round(nt.min)) 
+//					rg.max = Math.toIntExact(Math.round(nt.max)) 
+//					m.formInput.add(rg)
+//				],
+//				
 //				rule('Date')
 //				.in('sdt', DD.statsDataType).
 //				out('dt', VF.dat) [

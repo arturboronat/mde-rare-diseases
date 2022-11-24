@@ -1,5 +1,6 @@
 package com.server.cafeV.webapp.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.lang.Nullable;
@@ -9,8 +10,12 @@ public class VForm {
 	
 	private String formLayout;
 	
+	public VForm() {
+		
+		this.formInputs = new ArrayList<FormInput>();
+	}
 	
-	private List<FormInput> formInputs;
+	public List<FormInput> formInputs;
 	
 	
 	public String getFormLayout() {
@@ -26,6 +31,7 @@ public class VForm {
 		this.formInputs = formInputs;
 	}
 
+	
 }
 
 

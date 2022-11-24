@@ -1,5 +1,6 @@
 package com.server.cafeV.webapp.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FormInputSearch extends FormInput {
@@ -17,5 +18,7 @@ public class FormInputSearch extends FormInput {
 	
 	public FormInputSearch() {
 		super();
+		this.data = new ArrayList<String>();
+		
 	}
 }
