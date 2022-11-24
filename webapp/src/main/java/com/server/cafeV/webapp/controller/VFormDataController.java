@@ -20,6 +20,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.server.cafeV.webapp.model.EditData;
+import com.server.cafeV.webapp.model.EditProperties;
+import com.server.cafeV.webapp.model.EditProperty;
 import com.server.cafeV.webapp.model.VForm;
 import com.server.cafeV.webapp.service.YAMLServices;
 
@@ -61,4 +63,25 @@ public class VFormDataController {
 			return this.ym.getEditedData();
 			
 	}
+	
+	
+	@PostMapping("/setEditProperty")
+	public String edit(@RequestBody String name){
+		
+		this.ym.setEditProperty(name);;
+		
+		return "redirect:/getEditProperty";
+
+	}
+	
+	
+	@GetMapping("/getEditProperty")
+	@ResponseBody
+	@RequestMapping(path="/getEditProperty",produces="application/json")
+	public EditProperty getEditProperty() {
+			
+			return this.ym.getEditProperty();
+			
+	}
+	
 }

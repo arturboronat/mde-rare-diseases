@@ -7,19 +7,24 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+import org.springframework.cglib.core.CollectionUtils;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.server.cafeV.webapp.WebappApplication;
 import com.server.cafeV.webapp.model.EditData;
+import com.server.cafeV.webapp.model.EditProperties;
+import com.server.cafeV.webapp.model.EditProperty;
 import com.server.cafeV.webapp.model.FormInput;
 import com.server.cafeV.webapp.model.FormInputBasic;
 import com.server.cafeV.webapp.model.VForm;
 
+import csv_to_props.PropsCompiler;
 import yamtlDataset.DatasetCompiler;
 
 @Service
@@ -27,10 +32,15 @@ public class YAMLServices {
 	
 
 	private VForm vFormDSL; 
-	private	File  VfObj;
+	private	File  vfPath;
+	private File propsPath;
+	private List<EditProperty> editProperties;
+	private EditProperty editProperty;
 	
 	public YAMLServices() {
 		this.vFormDSL = new VForm();
+		this.editProperties = new ArrayList<EditProperty>();
+		this.editProperty = new EditProperty();
 	}
 	
 //	public static void main(String[] args) {
@@ -78,17 +88,22 @@ public class YAMLServices {
 //		
 //	}
 	
+	@SuppressWarnings("unchecked")
 	public VForm getVFormData(String DataSet) {
 		
 		DatasetCompiler dc = new DatasetCompiler();
+		PropsCompiler pc = new PropsCompiler();
+		
 		
 		try {
 			File fileUrl = new File(dc.getClass().getProtectionDomain().getCodeSource().getLocation().toURI());
 			String newUrl = fileUrl.getParentFile().getParent()+"/src/main/resources/datasets/"+DataSet;
 			dc.compile(newUrl);
+			pc.compile(newUrl);
 			Path vfUrl = Paths.get(newUrl+".vform");
 			Path vfJson = Paths.get(newUrl+".json");
-			this.VfObj = new File(newUrl+".json");
+			this.vfPath = new File(newUrl+".json");
+			this.propsPath = new File(newUrl+"_props.json");
 			try {
 				Files.copy(vfUrl, vfJson);
 			} catch (IOException e) {
@@ -103,8 +118,9 @@ public class YAMLServices {
 		ObjectMapper objectMapper = new ObjectMapper();
 		
 			try {
-
-				this.vFormDSL = objectMapper.readValue(VfObj, this.vFormDSL.getClass());
+				
+				this.editProperties = objectMapper.readValue(propsPath, this.editProperties.getClass());
+				this.vFormDSL = objectMapper.readValue(vfPath, this.vFormDSL.getClass());
 				
 				return this.vFormDSL;
 			} catch (IOException e) {
@@ -136,6 +152,21 @@ public class YAMLServices {
 	
 	public VForm getEditedData() {
 		return this.vFormDSL;
+	}
+	
+	public void setEditProperty(String name) {
+		
+		for(EditProperty i: this.editProperties) {
+			if(i.getName().equals(name)) {
+				this.editProperty = i;
+			}
+		}
+		
+	}
+	
+	public EditProperty getEditProperty() {
+		
+		return this.editProperty;
 	}
 	
 
