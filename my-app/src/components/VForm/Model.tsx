@@ -2,7 +2,7 @@ import React from "react"
 
 export type FormModel = {
   formLayout?: Layout;
-  formInputs?: (text|num|checkbox|range|select|search|date|group|hpo|orpha|hgvs)[];
+  formInputs?: (text|num|checkbox|range|select|search|date|group|hpo|orpha|hgvs|Disabled)[];
 }
 
 type Layout = "vertical"|"horizontal"
@@ -22,6 +22,13 @@ type num = {
 type checkbox = {
   inputType:"checkbox",
   inputName: string,
+  id?:string
+}
+
+type Disabled = {
+  inputType:"disabled",
+  inputName: string,
+  queryClause?:boolean,
   id?:string
 }
 

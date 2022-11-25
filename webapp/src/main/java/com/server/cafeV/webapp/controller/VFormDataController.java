@@ -50,7 +50,7 @@ public class VFormDataController {
 			
 	}
 	
-	@PostMapping(path="/dataset")
+	@PostMapping
 	@RequestMapping(path="/dataset")
 	@ResponseBody
 	public ResponseEntity<ResponseMessage> postDataSet(@RequestBody String DataBase ){
@@ -60,7 +60,7 @@ public class VFormDataController {
 		
 		this.DataBase = "";
 				this.DataBase=DataBase.split("=")[0];
-		//System.out.print(DataBase.getDataBase());
+		System.out.print(this.DataBase);
 		message = "success";
 		return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
 	}catch(Exception e) {
@@ -70,18 +70,30 @@ public class VFormDataController {
 
 	}
 	
-	@PostMapping("/editData")
+	@PostMapping
+	@ResponseBody
 	@RequestMapping(path="/editData",consumes="application/json")
-	public String edit(@RequestBody EditData editdata){
+	public ResponseEntity<ResponseMessage>  edit(@RequestBody EditData editdata){
+					
+			String message = "";
+		try {
+			
+			this.ym.editVForm(editdata);
+			ObjectMapper ob = new ObjectMapper();
+			
+			System.out.print(ob.writeValueAsString(editdata));
+			message = "success";
+			return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
+		}catch(Exception e) {
+			message = "failed";
+			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new ResponseMessage(message));
+		}
 		
-		this.ym.editVForm(editdata);
-		
-		return "redirect:/getEditedData";
 
 	}
 	
 	
-	@GetMapping("/getEditedData")
+	@GetMapping
 	@ResponseBody
 	@RequestMapping(path="/getEditedData",produces="application/json")
 	public VForm getEditedData() {
@@ -91,15 +103,29 @@ public class VFormDataController {
 	}
 	
 	
-	@PostMapping("/setEditProperty")
-	public String edit(@RequestBody String name){		
-		this.ym.setEditProperty(name);;		
-		return "redirect:/getEditProperty";
+	@PostMapping
+	@ResponseBody
+	@RequestMapping(path="/setEditProperty")
+	public ResponseEntity<ResponseMessage> setEditProperty(@RequestBody String name){		
+		
+		String message = "";
+	try {
+		
+		this.ym.setEditProperty(name.split("=")[0]);
+		
+		System.out.print(name.split("=")[0]);
+		message = "success";
+		return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
+	}catch(Exception e) {
+		message = "failed";
+		return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new ResponseMessage(message));
+	}
+		
 
 	}
 	
 	
-	@GetMapping("/getEditProperty")
+	@GetMapping
 	@ResponseBody
 	@RequestMapping(path="/getEditProperty",produces="application/json")
 	public VForm getEditProperty() {			

@@ -17,6 +17,7 @@ use = JsonTypeInfo.Id.NAME,
 include = JsonTypeInfo.As.EXISTING_PROPERTY,
 property = "inputType", visible=true)
 @JsonSubTypes({
+	@Type(value=FormInputBasic.class, name="disabled"),
 	@Type(value=FormInputBasic.class, name="text"),
 	@Type(value=FormInputBasic.class, name="checkbox"),
 	@Type(value=FormInputBasic.class, name="number"),
@@ -28,7 +29,19 @@ property = "inputType", visible=true)
 public abstract class FormInput {
 	
 	public String inputName;
-;
+	
+	@Nullable
+	public String id;
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
 	@Nullable
 	public boolean queryClause;
 	public boolean getQueryClause() {

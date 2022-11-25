@@ -133,7 +133,7 @@ function Qcode({getRoute, history}:appProps) {
             
          {(outPut!=undefined)&& 
             <VForm
-                model={outPut} 
+                model={VFormDSL} 
                 // setSave={((event)=>{setSaveForm(event)})}
                 handleOutput={getResult}
                 // getRoute={((route)=>{

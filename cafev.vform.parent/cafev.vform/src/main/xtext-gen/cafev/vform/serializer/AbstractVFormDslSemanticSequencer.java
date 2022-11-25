@@ -154,23 +154,11 @@ public abstract class AbstractVFormDslSemanticSequencer extends AbstractDelegati
 	 *     FormInputBasic returns FormInputBasic
 	 *
 	 * Constraint:
-	 *     (name=STRING qC=BOOLEAN type=BASICINPUT)
+	 *     (name=STRING id=STRING? qC=BOOLEAN type=BASICINPUT)
 	 * </pre>
 	 */
 	protected void sequence_FormInputBasic(ISerializationContext context, FormInputBasic semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, VFormDslPackage.Literals.FORM_INPUT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.FORM_INPUT__NAME));
-			if (transientValues.isValueTransient(semanticObject, VFormDslPackage.Literals.FORM_INPUT_BASIC__QC) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.FORM_INPUT_BASIC__QC));
-			if (transientValues.isValueTransient(semanticObject, VFormDslPackage.Literals.FORM_INPUT_BASIC__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.FORM_INPUT_BASIC__TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFormInputBasicAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getFormInputBasicAccess().getQCBOOLEANTerminalRuleCall_7_0(), semanticObject.getQC());
-		feeder.accept(grammarAccess.getFormInputBasicAccess().getTypeBASICINPUTTerminalRuleCall_11_0(), semanticObject.getType());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -205,26 +193,11 @@ public abstract class AbstractVFormDslSemanticSequencer extends AbstractDelegati
 	 *     FormInputRange returns FormInputRange
 	 *
 	 * Constraint:
-	 *     (name=STRING qC=BOOLEAN min=INT max=INT)
+	 *     (name=STRING id=STRING? qC=BOOLEAN min=INT max=INT)
 	 * </pre>
 	 */
 	protected void sequence_FormInputRange(ISerializationContext context, FormInputRange semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, VFormDslPackage.Literals.FORM_INPUT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.FORM_INPUT__NAME));
-			if (transientValues.isValueTransient(semanticObject, VFormDslPackage.Literals.FORM_INPUT_RANGE__QC) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.FORM_INPUT_RANGE__QC));
-			if (transientValues.isValueTransient(semanticObject, VFormDslPackage.Literals.FORM_INPUT_RANGE__MIN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.FORM_INPUT_RANGE__MIN));
-			if (transientValues.isValueTransient(semanticObject, VFormDslPackage.Literals.FORM_INPUT_RANGE__MAX) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.FORM_INPUT_RANGE__MAX));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFormInputRangeAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getFormInputRangeAccess().getQCBOOLEANTerminalRuleCall_7_0(), semanticObject.getQC());
-		feeder.accept(grammarAccess.getFormInputRangeAccess().getMinINTTerminalRuleCall_15_0(), semanticObject.getMin());
-		feeder.accept(grammarAccess.getFormInputRangeAccess().getMaxINTTerminalRuleCall_19_0(), semanticObject.getMax());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -235,7 +208,7 @@ public abstract class AbstractVFormDslSemanticSequencer extends AbstractDelegati
 	 *     FormInputSearch returns FormInputSearch
 	 *
 	 * Constraint:
-	 *     (name=STRING qC=BOOLEAN data+=OptionItem data+=OptionItem*)
+	 *     (name=STRING id=STRING? qC=BOOLEAN data+=OptionItem data+=OptionItem*)
 	 * </pre>
 	 */
 	protected void sequence_FormInputSearch(ISerializationContext context, FormInputSearch semanticObject) {
@@ -250,23 +223,11 @@ public abstract class AbstractVFormDslSemanticSequencer extends AbstractDelegati
 	 *     FormInputSelect returns FormInputSelect
 	 *
 	 * Constraint:
-	 *     (name=STRING qC=BOOLEAN option=Option)
+	 *     (name=STRING id=STRING? qC=BOOLEAN option=Option)
 	 * </pre>
 	 */
 	protected void sequence_FormInputSelect(ISerializationContext context, FormInputSelect semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, VFormDslPackage.Literals.FORM_INPUT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.FORM_INPUT__NAME));
-			if (transientValues.isValueTransient(semanticObject, VFormDslPackage.Literals.FORM_INPUT_SELECT__QC) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.FORM_INPUT_SELECT__QC));
-			if (transientValues.isValueTransient(semanticObject, VFormDslPackage.Literals.FORM_INPUT_SELECT__OPTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VFormDslPackage.Literals.FORM_INPUT_SELECT__OPTION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFormInputSelectAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getFormInputSelectAccess().getQCBOOLEANTerminalRuleCall_7_0(), semanticObject.getQC());
-		feeder.accept(grammarAccess.getFormInputSelectAccess().getOptionOptionParserRuleCall_15_0(), semanticObject.getOption());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

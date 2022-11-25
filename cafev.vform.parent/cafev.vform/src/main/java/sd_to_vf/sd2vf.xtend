@@ -106,6 +106,7 @@ class sd2vf extends YAMTLModule {
 					
 					//bindings
 					sch.name = ct.name
+					sch.id = ct.name
 					sch.QC = 'true'
 					sch.data += ct.frequencyTable.fetch("stringOptionItem") as List<StringOptionItem>
 					m.formInput.add(sch)
@@ -119,6 +120,7 @@ class sd2vf extends YAMTLModule {
 					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
 					slt.name = ct.name	
+					slt.id = ct.name	
 					slt.QC = 'true'		
 					slt.option = opt
 					m.formInput.add(slt)
@@ -135,6 +137,7 @@ class sd2vf extends YAMTLModule {
 					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
 					slt.name = nt.name	
+					slt.id = ct.name	
 					slt.QC = 'true'				
 					slt.option = opt
 					m.formInput.add(slt)

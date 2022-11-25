@@ -4,14 +4,14 @@ import org.springframework.lang.Nullable;
 
 public class EditData {
 	
-	private String id;
+	private String id_;
 	
 	@Nullable
 	private String name;
 	@Nullable
 	private String type;
-	@Nullable
-	private String groupName;
+//	@Nullable
+//	private String groupName;
 	
 	public String getName() {
 		return name;
@@ -25,17 +25,17 @@ public class EditData {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public String getGroupName() {
-		return groupName;
+//	public String getGroupName() {
+//		return groupName;
+//	}
+//	public void setGroupName(String groupName) {
+//		this.groupName = groupName;
+//	}
+	public String getId_() {
+		return id_;
 	}
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
+	public void setId_(String id_) {
+		this.id_ = id_;
 	}
 
 }

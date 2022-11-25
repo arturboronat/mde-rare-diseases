@@ -13,6 +13,7 @@ package cafev.vform.vFormDsl;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link cafev.vform.vFormDsl.FormInputSelect#getId <em>Id</em>}</li>
  *   <li>{@link cafev.vform.vFormDsl.FormInputSelect#getQC <em>QC</em>}</li>
  *   <li>{@link cafev.vform.vFormDsl.FormInputSelect#getOption <em>Option</em>}</li>
  * </ul>
@@ -23,6 +24,28 @@ package cafev.vform.vFormDsl;
  */
 public interface FormInputSelect extends FormInput
 {
+  /**
+   * Returns the value of the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Id</em>' attribute.
+   * @see #setId(String)
+   * @see cafev.vform.vFormDsl.VFormDslPackage#getFormInputSelect_Id()
+   * @model
+   * @generated
+   */
+  String getId();
+
+  /**
+   * Sets the value of the '{@link cafev.vform.vFormDsl.FormInputSelect#getId <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Id</em>' attribute.
+   * @see #getId()
+   * @generated
+   */
+  void setId(String value);
+
   /**
    * Returns the value of the '<em><b>QC</b></em>' attribute.
    * <!-- begin-user-doc -->

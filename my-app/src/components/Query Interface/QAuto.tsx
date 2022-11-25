@@ -36,14 +36,18 @@ function QAuto({getRoute, history}:appProps) {
         setTimeout(()=>{setOpac("opacity-90")},500)
         setTimeout(()=>{setOpac("opacity-1")},550)
     }, [])
+    const [dataBase, setDataBase] = useState<any[]>([])
+    const [data, setData] = useState<any>()
+
+    const [edit, setEdit] = useState<any>()
 
     const [name, setName] = useState("")
     const [result, setResult] = useState<{}>()
-    const [del, setDel] = useState<{}>()
-    const [edit, setEdit] = useState<{}>()
+    const [del, setDel] = useState<any>()
+   
     const [route, setRoute] = useState("dataBase")
-    const [dataBase, setDataBase] = useState<any[]>([])
-    const [data, setData] = useState<any>()
+    
+    
     const [opac, setOpac] = useState("opacity-10")
     const [lay, setLay] = useState('#e2e8f0')
     const [layout, setLayout] = useState('horizontal')
@@ -69,8 +73,27 @@ function QAuto({getRoute, history}:appProps) {
     //     setOutPut(GuiDsl(prev, layout))
     }
 
-    function handleEdit(event:any){
-    setEdit(data[event])
+  async  function handleEdit(edit:any){
+        try{
+       const res = await axios.post("http://localhost:8080/setEditProperty", edit)
+
+       console.log(res.status)
+
+       if(res.status===200){
+
+        axios.get("http://localhost:8080/getEditProperty").then(res=>{
+            setEdit(res.data)
+           
+            }
+        )
+       }
+           
+     }
+      catch(err){
+        console.log(err)
+        
+      }
+
     }
 
     function getResult(event:any){
@@ -99,19 +122,31 @@ function QAuto({getRoute, history}:appProps) {
         console.log(err)
         
       }
-        setTimeout(()=>{
-            
-
-            
-            
-            setRoute("query")}, 3000)
+        setTimeout(()=>{setRoute("query")}, 3000)
     }
 
-    function editForm(intp:any){
-    setEdit(undefined)
-
-    }
-
+        async  function editForm(edit:any){
+            try{
+           const res = await axios.post("http://localhost:8080/editData", edit)
+    
+           console.log(res.status)
+    
+           if(res.status===200){
+    
+            axios.get("http://localhost:8080/getEditedData").then(res=>{
+                setData(res.data)
+               
+                }
+            )
+           }
+               
+         }
+          catch(err){
+            console.log(err)
+            
+          }
+            //setEdit(undefined)
+        }
 
     return (
         <div className={`grid grid-cols-2 home  min-h-full bg-cover ${opac}`} >  
@@ -176,7 +211,7 @@ function QAuto({getRoute, history}:appProps) {
 
        { /* Edit Form */ }
             {
-                (!isUndefined(edit))&& 
+                (!isUndefined(edit))&&
                 <Backdrop
                 sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
                 open={(!isUndefined(edit))} >
@@ -190,10 +225,9 @@ function QAuto({getRoute, history}:appProps) {
                         <ClearIcon/>
                     </IconButton>
                 </div>
-                    <Form inputData={edit} 
-                    inputGroup={group}
-                outputData={editForm}
-                />
+                  <VForm model={edit} 
+                  handleOutput={editForm}
+                  />
                 </div>
                 </Backdrop>
                 

@@ -383,6 +383,22 @@ export const VForm = ({submitted, handleOutput, deleted, model, edited}:AppProps
             </IconButton>}
             </div>)
 
+          case "disabled":
+           if(Object.entries(data).length===0){
+            setData({["id_"]:obj.id})
+           }
+          
+            return(<div> 
+              <TextField
+            //sx={{...textStyle, width:"40.5%", marginLeft: "32%",zIndex: 100}}
+            disabled
+            id="outlined-disabled"
+            label="id_"
+            defaultValue={obj.id}
+            color = "primary"
+            size = "small"
+              />
+              </div>)
              
           case "select":
             return(<div

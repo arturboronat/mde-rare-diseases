@@ -19,6 +19,7 @@ FormInput:
 FormInputBasic:
 "{"
 	"\"inputName\"" ":" name=STRING ","
+	("\"id\"" ":" id=STRING ",")?
 	"\"queryClause\"" ":" qC=BOOLEAN ","
 	"\"inputType\"" ":" type=BASICINPUT
 "}"
@@ -27,6 +28,7 @@ FormInputBasic:
 FormInputRange:
 "{"
 	"\"inputName\"" ":" name=STRING ","
+	("\"id\"" ":" id=STRING ",")?
 	"\"queryClause\"" ":" qC=BOOLEAN ","
 	"\"inputType\"" ":" "\"range\"" ","
 	"\"min\"" ":" min=INT ","
@@ -38,6 +40,7 @@ FormInputRange:
 FormInputSelect:
 "{"
 	"\"inputName\"" ":" name=STRING ","
+	("\"id\"" ":" id=STRING ",")?
 	"\"queryClause\"" ":" qC=BOOLEAN ","
 	"\"inputType\"" ":" "\"select\"" ","
 	 "\"options\"" ":"  option=Option 
@@ -74,6 +77,7 @@ NumberOption:
 FormInputSearch:
 "{"
 	"\"inputName\"" ":" name=STRING ","
+	("\"id\"" ":" id=STRING ",")?
 	"\"queryClause\"" ":" qC=BOOLEAN ","
 	"\"inputType\"" ":" "\"search\"" ","
  	"\"options\"" ":"  "[" data+=OptionItem ("," data+=OptionItem)* "]"	 
@@ -130,4 +134,5 @@ terminal LAYOUT:
 	"\"horizontal\""|"\"vertical\"" ;
 	
 terminal BASICINPUT:
-	("\"text\""|"\"checkbox\""|"\"number\""|"\"date\"");
+	("\"text\""|"\"checkbox\""|"\"number\""|"\"date\""|"\"disabled\"")
+	;

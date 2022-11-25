@@ -42,12 +42,18 @@ public class YAMLServices {
 	private File propsPath;
 	private List<HashMap<String,List<String>>> editProperties;
 	private EditProperty editProperty;
+	private ObjectMapper objectMapper;
+	private DatasetCompiler dc ;
+	private PropsCompiler pc = new PropsCompiler();
 	
 	public YAMLServices() {
 		this.vFormDSL = new VForm();
 		this.editProperties = new ArrayList<HashMap<String,List<String>>>();
 		this.editProperty = new EditProperty();
 		this.storageService = new StorageServiceImpl();
+		this.objectMapper = new ObjectMapper();
+		this.dc = new DatasetCompiler();
+		this.pc = new PropsCompiler();
 	}
 	
 //	public static void main(String[] args) {
@@ -77,13 +83,11 @@ public class YAMLServices {
 	@SuppressWarnings("unchecked")
 	public VForm getVFormData(String DataSet) {
 		
-		ObjectMapper objectMapper = new ObjectMapper();
-		DatasetCompiler dc = new DatasetCompiler();
-		PropsCompiler pc = new PropsCompiler();
+		
 		
 		
 		try {
-			File fileUrl = new File(dc.getClass().getProtectionDomain().getCodeSource().getLocation().toURI());
+			File fileUrl = new File(this.dc.getClass().getProtectionDomain().getCodeSource().getLocation().toURI());
 			String newUrl = fileUrl.getParentFile().getParent()+"/src/main/resources/datasets/"+DataSet;
 			
 			Path vfUrl = Paths.get(newUrl+".vform");
@@ -92,7 +96,7 @@ public class YAMLServices {
 			this.propsPath = new File(newUrl+"_props.json");
 			if(vfPath.exists()) {
 				try {
-					return objectMapper.readValue(vfPath, this.vFormDSL.getClass());
+					return this.objectMapper.readValue(vfPath, this.vFormDSL.getClass());
 				} catch (StreamReadException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -104,8 +108,8 @@ public class YAMLServices {
 					e.printStackTrace();
 				}
 			}
-			dc.compile(newUrl);
-			pc.compile(newUrl);
+			this.dc.compile(newUrl);
+			this.pc.compile(newUrl);
 			try {
 				Files.copy(vfUrl, vfJson);
 			} catch (IOException e) {
@@ -121,8 +125,8 @@ public class YAMLServices {
 		
 			try {
 				
-				this.editProperties = objectMapper.readValue(propsPath, this.editProperties.getClass());
-				this.vFormDSL = objectMapper.readValue(vfPath, this.vFormDSL.getClass());
+				
+				this.vFormDSL = this.objectMapper.readValue(vfPath, this.vFormDSL.getClass());
 				
 				return this.vFormDSL;
 			} catch (IOException e) {
@@ -139,11 +143,14 @@ public class YAMLServices {
 			
 		for(FormInput i: this.vFormDSL.formInputs) {
 			
-			if(i.inputName.equals(editdata.getName())) {
-//				System.out.print((i.inputName));
-				i.inputType = editdata.getType();
-				
-				
+			if(i.id.equals(editdata.getId_())) {
+//			System.out.print((i.inputName));
+				if(editdata.getName()!=null) {
+					i.setInputName(editdata.getName());
+				}
+				if(editdata.getType()!=null) {
+					i.setInputType(editdata.getType());
+				}	
 			}
 			
 			
@@ -156,8 +163,20 @@ public class YAMLServices {
 		return this.vFormDSL;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void setEditProperty(String name) {
-		
+		try {
+			this.editProperties = this.objectMapper.readValue(propsPath, this.editProperties.getClass());
+		} catch (StreamReadException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (DatabindException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		for(HashMap<String,List<String>> i:this.editProperties) {
 			if(i.get("name").get(0).equals(name)) {
 				this.editProperty.setTypes(i.get("types"));
@@ -172,24 +191,32 @@ public class YAMLServices {
 	
 	public VForm getEditProperty() {
 		
-		VForm vEdit = new VForm();
 		FormInputBasic name = new FormInputBasic();
 		FormInputBasic id = new FormInputBasic();
 		FormInputSelect types = new FormInputSelect();
 		EnumOption typesOption = new EnumOption();
+		
+		VForm vEdit = new VForm();
+		
 		typesOption.setData(this.editProperty.getTypes());
-		name.setInputName(this.editProperty.getId());
-		name.setInputType("checkbox");
+		name.setInputName(this.editProperty.getName());
+		name.setInputType("disabled");
 		id.setInputName("name");
+		id.setId("name");
+		name.setId(this.editProperty.getName());
 		id.setInputType("text");
-		types.setInputName("inputTypes");
+		types.setId("type");
+		types.setInputName("type");
 		types.setInputType("select");
 		types.setOption(typesOption);
 		vEdit.setFormLayout("vertical");
-		vEdit.formInputs.add(name);
-		vEdit.formInputs.add(id);
-		vEdit.formInputs.add(types);
 		
+		List<FormInput> fm = new ArrayList<FormInput>();
+		
+		fm.add(name);
+		fm.add(id);
+		fm.add(types);
+		vEdit.setFormInputs(fm);
 		return vEdit;
 	}
 	
@@ -206,6 +233,7 @@ public class YAMLServices {
 		}		
 		options.setData(data);
 		dataBase.setInputName("DataBase");
+		dataBase.setId("DataBase");
 		dataBase.setInputType("select");
 		dataBase.setOption(options);
 		dataBase.setQueryClause(false);
