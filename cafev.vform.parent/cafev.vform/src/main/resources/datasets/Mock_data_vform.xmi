@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <vFormDsl:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vFormDsl="http://www.vform.cafev/VFormDsl">
   <formLayout layout="&quot;horizontal&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="biological_samples_available" id="biological_samples_available" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="Blood"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="Saliva"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="biological_samples_available" id="biological_samples_available" qC="true" type="&quot;checkbox&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="biological_samples_available" id="biological_samples_available" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="patient_status" id="patient_status" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="Alive"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="Deceased"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="patient_status" id="patient_status" qC="true" type="&quot;checkbox&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="patient_status" id="patient_status" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="date_of_death" id="date_of_death" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="07/07/2017"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="date_of_death" id="date_of_death" qC="true" type="&quot;checkbox&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="date_of_death" id="date_of_death" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="age_at_death" id="age_at_death" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="12"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="age_at_death" id="age_at_death" qC="true" type="&quot;checkbox&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="age_at_death" id="age_at_death" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="cause_of_death" id="cause_of_death" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="Respiratory infection"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="cause_of_death" id="cause_of_death" qC="true" type="&quot;checkbox&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="cause_of_death" id="cause_of_death" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="gender" id="gender" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="F"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="M"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="gender" id="gender" qC="true" type="&quot;checkbox&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="gender" id="gender" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="seizures" id="seizures" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="YES"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="NO"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="seizures" id="seizures" qC="true" type="&quot;checkbox&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="seizures" id="seizures" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="analysed_tissue" id="analysed_tissue" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="Blood"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="analysed_tissue" id="analysed_tissue" qC="true" type="&quot;checkbox&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="analysed_tissue" id="analysed_tissue" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="subject_id" id="subject_id" qC="true" type="&quot;text&quot;"/>
   <formInput xsi:type="vFormDsl:FormInputSearch" name="subject_id" id="subject_id" qC="true">
     <data xsi:type="vFormDsl:StringOptionItem" value="994M"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="1021M"/>
@@ -20,6 +81,7 @@
     <data xsi:type="vFormDsl:StringOptionItem" value="13M"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="14M"/>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="date_of_last_follow_up" id="date_of_last_follow_up" qC="true" type="&quot;text&quot;"/>
   <formInput xsi:type="vFormDsl:FormInputSearch" name="date_of_last_follow_up" id="date_of_last_follow_up" qC="true">
     <data xsi:type="vFormDsl:StringOptionItem" value="14/01/2020"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="07/08/2017"/>
@@ -38,6 +100,7 @@
     <data xsi:type="vFormDsl:StringOptionItem" value="20/03/2019"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="20/11/2019"/>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="first_contact_with_specialized_centre" id="first_contact_with_specialized_centre" qC="true" type="&quot;text&quot;"/>
   <formInput xsi:type="vFormDsl:FormInputSearch" name="first_contact_with_specialized_centre" id="first_contact_with_specialized_centre" qC="true">
     <data xsi:type="vFormDsl:StringOptionItem" value="07/10/2010"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="31/10/2012"/>
@@ -57,6 +120,7 @@
     <data xsi:type="vFormDsl:StringOptionItem" value="20/03/2019"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="20/11/2019"/>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="date_of_birth" id="date_of_birth" qC="true" type="&quot;text&quot;"/>
   <formInput xsi:type="vFormDsl:FormInputSearch" name="date_of_birth" id="date_of_birth" qC="true">
     <data xsi:type="vFormDsl:StringOptionItem" value="09/07/2009"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="01/06/2012"/>
@@ -75,6 +139,7 @@
     <data xsi:type="vFormDsl:StringOptionItem" value="20/10/2018"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="20/10/2019"/>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="phenotype" id="phenotype" qC="true" type="&quot;text&quot;"/>
   <formInput xsi:type="vFormDsl:FormInputSearch" name="phenotype" id="phenotype" qC="true">
     <data xsi:type="vFormDsl:StringOptionItem" value="HP:0002376"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="HP:0011097"/>
@@ -108,6 +173,63 @@
     <data xsi:type="vFormDsl:StringOptionItem" value="HP:0001298"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="HP:0002353"/>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="age_at_diagnosis" id="age_at_diagnosis" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="1"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="0"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="2"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="6"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="7"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="-1"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="10"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="14"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="Undetermined"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="age_at_diagnosis" id="age_at_diagnosis" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="age_of_seizure_onset" id="age_of_seizure_onset" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="0.6"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="0"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="0.5"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="0.11"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="2.6"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="Undetermined"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="0.3"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="4"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="0.7"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="age_of_seizure_onset" id="age_of_seizure_onset" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="inheritance_model" id="inheritance_model" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="AD - de novo"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="AD - inherited"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="XLR - inherited"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="AR - compound heterozygous"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="AR - inherited - homozygous"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="AD - de novo - somatic"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="AD &#x2013; inherited"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="inheritance_model" id="inheritance_model" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="platform" id="platform" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="WES - singleton"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="TGS - gene panel"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="WES - trio"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="platform" id="platform" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="zygosity" id="zygosity" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="Heterozygous"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="Hemizygous"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="Homozygous"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="zygosity" id="zygosity" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="chr" id="chr" qC="true" type="&quot;text&quot;"/>
   <formInput xsi:type="vFormDsl:FormInputSearch" name="chr" id="chr" qC="true">
     <data xsi:type="vFormDsl:StringOptionItem" value="20"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="16"/>
@@ -121,6 +243,27 @@
     <data xsi:type="vFormDsl:StringOptionItem" value="15"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="9"/>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="ref" id="ref" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="G"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="A"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="C"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="T"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="CT"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="ref" id="ref" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputSelect" name="alt" id="alt" qC="true">
+    <option xsi:type="vFormDsl:EnumOption">
+      <data xsi:type="vFormDsl:StringOptionItem" value="A"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="G"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="T"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="TT"/>
+      <data xsi:type="vFormDsl:StringOptionItem" value="C"/>
+    </option>
+  </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="alt" id="alt" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="transcript" id="transcript" qC="true" type="&quot;text&quot;"/>
   <formInput xsi:type="vFormDsl:FormInputSearch" name="transcript" id="transcript" qC="true">
     <data xsi:type="vFormDsl:StringOptionItem" value="NM_004975.2"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="NM_020988.2"/>
@@ -139,6 +282,7 @@
     <data xsi:type="vFormDsl:StringOptionItem" value="NM_003165.3"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="NM_153682.2"/>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="cDNA" id="cDNA" qC="true" type="&quot;text&quot;"/>
   <formInput xsi:type="vFormDsl:FormInputSearch" name="cDNA" id="cDNA" qC="true">
     <data xsi:type="vFormDsl:StringOptionItem" value="c.1747C>T"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="c.607G>A"/>
@@ -159,6 +303,7 @@
     <data xsi:type="vFormDsl:StringOptionItem" value="c.37+1G>A"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="c.2T>C"/>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="protein" id="protein" qC="true" type="&quot;text&quot;"/>
   <formInput xsi:type="vFormDsl:FormInputSearch" name="protein" id="protein" qC="true">
     <data xsi:type="vFormDsl:StringOptionItem" value="p.(Arg583*)"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="p.(Gly203Arg)"/>
@@ -177,6 +322,7 @@
     <data xsi:type="vFormDsl:StringOptionItem" value="p.(Leu107Phe)"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="p.Arg121Ter"/>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="genes" id="genes" qC="true" type="&quot;text&quot;"/>
   <formInput xsi:type="vFormDsl:FormInputSearch" name="genes" id="genes" qC="true">
     <data xsi:type="vFormDsl:StringOptionItem" value="KCNB1"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="GNAO1"/>
@@ -194,119 +340,6 @@
     <data xsi:type="vFormDsl:StringOptionItem" value="CHD2"/>
     <data xsi:type="vFormDsl:StringOptionItem" value="STXBP1"/>
   </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="biological_samples_available" id="biological_samples_available" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="Blood"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="Saliva"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="patient_status" id="patient_status" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="Alive"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="Deceased"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="date_of_death" id="date_of_death" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="07/07/2017"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="age_at_death" id="age_at_death" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="12"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="cause_of_death" id="cause_of_death" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="Respiratory infection"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="age_at_diagnosis" id="age_at_diagnosis" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="1"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="0"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="2"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="6"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="7"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="-1"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="10"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="14"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="Undetermined"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="gender" id="gender" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="F"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="M"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="seizures" id="seizures" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="YES"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="NO"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="age_of_seizure_onset" id="age_of_seizure_onset" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="0.6"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="0"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="0.5"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="0.11"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="2.6"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="Undetermined"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="0.3"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="4"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="0.7"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="inheritance_model" id="inheritance_model" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="AD - de novo"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="AD - inherited"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="XLR - inherited"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="AR - compound heterozygous"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="AR - inherited - homozygous"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="AD - de novo - somatic"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="AD &#x2013; inherited"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="platform" id="platform" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="WES - singleton"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="TGS - gene panel"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="WES - trio"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="analysed_tissue" id="analysed_tissue" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="Blood"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="zygosity" id="zygosity" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="Heterozygous"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="Hemizygous"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="Homozygous"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="ref" id="ref" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="G"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="A"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="C"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="T"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="CT"/>
-    </option>
-  </formInput>
-  <formInput xsi:type="vFormDsl:FormInputSelect" name="alt" id="alt" qC="true">
-    <option xsi:type="vFormDsl:EnumOption">
-      <data xsi:type="vFormDsl:StringOptionItem" value="A"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="G"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="T"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="TT"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="C"/>
-    </option>
-  </formInput>
   <formInput xsi:type="vFormDsl:FormInputSelect" name="interpretation" id="interpretation" qC="true">
     <option xsi:type="vFormDsl:EnumOption">
       <data xsi:type="vFormDsl:StringOptionItem" value="Pathogenic"/>
@@ -315,6 +348,7 @@
       <data xsi:type="vFormDsl:StringOptionItem" value="Vous - candidate"/>
     </option>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="interpretation" id="interpretation" qC="true" type="&quot;text&quot;"/>
   <formInput xsi:type="vFormDsl:FormInputSelect" name="interpretation_addendum" id="interpretation_addendum" qC="true">
     <option xsi:type="vFormDsl:EnumOption">
       <data xsi:type="vFormDsl:StringOptionItem" value="Diagnostic"/>
@@ -322,6 +356,7 @@
       <data xsi:type="vFormDsl:StringOptionItem" value="Candidate"/>
     </option>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="interpretation_addendum" id="interpretation_addendum" qC="true" type="&quot;text&quot;"/>
   <formInput xsi:type="vFormDsl:FormInputSelect" name="Phenotype_ORPHA" id="Phenotype_ORPHA" qC="true">
     <option xsi:type="vFormDsl:EnumOption">
       <data xsi:type="vFormDsl:StringOptionItem" value="ORPHA:33069"/>
@@ -330,6 +365,8 @@
       <data xsi:type="vFormDsl:StringOptionItem" value="ORPHA:2382"/>
     </option>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputBasic" name="Phenotype_ORPHA" id="Phenotype_ORPHA" qC="true" type="&quot;text&quot;"/>
+  <formInput xsi:type="vFormDsl:FormInputRange" name="age_at_last_follow_up" id="age_at_last_follow_up" qC="true" max="32"/>
   <formInput xsi:type="vFormDsl:FormInputSelect" name="age_at_last_follow_up" id="Phenotype_ORPHA" qC="true">
     <option xsi:type="vFormDsl:EnumOption">
       <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
@@ -338,6 +375,7 @@
       <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
     </option>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputRange" name="age_at_first_contact_with_specialized_centre" id="age_at_first_contact_with_specialized_centre" qC="true" max="18"/>
   <formInput xsi:type="vFormDsl:FormInputSelect" name="age_at_first_contact_with_specialized_centre" id="Phenotype_ORPHA" qC="true">
     <option xsi:type="vFormDsl:EnumOption">
       <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
@@ -346,6 +384,7 @@
       <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
     </option>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputRange" name="age" id="age" qC="true" max="34"/>
   <formInput xsi:type="vFormDsl:FormInputSelect" name="age" id="Phenotype_ORPHA" qC="true">
     <option xsi:type="vFormDsl:EnumOption">
       <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
@@ -355,6 +394,7 @@
       <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>
     </option>
   </formInput>
+  <formInput xsi:type="vFormDsl:FormInputRange" name="position" id="position" qC="true" min="2541585" max="236649682"/>
   <formInput xsi:type="vFormDsl:FormInputSelect" name="position" id="Phenotype_ORPHA" qC="true">
     <option xsi:type="vFormDsl:EnumOption">
       <data xsi:type="vFormDsl:StringOptionItem" value="]&#xfffd;lowerBound&#xfffd;, &#xfffd;upperBound&#xfffd;]"/>

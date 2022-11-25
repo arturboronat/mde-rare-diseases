@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -45,6 +46,7 @@ public class YAMLServices {
 	private ObjectMapper objectMapper;
 	private DatasetCompiler dc ;
 	private PropsCompiler pc = new PropsCompiler();
+	private VForm vFc;
 	
 	public YAMLServices() {
 		this.vFormDSL = new VForm();
@@ -54,38 +56,27 @@ public class YAMLServices {
 		this.objectMapper = new ObjectMapper();
 		this.dc = new DatasetCompiler();
 		this.pc = new PropsCompiler();
+		this.vFc = new VForm();
 	}
 	
-//	public static void main(String[] args) {
-//		
-//		YAMLServices yy = new YAMLServices();
-//		ObjectMapper obj = new ObjectMapper();
-//	//	VForm vff = new VForm();
-//		
-////		VForm vff = yy.getVFormData("Mock_data");
-////		
-////		yy.setEditProperty("subject_id");
-//		
-//		VForm ed  = yy.getDataBase();
-//		
-//		try {
-//			String op = obj.writeValueAsString(ed);
-//			System.out.print(op);
-//		} catch (JsonProcessingException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		
-//		
-//	}
+	public static void main(String[] args) {
+		
+		YAMLServices yy = new YAMLServices();
+		ObjectMapper obj = new ObjectMapper();
+		
+		VForm ed  = yy.getVFormData("Mock_data");
+		
+		try {
+			System.out.print(obj.writeValueAsString(ed));
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 	
 	@SuppressWarnings("unchecked")
 	public VForm getVFormData(String DataSet) {
-		
-		
-		
-		
 		try {
 			File fileUrl = new File(this.dc.getClass().getProtectionDomain().getCodeSource().getLocation().toURI());
 			String newUrl = fileUrl.getParentFile().getParent()+"/src/main/resources/datasets/"+DataSet;
@@ -128,7 +119,7 @@ public class YAMLServices {
 				
 				this.vFormDSL = this.objectMapper.readValue(vfPath, this.vFormDSL.getClass());
 				
-				return this.vFormDSL;
+				return generateForm();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -139,14 +130,36 @@ public class YAMLServices {
 		
 	}
 	
-	public void editVForm(EditData editdata) {
+	public VForm generateForm() {
+		VForm vf = new VForm();
+		List<FormInput> lfm = new ArrayList();
+		
+		for(HashMap<String,List<String>> i:  this.editProperties) {
+			String name = i.get("name").get(0);
+			String type = i.get("types").get(0);
+			Stream<FormInput> fm = this.vFormDSL.formInputs.stream().
+					filter(itm->itm.inputName.equals(name));
+					
 			
+			
+			
+		}
+		
+		vf.setFormLayout("horizontal");
+		vf.setFormInputs(lfm);
+		
+		return vf;
+	}
+	
+	public void editVForm(EditData editdata) {
+		
+		
 		for(FormInput i: this.vFormDSL.formInputs) {
 			
 			if(i.id.equals(editdata.getId_())) {
 //			System.out.print((i.inputName));
 				if(editdata.getName()!=null) {
-					i.setInputName(editdata.getName());
+					
 				}
 				if(editdata.getType()!=null) {
 					i.setInputType(editdata.getType());
