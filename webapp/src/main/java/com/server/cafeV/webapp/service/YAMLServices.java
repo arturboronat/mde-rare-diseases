@@ -17,6 +17,8 @@ import org.springframework.cglib.core.CollectionUtils;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.exc.StreamReadException;
+import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.server.cafeV.webapp.WebappApplication;
 import com.server.cafeV.webapp.model.EditData;
@@ -34,7 +36,7 @@ import yamtlDataset.DatasetCompiler;
 @Service
 public class YAMLServices {
 	
-
+	private  StorageServiceImpl storageService;
 	private VForm vFormDSL; 
 	private	File  vfPath;
 	private File propsPath;
@@ -45,6 +47,7 @@ public class YAMLServices {
 		this.vFormDSL = new VForm();
 		this.editProperties = new ArrayList<HashMap<String,List<String>>>();
 		this.editProperty = new EditProperty();
+		this.storageService = new StorageServiceImpl();
 	}
 	
 //	public static void main(String[] args) {
@@ -53,11 +56,11 @@ public class YAMLServices {
 //		ObjectMapper obj = new ObjectMapper();
 //	//	VForm vff = new VForm();
 //		
-//		VForm vff = yy.getVFormData("Mock_data");
+////		VForm vff = yy.getVFormData("Mock_data");
+////		
+////		yy.setEditProperty("subject_id");
 //		
-//		yy.setEditProperty("subject_id");
-//		
-//		VForm ed  = yy.getEditProperty();
+//		VForm ed  = yy.getDataBase();
 //		
 //		try {
 //			String op = obj.writeValueAsString(ed);
@@ -70,10 +73,11 @@ public class YAMLServices {
 //		
 //		
 //	}
-//	
+	
 	@SuppressWarnings("unchecked")
 	public VForm getVFormData(String DataSet) {
 		
+		ObjectMapper objectMapper = new ObjectMapper();
 		DatasetCompiler dc = new DatasetCompiler();
 		PropsCompiler pc = new PropsCompiler();
 		
@@ -81,12 +85,27 @@ public class YAMLServices {
 		try {
 			File fileUrl = new File(dc.getClass().getProtectionDomain().getCodeSource().getLocation().toURI());
 			String newUrl = fileUrl.getParentFile().getParent()+"/src/main/resources/datasets/"+DataSet;
-			dc.compile(newUrl);
-			pc.compile(newUrl);
+			
 			Path vfUrl = Paths.get(newUrl+".vform");
 			Path vfJson = Paths.get(newUrl+".json");
 			this.vfPath = new File(newUrl+".json");
 			this.propsPath = new File(newUrl+"_props.json");
+			if(vfPath.exists()) {
+				try {
+					return objectMapper.readValue(vfPath, this.vFormDSL.getClass());
+				} catch (StreamReadException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (DatabindException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			dc.compile(newUrl);
+			pc.compile(newUrl);
 			try {
 				Files.copy(vfUrl, vfJson);
 			} catch (IOException e) {
@@ -98,7 +117,7 @@ public class YAMLServices {
 			e.printStackTrace();
 		}
 		
-		ObjectMapper objectMapper = new ObjectMapper();
+		
 		
 			try {
 				
@@ -121,7 +140,7 @@ public class YAMLServices {
 		for(FormInput i: this.vFormDSL.formInputs) {
 			
 			if(i.inputName.equals(editdata.getName())) {
-				System.out.print((i.inputName));
+//				System.out.print((i.inputName));
 				i.inputType = editdata.getType();
 				
 				
@@ -171,10 +190,27 @@ public class YAMLServices {
 		vEdit.formInputs.add(id);
 		vEdit.formInputs.add(types);
 		
-		
-		
 		return vEdit;
 	}
 	
+	public VForm getDataBase() {
+		
+		VForm vEdit = new VForm();
+		FormInputSelect dataBase = new FormInputSelect();
+		EnumOption options = new EnumOption();
+		List<String> data = new ArrayList<String>();
+		
+		for(String i: this.storageService.getFiles()) {
 
+			data.add(i.replaceFirst(".csv", ""));
+		}		
+		options.setData(data);
+		dataBase.setInputName("DataBase");
+		dataBase.setInputType("select");
+		dataBase.setOption(options);
+		dataBase.setQueryClause(false);
+		vEdit.setFormLayout("vertical");
+		vEdit.formInputs.add(dataBase);		
+		return vEdit;
+	}
 }

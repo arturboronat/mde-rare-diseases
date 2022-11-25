@@ -318,9 +318,9 @@ ruleFormInputBasic returns [EObject current=null]
 		{
 			newLeafNode(otherlv_4, grammarAccess.getFormInputBasicAccess().getCommaKeyword_4());
 		}
-		otherlv_5='"inputType"'
+		otherlv_5='"queryClause"'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getFormInputBasicAccess().getInputTypeKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getFormInputBasicAccess().getQueryClauseKeyword_5());
 		}
 		otherlv_6=':'
 		{
@@ -328,9 +328,39 @@ ruleFormInputBasic returns [EObject current=null]
 		}
 		(
 			(
-				lv_type_7_0=RULE_BASICINPUT
+				lv_qC_7_0=RULE_BOOLEAN
 				{
-					newLeafNode(lv_type_7_0, grammarAccess.getFormInputBasicAccess().getTypeBASICINPUTTerminalRuleCall_7_0());
+					newLeafNode(lv_qC_7_0, grammarAccess.getFormInputBasicAccess().getQCBOOLEANTerminalRuleCall_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFormInputBasicRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"qC",
+						lv_qC_7_0,
+						"cafev.vform.VFormDsl.BOOLEAN");
+				}
+			)
+		)
+		otherlv_8=','
+		{
+			newLeafNode(otherlv_8, grammarAccess.getFormInputBasicAccess().getCommaKeyword_8());
+		}
+		otherlv_9='"inputType"'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getFormInputBasicAccess().getInputTypeKeyword_9());
+		}
+		otherlv_10=':'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getFormInputBasicAccess().getColonKeyword_10());
+		}
+		(
+			(
+				lv_type_11_0=RULE_BASICINPUT
+				{
+					newLeafNode(lv_type_11_0, grammarAccess.getFormInputBasicAccess().getTypeBASICINPUTTerminalRuleCall_11_0());
 				}
 				{
 					if ($current==null) {
@@ -339,14 +369,14 @@ ruleFormInputBasic returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"type",
-						lv_type_7_0,
+						lv_type_11_0,
 						"cafev.vform.VFormDsl.BASICINPUT");
 				}
 			)
 		)
-		otherlv_8='}'
+		otherlv_12='}'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getFormInputBasicAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_12, grammarAccess.getFormInputBasicAccess().getRightCurlyBracketKeyword_12());
 		}
 	)
 ;
@@ -401,35 +431,65 @@ ruleFormInputRange returns [EObject current=null]
 		{
 			newLeafNode(otherlv_4, grammarAccess.getFormInputRangeAccess().getCommaKeyword_4());
 		}
-		otherlv_5='"inputType"'
+		otherlv_5='"queryClause"'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getFormInputRangeAccess().getInputTypeKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getFormInputRangeAccess().getQueryClauseKeyword_5());
 		}
 		otherlv_6=':'
 		{
 			newLeafNode(otherlv_6, grammarAccess.getFormInputRangeAccess().getColonKeyword_6());
 		}
-		otherlv_7='"range"'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getFormInputRangeAccess().getRangeKeyword_7());
-		}
+		(
+			(
+				lv_qC_7_0=RULE_BOOLEAN
+				{
+					newLeafNode(lv_qC_7_0, grammarAccess.getFormInputRangeAccess().getQCBOOLEANTerminalRuleCall_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFormInputRangeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"qC",
+						lv_qC_7_0,
+						"cafev.vform.VFormDsl.BOOLEAN");
+				}
+			)
+		)
 		otherlv_8=','
 		{
 			newLeafNode(otherlv_8, grammarAccess.getFormInputRangeAccess().getCommaKeyword_8());
 		}
-		otherlv_9='"min"'
+		otherlv_9='"inputType"'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getFormInputRangeAccess().getMinKeyword_9());
+			newLeafNode(otherlv_9, grammarAccess.getFormInputRangeAccess().getInputTypeKeyword_9());
 		}
 		otherlv_10=':'
 		{
 			newLeafNode(otherlv_10, grammarAccess.getFormInputRangeAccess().getColonKeyword_10());
 		}
+		otherlv_11='"range"'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getFormInputRangeAccess().getRangeKeyword_11());
+		}
+		otherlv_12=','
+		{
+			newLeafNode(otherlv_12, grammarAccess.getFormInputRangeAccess().getCommaKeyword_12());
+		}
+		otherlv_13='"min"'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getFormInputRangeAccess().getMinKeyword_13());
+		}
+		otherlv_14=':'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getFormInputRangeAccess().getColonKeyword_14());
+		}
 		(
 			(
-				lv_min_11_0=RULE_INT
+				lv_min_15_0=RULE_INT
 				{
-					newLeafNode(lv_min_11_0, grammarAccess.getFormInputRangeAccess().getMinINTTerminalRuleCall_11_0());
+					newLeafNode(lv_min_15_0, grammarAccess.getFormInputRangeAccess().getMinINTTerminalRuleCall_15_0());
 				}
 				{
 					if ($current==null) {
@@ -438,28 +498,28 @@ ruleFormInputRange returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"min",
-						lv_min_11_0,
+						lv_min_15_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_12=','
+		otherlv_16=','
 		{
-			newLeafNode(otherlv_12, grammarAccess.getFormInputRangeAccess().getCommaKeyword_12());
+			newLeafNode(otherlv_16, grammarAccess.getFormInputRangeAccess().getCommaKeyword_16());
 		}
-		otherlv_13='"max"'
+		otherlv_17='"max"'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getFormInputRangeAccess().getMaxKeyword_13());
+			newLeafNode(otherlv_17, grammarAccess.getFormInputRangeAccess().getMaxKeyword_17());
 		}
-		otherlv_14=':'
+		otherlv_18=':'
 		{
-			newLeafNode(otherlv_14, grammarAccess.getFormInputRangeAccess().getColonKeyword_14());
+			newLeafNode(otherlv_18, grammarAccess.getFormInputRangeAccess().getColonKeyword_18());
 		}
 		(
 			(
-				lv_max_15_0=RULE_INT
+				lv_max_19_0=RULE_INT
 				{
-					newLeafNode(lv_max_15_0, grammarAccess.getFormInputRangeAccess().getMaxINTTerminalRuleCall_15_0());
+					newLeafNode(lv_max_19_0, grammarAccess.getFormInputRangeAccess().getMaxINTTerminalRuleCall_19_0());
 				}
 				{
 					if ($current==null) {
@@ -468,14 +528,14 @@ ruleFormInputRange returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"max",
-						lv_max_15_0,
+						lv_max_19_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_16='}'
+		otherlv_20='}'
 		{
-			newLeafNode(otherlv_16, grammarAccess.getFormInputRangeAccess().getRightCurlyBracketKeyword_16());
+			newLeafNode(otherlv_20, grammarAccess.getFormInputRangeAccess().getRightCurlyBracketKeyword_20());
 		}
 	)
 ;
@@ -530,36 +590,66 @@ ruleFormInputSelect returns [EObject current=null]
 		{
 			newLeafNode(otherlv_4, grammarAccess.getFormInputSelectAccess().getCommaKeyword_4());
 		}
-		otherlv_5='"inputType"'
+		otherlv_5='"queryClause"'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getFormInputSelectAccess().getInputTypeKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getFormInputSelectAccess().getQueryClauseKeyword_5());
 		}
 		otherlv_6=':'
 		{
 			newLeafNode(otherlv_6, grammarAccess.getFormInputSelectAccess().getColonKeyword_6());
 		}
-		otherlv_7='"select"'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getFormInputSelectAccess().getSelectKeyword_7());
-		}
+		(
+			(
+				lv_qC_7_0=RULE_BOOLEAN
+				{
+					newLeafNode(lv_qC_7_0, grammarAccess.getFormInputSelectAccess().getQCBOOLEANTerminalRuleCall_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFormInputSelectRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"qC",
+						lv_qC_7_0,
+						"cafev.vform.VFormDsl.BOOLEAN");
+				}
+			)
+		)
 		otherlv_8=','
 		{
 			newLeafNode(otherlv_8, grammarAccess.getFormInputSelectAccess().getCommaKeyword_8());
 		}
-		otherlv_9='"options"'
+		otherlv_9='"inputType"'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getFormInputSelectAccess().getOptionsKeyword_9());
+			newLeafNode(otherlv_9, grammarAccess.getFormInputSelectAccess().getInputTypeKeyword_9());
 		}
 		otherlv_10=':'
 		{
 			newLeafNode(otherlv_10, grammarAccess.getFormInputSelectAccess().getColonKeyword_10());
 		}
+		otherlv_11='"select"'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getFormInputSelectAccess().getSelectKeyword_11());
+		}
+		otherlv_12=','
+		{
+			newLeafNode(otherlv_12, grammarAccess.getFormInputSelectAccess().getCommaKeyword_12());
+		}
+		otherlv_13='"options"'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getFormInputSelectAccess().getOptionsKeyword_13());
+		}
+		otherlv_14=':'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getFormInputSelectAccess().getColonKeyword_14());
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFormInputSelectAccess().getOptionOptionParserRuleCall_11_0());
+					newCompositeNode(grammarAccess.getFormInputSelectAccess().getOptionOptionParserRuleCall_15_0());
 				}
-				lv_option_11_0=ruleOption
+				lv_option_15_0=ruleOption
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFormInputSelectRule());
@@ -567,15 +657,15 @@ ruleFormInputSelect returns [EObject current=null]
 					set(
 						$current,
 						"option",
-						lv_option_11_0,
+						lv_option_15_0,
 						"cafev.vform.VFormDsl.Option");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_12='}'
+		otherlv_16='}'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getFormInputSelectAccess().getRightCurlyBracketKeyword_12());
+			newLeafNode(otherlv_16, grammarAccess.getFormInputSelectAccess().getRightCurlyBracketKeyword_16());
 		}
 	)
 ;
@@ -1006,40 +1096,70 @@ ruleFormInputSearch returns [EObject current=null]
 		{
 			newLeafNode(otherlv_4, grammarAccess.getFormInputSearchAccess().getCommaKeyword_4());
 		}
-		otherlv_5='"inputType"'
+		otherlv_5='"queryClause"'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getFormInputSearchAccess().getInputTypeKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getFormInputSearchAccess().getQueryClauseKeyword_5());
 		}
 		otherlv_6=':'
 		{
 			newLeafNode(otherlv_6, grammarAccess.getFormInputSearchAccess().getColonKeyword_6());
 		}
-		otherlv_7='"search"'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getFormInputSearchAccess().getSearchKeyword_7());
-		}
+		(
+			(
+				lv_qC_7_0=RULE_BOOLEAN
+				{
+					newLeafNode(lv_qC_7_0, grammarAccess.getFormInputSearchAccess().getQCBOOLEANTerminalRuleCall_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFormInputSearchRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"qC",
+						lv_qC_7_0,
+						"cafev.vform.VFormDsl.BOOLEAN");
+				}
+			)
+		)
 		otherlv_8=','
 		{
 			newLeafNode(otherlv_8, grammarAccess.getFormInputSearchAccess().getCommaKeyword_8());
 		}
-		otherlv_9='"data"'
+		otherlv_9='"inputType"'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getFormInputSearchAccess().getDataKeyword_9());
+			newLeafNode(otherlv_9, grammarAccess.getFormInputSearchAccess().getInputTypeKeyword_9());
 		}
 		otherlv_10=':'
 		{
 			newLeafNode(otherlv_10, grammarAccess.getFormInputSearchAccess().getColonKeyword_10());
 		}
-		otherlv_11='['
+		otherlv_11='"search"'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getFormInputSearchAccess().getLeftSquareBracketKeyword_11());
+			newLeafNode(otherlv_11, grammarAccess.getFormInputSearchAccess().getSearchKeyword_11());
+		}
+		otherlv_12=','
+		{
+			newLeafNode(otherlv_12, grammarAccess.getFormInputSearchAccess().getCommaKeyword_12());
+		}
+		otherlv_13='"options"'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getFormInputSearchAccess().getOptionsKeyword_13());
+		}
+		otherlv_14=':'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getFormInputSearchAccess().getColonKeyword_14());
+		}
+		otherlv_15='['
+		{
+			newLeafNode(otherlv_15, grammarAccess.getFormInputSearchAccess().getLeftSquareBracketKeyword_15());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFormInputSearchAccess().getDataOptionItemParserRuleCall_12_0());
+					newCompositeNode(grammarAccess.getFormInputSearchAccess().getDataOptionItemParserRuleCall_16_0());
 				}
-				lv_data_12_0=ruleOptionItem
+				lv_data_16_0=ruleOptionItem
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFormInputSearchRule());
@@ -1047,23 +1167,23 @@ ruleFormInputSearch returns [EObject current=null]
 					add(
 						$current,
 						"data",
-						lv_data_12_0,
+						lv_data_16_0,
 						"cafev.vform.VFormDsl.OptionItem");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_13=','
+			otherlv_17=','
 			{
-				newLeafNode(otherlv_13, grammarAccess.getFormInputSearchAccess().getCommaKeyword_13_0());
+				newLeafNode(otherlv_17, grammarAccess.getFormInputSearchAccess().getCommaKeyword_17_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFormInputSearchAccess().getDataOptionItemParserRuleCall_13_1_0());
+						newCompositeNode(grammarAccess.getFormInputSearchAccess().getDataOptionItemParserRuleCall_17_1_0());
 					}
-					lv_data_14_0=ruleOptionItem
+					lv_data_18_0=ruleOptionItem
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFormInputSearchRule());
@@ -1071,20 +1191,20 @@ ruleFormInputSearch returns [EObject current=null]
 						add(
 							$current,
 							"data",
-							lv_data_14_0,
+							lv_data_18_0,
 							"cafev.vform.VFormDsl.OptionItem");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_15=']'
+		otherlv_19=']'
 		{
-			newLeafNode(otherlv_15, grammarAccess.getFormInputSearchAccess().getRightSquareBracketKeyword_14());
+			newLeafNode(otherlv_19, grammarAccess.getFormInputSearchAccess().getRightSquareBracketKeyword_18());
 		}
-		otherlv_16='}'
+		otherlv_20='}'
 		{
-			newLeafNode(otherlv_16, grammarAccess.getFormInputSearchAccess().getRightCurlyBracketKeyword_15());
+			newLeafNode(otherlv_20, grammarAccess.getFormInputSearchAccess().getRightCurlyBracketKeyword_19());
 		}
 	)
 ;
@@ -1504,9 +1624,11 @@ ruleIntData returns [EObject current=null]
 	)
 ;
 
+RULE_BOOLEAN : ('true'|'false');
+
 RULE_LAYOUT : ('"horizontal"'|'"vertical"');
 
-RULE_BASICINPUT : ('"text"'|'"checkbox"'|'"numberr"'|'"date"');
+RULE_BASICINPUT : ('"text"'|'"checkbox"'|'"number"'|'"date"');
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

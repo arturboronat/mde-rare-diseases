@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link cafev.vform.vFormDsl.impl.FormInputRangeImpl#getQC <em>QC</em>}</li>
  *   <li>{@link cafev.vform.vFormDsl.impl.FormInputRangeImpl#getMin <em>Min</em>}</li>
  *   <li>{@link cafev.vform.vFormDsl.impl.FormInputRangeImpl#getMax <em>Max</em>}</li>
  * </ul>
@@ -28,6 +29,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class FormInputRangeImpl extends FormInputImpl implements FormInputRange
 {
+  /**
+   * The default value of the '{@link #getQC() <em>QC</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQC()
+   * @generated
+   * @ordered
+   */
+  protected static final String QC_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getQC() <em>QC</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQC()
+   * @generated
+   * @ordered
+   */
+  protected String qC = QC_EDEFAULT;
+
   /**
    * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -95,6 +116,31 @@ public class FormInputRangeImpl extends FormInputImpl implements FormInputRange
    * @generated
    */
   @Override
+  public String getQC()
+  {
+    return qC;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setQC(String newQC)
+  {
+    String oldQC = qC;
+    qC = newQC;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VFormDslPackage.FORM_INPUT_RANGE__QC, oldQC, qC));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public int getMin()
   {
     return min;
@@ -149,6 +195,8 @@ public class FormInputRangeImpl extends FormInputImpl implements FormInputRange
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_RANGE__QC:
+        return getQC();
       case VFormDslPackage.FORM_INPUT_RANGE__MIN:
         return getMin();
       case VFormDslPackage.FORM_INPUT_RANGE__MAX:
@@ -167,6 +215,9 @@ public class FormInputRangeImpl extends FormInputImpl implements FormInputRange
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_RANGE__QC:
+        setQC((String)newValue);
+        return;
       case VFormDslPackage.FORM_INPUT_RANGE__MIN:
         setMin((Integer)newValue);
         return;
@@ -187,6 +238,9 @@ public class FormInputRangeImpl extends FormInputImpl implements FormInputRange
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_RANGE__QC:
+        setQC(QC_EDEFAULT);
+        return;
       case VFormDslPackage.FORM_INPUT_RANGE__MIN:
         setMin(MIN_EDEFAULT);
         return;
@@ -207,6 +261,8 @@ public class FormInputRangeImpl extends FormInputImpl implements FormInputRange
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_RANGE__QC:
+        return QC_EDEFAULT == null ? qC != null : !QC_EDEFAULT.equals(qC);
       case VFormDslPackage.FORM_INPUT_RANGE__MIN:
         return min != MIN_EDEFAULT;
       case VFormDslPackage.FORM_INPUT_RANGE__MAX:
@@ -226,7 +282,9 @@ public class FormInputRangeImpl extends FormInputImpl implements FormInputRange
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (min: ");
+    result.append(" (qC: ");
+    result.append(qC);
+    result.append(", min: ");
     result.append(min);
     result.append(", max: ");
     result.append(max);

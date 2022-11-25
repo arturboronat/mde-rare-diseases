@@ -22,18 +22,8 @@ function QAuto({getRoute, history}:appProps) {
 
 
     useEffect(()=>{
-        axios.get("http://localhost:5000/files").then((res)=>{
-            setDataBase((prev:any[])=>{
-              
-                prev = res.data.map((item:any)=>{
-                    return {
-                        label:item.split(".")[0],
-                        value:item
-                    }
-                })
-
-                return prev
-            })
+        axios.get("http://localhost:8080/getDataBase").then((res)=>{
+            setDataBase(res.data)
         })
         setTimeout(()=>{setOpac("opacity-10")},100)
         setTimeout(()=>{setOpac("opacity-20")},150)
@@ -72,11 +62,11 @@ function QAuto({getRoute, history}:appProps) {
     }
 
     function handleDelete(event:any){
-        setDel(event)
-        let prev = data
-        delete prev[event]
-    setData(prev)
-        setOutPut(GuiDsl(prev, layout))
+    //     setDel(event)
+    //     let prev = data
+    //     delete prev[event]
+    // setData(prev)
+    //     setOutPut(GuiDsl(prev, layout))
     }
 
     function handleEdit(event:any){
@@ -89,29 +79,35 @@ function QAuto({getRoute, history}:appProps) {
     }
 
     async function getData(data:any){
-      setName(data.DataBase.label)
       setRoute("ui")
         try{
-       const res = await axios.post("http://localhost:5000/presentationModel", data)
-        
-       if(res.status === 200){
-         axios.get("http://localhost:5000/presentationModel").then(res=>{
-        setData(res.data[0]);
-        setNewGroup([...group, ...res.data[1]])  
-         setOutPut(GuiDsl(res.data[0], layout))})
-        }
-        
-      }
+       const res = await axios.post("http://localhost:8080/dataset", data.DataBase)
+
+       console.log(res.status)
+
+       if(res.status===200){
+
+        axios.get("http://localhost:8080/getData").then(res=>{
+            setData(res.data)
+           
+            }
+        )
+       }
+           
+     }
       catch(err){
         console.log(err)
         
       }
-        setTimeout(()=>{setRoute("query")}, 3000)
+        setTimeout(()=>{
+            
+
+            
+            
+            setRoute("query")}, 3000)
     }
 
     function editForm(intp:any){
-    setData({...data, ...intp})
-    setOutPut(GuiDsl({...data, ...intp}, layout))
     setEdit(undefined)
 
     }
@@ -143,8 +139,7 @@ function QAuto({getRoute, history}:appProps) {
         <QDataBase getRoute={routeController} route={route} dataBase={dataBase} outPut={getData}/>
         
             {
-                (!isUndefined(outPut)&& 
-                route==="query") &&
+                (!isUndefined(data)&&(route==="query"))&&
                 <div> 
                     <div className='flex flex-row-reverse bg-[#e2e8f0] rounded-t-lg mb-[-2%] pb-[2%] '
                     onMouseEnter={(()=>{
@@ -171,7 +166,7 @@ function QAuto({getRoute, history}:appProps) {
                     </div>
                     
                 <VForm 
-                model={outPut} 
+                model={data} 
                 handleOutput={getResult} 
                 deleted={handleDelete} 
                 edited={handleEdit} 
@@ -216,7 +211,7 @@ function QAuto({getRoute, history}:appProps) {
             <Backdrop open={(route==="ui")}
                 sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}>
               <div className='mt-[-20%] xl:mr-[-50%] 2xl:mr-[30%] p-[30%]'>
-                  <p className="text-xl ml-[-50%] 2xl:ml-[-25%]">Please be patient, the User Interface for {name.split(".")[0]} is being generated </p>
+                  <p className="text-xl ml-[-50%] 2xl:ml-[-25%]">Please be patient, the User Interface for  is being generated </p>
                   <CircularProgress  sx={{marginTop: "10%"}}/>
               </div>
         </Backdrop>

@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link cafev.vform.vFormDsl.FormInputSearch#getQC <em>QC</em>}</li>
  *   <li>{@link cafev.vform.vFormDsl.FormInputSearch#getData <em>Data</em>}</li>
  * </ul>
  *
@@ -23,6 +24,28 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface FormInputSearch extends FormInput
 {
+  /**
+   * Returns the value of the '<em><b>QC</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>QC</em>' attribute.
+   * @see #setQC(String)
+   * @see cafev.vform.vFormDsl.VFormDslPackage#getFormInputSearch_QC()
+   * @model
+   * @generated
+   */
+  String getQC();
+
+  /**
+   * Sets the value of the '{@link cafev.vform.vFormDsl.FormInputSearch#getQC <em>QC</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>QC</em>' attribute.
+   * @see #getQC()
+   * @generated
+   */
+  void setQC(String value);
+
   /**
    * Returns the value of the '<em><b>Data</b></em>' containment reference list.
    * The list contents are of type {@link cafev.vform.vFormDsl.OptionItem}.

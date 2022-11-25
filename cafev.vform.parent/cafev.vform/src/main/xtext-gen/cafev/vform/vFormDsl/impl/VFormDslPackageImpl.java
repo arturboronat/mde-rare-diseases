@@ -330,9 +330,20 @@ public class VFormDslPackageImpl extends EPackageImpl implements VFormDslPackage
    * @generated
    */
   @Override
-  public EAttribute getFormInputBasic_Type()
+  public EAttribute getFormInputBasic_QC()
   {
     return (EAttribute)formInputBasicEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFormInputBasic_Type()
+  {
+    return (EAttribute)formInputBasicEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -352,7 +363,7 @@ public class VFormDslPackageImpl extends EPackageImpl implements VFormDslPackage
    * @generated
    */
   @Override
-  public EAttribute getFormInputRange_Min()
+  public EAttribute getFormInputRange_QC()
   {
     return (EAttribute)formInputRangeEClass.getEStructuralFeatures().get(0);
   }
@@ -363,9 +374,20 @@ public class VFormDslPackageImpl extends EPackageImpl implements VFormDslPackage
    * @generated
    */
   @Override
-  public EAttribute getFormInputRange_Max()
+  public EAttribute getFormInputRange_Min()
   {
     return (EAttribute)formInputRangeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFormInputRange_Max()
+  {
+    return (EAttribute)formInputRangeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -385,9 +407,20 @@ public class VFormDslPackageImpl extends EPackageImpl implements VFormDslPackage
    * @generated
    */
   @Override
+  public EAttribute getFormInputSelect_QC()
+  {
+    return (EAttribute)formInputSelectEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getFormInputSelect_Option()
   {
-    return (EReference)formInputSelectEClass.getEStructuralFeatures().get(0);
+    return (EReference)formInputSelectEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -506,9 +539,20 @@ public class VFormDslPackageImpl extends EPackageImpl implements VFormDslPackage
    * @generated
    */
   @Override
+  public EAttribute getFormInputSearch_QC()
+  {
+    return (EAttribute)formInputSearchEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getFormInputSearch_Data()
   {
-    return (EReference)formInputSearchEClass.getEStructuralFeatures().get(0);
+    return (EReference)formInputSearchEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -718,13 +762,16 @@ public class VFormDslPackageImpl extends EPackageImpl implements VFormDslPackage
     createEAttribute(formInputEClass, FORM_INPUT__NAME);
 
     formInputBasicEClass = createEClass(FORM_INPUT_BASIC);
+    createEAttribute(formInputBasicEClass, FORM_INPUT_BASIC__QC);
     createEAttribute(formInputBasicEClass, FORM_INPUT_BASIC__TYPE);
 
     formInputRangeEClass = createEClass(FORM_INPUT_RANGE);
+    createEAttribute(formInputRangeEClass, FORM_INPUT_RANGE__QC);
     createEAttribute(formInputRangeEClass, FORM_INPUT_RANGE__MIN);
     createEAttribute(formInputRangeEClass, FORM_INPUT_RANGE__MAX);
 
     formInputSelectEClass = createEClass(FORM_INPUT_SELECT);
+    createEAttribute(formInputSelectEClass, FORM_INPUT_SELECT__QC);
     createEReference(formInputSelectEClass, FORM_INPUT_SELECT__OPTION);
 
     optionEClass = createEClass(OPTION);
@@ -741,6 +788,7 @@ public class VFormDslPackageImpl extends EPackageImpl implements VFormDslPackage
     createEAttribute(numberOptionEClass, NUMBER_OPTION__RANGE);
 
     formInputSearchEClass = createEClass(FORM_INPUT_SEARCH);
+    createEAttribute(formInputSearchEClass, FORM_INPUT_SEARCH__QC);
     createEReference(formInputSearchEClass, FORM_INPUT_SEARCH__DATA);
 
     optionItemEClass = createEClass(OPTION_ITEM);
@@ -822,13 +870,16 @@ public class VFormDslPackageImpl extends EPackageImpl implements VFormDslPackage
     initEAttribute(getFormInput_Name(), ecorePackage.getEString(), "name", null, 0, 1, FormInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formInputBasicEClass, FormInputBasic.class, "FormInputBasic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFormInputBasic_QC(), ecorePackage.getEString(), "qC", null, 0, 1, FormInputBasic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFormInputBasic_Type(), ecorePackage.getEString(), "type", null, 0, 1, FormInputBasic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formInputRangeEClass, FormInputRange.class, "FormInputRange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFormInputRange_QC(), ecorePackage.getEString(), "qC", null, 0, 1, FormInputRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFormInputRange_Min(), ecorePackage.getEInt(), "min", null, 0, 1, FormInputRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFormInputRange_Max(), ecorePackage.getEInt(), "max", null, 0, 1, FormInputRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formInputSelectEClass, FormInputSelect.class, "FormInputSelect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFormInputSelect_QC(), ecorePackage.getEString(), "qC", null, 0, 1, FormInputSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFormInputSelect_Option(), this.getOption(), null, "option", null, 0, 1, FormInputSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(optionEClass, Option.class, "Option", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -845,6 +896,7 @@ public class VFormDslPackageImpl extends EPackageImpl implements VFormDslPackage
     initEAttribute(getNumberOption_Range(), ecorePackage.getEInt(), "range", null, 0, 1, NumberOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formInputSearchEClass, FormInputSearch.class, "FormInputSearch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFormInputSearch_QC(), ecorePackage.getEString(), "qC", null, 0, 1, FormInputSearch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFormInputSearch_Data(), this.getOptionItem(), null, "data", null, 0, -1, FormInputSearch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(optionItemEClass, OptionItem.class, "OptionItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

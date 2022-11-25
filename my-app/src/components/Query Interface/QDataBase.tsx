@@ -6,36 +6,13 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { Backdrop, IconButton } from '@mui/material';
 
 interface appProps {
-    dataBase:string[],
+    dataBase:any,
     route:string,
     outPut:(outPut:any)=>void,
     getRoute:(route:string)=>void
 }
 
 function QDataBase({dataBase, route, outPut, getRoute}:appProps) {
-
-    function generateForm(data:string[]){
-        let input:any = []
-        if(data.length > 0){
-           input = data
-        }
-        let form:FormModel ={
-            formLayout:"vertical",
-            formInputs:[
-                {
-                    inputName: "DataBase",
-                    queryClause:false,
-                    inputType: "search",
-                    options:input
-                    
-                }
-            ]
-        }
-    
-        return form
-    }
-    
-
 
     return (
 
@@ -59,7 +36,7 @@ function QDataBase({dataBase, route, outPut, getRoute}:appProps) {
 
                             <div className="w-[100%] ml-[10%] ">
                                 <VForm 
-                                    model={generateForm(dataBase)} 
+                                    model={dataBase} 
                                     handleOutput={outPut}
                                 />
                             </div>

@@ -27,7 +27,7 @@ public interface StorageService {
 	
 	public Resource load(String fileName);
 	
-	public String [] getFiles();
+	public List<String> getFiles();
 	
 	public void delete(String data);
 	

@@ -29,6 +29,15 @@ public abstract class FormInput {
 	
 	public String inputName;
 ;
+	@Nullable
+	public boolean queryClause;
+	public boolean getQueryClause() {
+		return queryClause;
+	}
+
+	public void setQueryClause(boolean queryClause) {
+		this.queryClause = queryClause;
+	}
 
 
 	public String inputType;

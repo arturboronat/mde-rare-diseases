@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -26,6 +27,10 @@ public class StorageServiceImpl implements StorageService{
 	
 	
 	private  Path rootLocation;
+	
+	public StorageServiceImpl() {
+		this.init();
+	}
 	
 
 	@Override
@@ -57,10 +62,17 @@ public class StorageServiceImpl implements StorageService{
 	}
 	
 	@Override
-	public String[] getFiles(){
+	public List<String> getFiles(){
 		
 		File allFiles = new File(this.rootLocation.toString());
-		return allFiles.list();
+		List<String> database = new ArrayList<String>();
+		
+		for(String i: allFiles.list()) {
+			if(i.endsWith(".csv")) {
+				database.add(i);
+			}
+		}
+		return database;
 		
 	}
 

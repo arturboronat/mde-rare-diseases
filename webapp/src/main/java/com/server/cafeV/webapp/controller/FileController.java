@@ -72,7 +72,7 @@ public class FileController {
 
 	@GetMapping("/files")
 	@ResponseBody
-	public String [] getFiles() {
+	public List<String> getFiles() {
 		
 		return storageService.getFiles();
 

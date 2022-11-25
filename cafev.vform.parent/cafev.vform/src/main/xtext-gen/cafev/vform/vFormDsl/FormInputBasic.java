@@ -13,6 +13,7 @@ package cafev.vform.vFormDsl;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link cafev.vform.vFormDsl.FormInputBasic#getQC <em>QC</em>}</li>
  *   <li>{@link cafev.vform.vFormDsl.FormInputBasic#getType <em>Type</em>}</li>
  * </ul>
  *
@@ -22,6 +23,28 @@ package cafev.vform.vFormDsl;
  */
 public interface FormInputBasic extends FormInput
 {
+  /**
+   * Returns the value of the '<em><b>QC</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>QC</em>' attribute.
+   * @see #setQC(String)
+   * @see cafev.vform.vFormDsl.VFormDslPackage#getFormInputBasic_QC()
+   * @model
+   * @generated
+   */
+  String getQC();
+
+  /**
+   * Sets the value of the '{@link cafev.vform.vFormDsl.FormInputBasic#getQC <em>QC</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>QC</em>' attribute.
+   * @see #getQC()
+   * @generated
+   */
+  void setQC(String value);
+
   /**
    * Returns the value of the '<em><b>Type</b></em>' attribute.
    * <!-- begin-user-doc -->

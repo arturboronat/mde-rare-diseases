@@ -17,13 +17,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VFormDsl.ecore#//FormInput/name"/>
     </genClasses>
     <genClasses ecoreClass="VFormDsl.ecore#//FormInputBasic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VFormDsl.ecore#//FormInputBasic/qC"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VFormDsl.ecore#//FormInputBasic/type"/>
     </genClasses>
     <genClasses ecoreClass="VFormDsl.ecore#//FormInputRange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VFormDsl.ecore#//FormInputRange/qC"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VFormDsl.ecore#//FormInputRange/min"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VFormDsl.ecore#//FormInputRange/max"/>
     </genClasses>
     <genClasses ecoreClass="VFormDsl.ecore#//FormInputSelect">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VFormDsl.ecore#//FormInputSelect/qC"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VFormDsl.ecore#//FormInputSelect/option"/>
     </genClasses>
     <genClasses ecoreClass="VFormDsl.ecore#//Option"/>
@@ -39,6 +42,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VFormDsl.ecore#//NumberOption/range"/>
     </genClasses>
     <genClasses ecoreClass="VFormDsl.ecore#//FormInputSearch">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VFormDsl.ecore#//FormInputSearch/qC"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VFormDsl.ecore#//FormInputSearch/data"/>
     </genClasses>
     <genClasses ecoreClass="VFormDsl.ecore#//OptionItem"/>

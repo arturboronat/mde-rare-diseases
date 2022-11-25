@@ -1,5 +1,4 @@
 package sd_to_vf
-
 import cafev.vform.vFormDsl.EnumOption
 import cafev.vform.vFormDsl.FormInputBasic
 import cafev.vform.vFormDsl.FormInputRange
@@ -19,13 +18,16 @@ import yamtl.core.YAMTLModule
 
 import static yamtl.dsl.Rule.*
 
+
 /** 
  * SHORTER TRANSFORMATION FOR PRESENTATION PURPOSES
  * with boilerplate code
  */
 class sd2vf extends YAMTLModule {
 	val DD = DataDescriptionPackage.eINSTANCE  
-	val VF = VFormDslPackage.eINSTANCE  
+	val VF = VFormDslPackage.eINSTANCE
+		
+		
 	new () {
 		header().in('dd', DD).out('vf', VF)
 		ruleStore( #[
@@ -104,6 +106,7 @@ class sd2vf extends YAMTLModule {
 					
 					//bindings
 					sch.name = ct.name
+					sch.QC = 'true'
 					sch.data += ct.frequencyTable.fetch("stringOptionItem") as List<StringOptionItem>
 					m.formInput.add(sch)
 				],
@@ -115,7 +118,8 @@ class sd2vf extends YAMTLModule {
 				.out("slt", VF.formInputSelect) [
 					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
-					slt.name = ct.name			
+					slt.name = ct.name	
+					slt.QC = 'true'		
 					slt.option = opt
 					m.formInput.add(slt)
 				].
@@ -130,7 +134,8 @@ class sd2vf extends YAMTLModule {
 				.out("slt", VF.formInputSelect) [
 					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
-					slt.name = nt.name					
+					slt.name = nt.name	
+					slt.QC = 'true'				
 					slt.option = opt
 					m.formInput.add(slt)
 				].
