@@ -12,7 +12,7 @@ public class FormInputSelect extends FormInput{
 		this.options = options;
 	}
 	
-	FormInputSelect(){
+	public FormInputSelect(){
 		super();
 	}
 }

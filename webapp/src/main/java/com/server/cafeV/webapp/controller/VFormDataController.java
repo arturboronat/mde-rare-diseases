@@ -78,7 +78,7 @@ public class VFormDataController {
 	@GetMapping("/getEditProperty")
 	@ResponseBody
 	@RequestMapping(path="/getEditProperty",produces="application/json")
-	public EditProperty getEditProperty() {
+	public VForm getEditProperty() {
 			
 			return this.ym.getEditProperty();
 			

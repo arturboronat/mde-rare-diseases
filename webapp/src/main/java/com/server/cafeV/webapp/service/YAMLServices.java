@@ -7,7 +7,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -20,8 +22,10 @@ import com.server.cafeV.webapp.WebappApplication;
 import com.server.cafeV.webapp.model.EditData;
 import com.server.cafeV.webapp.model.EditProperties;
 import com.server.cafeV.webapp.model.EditProperty;
+import com.server.cafeV.webapp.model.EnumOption;
 import com.server.cafeV.webapp.model.FormInput;
 import com.server.cafeV.webapp.model.FormInputBasic;
+import com.server.cafeV.webapp.model.FormInputSelect;
 import com.server.cafeV.webapp.model.VForm;
 
 import csv_to_props.PropsCompiler;
@@ -34,60 +38,39 @@ public class YAMLServices {
 	private VForm vFormDSL; 
 	private	File  vfPath;
 	private File propsPath;
-	private List<EditProperty> editProperties;
+	private List<HashMap<String,List<String>>> editProperties;
 	private EditProperty editProperty;
 	
 	public YAMLServices() {
 		this.vFormDSL = new VForm();
-		this.editProperties = new ArrayList<EditProperty>();
+		this.editProperties = new ArrayList<HashMap<String,List<String>>>();
 		this.editProperty = new EditProperty();
 	}
 	
 //	public static void main(String[] args) {
 //		
 //		YAMLServices yy = new YAMLServices();
-//		
-//		//VForm vd = new VForm();
-//		
-//		yy.getVFormData("Mock_data");
-//		EditData edd = new EditData();
-//		edd.setName("combo");
-//		edd.setType("search");
-//		yy.editVForm(edd);		
-//		FormInput fd = new FormInputBasic();
-//		
-//		fd.setInputName("myText");
-//		fd.setInputType("text");
-//		
-//		FormInput fd2 = new FormInputBasic();
-//		fd2.setInputName("myChck");
-//		fd2.setInputType("checkbox");
-//		
-//		FormInput fd3 = new FormInputBasic();
-//		fd3.setInputName("myNumber");
-//		fd3.setInputType("number");
-//		
-//		EditData edd = new EditData();
-//		edd.setName("myText");
-//		edd.setType("checkbox");
-//		
-//		vd.formInputs.add(fd);
-//		vd.formInputs.add(fd2);
-//		vd.formInputs.add(fd2);
-		//yy.editVForm(edd,vd);
-//		
-//		
 //		ObjectMapper obj = new ObjectMapper();
+//	//	VForm vff = new VForm();
+//		
+//		VForm vff = yy.getVFormData("Mock_data");
+//		
+//		yy.setEditProperty("subject_id");
+//		
+//		VForm ed  = yy.getEditProperty();
 //		
 //		try {
-//			System.out.print(obj.writeValueAsString(yy.editVForm(edd)));
+//			String op = obj.writeValueAsString(ed);
+//			System.out.print(op);
 //		} catch (JsonProcessingException e) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
 //		
+//		
+//		
 //	}
-	
+//	
 	@SuppressWarnings("unchecked")
 	public VForm getVFormData(String DataSet) {
 		
@@ -156,17 +139,41 @@ public class YAMLServices {
 	
 	public void setEditProperty(String name) {
 		
-		for(EditProperty i: this.editProperties) {
-			if(i.getName().equals(name)) {
-				this.editProperty = i;
+		for(HashMap<String,List<String>> i:this.editProperties) {
+			if(i.get("name").get(0).equals(name)) {
+				this.editProperty.setTypes(i.get("types"));
+				this.editProperty.setName(i.get("name").get(0));
+				this.editProperty.setId(i.get("name").get(0));
+				
 			}
+			
 		}
 		
 	}
 	
-	public EditProperty getEditProperty() {
+	public VForm getEditProperty() {
 		
-		return this.editProperty;
+		VForm vEdit = new VForm();
+		FormInputBasic name = new FormInputBasic();
+		FormInputBasic id = new FormInputBasic();
+		FormInputSelect types = new FormInputSelect();
+		EnumOption typesOption = new EnumOption();
+		typesOption.setData(this.editProperty.getTypes());
+		name.setInputName(this.editProperty.getId());
+		name.setInputType("checkbox");
+		id.setInputName("name");
+		id.setInputType("text");
+		types.setInputName("inputTypes");
+		types.setInputType("select");
+		types.setOption(typesOption);
+		vEdit.setFormLayout("vertical");
+		vEdit.formInputs.add(name);
+		vEdit.formInputs.add(id);
+		vEdit.formInputs.add(types);
+		
+		
+		
+		return vEdit;
 	}
 	
 
