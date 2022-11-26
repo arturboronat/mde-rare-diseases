@@ -4,6 +4,7 @@ import java.io.IOException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,7 +76,6 @@ public class FileController {
 	public List<String> getFiles() {
 		
 		return storageService.getFiles();
-
 //		Resource file = storageService.load(fileName);
 //		String contentType = null;
 //		

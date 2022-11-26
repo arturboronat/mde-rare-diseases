@@ -1,0 +1,1 @@
+[{"type":["select"],"name":["subject_id"],"groupName":["DEMOGRAPHICS"]},{"type":["checkbox"],"name":["biological_samples_available"]},{"type":["search"],"name":["date_of_birth"]},{"type":["range"],"name":["age"]},{"type":["select"],"name":["patient_status"]},{"type":["select"]]

@@ -28,10 +28,6 @@ public class StorageServiceImpl implements StorageService{
 	
 	private  Path rootLocation;
 	
-	public StorageServiceImpl() {
-		this.init();
-	}
-	
 
 	@Override
 	public void init() {
@@ -65,14 +61,13 @@ public class StorageServiceImpl implements StorageService{
 	public List<String> getFiles(){
 		
 		File allFiles = new File(this.rootLocation.toString());
-		List<String> database = new ArrayList<String>();
 		
-		for(String i: allFiles.list()) {
-			if(i.endsWith(".csv")) {
-				database.add(i);
-			}
+		List<String> csv = new ArrayList<String>();
+		
+		for (String i:allFiles.list()) {
+			if(i.endsWith(".csv")) {csv.add(i);}
 		}
-		return database;
+		return csv;
 		
 	}
 

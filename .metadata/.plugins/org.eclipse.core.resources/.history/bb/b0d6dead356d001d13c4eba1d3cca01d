@@ -1,0 +1,145 @@
+package com.server.cafeV.webapp.service;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.cglib.core.CollectionUtils;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.server.cafeV.webapp.WebappApplication;
+import com.server.cafeV.webapp.model.EditData;
+import com.server.cafeV.webapp.model.EditProperties;
+import com.server.cafeV.webapp.model.EditProperty;
+import com.server.cafeV.webapp.model.EnumOption;
+import com.server.cafeV.webapp.model.FormInput;
+import com.server.cafeV.webapp.model.FormInputBasic;
+import com.server.cafeV.webapp.model.FormInputSelect;
+import com.server.cafeV.webapp.model.VForm;
+
+import csv_to_props.PropsCompiler;
+import yamtlDataset.DatasetCompiler;
+
+@Service
+public class YAMLServices {
+	
+
+	private VForm vFormDSL; 
+	private	File  vfPath;
+	private File propsPath;
+	private List<HashMap<String,List<String>>> uiEditProps;
+	private EditProperty editProperty;
+	private DatasetCompiler dc;
+	private PropsCompiler pc;
+	private ObjectMapper obm;
+	
+	public YAMLServices() {
+		this.uiEditProps = new ArrayList<HashMap<String,List<String>>>();
+		this.editProperty = new EditProperty();
+		 this.dc = new DatasetCompiler();
+		 this.pc = new PropsCompiler();
+		 this.obm = new ObjectMapper();
+		 
+	}
+	
+	public static void main(String[] args) throws IOException, URISyntaxException {
+		
+		YAMLServices yy = new YAMLServices();
+		ObjectMapper obj = new ObjectMapper();
+	
+		VForm vf = yy.generateForm("Mock_data");
+		
+		
+		String out = obj.writeValueAsString(vf);
+		System.out.print(out);
+		
+		
+	}
+	
+	
+	//This is an Service for retrieving the VForm Generated from the file System
+	@SuppressWarnings("unchecked")
+	public VForm generateForm(String DataSet) throws IOException, URISyntaxException {
+		
+			this.vFormDSL = new VForm();
+			
+		//Get Dataset Paths
+		
+			File fileUrl = new File(this.dc.getClass().getProtectionDomain().getCodeSource().getLocation().toURI());
+			String newUrl = fileUrl.getParentFile().getParent()+"/src/main/resources/datasets/"+DataSet;
+			this.dc.compile(newUrl);
+			//include Error Handling
+			this.pc.compile(newUrl);
+			//include Error Handling
+			Path vfUrl = Paths.get(newUrl+".vform");
+			Path vfJson = Paths.get(newUrl+".json");
+			this.vfPath = new File(newUrl+".json");
+			this.propsPath = new File(newUrl+"_props.json");
+				
+			if(vfPath.exists()) {return this.obm.readValue(vfPath, this.vFormDSL.getClass());}
+			
+			Files.copy(vfUrl, vfJson);
+		
+			this.uiEditProps = this.obm.readValue(this.propsPath, this.uiEditProps.getClass());	
+			
+			return this.obm.readValue(vfPath, this.vFormDSL.getClass());
+	
+		
+	}
+	
+	
+	//this is a method for generating the edit options for a given input entity it recieves a post request
+	public void setEditProperty(String name) {
+		
+		for(HashMap<String,List<String>> i:this.uiEditProps) {
+			if(i.get("name").get(0).equals(name)) {
+				this.editProperty.setTypes(i.get("types"));
+				this.editProperty.setName(i.get("name").get(0));
+				this.editProperty.setId(i.get("name").get(0));
+				
+			}
+			
+		}
+		
+	}
+	
+	
+	//this is a method for retrieving the edit property for a given input entity
+	public VForm getEditProperty() {
+		
+		VForm vEdit = new VForm();
+		FormInputBasic name = new FormInputBasic();
+		FormInputBasic id = new FormInputBasic();
+		FormInputSelect types = new FormInputSelect();
+		EnumOption typesOption = new EnumOption();
+		typesOption.setData(this.editProperty.getTypes());
+		name.setInputName(this.editProperty.getId());
+		name.setInputType("checkbox");
+		id.setInputName("name");
+		id.setInputType("text");
+		types.setInputName("inputTypes");
+		types.setInputType("select");
+		types.setOption(typesOption);
+		vEdit.setFormLayout("vertical");
+		vEdit.formInputs.add(name);
+		vEdit.formInputs.add(id);
+		vEdit.formInputs.add(types);
+		
+		
+		
+		return vEdit;
+	}
+	
+
+}

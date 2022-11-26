@@ -6,6 +6,16 @@ import java.util.List;
 public class FormInputSearch extends FormInput {
 	
 
+	
+
+	private List<String> options;
+	
+	public FormInputSearch() {
+		super();
+
+		
+	}
+
 	public List<String> getOptions() {
 		return options;
 	}
@@ -13,11 +23,6 @@ public class FormInputSearch extends FormInput {
 	public void setOptions(List<String> options) {
 		this.options = options;
 	}
-
-	private List<String> options;
 	
-	public FormInputSearch() {
-		super();
-		
-	}
+	
 }

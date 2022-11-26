@@ -20,11 +20,13 @@ interface appProps {
 
 function QAuto({getRoute, history}:appProps) {
 
+    // axios.get("http://localhost:8080/getDataBase").then((res)=>{
+    //     setDB(res.data)
+    // })
 
+    const [db, setDB] = useState<any>();
     useEffect(()=>{
-        axios.get("http://localhost:8080/getDataBase").then((res)=>{
-            setDataBase(res.data)
-        })
+       
         setTimeout(()=>{setOpac("opacity-10")},100)
         setTimeout(()=>{setOpac("opacity-20")},150)
         setTimeout(()=>{setOpac("opacity-30")},200)
@@ -36,7 +38,8 @@ function QAuto({getRoute, history}:appProps) {
         setTimeout(()=>{setOpac("opacity-90")},500)
         setTimeout(()=>{setOpac("opacity-1")},550)
     }, [])
-    const [dataBase, setDataBase] = useState<any[]>([])
+    
+    const [dataBase, setDataBase] = useState<String>("")
     const [data, setData] = useState<any>()
 
     const [edit, setEdit] = useState<any>()
@@ -57,6 +60,7 @@ function QAuto({getRoute, history}:appProps) {
     const [group, setNewGroup] = useState<string[]>([])
 
     function routeController(route:string){
+        
        if(route!=="Qhome"){
         setRoute(route)
        } 
@@ -74,27 +78,15 @@ function QAuto({getRoute, history}:appProps) {
     }
 
   async  function handleEdit(edit:any){
-        try{
-       const res = await axios.post("http://localhost:8080/setEditProperty", edit)
-
-       console.log(res.status)
-
-       if(res.status===200){
-
-        axios.get("http://localhost:8080/getEditProperty").then(res=>{
+       
+        axios.get(`http://localhost:8080/getUiEditproperty/${dataBase}/${edit}`).then(res=>{
             setEdit(res.data)
            
             }
         )
        }
            
-     }
-      catch(err){
-        console.log(err)
-        
-      }
-
-    }
+     
 
     function getResult(event:any){
         setResult(event)
@@ -103,48 +95,39 @@ function QAuto({getRoute, history}:appProps) {
 
     async function getData(data:any){
       setRoute("ui")
-        try{
-       const res = await axios.post("http://localhost:8080/dataset", data.DataBase)
-
-       console.log(res.status)
-
-       if(res.status===200){
-
-        axios.get("http://localhost:8080/getData").then(res=>{
-            setData(res.data)
+       
+        axios.get(`http://localhost:8080/getFormData/${data}`).then(res=>{
+                setDataBase(data)
+                setData(res.data)
            
             }
         )
-       }
+       
            
-     }
-      catch(err){
-        console.log(err)
-        
-      }
+    
         setTimeout(()=>{setRoute("query")}, 3000)
     }
 
         async  function editForm(edit:any){
-            try{
-           const res = await axios.post("http://localhost:8080/editData", edit)
+        //    try{
+           const res = await axios.post("http://localhost:8080/editFormData", edit)
     
-           console.log(res.status)
+        //  console.log(res.status)
     
-           if(res.status===200){
+        //    if(res.status===200){
     
-            axios.get("http://localhost:8080/getEditedData").then(res=>{
-                setData(res.data)
+        //     axios.get(`http://localhost:8080/getFormData/${dataBase}`).then(res=>{
+                
+        //         setData(res.data)
+        //      }
+        //     )
+        //    }
                
-                }
-            )
-           }
-               
-         }
-          catch(err){
-            console.log(err)
+        //  }
+        //   catch(err){
+        //     console.log(err)
             
-          }
+        //   }
             //setEdit(undefined)
         }
 
@@ -171,7 +154,7 @@ function QAuto({getRoute, history}:appProps) {
             </div>
         <div className="w-[220%] ml-[-60%] mt-[20%] z-[70]">
             
-        <QDataBase getRoute={routeController} route={route} dataBase={dataBase} outPut={getData}/>
+        <QDataBase getRoute={routeController} route={route}  outPut={getData}/>
         
             {
                 (!isUndefined(data)&&(route==="query"))&&
