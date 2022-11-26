@@ -30,6 +30,7 @@ subprojects {
 	targetCompatibility = '11'
 
 	configurations.all {
+		
 		exclude group: 'asm'
 	}
 }

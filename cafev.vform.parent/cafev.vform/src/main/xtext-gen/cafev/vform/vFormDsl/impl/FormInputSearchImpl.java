@@ -9,12 +9,15 @@ import cafev.vform.vFormDsl.VFormDslPackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -27,6 +30,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link cafev.vform.vFormDsl.impl.FormInputSearchImpl#getId <em>Id</em>}</li>
+ *   <li>{@link cafev.vform.vFormDsl.impl.FormInputSearchImpl#getQC <em>QC</em>}</li>
  *   <li>{@link cafev.vform.vFormDsl.impl.FormInputSearchImpl#getData <em>Data</em>}</li>
  * </ul>
  *
@@ -34,6 +39,46 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class FormInputSearchImpl extends FormInputImpl implements FormInputSearch
 {
+  /**
+   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getId()
+   * @generated
+   * @ordered
+   */
+  protected static final String ID_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getId()
+   * @generated
+   * @ordered
+   */
+  protected String id = ID_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getQC() <em>QC</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQC()
+   * @generated
+   * @ordered
+   */
+  protected static final String QC_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getQC() <em>QC</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQC()
+   * @generated
+   * @ordered
+   */
+  protected String qC = QC_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -63,6 +108,56 @@ public class FormInputSearchImpl extends FormInputImpl implements FormInputSearc
   protected EClass eStaticClass()
   {
     return VFormDslPackage.Literals.FORM_INPUT_SEARCH;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getId()
+  {
+    return id;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setId(String newId)
+  {
+    String oldId = id;
+    id = newId;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VFormDslPackage.FORM_INPUT_SEARCH__ID, oldId, id));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getQC()
+  {
+    return qC;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setQC(String newQC)
+  {
+    String oldQC = qC;
+    qC = newQC;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VFormDslPackage.FORM_INPUT_SEARCH__QC, oldQC, qC));
   }
 
   /**
@@ -106,6 +201,10 @@ public class FormInputSearchImpl extends FormInputImpl implements FormInputSearc
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_SEARCH__ID:
+        return getId();
+      case VFormDslPackage.FORM_INPUT_SEARCH__QC:
+        return getQC();
       case VFormDslPackage.FORM_INPUT_SEARCH__DATA:
         return getData();
     }
@@ -123,6 +222,12 @@ public class FormInputSearchImpl extends FormInputImpl implements FormInputSearc
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_SEARCH__ID:
+        setId((String)newValue);
+        return;
+      case VFormDslPackage.FORM_INPUT_SEARCH__QC:
+        setQC((String)newValue);
+        return;
       case VFormDslPackage.FORM_INPUT_SEARCH__DATA:
         getData().clear();
         getData().addAll((Collection<? extends OptionItem>)newValue);
@@ -141,6 +246,12 @@ public class FormInputSearchImpl extends FormInputImpl implements FormInputSearc
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_SEARCH__ID:
+        setId(ID_EDEFAULT);
+        return;
+      case VFormDslPackage.FORM_INPUT_SEARCH__QC:
+        setQC(QC_EDEFAULT);
+        return;
       case VFormDslPackage.FORM_INPUT_SEARCH__DATA:
         getData().clear();
         return;
@@ -158,10 +269,33 @@ public class FormInputSearchImpl extends FormInputImpl implements FormInputSearc
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_SEARCH__ID:
+        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case VFormDslPackage.FORM_INPUT_SEARCH__QC:
+        return QC_EDEFAULT == null ? qC != null : !QC_EDEFAULT.equals(qC);
       case VFormDslPackage.FORM_INPUT_SEARCH__DATA:
         return data != null && !data.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (id: ");
+    result.append(id);
+    result.append(", qC: ");
+    result.append(qC);
+    result.append(')');
+    return result.toString();
   }
 
 } //FormInputSearchImpl

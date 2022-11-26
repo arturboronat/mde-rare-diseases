@@ -23,6 +23,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link cafev.vform.vFormDsl.impl.FormInputSelectImpl#getId <em>Id</em>}</li>
+ *   <li>{@link cafev.vform.vFormDsl.impl.FormInputSelectImpl#getQC <em>QC</em>}</li>
  *   <li>{@link cafev.vform.vFormDsl.impl.FormInputSelectImpl#getOption <em>Option</em>}</li>
  * </ul>
  *
@@ -30,6 +32,46 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class FormInputSelectImpl extends FormInputImpl implements FormInputSelect
 {
+  /**
+   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getId()
+   * @generated
+   * @ordered
+   */
+  protected static final String ID_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getId()
+   * @generated
+   * @ordered
+   */
+  protected String id = ID_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getQC() <em>QC</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQC()
+   * @generated
+   * @ordered
+   */
+  protected static final String QC_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getQC() <em>QC</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQC()
+   * @generated
+   * @ordered
+   */
+  protected String qC = QC_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getOption() <em>Option</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -59,6 +101,56 @@ public class FormInputSelectImpl extends FormInputImpl implements FormInputSelec
   protected EClass eStaticClass()
   {
     return VFormDslPackage.Literals.FORM_INPUT_SELECT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getId()
+  {
+    return id;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setId(String newId)
+  {
+    String oldId = id;
+    id = newId;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VFormDslPackage.FORM_INPUT_SELECT__ID, oldId, id));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getQC()
+  {
+    return qC;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setQC(String newQC)
+  {
+    String oldQC = qC;
+    qC = newQC;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VFormDslPackage.FORM_INPUT_SELECT__QC, oldQC, qC));
   }
 
   /**
@@ -137,6 +229,10 @@ public class FormInputSelectImpl extends FormInputImpl implements FormInputSelec
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_SELECT__ID:
+        return getId();
+      case VFormDslPackage.FORM_INPUT_SELECT__QC:
+        return getQC();
       case VFormDslPackage.FORM_INPUT_SELECT__OPTION:
         return getOption();
     }
@@ -153,6 +249,12 @@ public class FormInputSelectImpl extends FormInputImpl implements FormInputSelec
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_SELECT__ID:
+        setId((String)newValue);
+        return;
+      case VFormDslPackage.FORM_INPUT_SELECT__QC:
+        setQC((String)newValue);
+        return;
       case VFormDslPackage.FORM_INPUT_SELECT__OPTION:
         setOption((Option)newValue);
         return;
@@ -170,6 +272,12 @@ public class FormInputSelectImpl extends FormInputImpl implements FormInputSelec
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_SELECT__ID:
+        setId(ID_EDEFAULT);
+        return;
+      case VFormDslPackage.FORM_INPUT_SELECT__QC:
+        setQC(QC_EDEFAULT);
+        return;
       case VFormDslPackage.FORM_INPUT_SELECT__OPTION:
         setOption((Option)null);
         return;
@@ -187,10 +295,33 @@ public class FormInputSelectImpl extends FormInputImpl implements FormInputSelec
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_SELECT__ID:
+        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case VFormDslPackage.FORM_INPUT_SELECT__QC:
+        return QC_EDEFAULT == null ? qC != null : !QC_EDEFAULT.equals(qC);
       case VFormDslPackage.FORM_INPUT_SELECT__OPTION:
         return option != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (id: ");
+    result.append(id);
+    result.append(", qC: ");
+    result.append(qC);
+    result.append(')');
+    return result.toString();
   }
 
 } //FormInputSelectImpl

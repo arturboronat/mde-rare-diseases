@@ -1,5 +1,4 @@
 package sd_to_vf
-
 import cafev.vform.vFormDsl.EnumOption
 import cafev.vform.vFormDsl.FormInputBasic
 import cafev.vform.vFormDsl.FormInputRange
@@ -19,13 +18,16 @@ import yamtl.core.YAMTLModule
 
 import static yamtl.dsl.Rule.*
 
+
 /** 
  * SHORTER TRANSFORMATION FOR PRESENTATION PURPOSES
  * with boilerplate code
  */
 class sd2vf extends YAMTLModule {
 	val DD = DataDescriptionPackage.eINSTANCE  
-	val VF = VFormDslPackage.eINSTANCE  
+	val VF = VFormDslPackage.eINSTANCE
+		
+		
 	new () {
 		header().in('dd', DD).out('vf', VF)
 		ruleStore( #[
@@ -37,44 +39,52 @@ class sd2vf extends YAMTLModule {
 				.out('fl', VF.formLayout) [
 					fl.layout = "\"horizontal\""
 				],
-//			rule('Checkbox')
-//				.in('ct', DD.categoricalType).filter[
-//					ct.frequencyTable.size()<=2
-//				]
-//				.out('fib', VF.formInputBasic) [	
-//					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
-//					fib.name = ct.name
-//					fib.type = "\"checkbox\""
-//					m.formInput.add(fib)
-//				],
-//				
-//			rule('Text')
-//				.in('ct', DD.categoricalType)
-//				.out('fib', VF.formInputBasic) [	
-//					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
-//					fib.name = ct.name
-//					fib.type = "\"text\""
-//					m.formInput.add(fib)
-//				],
+			rule('Checkbox')
+				.in('ct', DD.categoricalType).filter[
+					ct.frequencyTable.size()<=2
+				]
+				.out('fib', VF.formInputBasic) [	
+					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
+					fib.name = ct.name
+					fib.id = ct .name
+					fib.QC = 'true'
+					fib.type = "\"checkbox\""
+					m.formInput.add(fib)
+				],
+				
+			rule('Text')
+				.in('ct', DD.categoricalType)
+				.out('fib', VF.formInputBasic) [	
+					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
+					fib.name = ct.name
+					fib.id = ct.name
+					fib.QC = 'true'
+					fib.type = "\"text\""
+					m.formInput.add(fib)
+				],
 //			rule('Number')
 //				.in('nt', DD.numericalType)
 //				.out('fib', VF.formInputBasic) [	
 //					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
 //					fib.name = nt.name
-//					fib.type = "'numberr'"
+//					fib.id = nt.name
+//					fib.QC = 'true'
+//					fib.type = "\"number\""
 //					m.formInput.add(fib)
 //				],
-//			rule('Range')
-//				.in('nt', DD.numericalType)
-//				.out('rg', VF.formInputRange) [
-//					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
-//					//bindings
-//					rg.name = nt.name
-//					rg.min = Math.toIntExact(Math.round(nt.min)) 
-//					rg.max = Math.toIntExact(Math.round(nt.max)) 
-//					m.formInput.add(rg)
-//				],
-//				
+			rule('Range')
+				.in('nt', DD.numericalType)
+				.out('rg', VF.formInputRange) [
+					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
+					//bindings
+					rg.name = nt.name
+					rg.id = nt.name
+					rg.QC = 'true'
+					rg.min = Math.toIntExact(Math.round(nt.min)) 
+					rg.max = Math.toIntExact(Math.round(nt.max)) 
+					m.formInput.add(rg)
+				],
+				
 //				rule('Date')
 //				.in('sdt', DD.statsDataType).
 //				out('dt', VF.dat) [
@@ -104,6 +114,8 @@ class sd2vf extends YAMTLModule {
 					
 					//bindings
 					sch.name = ct.name
+					sch.id = ct.name
+					sch.QC = 'true'
 					sch.data += ct.frequencyTable.fetch("stringOptionItem") as List<StringOptionItem>
 					m.formInput.add(sch)
 				],
@@ -115,7 +127,9 @@ class sd2vf extends YAMTLModule {
 				.out("slt", VF.formInputSelect) [
 					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
-					slt.name = ct.name			
+					slt.name = ct.name	
+					slt.id = ct.name	
+					slt.QC = 'true'		
 					slt.option = opt
 					m.formInput.add(slt)
 				].
@@ -130,7 +144,9 @@ class sd2vf extends YAMTLModule {
 				.out("slt", VF.formInputSelect) [
 					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
-					slt.name = nt.name					
+					slt.name = nt.name	
+					slt.id = ct.name	
+					slt.QC = 'true'				
 					slt.option = opt
 					m.formInput.add(slt)
 				].

@@ -170,13 +170,31 @@ public interface VFormDslPackage extends EPackage
   int FORM_INPUT_BASIC__NAME = FORM_INPUT__NAME;
 
   /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_INPUT_BASIC__ID = FORM_INPUT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>QC</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_INPUT_BASIC__QC = FORM_INPUT_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORM_INPUT_BASIC__TYPE = FORM_INPUT_FEATURE_COUNT + 0;
+  int FORM_INPUT_BASIC__TYPE = FORM_INPUT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Form Input Basic</em>' class.
@@ -185,7 +203,7 @@ public interface VFormDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM_INPUT_BASIC_FEATURE_COUNT = FORM_INPUT_FEATURE_COUNT + 1;
+  int FORM_INPUT_BASIC_FEATURE_COUNT = FORM_INPUT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link cafev.vform.vFormDsl.impl.FormInputRangeImpl <em>Form Input Range</em>}' class.
@@ -207,13 +225,31 @@ public interface VFormDslPackage extends EPackage
   int FORM_INPUT_RANGE__NAME = FORM_INPUT__NAME;
 
   /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_INPUT_RANGE__ID = FORM_INPUT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>QC</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_INPUT_RANGE__QC = FORM_INPUT_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Min</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORM_INPUT_RANGE__MIN = FORM_INPUT_FEATURE_COUNT + 0;
+  int FORM_INPUT_RANGE__MIN = FORM_INPUT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -222,7 +258,7 @@ public interface VFormDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM_INPUT_RANGE__MAX = FORM_INPUT_FEATURE_COUNT + 1;
+  int FORM_INPUT_RANGE__MAX = FORM_INPUT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Form Input Range</em>' class.
@@ -231,7 +267,7 @@ public interface VFormDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM_INPUT_RANGE_FEATURE_COUNT = FORM_INPUT_FEATURE_COUNT + 2;
+  int FORM_INPUT_RANGE_FEATURE_COUNT = FORM_INPUT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link cafev.vform.vFormDsl.impl.FormInputSelectImpl <em>Form Input Select</em>}' class.
@@ -253,13 +289,31 @@ public interface VFormDslPackage extends EPackage
   int FORM_INPUT_SELECT__NAME = FORM_INPUT__NAME;
 
   /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_INPUT_SELECT__ID = FORM_INPUT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>QC</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_INPUT_SELECT__QC = FORM_INPUT_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Option</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORM_INPUT_SELECT__OPTION = FORM_INPUT_FEATURE_COUNT + 0;
+  int FORM_INPUT_SELECT__OPTION = FORM_INPUT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Form Input Select</em>' class.
@@ -268,7 +322,7 @@ public interface VFormDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM_INPUT_SELECT_FEATURE_COUNT = FORM_INPUT_FEATURE_COUNT + 1;
+  int FORM_INPUT_SELECT_FEATURE_COUNT = FORM_INPUT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link cafev.vform.vFormDsl.impl.OptionImpl <em>Option</em>}' class.
@@ -411,13 +465,31 @@ public interface VFormDslPackage extends EPackage
   int FORM_INPUT_SEARCH__NAME = FORM_INPUT__NAME;
 
   /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_INPUT_SEARCH__ID = FORM_INPUT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>QC</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_INPUT_SEARCH__QC = FORM_INPUT_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Data</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORM_INPUT_SEARCH__DATA = FORM_INPUT_FEATURE_COUNT + 0;
+  int FORM_INPUT_SEARCH__DATA = FORM_INPUT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Form Input Search</em>' class.
@@ -426,7 +498,7 @@ public interface VFormDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORM_INPUT_SEARCH_FEATURE_COUNT = FORM_INPUT_FEATURE_COUNT + 1;
+  int FORM_INPUT_SEARCH_FEATURE_COUNT = FORM_INPUT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link cafev.vform.vFormDsl.impl.OptionItemImpl <em>Option Item</em>}' class.
@@ -756,6 +828,28 @@ public interface VFormDslPackage extends EPackage
   EClass getFormInputBasic();
 
   /**
+   * Returns the meta object for the attribute '{@link cafev.vform.vFormDsl.FormInputBasic#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see cafev.vform.vFormDsl.FormInputBasic#getId()
+   * @see #getFormInputBasic()
+   * @generated
+   */
+  EAttribute getFormInputBasic_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link cafev.vform.vFormDsl.FormInputBasic#getQC <em>QC</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>QC</em>'.
+   * @see cafev.vform.vFormDsl.FormInputBasic#getQC()
+   * @see #getFormInputBasic()
+   * @generated
+   */
+  EAttribute getFormInputBasic_QC();
+
+  /**
    * Returns the meta object for the attribute '{@link cafev.vform.vFormDsl.FormInputBasic#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -775,6 +869,28 @@ public interface VFormDslPackage extends EPackage
    * @generated
    */
   EClass getFormInputRange();
+
+  /**
+   * Returns the meta object for the attribute '{@link cafev.vform.vFormDsl.FormInputRange#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see cafev.vform.vFormDsl.FormInputRange#getId()
+   * @see #getFormInputRange()
+   * @generated
+   */
+  EAttribute getFormInputRange_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link cafev.vform.vFormDsl.FormInputRange#getQC <em>QC</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>QC</em>'.
+   * @see cafev.vform.vFormDsl.FormInputRange#getQC()
+   * @see #getFormInputRange()
+   * @generated
+   */
+  EAttribute getFormInputRange_QC();
 
   /**
    * Returns the meta object for the attribute '{@link cafev.vform.vFormDsl.FormInputRange#getMin <em>Min</em>}'.
@@ -807,6 +923,28 @@ public interface VFormDslPackage extends EPackage
    * @generated
    */
   EClass getFormInputSelect();
+
+  /**
+   * Returns the meta object for the attribute '{@link cafev.vform.vFormDsl.FormInputSelect#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see cafev.vform.vFormDsl.FormInputSelect#getId()
+   * @see #getFormInputSelect()
+   * @generated
+   */
+  EAttribute getFormInputSelect_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link cafev.vform.vFormDsl.FormInputSelect#getQC <em>QC</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>QC</em>'.
+   * @see cafev.vform.vFormDsl.FormInputSelect#getQC()
+   * @see #getFormInputSelect()
+   * @generated
+   */
+  EAttribute getFormInputSelect_QC();
 
   /**
    * Returns the meta object for the containment reference '{@link cafev.vform.vFormDsl.FormInputSelect#getOption <em>Option</em>}'.
@@ -923,6 +1061,28 @@ public interface VFormDslPackage extends EPackage
    * @generated
    */
   EClass getFormInputSearch();
+
+  /**
+   * Returns the meta object for the attribute '{@link cafev.vform.vFormDsl.FormInputSearch#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see cafev.vform.vFormDsl.FormInputSearch#getId()
+   * @see #getFormInputSearch()
+   * @generated
+   */
+  EAttribute getFormInputSearch_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link cafev.vform.vFormDsl.FormInputSearch#getQC <em>QC</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>QC</em>'.
+   * @see cafev.vform.vFormDsl.FormInputSearch#getQC()
+   * @see #getFormInputSearch()
+   * @generated
+   */
+  EAttribute getFormInputSearch_QC();
 
   /**
    * Returns the meta object for the containment reference list '{@link cafev.vform.vFormDsl.FormInputSearch#getData <em>Data</em>}'.
@@ -1188,6 +1348,22 @@ public interface VFormDslPackage extends EPackage
     EClass FORM_INPUT_BASIC = eINSTANCE.getFormInputBasic();
 
     /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM_INPUT_BASIC__ID = eINSTANCE.getFormInputBasic_Id();
+
+    /**
+     * The meta object literal for the '<em><b>QC</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM_INPUT_BASIC__QC = eINSTANCE.getFormInputBasic_QC();
+
+    /**
      * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1204,6 +1380,22 @@ public interface VFormDslPackage extends EPackage
      * @generated
      */
     EClass FORM_INPUT_RANGE = eINSTANCE.getFormInputRange();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM_INPUT_RANGE__ID = eINSTANCE.getFormInputRange_Id();
+
+    /**
+     * The meta object literal for the '<em><b>QC</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM_INPUT_RANGE__QC = eINSTANCE.getFormInputRange_QC();
 
     /**
      * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
@@ -1230,6 +1422,22 @@ public interface VFormDslPackage extends EPackage
      * @generated
      */
     EClass FORM_INPUT_SELECT = eINSTANCE.getFormInputSelect();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM_INPUT_SELECT__ID = eINSTANCE.getFormInputSelect_Id();
+
+    /**
+     * The meta object literal for the '<em><b>QC</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM_INPUT_SELECT__QC = eINSTANCE.getFormInputSelect_QC();
 
     /**
      * The meta object literal for the '<em><b>Option</b></em>' containment reference feature.
@@ -1328,6 +1536,22 @@ public interface VFormDslPackage extends EPackage
      * @generated
      */
     EClass FORM_INPUT_SEARCH = eINSTANCE.getFormInputSearch();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM_INPUT_SEARCH__ID = eINSTANCE.getFormInputSearch_Id();
+
+    /**
+     * The meta object literal for the '<em><b>QC</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM_INPUT_SEARCH__QC = eINSTANCE.getFormInputSearch_QC();
 
     /**
      * The meta object literal for the '<em><b>Data</b></em>' containment reference list feature.

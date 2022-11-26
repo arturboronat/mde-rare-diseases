@@ -157,15 +157,28 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cInputTypeKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cTypeAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cTypeBASICINPUTTerminalRuleCall_7_0 = (RuleCall)cTypeAssignment_7.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cIdKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cIdAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cIdSTRINGTerminalRuleCall_5_2_0 = (RuleCall)cIdAssignment_5_2.eContents().get(0);
+		private final Keyword cCommaKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
+		private final Keyword cQueryClauseKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cQCAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cQCBOOLEANTerminalRuleCall_8_0 = (RuleCall)cQCAssignment_8.eContents().get(0);
+		private final Keyword cCommaKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cInputTypeKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cColonKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cTypeAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cTypeBASICINPUTTerminalRuleCall_12_0 = (RuleCall)cTypeAssignment_12.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//FormInputBasic:
 		//"{"
 		//    "\"inputName\"" ":" name=STRING ","
+		//    ("\"id\"" ":" id=STRING ",")?
+		//    "\"queryClause\"" ":" qC=BOOLEAN ","
 		//    "\"inputType\"" ":" type=BASICINPUT
 		//"}"
 		//;
@@ -173,6 +186,8 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		
 		//"{"
 		//    "\"inputName\"" ":" name=STRING ","
+		//    ("\"id\"" ":" id=STRING ",")?
+		//    "\"queryClause\"" ":" qC=BOOLEAN ","
 		//    "\"inputType\"" ":" type=BASICINPUT
 		//"}"
 		public Group getGroup() { return cGroup; }
@@ -195,20 +210,53 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//","
 		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 		
-		//"\"inputType\""
-		public Keyword getInputTypeKeyword_5() { return cInputTypeKeyword_5; }
+		//("\"id\"" ":" id=STRING ",")?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//"\"id\""
+		public Keyword getIdKeyword_5_0() { return cIdKeyword_5_0; }
 		
 		//":"
-		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
+		
+		//id=STRING
+		public Assignment getIdAssignment_5_2() { return cIdAssignment_5_2; }
+		
+		//STRING
+		public RuleCall getIdSTRINGTerminalRuleCall_5_2_0() { return cIdSTRINGTerminalRuleCall_5_2_0; }
+		
+		//","
+		public Keyword getCommaKeyword_5_3() { return cCommaKeyword_5_3; }
+		
+		//"\"queryClause\""
+		public Keyword getQueryClauseKeyword_6() { return cQueryClauseKeyword_6; }
+		
+		//":"
+		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
+		
+		//qC=BOOLEAN
+		public Assignment getQCAssignment_8() { return cQCAssignment_8; }
+		
+		//BOOLEAN
+		public RuleCall getQCBOOLEANTerminalRuleCall_8_0() { return cQCBOOLEANTerminalRuleCall_8_0; }
+		
+		//","
+		public Keyword getCommaKeyword_9() { return cCommaKeyword_9; }
+		
+		//"\"inputType\""
+		public Keyword getInputTypeKeyword_10() { return cInputTypeKeyword_10; }
+		
+		//":"
+		public Keyword getColonKeyword_11() { return cColonKeyword_11; }
 		
 		//type=BASICINPUT
-		public Assignment getTypeAssignment_7() { return cTypeAssignment_7; }
+		public Assignment getTypeAssignment_12() { return cTypeAssignment_12; }
 		
 		//BASICINPUT
-		public RuleCall getTypeBASICINPUTTerminalRuleCall_7_0() { return cTypeBASICINPUTTerminalRuleCall_7_0; }
+		public RuleCall getTypeBASICINPUTTerminalRuleCall_12_0() { return cTypeBASICINPUTTerminalRuleCall_12_0; }
 		
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
 	}
 	public class FormInputRangeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.FormInputRange");
@@ -219,24 +267,37 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cInputTypeKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cRangeKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cMinKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cMinAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cMinINTTerminalRuleCall_11_0 = (RuleCall)cMinAssignment_11.eContents().get(0);
-		private final Keyword cCommaKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final Keyword cMaxKeyword_13 = (Keyword)cGroup.eContents().get(13);
-		private final Keyword cColonKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Assignment cMaxAssignment_15 = (Assignment)cGroup.eContents().get(15);
-		private final RuleCall cMaxINTTerminalRuleCall_15_0 = (RuleCall)cMaxAssignment_15.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cIdKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cIdAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cIdSTRINGTerminalRuleCall_5_2_0 = (RuleCall)cIdAssignment_5_2.eContents().get(0);
+		private final Keyword cCommaKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
+		private final Keyword cQueryClauseKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cQCAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cQCBOOLEANTerminalRuleCall_8_0 = (RuleCall)cQCAssignment_8.eContents().get(0);
+		private final Keyword cCommaKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cInputTypeKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cColonKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cRangeKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cCommaKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cMinKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cColonKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cMinAssignment_16 = (Assignment)cGroup.eContents().get(16);
+		private final RuleCall cMinINTTerminalRuleCall_16_0 = (RuleCall)cMinAssignment_16.eContents().get(0);
+		private final Keyword cCommaKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Keyword cMaxKeyword_18 = (Keyword)cGroup.eContents().get(18);
+		private final Keyword cColonKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Assignment cMaxAssignment_20 = (Assignment)cGroup.eContents().get(20);
+		private final RuleCall cMaxINTTerminalRuleCall_20_0 = (RuleCall)cMaxAssignment_20.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_21 = (Keyword)cGroup.eContents().get(21);
 		
 		//FormInputRange:
 		//"{"
 		//    "\"inputName\"" ":" name=STRING ","
+		//    ("\"id\"" ":" id=STRING ",")?
+		//    "\"queryClause\"" ":" qC=BOOLEAN ","
 		//    "\"inputType\"" ":" "\"range\"" ","
 		//    "\"min\"" ":" min=INT ","
 		//    "\"max\"" ":" max=INT
@@ -246,6 +307,8 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		
 		//"{"
 		//    "\"inputName\"" ":" name=STRING ","
+		//    ("\"id\"" ":" id=STRING ",")?
+		//    "\"queryClause\"" ":" qC=BOOLEAN ","
 		//    "\"inputType\"" ":" "\"range\"" ","
 		//    "\"min\"" ":" min=INT ","
 		//    "\"max\"" ":" max=INT
@@ -270,47 +333,80 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//","
 		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 		
-		//"\"inputType\""
-		public Keyword getInputTypeKeyword_5() { return cInputTypeKeyword_5; }
+		//("\"id\"" ":" id=STRING ",")?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//"\"id\""
+		public Keyword getIdKeyword_5_0() { return cIdKeyword_5_0; }
 		
 		//":"
-		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
+		
+		//id=STRING
+		public Assignment getIdAssignment_5_2() { return cIdAssignment_5_2; }
+		
+		//STRING
+		public RuleCall getIdSTRINGTerminalRuleCall_5_2_0() { return cIdSTRINGTerminalRuleCall_5_2_0; }
+		
+		//","
+		public Keyword getCommaKeyword_5_3() { return cCommaKeyword_5_3; }
+		
+		//"\"queryClause\""
+		public Keyword getQueryClauseKeyword_6() { return cQueryClauseKeyword_6; }
+		
+		//":"
+		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
+		
+		//qC=BOOLEAN
+		public Assignment getQCAssignment_8() { return cQCAssignment_8; }
+		
+		//BOOLEAN
+		public RuleCall getQCBOOLEANTerminalRuleCall_8_0() { return cQCBOOLEANTerminalRuleCall_8_0; }
+		
+		//","
+		public Keyword getCommaKeyword_9() { return cCommaKeyword_9; }
+		
+		//"\"inputType\""
+		public Keyword getInputTypeKeyword_10() { return cInputTypeKeyword_10; }
+		
+		//":"
+		public Keyword getColonKeyword_11() { return cColonKeyword_11; }
 		
 		//"\"range\""
-		public Keyword getRangeKeyword_7() { return cRangeKeyword_7; }
+		public Keyword getRangeKeyword_12() { return cRangeKeyword_12; }
 		
 		//","
-		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
+		public Keyword getCommaKeyword_13() { return cCommaKeyword_13; }
 		
 		//"\"min\""
-		public Keyword getMinKeyword_9() { return cMinKeyword_9; }
+		public Keyword getMinKeyword_14() { return cMinKeyword_14; }
 		
 		//":"
-		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
+		public Keyword getColonKeyword_15() { return cColonKeyword_15; }
 		
 		//min=INT
-		public Assignment getMinAssignment_11() { return cMinAssignment_11; }
+		public Assignment getMinAssignment_16() { return cMinAssignment_16; }
 		
 		//INT
-		public RuleCall getMinINTTerminalRuleCall_11_0() { return cMinINTTerminalRuleCall_11_0; }
+		public RuleCall getMinINTTerminalRuleCall_16_0() { return cMinINTTerminalRuleCall_16_0; }
 		
 		//","
-		public Keyword getCommaKeyword_12() { return cCommaKeyword_12; }
+		public Keyword getCommaKeyword_17() { return cCommaKeyword_17; }
 		
 		//"\"max\""
-		public Keyword getMaxKeyword_13() { return cMaxKeyword_13; }
+		public Keyword getMaxKeyword_18() { return cMaxKeyword_18; }
 		
 		//":"
-		public Keyword getColonKeyword_14() { return cColonKeyword_14; }
+		public Keyword getColonKeyword_19() { return cColonKeyword_19; }
 		
 		//max=INT
-		public Assignment getMaxAssignment_15() { return cMaxAssignment_15; }
+		public Assignment getMaxAssignment_20() { return cMaxAssignment_20; }
 		
 		//INT
-		public RuleCall getMaxINTTerminalRuleCall_15_0() { return cMaxINTTerminalRuleCall_15_0; }
+		public RuleCall getMaxINTTerminalRuleCall_20_0() { return cMaxINTTerminalRuleCall_20_0; }
 		
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
+		public Keyword getRightCurlyBracketKeyword_21() { return cRightCurlyBracketKeyword_21; }
 	}
 	public class FormInputSelectElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.FormInputSelect");
@@ -321,19 +417,32 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cInputTypeKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cSelectKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cOptionsKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cOptionAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cOptionOptionParserRuleCall_11_0 = (RuleCall)cOptionAssignment_11.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cIdKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cIdAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cIdSTRINGTerminalRuleCall_5_2_0 = (RuleCall)cIdAssignment_5_2.eContents().get(0);
+		private final Keyword cCommaKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
+		private final Keyword cQueryClauseKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cQCAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cQCBOOLEANTerminalRuleCall_8_0 = (RuleCall)cQCAssignment_8.eContents().get(0);
+		private final Keyword cCommaKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cInputTypeKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cColonKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cSelectKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cCommaKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cOptionsKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cColonKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cOptionAssignment_16 = (Assignment)cGroup.eContents().get(16);
+		private final RuleCall cOptionOptionParserRuleCall_16_0 = (RuleCall)cOptionAssignment_16.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		
 		//FormInputSelect:
 		//"{"
 		//    "\"inputName\"" ":" name=STRING ","
+		//    ("\"id\"" ":" id=STRING ",")?
+		//    "\"queryClause\"" ":" qC=BOOLEAN ","
 		//    "\"inputType\"" ":" "\"select\"" ","
 		//     "\"options\"" ":"  option=Option
 		//"}"
@@ -342,6 +451,8 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		
 		//"{"
 		//    "\"inputName\"" ":" name=STRING ","
+		//    ("\"id\"" ":" id=STRING ",")?
+		//    "\"queryClause\"" ":" qC=BOOLEAN ","
 		//    "\"inputType\"" ":" "\"select\"" ","
 		//     "\"options\"" ":"  option=Option
 		//"}"
@@ -365,32 +476,65 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//","
 		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 		
-		//"\"inputType\""
-		public Keyword getInputTypeKeyword_5() { return cInputTypeKeyword_5; }
+		//("\"id\"" ":" id=STRING ",")?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//"\"id\""
+		public Keyword getIdKeyword_5_0() { return cIdKeyword_5_0; }
 		
 		//":"
-		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
 		
-		//"\"select\""
-		public Keyword getSelectKeyword_7() { return cSelectKeyword_7; }
+		//id=STRING
+		public Assignment getIdAssignment_5_2() { return cIdAssignment_5_2; }
+		
+		//STRING
+		public RuleCall getIdSTRINGTerminalRuleCall_5_2_0() { return cIdSTRINGTerminalRuleCall_5_2_0; }
 		
 		//","
-		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
+		public Keyword getCommaKeyword_5_3() { return cCommaKeyword_5_3; }
 		
-		//"\"options\""
-		public Keyword getOptionsKeyword_9() { return cOptionsKeyword_9; }
+		//"\"queryClause\""
+		public Keyword getQueryClauseKeyword_6() { return cQueryClauseKeyword_6; }
 		
 		//":"
-		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
+		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
+		
+		//qC=BOOLEAN
+		public Assignment getQCAssignment_8() { return cQCAssignment_8; }
+		
+		//BOOLEAN
+		public RuleCall getQCBOOLEANTerminalRuleCall_8_0() { return cQCBOOLEANTerminalRuleCall_8_0; }
+		
+		//","
+		public Keyword getCommaKeyword_9() { return cCommaKeyword_9; }
+		
+		//"\"inputType\""
+		public Keyword getInputTypeKeyword_10() { return cInputTypeKeyword_10; }
+		
+		//":"
+		public Keyword getColonKeyword_11() { return cColonKeyword_11; }
+		
+		//"\"select\""
+		public Keyword getSelectKeyword_12() { return cSelectKeyword_12; }
+		
+		//","
+		public Keyword getCommaKeyword_13() { return cCommaKeyword_13; }
+		
+		//"\"options\""
+		public Keyword getOptionsKeyword_14() { return cOptionsKeyword_14; }
+		
+		//":"
+		public Keyword getColonKeyword_15() { return cColonKeyword_15; }
 		
 		//option=Option
-		public Assignment getOptionAssignment_11() { return cOptionAssignment_11; }
+		public Assignment getOptionAssignment_16() { return cOptionAssignment_16; }
 		
 		//Option
-		public RuleCall getOptionOptionParserRuleCall_11_0() { return cOptionOptionParserRuleCall_11_0; }
+		public RuleCall getOptionOptionParserRuleCall_16_0() { return cOptionOptionParserRuleCall_16_0; }
 		
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
+		public Keyword getRightCurlyBracketKeyword_17() { return cRightCurlyBracketKeyword_17; }
 	}
 	public class OptionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.Option");
@@ -687,35 +831,50 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cInputTypeKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cSearchKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cDataKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cLeftSquareBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cDataAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cDataOptionItemParserRuleCall_12_0 = (RuleCall)cDataAssignment_12.eContents().get(0);
-		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
-		private final Keyword cCommaKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
-		private final Assignment cDataAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
-		private final RuleCall cDataOptionItemParserRuleCall_13_1_0 = (RuleCall)cDataAssignment_13_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cIdKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cIdAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cIdSTRINGTerminalRuleCall_5_2_0 = (RuleCall)cIdAssignment_5_2.eContents().get(0);
+		private final Keyword cCommaKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
+		private final Keyword cQueryClauseKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cQCAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cQCBOOLEANTerminalRuleCall_8_0 = (RuleCall)cQCAssignment_8.eContents().get(0);
+		private final Keyword cCommaKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cInputTypeKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cColonKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cSearchKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cCommaKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cOptionsKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cColonKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Keyword cLeftSquareBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Assignment cDataAssignment_17 = (Assignment)cGroup.eContents().get(17);
+		private final RuleCall cDataOptionItemParserRuleCall_17_0 = (RuleCall)cDataAssignment_17.eContents().get(0);
+		private final Group cGroup_18 = (Group)cGroup.eContents().get(18);
+		private final Keyword cCommaKeyword_18_0 = (Keyword)cGroup_18.eContents().get(0);
+		private final Assignment cDataAssignment_18_1 = (Assignment)cGroup_18.eContents().get(1);
+		private final RuleCall cDataOptionItemParserRuleCall_18_1_0 = (RuleCall)cDataAssignment_18_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Keyword cRightCurlyBracketKeyword_20 = (Keyword)cGroup.eContents().get(20);
 		
 		//FormInputSearch:
 		//"{"
 		//    "\"inputName\"" ":" name=STRING ","
+		//    ("\"id\"" ":" id=STRING ",")?
+		//    "\"queryClause\"" ":" qC=BOOLEAN ","
 		//    "\"inputType\"" ":" "\"search\"" ","
-		//     "\"data\"" ":"  "[" data+=OptionItem ("," data+=OptionItem)* "]"
+		//     "\"options\"" ":"  "[" data+=OptionItem ("," data+=OptionItem)* "]"
 		//"}"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"{"
 		//    "\"inputName\"" ":" name=STRING ","
+		//    ("\"id\"" ":" id=STRING ",")?
+		//    "\"queryClause\"" ":" qC=BOOLEAN ","
 		//    "\"inputType\"" ":" "\"search\"" ","
-		//     "\"data\"" ":"  "[" data+=OptionItem ("," data+=OptionItem)* "]"
+		//     "\"options\"" ":"  "[" data+=OptionItem ("," data+=OptionItem)* "]"
 		//"}"
 		public Group getGroup() { return cGroup; }
 		
@@ -737,50 +896,83 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//","
 		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 		
-		//"\"inputType\""
-		public Keyword getInputTypeKeyword_5() { return cInputTypeKeyword_5; }
+		//("\"id\"" ":" id=STRING ",")?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//"\"id\""
+		public Keyword getIdKeyword_5_0() { return cIdKeyword_5_0; }
 		
 		//":"
-		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
+		
+		//id=STRING
+		public Assignment getIdAssignment_5_2() { return cIdAssignment_5_2; }
+		
+		//STRING
+		public RuleCall getIdSTRINGTerminalRuleCall_5_2_0() { return cIdSTRINGTerminalRuleCall_5_2_0; }
+		
+		//","
+		public Keyword getCommaKeyword_5_3() { return cCommaKeyword_5_3; }
+		
+		//"\"queryClause\""
+		public Keyword getQueryClauseKeyword_6() { return cQueryClauseKeyword_6; }
+		
+		//":"
+		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
+		
+		//qC=BOOLEAN
+		public Assignment getQCAssignment_8() { return cQCAssignment_8; }
+		
+		//BOOLEAN
+		public RuleCall getQCBOOLEANTerminalRuleCall_8_0() { return cQCBOOLEANTerminalRuleCall_8_0; }
+		
+		//","
+		public Keyword getCommaKeyword_9() { return cCommaKeyword_9; }
+		
+		//"\"inputType\""
+		public Keyword getInputTypeKeyword_10() { return cInputTypeKeyword_10; }
+		
+		//":"
+		public Keyword getColonKeyword_11() { return cColonKeyword_11; }
 		
 		//"\"search\""
-		public Keyword getSearchKeyword_7() { return cSearchKeyword_7; }
+		public Keyword getSearchKeyword_12() { return cSearchKeyword_12; }
 		
 		//","
-		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
+		public Keyword getCommaKeyword_13() { return cCommaKeyword_13; }
 		
-		//"\"data\""
-		public Keyword getDataKeyword_9() { return cDataKeyword_9; }
+		//"\"options\""
+		public Keyword getOptionsKeyword_14() { return cOptionsKeyword_14; }
 		
 		//":"
-		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
+		public Keyword getColonKeyword_15() { return cColonKeyword_15; }
 		
 		//"["
-		public Keyword getLeftSquareBracketKeyword_11() { return cLeftSquareBracketKeyword_11; }
+		public Keyword getLeftSquareBracketKeyword_16() { return cLeftSquareBracketKeyword_16; }
 		
 		//data+=OptionItem
-		public Assignment getDataAssignment_12() { return cDataAssignment_12; }
+		public Assignment getDataAssignment_17() { return cDataAssignment_17; }
 		
 		//OptionItem
-		public RuleCall getDataOptionItemParserRuleCall_12_0() { return cDataOptionItemParserRuleCall_12_0; }
+		public RuleCall getDataOptionItemParserRuleCall_17_0() { return cDataOptionItemParserRuleCall_17_0; }
 		
 		//("," data+=OptionItem)*
-		public Group getGroup_13() { return cGroup_13; }
+		public Group getGroup_18() { return cGroup_18; }
 		
 		//","
-		public Keyword getCommaKeyword_13_0() { return cCommaKeyword_13_0; }
+		public Keyword getCommaKeyword_18_0() { return cCommaKeyword_18_0; }
 		
 		//data+=OptionItem
-		public Assignment getDataAssignment_13_1() { return cDataAssignment_13_1; }
+		public Assignment getDataAssignment_18_1() { return cDataAssignment_18_1; }
 		
 		//OptionItem
-		public RuleCall getDataOptionItemParserRuleCall_13_1_0() { return cDataOptionItemParserRuleCall_13_1_0; }
+		public RuleCall getDataOptionItemParserRuleCall_18_1_0() { return cDataOptionItemParserRuleCall_18_1_0; }
 		
 		//"]"
-		public Keyword getRightSquareBracketKeyword_14() { return cRightSquareBracketKeyword_14; }
+		public Keyword getRightSquareBracketKeyword_19() { return cRightSquareBracketKeyword_19; }
 		
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
+		public Keyword getRightCurlyBracketKeyword_20() { return cRightCurlyBracketKeyword_20; }
 	}
 	public class OptionItemElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.OptionItem");
@@ -1064,6 +1256,7 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	private final DataElements pData;
 	private final StringDataElements pStringData;
 	private final IntDataElements pIntData;
+	private final TerminalRule tBOOLEAN;
 	private final TerminalRule tLAYOUT;
 	private final TerminalRule tBASICINPUT;
 	
@@ -1095,6 +1288,7 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		this.pData = new DataElements();
 		this.pStringData = new StringDataElements();
 		this.pIntData = new IntDataElements();
+		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.BOOLEAN");
 		this.tLAYOUT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.LAYOUT");
 		this.tBASICINPUT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "cafev.vform.VFormDsl.BASICINPUT");
 	}
@@ -1164,6 +1358,8 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//FormInputBasic:
 	//"{"
 	//    "\"inputName\"" ":" name=STRING ","
+	//    ("\"id\"" ":" id=STRING ",")?
+	//    "\"queryClause\"" ":" qC=BOOLEAN ","
 	//    "\"inputType\"" ":" type=BASICINPUT
 	//"}"
 	//;
@@ -1178,6 +1374,8 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//FormInputRange:
 	//"{"
 	//    "\"inputName\"" ":" name=STRING ","
+	//    ("\"id\"" ":" id=STRING ",")?
+	//    "\"queryClause\"" ":" qC=BOOLEAN ","
 	//    "\"inputType\"" ":" "\"range\"" ","
 	//    "\"min\"" ":" min=INT ","
 	//    "\"max\"" ":" max=INT
@@ -1194,6 +1392,8 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//FormInputSelect:
 	//"{"
 	//    "\"inputName\"" ":" name=STRING ","
+	//    ("\"id\"" ":" id=STRING ",")?
+	//    "\"queryClause\"" ":" qC=BOOLEAN ","
 	//    "\"inputType\"" ":" "\"select\"" ","
 	//     "\"options\"" ":"  option=Option
 	//"}"
@@ -1264,8 +1464,10 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//FormInputSearch:
 	//"{"
 	//    "\"inputName\"" ":" name=STRING ","
+	//    ("\"id\"" ":" id=STRING ",")?
+	//    "\"queryClause\"" ":" qC=BOOLEAN ","
 	//    "\"inputType\"" ":" "\"search\"" ","
-	//     "\"data\"" ":"  "[" data+=OptionItem ("," data+=OptionItem)* "]"
+	//     "\"options\"" ":"  "[" data+=OptionItem ("," data+=OptionItem)* "]"
 	//"}"
 	//;
 	public FormInputSearchElements getFormInputSearchAccess() {
@@ -1369,6 +1571,13 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		return getIntDataAccess().getRule();
 	}
 	
+	//terminal BOOLEAN:
+	//    'true'|'false'
+	//;
+	public TerminalRule getBOOLEANRule() {
+		return tBOOLEAN;
+	}
+	
 	//terminal LAYOUT:
 	//    "\"horizontal\""|"\"vertical\"" ;
 	public TerminalRule getLAYOUTRule() {
@@ -1376,8 +1585,8 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//terminal BASICINPUT:
-	//    ("\"text\""|"\"checkbox\""|"\"numberr\""|"\"date\"")
-	//;
+	//    ("\"text\""|"\"checkbox\""|"\"number\""|"\"date\""|"\"disabled\"")
+	//    ;
 	public TerminalRule getBASICINPUTRule() {
 		return tBASICINPUT;
 	}

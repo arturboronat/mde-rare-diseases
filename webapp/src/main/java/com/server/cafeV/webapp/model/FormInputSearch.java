@@ -6,19 +6,23 @@ import java.util.List;
 public class FormInputSearch extends FormInput {
 	
 
-	public List<String> getData() {
-		return data;
-	}
+	
 
-	public void setData(List<String> data) {
-		this.data = data;
-	}
-
-	private List<String> data;
+	private List<String> options;
 	
 	public FormInputSearch() {
 		super();
-		this.data = new ArrayList<String>();
+
 		
 	}
+
+	public List<String> getOptions() {
+		return options;
+	}
+
+	public void setOptions(List<String> options) {
+		this.options = options;
+	}
+	
+	
 }

@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link cafev.vform.vFormDsl.impl.FormInputBasicImpl#getId <em>Id</em>}</li>
+ *   <li>{@link cafev.vform.vFormDsl.impl.FormInputBasicImpl#getQC <em>QC</em>}</li>
  *   <li>{@link cafev.vform.vFormDsl.impl.FormInputBasicImpl#getType <em>Type</em>}</li>
  * </ul>
  *
@@ -27,6 +29,46 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic
 {
+  /**
+   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getId()
+   * @generated
+   * @ordered
+   */
+  protected static final String ID_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getId()
+   * @generated
+   * @ordered
+   */
+  protected String id = ID_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getQC() <em>QC</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQC()
+   * @generated
+   * @ordered
+   */
+  protected static final String QC_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getQC() <em>QC</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQC()
+   * @generated
+   * @ordered
+   */
+  protected String qC = QC_EDEFAULT;
+
   /**
    * The default value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -74,6 +116,56 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic
    * @generated
    */
   @Override
+  public String getId()
+  {
+    return id;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setId(String newId)
+  {
+    String oldId = id;
+    id = newId;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VFormDslPackage.FORM_INPUT_BASIC__ID, oldId, id));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getQC()
+  {
+    return qC;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setQC(String newQC)
+  {
+    String oldQC = qC;
+    qC = newQC;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VFormDslPackage.FORM_INPUT_BASIC__QC, oldQC, qC));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getType()
   {
     return type;
@@ -103,6 +195,10 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_BASIC__ID:
+        return getId();
+      case VFormDslPackage.FORM_INPUT_BASIC__QC:
+        return getQC();
       case VFormDslPackage.FORM_INPUT_BASIC__TYPE:
         return getType();
     }
@@ -119,6 +215,12 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_BASIC__ID:
+        setId((String)newValue);
+        return;
+      case VFormDslPackage.FORM_INPUT_BASIC__QC:
+        setQC((String)newValue);
+        return;
       case VFormDslPackage.FORM_INPUT_BASIC__TYPE:
         setType((String)newValue);
         return;
@@ -136,6 +238,12 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_BASIC__ID:
+        setId(ID_EDEFAULT);
+        return;
+      case VFormDslPackage.FORM_INPUT_BASIC__QC:
+        setQC(QC_EDEFAULT);
+        return;
       case VFormDslPackage.FORM_INPUT_BASIC__TYPE:
         setType(TYPE_EDEFAULT);
         return;
@@ -153,6 +261,10 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic
   {
     switch (featureID)
     {
+      case VFormDslPackage.FORM_INPUT_BASIC__ID:
+        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case VFormDslPackage.FORM_INPUT_BASIC__QC:
+        return QC_EDEFAULT == null ? qC != null : !QC_EDEFAULT.equals(qC);
       case VFormDslPackage.FORM_INPUT_BASIC__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
     }
@@ -170,7 +282,11 @@ public class FormInputBasicImpl extends FormInputImpl implements FormInputBasic
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (type: ");
+    result.append(" (id: ");
+    result.append(id);
+    result.append(", qC: ");
+    result.append(qC);
+    result.append(", type: ");
     result.append(type);
     result.append(')');
     return result.toString();

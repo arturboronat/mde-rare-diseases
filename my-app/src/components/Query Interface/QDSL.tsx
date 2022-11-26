@@ -167,7 +167,7 @@ function QDSL({getRoute, history}:appProps) {
             </div>
        
         <div className="w-[220%] ml-[-60%] mt-[20%] z-[70]">
-            <QDataBase getRoute={routeController} route={route} dataBase={dataBase} outPut={getData}/>
+            {/* <QDataBase getRoute={routeController} route={route} dataBase={dataBase} outPut={getData}/> */}
 
             
 

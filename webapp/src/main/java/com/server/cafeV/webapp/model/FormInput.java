@@ -27,11 +27,12 @@ property = "inputType", visible=true)
 
 public abstract class FormInput {
 	
+	@Nullable
+	public String id;
 	public String inputName;
-;
-
 
 	public String inputType;
+	public Boolean queryClause;
 
 	public String getInputType() {
 		return inputType;
@@ -57,6 +58,25 @@ public abstract class FormInput {
 	public void setInputName(String inputName) {
 		this.inputName = inputName;
 	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public Boolean getQueryClause() {
+		return queryClause;
+	}
+
+	public void setQueryClause(Boolean queryClause) {
+		this.queryClause = queryClause;
+	}
+
+
+	
 
 
 //	public String getInputType() {

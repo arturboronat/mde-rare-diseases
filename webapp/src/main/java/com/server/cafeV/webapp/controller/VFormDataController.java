@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,20 +11,25 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.exc.StreamReadException;
+import com.fasterxml.jackson.core.exc.StreamWriteException;
+import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.server.cafeV.webapp.model.EditData;
-import com.server.cafeV.webapp.model.EditProperties;
-import com.server.cafeV.webapp.model.EditProperty;
+import com.server.cafeV.webapp.model.FormInputSearch;
 import com.server.cafeV.webapp.model.VForm;
+import com.server.cafeV.webapp.service.StorageService;
+import com.server.cafeV.webapp.service.StorageServiceImpl;
 import com.server.cafeV.webapp.service.YAMLServices;
+
 
 
 
@@ -35,53 +41,59 @@ public class VFormDataController {
 	@Autowired
 	private YAMLServices ym;
 	
+	
+	//Api for generating Form Data with YAMTL
 	@GetMapping
-	@RequestMapping(path="/getData",produces="application/json")
 	@ResponseBody
-	public VForm welcome() {
-			
-			return this.ym.getVFormData("Rett_Datacleaned");
-			
-	}
-	
-	@PostMapping("/edit")
-	@RequestMapping(path="/edit",consumes="application/json")
-	public String edit(@RequestBody EditData editdata){
+	@RequestMapping(path="/getFormData/{dataSet}")
+	public VForm getFormData(@PathVariable String dataSet) throws IOException, URISyntaxException {						
 		
-		this.ym.editVForm(editdata);
-		
-		return "redirect:/getEditedData";
-
+		return this.ym.generateForm(dataSet);		
 	}
 	
 	
-	@GetMapping("/getEditedData")
+	@GetMapping
 	@ResponseBody
-	@RequestMapping(path="/getEditedData",produces="application/json")
-	public VForm getEditedData() {
+	@RequestMapping(path="/getUiEditProperty/{dataSet}/{id}",produces="application/json")
+	public VForm getuiEditProperty(@PathVariable String dataSet, @PathVariable String id) throws StreamReadException, DatabindException, IOException {
 			
-			return this.ym.getEditedData();
-			
+		return ym.getUiEditProp(dataSet, id);	
 	}
 	
 	
-	@PostMapping("/setEditProperty")
-	public String edit(@RequestBody String name){
-		
-		this.ym.setEditProperty(name);;
-		
-		return "redirect:/getEditProperty";
-
-	}
-	
-	
-	@GetMapping("/getEditProperty")
+	@PostMapping
 	@ResponseBody
-	@RequestMapping(path="/getEditProperty",produces="application/json")
-	public VForm getEditProperty() {
-			
-			return this.ym.getEditProperty();
-			
+	@RequestMapping(path="/editFormData",consumes="application/json")
+	public void editFormData(@RequestParam List<HashMap<String,List<String>>> editData) throws StreamWriteException, DatabindException, IOException {					
+		
+		ym.editForm(editData);
+		
 	}
+	
+	
+	@GetMapping
+	@ResponseBody
+	@RequestMapping(path="/getDataBase",produces="application/json")
+	public VForm getDataBase() {
+		StorageService ss = new StorageServiceImpl();
+		ss.init();
+		VForm db = new VForm();
+		FormInputSearch sch = new FormInputSearch();
+		
+		sch.setQueryClause(false);
+		sch.setId("dataBase");
+		sch.setInputType("search");
+		sch.setInputName("dataBase");
+		sch.setOptions(ss.getFiles());
+		db.setFormLayout("vertical");
+		db.formInputs.add(sch);
+		
+		return db;
+		
+		
+		
+	}
+	
+	
 	
 }

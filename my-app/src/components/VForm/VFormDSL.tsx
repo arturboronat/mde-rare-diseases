@@ -11,10 +11,7 @@ export const VFormDSL:FormModel =
 
 formLayout:"horizontal",
 formInputs:[
-    {
-        inputType:"hgvs",
-        inputName:"Age"
-    },
+   
     {
         inputType:"group",
         inputName:"DEMOGRAPHICS",
@@ -52,6 +49,10 @@ formInputs:[
     {
         inputType:"text",
         inputName:"Name"
+    },
+    {
+        inputType:"disabled",
+        inputName:"Age"
     },
  
 ]
