@@ -26,25 +26,28 @@ class CSV_to_PROPS extends YAMTLModule {
 				.in('inModel', CSV.runtimeModel)
 				.out('outModel', JSON.runtimeModel),
 
-				rule('Object')
+			rule('Object')
 				.in('inFt', CSV.featureType).filter[inFt.name!="<group_end>"]
 				.out('outOt', JSON.dynamicEObjectType)[
-				val obj =RuntimeModelFactory.eINSTANCE.createDynamicEObject
+					outOt.owningModel = inFt.owningObjectType.owningModel.fetch as RuntimeModel
+					
+					val obj = RuntimeModelFactory.eINSTANCE.createDynamicEObject
 					obj.owningModel = inFt.owningObjectType.owningModel.fetch as RuntimeModel
 					obj.type = outOt
-					outOt.owningModel = inFt.owningObjectType.owningModel.fetch as RuntimeModel
-				
 				],
 
-				rule('attributeType')
+			rule('attributeType')
 				.in('inFt', CSV.featureType).filter[inFt.name!="<group_end>"]
 				
 				.out('outFtN', JSON.featureType) [				
 					outFtN.name = "name"
 					outFtN.owningObjectType = inFt.fetch as DynamicEObjectType
+					
+					
 					val att = RuntimeModelFactory.eINSTANCE.createAttributeValue
 					outFtN.featureValues += att
 					att.containingDynamicEObject = (inFt.fetch as DynamicEObjectType).instances.get(0)
+					
 					val list = new ArrayList<String>()
 					list.add(inFt.name)
 					att.value = list

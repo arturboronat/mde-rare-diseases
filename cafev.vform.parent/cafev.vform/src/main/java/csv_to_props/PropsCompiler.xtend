@@ -2,7 +2,8 @@ package csv_to_props
 
 
 class PropsCompiler {
-	def compile(String DATASET) {
+	def static void main(String[] args) {
+		val DATASET = "src/main/resources/datasets/Mock_data"
 		var String inputCsvPath = DATASET+".csv"
 
 		
