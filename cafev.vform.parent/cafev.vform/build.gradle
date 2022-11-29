@@ -7,7 +7,7 @@ repositories {
 }
 
 ext {
-	xtendVersion = '2.28.0'
+	xtendVersion = '2.29.0'
 	emfChangeVersion = '2.14.0'
 }
 
@@ -41,7 +41,7 @@ dependencies {
 	implementation "org.eclipse.xtend:org.eclipse.xtend.core:$xtendVersion"
 	implementation "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
 	implementation "org.eclipse.emf:org.eclipse.emf.ecore.change:$emfChangeVersion"
-	implementation "yamtl:yamtl:0.2.7"
+	implementation "yamtl:yamtl:0.2.8"
 	implementation 'org.apache.commons:commons-math3:3.6.1'
 	implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.13.0"
 	implementation "org.apache.groovy:groovy-all:4.0.6"

@@ -1,4 +1,5 @@
 package sd_to_vf
+
 import cafev.vform.vFormDsl.EnumOption
 import cafev.vform.vFormDsl.FormInputBasic
 import cafev.vform.vFormDsl.FormInputRange
@@ -8,16 +9,20 @@ import cafev.vform.vFormDsl.FormLayout
 import cafev.vform.vFormDsl.Model
 import cafev.vform.vFormDsl.StringOptionItem
 import cafev.vform.vFormDsl.VFormDslPackage
+import com.fasterxml.jackson.databind.ObjectMapper
 import dataDescription.CategoricalType
 import dataDescription.DataDescriptionPackage
 import dataDescription.FrequencyEntry
 import dataDescription.NumericalType
 import dataDescription.StatsDataModel
+import dataDescription.StatsDataType
+import java.nio.file.Files
+import java.nio.file.Paths
 import java.util.List
+import java.util.Map
 import yamtl.core.YAMTLModule
 
 import static yamtl.dsl.Rule.*
-
 
 /** 
  * SHORTER TRANSFORMATION FOR PRESENTATION PURPOSES
@@ -45,8 +50,8 @@ class sd2vf extends YAMTLModule {
 				]
 				.out('fib', VF.formInputBasic) [	
 					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
-					fib.name = ct.name
-					fib.id = ct .name
+					fib.name = displayName(ct)
+					fib.id = ct.name
 					fib.QC = 'true'
 					fib.type = "\"checkbox\""
 					m.formInput.add(fib)
@@ -56,7 +61,7 @@ class sd2vf extends YAMTLModule {
 				.in('ct', DD.categoricalType)
 				.out('fib', VF.formInputBasic) [	
 					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
-					fib.name = ct.name
+					fib.name = displayName(ct)
 					fib.id = ct.name
 					fib.QC = 'true'
 					fib.type = "\"text\""
@@ -77,7 +82,7 @@ class sd2vf extends YAMTLModule {
 				.out('rg', VF.formInputRange) [
 					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
-					rg.name = nt.name
+					rg.name = displayName(nt)
 					rg.id = nt.name
 					rg.QC = 'true'
 					rg.min = Math.toIntExact(Math.round(nt.min)) 
@@ -106,14 +111,13 @@ class sd2vf extends YAMTLModule {
 			
 			rule('Search')
 				.in('ct', DD.categoricalType).filter [
-					val ct = 'ct'.fetch as CategoricalType
-					ct.frequencyTable.size() > 10
+					isType(ct,'search') || ct.frequencyTable.size() > 10
 				]
 				.out("sch", VF.formInputSearch) [
 					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
 					
 					//bindings
-					sch.name = ct.name
+					sch.name = displayName(ct)
 					sch.id = ct.name
 					sch.QC = 'true'
 					sch.data += ct.frequencyTable.fetch("stringOptionItem") as List<StringOptionItem>
@@ -121,13 +125,12 @@ class sd2vf extends YAMTLModule {
 				],
 			rule('Categorical Select')
 				.in('ct', DD.categoricalType).filter [
-					val ct = 'ct'.fetch as CategoricalType
-					ct.frequencyTable.size() <= 10
+					isType(ct,'select') || ct.frequencyTable.size() <= 10
 				]
 				.out("slt", VF.formInputSelect) [
 					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
-					slt.name = ct.name	
+					slt.name = displayName(ct)	
 					slt.id = ct.name	
 					slt.QC = 'true'		
 					slt.option = opt
@@ -138,13 +141,12 @@ class sd2vf extends YAMTLModule {
 				],
 			rule('Numerical Select')
 				.in('nt', DD.numericalType).filter [
-					val nt = 'nt'.fetch as NumericalType
 					nt.frequencyTable.size() <= 10
 				]
 				.out("slt", VF.formInputSelect) [
 					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
-					slt.name = nt.name	
+					slt.name = displayName(nt)	
 					slt.id = ct.name	
 					slt.QC = 'true'				
 					slt.option = opt
@@ -203,5 +205,53 @@ class sd2vf extends YAMTLModule {
 	}
 	def fe(){
 	  'fe'.fetch() as FrequencyEntry
+	}
+	
+	
+	/*
+	 * LOAD JSON
+	 */
+ 	val editMap = newHashMap	
+ 	def loadEditProperties(String filePath) {
+ 				
+		val path = Paths.get(filePath)
+		val json = Files.readAllLines(path).join("\n");
+		
+ 		val ObjectMapper mapper = new ObjectMapper();
+		try {
+			val list = mapper.readValue(json, List);
+			list.forEach[ Map m | 
+				val v = m.get("id") as String
+				editMap.put(v, m)
+			]
+		} catch(Exception e) {
+			e.printStackTrace
+		}
+	}
+	def isType(StatsDataType datatype, String typeValue) {
+		val value = editMap.get(datatype.name) as Map
+		if (value !== null) {
+			val type = value.get("type")
+			if (type !== null) {
+				type == typeValue
+			} else {
+				false
+			}
+		} else {
+			false
+		}
+	}
+	def String displayName(StatsDataType datatype) {
+		val value = editMap.get(datatype.name) as Map
+		if (value !== null) {
+			val newName = value.get("name") as String
+			if (newName !== null) {
+				newName
+			} else {
+				datatype.name
+			}
+		} else {
+			datatype.name
+		}
 	}
 }

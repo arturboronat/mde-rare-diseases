@@ -81,7 +81,7 @@ class CSV_to_SD extends YAMTLModule {
 						val upperBound = upperBound_
 						
 						val entry = DataDescriptionFactory.eINSTANCE.createFrequencyEntry
-						entry.name = ''']«lowerBound», «upperBound»]'''
+						entry.name = ''']Â«lowerBoundÂ», Â«upperBoundÂ»]'''
 						entry.frequency = ft.featureValues.map[it as AttributeValue].filter[ it.value.toDouble >= lowerBound || it.value.toDouble < upperBound ].size
 						nt.frequencyTable += entry
 					}
@@ -96,7 +96,7 @@ class CSV_to_SD extends YAMTLModule {
 						val upperBound = upperBound_
 
 						val entry = DataDescriptionFactory.eINSTANCE.createFrequencyEntry
-						entry.name = ''']«lowerBound», «upperBound»]'''
+						entry.name = ''']Â«lowerBoundÂ», Â«upperBoundÂ»]'''
 						entry.frequency = ft.featureValues.map[it as AttributeValue].filter[ it.value.toDouble >= lowerBound || it.value.toDouble < upperBound ].size
 						nt.frequencyTable += entry
 					}

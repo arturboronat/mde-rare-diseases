@@ -30,5 +30,5 @@ class FrequencyEntry {
 	attr int[1] frequency;
 }
 
-
+/* DATA FOR UI **/
 
