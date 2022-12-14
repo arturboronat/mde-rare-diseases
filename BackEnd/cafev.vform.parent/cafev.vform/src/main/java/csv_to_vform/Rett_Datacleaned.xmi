@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dataDescription:StatsDataModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataDescription="http://www.example.org/dataDescription">
+  <types xsi:type="dataDescription:CategoricalType" name="subject_id">
+    <frequencyTable name="22-414" frequency="1"/>
+    <frequencyTable name="22-413" frequency="1"/>
+    <frequencyTable name="22-410" frequency="1"/>
+    <frequencyTable name="22-399" frequency="1"/>
+    <frequencyTable name="22-403" frequency="1"/>
+    <frequencyTable name="22-394" frequency="1"/>
+    <frequencyTable name="22-348" frequency="1"/>
+    <frequencyTable name="22-386" frequency="1"/>
+    <frequencyTable name="22-374" frequency="1"/>
+    <frequencyTable name="IT266" frequency="1"/>
+    <frequencyTable name="22-382" frequency="1"/>
+    <frequencyTable name="22-381" frequency="1"/>
+    <frequencyTable name="22-380" frequency="1"/>
+    <frequencyTable name="22-379" frequency="1"/>
+    <frequencyTable name="22-378" frequency="1"/>
+    <frequencyTable name="22-372" frequency="1"/>
+    <frequencyTable name="22-371" frequency="1"/>
+    <frequencyTable name="22-366" frequency="1"/>
+    <frequencyTable name="22-365" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="Gender">
+    <frequencyTable name="F" frequency="19"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="rett_diagnosed">
+    <frequencyTable name="classical" frequency="19"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="rett_in_family">
+    <frequencyTable name="no" frequency="18"/>
+    <frequencyTable name="yes" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="labour_at_term">
+    <frequencyTable name="yes" frequency="9"/>
+    <frequencyTable name="no" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="head_score">
+    <frequencyTable name="deceleration of head growth" frequency="6"/>
+    <frequencyTable name="microcephaly" frequency="10"/>
+    <frequencyTable name="no deceleration" frequency="2"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="normal_ofc_at_birth">
+    <frequencyTable name="yes" frequency="14"/>
+    <frequencyTable name="no" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="height_score">
+    <frequencyTable name="below 5th percentile" frequency="4"/>
+    <frequencyTable name="Above 25th percentile" frequency="7"/>
+    <frequencyTable name="5th to 25th percentile" frequency="3"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="weight_score">
+    <frequencyTable name="3rd to 25th percentile" frequency="6"/>
+    <frequencyTable name="below 3rd percentile" frequency="4"/>
+    <frequencyTable name="Above 25th percentile" frequency="5"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="regression">
+    <frequencyTable name="yes" frequency="17"/>
+    <frequencyTable name="no" frequency="2"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="regression_score">
+    <frequencyTable name="between 18 months and 3 years" frequency="6"/>
+    <frequencyTable name="before 18 months" frequency="2"/>
+    <frequencyTable name="after 3 years" frequency="1"/>
+    <frequencyTable name="before 18 months " frequency="8"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="regression_hand_use">
+    <frequencyTable name="yes" frequency="13"/>
+    <frequencyTable name="no" frequency="2"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="hand_use_acquisition">
+    <frequencyTable name="yes" frequency="13"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="hand_skills_regained">
+    <frequencyTable name="yes" frequency="7"/>
+    <frequencyTable name="no" frequency="2"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="hand_skills_regained_age">
+    <frequencyTable name="0" frequency="13"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="hand_stereotypy_score">
+    <frequencyTable name="mild or intermittent" frequency="9"/>
+    <frequencyTable name="dominating or costant" frequency="9"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="gastrointestinal_disturbances_score">
+    <frequencyTable name="absent" frequency="7"/>
+    <frequencyTable name="mild" frequency="9"/>
+    <frequencyTable name="severe" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="feed_skill">
+    <frequencyTable name="feeding with assistance" frequency="10"/>
+    <frequencyTable name="self finger" frequency="1"/>
+    <frequencyTable name="gastrostomy tube feeding" frequency="1"/>
+    <frequencyTable name="feeding without assistance" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="comm_non_verb_quality">
+    <frequencyTable name="intermittent" frequency="2"/>
+    <frequencyTable name="significative/intentional" frequency="5"/>
+    <frequencyTable name="never acquired" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="eye_contact">
+    <frequencyTable name="yes" frequency="10"/>
+    <frequencyTable name="no" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="phrases_score">
+    <frequencyTable name="absent" frequency="18"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="speech_score">
+    <frequencyTable name="loss of ability to speak" frequency="3"/>
+    <frequencyTable name="never spoken" frequency="10"/>
+    <frequencyTable name="loss to ability to speak" frequency="4"/>
+    <frequencyTable name=">10 words at age of 5" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="sitting_score">
+    <frequencyTable name="sitting unsupported at age of 5" frequency="15"/>
+    <frequencyTable name="never learned to sit" frequency="2"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="walking_score">
+    <frequencyTable name="walking unsupported" frequency="11"/>
+    <frequencyTable name="never learned to walk" frequency="3"/>
+    <frequencyTable name="loss ability to walk" frequency="1"/>
+    <frequencyTable name="not know" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="walking_age_score">
+    <frequencyTable name="after and equal to 18 months" frequency="10"/>
+    <frequencyTable name="before 18 months" frequency="2"/>
+    <frequencyTable name="never" frequency="3"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="gait_dyspraxia">
+    <frequencyTable name="yes" frequency="8"/>
+    <frequencyTable name="no" frequency="6"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="intellectual_disability_score">
+    <frequencyTable name="non measurable IQ(IQ&lt;20)" frequency="4"/>
+    <frequencyTable name="severe IQ 20-40" frequency="6"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="age_at_epilepsy_onset">
+    <frequencyTable name="5-10 years" frequency="4"/>
+    <frequencyTable name="1-3 years" frequency="2"/>
+    <frequencyTable name="0-1 year" frequency="1"/>
+    <frequencyTable name="5-10-years" frequency="1"/>
+    <frequencyTable name="0-1 years" frequency="1"/>
+    <frequencyTable name="3-5 years" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="epilepsy_score">
+    <frequencyTable name="no epilepsy at age of 5" frequency="9"/>
+    <frequencyTable name="rarely or not controlled by therapy" frequency="1"/>
+    <frequencyTable name="barely or not controlled by therapy" frequency="5"/>
+    <frequencyTable name="controlled by therapy" frequency="3"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="epilepsy_type">
+    <frequencyTable name="myoclonic" frequency="1"/>
+    <frequencyTable name="infantile spasm" frequency="1"/>
+    <frequencyTable name="absent" frequency="2"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="breathing_disorders_score">
+    <frequencyTable name="mild or intermittent" frequency="1"/>
+    <frequencyTable name="mild" frequency="7"/>
+    <frequencyTable name="absent" frequency="6"/>
+    <frequencyTable name="severe" frequency="1"/>
+    <frequencyTable name="mild " frequency="2"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="breathing_disorder_type">
+    <frequencyTable name="apnea" frequency="7"/>
+    <frequencyTable name="hyperventilation" frequency="1"/>
+    <frequencyTable name="none" frequency="6"/>
+    <frequencyTable name="both" frequency="2"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="cold_extremities_score">
+    <frequencyTable name="mild " frequency="5"/>
+    <frequencyTable name="absent" frequency="4"/>
+    <frequencyTable name="mild" frequency="4"/>
+    <frequencyTable name="severe" frequency="2"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="sphincter_control_score">
+    <frequencyTable name="absent" frequency="12"/>
+    <frequencyTable name="complete" frequency="1"/>
+    <frequencyTable name="partiial" frequency="1"/>
+    <frequencyTable name="partial" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="scoliosis_score">
+    <frequencyTable name="absent" frequency="9"/>
+    <frequencyTable name="mild" frequency="5"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="presence_of_additional_involuntary_movement">
+    <frequencyTable name="no" frequency="12"/>
+    <frequencyTable name="yes" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="bruxism">
+    <frequencyTable name="yes" frequency="9"/>
+    <frequencyTable name="no" frequency="4"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="self_injury">
+    <frequencyTable name="no" frequency="13"/>
+    <frequencyTable name="yes " frequency="1"/>
+    <frequencyTable name="yes" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="mood_disturbance">
+    <frequencyTable name="no" frequency="13"/>
+    <frequencyTable name="yes" frequency="1"/>
+    <frequencyTable name="sudden laughing" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="trouble_night_sleep">
+    <frequencyTable name="absent" frequency="10"/>
+    <frequencyTable name="present" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="brain_imaging">
+    <frequencyTable name="yes" frequency="7"/>
+    <frequencyTable name="no" frequency="5"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="affected_gene">
+    <frequencyTable name="MECP2" frequency="18"/>
+    <frequencyTable name="FOXG1" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="hgvs">
+    <frequencyTable name="MECP2c.763C>T" frequency="1"/>
+    <frequencyTable name="MECP2c.1164_1207del44(P.P389X)" frequency="1"/>
+    <frequencyTable name="MECP2c.502C>T (p.R168X)" frequency="2"/>
+    <frequencyTable name="FOXG1c.1200C>G(p.Tyr400X)" frequency="1"/>
+    <frequencyTable name="MECP2c.468C>G(pD156E)" frequency="1"/>
+    <frequencyTable name="MECP2c.763C>T(pR255X)" frequency="1"/>
+    <frequencyTable name="MECP2c.473C>T(pT158M)" frequency="1"/>
+    <frequencyTable name="MECP2c.916C>T(pR306C)" frequency="2"/>
+    <frequencyTable name="MECP2c.1326_1327insC(pA443Xfs)" frequency="1"/>
+    <frequencyTable name="MECP2c.11155_1198del44(pL386Xfs)" frequency="1"/>
+    <frequencyTable name="MECP2c.502C>T(pR168X)" frequency="1"/>
+    <frequencyTable name="MECP2c.401C>T(pS134F)" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="mutation_type">
+    <frequencyTable name="gene duplication" frequency="1"/>
+    <frequencyTable name="gene deletion" frequency="3"/>
+    <frequencyTable name="early truncating" frequency="6"/>
+    <frequencyTable name="late truncating" frequency="3"/>
+    <frequencyTable name="missense" frequency="5"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:CategoricalType" name="inheritance">
+    <frequencyTable name="de novo mutation" frequency="12"/>
+    <frequencyTable name="carrier mother" frequency="1"/>
+    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </types>
+  <types xsi:type="dataDescription:NumericalType" name="ofc_at_birth_in_cm" min="31.8" max="36.0" mean="33.61818181818182" std="1.3128733235298689">
+    <frequencyTable name="0.0 - 32.305308494651946" frequency="8"/>
+    <frequencyTable name="32.305308494651946 - 33.61818181818182" frequency="10"/>
+    <frequencyTable name="33.61818181818182 - 34.93105514171169" frequency="6"/>
+    <frequencyTable name="&lt;34.93105514171169" frequency="9"/>
+  </types>
+  <types xsi:type="dataDescription:NumericalType" name="ofc_with_age_cm" min="42.0" max="53.0" mean="47.0" std="3.302891295379082">
+    <frequencyTable name="0.0 - 43.697108704620916" frequency="9"/>
+    <frequencyTable name="43.697108704620916 - 47.0" frequency="7"/>
+    <frequencyTable name="47.0 - 50.302891295379084" frequency="10"/>
+    <frequencyTable name="&lt;50.302891295379084" frequency="10"/>
+  </types>
+  <types xsi:type="dataDescription:NumericalType" name="height_with_age_cm" min="52.0" max="160.0" mean="94.75" std="29.117707826869015">
+    <frequencyTable name="0.0 - 65.63229217313099" frequency="11"/>
+    <frequencyTable name="65.63229217313099 - 94.75" frequency="5"/>
+    <frequencyTable name="94.75 - 123.86770782686901" frequency="10"/>
+    <frequencyTable name="123.86770782686901 - 152.98541565373802" frequency="11"/>
+    <frequencyTable name="&lt;152.98541565373802" frequency="11"/>
+  </types>
+  <types xsi:type="dataDescription:NumericalType" name="birth_weight_in_gr" min="2450.0" max="3880.0" mean="3084.1666666666665" std="450.6048124129357">
+    <frequencyTable name="0.0 - 2633.561854253731" frequency="11"/>
+    <frequencyTable name="2633.561854253731 - 3084.1666666666665" frequency="6"/>
+    <frequencyTable name="3084.1666666666665 - 3534.771479079602" frequency="9"/>
+    <frequencyTable name="&lt;3534.771479079602" frequency="10"/>
+  </types>
+  <types xsi:type="dataDescription:NumericalType" name="weight_with_age_gr" min="11.0" max="45000.0" mean="12520.25" std="11845.784613677406">
+    <frequencyTable name="-0.0 - 674.465386322594" frequency="10"/>
+    <frequencyTable name="674.465386322594 - 12520.25" frequency="7"/>
+    <frequencyTable name="12520.25 - 24366.034613677406" frequency="8"/>
+    <frequencyTable name="24366.034613677406 - 36211.81922735481" frequency="12"/>
+    <frequencyTable name="&lt;36211.81922735482" frequency="11"/>
+  </types>
+  <types xsi:type="dataDescription:NumericalType" name="regression_age_months" min="2.0" max="24.0" mean="14.5" std="6.346079677464448">
+    <frequencyTable name="0.0 - 8.153920322535551" frequency="9"/>
+    <frequencyTable name="8.153920322535551 - 14.5" frequency="10"/>
+    <frequencyTable name="14.5 - 20.84607967746445" frequency="7"/>
+    <frequencyTable name="&lt;20.84607967746445" frequency="10"/>
+  </types>
+  <types xsi:type="dataDescription:NumericalType" name="epilepsy_diag_age_months" min="60.0" max="96.0" mean="78.0" std="25.45584412271571">
+    <frequencyTable name="0.0 - 78.0" frequency="1"/>
+    <frequencyTable name="&lt;78.0" frequency="1"/>
+  </types>
+</dataDescription:StatsDataModel>

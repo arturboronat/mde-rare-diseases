@@ -1,4 +1,0 @@
-[%
-  var t : Template = TemplateFactory.load("xlsxParser.egl");
-  t.generate("src-gen/xlsxClassGenerator/JsonGen.java");
-%]

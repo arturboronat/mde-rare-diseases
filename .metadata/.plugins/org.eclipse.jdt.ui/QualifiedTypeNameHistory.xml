@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="com.server.cafeV.webapp.service.StorageService"/>
-    <fullyQualifiedTypeName name="cafev.vform.vFormDsl.FormInputSearch"/>
-    <fullyQualifiedTypeName name="com.server.cafeV.webapp.model.FormInputSearch"/>
-</qualifiedTypeNameHistroy>
