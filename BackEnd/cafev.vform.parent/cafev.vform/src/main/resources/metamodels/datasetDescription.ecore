@@ -13,10 +13,10 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="frequencyTable" upperBound="-1"
         eType="#//FrequencyEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CategoricalType" eSuperTypes="#//StatsDataType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" lowerBound="1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EDataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumericalType" eSuperTypes="#//StatsDataType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>

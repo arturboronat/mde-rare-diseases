@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link dataDescription.StatsDataType#getName <em>Name</em>}</li>
  *   <li>{@link dataDescription.StatsDataType#getFrequencyTable <em>Frequency Table</em>}</li>
+ *   <li>{@link dataDescription.StatsDataType#getGroup <em>Group</em>}</li>
  * </ul>
  *
  * @see dataDescription.DataDescriptionPackage#getStatsDataType()
@@ -57,5 +58,27 @@ public interface StatsDataType extends EObject {
 	 * @generated
 	 */
 	EList<FrequencyEntry> getFrequencyTable();
+
+	/**
+	 * Returns the value of the '<em><b>Group</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Group</em>' attribute.
+	 * @see #setGroup(String)
+	 * @see dataDescription.DataDescriptionPackage#getStatsDataType_Group()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getGroup();
+
+	/**
+	 * Sets the value of the '{@link dataDescription.StatsDataType#getGroup <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Group</em>' attribute.
+	 * @see #getGroup()
+	 * @generated
+	 */
+	void setGroup(String value);
 
 } // StatsDataType

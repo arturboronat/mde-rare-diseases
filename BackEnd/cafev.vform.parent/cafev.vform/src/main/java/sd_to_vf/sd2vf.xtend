@@ -29,6 +29,8 @@ import cafev.vform.vFormDsl.VFormDslFactory
 import java.util.regex.Pattern
 import cafev.vform.vFormDsl.FormInputGroup
 import java.util.ArrayList
+import java.util.Arrays
+import java.util.Set
 
 /** 
  * SHORTER TRANSFORMATION FOR PRESENTATION PURPOSES
@@ -48,233 +50,107 @@ class sd2vf extends YAMTLModule {
 				.in('sd', DD.statsDataModel)
 				.out('m', VF.model) [
 					m.formLayout = fl
+					m.formInput+= sd.fetchInputs
 				]
 				.out('fl', VF.formLayout) [
 					fl.layout = "\"horizontal\""
 				],
+			rule('Groups')
+				.uniqueLazy
+				.in('sd', DD.statsDataModel)
+				.out('fig', VF.formInputGroup) [	
+					//bindings
+					fig.name = sd.name
+					fig.id = sd.name
+					fig.QC = 'true'
+					fig.groupInputs += sd.fetchGroupInputs
+				],
 			rule('Checkbox')
-				.in('ct', DD.categoricalType).filter[
-					isType(ct,'checkbox')
+				.uniqueLazy
+				.in('sdt', DD.statsDataType).filter[
+					isType(sdt,'checkbox')
 				]
-				.out('fib', VF.formInputBasic) [	
-					val fin = ((ct.eContainer() as StatsDataModel).fetch('m') as Model).formInput as List<FormInput>
-					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
-					fib.name = displayName(ct)
-					fib.id = ct.name
+				.out('fib', VF.formInputBasic)[	
+					fib.name = displayName(sdt)
+					fib.id = sdt.name
 					fib.QC = 'true'
 					fib.type = "\"checkbox\""
-					
-					val gpN =fin.filter[it.name == ct.name.groupByName]
-					if(gpN.size==0){
-						val fig  = VE.createFormInputGroup as FormInputGroup
-						fig.name = ct.name.groupByName
-						fig.id = ct.name.groupByName
-						fig.QC = 'true'
-						fig.groupInputs+=fib
-						fin+=fig
-						
-					}else{
-						
-						fin.forEach[if(it.name === ct.name.groupByName){
-							val idx = fin.indexOf(it)
-							val fig = gpN.get(0)
-							if(fig instanceof FormInputGroup)
-							fig.groupInputs+=fib
-							fin.set(idx,fig)
-						}]
-						
-					}
-//					m.formInput.add(fib)
-				],
-				
-			rule('Text')
-				.in('ct', DD.categoricalType).filter[
-					isType(ct,'text')
-				]
-				.out('fib', VF.formInputBasic) [	
-					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
-					fib.name = displayName(ct)
-					fib.id = ct.name
-					fib.QC = 'true'
-					fib.type = "\"text\""
-					m.formInput.add(fib)
 				],
 //			rule('Number')
 //				.in('nt', DD.numericalType)
-//				.out('fib', VF.formInputBasic) [	
-//					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
 //					fib.name = nt.name
 //					fib.id = nt.name
 //					fib.QC = 'true'
 //					fib.type = "\"number\""
-//					m.formInput.add(fib)
 //				],
 			rule('Search')
-				.in('ct', DD.categoricalType).filter [
-					isType(ct,'search')
+			.uniqueLazy
+				.in('sdt', DD.statsDataType).filter [
+					isType(sdt,'search')
 				]
 				.out("sch", VF.formInputSearch) [
-					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
-					val fin = ((ct.eContainer() as StatsDataModel).fetch('m') as Model).formInput as List<FormInput>
 					//bindings
-					sch.name = displayName(ct)
-					sch.id = ct.name
+					sch.name = displayName(sdt)
+					sch.id = sdt.name
 					sch.QC = 'true'
-					sch.data += ct.frequencyTable.fetch("stringOptionItem") as List<StringOptionItem>
-					val gpN =fin.filter[it.name == ct.name.groupByName]
-					if(gpN.size==0){
-						val fig  = VE.createFormInputGroup as FormInputGroup
-						fig.name = ct.name.groupByName
-						fig.id = ct.name.groupByName
-						fig.QC = 'true'
-						fig.groupInputs+=sch
-						fin+=fig
-						
-					}else{
-						
-						fin.forEach[if(it.name === ct.name.groupByName){
-							val idx = fin.indexOf(it)
-							val fig = gpN.get(0)
-							if(fig instanceof FormInputGroup)
-							fig.groupInputs+=sch
-							fin.set(idx,fig)
-						}]
-						
-					}
-		//			m.formInput.add(sch)
+					sch.data += sdt.fetchData
 				],
 			rule('Categorical Select')
-				.in('ct', DD.categoricalType).filter [
-					isType(ct,'select')
+				.uniqueLazy
+				.in('sdt', DD.statsDataType).filter [
+					isType(sdt,'select')
 				]
 				.out("slt", VF.formInputSelect) [
-					val fin = ((ct.eContainer() as StatsDataModel).fetch('m') as Model).formInput as List<FormInput>
-					val m = (ct.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
-					slt.name = displayName(ct)	
-					slt.id = ct.name	
+					slt.name = displayName(sdt)	
+					slt.id = sdt.name	
 					slt.QC = 'true'		
 					slt.option = opt
-					val gpN =fin.filter[it.name == ct.name.groupByName]
-					if(gpN.size==0){
-						val fig  = VE.createFormInputGroup as FormInputGroup
-						fig.name = ct.name.groupByName
-						fig.id = ct.name.groupByName
-						fig.QC = 'true'
-						fig.groupInputs+=slt
-						fin+=fig
-						
-					}else{
-						
-						fin.forEach[if(it.name === ct.name.groupByName){
-							val idx = fin.indexOf(it)
-							val fig = gpN.get(0)
-							if(fig instanceof FormInputGroup)
-							fig.groupInputs+=slt
-							fin.set(idx,fig)
-						}]
-						
-					}
-//					m.formInput.add(slt)
 				].
 				out("opt", VF.enumOption) [
-					opt.data += ct.frequencyTable.fetch("stringOptionItem") as List<StringOptionItem>
+					opt.data += sdt.fetchData
 				],
 			rule('Range')
-				.in('nt', DD.numericalType).filter[
-					isType(nt,'range')
+				.uniqueLazy
+				.in('sdt', DD.statsDataType).filter[
+					isType(sdt,'range')
 				]
 				.out('rg', VF.formInputRange) [
-					val fin = ((nt.eContainer() as StatsDataModel).fetch('m') as Model).formInput as List<FormInput>
-					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
-					rg.name = displayName(nt)
-					rg.id = nt.name
+					rg.name = displayName(sdt)
+					rg.id = sdt.name
 					rg.QC = 'true'
-					rg.min = Math.toIntExact(Math.round(nt.min)) 
-					rg.max = Math.toIntExact(Math.round(nt.max)) 
-					
-					
-					val gpN =fin.filter[it.name == nt.name.groupByName]
-					if(gpN.size==0){
-						val fig  = VE.createFormInputGroup as FormInputGroup
-						fig.name = nt.name.groupByName
-						fig.id = nt.name.groupByName
-						fig.QC = 'true'
-						fig.groupInputs+=rg
-						fin+=fig
-						
-					}else{
-						
-						fin.forEach[if(it.name === nt.name.groupByName){
-							val idx = fin.indexOf(it)
-							val fig = gpN.get(0)
-							if(fig instanceof FormInputGroup)
-							fig.groupInputs+=rg
-							fin.set(idx,fig)
-						}]
-						
-					}
-//					m.formInput.add(rg)
-				]
-				
-//				rule('Date')
-//				.in('sdt', DD.statsDataType).
-//				out('dt', VF.dat) [
-//					// environment vbles 
-//					val pattern = Pattern.compile("^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$")
-//					val sdt = 'sdt'.fetch as StatsDataType
-//					val dt = 'dt'.fetch as Dat
-//					val fi = (sdt.eContainer() as StatsDataModel).fetch('fi') as FormInput
-//					dt.inputName = sdt.name
-//					
-//					sdt.frequencyTable.forEach[i|
-//						
-//						if(!pattern.matcher(i.name).matches()){
-//							fi.dat.add(dt)
-//						}
-//					]
-//					
-//				],
+					rg.min = sdt.fetchRange.get('min') 
+					rg.max = sdt.fetchRange.get('max') 
+		
+				],			
+		rule('Date')
+			.uniqueLazy
+			.in('sdt', DD.statsDataType).filter [
+				isType(sdt,'date')
+			]
+			.out("fib", VF.formInputBasic) [
+					//bindings
+					fib.name = displayName(sdt)	
+					fib.id = sdt.name	
+					fib.type = "\"date\""
+					fib.QC = 'true'		
+				],
 			
-,
 			rule('Numerical Select')
-				.in('nt', DD.numericalType).filter [
-					isType(nt,'select')
+				.uniqueLazy
+				.in('sdt', DD.statsDataType).filter [
+					isType(sdt,'select')
 				]
 				.out("slt", VF.formInputSelect) [
-					val fin = ((nt.eContainer() as StatsDataModel).fetch('m') as Model).formInput as List<FormInput>
-					val m = (nt.eContainer() as StatsDataModel).fetch('m') as Model
 					//bindings
-					slt.name = displayName(nt)	
-					slt.id = nt.name	
+					slt.name = displayName(sdt)	
+					slt.id = sdt.name	
 					slt.QC = 'true'				
 					slt.option = opt
-					
-					val gpN =fin.filter[it.name == nt.name.groupByName]
-					if(gpN.size==0){
-						val fig  = VE.createFormInputGroup as FormInputGroup
-						fig.name = nt.name.groupByName
-						fig.id = nt.name.groupByName
-						fig.QC = 'true'
-						fig.groupInputs+=slt
-						fin+=fig
-						
-					}else{
-						
-						fin.forEach[if(it.name === nt.name.groupByName){
-							val idx = fin.indexOf(it)
-							val fig = gpN.get(0)
-							if(fig instanceof FormInputGroup)
-							fig.groupInputs+=slt
-							fin.set(idx,fig)
-						}]
-						
-					}
-					//m.formInput.add(slt)
 				].
 				out("opt", VF.enumOption) [
-					opt.data.addAll(numericData(nt))
+					opt.data+=sdt.fetchData
 				],
 			rule('stringOptionItem')
 				.uniqueLazy
@@ -299,8 +175,14 @@ class sd2vf extends YAMTLModule {
 	def fib() {
 	  'fib'.fetch() as FormInputBasic
 	}
+	def fig() {
+	  'fig'.fetch() as FormInputGroup
+	}
 	def fl() {
 	  'fl'.fetch() as FormLayout
+	}
+	def sdt() {
+	  'sdt'.fetch() as StatsDataType
 	}
 
 	def ct() {
@@ -354,6 +236,7 @@ class sd2vf extends YAMTLModule {
 	}
 	
 	val createMap = newHashMap
+	
 	def loadCreateProperties(String filePath) {
 				
 		if(!filePath.equals("noFile")){
@@ -373,8 +256,8 @@ class sd2vf extends YAMTLModule {
 		
 	}
 	
-	
 	def isType(StatsDataType datatype, String typeValue) {
+		val date = Pattern.compile("^(0?[1-9]|[12][0-9]|3[01])([/]|[-])(0?[1-9]|1[012])([/]|[-])[0-9]{4}$")
 		var value = editMap.get(datatype.name) as Map
 		val createValue = createMap.get(datatype.name) as Map
 		if(createMap.size()>0){
@@ -382,20 +265,28 @@ class sd2vf extends YAMTLModule {
 		}
 		
 		if (createMap.size()<1&&((value!==null &&value.get("type")===null)||value===null)) {
-			
+				
+				
+				
 				switch(typeValue){
 				case "search":
-				datatype instanceof CategoricalType &&
-				datatype.frequencyTable.size()>10
+					if(datatype instanceof CategoricalType){
+					val ct = datatype as CategoricalType
+					datatype.frequencyTable.size()>10 && (ct.dataType != "Date")
+					}
+					else{
+						false
+					}
 				
 				case "select":
 				
 					if(datatype instanceof NumericalType){
-						(datatype.max-datatype.min)>100
+						(datatype.max-datatype.min)>100 
 					}
 					else{
+						val ct = datatype as CategoricalType
 						datatype instanceof CategoricalType &&
-						datatype.frequencyTable.size()<=10
+						datatype.frequencyTable.size()<=10 && (ct.dataType != "Date")
 					}
 					
 				case "range":
@@ -405,7 +296,15 @@ class sd2vf extends YAMTLModule {
 					else{
 						false
 					}
-				
+					
+				case "date":
+					if(datatype instanceof CategoricalType){
+					val ct = datatype as CategoricalType
+						ct.dataType == "Date"
+					}
+					else{
+						false
+					}
 				default:
 					false
 			}
@@ -442,7 +341,7 @@ class sd2vf extends YAMTLModule {
 		}
 	}
 	
-	def List<StringOptionItem> numericData(StatsDataType datatype) {
+	def fetchNumericData(StatsDataType datatype) {
 		var value = editMap.get(datatype.name) as Map
 		val createValue = createMap.get(datatype.name) as Map
 		if(createMap.size()>0){
@@ -476,17 +375,97 @@ class sd2vf extends YAMTLModule {
 		}
 	}
 	
-	def groupByName(String name){
-		val pattern = Pattern.compile("sex|gender|height|weight|age|birth|subject|patient")
-		
-		if(pattern.matcher(name).find()){
-			return "DEMOGRAPHICS"
+	def getGroup(StatsDataModel sd){
+		val grps = newHashMap
+		val dg = new ArrayList<StatsDataType>()
+		val ug = new ArrayList<StatsDataType>()
+		val og = new ArrayList<StatsDataType>()
+		val dng =  new ArrayList<StatsDataType>()
+		sd.types.forEach[
+			switch(it.group){
+				case "DEMOGRAPHICS":
+					dg+=it
+				case "ONTOLOGIES":
+					og+=it
+				case "DNA SEQUENCE":
+					dng+=it
+				default:
+					ug+=it
+				
+			}
+
+			
+		]
+		grps.put("DEMOGRAPHICS", dg)
+		grps.put("UNCLASSIFIED", ug)
+		grps.put("ONTOLOGIES", og)
+		grps.put("DNA SEQUENCE", dng)
+		grps.put("ONTOLOGIES", og)
+		grps
+	}
+	
+	def fetchGroupInputs(StatsDataModel sd){
+		val fin = new ArrayList<FormInput>()
+		fin+=sd.types.fetch("Search") as List<FormInput>
+		fin+=sd.types.fetch("Categorical Select") as List<FormInput>
+		fin+=sd.types.fetch("Date") as List<FormInput>
+		fin+=sd.types.fetch("Checkbox") as List<FormInput>
+		fin+=sd.types.fetch("Range") as List<FormInput>
+		fin
+	}
+	
+	def fetchInputs(StatsDataModel sd){
+					val grpMap = sd.getGroup
+					val groups = grpMap.keySet().groupList
+					val sdmA = newArrayList
+					groups.forEach[
+						val sdtm = DE.createStatsDataModel
+						sdtm.name = it
+						sdtm.types+=grpMap.get(it)
+						if(sdtm.types.size!=0){
+							sdmA+=sdtm
+						}
+							
+					]
+					sdmA.fetch('Groups') as List<FormInputGroup>
+	}
+	
+	def fetchData(StatsDataType sdt){
+		if(sdt instanceof NumericalType){
+
+			sdt.fetchNumericData
 		}
 		else{
-			
-			return "UNCLASSIFIED"
+			sdt.frequencyTable.fetch("stringOptionItem") as List<StringOptionItem>
 		}
 		
 	}
 	
+	def groupList(Set<String> list){
+		val grpKeys = list
+					val groups = newArrayList
+					grpKeys.forEach[
+						if(it!="DEMOGRAPHICS" && it!="UNCLASSIFIED"){
+							groups+=it
+						}
+					]
+					grpKeys.forEach[
+						
+						if(it=="DEMOGRAPHICS"){
+							groups.add(0,it)
+						}
+						else if(it=="UNCLASSIFIED"){
+							groups+=it
+						}
+					]
+		groups
+	}
+	
+	def fetchRange(StatsDataType sdt){
+		val range = newHashMap
+		val nt = sdt as NumericalType
+		range.put('min',Math.toIntExact(Math.round(nt.min)))
+		range.put('max',Math.toIntExact(Math.round(nt.max)))
+		range
+	}
 }

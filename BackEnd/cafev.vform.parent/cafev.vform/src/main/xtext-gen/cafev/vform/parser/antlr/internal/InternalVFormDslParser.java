@@ -3179,7 +3179,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormInputGroup"
-    // InternalVFormDsl.g:1499:1: ruleFormInputGroup returns [EObject current=null] : (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' (otherlv_5= '\"id\"' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= ',' )? otherlv_9= '\"queryClause\"' otherlv_10= ':' ( (lv_qC_11_0= RULE_BOOLEAN ) ) otherlv_12= ',' otherlv_13= '\"inputType\"' otherlv_14= ':' otherlv_15= '\"group\"' otherlv_16= ',' otherlv_17= '\"groupInputs\"' otherlv_18= ':' otherlv_19= '[' ( (lv_groupInputs_20_0= ruleFormInput ) ) (otherlv_21= ',' ( (lv_groupInputs_22_0= ruleFormInput ) ) )* otherlv_23= ']' otherlv_24= '}' ) ;
+    // InternalVFormDsl.g:1499:1: ruleFormInputGroup returns [EObject current=null] : (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' (otherlv_5= '\"id\"' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= ',' )? otherlv_9= '\"queryClause\"' otherlv_10= ':' ( (lv_qC_11_0= RULE_BOOLEAN ) ) otherlv_12= ',' otherlv_13= '\"inputType\"' otherlv_14= ':' otherlv_15= '\"group\"' otherlv_16= ',' otherlv_17= '\"groupInputs\"' otherlv_18= ':' otherlv_19= '[' ( (lv_groupInputs_20_0= ruleFormInput ) )? (otherlv_21= ',' ( (lv_groupInputs_22_0= ruleFormInput ) ) )* otherlv_23= ']' otherlv_24= '}' ) ;
     public final EObject ruleFormInputGroup() throws RecognitionException {
         EObject current = null;
 
@@ -3215,11 +3215,11 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVFormDsl.g:1505:2: ( (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' (otherlv_5= '\"id\"' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= ',' )? otherlv_9= '\"queryClause\"' otherlv_10= ':' ( (lv_qC_11_0= RULE_BOOLEAN ) ) otherlv_12= ',' otherlv_13= '\"inputType\"' otherlv_14= ':' otherlv_15= '\"group\"' otherlv_16= ',' otherlv_17= '\"groupInputs\"' otherlv_18= ':' otherlv_19= '[' ( (lv_groupInputs_20_0= ruleFormInput ) ) (otherlv_21= ',' ( (lv_groupInputs_22_0= ruleFormInput ) ) )* otherlv_23= ']' otherlv_24= '}' ) )
-            // InternalVFormDsl.g:1506:2: (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' (otherlv_5= '\"id\"' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= ',' )? otherlv_9= '\"queryClause\"' otherlv_10= ':' ( (lv_qC_11_0= RULE_BOOLEAN ) ) otherlv_12= ',' otherlv_13= '\"inputType\"' otherlv_14= ':' otherlv_15= '\"group\"' otherlv_16= ',' otherlv_17= '\"groupInputs\"' otherlv_18= ':' otherlv_19= '[' ( (lv_groupInputs_20_0= ruleFormInput ) ) (otherlv_21= ',' ( (lv_groupInputs_22_0= ruleFormInput ) ) )* otherlv_23= ']' otherlv_24= '}' )
+            // InternalVFormDsl.g:1505:2: ( (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' (otherlv_5= '\"id\"' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= ',' )? otherlv_9= '\"queryClause\"' otherlv_10= ':' ( (lv_qC_11_0= RULE_BOOLEAN ) ) otherlv_12= ',' otherlv_13= '\"inputType\"' otherlv_14= ':' otherlv_15= '\"group\"' otherlv_16= ',' otherlv_17= '\"groupInputs\"' otherlv_18= ':' otherlv_19= '[' ( (lv_groupInputs_20_0= ruleFormInput ) )? (otherlv_21= ',' ( (lv_groupInputs_22_0= ruleFormInput ) ) )* otherlv_23= ']' otherlv_24= '}' ) )
+            // InternalVFormDsl.g:1506:2: (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' (otherlv_5= '\"id\"' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= ',' )? otherlv_9= '\"queryClause\"' otherlv_10= ':' ( (lv_qC_11_0= RULE_BOOLEAN ) ) otherlv_12= ',' otherlv_13= '\"inputType\"' otherlv_14= ':' otherlv_15= '\"group\"' otherlv_16= ',' otherlv_17= '\"groupInputs\"' otherlv_18= ':' otherlv_19= '[' ( (lv_groupInputs_20_0= ruleFormInput ) )? (otherlv_21= ',' ( (lv_groupInputs_22_0= ruleFormInput ) ) )* otherlv_23= ']' otherlv_24= '}' )
             {
-            // InternalVFormDsl.g:1506:2: (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' (otherlv_5= '\"id\"' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= ',' )? otherlv_9= '\"queryClause\"' otherlv_10= ':' ( (lv_qC_11_0= RULE_BOOLEAN ) ) otherlv_12= ',' otherlv_13= '\"inputType\"' otherlv_14= ':' otherlv_15= '\"group\"' otherlv_16= ',' otherlv_17= '\"groupInputs\"' otherlv_18= ':' otherlv_19= '[' ( (lv_groupInputs_20_0= ruleFormInput ) ) (otherlv_21= ',' ( (lv_groupInputs_22_0= ruleFormInput ) ) )* otherlv_23= ']' otherlv_24= '}' )
-            // InternalVFormDsl.g:1507:3: otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' (otherlv_5= '\"id\"' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= ',' )? otherlv_9= '\"queryClause\"' otherlv_10= ':' ( (lv_qC_11_0= RULE_BOOLEAN ) ) otherlv_12= ',' otherlv_13= '\"inputType\"' otherlv_14= ':' otherlv_15= '\"group\"' otherlv_16= ',' otherlv_17= '\"groupInputs\"' otherlv_18= ':' otherlv_19= '[' ( (lv_groupInputs_20_0= ruleFormInput ) ) (otherlv_21= ',' ( (lv_groupInputs_22_0= ruleFormInput ) ) )* otherlv_23= ']' otherlv_24= '}'
+            // InternalVFormDsl.g:1506:2: (otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' (otherlv_5= '\"id\"' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= ',' )? otherlv_9= '\"queryClause\"' otherlv_10= ':' ( (lv_qC_11_0= RULE_BOOLEAN ) ) otherlv_12= ',' otherlv_13= '\"inputType\"' otherlv_14= ':' otherlv_15= '\"group\"' otherlv_16= ',' otherlv_17= '\"groupInputs\"' otherlv_18= ':' otherlv_19= '[' ( (lv_groupInputs_20_0= ruleFormInput ) )? (otherlv_21= ',' ( (lv_groupInputs_22_0= ruleFormInput ) ) )* otherlv_23= ']' otherlv_24= '}' )
+            // InternalVFormDsl.g:1507:3: otherlv_0= '{' otherlv_1= '\"inputName\"' otherlv_2= ':' ( (lv_name_3_0= RULE_STRING ) ) otherlv_4= ',' (otherlv_5= '\"id\"' otherlv_6= ':' ( (lv_id_7_0= RULE_STRING ) ) otherlv_8= ',' )? otherlv_9= '\"queryClause\"' otherlv_10= ':' ( (lv_qC_11_0= RULE_BOOLEAN ) ) otherlv_12= ',' otherlv_13= '\"inputType\"' otherlv_14= ':' otherlv_15= '\"group\"' otherlv_16= ',' otherlv_17= '\"groupInputs\"' otherlv_18= ':' otherlv_19= '[' ( (lv_groupInputs_20_0= ruleFormInput ) )? (otherlv_21= ',' ( (lv_groupInputs_22_0= ruleFormInput ) ) )* otherlv_23= ']' otherlv_24= '}'
             {
             otherlv_0=(Token)match(input,14,FOLLOW_11); 
 
@@ -3380,53 +3380,64 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_18, grammarAccess.getFormInputGroupAccess().getColonKeyword_15());
             		
-            otherlv_19=(Token)match(input,18,FOLLOW_8); 
+            otherlv_19=(Token)match(input,18,FOLLOW_33); 
 
             			newLeafNode(otherlv_19, grammarAccess.getFormInputGroupAccess().getLeftSquareBracketKeyword_16());
             		
-            // InternalVFormDsl.g:1631:3: ( (lv_groupInputs_20_0= ruleFormInput ) )
-            // InternalVFormDsl.g:1632:4: (lv_groupInputs_20_0= ruleFormInput )
-            {
-            // InternalVFormDsl.g:1632:4: (lv_groupInputs_20_0= ruleFormInput )
-            // InternalVFormDsl.g:1633:5: lv_groupInputs_20_0= ruleFormInput
-            {
+            // InternalVFormDsl.g:1631:3: ( (lv_groupInputs_20_0= ruleFormInput ) )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            					newCompositeNode(grammarAccess.getFormInputGroupAccess().getGroupInputsFormInputParserRuleCall_17_0());
-            				
-            pushFollow(FOLLOW_9);
-            lv_groupInputs_20_0=ruleFormInput();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getFormInputGroupRule());
-            					}
-            					add(
-            						current,
-            						"groupInputs",
-            						lv_groupInputs_20_0,
-            						"cafev.vform.VFormDsl.FormInput");
-            					afterParserOrEnumRuleCall();
-            				
-
+            if ( (LA13_0==14) ) {
+                alt13=1;
             }
+            switch (alt13) {
+                case 1 :
+                    // InternalVFormDsl.g:1632:4: (lv_groupInputs_20_0= ruleFormInput )
+                    {
+                    // InternalVFormDsl.g:1632:4: (lv_groupInputs_20_0= ruleFormInput )
+                    // InternalVFormDsl.g:1633:5: lv_groupInputs_20_0= ruleFormInput
+                    {
 
+                    					newCompositeNode(grammarAccess.getFormInputGroupAccess().getGroupInputsFormInputParserRuleCall_17_0());
+                    				
+                    pushFollow(FOLLOW_9);
+                    lv_groupInputs_20_0=ruleFormInput();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getFormInputGroupRule());
+                    					}
+                    					add(
+                    						current,
+                    						"groupInputs",
+                    						lv_groupInputs_20_0,
+                    						"cafev.vform.VFormDsl.FormInput");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
             // InternalVFormDsl.g:1650:3: (otherlv_21= ',' ( (lv_groupInputs_22_0= ruleFormInput ) ) )*
-            loop13:
+            loop14:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA13_0==16) ) {
-                    alt13=1;
+                if ( (LA14_0==16) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt14) {
             	case 1 :
             	    // InternalVFormDsl.g:1651:4: otherlv_21= ',' ( (lv_groupInputs_22_0= ruleFormInput ) )
             	    {
@@ -3470,7 +3481,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop14;
                 }
             } while (true);
 
@@ -3558,72 +3569,72 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             // InternalVFormDsl.g:1701:2: (this_StringData_0= ruleStringData | this_IntData_1= ruleIntData )
             {
             // InternalVFormDsl.g:1701:2: (this_StringData_0= ruleStringData | this_IntData_1= ruleIntData )
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( (LA14_0==14) ) {
-                int LA14_1 = input.LA(2);
+            if ( (LA15_0==14) ) {
+                int LA15_1 = input.LA(2);
 
-                if ( (LA14_1==38) ) {
-                    int LA14_2 = input.LA(3);
+                if ( (LA15_1==38) ) {
+                    int LA15_2 = input.LA(3);
 
-                    if ( (LA14_2==RULE_STRING) ) {
-                        int LA14_3 = input.LA(4);
+                    if ( (LA15_2==RULE_STRING) ) {
+                        int LA15_3 = input.LA(4);
 
-                        if ( (LA14_3==16) ) {
-                            int LA14_4 = input.LA(5);
+                        if ( (LA15_3==16) ) {
+                            int LA15_4 = input.LA(5);
 
-                            if ( (LA14_4==39) ) {
-                                int LA14_5 = input.LA(6);
+                            if ( (LA15_4==39) ) {
+                                int LA15_5 = input.LA(6);
 
-                                if ( (LA14_5==RULE_INT) ) {
-                                    alt14=2;
+                                if ( (LA15_5==RULE_INT) ) {
+                                    alt15=2;
                                 }
-                                else if ( (LA14_5==RULE_STRING) ) {
-                                    alt14=1;
+                                else if ( (LA15_5==RULE_STRING) ) {
+                                    alt15=1;
                                 }
                                 else {
                                     NoViableAltException nvae =
-                                        new NoViableAltException("", 14, 5, input);
+                                        new NoViableAltException("", 15, 5, input);
 
                                     throw nvae;
                                 }
                             }
                             else {
                                 NoViableAltException nvae =
-                                    new NoViableAltException("", 14, 4, input);
+                                    new NoViableAltException("", 15, 4, input);
 
                                 throw nvae;
                             }
                         }
                         else {
                             NoViableAltException nvae =
-                                new NoViableAltException("", 14, 3, input);
+                                new NoViableAltException("", 15, 3, input);
 
                             throw nvae;
                         }
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 14, 2, input);
+                            new NoViableAltException("", 15, 2, input);
 
                         throw nvae;
                     }
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 14, 1, input);
+                        new NoViableAltException("", 15, 1, input);
 
                     throw nvae;
                 }
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 15, 0, input);
 
                 throw nvae;
             }
-            switch (alt14) {
+            switch (alt15) {
                 case 1 :
                     // InternalVFormDsl.g:1702:3: this_StringData_0= ruleStringData
                     {
@@ -3741,7 +3752,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             // InternalVFormDsl.g:1737:2: (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '}' )
             // InternalVFormDsl.g:1738:3: otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,14,FOLLOW_33); 
+            otherlv_0=(Token)match(input,14,FOLLOW_34); 
 
             			newLeafNode(otherlv_0, grammarAccess.getStringDataAccess().getLeftCurlyBracketKeyword_0());
             		
@@ -3775,7 +3786,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_34); 
+            otherlv_3=(Token)match(input,16,FOLLOW_35); 
 
             			newLeafNode(otherlv_3, grammarAccess.getStringDataAccess().getCommaKeyword_3());
             		
@@ -3894,7 +3905,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
             // InternalVFormDsl.g:1812:2: (otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_INT ) ) otherlv_6= '}' )
             // InternalVFormDsl.g:1813:3: otherlv_0= '{' otherlv_1= 'label:' ( (lv_label_2_0= RULE_STRING ) ) otherlv_3= ',' otherlv_4= 'value:' ( (lv_value_5_0= RULE_INT ) ) otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,14,FOLLOW_33); 
+            otherlv_0=(Token)match(input,14,FOLLOW_34); 
 
             			newLeafNode(otherlv_0, grammarAccess.getIntDataAccess().getLeftCurlyBracketKeyword_0());
             		
@@ -3928,7 +3939,7 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,16,FOLLOW_34); 
+            otherlv_3=(Token)match(input,16,FOLLOW_35); 
 
             			newLeafNode(otherlv_3, grammarAccess.getIntDataAccess().getCommaKeyword_3());
             		
@@ -4078,7 +4089,8 @@ public class InternalVFormDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000001000000000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000094000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000008000000000L});
 
 }

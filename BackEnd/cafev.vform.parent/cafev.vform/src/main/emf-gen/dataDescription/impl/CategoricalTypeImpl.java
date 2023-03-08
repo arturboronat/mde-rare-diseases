@@ -8,9 +8,6 @@ import dataDescription.DataDescriptionPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,14 +25,23 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class CategoricalTypeImpl extends StatsDataTypeImpl implements CategoricalType {
 	/**
-	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
+	 * The default value of the '{@link #getDataType() <em>Data Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EDataType dataType;
+	protected static final String DATA_TYPE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String dataType = DATA_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,15 +67,7 @@ public class CategoricalTypeImpl extends StatsDataTypeImpl implements Categorica
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getDataType() {
-		if (dataType != null && dataType.eIsProxy()) {
-			InternalEObject oldDataType = (InternalEObject)dataType;
-			dataType = (EDataType)eResolveProxy(oldDataType);
-			if (dataType != oldDataType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataDescriptionPackage.CATEGORICAL_TYPE__DATA_TYPE, oldDataType, dataType));
-			}
-		}
+	public String getDataType() {
 		return dataType;
 	}
 
@@ -78,17 +76,8 @@ public class CategoricalTypeImpl extends StatsDataTypeImpl implements Categorica
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType basicGetDataType() {
-		return dataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDataType(EDataType newDataType) {
-		EDataType oldDataType = dataType;
+	public void setDataType(String newDataType) {
+		String oldDataType = dataType;
 		dataType = newDataType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataDescriptionPackage.CATEGORICAL_TYPE__DATA_TYPE, oldDataType, dataType));
@@ -103,8 +92,7 @@ public class CategoricalTypeImpl extends StatsDataTypeImpl implements Categorica
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DataDescriptionPackage.CATEGORICAL_TYPE__DATA_TYPE:
-				if (resolve) return getDataType();
-				return basicGetDataType();
+				return getDataType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,7 +106,7 @@ public class CategoricalTypeImpl extends StatsDataTypeImpl implements Categorica
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DataDescriptionPackage.CATEGORICAL_TYPE__DATA_TYPE:
-				setDataType((EDataType)newValue);
+				setDataType((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,7 +121,7 @@ public class CategoricalTypeImpl extends StatsDataTypeImpl implements Categorica
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DataDescriptionPackage.CATEGORICAL_TYPE__DATA_TYPE:
-				setDataType((EDataType)null);
+				setDataType(DATA_TYPE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -148,9 +136,25 @@ public class CategoricalTypeImpl extends StatsDataTypeImpl implements Categorica
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DataDescriptionPackage.CATEGORICAL_TYPE__DATA_TYPE:
-				return dataType != null;
+				return DATA_TYPE_EDEFAULT == null ? dataType != null : !DATA_TYPE_EDEFAULT.equals(dataType);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (dataType: ");
+		result.append(dataType);
+		result.append(')');
+		return result.toString();
 	}
 
 } //CategoricalTypeImpl

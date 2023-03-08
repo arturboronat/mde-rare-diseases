@@ -80,7 +80,7 @@ function DataBase({getRoute}:appProps) {
   
    
     useEffect(()=>{
-        axios.get("http://localhost:5000/files").then((res)=>{
+        axios.get("http://localhost:8080/files").then((res)=>{
             setDataBase((prev:any[])=>{
               
                 prev = res.data.map((item:any)=>{

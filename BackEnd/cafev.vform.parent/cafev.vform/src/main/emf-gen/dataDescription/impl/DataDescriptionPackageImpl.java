@@ -178,6 +178,15 @@ public class DataDescriptionPackageImpl extends EPackageImpl implements DataDesc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getStatsDataType_Group() {
+		return (EAttribute)statsDataTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCategoricalType() {
 		return categoricalTypeEClass;
 	}
@@ -187,8 +196,8 @@ public class DataDescriptionPackageImpl extends EPackageImpl implements DataDesc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCategoricalType_DataType() {
-		return (EReference)categoricalTypeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getCategoricalType_DataType() {
+		return (EAttribute)categoricalTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -298,9 +307,10 @@ public class DataDescriptionPackageImpl extends EPackageImpl implements DataDesc
 		statsDataTypeEClass = createEClass(STATS_DATA_TYPE);
 		createEAttribute(statsDataTypeEClass, STATS_DATA_TYPE__NAME);
 		createEReference(statsDataTypeEClass, STATS_DATA_TYPE__FREQUENCY_TABLE);
+		createEAttribute(statsDataTypeEClass, STATS_DATA_TYPE__GROUP);
 
 		categoricalTypeEClass = createEClass(CATEGORICAL_TYPE);
-		createEReference(categoricalTypeEClass, CATEGORICAL_TYPE__DATA_TYPE);
+		createEAttribute(categoricalTypeEClass, CATEGORICAL_TYPE__DATA_TYPE);
 
 		numericalTypeEClass = createEClass(NUMERICAL_TYPE);
 		createEAttribute(numericalTypeEClass, NUMERICAL_TYPE__MIN);
@@ -352,9 +362,10 @@ public class DataDescriptionPackageImpl extends EPackageImpl implements DataDesc
 		initEClass(statsDataTypeEClass, StatsDataType.class, "StatsDataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatsDataType_Name(), ecorePackage.getEString(), "name", null, 1, 1, StatsDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStatsDataType_FrequencyTable(), this.getFrequencyEntry(), null, "frequencyTable", null, 0, -1, StatsDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStatsDataType_Group(), ecorePackage.getEString(), "group", null, 1, 1, StatsDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(categoricalTypeEClass, CategoricalType.class, "CategoricalType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCategoricalType_DataType(), ecorePackage.getEDataType(), null, "dataType", null, 1, 1, CategoricalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCategoricalType_DataType(), ecorePackage.getEString(), "dataType", null, 0, 1, CategoricalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(numericalTypeEClass, NumericalType.class, "NumericalType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNumericalType_Min(), ecorePackage.getEDouble(), "min", null, 1, 1, NumericalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

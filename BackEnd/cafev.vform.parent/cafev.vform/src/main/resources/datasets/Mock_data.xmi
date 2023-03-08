@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <dataDescription:StatsDataModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataDescription="http://www.example.org/dataDescription">
-  <types xsi:type="dataDescription:CategoricalType" name="subject_id">
+  <types xsi:type="dataDescription:CategoricalType" name="subject_id" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="994M" frequency="3"/>
     <frequencyTable name="1021M" frequency="5"/>
     <frequencyTable name="1162M" frequency="1"/>
@@ -18,14 +18,12 @@
     <frequencyTable name="12M" frequency="1"/>
     <frequencyTable name="13M" frequency="3"/>
     <frequencyTable name="14M" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="biological_samples_available">
+  <types xsi:type="dataDescription:CategoricalType" name="biological_samples_available" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="Blood" frequency="17"/>
     <frequencyTable name="Saliva" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="date_of_last_follow_up">
+  <types xsi:type="dataDescription:CategoricalType" name="date_of_last_follow_up" group="UNCLASSIFIED" dataType="Date">
     <frequencyTable name="14/01/2020" frequency="1"/>
     <frequencyTable name="07/08/2017" frequency="2"/>
     <frequencyTable name="14/07/2017" frequency="1"/>
@@ -42,9 +40,8 @@
     <frequencyTable name="20/10/2017" frequency="1"/>
     <frequencyTable name="20/03/2019" frequency="1"/>
     <frequencyTable name="20/11/2019" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="first_contact_with_specialized_centre">
+  <types xsi:type="dataDescription:CategoricalType" name="first_contact_with_specialized_centre" group="UNCLASSIFIED" dataType="Date">
     <frequencyTable name="07/10/2010" frequency="1"/>
     <frequencyTable name="31/10/2012" frequency="1"/>
     <frequencyTable name="07/12/2012" frequency="1"/>
@@ -62,9 +59,8 @@
     <frequencyTable name="20/10/2017" frequency="1"/>
     <frequencyTable name="20/03/2019" frequency="1"/>
     <frequencyTable name="20/11/2019" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="date_of_birth">
+  <types xsi:type="dataDescription:CategoricalType" name="date_of_birth" group="DEMOGRAPHICS" dataType="Date">
     <frequencyTable name="09/07/2009" frequency="1"/>
     <frequencyTable name="01/06/2012" frequency="1"/>
     <frequencyTable name="20/08/2012" frequency="1"/>
@@ -81,26 +77,21 @@
     <frequencyTable name="01/01/2019" frequency="1"/>
     <frequencyTable name="20/10/2018" frequency="1"/>
     <frequencyTable name="20/10/2019" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="patient_status">
+  <types xsi:type="dataDescription:CategoricalType" name="patient_status" group="DEMOGRAPHICS" dataType="String">
     <frequencyTable name="Alive" frequency="16"/>
     <frequencyTable name="Deceased" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="date_of_death">
+  <types xsi:type="dataDescription:CategoricalType" name="date_of_death" group="UNCLASSIFIED" dataType="Date">
     <frequencyTable name="07/07/2017" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="age_at_death">
+  <types xsi:type="dataDescription:CategoricalType" name="age_at_death" group="DEMOGRAPHICS" dataType="String">
     <frequencyTable name="12" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="cause_of_death">
+  <types xsi:type="dataDescription:CategoricalType" name="cause_of_death" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="Respiratory infection" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="phenotype">
+  <types xsi:type="dataDescription:CategoricalType" name="phenotype" group="ONTOLOGIES" dataType="String">
     <frequencyTable name="HP:0002376" frequency="1"/>
     <frequencyTable name="HP:0011097" frequency="4"/>
     <frequencyTable name="HP:0002521" frequency="2"/>
@@ -132,9 +123,8 @@
     <frequencyTable name="HP:0000252" frequency="2"/>
     <frequencyTable name="HP:0001298" frequency="1"/>
     <frequencyTable name="HP:0002353" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="age_at_diagnosis">
+  <types xsi:type="dataDescription:CategoricalType" name="age_at_diagnosis" group="DEMOGRAPHICS" dataType="String">
     <frequencyTable name="1" frequency="1"/>
     <frequencyTable name="0" frequency="5"/>
     <frequencyTable name="2" frequency="2"/>
@@ -144,19 +134,16 @@
     <frequencyTable name="10" frequency="1"/>
     <frequencyTable name="14" frequency="1"/>
     <frequencyTable name="Undetermined" frequency="4"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="gender">
+  <types xsi:type="dataDescription:CategoricalType" name="gender" group="DEMOGRAPHICS" dataType="String">
     <frequencyTable name="F" frequency="8"/>
     <frequencyTable name="M" frequency="9"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="seizures">
+  <types xsi:type="dataDescription:CategoricalType" name="seizures" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="YES" frequency="16"/>
     <frequencyTable name="NO" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="age_of_seizure_onset">
+  <types xsi:type="dataDescription:CategoricalType" name="age_of_seizure_onset" group="DEMOGRAPHICS" dataType="String">
     <frequencyTable name="0.6" frequency="1"/>
     <frequencyTable name="0" frequency="4"/>
     <frequencyTable name="0.5" frequency="1"/>
@@ -166,9 +153,8 @@
     <frequencyTable name="0.3" frequency="1"/>
     <frequencyTable name="4" frequency="1"/>
     <frequencyTable name="0.7" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="inheritance_model">
+  <types xsi:type="dataDescription:CategoricalType" name="inheritance_model" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="AD - de novo" frequency="9"/>
     <frequencyTable name="AD - inherited" frequency="2"/>
     <frequencyTable name="XLR - inherited" frequency="1"/>
@@ -176,25 +162,21 @@
     <frequencyTable name="AR - inherited - homozygous" frequency="2"/>
     <frequencyTable name="AD - de novo - somatic" frequency="1"/>
     <frequencyTable name="AD &#x2013; inherited" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="platform">
+  <types xsi:type="dataDescription:CategoricalType" name="platform" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="WES - singleton" frequency="7"/>
     <frequencyTable name="TGS - gene panel" frequency="6"/>
     <frequencyTable name="WES - trio" frequency="4"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="analysed_tissue">
+  <types xsi:type="dataDescription:CategoricalType" name="analysed_tissue" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="Blood" frequency="17"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="zygosity">
+  <types xsi:type="dataDescription:CategoricalType" name="zygosity" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="Heterozygous" frequency="14"/>
     <frequencyTable name="Hemizygous" frequency="1"/>
     <frequencyTable name="Homozygous" frequency="2"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="chr">
+  <types xsi:type="dataDescription:CategoricalType" name="chr" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="20" frequency="2"/>
     <frequencyTable name="16" frequency="2"/>
     <frequencyTable name="2" frequency="6"/>
@@ -206,25 +188,22 @@
     <frequencyTable name="13" frequency="1"/>
     <frequencyTable name="15" frequency="1"/>
     <frequencyTable name="9" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="ref">
+  <types xsi:type="dataDescription:CategoricalType" name="ref" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="G" frequency="9"/>
     <frequencyTable name="A" frequency="2"/>
     <frequencyTable name="C" frequency="5"/>
     <frequencyTable name="T" frequency="3"/>
     <frequencyTable name="CT" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="alt">
+  <types xsi:type="dataDescription:CategoricalType" name="alt" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="A" frequency="9"/>
     <frequencyTable name="G" frequency="3"/>
     <frequencyTable name="T" frequency="5"/>
     <frequencyTable name="TT" frequency="1"/>
     <frequencyTable name="C" frequency="2"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="transcript">
+  <types xsi:type="dataDescription:CategoricalType" name="transcript" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="NM_004975.2" frequency="1"/>
     <frequencyTable name="NM_020988.2" frequency="2"/>
     <frequencyTable name="NM_021007.2" frequency="1"/>
@@ -241,9 +220,8 @@
     <frequencyTable name="NM_001271.4" frequency="1"/>
     <frequencyTable name="NM_003165.3" frequency="1"/>
     <frequencyTable name="NM_153682.2" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="cDNA">
+  <types xsi:type="dataDescription:CategoricalType" name="cDNA" group="DNA SEQUENCE" dataType="String">
     <frequencyTable name="c.1747C>T" frequency="1"/>
     <frequencyTable name="c.607G>A" frequency="2"/>
     <frequencyTable name="c.2576A>G" frequency="1"/>
@@ -262,9 +240,8 @@
     <frequencyTable name="c.361C>T" frequency="1"/>
     <frequencyTable name="c.37+1G>A" frequency="1"/>
     <frequencyTable name="c.2T>C" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="protein">
+  <types xsi:type="dataDescription:CategoricalType" name="protein" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="p.(Arg583*)" frequency="1"/>
     <frequencyTable name="p.(Gly203Arg)" frequency="2"/>
     <frequencyTable name="p.(Lys859Arg)" frequency="1"/>
@@ -281,9 +258,8 @@
     <frequencyTable name="p.(Pro129Leu)" frequency="1"/>
     <frequencyTable name="p.(Leu107Phe)" frequency="1"/>
     <frequencyTable name="p.Arg121Ter" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="genes">
+  <types xsi:type="dataDescription:CategoricalType" name="genes" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="KCNB1" frequency="1"/>
     <frequencyTable name="GNAO1" frequency="2"/>
     <frequencyTable name="SCN2A" frequency="1"/>
@@ -299,48 +275,44 @@
     <frequencyTable name="KCNQ2" frequency="1"/>
     <frequencyTable name="CHD2" frequency="1"/>
     <frequencyTable name="STXBP1" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="interpretation">
+  <types xsi:type="dataDescription:CategoricalType" name="interpretation" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="Pathogenic" frequency="12"/>
     <frequencyTable name="Likely pathogenic" frequency="4"/>
     <frequencyTable name="Vous" frequency="1"/>
     <frequencyTable name="Vous - candidate" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="interpretation_addendum">
+  <types xsi:type="dataDescription:CategoricalType" name="interpretation_addendum" group="UNCLASSIFIED" dataType="String">
     <frequencyTable name="Diagnostic" frequency="10"/>
     <frequencyTable name="Vous" frequency="1"/>
     <frequencyTable name="Candidate" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:CategoricalType" name="Phenotype_ORPHA">
+  <types xsi:type="dataDescription:CategoricalType" name="Phenotype_ORPHA" group="ONTOLOGIES" dataType="String">
     <frequencyTable name="ORPHA:33069" frequency="1"/>
     <frequencyTable name="ORPHA:1934" frequency="2"/>
     <frequencyTable name="ORPHA:1949" frequency="1"/>
     <frequencyTable name="ORPHA:2382" frequency="1"/>
-    <dataType href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </types>
-  <types xsi:type="dataDescription:NumericalType" name="age_at_last_follow_up" max="32.0" mean="8.764705882352942" std="9.11406476115834">
+  <types xsi:type="dataDescription:NumericalType" name="age_at_last_follow_up" group="DEMOGRAPHICS" max="32.0" mean="8.764705882352942" std="9.11406476115834">
     <frequencyTable name="-0.0 - 8.764705882352942" frequency="7"/>
     <frequencyTable name="8.76470588235294 - 17.87877064351128" frequency="13"/>
     <frequencyTable name="17.87877064351128 - 26.99283540466962" frequency="15"/>
     <frequencyTable name="&lt;26.99283540466962" frequency="16"/>
   </types>
-  <types xsi:type="dataDescription:NumericalType" name="age_at_first_contact_with_specialized_centre" max="18.0" mean="4.411764705882353" std="5.884925907874837">
+  <types xsi:type="dataDescription:NumericalType" name="age_at_first_contact_with_specialized_centre" group="DEMOGRAPHICS" max="18.0" mean="4.411764705882353" std="5.884925907874837">
     <frequencyTable name="-0.0 - 4.411764705882353" frequency="6"/>
     <frequencyTable name="4.411764705882352 - 10.296690613757189" frequency="14"/>
     <frequencyTable name="10.296690613757189 - 16.181616521632026" frequency="15"/>
     <frequencyTable name="&lt;16.181616521632026" frequency="16"/>
   </types>
-  <types xsi:type="dataDescription:NumericalType" name="age" max="34.0" mean="10.0" std="9.212762886344139">
+  <types xsi:type="dataDescription:NumericalType" name="age" group="DEMOGRAPHICS" max="34.0" mean="10.0" std="9.212762886344139">
     <frequencyTable name="-0.0 - 0.7872371136558609" frequency="16"/>
     <frequencyTable name="0.7872371136558609 - 10.0" frequency="7"/>
     <frequencyTable name="9.999999999999998 - 19.212762886344137" frequency="13"/>
     <frequencyTable name="19.212762886344137 - 28.425525772688275" frequency="15"/>
     <frequencyTable name="&lt;28.425525772688275" frequency="16"/>
   </types>
-  <types xsi:type="dataDescription:NumericalType" name="position" min="2541585.0" max="2.36649682E8" mean="1.0274971045E8" std="6.699389578483044E7">
+  <types xsi:type="dataDescription:NumericalType" name="position" group="UNCLASSIFIED" min="2541585.0" max="2.36649682E8" mean="1.0274971045E8" std="6.699389578483044E7">
     <frequencyTable name="-0.0 - 3.575581466516956E7" frequency="18"/>
     <frequencyTable name="3.575581466516956E7 - 1.0274971045E8" frequency="11"/>
     <frequencyTable name="1.0274971044999999E8 - 1.6974360623483044E8" frequency="13"/>

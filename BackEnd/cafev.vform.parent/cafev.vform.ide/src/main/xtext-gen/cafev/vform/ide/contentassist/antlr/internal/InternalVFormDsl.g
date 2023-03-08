@@ -5139,7 +5139,7 @@ rule__FormInputGroup__Group__17__Impl
 :
 (
 	{ before(grammarAccess.getFormInputGroupAccess().getGroupInputsAssignment_17()); }
-	(rule__FormInputGroup__GroupInputsAssignment_17)
+	(rule__FormInputGroup__GroupInputsAssignment_17)?
 	{ after(grammarAccess.getFormInputGroupAccess().getGroupInputsAssignment_17()); }
 )
 ;

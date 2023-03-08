@@ -1087,7 +1087,7 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//    ("\"id\"" ":" id=STRING ",")?
 		//    "\"queryClause\"" ":" qC=BOOLEAN ","
 		//    "\"inputType\"" ":" "\"group\"" ","
-		//     "\"groupInputs\"" ":"  "["groupInputs+=FormInput ("," groupInputs+=FormInput)*"]"
+		//     "\"groupInputs\"" ":"  "["(groupInputs+=FormInput)? ("," groupInputs+=FormInput)*"]"
 		//"}"
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -1097,7 +1097,7 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//    ("\"id\"" ":" id=STRING ",")?
 		//    "\"queryClause\"" ":" qC=BOOLEAN ","
 		//    "\"inputType\"" ":" "\"group\"" ","
-		//     "\"groupInputs\"" ":"  "["groupInputs+=FormInput ("," groupInputs+=FormInput)*"]"
+		//     "\"groupInputs\"" ":"  "["(groupInputs+=FormInput)? ("," groupInputs+=FormInput)*"]"
 		//"}"
 		public Group getGroup() { return cGroup; }
 		
@@ -1173,7 +1173,7 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//"["
 		public Keyword getLeftSquareBracketKeyword_16() { return cLeftSquareBracketKeyword_16; }
 		
-		//groupInputs+=FormInput
+		//(groupInputs+=FormInput)?
 		public Assignment getGroupInputsAssignment_17() { return cGroupInputsAssignment_17; }
 		
 		//FormInput
@@ -1615,7 +1615,7 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//    ("\"id\"" ":" id=STRING ",")?
 	//    "\"queryClause\"" ":" qC=BOOLEAN ","
 	//    "\"inputType\"" ":" "\"group\"" ","
-	//     "\"groupInputs\"" ":"  "["groupInputs+=FormInput ("," groupInputs+=FormInput)*"]"
+	//     "\"groupInputs\"" ":"  "["(groupInputs+=FormInput)? ("," groupInputs+=FormInput)*"]"
 	//"}"
 	//;
 	public FormInputGroupElements getFormInputGroupAccess() {

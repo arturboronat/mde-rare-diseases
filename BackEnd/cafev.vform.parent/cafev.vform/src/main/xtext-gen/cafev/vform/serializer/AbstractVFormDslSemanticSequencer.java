@@ -169,7 +169,7 @@ public abstract class AbstractVFormDslSemanticSequencer extends AbstractDelegati
 	 *     FormInputGroup returns FormInputGroup
 	 *
 	 * Constraint:
-	 *     (name=STRING id=STRING? qC=BOOLEAN groupInputs+=FormInput groupInputs+=FormInput*)
+	 *     (name=STRING id=STRING? qC=BOOLEAN groupInputs+=FormInput? groupInputs+=FormInput*)
 	 * </pre>
 	 */
 	protected void sequence_FormInputGroup(ISerializationContext context, FormInputGroup semanticObject) {

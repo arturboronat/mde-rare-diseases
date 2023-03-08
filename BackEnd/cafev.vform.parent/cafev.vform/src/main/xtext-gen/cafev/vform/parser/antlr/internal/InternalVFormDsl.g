@@ -1646,7 +1646,7 @@ ruleFormInputGroup returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		(
 			otherlv_21=','
 			{

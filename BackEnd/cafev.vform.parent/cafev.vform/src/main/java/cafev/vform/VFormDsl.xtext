@@ -109,7 +109,7 @@ FormInputGroup:
 	("\"id\"" ":" id=STRING ",")?
 	"\"queryClause\"" ":" qC=BOOLEAN ","
 	"\"inputType\"" ":" "\"group\"" ","
- 	"\"groupInputs\"" ":"  "["groupInputs+=FormInput ("," groupInputs+=FormInput)*"]"
+ 	"\"groupInputs\"" ":"  "["(groupInputs+=FormInput)? ("," groupInputs+=FormInput)*"]"
 "}"
 
 ;   

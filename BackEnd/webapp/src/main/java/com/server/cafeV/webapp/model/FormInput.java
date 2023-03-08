@@ -19,7 +19,7 @@ property = "inputType", visible=true)
 @JsonSubTypes({
 	@Type(value=FormInputBasic.class, name="text"),
 	@Type(value=FormInputBasic.class, name="checkbox"),
-	@Type(value=FormInputBasic.class, name="number"),
+	@Type(value=FormInputBasic.class, name="date"),
 	@Type(value=FormInputRange.class, name="range"),
 	@Type(value=FormInputSearch.class, name="search"),
 	@Type(value=FormInputSelect.class, name="select"),

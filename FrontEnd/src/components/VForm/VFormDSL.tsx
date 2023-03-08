@@ -12,48 +12,53 @@ export const VFormDSL:FormModel =
 formLayout:"horizontal",
 formInputs:[
    
-    {
-        inputType:"group",
-        inputName:"DEMOGRAPHICS",
-        groupInputs:[
-            {
-                inputType:"text",
-                inputName:"SubjectID"
-            },
-            {
-                inputType:"checkbox",
-                inputName:"Gender",
+    // {
+    //     inputType:"group",
+    //     inputName:"DEMOGRAPHICS",
+    //     groupInputs:[
+    //         {
+    //             inputType:"text",
+    //             inputName:"SubjectID"
+    //         },
+    //         {
+    //             inputType:"checkbox",
+    //             inputName:"Gender",
                 
-            },
-            {
-                inputType:"select",
-                inputName:"eyeColor",
-                options:{
-                    optionType:"enum",
-                    data:["blue","grey"]
-                }
-            },
-            {
-                inputType:"range",
-                inputName:"height",
-                min:0,
-                max:220
-            },
-            {
-                inputType:"number",
-                inputName:"age"
-            }
-        ],
-        logic:"AND"
-    },
+    //         },
+    //         {
+    //             inputType:"select",
+    //             inputName:"eyeColor",
+    //             options:{
+    //                 optionType:"enum",
+    //                 data:["blue","grey"]
+    //             }
+    //         },
+    //         {
+    //             inputType:"range",
+    //             inputName:"height",
+    //             min:0,
+    //             max:220
+    //         },
+    //         {
+    //             inputType:"number",
+    //             inputName:"age"
+    //         }
+    //     ],
+    //     logic:"AND"
+    // },
     {
         inputType:"text",
         inputName:"Name"
     },
     {
         inputType:"disabled",
-        inputName:"Age"
+        inputName:"Age",
+        id: "Age"
     },
+    {
+        inputType:"date",
+        inputName:"Date of birth"
+    }
  
 ]
 

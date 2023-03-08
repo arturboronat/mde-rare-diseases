@@ -2,8 +2,6 @@
  */
 package dataDescription;
 
-import org.eclipse.emf.ecore.EDataType;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Categorical Type</b></em>'.
@@ -22,25 +20,25 @@ import org.eclipse.emf.ecore.EDataType;
  */
 public interface CategoricalType extends StatsDataType {
 	/**
-	 * Returns the value of the '<em><b>Data Type</b></em>' reference.
+	 * Returns the value of the '<em><b>Data Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Type</em>' reference.
-	 * @see #setDataType(EDataType)
+	 * @return the value of the '<em>Data Type</em>' attribute.
+	 * @see #setDataType(String)
 	 * @see dataDescription.DataDescriptionPackage#getCategoricalType_DataType()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
-	EDataType getDataType();
+	String getDataType();
 
 	/**
-	 * Sets the value of the '{@link dataDescription.CategoricalType#getDataType <em>Data Type</em>}' reference.
+	 * Sets the value of the '{@link dataDescription.CategoricalType#getDataType <em>Data Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Type</em>' reference.
+	 * @param value the new value of the '<em>Data Type</em>' attribute.
 	 * @see #getDataType()
 	 * @generated
 	 */
-	void setDataType(EDataType value);
+	void setDataType(String value);
 
 } // CategoricalType

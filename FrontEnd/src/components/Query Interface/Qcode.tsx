@@ -131,7 +131,7 @@ function Qcode({getRoute, history}:appProps) {
 
          
             
-         {(outPut!=undefined)&& 
+         {/* {(outPut!=undefined)&&  */}
             <VForm
                 model={VFormDSL} 
                 // setSave={((event)=>{setSaveForm(event)})}
@@ -141,7 +141,7 @@ function Qcode({getRoute, history}:appProps) {
                 // setLays(route)
                 // })}
             />
-         }  
+         {/* }   */}
 
 
             {

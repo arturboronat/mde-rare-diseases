@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dataDescription.impl.StatsDataTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link dataDescription.impl.StatsDataTypeImpl#getFrequencyTable <em>Frequency Table</em>}</li>
+ *   <li>{@link dataDescription.impl.StatsDataTypeImpl#getGroup <em>Group</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +67,26 @@ public abstract class StatsDataTypeImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected EList<FrequencyEntry> frequencyTable;
+
+	/**
+	 * The default value of the '{@link #getGroup() <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GROUP_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected String group = GROUP_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,6 +145,27 @@ public abstract class StatsDataTypeImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getGroup() {
+		return group;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGroup(String newGroup) {
+		String oldGroup = group;
+		group = newGroup;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataDescriptionPackage.STATS_DATA_TYPE__GROUP, oldGroup, group));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -145,6 +187,8 @@ public abstract class StatsDataTypeImpl extends MinimalEObjectImpl.Container imp
 				return getName();
 			case DataDescriptionPackage.STATS_DATA_TYPE__FREQUENCY_TABLE:
 				return getFrequencyTable();
+			case DataDescriptionPackage.STATS_DATA_TYPE__GROUP:
+				return getGroup();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,6 +209,9 @@ public abstract class StatsDataTypeImpl extends MinimalEObjectImpl.Container imp
 				getFrequencyTable().clear();
 				getFrequencyTable().addAll((Collection<? extends FrequencyEntry>)newValue);
 				return;
+			case DataDescriptionPackage.STATS_DATA_TYPE__GROUP:
+				setGroup((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,6 +230,9 @@ public abstract class StatsDataTypeImpl extends MinimalEObjectImpl.Container imp
 			case DataDescriptionPackage.STATS_DATA_TYPE__FREQUENCY_TABLE:
 				getFrequencyTable().clear();
 				return;
+			case DataDescriptionPackage.STATS_DATA_TYPE__GROUP:
+				setGroup(GROUP_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,6 +249,8 @@ public abstract class StatsDataTypeImpl extends MinimalEObjectImpl.Container imp
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case DataDescriptionPackage.STATS_DATA_TYPE__FREQUENCY_TABLE:
 				return frequencyTable != null && !frequencyTable.isEmpty();
+			case DataDescriptionPackage.STATS_DATA_TYPE__GROUP:
+				return GROUP_EDEFAULT == null ? group != null : !GROUP_EDEFAULT.equals(group);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -215,6 +267,8 @@ public abstract class StatsDataTypeImpl extends MinimalEObjectImpl.Container imp
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", group: ");
+		result.append(group);
 		result.append(')');
 		return result.toString();
 	}

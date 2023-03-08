@@ -14878,7 +14878,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
             // InternalVFormDsl.g:5100:1: ( rule__FormInputGroup__Group__16__Impl rule__FormInputGroup__Group__17 )
             // InternalVFormDsl.g:5101:2: rule__FormInputGroup__Group__16__Impl rule__FormInputGroup__Group__17
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_33);
             rule__FormInputGroup__Group__16__Impl();
 
             state._fsp--;
@@ -14953,7 +14953,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
             // InternalVFormDsl.g:5127:1: ( rule__FormInputGroup__Group__17__Impl rule__FormInputGroup__Group__18 )
             // InternalVFormDsl.g:5128:2: rule__FormInputGroup__Group__17__Impl rule__FormInputGroup__Group__18
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_33);
             rule__FormInputGroup__Group__17__Impl();
 
             state._fsp--;
@@ -14982,27 +14982,38 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FormInputGroup__Group__17__Impl"
-    // InternalVFormDsl.g:5135:1: rule__FormInputGroup__Group__17__Impl : ( ( rule__FormInputGroup__GroupInputsAssignment_17 ) ) ;
+    // InternalVFormDsl.g:5135:1: rule__FormInputGroup__Group__17__Impl : ( ( rule__FormInputGroup__GroupInputsAssignment_17 )? ) ;
     public final void rule__FormInputGroup__Group__17__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalVFormDsl.g:5139:1: ( ( ( rule__FormInputGroup__GroupInputsAssignment_17 ) ) )
-            // InternalVFormDsl.g:5140:1: ( ( rule__FormInputGroup__GroupInputsAssignment_17 ) )
+            // InternalVFormDsl.g:5139:1: ( ( ( rule__FormInputGroup__GroupInputsAssignment_17 )? ) )
+            // InternalVFormDsl.g:5140:1: ( ( rule__FormInputGroup__GroupInputsAssignment_17 )? )
             {
-            // InternalVFormDsl.g:5140:1: ( ( rule__FormInputGroup__GroupInputsAssignment_17 ) )
-            // InternalVFormDsl.g:5141:2: ( rule__FormInputGroup__GroupInputsAssignment_17 )
+            // InternalVFormDsl.g:5140:1: ( ( rule__FormInputGroup__GroupInputsAssignment_17 )? )
+            // InternalVFormDsl.g:5141:2: ( rule__FormInputGroup__GroupInputsAssignment_17 )?
             {
              before(grammarAccess.getFormInputGroupAccess().getGroupInputsAssignment_17()); 
-            // InternalVFormDsl.g:5142:2: ( rule__FormInputGroup__GroupInputsAssignment_17 )
-            // InternalVFormDsl.g:5142:3: rule__FormInputGroup__GroupInputsAssignment_17
-            {
-            pushFollow(FOLLOW_2);
-            rule__FormInputGroup__GroupInputsAssignment_17();
+            // InternalVFormDsl.g:5142:2: ( rule__FormInputGroup__GroupInputsAssignment_17 )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA14_0==14) ) {
+                alt14=1;
+            }
+            switch (alt14) {
+                case 1 :
+                    // InternalVFormDsl.g:5142:3: rule__FormInputGroup__GroupInputsAssignment_17
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__FormInputGroup__GroupInputsAssignment_17();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -15038,7 +15049,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
             // InternalVFormDsl.g:5154:1: ( rule__FormInputGroup__Group__18__Impl rule__FormInputGroup__Group__19 )
             // InternalVFormDsl.g:5155:2: rule__FormInputGroup__Group__18__Impl rule__FormInputGroup__Group__19
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_33);
             rule__FormInputGroup__Group__18__Impl();
 
             state._fsp--;
@@ -15081,17 +15092,17 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
             {
              before(grammarAccess.getFormInputGroupAccess().getGroup_18()); 
             // InternalVFormDsl.g:5169:2: ( rule__FormInputGroup__Group_18__0 )*
-            loop14:
+            loop15:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-                if ( (LA14_0==16) ) {
-                    alt14=1;
+                if ( (LA15_0==16) ) {
+                    alt15=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt15) {
             	case 1 :
             	    // InternalVFormDsl.g:5169:3: rule__FormInputGroup__Group_18__0
             	    {
@@ -15105,7 +15116,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop15;
                 }
             } while (true);
 
@@ -15746,7 +15757,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
             // InternalVFormDsl.g:5397:1: ( rule__StringData__Group__0__Impl rule__StringData__Group__1 )
             // InternalVFormDsl.g:5398:2: rule__StringData__Group__0__Impl rule__StringData__Group__1
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_34);
             rule__StringData__Group__0__Impl();
 
             state._fsp--;
@@ -15981,7 +15992,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
             // InternalVFormDsl.g:5478:1: ( rule__StringData__Group__3__Impl rule__StringData__Group__4 )
             // InternalVFormDsl.g:5479:2: rule__StringData__Group__3__Impl rule__StringData__Group__4
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_35);
             rule__StringData__Group__3__Impl();
 
             state._fsp--;
@@ -16286,7 +16297,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
             // InternalVFormDsl.g:5586:1: ( rule__IntData__Group__0__Impl rule__IntData__Group__1 )
             // InternalVFormDsl.g:5587:2: rule__IntData__Group__0__Impl rule__IntData__Group__1
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_34);
             rule__IntData__Group__0__Impl();
 
             state._fsp--;
@@ -16521,7 +16532,7 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
             // InternalVFormDsl.g:5667:1: ( rule__IntData__Group__3__Impl rule__IntData__Group__4 )
             // InternalVFormDsl.g:5668:2: rule__IntData__Group__3__Impl rule__IntData__Group__4
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_35);
             rule__IntData__Group__3__Impl();
 
             state._fsp--;
@@ -18475,7 +18486,8 @@ public class InternalVFormDslParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000001000000000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000094000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000008000000000L});
 
 }

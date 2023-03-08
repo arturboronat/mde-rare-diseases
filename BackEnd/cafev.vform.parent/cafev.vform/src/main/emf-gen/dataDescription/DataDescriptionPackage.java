@@ -131,13 +131,22 @@ public interface DataDescriptionPackage extends EPackage {
 	int STATS_DATA_TYPE__FREQUENCY_TABLE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Group</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATS_DATA_TYPE__GROUP = 2;
+
+	/**
 	 * The number of structural features of the '<em>Stats Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATS_DATA_TYPE_FEATURE_COUNT = 2;
+	int STATS_DATA_TYPE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Stats Data Type</em>' class.
@@ -177,7 +186,16 @@ public interface DataDescriptionPackage extends EPackage {
 	int CATEGORICAL_TYPE__FREQUENCY_TABLE = STATS_DATA_TYPE__FREQUENCY_TABLE;
 
 	/**
-	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * The feature id for the '<em><b>Group</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATEGORICAL_TYPE__GROUP = STATS_DATA_TYPE__GROUP;
+
+	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -230,6 +248,15 @@ public interface DataDescriptionPackage extends EPackage {
 	 * @ordered
 	 */
 	int NUMERICAL_TYPE__FREQUENCY_TABLE = STATS_DATA_TYPE__FREQUENCY_TABLE;
+
+	/**
+	 * The feature id for the '<em><b>Group</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERICAL_TYPE__GROUP = STATS_DATA_TYPE__GROUP;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' attribute.
@@ -397,6 +424,17 @@ public interface DataDescriptionPackage extends EPackage {
 	EReference getStatsDataType_FrequencyTable();
 
 	/**
+	 * Returns the meta object for the attribute '{@link dataDescription.StatsDataType#getGroup <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Group</em>'.
+	 * @see dataDescription.StatsDataType#getGroup()
+	 * @see #getStatsDataType()
+	 * @generated
+	 */
+	EAttribute getStatsDataType_Group();
+
+	/**
 	 * Returns the meta object for class '{@link dataDescription.CategoricalType <em>Categorical Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -407,15 +445,15 @@ public interface DataDescriptionPackage extends EPackage {
 	EClass getCategoricalType();
 
 	/**
-	 * Returns the meta object for the reference '{@link dataDescription.CategoricalType#getDataType <em>Data Type</em>}'.
+	 * Returns the meta object for the attribute '{@link dataDescription.CategoricalType#getDataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Type</em>'.
+	 * @return the meta object for the attribute '<em>Data Type</em>'.
 	 * @see dataDescription.CategoricalType#getDataType()
 	 * @see #getCategoricalType()
 	 * @generated
 	 */
-	EReference getCategoricalType_DataType();
+	EAttribute getCategoricalType_DataType();
 
 	/**
 	 * Returns the meta object for class '{@link dataDescription.NumericalType <em>Numerical Type</em>}'.
@@ -579,6 +617,14 @@ public interface DataDescriptionPackage extends EPackage {
 		EReference STATS_DATA_TYPE__FREQUENCY_TABLE = eINSTANCE.getStatsDataType_FrequencyTable();
 
 		/**
+		 * The meta object literal for the '<em><b>Group</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATS_DATA_TYPE__GROUP = eINSTANCE.getStatsDataType_Group();
+
+		/**
 		 * The meta object literal for the '{@link dataDescription.impl.CategoricalTypeImpl <em>Categorical Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -589,12 +635,12 @@ public interface DataDescriptionPackage extends EPackage {
 		EClass CATEGORICAL_TYPE = eINSTANCE.getCategoricalType();
 
 		/**
-		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Data Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CATEGORICAL_TYPE__DATA_TYPE = eINSTANCE.getCategoricalType_DataType();
+		EAttribute CATEGORICAL_TYPE__DATA_TYPE = eINSTANCE.getCategoricalType_DataType();
 
 		/**
 		 * The meta object literal for the '{@link dataDescription.impl.NumericalTypeImpl <em>Numerical Type</em>}' class.
