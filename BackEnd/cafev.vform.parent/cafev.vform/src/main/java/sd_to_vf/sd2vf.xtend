@@ -76,15 +76,19 @@ class sd2vf extends YAMTLModule {
 					fib.QC = 'true'
 					fib.type = "\"checkbox\""
 				],
-//			rule('Number')
-//				.in('nt', DD.numericalType)
-//					fib.name = nt.name
-//					fib.id = nt.name
-//					fib.QC = 'true'
-//					fib.type = "\"number\""
-//				],
+			rule('Number')
+				.uniqueLazy
+				.in('sdt', DD.statsDataType).filter[
+					isType(sdt,'digit')
+				]
+				.out('fib', VF.formInputBasic)[
+						fib.name = sdt.name
+						fib.id = sdt.name
+						fib.QC = 'true'
+						fib.type = "\"digit\""
+					],
 			rule('Search')
-			.uniqueLazy
+				.uniqueLazy
 				.in('sdt', DD.statsDataType).filter [
 					isType(sdt,'search')
 				]
@@ -95,7 +99,7 @@ class sd2vf extends YAMTLModule {
 					sch.QC = 'true'
 					sch.data += sdt.fetchData
 				],
-			rule('Categorical Select')
+			rule('Select')
 				.uniqueLazy
 				.in('sdt', DD.statsDataType).filter [
 					isType(sdt,'select')
@@ -122,43 +126,25 @@ class sd2vf extends YAMTLModule {
 					rg.QC = 'true'
 					rg.min = sdt.fetchRange.get('min') 
 					rg.max = sdt.fetchRange.get('max') 
-		
-				],			
-		rule('Date')
-			.uniqueLazy
-			.in('sdt', DD.statsDataType).filter [
-				isType(sdt,'date')
-			]
-			.out("fib", VF.formInputBasic) [
+				],						
+			rule('Date')
+				.uniqueLazy
+				.in('sdt', DD.statsDataType).filter [
+					isType(sdt,'date')
+				]
+				.out("fib", VF.formInputBasic) [
 					//bindings
 					fib.name = displayName(sdt)	
 					fib.id = sdt.name	
 					fib.type = "\"date\""
 					fib.QC = 'true'		
-				],
-			
-			rule('Numerical Select')
-				.uniqueLazy
-				.in('sdt', DD.statsDataType).filter [
-					isType(sdt,'select')
-				]
-				.out("slt", VF.formInputSelect) [
-					//bindings
-					slt.name = displayName(sdt)	
-					slt.id = sdt.name	
-					slt.QC = 'true'				
-					slt.option = opt
-				].
-				out("opt", VF.enumOption) [
-					opt.data+=sdt.fetchData
-				],
-			rule('stringOptionItem')
-				.uniqueLazy
-				.in('fe', DD.frequencyEntry)
-				.out("soi", VF.stringOptionItem) [
-					soi.value = fe.name
-				]	
-
+				],		
+			rule('Data')
+					.uniqueLazy
+					.in('fe', DD.frequencyEntry)
+					.out("soi", VF.stringOptionItem) [
+						soi.value = fe.name
+					]	
 		])				
 				
 	}
@@ -184,7 +170,6 @@ class sd2vf extends YAMTLModule {
 	def sdt() {
 	  'sdt'.fetch() as StatsDataType
 	}
-
 	def ct() {
 	  'ct'.fetch() as CategoricalType
 	}
@@ -265,8 +250,6 @@ class sd2vf extends YAMTLModule {
 		}
 		
 		if (createMap.size()<1&&((value!==null &&value.get("type")===null)||value===null)) {
-				
-				
 				
 				switch(typeValue){
 				case "search":
@@ -407,10 +390,11 @@ class sd2vf extends YAMTLModule {
 	def fetchGroupInputs(StatsDataModel sd){
 		val fin = new ArrayList<FormInput>()
 		fin+=sd.types.fetch("Search") as List<FormInput>
-		fin+=sd.types.fetch("Categorical Select") as List<FormInput>
+		fin+=sd.types.fetch("Select") as List<FormInput>
 		fin+=sd.types.fetch("Date") as List<FormInput>
 		fin+=sd.types.fetch("Checkbox") as List<FormInput>
 		fin+=sd.types.fetch("Range") as List<FormInput>
+		fin+=sd.types.fetch("Number") as List<FormInput>
 		fin
 	}
 	
@@ -436,7 +420,7 @@ class sd2vf extends YAMTLModule {
 			sdt.fetchNumericData
 		}
 		else{
-			sdt.frequencyTable.fetch("stringOptionItem") as List<StringOptionItem>
+			sdt.frequencyTable.fetch("Data") as List<StringOptionItem>
 		}
 		
 	}

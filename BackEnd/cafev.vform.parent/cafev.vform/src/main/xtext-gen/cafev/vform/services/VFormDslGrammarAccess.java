@@ -1676,7 +1676,7 @@ public class VFormDslGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//terminal BASICINPUT:
-	//    ("\"text\""|"\"checkbox\""|"\"number\""|"\"date\""|"\"disabled\"")
+	//    ("\"text\""|"\"checkbox\""|"\"digit\""|"\"date\""|"\"disabled\"")
 	//    ;
 	public TerminalRule getBASICINPUTRule() {
 		return tBASICINPUT;

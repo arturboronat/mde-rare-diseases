@@ -47,8 +47,8 @@
     </groupInputs>
     <groupInputs xsi:type="vFormDsl:FormInputBasic" name="date_of_birth" id="date_of_birth" qC="true" type="&quot;date&quot;"/>
     <groupInputs xsi:type="vFormDsl:FormInputRange" name="age_at_last_follow_up" id="age_at_last_follow_up" qC="true" max="32"/>
-    <groupInputs xsi:type="vFormDsl:FormInputRange" name="age_at_first_contact_with_specialized_centre" id="age_at_first_contact_with_specialized_centre" qC="true" max="18"/>
     <groupInputs xsi:type="vFormDsl:FormInputRange" name="age" id="age" qC="true" max="34"/>
+    <groupInputs xsi:type="vFormDsl:FormInputBasic" name="age_at_first_contact_with_specialized_centre" id="age_at_first_contact_with_specialized_centre" qC="true" type="&quot;digit&quot;"/>
   </formInput>
   <formInput xsi:type="vFormDsl:FormInputGroup" name="ONTOLOGIES" id="ONTOLOGIES" qC="true">
     <groupInputs xsi:type="vFormDsl:FormInputSearch" name="phenotype" id="phenotype" qC="true">
@@ -134,24 +134,6 @@
       <data xsi:type="vFormDsl:StringOptionItem" value="12M"/>
       <data xsi:type="vFormDsl:StringOptionItem" value="13M"/>
       <data xsi:type="vFormDsl:StringOptionItem" value="14M"/>
-    </groupInputs>
-    <groupInputs xsi:type="vFormDsl:FormInputSearch" name="date_of_last_follow_up" id="date_of_last_follow_up" qC="true">
-      <data xsi:type="vFormDsl:StringOptionItem" value="14/01/2020"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="07/08/2017"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="14/07/2017"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="01/02/2017"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="10/01/2018"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="02/03/2018"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="07/05/2017"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="07/05/2019"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="12/06/2019"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="30/05/2019"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="02/03/2019"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="07/08/2018"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="05/05/2020"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="20/10/2017"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="20/03/2019"/>
-      <data xsi:type="vFormDsl:StringOptionItem" value="20/11/2019"/>
     </groupInputs>
     <groupInputs xsi:type="vFormDsl:FormInputSearch" name="chr" id="chr" qC="true">
       <data xsi:type="vFormDsl:StringOptionItem" value="20"/>
@@ -307,6 +289,7 @@
         <data xsi:type="vFormDsl:StringOptionItem" value="&lt;1.6974360623483044E8"/>
       </option>
     </groupInputs>
+    <groupInputs xsi:type="vFormDsl:FormInputBasic" name="date_of_last_follow_up" id="date_of_last_follow_up" qC="true" type="&quot;date&quot;"/>
     <groupInputs xsi:type="vFormDsl:FormInputBasic" name="first_contact_with_specialized_centre" id="first_contact_with_specialized_centre" qC="true" type="&quot;date&quot;"/>
     <groupInputs xsi:type="vFormDsl:FormInputBasic" name="date_of_death" id="date_of_death" qC="true" type="&quot;date&quot;"/>
   </formInput>

@@ -74,7 +74,7 @@
         "types": [
             "range",
             "select",
-            "number"
+            "digit"
         ],
         "Std": [
             "9.11406476115834"
@@ -143,7 +143,7 @@
         "types": [
             "range",
             "select",
-            "number"
+            "digit"
         ],
         "Std": [
             "5.884925907874837"
@@ -211,7 +211,7 @@
         "types": [
             "range",
             "select",
-            "number"
+            "digit"
         ],
         "Std": [
             "9.212762886344139"
@@ -489,7 +489,7 @@
         "types": [
             "select",
             "range",
-            "number"
+            "digit"
         ],
         "Std": [
             "6.699389578483044E7"

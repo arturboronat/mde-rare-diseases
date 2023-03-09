@@ -97,12 +97,12 @@ class CSV_to_PROPS extends YAMTLModule {
 						if((d.max-d.min)<100){
 							types.add("range")
 							types.add("select")
-							types.add("number")
+							types.add("digit")
 						}
 						else{
 							types.add("select")
 							types.add("range")
-							types.add("number")
+							types.add("digit")
 						}	
 						
 					}

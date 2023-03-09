@@ -99,7 +99,7 @@ function generateInput(inputData:any){
       }
     break;
 
-    case "number":
+    case "digit":
       return{
         inputName:inputData.name,
         id:inputData.id,

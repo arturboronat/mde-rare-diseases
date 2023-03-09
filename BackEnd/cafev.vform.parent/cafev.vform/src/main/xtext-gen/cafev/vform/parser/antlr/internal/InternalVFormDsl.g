@@ -1873,7 +1873,7 @@ RULE_BOOLEAN : ('true'|'false');
 
 RULE_LAYOUT : ('"horizontal"'|'"vertical"');
 
-RULE_BASICINPUT : ('"text"'|'"checkbox"'|'"number"'|'"date"'|'"disabled"');
+RULE_BASICINPUT : ('"text"'|'"checkbox"'|'"digit"'|'"date"'|'"disabled"');
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

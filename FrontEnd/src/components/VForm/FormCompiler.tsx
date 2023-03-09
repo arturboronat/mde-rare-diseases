@@ -141,7 +141,7 @@ export const VForm = ({submitted, handleOutput, deleted, model, edited}:AppProps
             </div>)
 
 
-          case "number":
+          case "digit":
             return(<div
               onMouseEnter={(()=>{
   

@@ -21,6 +21,7 @@ property = "inputType", visible=true)
 	@Type(value=FormInputBasic.class, name="checkbox"),
 	@Type(value=FormInputBasic.class, name="date"),
 	@Type(value=FormInputRange.class, name="range"),
+	@Type(value=FormInputRange.class, name="digit"),
 	@Type(value=FormInputSearch.class, name="search"),
 	@Type(value=FormInputSelect.class, name="select"),
 	@Type(value=FormInputGroup.class, name="group")

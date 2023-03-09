@@ -87,7 +87,7 @@ type data = {
 }
 
 type numberOption = {
-  optionType: "number",
+  optionType: "digit",
   min: number,
   max: number,
   range: number,

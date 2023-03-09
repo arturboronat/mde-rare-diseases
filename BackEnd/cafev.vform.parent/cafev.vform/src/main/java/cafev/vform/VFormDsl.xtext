@@ -140,5 +140,5 @@ terminal LAYOUT:
 	"\"horizontal\""|"\"vertical\"" ;
 	
 terminal BASICINPUT:
-	("\"text\""|"\"checkbox\""|"\"number\""|"\"date\""|"\"disabled\"")
+	("\"text\""|"\"checkbox\""|"\"digit\""|"\"date\""|"\"disabled\"")
 	;
