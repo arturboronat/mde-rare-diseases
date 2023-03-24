@@ -8,10 +8,11 @@ class Runner {
 		var String inputCsvPath = '''src/main/resources/datasets/Rett_Datacleaned.csv'''
 		
 		val xform = new CSV_to_SD
-
+//xform.debug = true
 		// PREPARE MODELS
 		// Parses a CSV file and stores it as a runtime model in the YAMTL registry
-		xform.parseCsvTable('csv', inputCsvPath)
+		xform.importUntypedModelFromCsvFile('csv', inputCsvPath, true)
+		
 		
 		// EXECUTE TRAFO 
 		xform.execute()

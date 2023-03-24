@@ -1,5 +1,8 @@
 buildscript {
 	repositories {
+		maven {
+			url "https://github.com/yamtl/yamtl.github.io/raw/mvn-repo/mvn-repo/snapshot-repo"
+		}
 		mavenCentral()
 		gradlePluginPortal()
 	}

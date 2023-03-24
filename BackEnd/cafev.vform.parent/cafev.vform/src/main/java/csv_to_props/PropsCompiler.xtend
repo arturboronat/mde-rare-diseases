@@ -2,21 +2,26 @@ package csv_to_props
 
 
 class PropsCompiler {
-	def compile(String DATASET) {
-		var String inputCsvPath = DATASET+".csv"
+	def static compile(String filePath) {
+		var String inputCsvPath = filePath
 
 		
 		val xform = new CSV_to_PROPS
 
 		// PREPARE MODELS
 		// Parses a CSV file and stores it as a runtime model in the YAMTL registry
-		xform.parseCsvTable('in', inputCsvPath)
+		xform.importUntypedModelFromCsvFile('in', inputCsvPath, true)
 		
 		// EXECUTE TRAFO 
 		xform.execute()
-		xform.saveOutputModels(#{'out'->DATASET+'_props.json'})
+		xform.saveOutputModels(#{'out'-> filePath+'_props.json'})
 	
-		//println(xform.toJson('out'))
+		xform.exportUntypedModelToJson('out')
+	}
+	
+	def static void main(String... args) {
+		var datasetPath = 'src/main/resources/datasets/Mock_data.csv'
+		println(compile(datasetPath))
 		
 	}
 }

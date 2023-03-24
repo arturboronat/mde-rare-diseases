@@ -31,6 +31,31 @@ sourceSets {
 }
 
 
+ext {
+	mvnBuildDir = 'C:/Users/ab373/Documents/git-artur/yamtl.github.io'
+	xtendVersion = '2.29.0'
+//    lombokVersion = '1.16.20'
+//    guavaVersion = '23.0' // '22.0'
+	aspectJVersion = '1.9.9.1'
+	commonsioVersion = '2.11.0'
+	emfChangeVersion = '2.14.0'
+	ecoreVersion = '2.17.0' // 2.15.0
+}
+
+
+// ASPECTJ
+configurations {
+	ajc
+	aspects
+	aspectCompile
+	ajInpath
+	implementation {
+		extendsFrom aspects
+	}
+}
+
+
+
 dependencies {
 	testImplementation 'org.junit.jupiter:junit-jupiter-api'
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
@@ -41,11 +66,17 @@ dependencies {
 	implementation "org.eclipse.xtend:org.eclipse.xtend.core:$xtendVersion"
 	implementation "org.eclipse.xtend:org.eclipse.xtend.lib:$xtendVersion"
 	implementation "org.eclipse.emf:org.eclipse.emf.ecore.change:$emfChangeVersion"
-	implementation "yamtl:yamtl:0.2.7"
 	implementation 'org.apache.commons:commons-math3:3.6.1'
 	implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.13.0"
 	implementation "org.apache.groovy:groovy-all:4.0.6"
+	
+	
+	
+	// YAMTL
+	implementation 'yamtl:untyped-models:0.0.19'
+	implementation 'yamtl:yamtl:0.3.1'
 }
+
 configurations {
 	mwe2 {
 		extendsFrom compileClasspath

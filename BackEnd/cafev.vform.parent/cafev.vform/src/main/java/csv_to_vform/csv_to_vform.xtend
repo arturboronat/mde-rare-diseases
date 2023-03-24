@@ -20,7 +20,7 @@ class csv_to_vform {
 		 * CSV to DataDescription 
 		 */
 		val csv2sdModule = new CSV_to_SD
-		csv2sdModule.parseCsvTable('csv', inputCsvPath)
+		csv2sdModule.importUntypedModelFromCsvFile('csv', inputCsvPath, true)
 		csv2sdModule.execute()
 		var String outputModelPath = DATASET+".xmi"
 		csv2sdModule.saveOutputModels(#{'dd' -> outputModelPath})
@@ -71,7 +71,7 @@ class csv_to_vform {
 		 * CSV to DataDescription 
 		 */
 		val csv2sdModule = new CSV_to_SD
-		csv2sdModule.parseCsvTable('csv', inputCsvPath)
+		csv2sdModule.importUntypedModelFromCsvFile('csv', inputCsvPath, true)
 		csv2sdModule.execute()
 		var String outputModelPath = "src/main/resources/datasets/"+DATASET+".xmi"
 		csv2sdModule.saveOutputModels(#{'dd' -> outputModelPath})

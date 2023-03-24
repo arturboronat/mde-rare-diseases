@@ -1,7 +1,7 @@
 **/.classpath
 **/.project
-**/.gradle
-**/.settings
+**/.gradle/
+**/.settings/
 **/.launch
-**/bin
-**/xtend-gen
+**/bin/
+**/xtend-gen/
