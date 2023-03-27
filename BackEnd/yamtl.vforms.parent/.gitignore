@@ -1,0 +1,7 @@
+.gradle/
+**/bin/
+**/xtext-gen/
+**/xtend-gen/
+**/.classpath
+**/.project
+**/build/

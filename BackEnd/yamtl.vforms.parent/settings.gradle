@@ -1,0 +1,3 @@
+include 'yamtl.vforms'
+include 'yamtl.vforms.ide'
+include 'yamtl.vforms.web'

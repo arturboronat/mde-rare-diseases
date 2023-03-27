@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vFormDsl" nsURI="http://www.vform.cafev/VFormDsl" nsPrefix="vFormDsl">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formLayout" eType="#//FormLayout"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formInput" upperBound="-1"
+        eType="#//FormInput" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormLayout">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layout" eType="#//Layout"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormInput">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormInputBasic" eSuperTypes="#//FormInput">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//BasicInputType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BasicInputType">
+    <eLiterals name="TEXT" literal="TEXT"/>
+    <eLiterals name="CHECKBOX" value="1" literal="CHECKBOX"/>
+    <eLiterals name="NUMBER" value="2" literal="NUMBER"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormInputRange" eSuperTypes="#//FormInput">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormInputSelect" eSuperTypes="#//FormInput">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" eType="#//Option"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Option"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataOption" eSuperTypes="#//Option">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumOption" eSuperTypes="#//Option">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//OptionItem"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberOption" eSuperTypes="#//Option">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="range" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormInputSearch" eSuperTypes="#//FormInput">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//OptionItem"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptionItem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringOptionItem" eSuperTypes="#//OptionItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntOptionItem" eSuperTypes="#//OptionItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataOptionItem" eSuperTypes="#//OptionItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Data"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormInputGroup" eSuperTypes="#//FormInput">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groupInputs" upperBound="-1"
+        eType="#//FormInput" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Data">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringData" eSuperTypes="#//Data">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntData" eSuperTypes="#//Data">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Layout">
+    <eLiterals name="horizontal" literal="horizontal"/>
+    <eLiterals name="vertical" value="1" literal="vertical"/>
+  </eClassifiers>
+</ecore:EPackage>

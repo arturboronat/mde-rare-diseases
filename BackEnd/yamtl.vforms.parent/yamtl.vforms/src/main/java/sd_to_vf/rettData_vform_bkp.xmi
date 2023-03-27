@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<vFormsDsl:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vFormsDsl="http://www.vforms.yamtl/VFormsDsl">
+  <formLayout layout="&quot;horizontal&quot;"/>
+  <formInput xsi:type="vFormsDsl:FormInputGroup" name="DEMOGRAPHICS" id="DEMOGRAPHICS" qC="true">
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="Gender" id="Gender" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="F"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="normal_ofc_at_birth" id="normal_ofc_at_birth" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="height_score" id="height_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="below 5th percentile"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="Above 25th percentile"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="5th to 25th percentile"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="weight_score" id="weight_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="3rd to 25th percentile"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="below 3rd percentile"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="Above 25th percentile"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="hand_skills_regained_age" id="hand_skills_regained_age" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="0"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="walking_age_score" id="walking_age_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="after and equal to 18 months"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="before 18 months"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="never"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="age_at_epilepsy_onset" id="age_at_epilepsy_onset" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="5-10 years"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="1-3 years"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="0-1 year"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="5-10-years"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="0-1 years"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="3-5 years"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="height_with_age_cm" id="height_with_age_cm" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="94.75 - 123.86770782686901"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="123.86770782686901 - 152.98541565373802"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="152.98541565373802 (>)"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="65.63229217313099 - 94.75"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="65.63229217313099 (&lt;)"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="birth_weight_in_gr" id="birth_weight_in_gr" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="3084.1666666666665 - 3534.771479079602"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="3534.771479079602 (>)"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="2633.561854253731 - 3084.1666666666665"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="2633.561854253731 (&lt;)"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="weight_with_age_gr" id="weight_with_age_gr" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="12520.25 - 24366.034613677406"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="24366.034613677406 - 36211.81922735481"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="36211.81922735481 (>)"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="674.465386322594 - 12520.25"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="674.465386322594 (&lt;)"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputRange" name="ofc_at_birth_in_cm" id="ofc_at_birth_in_cm" qC="true" min="32" max="36"/>
+    <groupInputs xsi:type="vFormsDsl:FormInputRange" name="ofc_with_age_cm" id="ofc_with_age_cm" qC="true" min="42" max="53"/>
+    <groupInputs xsi:type="vFormsDsl:FormInputRange" name="regression_age_months" id="regression_age_months" qC="true" min="2" max="24"/>
+    <groupInputs xsi:type="vFormsDsl:FormInputRange" name="epilepsy_diag_age_months" id="epilepsy_diag_age_months" qC="true" min="60" max="96"/>
+  </formInput>
+  <formInput xsi:type="vFormsDsl:FormInputGroup" name="DNA SEQUENCE" id="DNA SEQUENCE" qC="true">
+    <groupInputs xsi:type="vFormsDsl:FormInputSearch" name="hgvs" id="hgvs" qC="true">
+      <data xsi:type="vFormsDsl:StringOptionItem" value="MECP2c.763C>T"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="MECP2c.1164_1207del44(P.P389X)"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="MECP2c.502C>T (p.R168X)"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="FOXG1c.1200C>G(p.Tyr400X)"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="MECP2c.468C>G(pD156E)"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="MECP2c.763C>T(pR255X)"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="MECP2c.473C>T(pT158M)"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="MECP2c.916C>T(pR306C)"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="MECP2c.1326_1327insC(pA443Xfs)"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="MECP2c.11155_1198del44(pL386Xfs)"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="MECP2c.502C>T(pR168X)"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="MECP2c.401C>T(pS134F)"/>
+    </groupInputs>
+  </formInput>
+  <formInput xsi:type="vFormsDsl:FormInputGroup" name="UNCLASSIFIED" id="UNCLASSIFIED" qC="true">
+    <groupInputs xsi:type="vFormsDsl:FormInputSearch" name="subject_id" id="subject_id" qC="true">
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-414"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-413"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-410"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-399"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-403"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-394"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-348"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-386"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-374"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="IT266"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-382"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-381"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-380"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-379"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-378"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-372"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-371"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-366"/>
+      <data xsi:type="vFormsDsl:StringOptionItem" value="22-365"/>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="rett_diagnosed" id="rett_diagnosed" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="classical"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="rett_in_family" id="rett_in_family" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="labour_at_term" id="labour_at_term" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="head_score" id="head_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="deceleration of head growth"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="microcephaly"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no deceleration"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="regression" id="regression" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="regression_score" id="regression_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="between 18 months and 3 years"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="before 18 months"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="after 3 years"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="before 18 months "/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="regression_hand_use" id="regression_hand_use" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="hand_use_acquisition" id="hand_use_acquisition" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="hand_skills_regained" id="hand_skills_regained" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="hand_stereotypy_score" id="hand_stereotypy_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="mild or intermittent"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="dominating or costant"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="gastrointestinal_disturbances_score" id="gastrointestinal_disturbances_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="absent"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="mild"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="severe"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="feed_skill" id="feed_skill" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="feeding with assistance"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="self finger"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="gastrostomy tube feeding"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="feeding without assistance"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="comm_non_verb_quality" id="comm_non_verb_quality" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="intermittent"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="significative/intentional"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="never acquired"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="eye_contact" id="eye_contact" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="phrases_score" id="phrases_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="absent"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="speech_score" id="speech_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="loss of ability to speak"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="never spoken"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="loss to ability to speak"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value=">10 words at age of 5"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="sitting_score" id="sitting_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="sitting unsupported at age of 5"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="never learned to sit"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="walking_score" id="walking_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="walking unsupported"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="never learned to walk"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="loss ability to walk"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="not know"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="gait_dyspraxia" id="gait_dyspraxia" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="intellectual_disability_score" id="intellectual_disability_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="non measurable IQ(IQ&lt;20)"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="severe IQ 20-40"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="epilepsy_score" id="epilepsy_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no epilepsy at age of 5"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="rarely or not controlled by therapy"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="barely or not controlled by therapy"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="controlled by therapy"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="epilepsy_type" id="epilepsy_type" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="myoclonic"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="infantile spasm"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="absent"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="breathing_disorders_score" id="breathing_disorders_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="mild or intermittent"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="mild"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="absent"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="severe"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="mild "/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="breathing_disorder_type" id="breathing_disorder_type" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="apnea"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="hyperventilation"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="none"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="both"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="cold_extremities_score" id="cold_extremities_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="mild "/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="absent"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="mild"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="severe"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="sphincter_control_score" id="sphincter_control_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="absent"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="complete"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="partiial"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="partial"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="scoliosis_score" id="scoliosis_score" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="absent"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="mild"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="presence_of_additional_involuntary_movement" id="presence_of_additional_involuntary_movement" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="bruxism" id="bruxism" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="self_injury" id="self_injury" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes "/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="mood_disturbance" id="mood_disturbance" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="sudden laughing"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="trouble_night_sleep" id="trouble_night_sleep" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="absent"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="present"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="brain_imaging" id="brain_imaging" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="yes"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="no"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="affected_gene" id="affected_gene" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="MECP2"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="FOXG1"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="mutation_type" id="mutation_type" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="gene duplication"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="gene deletion"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="early truncating"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="late truncating"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="missense"/>
+      </option>
+    </groupInputs>
+    <groupInputs xsi:type="vFormsDsl:FormInputSelect" name="inheritance" id="inheritance" qC="true">
+      <option xsi:type="vFormsDsl:EnumOption">
+        <data xsi:type="vFormsDsl:StringOptionItem" value="de novo mutation"/>
+        <data xsi:type="vFormsDsl:StringOptionItem" value="carrier mother"/>
+      </option>
+    </groupInputs>
+  </formInput>
+</vFormsDsl:Model>

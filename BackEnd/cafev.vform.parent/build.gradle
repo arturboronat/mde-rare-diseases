@@ -13,7 +13,12 @@ buildscript {
 
 subprojects {
 	ext.xtextVersion = '2.28.0'
+	ext.emfChangeVersion = '2.14.0'
 	repositories {
+		maven {
+			url "https://github.com/yamtl/yamtl.github.io/raw/mvn-repo/mvn-repo/snapshot-repo"
+		}
+	//	mavenLocal()
 		mavenCentral()
 	}
 

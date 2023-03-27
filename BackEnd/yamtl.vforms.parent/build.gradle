@@ -1,0 +1,39 @@
+buildscript {
+	repositories {
+		mavenCentral()
+		gradlePluginPortal()
+	}
+	dependencies {
+		classpath 'org.xtext:xtext-gradle-plugin:3.0.2'
+	}
+}
+
+subprojects {
+	ext.xtextVersion = '2.30.0'
+	repositories {
+		maven {
+			url "https://github.com/yamtl/yamtl.github.io/raw/mvn-repo/mvn-repo/snapshot-repo"
+		}
+		mavenCentral()
+	}
+
+	apply plugin: 'java-library'
+	dependencies {
+		api platform("org.eclipse.xtext:xtext-dev-bom:${xtextVersion}")
+	}
+
+	apply plugin: 'org.xtext.xtend'
+	apply from: "${rootDir}/gradle/source-layout.gradle"
+	apply plugin: 'eclipse'
+	apply plugin: 'maven-publish'
+
+	group = 'yamtl.vforms'
+	version = '1.0.0-SNAPSHOT'
+
+	sourceCompatibility = '17'
+	targetCompatibility = '17'
+
+	configurations.all {
+		exclude group: 'asm'
+	}
+}
