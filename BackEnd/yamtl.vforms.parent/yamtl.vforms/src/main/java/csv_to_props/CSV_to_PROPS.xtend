@@ -31,7 +31,7 @@ class CSV_to_PROPS extends YAMTLModule {
 				]
 
 				.out('outObj', JSON.ERecord)[
-					outObj.parent = inFt.owner.owner.fetch as UntypedModel
+					outObj.__parent = inFt.owner.owner.fetch as UntypedModel
 					
 					outObj.set("name", inFt.name)
 					outObj.set("data", inFt.fieldValues.toList) 
@@ -51,7 +51,7 @@ class CSV_to_PROPS extends YAMTLModule {
 				]
 
 				.out('outObj', JSON.ERecord)[
-					outObj.parent = inFt.owner.owner.fetch as UntypedModel
+					outObj.__parent = inFt.owner.owner.fetch as UntypedModel
 					
 					outObj.set("name", inFt.name)
 					outObj.set("data", inFt.fieldValues.toList)

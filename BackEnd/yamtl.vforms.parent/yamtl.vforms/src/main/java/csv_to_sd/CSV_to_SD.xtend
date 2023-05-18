@@ -137,6 +137,13 @@ class CSV_to_SD extends YAMTLModule {
 		'fe'.fetch as FrequencyEntry
 	}
 
+	/**	
+	* Determines the group category of a given FeatureType entity and returns a Group enum value that represents the category.
+	* The method uses regular expressions to match patterns in the fieldValues of the FeatureType to determine which group the entity belongs to.
+	* Numeric values and certain keywords related to demographics are also checked to classify the entity as DEMOGRAPHICS or UNCLASSIFIED if it does not belong to any other category.
+	* @param ft A FeatureType object representing an entity to be categorized
+	* @return A Group enum value representing the category of the entity
+	*/
 	def groupEntities(FeatureType ft) {
 
 		val dnaSequence = Pattern.compile("[A-z]+[0-9]*[.][0-9]+[A-z]*([>]|[_])[A-z]+[0-9]*")

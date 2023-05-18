@@ -3,7 +3,7 @@ package csv_to_sd
 import csv_to_sd.CSV_to_SD
 
 class Runner {
-	def public static void main(String[] args) {
+	def  static void main(String[] args) {
 //		var String inputCsvPath = '''src/main/resources/datasets/Mock_data.csv'''
 		var String inputCsvPath = '''src/main/resources/datasets/Rett_Datacleaned.csv'''
 		
